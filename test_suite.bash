@@ -42,7 +42,7 @@ for dir in $(ls -1p Input/ | grep /); do
 			input=$infile
 		fi
 		echo $input
-		$febio -i $input > /dev/null
+		$febio -i $input -cnf ../../febio.xml > /dev/null
 		log=${input%%.*}.log
 		plt=${input%%.*}.plt
 		eqns=$(awk '/Nr of equations/ {print $6; exit}' $log)
