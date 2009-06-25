@@ -87,6 +87,7 @@
 			<node id="16" bc="z" lc="1">1</node>
 		</prescribe>
 		<contact type="sliding_with_gaps">
+			<laugon>1</laugon>
 			<tolerance>0.01</tolerance>
 			<penalty>100</penalty>
 			<surface type="master">

@@ -3590,6 +3590,7 @@
 			<node id="1412" bc="y" lc="2">1</node>
 		</prescribe>
 		<contact type="sliding_with_gaps">
+			<laugon>1</laugon>
 			<tolerance>0.01</tolerance>
 			<penalty>10000</penalty>
 			<two_pass>1</two_pass>
@@ -3636,6 +3637,7 @@
 			</surface>
 		</contact>
 		<contact type="sliding_with_gaps">
+			<laugon>1</laugon>
 			<tolerance>0.01</tolerance>
 			<penalty>10000</penalty>
 			<two_pass>1</two_pass>
@@ -3698,6 +3700,7 @@
 			</surface>
 		</contact>
 		<contact type="sliding_with_gaps">
+			<laugon>1</laugon>
 			<tolerance>0.01</tolerance>
 			<penalty>1000</penalty>
 			<two_pass>1</two_pass>

@@ -410,6 +410,7 @@
 			<node id="188" bc="z" lc="1">1</node>
 		</prescribe>
 		<contact type="sliding_with_gaps">
+			<laugon>1</laugon>
 			<tolerance>0.1</tolerance>
 			<penalty>1e+006</penalty>
 			<two_pass>0</two_pass>

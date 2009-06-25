@@ -3627,6 +3627,7 @@
 			<node id="2016" bc="x" lc="1">1</node>
 		</prescribe>
 		<contact type="sliding_with_gaps">
+			<laugon>1</laugon>
 			<tolerance>0.01</tolerance>
 			<penalty>1</penalty>
 			<two_pass>1</two_pass>
