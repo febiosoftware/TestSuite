@@ -25,7 +25,7 @@ elif [ $HOSTTYPE == "x86_64" ]; then
 fi
 febio=${root}/mrl/FEBio/bin/febio.$plat
 
-echo 'File,Equations,Specified Time Steps,Solve Time,Elapsed Time,Steps Completed,Termination' > ${host}'_results.csv'
+echo 'File,Equations,Specified Time Steps,Solve Time,Elapsed Time,Steps Completed,Termination,Equil Iter,Stiff Reform' > ${host}'_results.csv'
 
 if [ ! -d platform/$host ]; then
 	mkdir platform/$host
@@ -42,7 +42,7 @@ for dir in $(ls -1p Input/ | grep /); do
 			input=$infile
 		fi
 		echo $input
-		$febio -i $input -cnf ../../febio.xml > /dev/null
+		$febio -i $input > /dev/null
 		log=${input%%.*}.log
 		plt=${input%%.*}.plt
 		eqns=$(awk '/Nr of equations/ {print $6; exit}' $log)
@@ -50,6 +50,8 @@ for dir in $(ls -1p Input/ | grep /); do
 		solve_tm=$(awk '/Time in solver/ {print $4}' $log)
 		elapse_tm=$(awk '/Elapsed time/ {print $4}' $log)
 		steps=$(awk '/steps completed/ {print $8}' $log)
+		eq_it=$(awk '/Total number of equilibrium/ {print $8}' $log)
+		st_re=$(awk '/Total number of stiffness/ {print $8}' $log)
 		if [ -n "$(grep 'E R R O R' $log)" ]; then
 			term=Error
 		elif [ -n "$(grep 'N O R M A L' $log)" ]; then
@@ -57,7 +59,7 @@ for dir in $(ls -1p Input/ | grep /); do
 		else
 			term=''
 		fi
-		echo $input,$eqns,$tmsteps,$solve_tm,$elapse_tm,$steps,$term >> ../../${host}'_results.csv'
+		echo $input,$eqns,$tmsteps,$solve_tm,$elapse_tm,$steps,$term,$eq_it,$st_re >> ../../${host}'_results.csv'
 		mv $log ../../platform/$host
 		rm $plt
 		if [ $host == 'win' ]; then

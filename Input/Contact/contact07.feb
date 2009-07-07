@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A stiff section of a cylinder presses down then slides along a softer block.
+Main Features:
+	Contact using the sliding_with_gaps algorithm
+Secondary Features:
+	Plotfile output - velocity is CONTACT_TRACTION
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 4191
+-->
 <febio_spec version="1.0">
 	<Control>
 		<title></title>
