@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!--
-Problem Description:
-	A stiff section of a cylinder presses down then slides along a softer block.
-Main Features:
-	Contact using the sliding_with_gaps algorithm
-Secondary Features:
-	Plotfile output - velocity is CONTACT_TRACTION
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 4191
--->
 <febio_spec version="1.0">
 	<Control>
 		<title></title>
@@ -21,13 +10,14 @@ Degrees of Freedom: 4191
 		<etol>0.01</etol>
 		<rtol>1e+010</rtol>
 		<lstol>0.9</lstol>
+<!--
 		<time_stepper>
 			<dtmin>0.0333333</dtmin>
 			<dtmax lc="1"></dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>11</opt_iter>
 		</time_stepper>
-		<optimize_bw>1</optimize_bw>
+-->
 	</Control>
 	<Material>
 		<material id="1" name="Material 1" type="neo-Hookean">
@@ -4435,10 +4425,11 @@ Degrees of Freedom: 4191
 			<node id="1932" bc="z" lc="3">1</node>
 		</prescribe>
 		<contact type="sliding_with_gaps">
-			<laugon>1</laugon>
-			<tolerance>0.01</tolerance>
-			<penalty>5</penalty>
+			<tolerance>0.005</tolerance>
+			<penalty auto="on">0.02</penalty>
 			<two_pass>1</two_pass>
+			<search_tol>0.1</search_tol>
+			<laugon>1</laugon>
 			<surface type="master">
 				<quad4 id="1">     6,    72,    78,    12</quad4>
 				<quad4 id="2">    12,    78,    84,    18</quad4>
@@ -4918,8 +4909,8 @@ Degrees of Freedom: 4191
 		</loadcurve>
 		<loadcurve id="3">
 			<loadpoint>0,0</loadpoint>
-			<loadpoint>1,-0.6</loadpoint>
-			<loadpoint>4,-0.6</loadpoint>
+			<loadpoint>1,-0.35</loadpoint>
+			<loadpoint>4,-0.35</loadpoint>
 		</loadcurve>
 	</LoadData>
 	<Output>
