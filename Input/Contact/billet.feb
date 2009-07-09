@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A 2-dimensional billet block is compressed between two rigid bodies.
+Main Features:
+	Contact using the sliding_with_gaps algorithm
+	Augmented Lagrangian
+	Rigid Bodies
+Secondary Features:
+	None
+Materials:
+	Neo-Hookean
+	Rigid Bodies
+Degrees of Freedom: 4882
+Comments:
+	Gets better convergence and less contact penetration using the augmented Lagrangian
+-->
 <febio_spec version="1.0">
 	<Control>
 		<title></title>

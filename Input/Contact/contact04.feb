@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A stiff block compresses then slides across a larger softer block.
+Main Features:
+	Contact using the sliding_with_gaps algorithm
+	Augmented Lagrangian
+Secondary Features:
+	None
+Materials:
+	Mooney-Rivlin
+Degrees of Freedom: 2149
+Comments:
+	Does not converge with auto="on" in the contact penalty.  Turning the auto time stepper off leads
+	to better convergence and contact penetration using augmented Lagrangian, but will not converge if not
+	using augmented Lagrangian
+-->
 <febio_spec version="1.0">
 	<Control>
 		<title>                                        
@@ -11,12 +27,14 @@
 		<etol>0.01</etol>
 		<rtol>1e+010</rtol>
 		<lstol>0.9</lstol>
+<!--
 		<time_stepper>
 			<dtmin>0.0166667</dtmin>
 			<dtmax>0.05</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>11</opt_iter>
 		</time_stepper>
+-->
 	</Control>
 	<Material>
 		<material id="1" name="top block (Mooney-Rivlin)" type="Mooney-Rivlin">

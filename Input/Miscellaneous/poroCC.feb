@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	
+Main Features:
+	
+Secondary Features:
+	
+Materials:
+	
+Degrees of Freedom: 
+Comments:
+	
+-->
 <febio_spec version="1.0">
 	<Control>
 		<title>Confined compression</title>

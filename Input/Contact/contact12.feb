@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A Rigid ball pushes down and slides on a cantilever board.
+Main Features:
+	Contact with sliding_with_gaps algorithm
+	Rigid Bodies
+Secondary Features:
+	None
+Materials:
+	Neo-Hookean
+	Rigid Body
+Degrees of Freedom: 751
+Comments:
+	Convergence and contact penetration are better without using augmented Lagrangian.
+	This is the same problems as contact11 with the master and slave surfaces interchanged.
+-->
 <febio_spec version="1.0">
 	<Control>
 		<title></title>
@@ -3577,9 +3593,9 @@
 			<node id="10" bc="xyz"></node>
 		</fix>
 		<contact type="sliding_with_gaps">
-			<laugon>1</laugon>
+			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty>1</penalty>
+			<penalty>12</penalty>
 			<two_pass>0</two_pass>
 			<surface type="master" format="element face">
 				<quad4 id="1">  1397,     6</quad4>

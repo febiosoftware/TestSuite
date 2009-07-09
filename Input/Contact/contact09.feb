@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Block sliding and compressing against inclined rigid body plane.
+Main Features:
+	Contact with sliding_with_gaps algorithm.
+	Augmented Lagrangian
+Secondary Features:
+	Load curve for contact penalty
+Materials:
+	Neo-Hookean
+	Rigid Bodies
+Degrees of Freedom: 1924
+Comments:
+	Running with augmented Lagrangian performs better than without in order to obtain
+	the same level of contact penetration.
+-->
 <febio_spec version="1.0">
 	<Control>
 		<title></title>

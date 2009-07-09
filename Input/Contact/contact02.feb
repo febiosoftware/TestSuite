@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	An element with prescribed displacement compresses a larger block of elements.
+Main Features:
+	Contact using the sliding_with_gaps algorithm
+	Augmented Lagrangian
+Secondary Features:
+	None
+Materials:
+	Mooney-Rivlin
+Degrees of Freedom: 368
+Comments:
+	Convergence and contact penetration are improved by setting auto="on" in the contact penalty.
+-->
 <febio_spec version="1.0">
 	<Control>
 		<title>                                        
@@ -410,9 +424,9 @@
 			<node id="188" bc="z" lc="1">1</node>
 		</prescribe>
 		<contact type="sliding_with_gaps">
-			<laugon>1</laugon>
+			<laugon>0</laugon>
 			<tolerance>0.1</tolerance>
-			<penalty>1e+006</penalty>
+			<penalty auto = "on">1e+006</penalty>
 			<two_pass>0</two_pass>
 			<surface type="master">
 				<quad4 id="1">     5,    35,    40,    10</quad4>
