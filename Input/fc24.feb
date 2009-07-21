@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	Two balls have a constant body force of 1 unit in the z-direction and bounce off of
+	each other and a rigid horizontal wall.  Note that the rigid body horizontal wall is
+	only there to visulalize the rigid-wall contact.
 Main Features:
-	
+	Dynamic Analysis
+	Body Force
+	Contact using facet-to-facet sliding
+	Rigid-wall Contact
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+	Rigid Body
+Degrees of Freedom: 3102
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		
 Comments:
-	
+	This is the same as problem as dy04.feb but using facet-to-facet sliding contact instead of
+	sliding_with_gaps contact.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Dynamic Balls with Body Force</title>
 		<time_steps>40</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

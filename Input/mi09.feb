@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	An 8x4x4 element block has its left end nodes constrained in x,y,z and its right end
+	nodes constrained in y,z with a prescribed displacement of 1 unit in the x-direction.
 Main Features:
-	
+	Must point controller
+	Plot must points
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Mooney-Rivlin
+Degrees of Freedom: 550
+Results:
+	Steps Completed: 13
+	Equilibrium Iterations: 68
+	Right Hand Evaluations: 81
+	Siffness Reformations: 13
+	Other:
+		The nodes other than those on the ends contract in the y and z directions 0.116
+		units at time t=1.
 Comments:
 	
 -->

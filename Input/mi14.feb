@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A 5x6x5 element block undergoes a prescribed displacement of 1 unit in the z-direction.
+	Nodal constraints are specified for the 1/8th symmetric representation of the expansion
+	of a block in the z-direction.
 Main Features:
-	
+	Linear Orthotropic material
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Linear Orthotropic
+Degrees of Freedom: 636
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 64
+	Right Hand Evaluations: 74
+	Siffness Reformations: 11
+	Other:
+		
 Comments:
 	
 -->

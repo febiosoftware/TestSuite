@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	A stiff block compresses then slides across a larger softer block.
+	A stiff block with prescribed displacement of -0.14 units in the z-direction from time t=0
+	to t=1 and then -0.8 units in the x-direction from time t=1 to t=2 compresses then slides
+	across a larger softer block.
 Main Features:
 	Contact using the sliding_with_gaps algorithm
 	Augmented Lagrangian
 Secondary Features:
-	None
+	Multiple displacement loadcurves
 Materials:
 	Mooney-Rivlin
 Degrees of Freedom: 2149
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		
 Comments:
 	Does not converge with auto="on" in the contact penalty.  Turning the auto time stepper off leads
 	to better convergence and contact penetration using augmented Lagrangian, but will not converge if not
@@ -17,8 +26,7 @@ Comments:
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title>                                        
-</title>
+		<title>Two Block Compression and Sliding</title>
 		<time_steps>40</time_steps>
 		<step_size>0.05</step_size>
 		<max_refs>15</max_refs>

@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A cantilever beam has a nodal force in the z-direction of 0 units at time t=0 and
+	-0.00001 units at time t=1 applied to the right end nodes.
 Main Features:
-	
+	Nodal force
 Secondary Features:
-	
+	Non-uniform element thickness in the x-direction
 Materials:
-	
-Degrees of Freedom: 
+	Linear Elastic
+Degrees of Freedom: 2157
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 58
+	Right Hand Evaluations: 68
+	Siffness Reformations: 10
+	Other:
+		The right end nodes have a z-displacement of -0.0962 at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Cantilever with Nodal Force</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>
@@ -1301,79 +1309,42 @@ Comments:
 	<Boundary>
 		<fix>
 			<node id="1" bc="xyz"></node>
-			<node id="1" bc="p"></node>
 			<node id="2" bc="xyz"></node>
-			<node id="2" bc="p"></node>
 			<node id="3" bc="xyz"></node>
-			<node id="3" bc="p"></node>
 			<node id="4" bc="xyz"></node>
-			<node id="4" bc="p"></node>
 			<node id="5" bc="xyz"></node>
-			<node id="5" bc="p"></node>
 			<node id="6" bc="xyz"></node>
-			<node id="6" bc="p"></node>
 			<node id="7" bc="xyz"></node>
-			<node id="7" bc="p"></node>
 			<node id="8" bc="xyz"></node>
-			<node id="8" bc="p"></node>
 			<node id="9" bc="xyz"></node>
-			<node id="9" bc="p"></node>
 			<node id="10" bc="xyz"></node>
-			<node id="10" bc="p"></node>
 			<node id="11" bc="xyz"></node>
-			<node id="11" bc="p"></node>
 			<node id="12" bc="xyz"></node>
-			<node id="12" bc="p"></node>
 			<node id="13" bc="xyz"></node>
-			<node id="13" bc="p"></node>
 			<node id="14" bc="xyz"></node>
-			<node id="14" bc="p"></node>
 			<node id="15" bc="xyz"></node>
-			<node id="15" bc="p"></node>
 			<node id="16" bc="xyz"></node>
-			<node id="16" bc="p"></node>
 			<node id="17" bc="xyz"></node>
-			<node id="17" bc="p"></node>
 			<node id="18" bc="xyz"></node>
-			<node id="18" bc="p"></node>
 			<node id="19" bc="xyz"></node>
-			<node id="19" bc="p"></node>
 			<node id="20" bc="xyz"></node>
-			<node id="20" bc="p"></node>
 			<node id="21" bc="xyz"></node>
-			<node id="21" bc="p"></node>
 			<node id="22" bc="xyz"></node>
-			<node id="22" bc="p"></node>
 			<node id="23" bc="xyz"></node>
-			<node id="23" bc="p"></node>
 			<node id="24" bc="xyz"></node>
-			<node id="24" bc="p"></node>
 			<node id="25" bc="xyz"></node>
-			<node id="25" bc="p"></node>
 			<node id="26" bc="xyz"></node>
-			<node id="26" bc="p"></node>
 			<node id="27" bc="xyz"></node>
-			<node id="27" bc="p"></node>
 			<node id="28" bc="xyz"></node>
-			<node id="28" bc="p"></node>
 			<node id="29" bc="xyz"></node>
-			<node id="29" bc="p"></node>
 			<node id="30" bc="xyz"></node>
-			<node id="30" bc="p"></node>
 			<node id="31" bc="xyz"></node>
-			<node id="31" bc="p"></node>
 			<node id="32" bc="xyz"></node>
-			<node id="32" bc="p"></node>
 			<node id="33" bc="xyz"></node>
-			<node id="33" bc="p"></node>
 			<node id="34" bc="xyz"></node>
-			<node id="34" bc="p"></node>
 			<node id="35" bc="xyz"></node>
-			<node id="35" bc="p"></node>
 			<node id="36" bc="xyz"></node>
-			<node id="36" bc="p"></node>
 			<node id="61" bc="xyz"></node>
-			<node id="61" bc="p"></node>
 		</fix>
 		<force>
 			<node id="697" bc="z" lc="1">1</node>

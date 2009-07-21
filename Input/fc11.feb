@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A Rigid ball with a prescribed displacement of -5.0 units in the z-direction
+	pushes down and slides on a cantilever board.
 Main Features:
-	
+	Contact using facet-to-facet sliding
+	Rigid Bodies
 Secondary Features:
-	
+	None
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+	Rigid Body
+Degrees of Freedom: 751
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		
 Comments:
-	
+	This is the same as problem as co11.feb but using facet-to-facet sliding contact instead of
+	sliding_with_gaps contact.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Rigid Ball on Cantilever Board</title>
 		<time_steps>50</time_steps>
 		<step_size>0.02</step_size>
 		<max_refs>15</max_refs>

@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A block with a prescribed z-displacement of -1.5 units from time t=0 to t=7.5 slides
+	with friction along a rigid inclined plane.
 Main Features:
-	
+	Sliding Contact with Friction
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+	Rigid Body
+Degrees of Freedom: 1006
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Inclined Plane Friction Compression</title>
 		<time_steps>75</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

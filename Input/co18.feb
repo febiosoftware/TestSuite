@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	An element with friction has a z-displacement of -0.1 units from time t=0 to t=0.2
+	and an x-displacement of 3 units from time t=0.2 to t=1 along a rigid body.
 Main Features:
-	
+	Sliding Contact with Friction
+	Rigid Bodies
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+	Rigid Body
+Degrees of Freedom: 20
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		The effective strain of the element is 0.121 at time t=1.
 Comments:
-	
+	Similar to problem c017, but with a greater coefficient of friction.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Sliding with Friction</title>
 		<time_steps>100</time_steps>
 		<step_size>0.01</step_size>
 		<max_refs>15</max_refs>

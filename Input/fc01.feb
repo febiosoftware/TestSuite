@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	Two elements with sliding contact are compressed against each other.  The nodes on the left face of
+	the left element are constrained in the x-direction.  The nodes on the right face of the right element
+	are given a displacement of -0.2 in the x-direction in time t=1.
 Main Features:
-	
+	Contact using facet-to-facet sliding
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 12
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		
 Comments:
-	
+	This is the same as problem as co01.feb but using facet-to-facet sliding contact instead of
+	sliding_with_gaps contact.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Two Element Sliding Contact</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<time_stepper>

@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A cantilever board has a constant body force of 1 unit applied in the z-direction.
 Main Features:
-	
+	Dynamic analysis
+	Body force
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 540
+Results:
+	Steps Completed: 167
+	Equilibrium Iterations: 489
+	Right Hand Evaluations: 656
+	Siffness Reformations: 167
+	Other:
+		The free end of the board has a maximum total displacement of 22.1 at time t=8.6.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Dynamic Cantilever with Body Force</title>
 		<time_steps>84</time_steps>
 		<step_size>0.2</step_size>
 		<max_refs>15</max_refs>

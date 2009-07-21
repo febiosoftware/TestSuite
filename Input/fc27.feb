@@ -3,18 +3,26 @@
 Problem Description:
 	
 Main Features:
-	
+	Contact using facet-to-facet sliding
 Secondary Features:
 	
 Materials:
 	
 Degrees of Freedom: 
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		
 Comments:
-	
+	This is the same as problem as mi24.feb but using facet-to-facet sliding contact instead of
+	sliding_with_gaps contact.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Two Block Compression</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A 2-dimensional billet block is compressed between two rigid bodies which each have a
+	prescribed z-displacement (compressing the block) of 0.6 units from time t=0 to t=1.
 Main Features:
-	
+	Contact using facet-to-facet sliding
+	Rigid Bodies
 Secondary Features:
-	
+	None
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+	Rigid Bodies
+Degrees of Freedom: 4882
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		
 Comments:
-	
+	This is the same as problem as co22.feb but using facet-to-facet sliding contact instead of
+	sliding_with_gaps contact.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
-		<time_steps>100</time_steps>
-		<step_size>0.01</step_size>
-		<max_refs>50</max_refs>
-		<max_ups>1</max_ups>
+		<title>Compressed Billet</title>
+		<time_steps>10</time_steps>
+		<step_size>0.1</step_size>
+		<max_refs>15</max_refs>
+		<max_ups>10</max_ups>
 		<dtol>0.001</dtol>
 		<etol>0.01</etol>
 		<rtol>0</rtol>
 		<lstol>0.9</lstol>
 		<pressure_stiffness>1</pressure_stiffness>
 		<plot_level>PLOT_DEFAULT</plot_level>
-		<time_stepper>
-			<dtmin>0.001</dtmin>
-			<dtmax>0.01</dtmax>
-			<opt_iter>100</opt_iter>
-		</time_stepper>
 	</Control>
 	<Material>
-		<material id="1" name="billet" type="Ogden">
-			<c1>0.0329</c1>
-			<m1>6.82</m1>
-			<k>100</k>
+		<material id="1" name="billet" type="neo-Hookean">
+			<E>1</E>
+			<v>0.4</v>
 		</material>
 		<material id="2" name="top" type="rigid body">
 			<density>1</density>
@@ -2540,22 +2545,22 @@ Comments:
 			<node id="2480"> 8.0000000e-001, 1.0000000e+000, 5.0000000e-002</node>
 			<node id="2481"> 9.0000000e-001, 1.0000000e+000, 5.0000000e-002</node>
 			<node id="2482"> 1.0000000e+000, 1.0000000e+000, 5.0000000e-002</node>
-			<node id="2483">-3.0000000e+000, 1.0000000e+000,-5.0000000e-002</node>
-			<node id="2484">-3.0000000e+000, 1.0000000e+000, 5.0000000e-002</node>
-			<node id="2485">-3.0000000e+000, 1.1000000e+000,-5.0000000e-002</node>
-			<node id="2486">-3.0000000e+000, 1.1000000e+000, 5.0000000e-002</node>
-			<node id="2487"> 3.0000000e+000, 1.0000000e+000,-5.0000000e-002</node>
-			<node id="2488"> 3.0000000e+000, 1.0000000e+000, 5.0000000e-002</node>
-			<node id="2489"> 3.0000000e+000, 1.1000000e+000,-5.0000000e-002</node>
-			<node id="2490"> 3.0000000e+000, 1.1000000e+000, 5.0000000e-002</node>
-			<node id="2491">-3.0000000e+000,-1.1000000e+000,-5.0000000e-002</node>
-			<node id="2492">-3.0000000e+000,-1.1000000e+000, 5.0000000e-002</node>
-			<node id="2493">-3.0000000e+000,-1.0000000e+000,-5.0000000e-002</node>
-			<node id="2494">-3.0000000e+000,-1.0000000e+000, 5.0000000e-002</node>
-			<node id="2495"> 3.0000000e+000,-1.1000000e+000,-5.0000000e-002</node>
-			<node id="2496"> 3.0000000e+000,-1.1000000e+000, 5.0000000e-002</node>
-			<node id="2497"> 3.0000000e+000,-1.0000000e+000,-5.0000000e-002</node>
-			<node id="2498"> 3.0000000e+000,-1.0000000e+000, 5.0000000e-002</node>
+			<node id="2483">-2.0000000e+000, 1.0000000e+000,-5.0000000e-002</node>
+			<node id="2484">-2.0000000e+000, 1.0000000e+000, 5.0000000e-002</node>
+			<node id="2485">-2.0000000e+000, 1.1000000e+000,-5.0000000e-002</node>
+			<node id="2486">-2.0000000e+000, 1.1000000e+000, 5.0000000e-002</node>
+			<node id="2487"> 2.0000000e+000, 1.0000000e+000,-5.0000000e-002</node>
+			<node id="2488"> 2.0000000e+000, 1.0000000e+000, 5.0000000e-002</node>
+			<node id="2489"> 2.0000000e+000, 1.1000000e+000,-5.0000000e-002</node>
+			<node id="2490"> 2.0000000e+000, 1.1000000e+000, 5.0000000e-002</node>
+			<node id="2491">-2.0000000e+000,-1.1000000e+000,-5.0000000e-002</node>
+			<node id="2492">-2.0000000e+000,-1.1000000e+000, 5.0000000e-002</node>
+			<node id="2493">-2.0000000e+000,-1.0000000e+000,-5.0000000e-002</node>
+			<node id="2494">-2.0000000e+000,-1.0000000e+000, 5.0000000e-002</node>
+			<node id="2495"> 2.0000000e+000,-1.1000000e+000,-5.0000000e-002</node>
+			<node id="2496"> 2.0000000e+000,-1.1000000e+000, 5.0000000e-002</node>
+			<node id="2497"> 2.0000000e+000,-1.0000000e+000,-5.0000000e-002</node>
+			<node id="2498"> 2.0000000e+000,-1.0000000e+000, 5.0000000e-002</node>
 		</Nodes>
 		<Elements>
 			<hex8 id="1" mat="1">     1,     2,    23,    22,   442,   443,   464,   463</hex8>
@@ -6250,7 +6255,7 @@ Comments:
 		<contact type="facet-to-facet sliding">
 			<laugon>1</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty auto="on">50</penalty>
+			<penalty>15</penalty>
 			<two_pass>0</two_pass>
 			<surface type="master">
 				<quad4 id="1">  2483,  2487,  2488,  2484</quad4>
@@ -6301,7 +6306,7 @@ Comments:
 		<contact type="facet-to-facet sliding">
 			<laugon>1</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty auto="on">50</penalty>
+			<penalty>15</penalty>
 			<two_pass>0</two_pass>
 			<surface type="master">
 				<quad4 id="1">  2497,  2493,  2494,  2498</quad4>

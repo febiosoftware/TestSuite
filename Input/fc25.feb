@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	Dynamic analysis of two cylinders colliding with each other.  The cylinder on the right
+	is given an initial velocity of -1 units in the x-direction.
 Main Features:
-	
+	Dynamic analysis
+	Contact using facet-to-facet sliding
 Secondary Features:
-	
+	Initial velocity
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 11904
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		The cylinder on the left has a maximum x-displacement of -8.41 at time t=1.
 Comments:
-	
+	This is the same as problem as dy09.feb but using facet-to-facet sliding contact instead of
+	sliding_with_gaps contact.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title>colliding cylinders</title>
+		<title>Colliding Cylinders</title>
 		<time_steps>100</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

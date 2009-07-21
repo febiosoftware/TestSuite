@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	Nodal constraints are specified for the 1/8th symmetric representation of the
+	expansion of a block in the x-direction.  The right end nodes are given a
+	prescribed x-displacement of 0.001 at time t=1.
 Main Features:
-	
+	St.Venant-Kirchhoff material
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	St.Venant-Kirchhoff
+Degrees of Freedom: 12
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 20
+	Right Hand Evaluations: 30
+	Siffness Reformations: 10
+	Other:
+		
 Comments:
 	
 -->

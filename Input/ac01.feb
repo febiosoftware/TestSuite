@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A 10-element bar of trans iso Mooney-Rivlin material udergoes active contraction.
 Main Features:
-	
+	Active contraction of transversely isotropic material
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	trans iso Mooney-Rivlin
+Degrees of Freedom: 84
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		
+ 
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Active Contraction</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

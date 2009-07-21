@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	Two blocks have tied contact between them.  The left end nodes of the left block are
+	constrained in x,y,z and the right end nodes of the right block have a prescribed
+	x-displacement of 1 unit in time t=1.
 Main Features:
-	
+	Tied Contact
 Secondary Features:
 	
 Materials:
-	
+	Neo-Hookean
 Degrees of Freedom: 
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		The gap between the tied corners is 0.0261 units at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Tied Contact</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

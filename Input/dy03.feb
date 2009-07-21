@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A ball has a constant body force of 1 unit in the z-direction and bounces off of a rigid
+	horizontal wall   Note the the rigid body horizontal wall is only there to visualize the
+	rigid-wall contact.
 Main Features:
-	
+	Dynamic analysis
+	Body force
+	Rigid wall contact
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+	Rigid Body
+Degrees of Freedom: 4953
+Results:
+	Steps Completed: 41
+	Equilibrium Iterations: 189
+	Right Hand Evaluations: 301
+	Siffness Reformations: 66
+	Other:
+		At time t=1.802 the ball has its maximum z-displacement of -1.41 units.
 Comments:
-	
+	Changed the contact penalty from 100 to 7000 in order to change contact penetration from 0.25 to
+	0.0054 (5% of the element thickness)
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Dynamic Ball with Body Force</title>
 		<time_steps>30</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>
@@ -34,7 +47,7 @@ Comments:
 		<analysis type="dynamic"></analysis>
 	</Control>
 	<Material>
-		<material id="1" name="Material 3" type="neo-Hookean">pe
+		<material id="1" name="Material 3" type="neo-Hookean">
 			<E>100</E>
 			<v>0</v>
 		</material>
@@ -3229,7 +3242,7 @@ Comments:
 	<Boundary>
 		<contact type="rigid_wall">
 			<tolerance>0.01</tolerance>
-			<penalty>100</penalty>
+			<penalty>7000</penalty>
 			<plane>0,0,1,0</plane>
 			<surface>
 				<quad4 id="1">  1441,  1434,  1483,  1490</quad4>

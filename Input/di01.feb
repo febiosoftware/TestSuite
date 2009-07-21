@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A stationary point at node 9 is connected by a spring to node 1 on the left face of the element.
+	The nodes on the right face of the element have a prescribed displacement of 1 unit in time t=1.
 Main Features:
-	
+	Nodal springs
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 16
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 30
+	Right Hand Evaluations: 40
+	Siffness Reformations: 10
+	Other:
+		At time t=1, the x-displacement of node 1 should be 0.638
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Corner Nodal Spring</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>
@@ -23,7 +31,6 @@ Comments:
 		<etol>0.01</etol>
 		<rtol>0</rtol>
 		<lstol>0.9</lstol>
-		<pressure_stiffness>1</pressure_stiffness>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax>0.1</dtmax>

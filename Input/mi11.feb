@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	An 8x4x4 element block has its left end nodes constrained in x,y,z and its right end
+	nodes constrained in y,z with a prescribed displacement of 1 unit in the x-direction.
 Main Features:
-	
+	Ogden material
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Ogden
+Degrees of Freedom: 550
+Results:
+	Steps Completed: 12
+	Equilibrium Iterations: 101
+	Right Hand Evaluations: 129
+	Siffness Reformations: 14
+	Other:
+		The y and z displacement is not as uniform as is it for the Mooney-Rivlin
+		material in problem mi09, but ranges from 0.0844 and 0.141 at time t=1.
 Comments:
 	
 -->

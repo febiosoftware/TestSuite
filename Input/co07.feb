@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	A stiff section of a cylinder presses down then slides along a softer block.
+	A stiff section of a cylinder has a prescribed displacement in the z-direction 0f -0.35 units
+	from time t=0 to t=1 and then a displacement of 3 units in the x-direction from time t=1 to
+	t=4.  It presses down then slides along a softer block.
 Main Features:
 	Contact using the sliding_with_gaps algorithm
 	Augmented Lagrangian
 Secondary Features:
 	Plotfile output - velocity is CONTACT_TRACTION
+	Multiple displacement loadcurves
 Materials:
 	Neo-Hookean
 Degrees of Freedom: 4191
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		
 Comments:
 	This problem gets better convergence and less contact penetration with the auto time stepper off.
 	Without augmented Lagrangian it will not converge for the contact penalty > 0.07 if the time
@@ -18,7 +28,7 @@ Comments:
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Cylinder and Block</title>
 		<time_steps>40</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A displacement of 1 unit in the z-direction is prescribed for node 8.  Nodes 2, 4 and 6
+	(the other nodes on the top of the element) are constrained to have the same z component
+	as element 8.
 Main Features:
-	
+	Linear constraints
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 12
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 52
+	Right Hand Evaluations: 70
+	Siffness Reformations: 10
+	Other:
+		The volume is 1.05 units at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Linear Constraints</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

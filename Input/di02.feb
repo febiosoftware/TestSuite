@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	Two blocks of four elements each are connected by a nodal spring on the center nodes of their
+	mutually facing sides.  The nodes on the left face of the left block are constained in the x, y,
+	and z directions.  The nodes on the right side of the right block have a prescribed displacement
+	of one unit in the x-direction in time t=1.
 Main Features:
-	
+	Nodal springs
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hooken
+Degrees of Freedom: 117
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 51
+	Right Hand Evaluations: 61
+	Siffness Reformations: 10
+	Other:
+		At time t=1, the x-displacement of the node with the spring on the left block is 0.431,
+		and the x-displacement of the node with the spring on the right block is 0.570
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Center Nodal Spring</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>
@@ -23,7 +34,6 @@ Comments:
 		<etol>0.01</etol>
 		<rtol>0</rtol>
 		<lstol>0.9</lstol>
-		<pressure_stiffness>1</pressure_stiffness>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax>0.1</dtmax>

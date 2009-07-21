@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	An element with prescribed displacement compresses a larger block of elements.
+	An element with prescribed displacement of -0.5 units in the z-direction compresses
+	a larger block with sliding contact.
 Main Features:
 	Contact using the sliding_with_gaps algorithm
 	Augmented Lagrangian
@@ -10,13 +11,19 @@ Secondary Features:
 Materials:
 	Mooney-Rivlin
 Degrees of Freedom: 368
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		
 Comments:
 	Convergence and contact penetration are improved by setting auto="on" in the contact penalty.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title>                                        
-</title>
+		<title>Sliding Contact Block Compression</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

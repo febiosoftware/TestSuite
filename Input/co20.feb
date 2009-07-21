@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	Two cylindrical tubes at 90 degrees are compressed against each other.  The ends of
+	one tube are constrained in x,y,z and the ends of the other tube have a prescribed
+	displacement of -6.0 units in the x-direction.
 Main Features:
-	
+	Sliding Contact with Friction
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 5568
+Results:
+	Steps Completed: 
+	Equilibrium Iterations: 
+	Right Hand Evaluations: 
+	Siffness Reformations: 
+	Other:
+		
 Comments:
-	
+	This problem is the same as co15 but with friction.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title>colliding cylinders</title>
+		<title>Two Cylinder Compression with Friction</title>
 		<time_steps>50</time_steps>
 		<step_size>0.02</step_size>
 		<max_refs>15</max_refs>

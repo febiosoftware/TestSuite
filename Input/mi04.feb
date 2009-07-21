@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A displacement of 1 unit in the x-direction is prescribed for node 8.  Nodes 5, 6 and 7
+	(the other nodes on the right end of the element) are constrained to have the same x component
+	as element 8.
 Main Features:
-	
+	Linear constraints
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 9
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 31
+	Right Hand Evaluations: 41
+	Siffness Reformations: 10
+	Other:
+		The volume is 1.05 units at time t=1.
 Comments:
-	
+	Similar to problem mi01, but using alternative form of linear constraints.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Linear Constraints</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

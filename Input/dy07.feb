@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	Dynamic analysis of a 4x10 element bar which is constrained in the x, y and z directions on
+	the right end and has a prescribed displacement of 1 unit in the x-direction on the left end.
 Main Features:
-	
+	Dynamic analysis
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 279
+Results:
+	Steps Completed: 100
+	Equilibrium Iterations: 200
+	Right Hand Evaluations: 300
+	Siffness Reformations: 100
+	Other:
+	A wave pattern ripples through the bar with a maximum y-displacement of 2.41 units at time t=1.	
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Dynamic Bar</title>
 		<time_steps>100</time_steps>
 		<step_size>0.01</step_size>
 		<max_refs>15</max_refs>
@@ -23,7 +31,6 @@ Comments:
 		<etol>0.01</etol>
 		<rtol>0</rtol>
 		<lstol>0.9</lstol>
-		<pressure_stiffness>1</pressure_stiffness>
 		<time_stepper>
 			<dtmin>0.001</dtmin>
 			<dtmax>0.01</dtmax>

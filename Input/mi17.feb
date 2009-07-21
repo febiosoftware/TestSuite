@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	An element has its front (-y) nodes constrained in x,y,z and its rear (+y) nodes
+	given a prescribed displacement of 1 unit in the x-direction at time t=1 for a
+	shear strain.
 Main Features:
-	
+	Prescribed displacement
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Linear Elastic
+Degrees of Freedom: 4
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 10
+	Right Hand Evaluations: 20
+	Siffness Reformations: 10
+	Other:
+		Min edge angle is 45 at time t=1.
 Comments:
 	
 -->
