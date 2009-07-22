@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A disk composed of non-uniform triangular shell elements is deflected at the
+	center by a rigid cylinder with a prescribed z-displacement of 0.005 units
+	at time t=1.
 Main Features:
-	
+	Shells
+	Rigid Contact
 Secondary Features:
-	
+	Non-uniform element distribution
 Materials:
-	
-Degrees of Freedom: 
+	St.Venant-Kirchhoff
+Degrees of Freedom: 3802
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 10
+	Equilibrium Iterations: 64
+	Right Hand Evaluations: 77
+	Siffness Reformations: 10
 	Other:
-		
+		The maximum effective strain is 0.193 at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Disk and Cylinder</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

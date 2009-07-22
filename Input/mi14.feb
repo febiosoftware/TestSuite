@@ -17,13 +17,13 @@ Results:
 	Right Hand Evaluations: 74
 	Siffness Reformations: 11
 	Other:
-		
+		The right side of the box has an x-displacement of -0.368 at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Linear Orthotropic Material</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

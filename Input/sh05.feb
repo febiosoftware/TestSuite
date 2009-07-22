@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A shell disk is constrained in x,y,z on the edges and has a pressure of 0 units
+	at time t=0 to -0.005 units at time t=1.
 Main Features:
-	
+	Shells
+	Pressure
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 1014
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 18
+	Equilibrium Iterations: 150
+	Right Hand Evaluations: 176
+	Siffness Reformations: 19
 	Other:
-		
+		The disk has a maximum z-displacement of 0.879 at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Pressure on Disk</title>
 		<time_steps>100</time_steps>
 		<step_size>0.01</step_size>
 		<max_refs>15</max_refs>

@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	Simulation of an engine with two cylinders and a prescribed rotation of 6.2 radians at
+	time t=62 on the crank.
 Main Features:
-	
+	Rigid Bodies
+	Rigid Joints
 Secondary Features:
-	
+	Prescribed rotation
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+	Rigid Bodies
+Degrees of Freedom: 10431
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 62
+	Equilibrium Iterations: 339
+	Right Hand Evaluations: 574
+	Siffness Reformations: 186
 	Other:
-		
+		The right cylinder has a z-displacement of 0.0286 at time t=62.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Engine</title>
 		<time_steps>62</time_steps>
 		<step_size>1</step_size>
 		<max_refs>15</max_refs>

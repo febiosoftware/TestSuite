@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	Multi-step analysis.  An element has a prescribed x-displacement of 0.1 units at
+	time t=1 on it's right end, then dynamic analysis is applied to time t=25.
 Main Features:
-	
+	Multi-step analysis
+	Dynamic analysis
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 12
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 48
+	Equilibrium Iterations: 96
+	Right Hand Evaluations: 144
+	Siffness Reformations: 48
 	Other:
-		
+		The right end has an x-displacement of -0.0749 at time t=25.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title>Multi-step example</title>
+		<title>Multi-step Example</title>
 	</Control>
 	<Material>
 		<material id="1" name="Material 1" type="neo-Hookean">

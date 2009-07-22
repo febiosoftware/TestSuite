@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A 10x10 element shell plate is constrained in x,y,z on the -x and +y edges with
+	a z-force of 0 units at time t=0 to 0.0005 units at time t=1 applied to the +x,-y
+	corner.
 Main Features:
-	
+	Shells
 Secondary Features:
-	
+	Nodal Force
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 600
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 20
+	Equilibrium Iterations: 162
+	Right Hand Evaluations: 205
+	Siffness Reformations: 25
 	Other:
-		
+		The raised corner has a z-displacement of 1.07 units at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Shell with Force on Corner Node</title>
 		<time_steps>100</time_steps>
 		<step_size>0.01</step_size>
 		<max_refs>15</max_refs>

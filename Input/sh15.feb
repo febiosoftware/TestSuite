@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A 10x10 element shell sheet is constrained in x,y,z along the edges and
+	has a body force of 0 units at time t=0 to 1 unit at time t=1.
 Main Features:
-	
+	Shells
+	Body Force
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 606
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 11
+	Equilibrium Iterations: 55
+	Right Hand Evaluations: 70
+	Siffness Reformations: 12
 	Other:
-		
+		The sheet has a maximum z-displacement of -0.374 units at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Shell Sheet with Body Force</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

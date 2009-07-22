@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	1/8th symmetrical representation of an inflating balloon.  A pressure of
+	0 units at time t=0 to -0.0045 units at t=1 is applied to the shell disk.
 Main Features:
-	
+	Shells
+	Pressure
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 301
 Results:
 	Steps Completed: 
 	Equilibrium Iterations: 
 	Right Hand Evaluations: 
 	Siffness Reformations: 
 	Other:
-		
+		The disk has a maximum z-displacement of 0.75 at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>1/8th Balloon Inflation</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

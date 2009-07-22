@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A 20x5x5 element block is constrained in x,y,z on the left end nodes.  The right
+	end nodes are attached to a rigid body that has an x-rotation of 3.14 radians at
+	time t=1.
 Main Features:
-	
+	Tutorial
+	Rigid Contact
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Mooney-Rivlin
+	Rigid Body
+Degrees of Freedom: 2053
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 10
+	Equilibrium Iterations: 80
+	Right Hand Evaluations: 90
+	Siffness Reformations: 10
 	Other:
-		
+		The twisted block has a maximum angle of 117 degrees at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Tutorial 2</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

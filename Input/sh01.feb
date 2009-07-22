@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A cylinder is constrained in x,y,z on its top end and attached  by rigid
+	contact on its bottom end to a rigid spherical shell with z-dislacement of
+	-1 units at time t=1.
 Main Features:
-	
+	Shells
+	Rigid Contact
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+	Rigid Bodies
+Degrees of Freedom: 5074
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 10
+	Equilibrium Iterations: 20
+	Right Hand Evaluations: 30
+	Siffness Reformations: 10
 	Other:
-		
+		The maximum x-displacement of the cylinder is -8.33e-3 units at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Cylinder and Spherical Rigid Shell</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

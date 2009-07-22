@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A 20x5x5 element block is constrained in x,y,z on the left end nodes and in y,z
+	on the right end nodes which have a prescribed x-displacement of 1 unit at time t=1.
 Main Features:
-	
+	Tutorial
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Mooney-Rivlin
+Degrees of Freedom: 2088
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 10
+	Equilibrium Iterations: 29
+	Right Hand Evaluations: 39
+	Siffness Reformations: 10
 	Other:
-		
+		The sides of the block contract in the y and z directions a maximum of
+		0.034 units at time t=1.
 Comments:
-	
+	This is tutorial 1 in the PreView manual.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Tutorial 1</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

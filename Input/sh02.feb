@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A 10x2 element shell cantilever has a z-force of 0 units at time t=0 to 1e-5 units
+	at t=1 applied to the nodes of the free end.
 Main Features:
-	
+	Shells
 Secondary Features:
-	
+	Nodal Force
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+Degrees of Freedom: 180
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 18
+	Equilibrium Iterations: 186
+	Right Hand Evaluations: 255
+	Siffness Reformations: 25
 	Other:
-		
+		The free end has a z-displacement of 3.97 units at time t=1.
 Comments:
-	
+	The termination stats are not consistent with the Pardiso solver.
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Cantilever Shell</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>

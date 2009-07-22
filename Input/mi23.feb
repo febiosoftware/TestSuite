@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	
+	A viscoelastic 10x5x5 element block has a prescribed x-displacement of 0.005 at time t=1.
 Main Features:
-	
+	Viscoelasticity
 Secondary Features:
 	
 Materials:
-	
-Degrees of Freedom: 
+	Neo-Hookean
+	Viscoelastic
+Degrees of Freedom: 1008
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 14
+	Equilibrium Iterations: 19
+	Right Hand Evaluations: 33
+	Siffness Reformations: 14
 	Other:
-		
+		The block has a maximum x-displacement of 9.55e-3 at time t=0.2311
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Viscoelastic Block</title>
 		<time_steps>50</time_steps>
 		<step_size>0.02</step_size>
 		<max_refs>15</max_refs>

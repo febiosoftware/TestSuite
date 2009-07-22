@@ -17,13 +17,13 @@ Results:
 	Right Hand Evaluations: 30
 	Siffness Reformations: 10
 	Other:
-		
+		Maximum displacement is 1.23e-3 units at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>St.Venant-Kirchhoff Material</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>
