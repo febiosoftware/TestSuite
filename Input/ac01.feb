@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	A 10-element bar of trans iso Mooney-Rivlin material udergoes active contraction.
+	A 10-element bar of trans iso Mooney-Rivlin material udergoes active contraction
+	in the x-direction.
 Main Features:
 	Active contraction of transversely isotropic material
 Secondary Features:
@@ -10,12 +11,12 @@ Materials:
 	trans iso Mooney-Rivlin
 Degrees of Freedom: 84
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 10
+	Equilibrium Iterations: 39
+	Right Hand Evaluations: 49
+	Siffness Reformations: 10
 	Other:
-		
+		The bar has a maximum x-displacement of -1.08 units at time t=1.
  
 Comments:
 	
