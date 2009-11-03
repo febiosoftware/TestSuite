@@ -32,13 +32,7 @@ if [ ! -d platform/$host ]; then
 fi
 
 cd Input
-for infile in $(ls *.feb); do
-	if [ $host == 'win' ]; then
-		awk 'sub("$", "\r")' $infile > ${infile%%.*}_win.feb
-		input=${infile%%.*}_win.feb
-	else
-		input=$infile
-	fi
+for input in $(ls *.feb); do
 	echo $input
 	$febio -i $input > /dev/null
 	log=${input%%.*}.log
