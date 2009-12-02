@@ -4453,7 +4453,7 @@ Comments:
 		</prescribe>
 		<contact type="sliding_with_gaps">
 			<tolerance>0.005</tolerance>
-			<penalty auto="on">0.02</penalty>
+			<penalty auto="on">0.001</penalty>
 			<two_pass>1</two_pass>
 			<search_tol>0.1</search_tol>
 			<laugon>1</laugon>
