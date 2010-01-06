@@ -29,7 +29,7 @@ if [ ! -d platform/$host ]; then
 	mkdir platform/$host
 fi
 
-cd Input
+cd Validate
 for input in $(ls *.feb); do
 	echo $input
 	$febio -i $input > /dev/null
