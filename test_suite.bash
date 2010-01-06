@@ -6,12 +6,10 @@
 
 # Cygwin notes:
 #	This script assumes that the test suite directory exists on a mapped linux (samba) network drive
-#	called 's' under Windows.  It also assumes that the test suite files (.feb files) have a unix line
-#	termination and creates a temporary dos line terminated file.  If this is not the case in your
-#	implementation, edit this script accordingly.
+#	called 's' under Windows.  If this is not the case in your implementation, edit this script accordingly.
 
 host=${HOSTNAME%%.*}
-root=~/mrl # This line needs to be edited to be the directory where FEBio resides
+root=~ # This line needs to be edited to be the directory where FEBio resides
 if [ $HOSTTYPE == "i386" ]; then
 	plat=osx
 elif [ $HOSTTYPE == "ia64" ]; then
