@@ -3,7 +3,7 @@
 Problem Description:
 	A 10 x 10 element plane block rises (with compression) over a ramped rigid bump.
 Main Features:
-	Node to facet contact
+	Sliding with gaps contact
 Secondary Features:
 	Augmented Lagrangian
 Materials:
@@ -20,8 +20,8 @@ Results:
 		The left bottom corner (node 2) has a y-displacement of 0.030 at time t=1.2.
  
 Comments:
-	This model has significant pentration without using Augmented Lagrangian.  The node to facet contact algorithm
-	(sliding_with_gaps) performed significantly better than the other 3 contact algorithms.
+	This model has significant pentration without using Augmented Lagrangian.  The sliding_with_gaps
+	contact algorithm performed significantly better than the other 3 contact algorithms.
 -->
 <febio_spec version="1.0">
 	<Control>

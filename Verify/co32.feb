@@ -12,7 +12,7 @@ Materials:
 Degrees of Freedom: 600
 Results:
 	Solver: Pardiso
-	Steps Completed: 520
+	Steps Completed: 20
 	Equilibrium Iterations: 40
 	Right Hand Evaluations: 60
 	Siffness Reformations: 40
