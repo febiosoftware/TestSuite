@@ -5,20 +5,20 @@ Problem Description:
 	one tube are constrained in x,y,z and the ends of the other tube have a prescribed
 	displacement of -6.0 units in the x-direction.
 Main Features:
-	Sliding Contact
+	Facet to facet Contact
 Secondary Features:
 	
 Materials:
 	Neo-Hookean
 Degrees of Freedom: 5568
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 50
+	Equilibrium Iterations: 233
+	Right Hand Evaluations: 326
+	Siffness Reformations: 53
 	Other:
 		The center node on the back of the horizontal tube (node 1491) has an x-displacement
-		of -4.155 at time t=1.
+		of -4.16 at time t=1.
 Comments:
 	This problem is similar to co13 except the ends of the moving tube are given a prescribed
 	displacement instead of being attached to a moving rigid body.
@@ -3650,12 +3650,11 @@ Comments:
 			<node id="2015" bc="x" lc="1">1</node>
 			<node id="2016" bc="x" lc="1">1</node>
 		</prescribe>
-		<contact type="sliding_with_gaps">
-			<laugon>1</laugon>
+		<contact type="facet-to-facet sliding">
+			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty>1</penalty>
+			<penalty>5</penalty>
 			<two_pass>1</two_pass>
-			<fric_penalty>1</fric_penalty>
 			<surface type="master">
 				<quad4 id="1">     3,     6,    54,    51</quad4>
 				<quad4 id="2">     6,     9,    57,    54</quad4>

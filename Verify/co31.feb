@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	A 10 x 10 element plane block rises (with compression) over a ramped rigid bump.
+	A 10 x 10 element planar block rises (with compression) in plane strain
+	over a ramped rigid bump.
 Main Features:
 	Sliding with gaps contact
 Secondary Features:
@@ -21,7 +22,7 @@ Results:
  
 Comments:
 	This model has significant pentration without using Augmented Lagrangian.  The sliding_with_gaps
-	contact algorithm performed significantly better than the other 3 contact algorithms.
+	contact algorithm performed significantly better than the other three contact algorithms.
 -->
 <febio_spec version="1.0">
 	<Control>

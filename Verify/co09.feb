@@ -5,7 +5,6 @@ Problem Description:
 	sliding and compressing against inclined rigid body plane.
 Main Features:
 	Contact with sliding_with_gaps algorithm.
-	Augmented Lagrangian
 Secondary Features:
 	Load curve for contact penalty
 Materials:
@@ -13,15 +12,15 @@ Materials:
 	Rigid Bodies
 Degrees of Freedom: 1924
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Solver: Pardiso
+	Steps Completed: 11
+	Equilibrium Iterations: 71
+	Right Hand Evaluations: 118
+	Siffness Reformations: 13
 	Other:
-		
+		The effective strain on the lead top edge (node 11) is 0.369 at time t=1.
 Comments:
-	Running with augmented Lagrangian performs better than without in order to obtain
-	the same level of contact penetration.
+	
 -->
 <febio_spec version="1.0">
 	<Control>
@@ -1601,7 +1600,7 @@ Comments:
 			<node id="716" bc="z" lc="1">1</node>
 		</prescribe>
 		<contact type="sliding_with_gaps">
-			<laugon>1</laugon>
+			<laugon>0</laugon>
 			<tolerance>0.02</tolerance>
 			<penalty lc="2">1</penalty>
 			<two_pass>0</two_pass>

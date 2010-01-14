@@ -5,7 +5,7 @@ Problem Description:
 	to t=1 and then -0.8 units in the x-direction from time t=1 to t=2 compresses then slides
 	across a larger softer block.
 Main Features:
-	Contact using the sliding_with_gaps algorithm
+	Sliding_with_gaps contact
 	Augmented Lagrangian
 Secondary Features:
 	Multiple displacement loadcurves
@@ -13,16 +13,17 @@ Materials:
 	Mooney-Rivlin
 Degrees of Freedom: 2149
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Solver: Pardiso
+	Steps Completed: 40
+	Equilibrium Iterations: 339
+	Right Hand Evaluations: 434
+	Siffness Reformations: 46
 	Other:
-		
+		Node 36 (on the edge of the lower block) has a z-displacement of -0.15 at time t=1.4
 Comments:
 	Does not converge with auto="on" in the contact penalty.  Turning the auto time stepper off leads
-	to better convergence and contact penetration using augmented Lagrangian, but will not converge if not
-	using augmented Lagrangian
+	to better convergence and contact penetration using augmented Lagrangian.  Not using augmented
+	Lagrangian creates too much penetration.
 -->
 <febio_spec version="1.0">
 	<Control>
@@ -2024,6 +2025,7 @@ Comments:
 			<laugon>1</laugon>
 			<tolerance>0.1</tolerance>
 			<penalty>1000</penalty>
+			<auto_penalty>0</auto_penalty>
 			<two_pass>0</two_pass>
 			<surface type="master">
 				<quad4 id="1">     6,    72,    78,    12</quad4>

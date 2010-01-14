@@ -2,22 +2,21 @@
 <!--
 Problem Description:
 	An element with prescribed displacement of -0.5 units in the z-direction compresses
-	a larger block with sliding contact.
+	a 5x5x4 element block with sliding contact.
 Main Features:
 	Contact using the sliding_with_gaps algorithm
-	Augmented Lagrangian
 Secondary Features:
-	None
+	
 Materials:
 	Mooney-Rivlin
 Degrees of Freedom: 368
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 6
+	Equilibrium Iterations: 31
+	Right Hand Evaluations: 44
+	Siffness Reformations: 7
 	Other:
-		
+		The bottom of the top element (node 187) has a z-displacement of -0.215 at time t=1.
 Comments:
 	Convergence and contact penetration are improved by setting auto="on" in the contact penalty.
 -->
@@ -433,7 +432,8 @@ Comments:
 		<contact type="sliding_with_gaps">
 			<laugon>0</laugon>
 			<tolerance>0.1</tolerance>
-			<penalty auto = "on">1e+006</penalty>
+			<penalty>1e+006</penalty>
+			<auto_penalty>1</auto_penalty>
 			<two_pass>0</two_pass>
 			<surface type="master">
 				<quad4 id="1">     5,    35,    40,    10</quad4>

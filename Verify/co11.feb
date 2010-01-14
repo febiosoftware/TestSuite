@@ -13,12 +13,13 @@ Materials:
 	Rigid Body
 Degrees of Freedom: 751
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Solver: Pardiso
+	Steps Completed: 26
+	Equilibrium Iterations: 311
+	Right Hand Evaluations: 470
+	Siffness Reformations: 59
 	Other:
-		
+		The cantilever has a maximum z-displacement of -2.08 (node 251) at time t=0.3994
 Comments:
 	Convergence and contact penetration are better without using augmented Lagrangian.
 -->

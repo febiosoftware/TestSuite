@@ -5,7 +5,7 @@ Problem Description:
 	one tube are constrained in x,y,z and the ends of the other tube are attached to a
 	rigid body which has a prescribed displacement of -6.0 units in the x-direction.
 Main Features:
-	Sliding Contact
+	Facet to facet Contact
 	Rigid Bodies
 Secondary Features:
 	
@@ -14,15 +14,16 @@ Materials:
 	Rigid Body
 Degrees of Freedom: 5473
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Solver: Pardiso
+	Steps Completed: 51
+	Equilibrium Iterations: 217
+	Right Hand Evaluations: 324
+	Siffness Reformations: 53
 	Other:
 		The center node on the back of the horizontal tube (node 1491) has an x-displacement
-		of -3.558 at time t=1.
+		of -3.56 at time t=1.
 Comments:
-	
+	Penetration is slightly better using augmented lagrangian, but convergence is better without it.
 -->
 <febio_spec version="1.0">
 	<Control>
@@ -3566,12 +3567,11 @@ Comments:
 			<node id="1055" rb="3"></node>
 			<node id="1056" rb="3"></node>
 		</contact>
-		<contact type="sliding_with_gaps">
-			<laugon>1</laugon>
+		<contact type="facet-to-facet sliding">
+			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty>1</penalty>
+			<penalty>10</penalty>
 			<two_pass>1</two_pass>
-			<fric_penalty>1</fric_penalty>
 			<surface type="master">
 				<quad4 id="1">  1026,  1029,  1077,  1074</quad4>
 				<quad4 id="2">  1029,  1032,  1080,  1077</quad4>

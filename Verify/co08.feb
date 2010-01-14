@@ -12,10 +12,10 @@ Materials:
 	Neo-Hookean
 Degrees of Freedom: 212
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 12
+	Equilibrium Iterations: 105
+	Right Hand Evaluations: 190
+	Siffness Reformations: 18
 	Other:
 		The corner of the disk touching the rigid wall has a y-displacement of
 		0.493 at time t=0.5
