@@ -14,8 +14,8 @@ Materials:
 Degrees of Freedom: 20
 Results:
 	Steps Completed: 100
-	Equilibrium Iterations: 934
-	Right Hand Evaluations: 1544
+	Equilibrium Iterations: 894
+	Right Hand Evaluations: 1484
 	Siffness Reformations: 106
 	Other:
 		The effective strain of the element is 0.121 at time t=1.
@@ -92,9 +92,9 @@ Comments:
 			<node id="8" bc="z" lc="2">1</node>
 		</prescribe>
 		<contact type="sliding_with_gaps">
-			<laugon>0</laugon>
+			<laugon>1</laugon>
 			<tolerance>0.001</tolerance>
-			<penalty>10</penalty>
+			<penalty>5</penalty>
 			<two_pass>0</two_pass>
 			<fric_coeff>0.5</fric_coeff>
 			<fric_penalty>0.05</fric_penalty>

@@ -11,14 +11,15 @@ Materials:
 	Neo-Hookean
 Degrees of Freedom: 2781
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Solver: Pardiso
+	Steps Completed: 62
+	Equilibrium Iterations: 425
+	Right Hand Evaluations: 657
+	Siffness Reformations: 73
 	Other:
-		The outer edges of the ring have an x-displacement of 3.11 units at time t=1.
+		The outer edges of the ring have an x-displacement of 2.92 units at time t=6.2.
 Comments:
-	
+	Aumented Lagrangian needs to be used when the ring contacts itself to eliminate penetration.
 -->
 <febio_spec version="1.0">
 	<Control>
@@ -3611,11 +3612,11 @@ Comments:
 			<node id="1412" bc="y" lc="2">1</node>
 		</prescribe>
 		<contact type="sliding_with_gaps">
-			<laugon>1</laugon>
+			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty>10000</penalty>
+			<penalty>1</penalty>
+			<auto_penalty>1</auto_penalty>
 			<two_pass>1</two_pass>
-			<fric_penalty>1</fric_penalty>
 			<surface type="master">
 				<quad4 id="1">    90,    95,   595,   590</quad4>
 				<quad4 id="2">    95,   100,   600,   595</quad4>
@@ -3658,11 +3659,11 @@ Comments:
 			</surface>
 		</contact>
 		<contact type="sliding_with_gaps">
-			<laugon>1</laugon>
+			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty>10000</penalty>
+			<penalty>1</penalty>
+			<auto_penalty>1</auto_penalty>
 			<two_pass>1</two_pass>
-			<fric_penalty>1</fric_penalty>
 			<surface type="master">
 				<quad4 id="1">    90,    95,   595,   590</quad4>
 				<quad4 id="2">    95,   100,   600,   595</quad4>
@@ -3723,9 +3724,9 @@ Comments:
 		<contact type="sliding_with_gaps">
 			<laugon>1</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty>1000</penalty>
+			<penalty>0.01</penalty>
+			<auto_penalty>1</auto_penalty>
 			<two_pass>1</two_pass>
-			<fric_penalty>1</fric_penalty>
 			<surface type="master">
 				<quad4 id="1">   331,   831,   836,   336</quad4>
 				<quad4 id="2">   336,   836,   841,   341</quad4>

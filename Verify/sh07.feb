@@ -12,10 +12,10 @@ Materials:
 	Neo-Hookean
 Degrees of Freedom: 301
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 14
+	Equilibrium Iterations: 154
+	Right Hand Evaluations: 237
+	Siffness Reformations: 22
 	Other:
 		The disk has a maximum z-displacement of 0.75 at time t=1.
 Comments:

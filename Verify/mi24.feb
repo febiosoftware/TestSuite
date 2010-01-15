@@ -11,10 +11,10 @@ Materials:
 	Neo-Hookean
 Degrees of Freedom: 1220
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 10
+	Equilibrium Iterations: 37
+	Right Hand Evaluations: 47
+	Siffness Reformations: 37
 	Other:
 		
 Comments:

@@ -12,12 +12,12 @@ Materials:
 	Neo-Hookean
 Degrees of Freedom: 4191
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 56
+	Equilibrium Iterations: 554
+	Right Hand Evaluations: 765
+	Siffness Reformations: 64
 	Other:
-		
+		The maximum y-dislacement of the block is 0.382 at time t=4.
 Comments:
 	This problem is similar to co07 but with friction.
 -->

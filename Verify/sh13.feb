@@ -12,10 +12,10 @@ Materials:
 	Neo-Hookean
 Degrees of Freedom: 602
 Results:
-	Steps Completed: 44
-	Equilibrium Iterations: 553
-	Right Hand Evaluations: 735
-	Siffness Reformations: 72
+	Steps Completed: 39
+	Equilibrium Iterations: 501
+	Right Hand Evaluations: 682
+	Siffness Reformations: 73
 	Other:
 		Node 105 has a z-diplacement of 0.421 units at time t=1.
 Comments:

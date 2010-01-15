@@ -11,10 +11,10 @@ Materials:
 	Neo-Hookean
 Degrees of Freedom: 566
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 10
+	Equilibrium Iterations: 48
+	Right Hand Evaluations: 65
+	Siffness Reformations: 10
 	Other:
 		The center node of the plate has an effective strain of 0.637 at time t=1.
 Comments:

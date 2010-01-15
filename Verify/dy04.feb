@@ -16,14 +16,17 @@ Materials:
 	Rigid Body
 Degrees of Freedom: 3102
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 50
+	Equilibrium Iterations: 280
+	Right Hand Evaluations: 431
+	Siffness Reformations: 77
 	Other:
-		The top ball has an x-displacement of 3.52 at time t=1.
+		The bottom ball has its maximum z-displacement of -1.96 at time t=1.7 (on its
+		first bounce).
 Comments:
-	
+	The penalty values of 10000 were necessary in order to reduce the penetration.  Facet to
+	fact contact converges somewhat faster than sliding_with_gaps, but the penetration is
+	is better with the latter.
 -->
 <febio_spec version="1.0">
 	<Control>
@@ -2013,7 +2016,7 @@ Comments:
 	<Boundary>
 		<contact type="rigid_wall">
 			<tolerance>0.01</tolerance>
-			<penalty>500</penalty>
+			<penalty>10000</penalty>
 			<plane>0,0,1,0</plane>
 			<surface>
 				<quad4 id="1">   433,   428,   453,   458</quad4>
@@ -2068,7 +2071,7 @@ Comments:
 		</contact>
 		<contact type="sliding_with_gaps">
 			<tolerance>0.01</tolerance>
-			<penalty>500</penalty>
+			<penalty>10000</penalty>
 			<two_pass>1</two_pass>
 			<surface type="master">
 				<quad4 id="1">   950,   945,   970,   975</quad4>
@@ -2173,7 +2176,7 @@ Comments:
 		</contact>
 		<contact type="rigid_wall">
 			<tolerance>0.01</tolerance>
-			<penalty>500</penalty>
+			<penalty>10000</penalty>
 			<plane>0,0,1,0</plane>
 			<surface>
 				<quad4 id="1">   950,   945,   970,   975</quad4>

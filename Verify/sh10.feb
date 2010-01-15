@@ -5,17 +5,17 @@ Problem Description:
 	a rigid element with a prescribed z-displacement of -0.5 units at time t=1.
 Main Features:
 	Shells
-	Sliding Contact
+	Sliding with gaps Contact
 Secondary Features:
 	
 Materials:
 	Neo-Hookean
 Degrees of Freedom: 1087
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 11
+	Equilibrium Iterations: 77
+	Right Hand Evaluations: 94
+	Siffness Reformations: 12
 	Other:
 		The maximum shear stress is 0.106 units at time t=1.
 Comments:
@@ -1012,7 +1012,7 @@ Comments:
 			<node id="193" bc="xyz"></node>
 		</fix>
 		<contact type="sliding_with_gaps">
-			<laugon>1</laugon>
+			<laugon>0</laugon>
 			<tolerance>0.05</tolerance>
 			<penalty>10</penalty>
 			<two_pass>1</two_pass>

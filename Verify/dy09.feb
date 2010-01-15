@@ -5,7 +5,7 @@ Problem Description:
 	is given an initial velocity of -1 units in the x-direction.
 Main Features:
 	Dynamic analysis
-	Sliding contact
+	Facet to facet contact
 Secondary Features:
 	Initial velocity
 Materials:
@@ -13,13 +13,14 @@ Materials:
 Degrees of Freedom: 11904
 Results:
 	Steps Completed: 100
-	Equilibrium Iterations: 685
-	Right Hand Evaluations: 1118
-	Siffness Reformations: 111
+	Equilibrium Iterations: 343
+	Right Hand Evaluations: 492
+	Siffness Reformations: 101
 	Other:
-		The cylinder on the left has a maximum x-displacement of -8.41 at time t=1.
+		The cylinder on the left (-x direction) has a maximum x-displacement of -8.42 at time t=10.
 Comments:
-	
+	Penetration was slightly better with slinding_with_gaps contact, but congergence was significantly
+	better with facet to facet contact.
 -->
 <febio_spec version="1.0">
 	<Control>
@@ -6900,12 +6901,11 @@ Comments:
 		</Elements>
 	</Geometry>
 	<Boundary>
-		<contact type="sliding_with_gaps">
-			<laugon>1</laugon>
+		<contact type="facet-to-facet sliding">
+			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty>200</penalty>
+			<penalty>400</penalty>
 			<two_pass>1</two_pass>
-			<fric_penalty>1</fric_penalty>
 			<surface type="master">
 				<quad4 id="1">     4,     8,    72,    68</quad4>
 				<quad4 id="2">     8,    12,    76,    72</quad4>

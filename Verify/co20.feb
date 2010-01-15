@@ -12,12 +12,13 @@ Materials:
 	Neo-Hookean
 Degrees of Freedom: 5568
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 54
+	Equilibrium Iterations: 691
+	Right Hand Evaluations: 1128
+	Siffness Reformations: 91
 	Other:
-		
+		The center node on the back of the horizontal tube (node 1491) has an x-displacement
+		of -4.155 at time t=1.
 Comments:
 	This problem is the same as co15 but with friction.
 -->

@@ -13,10 +13,10 @@ Materials:
 	Rigid Bodies
 Degrees of Freedom: 
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 24
+	Equilibrium Iterations: 134
+	Right Hand Evaluations: 160
+	Siffness Reformations: 24
 	Other:
 		The maximum effective strain is 0.227 units and occurs in the muscle
 		above the ball of the foot at time t=41.23

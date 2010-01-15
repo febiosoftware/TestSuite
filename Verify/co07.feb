@@ -5,8 +5,8 @@ Problem Description:
 	from time t=0 to t=1 and then a displacement of 3 units in the x-direction from time t=1 to
 	t=4.  It presses down then slides along a softer block.
 Main Features:
-	Contact using the sliding_with_gaps algorithm
-	Augmented Lagrangian
+	Sliding2 symmetric Contact
+	Full-Newton
 Secondary Features:
 	Plotfile output - velocity is CONTACT_TRACTION
 	Multiple displacement loadcurves
@@ -14,37 +14,29 @@ Materials:
 	Neo-Hookean
 Degrees of Freedom: 4191
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 40
+	Equilibrium Iterations: 201
+	Right Hand Evaluations: 335
+	Siffness Reformations: 201
 	Other:
-		
+		The bottom block has a maximum y-dispacement of 0.178 at time t=4.
 Comments:
-	This problem gets better convergence and less contact penetration with the auto time stepper off.
-	Without augmented Lagrangian it will not converge for the contact penalty > 0.07 if the time
-	stepper is off.  With the time stepper on, it still gets better convergence using augmented
-	Lagrangian.
+	This problem demonstrated the sliding2 symmetric contact with augmented Lagrangian turned off.
+	It did not run well without using full-Newton (setting max_ups to 0).  Even though full-Newton
+	converged with fewer iterations than BFGS, it took more than four times as long to do so.
+	However, with these setting, this contact method did better than the other three.
 -->
 <febio_spec version="1.0">
 	<Control>
 		<title>Cylinder and Block</title>
 		<time_steps>40</time_steps>
 		<step_size>0.1</step_size>
-		<max_refs>15</max_refs>
-		<max_ups>10</max_ups>
+		<max_refs>50</max_refs>
+		<max_ups>0</max_ups>
 		<dtol>0.01</dtol>
 		<etol>0.01</etol>
-		<rtol>1e+010</rtol>
+		<rtol>0</rtol>
 		<lstol>0.9</lstol>
-<!--
-		<time_stepper>
-			<dtmin>0.0333333</dtmin>
-			<dtmax lc="1"></dtmax>
-			<max_retries>5</max_retries>
-			<opt_iter>11</opt_iter>
-		</time_stepper>
--->
 	</Control>
 	<Material>
 		<material id="1" name="Material 1" type="neo-Hookean">
@@ -4451,12 +4443,13 @@ Comments:
 			<node id="1932" bc="x" lc="2">1</node>
 			<node id="1932" bc="z" lc="3">1</node>
 		</prescribe>
-		<contact type="sliding_with_gaps">
-			<tolerance>0.005</tolerance>
-			<penalty auto="on">0.001</penalty>
+		<contact type="sliding2">
+			<tolerance>0.05</tolerance>
+			<penalty>0.01</penalty>
+			<auto_penalty>1</auto_penalty>
 			<two_pass>1</two_pass>
-			<search_tol>0.1</search_tol>
-			<laugon>1</laugon>
+			<laugon>0</laugon>
+			<symmetric_stiffness>1</symmetric_stiffness>
 			<surface type="master">
 				<quad4 id="1">     6,    72,    78,    12</quad4>
 				<quad4 id="2">    12,    78,    84,    18</quad4>

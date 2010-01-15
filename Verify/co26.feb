@@ -10,12 +10,12 @@ Secondary Features:
 	
 Materials:
 	Neo-Hookean
-Degrees of Freedom: 
+Degrees of Freedom: 246
 Results:
-	Steps Completed: 
-	Equilibrium Iterations: 
-	Right Hand Evaluations: 
-	Siffness Reformations: 
+	Steps Completed: 10
+	Equilibrium Iterations: 30
+	Right Hand Evaluations: 40
+	Siffness Reformations: 10
 	Other:
 		The gap between the tied corners is 0.0261 units at time t=1.
 Comments:
