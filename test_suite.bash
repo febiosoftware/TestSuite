@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Bash script to run the FEBio test suite.  Produces a file called 'host'_results.csv, where 'host' is the
-# name of the host machine or win if running Cygwin on Windows.  All tests should give a normal termiation.
-# The script assumes that the febio executable is in the FEBio/bin directory.
+# name of the host machine or win if running Cygwin on Windows.  All tests should give a normal termination.
+# The script assumes that the febio executable is in the FEBio/bin directory.  It can be run on several platforms
+# simultaneously and moves the output files to the platform/'host' directory.
 
 # Cygwin notes:
 #	This script assumes that the test suite directory exists on a mapped linux (samba) network drive
