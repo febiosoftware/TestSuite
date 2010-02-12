@@ -30,9 +30,8 @@ if [ ! -d platform/$host ]; then
 	mkdir platform/$host
 fi
 
-cd Validate
+cd Verify
 for input in $(ls *.feb); do
-	echo $input
 	$febio -i $input > /dev/null
 	log=${input%%.*}.log
 	plt=${input%%.*}.plt
@@ -48,8 +47,9 @@ for input in $(ls *.feb); do
 	elif [ -n "$(grep 'N O R M A L' $log)" ]; then
 		term=Normal
 	else
-		term=''
+		term='Fail'
 	fi
+	echo $input, $term
 	echo $input,$eqns,$tmsteps,$solve_tm,$elapse_tm,$steps,$term,$eq_it,$st_re >> ../${host}'_results.csv'
 	mv $log ../platform/$host
 	rm $plt
