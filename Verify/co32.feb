@@ -24,7 +24,7 @@ Comments:
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title></title>
+		<title>Confined Compression</title>
 		<time_steps>20</time_steps>
 		<step_size>250</step_size>
 		<max_refs>99</max_refs>

@@ -28,14 +28,6 @@ Comments:
 		<title>Two Element Sliding Contact</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
-<!--
-		<time_stepper>
-			<dtmin>0.01</dtmin>
-			<dtmax>0.1</dtmax>
-			<max_retries>15</max_retries>
-			<opt_iter>10</opt_iter>
-		</time_stepper>
--->
 	</Control>
 	<Material>
 		<material id="1" type="neo-Hookean">

@@ -1,34 +1,13 @@
 #!/bin/bash
 
-# Bash script to run the FEBio test suite.  Produces a file called 'host'_results.csv, where 'host' is the
-# name of the host machine or win if running Cygwin on Windows.  All tests should give a normal termination.
-# The script assumes that the febio executable is in the FEBio/bin directory.  It can be run on several platforms
-# simultaneously and moves the output files to the platform/'host' directory.
+# Bash script to run the FEBio test suite on the Altix.  Produces a file called results.txt.
 
-# Cygwin notes:
-#	This script assumes that the test suite directory exists on a mapped linux (samba) network drive
-#	called 's' under Windows.  If this is not the case in your implementation, edit this script accordingly.
+plat=alt
+febio=../../febio.$plat
+output=results.txt
+export OMP_NUM_THREADS=1
 
-host=${HOSTNAME%%.*}
-root=~ # This line needs to be edited to be the directory where FEBio resides
-if [ $HOSTTYPE == "i386" ]; then
-	plat=osx
-elif [ $HOSTTYPE == "ia64" ]; then
-	plat=alt
-elif [ $HOSTTYPE == "i686" ]; then # Cygwin
-	root=/cygdrive/s/mrl # This line needs to be edited to be the directory where FEBio resides
-	host=win
-	plat=exe
-elif [ $HOSTTYPE == "x86_64" ]; then
-	plat=lnx
-fi
-febio=${root}/FEBio/bin/febio.$plat
-
-echo 'File,Equations,Specified Time Steps,Solve Time,Elapsed Time,Steps Completed,Termination,Equil Iter,Stiff Reform' > ${host}'_results.csv'
-
-if [ ! -d platform/$host ]; then
-	mkdir platform/$host
-fi
+echo 'File,Equations,Specified Time Steps,Steps Completed,Equil Iter,RH Eval,Stiff Reform,Plt Size,Termination' > $output
 
 cd Verify
 for input in $(ls *.feb); do
@@ -41,7 +20,9 @@ for input in $(ls *.feb); do
 	elapse_tm=$(awk '/Elapsed time/ {print $4}' $log)
 	steps=$(awk '/steps completed/ {print $8}' $log)
 	eq_it=$(awk '/Total number of equilibrium/ {print $8}' $log)
+	rh_eval=$(awk '/Total number of right hand/ {print $9}' $log)
 	st_re=$(awk '/Total number of stiffness/ {print $8}' $log)
+	plt_size=$(ls -l $plt | cut -f6 -d' ')
 	if [ -n "$(grep 'E R R O R' $log)" ]; then
 		term=Error
 	elif [ -n "$(grep 'N O R M A L' $log)" ]; then
@@ -49,11 +30,10 @@ for input in $(ls *.feb); do
 	else
 		term='Fail'
 	fi
-	echo $input, $term
-	echo $input,$eqns,$tmsteps,$solve_tm,$elapse_tm,$steps,$term,$eq_it,$st_re >> ../${host}'_results.csv'
-	mv $log ../platform/$host
-	rm $plt
-	if [ $host == 'win' ]; then
-		rm $input
-	fi
+	echo ${input%%.*}, $term
+	echo $input,$eqns,$tmsteps,$steps,$eq_it,$rh_eval,$st_re,$plt_size,$term >> ../$output
 done
+
+# Compare with standard results
+cd ..
+diff $output results_$plat.txt

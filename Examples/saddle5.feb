@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Problem Description:
+	Two non-conforming saddle-shaped blocks are compressed against each other using
+	the sliding2 symmetric contact method.
+Main Features:
+	Sliding2 Contact
+Secondary Features:
+	Augmented Lagrangian
+Materials:
+	Holmes-Mow
+Degrees of Freedom: 61110
+Results:
+	Steps Completed: 20
+	Equilibrium Iterations: 84
+	Right Hand Evaluations: 139
+	Siffness Reformations: 84
+	Other:
+		Node 55 (on the bottom edge of the top saddle block on the positive x-axis)
+		has a y-displacement of -0.235 at time t=1.
+ 
+Comments:
+	
+-->
 <febio_spec version="1.0">
 	<Control>
-		<title>saddle2.un</title>
+		<title>Saddle Problem</title>
 		<time_steps>20</time_steps>
 		<step_size>  0.05</step_size>
 		<max_refs>99</max_refs>

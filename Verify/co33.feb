@@ -24,7 +24,7 @@ Comments:
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title>untitled</title>
+		<title>Stretched Links</title>
 		<time_steps>50</time_steps>
 		<step_size>0.05</step_size>
 		<max_refs>15</max_refs>
