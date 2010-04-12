@@ -12,10 +12,10 @@ Materials:
 	Mooney-Rivlin
 Degrees of Freedom: 550
 Results:
-	Steps Completed: 13
-	Equilibrium Iterations: 68
-	Right Hand Evaluations: 81
-	Siffness Reformations: 13
+	Steps Completed: 12
+	Equilibrium Iterations: 66
+	Right Hand Evaluations: 78
+	Siffness Reformations: 12
 	Other:
 		The nodes other than those on the ends contract in the y and z directions 0.116
 		units at time t=1.
