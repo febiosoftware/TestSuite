@@ -105,7 +105,7 @@ results.close()
 # compare results.txt with results_'plat'.txt
 os.chdir("..")
 results = open("results.txt", "r")
-results_std = open("results_" + plat + ".txt", "r")
+results_std = open("results_" + plat + "_std.txt", "r")
 for line in difflib.unified_diff(results.readlines(), results_std.readlines(), n=0):
         sys.stdout.write(line)
 results.close()
