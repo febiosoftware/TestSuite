@@ -10,7 +10,8 @@ import os, glob, platform, shutil, sys, subprocess, difflib
 # Determine the operating system and host name
 host = platform.node().split('.')[0]
 opsys = platform.machine()
-platform = sys.platform
+sysplat = sys.platform
+bits = platform.architecture()[0]
 print 'host = ' + host
 print 'opsys = ' + opsys
 
@@ -26,8 +27,8 @@ elif opsys == 'ia64':
 	solvers = ['pardiso', 'superlu', 'psldlt']
 elif opsys == 'x86_64':
 	plat = 'lnx'
-elif platform == 'win32':
-	plat = 'exe'
+elif sysplat == 'win32':
+	plat = 'win'
 elif opsys == 'i686':
 	plat = 'lnx32'
 
@@ -35,37 +36,49 @@ elif opsys == 'i686':
 os.environ['OMP_NUM_THREADS'] = '1'
 
 # open the results file
-res_name = "results_" + plat
+res_name = "nightly_" + plat
 results = open(res_name + ".txt", "w")
 
-# Define FEBio directory, executable, and library
-# Assumes that this script is run from FEBio/Testing
-# and that the executable is in FEBio/bin
-os.chdir("..")
-febio_dir = os.getcwd()
-febio = febio_dir + '/bin/febio.' + plat
-febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
+if plat == 'win':
+        febio_dir = 'C:/FEBio'
+        if bits == '64bit':
+                exe_dir = febio_dir + '/x64/Release'
+        else:
+                exe_dir = febio_dir + '/Release'
+        febio = exe_dir + '/FEBio.exe'
 
-# Define the log and plt output directory
-out_dir = '/scratch/rawlins/febio_test/'
+        out_dir = ''
+        command = ['build_release_x64.bat']
+        subprocess.call(command)
+else:
+        # Define FEBio directory, executable, and library
+        # Assumes that this script is run from FEBio/Testing
+        # and that the executable is in FEBio/bin
+        os.chdir("..")
+        febio_dir = os.getcwd()
+        febio = febio_dir + '/bin/febio.' + plat
+        febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
 
-# Do an svn update on nemo
-if host == 'nemo':
-	subprocess.call(['svn', 'up'])
+        # Define the log and plt output directory
+        out_dir = '/scratch/rawlins/febio_test/'
 
-# Compile FEBio
-shutil.copy(febio, febio.split('.')[0] + '_old.' + plat)
-shutil.copy(febio_lib, febio_lib.split('.')[0] + '_old.a')
-command =['make', '-f', 'make.mk', 'clean' + plat]
-subprocess.call(command)
-command =['make', '-f', 'make.mk', plat]
-subprocess.call(command)
+        # Do an svn update on nemo
+        if host == 'nemo':
+                subprocess.call(['svn', 'up'])
+
+        # Compile FEBio
+        shutil.copy(febio, febio.split('.')[0] + '_old.' + plat)
+        shutil.copy(febio_lib, febio_lib.split('.')[0] + '_old.a')
+        command =['make', '-f', 'make.mk', 'clean' + plat]
+        subprocess.call(command)
+        command =['make', '-f', 'make.mk', plat]
+        subprocess.call(command)
 
 # Define the test problems list.
 os.chdir(febio_dir + "/Testing/Verify")
 test = glob.glob("*.feb")
 test.sort()
-#test = ['ac01.feb', 'co01.feb']
+#test = ['co01.feb', 'co02.feb']
 
 # keep counters
 norms = 0			# nr of normal terminations
