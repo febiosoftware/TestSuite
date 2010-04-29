@@ -67,8 +67,11 @@ else:
                 subprocess.call(['svn', 'up'])
 
         # Compile FEBio
-        shutil.copy(febio, febio.split('.')[0] + '_old.' + plat)
-        shutil.copy(febio_lib, febio_lib.split('.')[0] + '_old.a')
+	try:
+		shutil.copy(febio, febio.split('.')[0] + '_old.' + plat)
+		shutil.copy(febio_lib, febio_lib.split('.')[0] + '_old.a')
+	except IOError:
+		print "Error copying files"
         command =['make', '-f', 'make.mk', 'clean' + plat]
         subprocess.call(command)
         command =['make', '-f', 'make.mk', plat]
