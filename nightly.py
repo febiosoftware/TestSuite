@@ -48,8 +48,6 @@ if plat == 'win':
         febio = exe_dir + '/FEBio.exe'
 
         out_dir = ''
-        command = ['build_release_x64.bat']
-        subprocess.call(command)
 else:
         # Define FEBio directory, executable, and library
         # Assumes that this script is run from FEBio/Testing
