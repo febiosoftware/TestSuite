@@ -72,9 +72,9 @@ else:
 		shutil.copy(febio_lib, febio_lib.split('.')[0] + '_old.a')
 	except IOError:
 		print "Error copying files"
-        command =['make', '-f', 'make.mk', 'clean' + plat]
+        command =['make', '-f', 'febio.mk', 'clean' + plat]
         subprocess.call(command)
-        command =['make', '-f', 'make.mk', plat]
+        command =['make', '-f', 'febio.mk', plat]
         subprocess.call(command)
 
 # Define the test problems list.
