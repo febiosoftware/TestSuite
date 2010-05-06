@@ -42,7 +42,7 @@ results = open(res_name + ".txt", "w")
 if plat == 'win':
         febio_dir = 'C:/FEBio'
         if bits == '64bit':
-                exe_dir = febio_dir + '/x64/Release'
+                exe_dir = febio_dir + '/x64/Release-x64'
         else:
                 exe_dir = febio_dir + '/Release'
         febio = exe_dir + '/FEBio.exe'
