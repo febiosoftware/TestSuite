@@ -101,12 +101,3 @@ results.write("\nSummary:\n")
 results.write("\tNormal termination : " + str(norms) + "\n")
 results.write("\tError termination  : " + str(nerrs) + "\n")
 results.close()
-
-# compare results.txt with results_'plat'.txt
-os.chdir("..")
-results = open("results.txt", "r")
-results_std = open("results_" + plat + "_std.txt", "r")
-for line in difflib.unified_diff(results.readlines(), results_std.readlines(), n=0):
-        sys.stdout.write(line)
-results.close()
-results_std.close()
