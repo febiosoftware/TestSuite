@@ -36,8 +36,9 @@ elif opsys == 'i686':
 os.environ['OMP_NUM_THREADS'] = '1'
 
 # open the results file
+test_dir = os.getcwd()
 res_name = "nightly_" + plat
-results = open(res_name + ".txt", "w")
+results = open(os.path.join(test_dir, res_name + ".txt"), "w")
 
 if plat == 'win':
         febio_dir = 'C:/FEBio'
@@ -77,9 +78,9 @@ else:
 
 # Define the test problems list.
 os.chdir(febio_dir + "/Testing/Verify")
-test = glob.glob("*.feb")
-test.sort()
-#test = ['co01.feb', 'co02.feb']
+#test = glob.glob("*.feb")
+#test.sort()
+test = ['co01.feb', 'co02.feb']
 
 # keep counters
 norms = 0			# nr of normal terminations
