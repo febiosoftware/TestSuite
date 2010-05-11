@@ -78,9 +78,9 @@ else:
 
 # Define the test problems list.
 os.chdir(febio_dir + "/Testing/Verify")
-#test = glob.glob("*.feb")
-#test.sort()
-test = ['co01.feb', 'co02.feb']
+test = glob.glob("*.feb")
+test.sort()
+#test = ['co01.feb', 'co02.feb']
 
 # keep counters
 norms = 0			# nr of normal terminations
