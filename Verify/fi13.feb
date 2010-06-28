@@ -17,7 +17,7 @@ Results:
 	Right Hand Evaluations: 45
 	Siffness Reformations: 10
 	Other:
-		The maximum effective strain is 0.285 at time t=1.
+		The maximum effective strain is 0.493 at time t=1.
 Comments:
 	
 -->
@@ -45,8 +45,8 @@ Comments:
 		<material id="1" name="Material 1" type="random fiber neo-Hookean">
 			<E>1</E>
 			<v>0.3</v>
-			<beta>3,20,20</beta>
-			<ksi>3,20,20</ksi>
+			<beta>3,200,3</beta>
+			<ksi>3,200,200</ksi>
 		</material>
 	</Material>
 	<Geometry>
