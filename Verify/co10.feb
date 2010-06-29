@@ -4,7 +4,7 @@ Problem Description:
 	Block with prescribed displacement of 2.5 units in z-direction from time t=0 to t=1
 	sliding and compressing against inclined rigid body plane.
 Main Features:
-	Contact with sliding_with_gaps algorithm.
+	Rigid Wall Contact.
 Secondary Features:
 	Load curve for contact penalty
 Materials:
@@ -13,18 +13,18 @@ Materials:
 Degrees of Freedom: 1924
 Results:
 	Solver: Pardiso
-	Steps Completed: 11
-	Equilibrium Iterations: 71
-	Right Hand Evaluations: 118
-	Siffness Reformations: 13
+	Steps Completed: 10
+	Equilibrium Iterations: 48
+	Right Hand Evaluations: 74
+	Siffness Reformations: 10
 	Other:
-		The effective strain on the lead top edge (node 11) is 0.369 at time t=1.
+		The maximum effective strain is 0.723 at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title>Sliding Contact on Inclined Plane</title>
+		<title>Block on Inclined Plane</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>
@@ -43,7 +43,7 @@ Comments:
 	<Material>
 		<material id="1" name="Material 4" type="neo-Hookean">
 			<E>1</E>
-			<v>0</v>
+			<v>0.35</v>
 		</material>
 		<material id="2" name="Material 5" type="rigid body">
 			<density>1</density>
@@ -1599,15 +1599,11 @@ Comments:
 			<node id="705" bc="z" lc="1">1</node>
 			<node id="716" bc="z" lc="1">1</node>
 		</prescribe>
-		<contact type="sliding_with_gaps">
-			<laugon>0</laugon>
-			<tolerance>0.02</tolerance>
+		<contact type="rigid_wall">
+			<tolerance>0.01</tolerance>
 			<penalty lc="2">1</penalty>
-			<two_pass>0</two_pass>
-			<surface type="master">
-				<quad4 id="1">   729,   727,   728,   730</quad4>
-			</surface>
-			<surface type="slave">
+			<plane>-1,0,-0.1,-0.6</plane>
+			<surface>
 				<quad4 id="2">   606,   617,   618,   607</quad4>
 				<quad4 id="3">   607,   618,   619,   608</quad4>
 				<quad4 id="4">   608,   619,   620,   609</quad4>
@@ -1717,9 +1713,9 @@ Comments:
 			<loadpoint>1,2.5</loadpoint>
 		</loadcurve>
 		<loadcurve id="2">
-			<loadpoint>0,10</loadpoint>
-			<loadpoint>0.8,150</loadpoint>
-			<loadpoint>1.0,200</loadpoint>
+			<loadpoint>0.0,  1</loadpoint>
+			<loadpoint>0.7, 50</loadpoint>
+			<loadpoint>1.0,250</loadpoint>
 		</loadcurve>
 	</LoadData>
 </febio_spec>
