@@ -5,10 +5,7 @@ import os, sys, glob, subprocess, difflib
 #===========================  Test Suite =======================================
 # Requires Python 2.4 or greater.
 # This script runs the FEBio test suite problems in the directory
-# Testing/Verify and saves the results in the file results.txt.  It then
-# compares the results with the standard results file results_'plat'.txt
-# where plat is one of lnx, lnx32, osx, alt or win.  If there are any
-# differences, they are printed to stdout using the linux diff format.
+# Testing/Verify and saves the results in the file results.txt.
 # The standard results were produced using the Pardiso solver.  The test
 # suite can be run using different solvers by chaning the solver in the file
 # FEBio/febio.xml.
