@@ -42,7 +42,7 @@ Comments:
 		<plot_level>PLOT_DEFAULT</plot_level>
 	</Control>
 	<Material>
-		<material id="1" name="Material 1" type="random fiber Mooney-Rivlin">
+		<material id="1" name="Material 1" type="EFD Mooney-Rivlin">
 			<c1>1</c1>
 			<c2>0</c2>
 			<k>100</k>

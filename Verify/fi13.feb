@@ -42,7 +42,7 @@ Comments:
 		<plot_level>PLOT_DEFAULT</plot_level>
 	</Control>
 	<Material>
-		<material id="1" name="Material 1" type="random fiber neo-Hookean">
+		<material id="1" name="Material 1" type="EFD neo-Hookean">
 			<E>1</E>
 			<v>0.3</v>
 			<beta>3,200,3</beta>
