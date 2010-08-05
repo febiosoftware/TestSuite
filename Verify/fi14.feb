@@ -50,7 +50,7 @@ Comments:
 			<T>310</T>
 			<beta>3,3,3</beta>
 			<ksi>0.01,0.01,0.01</ksi>
-			<mat_axis type="local"></mat_axis>
+			<mat_axis type="local">0,0,0</mat_axis>
 		</material>
 	</Material>
 	<Geometry>
