@@ -13,11 +13,11 @@ Materials:
 Degrees of Freedom: 636
 Results:
 	Steps Completed: 10
-	Equilibrium Iterations: 39
-	Right Hand Evaluations: 49
+	Equilibrium Iterations: 46
+	Right Hand Evaluations: 57
 	Siffness Reformations: 10
 	Other:
-		The maximum total displacement is 1.08 units at time t=1.
+		The maximum total displacement is 1.02 units at time t=1.
 Comments:
 	Similar to problem ma03 (linear orthotropic).
 -->
@@ -47,10 +47,10 @@ Comments:
 			<c2>0</c2>
 			<k>100</k>
 			<beta>4.3,4.3,4.3</beta>
-			<ksi>4525,4525,4525</ksi>
+			<ksi>45,45,45</ksi>
 			<mat_axis type="vector">
 				<a>1,0,0</a>
-				<a>0,1,0</a>
+				<d>0,1,0</d>
 			</mat_axis>
 		</material>
 	</Material>
