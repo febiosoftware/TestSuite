@@ -8,15 +8,15 @@ Main Features:
 Secondary Features:
 	Non-uniform element thickness in the x-direction
 Materials:
-	Linear Elastic
+	Isotropic Elastic
 Degrees of Freedom: 2157
 Results:
 	Steps Completed: 10
-	Equilibrium Iterations: 58
-	Right Hand Evaluations: 68
+	Equilibrium Iterations: 30
+	Right Hand Evaluations: 40
 	Siffness Reformations: 10
 	Other:
-		The right end nodes have a z-displacement of -0.0962 at time t=1.
+		The right end nodes have a maximum total displacement of 0.0979 at time t=1.
 Comments:
 	
 -->
@@ -39,7 +39,7 @@ Comments:
 		</time_stepper>
 	</Control>
 	<Material>
-		<material id="1" name="Material 1" type="linear elastic">
+		<material id="1" name="Material 1" type="isotropic elastic">
 			<E>1</E>
 			<v>0.1</v>
 		</material>
