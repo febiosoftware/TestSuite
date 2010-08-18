@@ -67,6 +67,7 @@ Comments:
 			<node id="2" bc="yz"></node>
 			<node id="3" bc="yz"></node>
 			<node id="4" bc="yz"></node>
+			<node id="9" bc="xyz"></node>
 		</fix>
 		<prescribe>
 			<node id="5" bc="x" lc="1">1</node>
