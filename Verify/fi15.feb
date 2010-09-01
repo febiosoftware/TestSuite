@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	A 10x10x10 block of Ellipsoidal Fiber Distribution (EFD) Mooney-Rivlin
+	A 10x10x10 block of Ellipsoidal Fiber Distribution (EFD) Veronda-Westmann
 	material undergoes an expansion of 0.2 units in the z-direction at
 	time t=1.
 Main Features:
@@ -9,21 +9,21 @@ Main Features:
 Secondary Features:
 	
 Materials:
-	EFD Mooney-Rivlin
+	EFD Veronda-Westmann
 Degrees of Freedom: 3630
 Results:
 	Steps Completed: 10
-	Equilibrium Iterations: 30
-	Right Hand Evaluations: 40
+	Equilibrium Iterations: 36
+	Right Hand Evaluations: 46
 	Siffness Reformations: 10
 	Other:
-		The maximum effective strain is 0.302 at time t=1.
+		The maximum effective stress is 0.503 at time t=1.
 Comments:
 	
 -->
 <febio_spec version="1.0">
 	<Control>
-		<title>EFD Mooney-Rivlin</title>
+		<title>EFD Veronda-Westmann</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>
@@ -42,9 +42,9 @@ Comments:
 		<plot_level>PLOT_DEFAULT</plot_level>
 	</Control>
 	<Material>
-		<material id="1" name="Material 1" type="EFD Mooney-Rivlin">
+		<material id="1" name="Material 1" type="EFD Veronda-Westmann">
 			<c1>1</c1>
-			<c2>0</c2>
+			<c2>0.5</c2>
 			<k>100</k>
 			<beta>3,20,20</beta>
 			<ksi>3,20,20</ksi>
