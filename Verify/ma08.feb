@@ -20,12 +20,17 @@
 		<plot_level>PLOT_DEFAULT</plot_level>
 	</Control>
 	<Material>
-		<material id="1" name="Permeability" type="spectral permeability trans iso">
-			<permA>0.01</permA>
-			<permT>0.001</permT>
+		<material id="1" name="Permeability" type="ref trans iso perm">
+			<perm0>200</perm0>
+			<perm1A>100</perm1A>
+			<perm1T>10</perm1T>
+			<perm2A>100</perm2A>
+			<perm2T>10</perm2T>
 			<phi0>0.2</phi0>
+			<M0>1.0</M0>
 			<MA>0.5</MA>
 			<MT>1.5</MT>
+			<alpha0>1.0</alpha0>
 			<alphaA>0.5</alphaA>
 			<alphaT>2</alphaT>
 			<solid_id>2</solid_id>

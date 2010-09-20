@@ -20,10 +20,13 @@
 		<plot_level>PLOT_DEFAULT</plot_level>
 	</Control>
 	<Material>
-		<material id="1" name="Permeability" type="spectral permeability ortho">
-			<perm>0.001, 0.002, 0.003</perm>
+		<material id="1" name="Permeability" type="ref ortho perm">
+			<perm1>10, 20, 30</perm1>
+			<perm2>100, 200, 300</perm2>
 			<phi0>0.2</phi0>
+			<M0>1.0</M0>
 			<M>1.5, 2.0, 2.5</M>
+			<alpha0>1.5</alpha0>
 			<alpha>2, 2.5, 3</alpha>
 			<solid_id>2</solid_id>
 		</material>
