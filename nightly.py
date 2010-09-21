@@ -97,7 +97,9 @@ for solver in solvers:
                 if solver + base not in exempt:
                         # define the log and plt files
                         logname = out_dir + solver + '_' + base + '.log'
+                        logstd = out_dir + solver + '_' + base + '_std.log'
                         pltname = out_dir + solver + '_' + base + '.plt'
+                        diffname = out_dir + solver + '_' + base + '_diff.txt'
                         # open the dummy file
                         dummy = open(out_dir + "dummy.txt", "w")
                         # run the FEBio problem
@@ -119,7 +121,7 @@ for solver in solvers:
                         # 5: Number of RHS evaluations
                         # 6: Number of reformations
                         # 7: Plot file size
-                        result = [solver, base, "", 0, 0, 0, 0, 0]
+                        result = [solver, base, "", 0, 0, 0, 0, 0, 0]
                         
                         # check the return value
                         if val==0:
@@ -129,17 +131,30 @@ for solver in solvers:
                                 result[2] = 'Error'
                                 nerrs = nerrs + 1
                                 
-                        #search the log file for the convergence info
+                        # search the log file for the convergence info
                         try:
-                                flog = open(logname, 'rt')
+                                flog = open(logname, 'r')
+                                fstd = open(logstd, 'r')
+                                diff = open(diffname, "w")
                                 
                                 for line in flog:
                                         if  line.find("Number of time steps completed"        ) != -1: result[3] = int(line[55:])
                                         if  line.find("Total number of equilibrium iterations") != -1: result[4] = int(line[55:])
                                         if  line.find("Total number of right hand evaluations") != -1: result[5] = int(line[55:])
                                         if  line.find("Total number of stiffness reformations") != -1: result[6] = int(line[55:])
-                                flog.close()
+                                # get the size of the plotfile
                                 result[7] = os.path.getsize(pltname)
+                                # do a diff on the log file
+                                flog.close()
+                                flog = open(logname, 'r')
+                                for line in difflib.unified_diff(flog.readlines(), fstd.readlines(), n=0):
+                                        diff.write(line)
+                                diff.close()
+                                flog.close()
+                                fstd.close()
+                                diffsize = os.path.getsize(diffname)
+                                if diffsize > 400:
+                                        result[8] = 1
                         except IOError:
                                 result[2] = 'Fail'
                         except OSError:
@@ -154,7 +169,7 @@ results.write("\tNormal termination : " + str(norms) + "\n")
 results.write("\tError termination  : " + str(nerrs) + "\n")
 results.close()
 
-# compare results.txt with results_'plat'.txt
+# compare results.txt with nightly_'plat'.txt
 os.chdir("..")
 results = open(res_name + ".txt", "r")
 std_name = res_name + "_std"
