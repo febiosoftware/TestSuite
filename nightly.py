@@ -87,7 +87,7 @@ norms = 0                       # nr of normal terminations
 nerrs = 0                       # nr of error terminations
 
 # exempt problems: These problems require nonsymmetric matrices
-exempt = ['skylineco31','skylineco32','skylineco34','skylinema07','skylinema08','skylinema09']
+exempt = ['skylineco32','skylineco34','skylinema07','skylinema08','skylinema09']
 
 #run the test problems
 for solver in solvers:
