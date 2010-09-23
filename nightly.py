@@ -121,6 +121,7 @@ for solver in solvers:
                         # 5: Number of RHS evaluations
                         # 6: Number of reformations
                         # 7: Plot file size
+                        # 8: Log diff file size
                         result = [solver, base, "", 0, 0, 0, 0, 0, 0]
                         
                         # check the return value
