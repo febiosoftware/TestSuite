@@ -154,8 +154,7 @@ for solver in solvers:
                                 flog.close()
                                 fstd.close()
                                 diffsize = os.path.getsize(diffname)
-                                if diffsize > 400:
-                                        result[8] = 1
+                                result[8] = diffsize/1000
                         except IOError:
                                 result[2] = 'Fail'
                         except OSError:
