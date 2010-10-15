@@ -23,7 +23,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.1">
 	<Control>
 		<title>Plates with Rigid Joint</title>
 		<time_steps>10</time_steps>
@@ -42,13 +42,9 @@ Comments:
 		</material>
 		<material id="2" type="rigid body" name="rigid 1">
 			<density>1</density>
-			<trans_x type="free"></trans_x>
-			<rot_y type="free"></rot_y>
 		</material>
 		<material id="3" type="rigid body" name="rigid2">
 			<density>1</density>
-			<trans_x type="free"></trans_x>
-			<rot_y type="free"></rot_y>
 		</material>
 	</Material>
 	<Geometry>
@@ -178,6 +174,20 @@ Comments:
 			<joint>0,0.1,0.5</joint>
 		</contact>
 	</Boundary>
+	<Constraints>
+		<rigid_body mat="2">
+			<trans_y type="fixed"/>
+			<trans_z type="fixed"/>
+			<rot_x type="fixed"/>
+			<rot_z type="fixed"/>
+		</rigid_body>
+		<rigid_body mat="3">
+			<trans_y type="fixed"/>
+			<trans_z type="fixed"/>
+			<rot_x type="fixed"/>
+			<rot_z type="fixed"/>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>
