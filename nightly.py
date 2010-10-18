@@ -26,7 +26,7 @@ elif opsys == 'ia64':
         plat = 'alt'
         solvers = ['pardiso', 'superlu', 'psldlt']
 elif opsys == 'x86_64':
-        plat = 'lnx'
+        plat = 'lnx64'
 elif sysplat == 'win32':
         plat = 'win'
 elif opsys == 'i686':
