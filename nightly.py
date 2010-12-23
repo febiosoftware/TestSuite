@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-import os, glob, platform, shutil, sys, subprocess, difflib
+import os, glob, platform, shutil, sys, subprocess, difflib, datetime
 #
 # This is the test suite script for our nightly build and test suite run.
 # This script runs a list of FEBio files and checks the results
@@ -178,3 +178,7 @@ for line in difflib.unified_diff(results.readlines(), std.readlines(), n=0):
         sys.stdout.write(line)
 results.close()
 std.close()
+
+# copy the results file to the Logs directory
+res_date = res_name + "_" + str(datetime.date.today()) + ".txt"
+shutil.copy(res_name + ".txt", "Logs/" + res_date)
