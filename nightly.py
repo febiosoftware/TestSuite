@@ -122,7 +122,9 @@ for solver in solvers:
                         # 6: Number of reformations
                         # 7: Plot file size
                         # 8: Log diff file size
-                        result = [solver, base, "", 0, 0, 0, 0, 0, 0]
+                        # 9: Solve time ratio new/old
+                        #10: Elapsed time ratio new/old
+                        result = [solver, base, "", 0, 0, 0, 0, 0, 0, 0, 0]
                         
                         # check the return value
                         if val==0:
@@ -143,6 +145,33 @@ for solver in solvers:
                                         if  line.find("Total number of equilibrium iterations") != -1: result[4] = int(line[55:])
                                         if  line.find("Total number of right hand evaluations") != -1: result[5] = int(line[55:])
                                         if  line.find("Total number of stiffness reformations") != -1: result[6] = int(line[55:])
+                                        if  line.find("Time in solver") != -1:
+                                                slv_hr  = int(line[17:18])
+                                                slv_min = int(line[19:21])
+                                                slv_sec = int(line[22:24])
+                                                new_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
+                                                #print "New solve time", new_slv_time
+                                        if  line.find("Elapsed time") != -1:
+                                                el_hr  = int(line[16:17])
+                                                el_min = int(line[18:20])
+                                                el_sec = int(line[21:23])
+                                                new_el_time = el_hr*3600 + el_min*60 + el_sec
+                                for line in fstd:
+                                        if  line.find("Time in solver") != -1:
+                                                slv_hr  = int(line[17:18])
+                                                slv_min = int(line[19:21])
+                                                slv_sec = int(line[22:24])
+                                                old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
+                                                #print "Old solve time", old_slv_time
+                                        if  line.find("Elapsed time") != -1:
+                                                el_hr  = int(line[16:17])
+                                                el_min = int(line[18:20])
+                                                el_sec = int(line[21:23])
+                                                old_el_time = el_hr*3600 + el_min*60 + el_sec
+                                if old_slv_time == 0: old_slv_time = 1
+                                if old_el_time == 0: old_el_time = 1
+                                result[9]  = new_slv_time/old_slv_time
+                                result[10] = new_el_time/old_el_time
                                 # get the size of the plotfile
                                 result[7] = os.path.getsize(pltname)
                                 # do a diff on the log file
