@@ -76,11 +76,15 @@ else:
         command =['make', '-f', 'febio.mk', plat]
         subprocess.call(command)
 
+        # Print the svn revision number in the results file
+        version = subprocess.Popen(["svnversion"], stdout=subprocess.PIPE).communicate()[0]
+        results.write("svn version : " + version + "\n")
+
 # Define the test problems list.
 os.chdir(febio_dir + "/Testing/Verify")
 test = glob.glob("*.feb")
 test.sort()
-#test = ['co01.feb', 'co02.feb']
+test = ['co01.feb', 'co02.feb']
 
 # keep counters
 norms = 0                       # nr of normal terminations
@@ -168,10 +172,13 @@ for solver in solvers:
                                                 el_min = int(line[18:20])
                                                 el_sec = int(line[21:23])
                                                 old_el_time = el_hr*3600 + el_min*60 + el_sec
-                                if old_slv_time == 0: old_slv_time = 1
-                                if old_el_time == 0: old_el_time = 1
-                                result[9]  = new_slv_time/old_slv_time
-                                result[10] = new_el_time/old_el_time
+                                slv_denom = old_slv_time
+                                el_denom = old_el_time
+                                if old_slv_time == 0: slv_denom = 1
+                                if old_el_time == 0: el_denom = 1
+                                # calculate percent change in solve and elapse times
+                                result[9]  = int(100*(new_slv_time-old_slv_time)/float(slv_denom))
+                                result[10] = int(100*(new_el_time-old_el_time)/float(el_denom))
                                 # get the size of the plotfile
                                 result[7] = os.path.getsize(pltname)
                                 # do a diff on the log file
