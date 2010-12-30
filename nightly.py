@@ -176,9 +176,9 @@ for solver in solvers:
                                 el_denom = old_el_time
                                 if old_slv_time == 0: slv_denom = 1
                                 if old_el_time == 0: el_denom = 1
-                                # calculate percent change in solve and elapse times
-                                result[9]  = int(100*(new_slv_time-old_slv_time)/float(slv_denom))
-                                result[10] = int(100*(new_el_time-old_el_time)/float(el_denom))
+                                # calculate percent change (in increments of 10%) in solve and elapse times
+                                result[9]  = 10*int(10*(new_slv_time-old_slv_time)/float(slv_denom))
+                                result[10] = 10*int(10*(new_el_time-old_el_time)/float(el_denom))
                                 # get the size of the plotfile
                                 result[7] = os.path.getsize(pltname)
                                 # do a diff on the log file
