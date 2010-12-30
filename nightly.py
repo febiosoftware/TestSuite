@@ -84,7 +84,7 @@ else:
 os.chdir(febio_dir + "/Testing/Verify")
 test = glob.glob("*.feb")
 test.sort()
-test = ['co01.feb', 'co02.feb']
+#test = ['co01.feb', 'co02.feb']
 
 # keep counters
 norms = 0                       # nr of normal terminations
