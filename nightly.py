@@ -192,9 +192,9 @@ for solver in solvers:
                                 diffsize = os.path.getsize(diffname)
                                 result[8] = diffsize/1000
                         except IOError:
-                                result[2] = 'Fail'
+                                result[2] = 'IOError'
                         except OSError:
-                                result[2] = 'Fail'
+                                result[2] = 'OSError'
                         print result
                         results.write(str(result) + '\n')
                         dummy.close()
