@@ -174,11 +174,15 @@ for solver in solvers:
                                                 old_el_time = el_hr*3600 + el_min*60 + el_sec
                                 slv_denom = old_slv_time
                                 el_denom = old_el_time
+                                slv_diff = new_slv_time - old_slv_time
+                                el_diff = new_el_time - old_el_time
                                 if old_slv_time == 0: slv_denom = 1
                                 if old_el_time == 0: el_denom = 1
+                                if slv_diff <= 2: slv_diff = 0
+                                if el_diff <= 2: el_diff = 0
                                 # calculate percent change (in increments of 10%) in solve and elapse times
-                                result[9]  = 10*int(10*(new_slv_time-old_slv_time)/float(slv_denom))
-                                result[10] = 10*int(10*(new_el_time-old_el_time)/float(el_denom))
+                                result[9]  = 10*int(10*slv_diff/float(slv_denom))
+                                result[10] = 10*int(10*el_diff/float(el_denom))
                                 # get the size of the plotfile
                                 result[7] = os.path.getsize(pltname)
                                 # do a diff on the log file
