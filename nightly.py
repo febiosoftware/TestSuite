@@ -88,7 +88,7 @@ else:
 os.chdir(febio_dir + "/Testing/Verify")
 test = glob.glob("*.feb")
 test.sort()
-#test = ['co01.feb', 'co02.feb']
+#test = ['co01.feb', 'co04.feb']
 
 # keep counters
 norms = 0                       # nr of normal terminations
@@ -176,17 +176,25 @@ for solver in solvers:
                                                 el_min = int(line[18:20])
                                                 el_sec = int(line[21:23])
                                                 old_el_time = el_hr*3600 + el_min*60 + el_sec
+                                # calculate percent difference (in incr% increments) in solve and elapse times
                                 slv_denom = (new_slv_time + old_slv_time)/2
                                 el_denom = (new_el_time + old_el_time)/2
                                 if slv_denom == 0: slv_denom = 1
                                 if el_denom == 0: el_denom = 1
                                 slv_diff = new_slv_time - old_slv_time
                                 el_diff = new_el_time - old_el_time
-                                if abs(slv_diff) <= 2: slv_diff = 0
-                                if abs(el_diff) <= 2: el_diff = 0
-                                # calculate percent difference (in increments of 10%) in solve and elapse times
-                                result[9]  = 10*int(10*slv_diff/float(slv_denom))
-                                result[10] = 10*int(10*el_diff/float(el_denom))
+                                if abs(slv_diff) <= 3: slv_diff = 0
+                                if abs(el_diff) <= 3: el_diff = 0
+                                if slv_denom < 5: incr = 100
+                                elif slv_denom < 20: incr = 50
+                                elif slv_denom < 60: incr = 20
+                                else: incr = 10
+                                result[9]  = incr*int((100/incr)*slv_diff/float(slv_denom))
+                                if el_denom < 5: incr = 100
+                                elif el_denom < 20: incr = 50
+                                elif el_denom < 60: incr = 20
+                                else: incr = 10
+                                result[10] = incr*int((100/incr)*el_diff/float(el_denom))
                                 # get the size of the plotfile
                                 result[7] = os.path.getsize(pltname)
                                 # do a diff on the log file
