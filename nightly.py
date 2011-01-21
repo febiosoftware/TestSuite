@@ -50,7 +50,7 @@ if plat == 'win':
 
         out_dir = ''
         # Exempt problems for the windows platform
-        exempt_spec = ['superluma07', 'superluma08', 'superlu09']
+        exempt_spec = ['superluma07', 'superluma08', 'superluma09']
 
         # Print the svn revision number in the results file
         version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
