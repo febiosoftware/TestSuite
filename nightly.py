@@ -49,6 +49,8 @@ if plat == 'win':
         febio = exe_dir + '/FEBio.exe'
 
         out_dir = ''
+        # Exempt problems for the windows platform
+        exempt_spec = ['superluma07', 'superluma08', 'superlu09']
 
         # Print the svn revision number in the results file
         version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
@@ -61,6 +63,9 @@ else:
         febio_dir = os.getcwd()
         febio = febio_dir + '/bin/febio.' + plat
         febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
+
+        # Exempt problems for non-windows platforms
+        exempt_spec = []
 
         # Define the log and plt output directory
         out_dir = '/scratch/rawlins/febio_test/'
@@ -95,7 +100,7 @@ norms = 0                       # nr of normal terminations
 nerrs = 0                       # nr of error terminations
 
 # exempt problems: These problems require nonsymmetric matrices
-exempt = ['skylineco32','skylineco34','skylinema07','skylinema08','skylinema09']
+exempt = ['skylineco32','skylineco34','skylinema07','skylinema08','skylinema09'] + exempt_spec
 
 #run the test problems
 for solver in solvers:
