@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <febio_spec version="1.0">
+	<Module type="poro"/>
 	<Control>
 		<title>Spectral Permeability Iso</title>
 		<time_steps>20</time_steps>
