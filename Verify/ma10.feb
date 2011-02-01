@@ -23,6 +23,7 @@ Comments:
 	This problem can be compared to ma11, which does not use a poroelastic material.
 -->
 <febio_spec version="1.0">
+	<Module type="poro"/>
 	<Control>
 		<title>Inflated Tube - Poroelastic</title>
 		<time_steps>10</time_steps>
