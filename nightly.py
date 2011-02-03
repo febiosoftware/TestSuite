@@ -114,7 +114,8 @@ for solver in solvers:
                         pltname = out_dir + solver + '_' + base + '.plt'
                         diffname = out_dir + solver + '_' + base + '_diff.txt'
                         # open the dummy file
-                        dummy = open(out_dir + "dummy.txt", "w")
+                        dummyname = out_dir + "dummy.txt"
+                        dummy = open(dummyname, "w")
                         # run the FEBio problem
                         # we grab the exit value for termination status
                         # TODO: check if the redirection will work on windows
@@ -200,8 +201,9 @@ for solver in solvers:
                                 elif el_denom < 60: incr = 20
                                 else: incr = 10
                                 result[10] = incr*int((100/incr)*el_diff/float(el_denom))
-                                # get the size of the plotfile
+                                # get the size of the plotfile and delete it
                                 result[7] = os.path.getsize(pltname)
+                                os.remove(pltname)
                                 # do a diff on the log file
                                 flog.seek(0)
                                 fstd.seek(0)
@@ -219,6 +221,7 @@ for solver in solvers:
                         print result
                         results.write(str(result) + '\n')
                         dummy.close()
+                        os.remove(dummyname)
 
 # print a summary to the log file
 results.write("\nSummary:\n")
