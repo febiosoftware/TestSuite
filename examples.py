@@ -71,7 +71,8 @@ for f in test:
 	pltname = out_dir + base + '.plt'
 	diffname = out_dir + base + '_diff.txt'
 	# open the dummy file
-	dummy = open(out_dir + "dummy.txt", "w")
+	dummyname = out_dir + "dummy.txt"
+	dummy = open(dummyname, "w")
 	# run the FEBio problem
 	# we grab the exit value for termination status
 	command = [febio, '-i', f, '-o', logname, '-p', pltname, \
@@ -142,8 +143,8 @@ for f in test:
 		result[10] = 10*int(10*(new_el_time-old_el_time)/float(el_denom))
 		# get the size of the plotfile
 		result[7] = os.path.getsize(pltname)
-		flog.close()
-		flog = open(logname, 'r')
+		os.remove(pltname)
+		flog.seek(0)
 		for line in difflib.unified_diff(flog.readlines(), fstd.readlines(), n=0):
 			diff.write(line)
 		diff.close()
@@ -158,6 +159,7 @@ for f in test:
 	print result
 	results.write(str(result) + '\n')
 	dummy.close()
+	os.remove(dummyname)
 
 # print a summary to the log file
 results.write("\nSummary:\n")
