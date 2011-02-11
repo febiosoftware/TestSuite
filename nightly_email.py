@@ -13,7 +13,7 @@ fp = open("nightly_compare.txt", 'r')
 msg = MIMEText(fp.read())
 fp.close()
 msg['Subject'] = 'Cron Nightly test: ' + host
-you = 'rawlins@sci.utah.edu'
+you = 'febio-test@sci.utah.edu'
 msg['From'] = me
 msg['To'] = you
 s = smtplib.SMTP('mail.sci.utah.edu')
