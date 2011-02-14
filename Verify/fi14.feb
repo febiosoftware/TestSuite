@@ -41,13 +41,17 @@ Comments:
 		</time_stepper>
 		<plot_level>PLOT_DEFAULT</plot_level>
 	</Control>
+	<Globals>
+		<Constants>
+			<R>8.314e-6</R>
+			<T>310</T>
+		</Constants>
+	</Globals>
 	<Material>
 		<material id="1" name="Material 1" type="EFD Donnan equilibrium">
 			<phiw0>0.8</phiw0>
 			<cF0 lc="1">1</cF0>
 			<bosm>300</bosm>
-			<R>8.314e-6</R>
-			<T>310</T>
 			<beta>3,3,3</beta>
 			<ksi>0.01,0.01,0.01</ksi>
 			<mat_axis type="local">0,0,0</mat_axis>
