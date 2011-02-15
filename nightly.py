@@ -71,7 +71,7 @@ else:
         out_dir = '/scratch/rawlins/febio_test/'
 
         # Do an svn update on nemo
-        if host == 'swell':
+        if host == 'nemo':
                 subprocess.call(['svn', 'up'])
 
         # Compile FEBio
