@@ -1,11 +1,12 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os, platform, shutil, subprocess
+import os, platform, sys, shutil, subprocess
 # This script creates the standard log file for new models
 
 # Determine the operating system
 opsys = platform.machine()
+sysplat = sys.platform
 bits = platform.architecture()[0]
 
 # Set the solvers
