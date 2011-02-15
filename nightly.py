@@ -50,7 +50,7 @@ if plat == 'win':
 
         out_dir = ''
         # Exempt problems for the windows platform
-        exempt_spec = ['superluma07', 'superluma08', 'superluma09']
+        exempt_spec = ['superlubp07', 'superlubp08', 'superlubp09', 'superlubp12', 'superlubp13']
 
         # Print the svn revision number in the results file
         version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
@@ -100,7 +100,15 @@ norms = 0                       # nr of normal terminations
 nerrs = 0                       # nr of error terminations
 
 # exempt problems: These problems require nonsymmetric matrices
-exempt = ['skylineco32','skylineco34','skylinema07','skylinema08','skylinema09'] + exempt_spec
+exempt = ['skylineco32',
+          'skylineco34',
+          'skylinebp07',
+          'skylinebp08',
+          'skylinebp09',
+          'skylinebp11',
+          'skylinebp12', # does not require nonsymmetric matrix, but is too slow.
+          'skylinebp13',
+          'skylinebp14'] + exempt_spec
 
 #run the test problems
 for solver in solvers:
