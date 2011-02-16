@@ -110,16 +110,20 @@ exempt = ['skylineco32',
           'skylinebp13',
           'skylinebp14'] + exempt_spec
 
+xplt = ['bp11', 'bp12', 'bp13', 'bp14']
+
 #run the test problems
 for solver in solvers:
         for f in test:
                 # strip the '.feb' from the input file name
                 base = f[:4]
                 if solver + base not in exempt:
+                        if base in xplt: pext = '.xplt'
+                        else: pext = '.plt'
                         # define the log and plt files
                         logname = out_dir + solver + '_' + base + '.log'
                         logstd = out_dir + solver + '_' + base + '_std.log'
-                        pltname = out_dir + solver + '_' + base + '.plt'
+                        pltname = out_dir + solver + '_' + base + pext
                         diffname = out_dir + solver + '_' + base + '_diff.txt'
                         # open the dummy file
                         dummyname = out_dir + "dummy.txt"
