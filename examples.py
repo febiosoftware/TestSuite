@@ -145,6 +145,7 @@ for f in test:
 		result[7] = os.path.getsize(pltname)
 		os.remove(pltname)
 		flog.seek(0)
+		fstd.seek(0)
 		for line in difflib.unified_diff(flog.readlines(), fstd.readlines(), n=0):
 			diff.write(line)
 		diff.close()
