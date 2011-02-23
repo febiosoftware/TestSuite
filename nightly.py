@@ -203,14 +203,14 @@ for solver in solvers:
                                 el_diff = new_el_time - old_el_time
                                 if abs(slv_diff) <= 3: slv_diff = 0
                                 if abs(el_diff) <= 3: el_diff = 0
-                                if slv_denom < 5: incr = 100
-                                elif slv_denom < 20: incr = 50
-                                elif slv_denom < 60: incr = 20
+                                if slv_denom < 5: incr = 200
+                                elif slv_denom < 20: incr = 100
+                                elif slv_denom < 60: incr = 50
                                 else: incr = 10
                                 result[9]  = incr*int((100/incr)*slv_diff/float(slv_denom))
-                                if el_denom < 5: incr = 100
-                                elif el_denom < 20: incr = 50
-                                elif el_denom < 60: incr = 20
+                                if el_denom < 5: incr = 200
+                                elif el_denom < 20: incr = 100
+                                elif el_denom < 60: incr = 50
                                 else: incr = 10
                                 result[10] = incr*int((100/incr)*el_diff/float(el_denom))
                                 # get the size of the plotfile and delete it
