@@ -206,12 +206,12 @@ for solver in solvers:
                                 if slv_denom < 5: incr = 200
                                 elif slv_denom < 20: incr = 100
                                 elif slv_denom < 60: incr = 50
-                                else: incr = 10
+                                else: incr = 20
                                 result[9]  = incr*int((100/incr)*slv_diff/float(slv_denom))
                                 if el_denom < 5: incr = 200
                                 elif el_denom < 20: incr = 100
                                 elif el_denom < 60: incr = 50
-                                else: incr = 10
+                                else: incr = 20
                                 result[10] = incr*int((100/incr)*el_diff/float(el_denom))
                                 # get the size of the plotfile and delete it
                                 result[7] = os.path.getsize(pltname)
