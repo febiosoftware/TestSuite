@@ -32,14 +32,14 @@ elif opsys == 'i686':
 os.environ['OMP_NUM_THREADS'] = '1'
 
 # open the results file
-os.chdir("/home/sci/rawlins/febio-test/Testing")
+os.chdir("/home/sci/rawlins/FEBio/Testing")
 res_name = "examples"
 results = open(res_name + ".txt", "w")
 
 # Define FEBio directory, executable, and library
 # Assumes that this script is run from FEBio/Testing
 # and that the executable is in FEBio/bin
-os.chdir("/home/sci/rawlins/febio-test")
+os.chdir("/home/sci/rawlins/FEBio")
 febio_dir = os.getcwd()
 febio = febio_dir + '/bin/febio.' + plat
 febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
