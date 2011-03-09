@@ -102,6 +102,8 @@ nerrs = 0                       # nr of error terminations
 # exempt problems: These problems require nonsymmetric matrices
 exempt = ['skylineco32',
           'skylineco34',
+          'skylineco38',
+          'skylineco40',
           'skylinebp07',
           'skylinebp08',
           'skylinebp09',
