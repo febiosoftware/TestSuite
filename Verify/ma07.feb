@@ -21,8 +21,8 @@ Results:
 		See the stress-strain curve in ma07.jpg
 Comments:
 	This problem is from the article "Finite element implementation of anisotropic
-	quasilinear viscoelasticity using a discrete spectrum approximation" Puso and Weiss,
-	Journal of Biomechanical Engineering, 
+	quasilinear viscoelasticity using a discrete spectrum approximation", Puso and Weiss,
+	Journal of Biomechanical Engineering, 1997
 -->
 <febio_spec version="1.0">
 <febio_spec version="1.1">
