@@ -24,7 +24,6 @@ Comments:
 	quasilinear viscoelasticity using a discrete spectrum approximation", Puso and Weiss,
 	Journal of Biomechanical Engineering, 1997
 -->
-<febio_spec version="1.0">
 <febio_spec version="1.1">
 	<Module type="solid"/>
 	<Control>
