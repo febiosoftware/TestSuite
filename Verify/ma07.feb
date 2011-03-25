@@ -28,8 +28,8 @@ Comments:
 	<Module type="solid"/>
 	<Control>
 		<title>Viscoelastic Cyclic Stress</title>
-		<time_steps>100</time_steps>
-		<step_size>1</step_size>
+		<time_steps>200</time_steps>
+		<step_size>.5</step_size>
 		<max_refs>15</max_refs>
 		<max_ups>10</max_ups>
 		<dtol>0.001</dtol>
@@ -593,7 +593,7 @@ Comments:
 			<loadpoint>95,0.5</loadpoint>
 			<loadpoint>100,0.5</loadpoint>
 		</loadcurve>
-		<loadcurve id="2" type="smooth">
+		<loadcurve id="2">
 			<loadpoint>0,0</loadpoint>
 			<loadpoint>5,0.03</loadpoint>
 			<loadpoint>10,0.015</loadpoint>
