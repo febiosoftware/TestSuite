@@ -32,8 +32,8 @@ elif sysplat == 'win32':
 elif opsys == 'i686':
         plat = 'lnx32'
 
-# Use one thread
-os.environ['OMP_NUM_THREADS'] = '1'
+# Use four threads
+os.environ['OMP_NUM_THREADS'] = '4'
 
 # open the results file
 test_dir = os.getcwd()
@@ -50,7 +50,7 @@ if plat == 'win':
 
         out_dir = ''
         # Exempt problems for the windows platform
-        exempt_spec = ['superlubp07', 'superlubp08', 'superlubp09', 'superlubp12', 'superlubp13']
+        exempt_spec = ['superlubp12', 'superlubp13']
 
         # Print the svn revision number in the results file
         version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
@@ -104,9 +104,6 @@ exempt = ['skylineco32',
           'skylineco34',
           'skylineco38',
           'skylineco40',
-          'skylinebp07',
-          'skylinebp08',
-          'skylinebp09',
           'skylinebp11',
           'skylinebp12', # does not require nonsymmetric matrix, but is too slow.
           'skylinebp13',
