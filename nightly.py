@@ -76,7 +76,7 @@ else:
         except IOError:
                 print "Error copying files"
         command =['make', '-f', 'febio.mk', plat + 'clean' ]
-        subprocess.call(command)
+#        subprocess.call(command)
         command =['make', '-f', 'febio.mk', plat]
         subprocess.call(command)
 
