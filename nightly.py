@@ -49,8 +49,6 @@ if plat == 'win':
         febio = exe_dir + '/FEBio.exe'
 
         out_dir = ''
-        # Exempt problems for the windows platform
-        exempt_spec = ['superlubp12', 'superlubp13']
 
         # Print the svn revision number in the results file
         version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
@@ -63,9 +61,6 @@ else:
         febio_dir = os.getcwd()
         febio = febio_dir + '/bin/febio.' + plat
         febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
-
-        # Exempt problems for non-windows platforms
-        exempt_spec = []
 
         # Define the log and plt output directory
         out_dir = '/scratch/rawlins/febio_test/'
@@ -105,9 +100,7 @@ exempt = ['skylineco32',
           'skylineco38',
           'skylineco40',
           'skylinebp11',
-          'skylinebp12', # does not require nonsymmetric matrix, but is too slow.
-          'skylinebp13',
-          'skylinebp14'] + exempt_spec
+          'skylinebp14']
 
 xplt = ['bp11', 'bp12', 'bp13', 'bp14']
 
