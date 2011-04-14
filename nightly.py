@@ -208,6 +208,7 @@ for solver in solvers:
                                 # get the size of the plotfile and delete it
                                 result[7] = os.path.getsize(pltname)
                                 os.remove(pltname)
+                                
                                 # do a diff on the log file
                                 flog.seek(0)
                                 fstd.seek(0)
@@ -217,7 +218,8 @@ for solver in solvers:
                                 flog.close()
                                 fstd.close()
                                 diffsize = os.path.getsize(diffname)
-                                result[8] = diffsize/1000
+                                diffsize = 5*(diffsize/5000)
+                                result[8] = diffsize
                         except IOError:
                                 result[2] = 'IOError'
                         except OSError:
