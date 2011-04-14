@@ -20,9 +20,10 @@ print 'opsys = ' + opsys
 # c: do not compile
 # p: use only Pardiso
 # f: do fast test (no long or inconsistent problems)
+# t: test on a few problems
 # 4: run with 4 threads
 
-if len(sys.args) > 1: args = sys.argv[1]
+if len(sys.argv) > 1: args = sys.argv[1]
 else: args = ''
 
 # Set the default solvers
@@ -99,9 +100,11 @@ else:
 
 # Define the test problems list.
 os.chdir(febio_dir + "/Testing/Verify")
-test = glob.glob("*.feb")
-test.sort()
-#test = ['co01.feb', 'co04.feb']
+if args.find('t') != -1: test = ['co01.feb', 'co04.feb']
+else:
+	test = glob.glob("*.feb")
+	test.sort()
+
 
 # keep counters
 norms = 0                       # nr of normal terminations
@@ -168,8 +171,8 @@ inconsistent = [
 	'pardisosh07',
 	'pardisosh13']
 
-if args.find('f') =! -1: exempt += slow + inconsistent
-if args.find('4') =! -1: exempt += inconsistent
+if args.find('f') != -1: exempt += slow + inconsistent
+if args.find('4') != -1: exempt += inconsistent
 
 
 # These problems use the new plot file format:
@@ -198,8 +201,9 @@ for solver in solvers:
 			#       ' -cnf ~/FEBio/' + solver + '.xml' + ' >& ../dummy.out'
 			command = [febio, '-i', f, '-o', logname, '-p', pltname, \
 				'-cnf', febio_dir + '/' + solver + '.xml']
-		      #print command
+			#print command
 			val = subprocess.call(command, stdout=dummy)
+			#print "Subprocess result: ", val
 
 			# create a variable that will store the results of the test
 			# 0: solver
