@@ -125,22 +125,6 @@ exempt = [
 	'skylinebp14',
 	# These problems are too slow:
 	'skylinebp12',
-	'superlubp07',
-	'superlubp08',
-	'superlubp09',
-	'superlubp12',
-	'superlubp13']
-
-# These problems will be ignored for a fast run of the test suite:
-slow = [
-	'pardisobp07',
-	'pardisobp08',
-	'pardisobp09',
-	'pardisobp12',
-	'pardisobp13',
-	'pardisoco33',
-	'pardisomi28',
-	'pardisori02',
 	'skylineco28',
 	'skylineco33',
 	'skylinedy09',
@@ -148,14 +132,25 @@ slow = [
 	'skylinemi28',
 	'skylineri02',
 	'skylineri04',
+	'superlubp07',
+	'superlubp08',
+	'superlubp09',
+	'superlubp12',
+	'superlubp13',
+	'superluco33',
+	'superluri02',
+	'superluri04']
+
+# These problems will be ignored for a fast run of the test suite:
+slow = [
+	'pardisoco33',
+	'pardisomi28',
+	'pardisori02',
 	'skylinete02',
 	'superluco28',
-	'superluco33',
 	'superludy03',
 	'superludy09',
 	'superlumi28',
-	'superluri02',
-	'superluri04',
 	'superlute02',
 	'superlute03']
 
