@@ -61,14 +61,19 @@ test.sort()
 norms = 0			# nr of normal terminations
 nerrs = 0			# nr of error terminations
 
+# These problems use the new plot file format:
+xplt = ['bp11', 'bp12', 'bp13', 'bp14']
+
 #run the test problems
 for f in test:
 	# strip the '.feb' from the input file name
 	base = f.split('.')[0]
+	if base in xplt: pext = '.xplt'
+	else: pext = '.plt'
 	# define the log and plt files
 	logname = out_dir + base + '.log'
 	logstd = out_dir + base + '_std.log'
-	pltname = out_dir + base + '.plt'
+	pltname = out_dir + base + pext
 	diffname = out_dir + base + '_diff.txt'
 	# open the dummy file
 	dummyname = out_dir + "dummy.txt"
