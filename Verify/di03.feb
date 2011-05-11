@@ -12,12 +12,12 @@ Materials:
 Degrees of Freedom: 540
 Results:
 	Steps Completed: 50
-	Equilibrium Iterations: 287
-	Right Hand Evaluations: 346
-	Siffness Reformations: 54
+	Equilibrium Iterations: 223
+	Right Hand Evaluations: 383
+	Siffness Reformations: 51
 	Other:
-		At time t=1, the total displacement of the free end of the right board is 2.74,
-		and the total displacement of the free end of the left board is 2.04
+		At time t=1, the total displacement of the free end of the right board is 3.45,
+		and the total displacement of the free end of the left board is 2.34
 Comments:
 	
 -->
@@ -36,7 +36,7 @@ Comments:
 	</Control>
 	<Material>
 		<material id="1" name="Material 2" type="neo-Hookean">
-			<E>100000</E>
+			<E>10000</E>
 			<v>0.3</v>
 		</material>
 	</Material>
@@ -352,11 +352,11 @@ Comments:
 		</force>
 		<spring>
 			<node>100, 93</node>
-			<E>100</E>
+			<E>50</E>
 		</spring>
 		<spring>
 			<node>106, 99</node>
-			<E>100</E>
+			<E>50</E>
 		</spring>
 	</Boundary>
 	<LoadData>

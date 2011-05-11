@@ -156,15 +156,7 @@ slow = [
 
 # These problems give inconsistent convergence statistics results
 # when run with multiple threads:
-inconsistent = [
-	'pardisoco11',
-	'pardisoco12',
-	'pardisoco20',
-	'pardisoco37',
-	'pardisodi03',
-	'pardisosh02',
-	'pardisosh07',
-	'pardisosh13']
+inconsistent = []
 
 if args.find('f') != -1: exempt += slow + inconsistent
 if args.find('4') != -1: exempt += inconsistent
