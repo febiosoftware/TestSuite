@@ -1007,10 +1007,4 @@ Comments:
 			<loadpoint>1,0.2</loadpoint>
 		</loadcurve>
 	</LoadData>
-	<Output>
-		<plotfile type="febio">
-			<var type="displacement"/>
-			<var type="stress"/>
-		</plotfile>
-	</Output>
 </febio_spec>
