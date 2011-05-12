@@ -44,9 +44,9 @@ elif opsys == 'i686':
 	plat = 'lnx32'
 
 # Specify number of threads
-#if (args.find('f') != -1) or (args.find('4') != -1): os.environ['OMP_NUM_THREADS'] = '4'
-#else: os.environ['OMP_NUM_THREADS'] = '1'
-os.environ['OMP_NUM_THREADS'] = '4'
+if (args.find('f') != -1) or (args.find('4') != -1): os.environ['OMP_NUM_THREADS'] = '4'
+else: os.environ['OMP_NUM_THREADS'] = '1'
+#os.environ['OMP_NUM_THREADS'] = '4'
 
 # open the results file
 test_dir = os.getcwd()
