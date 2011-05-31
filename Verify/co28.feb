@@ -6260,7 +6260,8 @@ Comments:
 		<contact type="sliding_with_gaps">
 			<laugon>1</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty auto="on">50</penalty>
+			<penalty>50</penalty>
+			<auto_penalty>1</auto_penalty>
 			<two_pass>0</two_pass>
 			<surface type="master">
 				<quad4 id="1">  2483,  2487,  2488,  2484</quad4>
@@ -6311,7 +6312,8 @@ Comments:
 		<contact type="sliding_with_gaps">
 			<laugon>1</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty auto="on">50</penalty>
+			<penalty>50</penalty>
+			<auto_penalty>1</auto_penalty>
 			<two_pass>0</two_pass>
 			<surface type="master">
 				<quad4 id="1">  2497,  2493,  2494,  2498</quad4>
