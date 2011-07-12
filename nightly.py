@@ -164,7 +164,7 @@ if args.find('4') != -1: exempt += inconsistent
 
 
 # These problems use the new plot file format:
-xplt = ['bp11', 'bp12', 'bp13', 'bp14']
+xplt = ['bp11', 'bp12', 'bp13', 'bp14', 'ma15']
 
 #run the test problems
 for solver in solvers:
