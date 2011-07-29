@@ -122,6 +122,7 @@ exempt = [
 	'skylinebp08',
 	'skylinebp09',
 	'skylinebp11',
+	'skylinebp12',
 	'skylinebp13',
 	'skylinebp14',
 	# These problems are too slow:
@@ -136,8 +137,6 @@ exempt = [
 	'superlubp07',
 	'superlubp08',
 	'superlubp09',
-	'superlubp12',
-	'superlubp13',
 	'superluco33',
 	'superluri02',
 	'superluri04']
