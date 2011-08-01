@@ -32,15 +32,16 @@ elif opsys == 'i686':
 os.environ['OMP_NUM_THREADS'] = '1'
 
 # open the results file
-os.chdir("/home/sci/rawlins/FEBio/Testing")
+test_dir = "/home/sci/rawlins/Testing"
+os.chdir(test_dir)
 res_name = "examples"
 results = open(res_name + ".txt", "w")
 
 # Define FEBio directory, executable, and library
 # Assumes that this script is run from FEBio/Testing
 # and that the executable is in FEBio/bin
-os.chdir("/home/sci/rawlins/FEBio")
-febio_dir = os.getcwd()
+febio_dir = "/home/sci/rawlins/FEBio"
+os.chdir(febio_dir)
 febio = febio_dir + '/bin/febio.' + plat
 febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
 
@@ -52,7 +53,7 @@ version = subprocess.Popen(["svnversion"], stdout=subprocess.PIPE).communicate()
 results.write("svn version : " + version + "\n")
 
 # Define the test problems list.
-os.chdir(febio_dir + "/Testing/Examples")
+os.chdir(test_dir + "/Examples")
 test = glob.glob("*.feb")
 test.sort()
 #test = [ 'Ei-adhesion.feb' ]
