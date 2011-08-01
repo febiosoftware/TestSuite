@@ -23,7 +23,9 @@ print 'opsys = ' + opsys
 # t: test on a few problems
 # 4: run with 4 threads
 
-if len(sys.argv) > 1: args = sys.argv[1]
+if len(sys.argv) == 1: sys.exit("error: The name of the FEBio directory must be entered as an argument")
+febio_name = sys.argv[1]
+if len(sys.argv) > 2: args = sys.argv[2]
 else: args = ''
 
 # Set the default solvers
@@ -54,7 +56,7 @@ res_name = "nightly_" + plat
 results = open(os.path.join(test_dir, res_name + ".txt"), "w")
 
 if plat == 'win':
-	febio_dir = 'C:/FEBio'
+	febio_dir = 'C:/' + febio_name
 	if bits == '64bit':
 		exe_dir = febio_dir + '/x64/Release-x64'
 	else:
@@ -68,9 +70,9 @@ if plat == 'win':
 	results.write("svn version : " + version + "\n")
 else:
 	# Define FEBio directory, executable, and library
-	# Assumes that this script is run from FEBio/Testing
+	# Assumes that this script is run from Testing and the FEBio directory is on the same level
 	# and that the executable is in FEBio/bin
-	os.chdir("..")
+	os.chdir("../" + febio_name)
 	febio_dir = os.getcwd()
 	febio = febio_dir + '/bin/febio.' + plat
 	febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
@@ -100,7 +102,7 @@ else:
 	results.write("svn version : " + version + "\n")
 
 # Define the test problems list.
-os.chdir(febio_dir + "/Testing/Verify")
+os.chdir(test_dir + "/Verify")
 if args.find('t') != -1: test = ['co01.feb', 'co04.feb']
 else:
 	test = glob.glob("*.feb")
@@ -114,10 +116,6 @@ nerrs = 0                       # nr of error terminations
 # Exempt problems: 
 exempt = [
 	# These problems require nonsymmetric matrices
-	'skylineco32',
-	'skylineco34',
-	'skylineco38',
-	'skylineco40',
 	'skylinebp07',
 	'skylinebp08',
 	'skylinebp09',
@@ -125,6 +123,12 @@ exempt = [
 	'skylinebp12',
 	'skylinebp13',
 	'skylinebp14',
+	'skylinebs01',
+	'skylinebs04',
+	'skylineco32',
+	'skylineco34',
+	'skylineco38',
+	'skylineco40',
 	# These problems are too slow:
 	'skylinebp12',
 	'skylineco28',

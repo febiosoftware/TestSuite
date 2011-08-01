@@ -62,7 +62,7 @@ norms = 0			# nr of normal terminations
 nerrs = 0			# nr of error terminations
 
 # These problems use the new plot file format:
-xplt = ['bp11', 'bp12', 'bp13', 'bp14']
+xplt = ['bp11', 'bp12', 'bp13', 'bp14', 'bs02', 'bs03']
 
 #run the test problems
 for f in test:
