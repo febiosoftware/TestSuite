@@ -63,7 +63,7 @@ if plat == 'win':
 		exe_dir = febio_dir + '/VS2008/Release'
 	else:
 		exe_dir = febio_dir + '/Release'
-	febio = exe_dir + '/' febio_name + '.exe'
+	febio = exe_dir + '/' + febio_name + '.exe'
 
 	out_dir = febio_name + '_Logs'
 	logs_dir = out_dir
@@ -186,7 +186,7 @@ for solver in solvers:
 			if base in xplt: pext = '.xplt'
 			else: pext = '.plt'
 			# define the log and plt files
-			logname = out_dir + solver + '_' + base + '.log'"/home/sci/rawlins/Testing"
+			logname = out_dir + solver + '_' + base + '.log'
 			logstd = out_dir + solver + '_' + base + '_std.log'
 			pltname = out_dir + solver + '_' + base + pext
 			diffname = out_dir + solver + '_' + base + '_diff.txt'
