@@ -59,9 +59,11 @@ if plat == 'win':
 	febio_dir = 'C:/' + febio_name
 	if bits == '64bit':
 		exe_dir = febio_dir + '/x64/Release-x64'
+	elif febio_name == 'FEBio2':
+		exe_dir = febio_dir + '/VS2008/Release'
 	else:
 		exe_dir = febio_dir + '/Release'
-	febio = exe_dir + '/FEBio.exe'
+	febio = exe_dir + '/' febio_name + '.exe'
 
 	out_dir = ''
 
