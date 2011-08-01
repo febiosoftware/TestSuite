@@ -69,6 +69,10 @@ if plat == 'win':
 	version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
 	results.write("svn version : " + version + "\n")
 else:
+	#Update the test suite
+	if plat == 'lnx64':
+		subprocess.call(['svn', 'up'])
+
 	# Define FEBio directory, executable, and library
 	# Assumes that this script is run from Testing and the FEBio directory is on the same level
 	# and that the executable is in FEBio/bin
