@@ -65,7 +65,8 @@ if plat == 'win':
 		exe_dir = febio_dir + '/Release'
 	febio = exe_dir + '/' febio_name + '.exe'
 
-	out_dir = ''
+	out_dir = febio_name + '_Logs'
+	logs_dir = out_dir
 
 	# Print the svn revision number in the results file
 	version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
@@ -85,6 +86,7 @@ else:
 
 	# Define the log and plt output directory
 	out_dir = '/scratch/rawlins/febio_test/'
+	logs_dir = 'Logs'
 
 	if args.find('c') == -1:
 
@@ -184,7 +186,7 @@ for solver in solvers:
 			if base in xplt: pext = '.xplt'
 			else: pext = '.plt'
 			# define the log and plt files
-			logname = out_dir + solver + '_' + base + '.log'
+			logname = out_dir + solver + '_' + base + '.log'"/home/sci/rawlins/Testing"
 			logstd = out_dir + solver + '_' + base + '_std.log'
 			pltname = out_dir + solver + '_' + base + pext
 			diffname = out_dir + solver + '_' + base + '_diff.txt'
@@ -211,7 +213,7 @@ for solver in solvers:
 			# 5: Number of RHS evaluations
 			# 6: Number of reformations
 			# 7: Plot file size
-			# 8: Log diff file size
+			# 8: Log diff file size"/home/sci/rawlins/Testing"
 			# 9: Solve time ratio new/old
 			#10: Elapsed time ratio new/old
 			result = [solver, base, "", 0, 0, 0, 0, 0, 0, 0, 0]
@@ -318,4 +320,4 @@ std.close()
 
 # copy the results file to the Logs directory
 res_date = res_name + "_" + str(datetime.date.today()) + ".txt"
-shutil.copy(res_name + ".txt", "Logs/" + res_date)
+shutil.copy(res_name + ".txt", logs_dir + "/" + res_date)
