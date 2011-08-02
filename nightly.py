@@ -65,7 +65,7 @@ if plat == 'win':
 		exe_dir = febio_dir + '/Release'
 	febio = exe_dir + '/' + febio_name + '.exe'
 
-	out_dir = febio_name + '_Logs'
+	out_dir = 'C:/Testing/' + febio_name + '_Logs/'
 	logs_dir = out_dir
 
 	# Print the svn revision number in the results file
@@ -86,7 +86,7 @@ else:
 
 	# Define the log and plt output directory
 	out_dir = '/scratch/rawlins/febio_test/'
-	logs_dir = 'Logs'
+	logs_dir = 'Logs/'
 
 	if args.find('c') == -1:
 
@@ -111,7 +111,7 @@ else:
 
 # Define the test problems list.
 os.chdir(test_dir + "/Verify")
-if args.find('t') != -1: test = ['co01.feb', 'co04.feb']
+if args.find('t') != -1: test = ['co01.feb', 'co02.feb']
 else:
 	test = glob.glob("*.feb")
 	test.sort()
@@ -320,4 +320,4 @@ std.close()
 
 # copy the results file to the Logs directory
 res_date = res_name + "_" + str(datetime.date.today()) + ".txt"
-shutil.copy(res_name + ".txt", logs_dir + "/" + res_date)
+shutil.copy(res_name + ".txt", logs_dir + res_date)
