@@ -61,6 +61,8 @@ if plat == 'win':
 		exe_dir = febio_dir + '/x64/Release-x64'
 	elif febio_name == 'FEBio2':
 		exe_dir = febio_dir + '/VS2008/Release'
+		results.close()
+		results = open(os.path.join(test_dir, "nightly_win2" + ".txt"), "w")
 	else:
 		exe_dir = febio_dir + '/Release'
 	febio = exe_dir + '/' + febio_name + '.exe'
