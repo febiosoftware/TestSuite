@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <febio_spec version="1.1">
+	<Module type="poro"/>
+	<Control>
+		<time_steps>30000</time_steps>
+		<step_size>0.1</step_size>
+		<max_refs>15</max_refs>
+		<max_ups>0</max_ups>
+		<dtol>0.001</dtol>
+		<etol>0.01</etol>
+		<rtol>0</rtol>
+		<ptol>0.01</ptol>
+		<lstol>0.9</lstol>
+		<time_stepper>
+			<dtmin>0.01</dtmin>
+			<dtmax lc="1"></dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+		</time_stepper>
+		<symmetric_biphasic>0</symmetric_biphasic>
+	</Control>
 	<Material>
 		<material id="1" name="Biphasic material" type="biphasic">
 			<solid type="Holmes-Mow">
@@ -232,12 +251,6 @@
 	</Geometry>
 	<Boundary>
 		<fix>
-			<node id="1" bc="p"/>
-			<node id="2" bc="p"/>
-			<node id="43" bc="p"/>
-			<node id="44" bc="p"/>
-		</fix>
-		<fix>
 			<node id="1" bc="x"/>
 			<node id="2" bc="x"/>
 			<node id="3" bc="x"/>
@@ -406,12 +419,6 @@
 			<node id="166" bc="x"/>
 			<node id="167" bc="x"/>
 			<node id="168" bc="x"/>
-		</fix>
-		<fix>
-			<node id="1" bc="y"/>
-			<node id="2" bc="y"/>
-			<node id="43" bc="y"/>
-			<node id="44" bc="y"/>
 		</fix>
 		<fix>
 			<node id="1" bc="z"/>
@@ -583,6 +590,24 @@
 			<node id="167" bc="z"/>
 			<node id="168" bc="z"/>
 		</fix>
+		<fix>
+			<node id="1" bc="y"/>
+			<node id="2" bc="y"/>
+			<node id="43" bc="y"/>
+			<node id="44" bc="y"/>
+		</fix>
+		<fix>
+			<node id="1" bc="p"/>
+			<node id="2" bc="p"/>
+			<node id="43" bc="p"/>
+			<node id="44" bc="p"/>
+		</fix>
+		<prescribe>
+			<node id="125" bc="y" lc="2">1</node>
+			<node id="126" bc="y" lc="2">1</node>
+			<node id="167" bc="y" lc="2">1</node>
+			<node id="168" bc="y" lc="2">1</node>
+		</prescribe>
 		<contact type="sliding2">
 			<laugon>1</laugon>
 			<tolerance>0.2</tolerance>
@@ -602,23 +627,13 @@
 	<LoadData>
 		<loadcurve id="1" type="step">
 			<loadpoint>0,0</loadpoint>
-			<loadpoint>0.1,0.1</loadpoint>
+			<loadpoint>500,20</loadpoint>
+			<loadpoint>1000,20</loadpoint>
+			<loadpoint>3000,100</loadpoint>
 		</loadcurve>
-		<loadcurve id="2" type="step">
+		<loadcurve id="2">
 			<loadpoint>0,0</loadpoint>
-			<loadpoint>1,0.1</loadpoint>
-			<loadpoint>10,1</loadpoint>
-			<loadpoint>100,10</loadpoint>
-			<loadpoint>1000,100</loadpoint>
-			<loadpoint>10000,1000</loadpoint>
-		</loadcurve>
-		<loadcurve id="3" type="step">
-			<loadpoint>0,0</loadpoint>
-			<loadpoint>1,-0.2</loadpoint>
-		</loadcurve>
-		<loadcurve id="4" type="smooth">
-			<loadpoint>0,0</loadpoint>
-			<loadpoint>0.1,-0.001</loadpoint>
+			<loadpoint>500,-0.5</loadpoint>
 		</loadcurve>
 	</LoadData>
 	<Output>
@@ -632,59 +647,4 @@
 			<var type="stress"/>
 		</plotfile>
 	</Output>
-	<Step>
-		<Module type="poro"/>
-		<Control>
-			<time_steps>1</time_steps>
-			<step_size>0.1</step_size>
-			<max_refs>15</max_refs>
-			<max_ups>0</max_ups>
-			<dtol>0.001</dtol>
-			<etol>0.01</etol>
-			<rtol>0</rtol>
-			<ptol>0.01</ptol>
-			<lstol>0.9</lstol>
-			<time_stepper>
-				<dtmin>0.01</dtmin>
-				<dtmax lc="1"></dtmax>
-				<max_retries>5</max_retries>
-				<opt_iter>10</opt_iter>
-			</time_stepper>
-			<symmetric_biphasic>0</symmetric_biphasic>
-		</Control>
-		<Boundary>
-			<prescribe>
-				<node id="125" bc="y" lc="4">1</node>
-				<node id="126" bc="y" lc="4">1</node>
-				<node id="167" bc="y" lc="4">1</node>
-				<node id="168" bc="y" lc="4">1</node>
-			</prescribe>
-		</Boundary>
-	</Step>
-	<Step>
-		<Module type="poro"/>
-		<Control>
-			<time_steps>100000</time_steps>
-			<step_size>0.1</step_size>
-			<max_refs>15</max_refs>
-			<max_ups>0</max_ups>
-			<dtol>0.001</dtol>
-			<etol>0.01</etol>
-			<rtol>0</rtol>
-			<ptol>0.01</ptol>
-			<lstol>0.9</lstol>
-			<time_stepper>
-				<dtmin>0.01</dtmin>
-				<dtmax lc="2"></dtmax>
-				<max_retries>5</max_retries>
-				<opt_iter>10</opt_iter>
-			</time_stepper>
-			<symmetric_biphasic>0</symmetric_biphasic>
-		</Control>
-		<Boundary>
-			<normal_traction type="nonlinear" traction="mixture">
-				<quad4 id="1" lc="3" scale="1">   167,   125,   126,   168</quad4>
-			</normal_traction>
-		</Boundary>
-	</Step>
 </febio_spec>
