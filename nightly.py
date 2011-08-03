@@ -133,8 +133,12 @@ exempt = [
 	'skylinebp12',
 	'skylinebp13',
 	'skylinebp14',
+	'skylinebp15',
+	'skylinebp16',
+	'skylinebp17',
 	'skylinebs01',
 	'skylinebs04',
+	'skylinebs05',
 	'skylineco32',
 	'skylineco34',
 	'skylineco38',
@@ -177,7 +181,7 @@ if args.find('4') != -1: exempt += inconsistent
 
 
 # These problems use the new plot file format:
-xplt = ['bp11', 'bp12', 'bp13', 'bp14', 'bs01', 'bs04', 'ma15']
+xplt = ['bp11', 'bp12', 'bp13', 'bp14', 'bp15', 'bp16', 'bp17', 'bs01', 'bs04', 'bs05', 'co42', 'ma15']
 
 #run the test problems
 for solver in solvers:
