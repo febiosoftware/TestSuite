@@ -21,18 +21,18 @@
 	</Control>
 	<Material>
 		<material id="1" name="Biphasic material" type="biphasic">
-		  <solid name="Solid Matrix" type="Holmes-Mow">
-			<density>1</density>
-			<E>1</E>
-			<v>0</v>
-			<beta>2</beta>
-		  </solid>
-		  <permeability name="Fluid" type="perm-Holmes-Mow">
-			<perm>0.001</perm>
 			<phi0>0.2</phi0>
-			<M>2</M>
-			<alpha>0</alpha>
-		  </permeability>
+			<solid name="Solid Matrix" type="Holmes-Mow">
+				<density>1</density>
+				<E>1</E>
+				<v>0</v>
+				<beta>2</beta>
+			</solid>
+			<permeability name="Fluid" type="perm-Holmes-Mow">
+				<perm>0.001</perm>
+				<M>2</M>
+				<alpha>0</alpha>
+			</permeability>
 		</material>
 	</Material>
 	<Geometry>

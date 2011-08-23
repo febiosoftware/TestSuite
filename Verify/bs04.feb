@@ -51,6 +51,7 @@ Comments:
 	</Globals>
 	<Material>
 		<material id="1" name="Biphasic with solute" type="biphasic-solute">
+		  <phi0>0.04</phi0>
 		  <fluid_density>1</fluid_density>
 		  <solid name="Solid Matrix" type="neo-Hookean">
 			<density>1</density>
@@ -59,7 +60,6 @@ Comments:
 		  </solid>
 		  <permeability name="Permeability" type="perm-Holmes-Mow">
 			<perm>0.08</perm>
-			<phi0>0.04</phi0>
 			<M>0</M>
 			<alpha>0</alpha>
 		  </permeability>

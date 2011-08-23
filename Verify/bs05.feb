@@ -22,6 +22,7 @@
 	</Control>
 	<Material>
 		<material id="1" name="Bottom Brick" type="biphasic-solute">
+			<phi0>0.2</phi0>
 			<solid type="neo-Hookean">
 				<density>1</density>
 				<E>1</E>
@@ -29,7 +30,6 @@
 			</solid>
 			<permeability type="perm-Holmes-Mow">
 				<perm>0.001</perm>
-				<phi0>0.2</phi0>
 				<M>0</M>
 				<alpha>0</alpha>
 			</permeability>
@@ -45,6 +45,7 @@
 			</osmotic_coefficient>
 		</material>
 		<material id="2" name="Top Brick" type="biphasic-solute">
+			<phi0>0.2</phi0>
 			<solid type="neo-Hookean">
 				<density>1</density>
 				<E>1</E>
@@ -52,7 +53,6 @@
 			</solid>
 			<permeability type="perm-Holmes-Mow">
 				<perm>0.001</perm>
-				<phi0>0.2</phi0>
 				<M>0</M>
 				<alpha>0</alpha>
 			</permeability>
