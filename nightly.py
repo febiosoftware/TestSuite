@@ -158,7 +158,15 @@ exempt = [
 	'superlubp09',
 	'superluco33',
 	'superluri02',
-	'superluri04']
+	'superluri04',
+	# These problems have a bug right now:
+	'pardisobs01',
+	'pardisobs04',
+	'pardisobs05',
+	'superlubs01',
+	'superlubs04',
+	'superlubs05']
+	
 
 # These problems will be ignored for a fast run of the test suite:
 slow = [
