@@ -42,18 +42,19 @@ Comments:
 		</time_stepper>
 	</Control>
 	<Material>
-		<material id="1" name="Biphasic" type="poroelastic Holmes-Mow">
-			<solid_id>2</solid_id>
-			<perm>0.001</perm>
+		<material id="1" name="Material1" type="biphasic">
 			<phi0>0.2</phi0>
-			<M>0</M>
-			<alpha>2</alpha>
-		</material>
-		<material id="2" name="Solid Matrix" type="Holmes-Mow">
-			<density>1</density>
-			<E>1</E>
-			<v>0</v>
-			<beta>0.5</beta>
+			<solid type="Holmes-Mow">
+				<density>1</density>
+				<E>1</E>
+				<v>0</v>
+				<beta>0.5</beta>
+			</solid>
+			<permeability type="perm-Holmes-Mow">
+				<perm>0.001</perm>
+				<M>0</M>
+				<alpha>2</alpha>
+			</permeability>
 		</material>
 	</Material>
 	<Geometry>
