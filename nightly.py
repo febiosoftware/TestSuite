@@ -159,6 +159,16 @@ exempt = [
 	'superluco33',
 	'superluri02',
 	'superluri04']
+	
+	if febio_name == "FEBio2":
+	  exempt += [
+	    # The poroelastic material will not work with FEBio2
+	    'pardisobp04',
+	    'pardisobp10',
+	    'skylinebp04',
+	    'skylinebp10',
+	    'superlubp04',
+	    'superlubp10']
 
 # These problems will be ignored for a fast run of the test suite:
 slow = [
