@@ -13,10 +13,10 @@ Materials:
 	biphasic-solute
 Degrees of Freedom: 2465
 Results:
-	Steps Completed: 151
-	Equilibrium Iterations: 260
-	Right Hand Evaluations: 412
-	Siffness Reformations: 260
+	Steps Completed: 105
+	Equilibrium Iterations: 200
+	Right Hand Evaluations: 305
+	Siffness Reformations: 200
 	Other:
 		The material has a minimum solute concentration of 6e-03 at time t=3113.
 Comments:
@@ -26,8 +26,8 @@ Comments:
 	<Module type="solute"/>
 	<Control>
 		<title>Step Loading Solute Uptake</title>
-		<time_steps>72000</time_steps>
-		<step_size>0.1</step_size>
+		<final_time>7200</final_time>
+		<step_size>0.01</step_size>
 		<max_refs>25</max_refs>
 		<max_ups>0</max_ups>
 		<dtol>0.001</dtol>
@@ -40,7 +40,7 @@ Comments:
 			<dtmin>0.01</dtmin>
 			<dtmax lc="3"></dtmax>
 			<max_retries>5</max_retries>
-			<opt_iter>10</opt_iter>
+			<opt_iter>100</opt_iter>
 		</time_stepper>
 	</Control>
 	<Globals>
@@ -2418,9 +2418,9 @@ Comments:
 			<loadpoint>0,0</loadpoint>
 			<loadpoint>0.01,0.006</loadpoint>
 		</loadcurve>
-		<loadcurve id="3" type="linear" extend="constant">
-			<loadpoint>0,0.01</loadpoint>
-			<loadpoint>7200,50</loadpoint>
+		<loadcurve id="3" type="linear" extend="extrapolate">
+			<loadpoint>0,0</loadpoint>
+			<loadpoint>1,0.2</loadpoint>
 		</loadcurve>
 	</LoadData>
 	<Output>

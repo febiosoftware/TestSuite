@@ -11,12 +11,12 @@ Materials:
 	biphasic-solute
 Degrees of Freedom: 6116
 Results:
-	Steps Completed: 54
-	Equilibrium Iterations: 309
-	Right Hand Evaluations: 363
-	Siffness Reformations: 309
+	Steps Completed: 86
+	Equilibrium Iterations: 295
+	Right Hand Evaluations: 387
+	Siffness Reformations: 295
 	Other:
-		The material has a minimum solute concentration of 4.63 at time t=248.
+		The weighted average of the relative volume has a minimum value of 0.715 at t=117.8s
 Comments:
 	
 -->
@@ -24,7 +24,7 @@ Comments:
 	<Module type="solute"/>
 	<Control>
 		<title>Spherical Gel - Osmotic Loading</title>
-		<time_steps>36000</time_steps>
+		<final_time>3600</final_time>
 		<step_size>0.1</step_size>
 		<max_refs>25</max_refs>
 		<max_ups>0</max_ups>
@@ -3157,11 +3157,9 @@ Comments:
 		</prescribe>
 	</Boundary>
 	<LoadData>
-		<loadcurve id="1" type="linear" extend="constant">
+		<loadcurve id="1" type="linear" extend="extrapolate">
 			<loadpoint>0,0</loadpoint>
-			<loadpoint>1,1</loadpoint>
-			<loadpoint>500,20</loadpoint>
-			<loadpoint>3600,200</loadpoint>
+			<loadpoint>1,0.2</loadpoint>
 		</loadcurve>
 		<loadcurve id="2" type="linear" extend="constant">
 			<loadpoint>0,0</loadpoint>
