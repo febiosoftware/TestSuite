@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	1D Permeation with prescribed upstream flux and unclamped condition. 
+	This problem demonstrates how to prescribe boundary conditions for a permeation
+	problem where the mixture flux is prescribed upstream, but the solid
+	displacement on the upstream surface is unconstrained.
+Main Features:
+	Permeability
+Secondary Features:
+	Must point curve
+Materials:
+	Biphasic
+	Neo-Hookean
+Degrees of Freedom: 160
+Results:
+	Steps Completed: 28
+	Equilibrium Iterations: 109
+	Right Hand Evaluations: 171
+	Siffness Reformations: 109
+	Other:
+		The maximum total fluid flux is 2.0e-4 at time t = 1000.
+Comments:
+	
+-->
 <febio_spec version="1.1">
 	<Module type="poro"/>
 	<Control>
