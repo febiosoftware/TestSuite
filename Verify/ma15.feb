@@ -41,7 +41,7 @@ Comments:
 		</time_stepper>
 	</Control>
 	<Material>
-		<material id="1" name="Material1" type="linear orthotropic">
+		<material id="1" name="Material1" type="orthotropic elastic">
 			<mat_axis type="vector">
 			  <a>0.866,0.5,0</a>
 			  <d>-0.5,0.866,0</d>

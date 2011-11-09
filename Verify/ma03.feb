@@ -42,7 +42,7 @@ Comments:
 		<plot_level>PLOT_DEFAULT</plot_level>
 	</Control>
 	<Material>
-		<material id="1" name="Material 1" type="linear orthotropic">
+		<material id="1" name="Material 1" type="orthotropic elastic">
 			<E1>1</E1>
 			<E2>1</E2>
 			<E3>1</E3>
