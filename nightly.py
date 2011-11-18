@@ -157,6 +157,7 @@ exempt = [
 	'superlubp08',
 	'superlubp09',
 	'superluco33',
+	'superlumi28',
 	'superluri02',
 	'superluri04']
 	
