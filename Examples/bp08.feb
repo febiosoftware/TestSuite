@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Cylinder with Referentially Trans Iso Permeability material undergoes pressure change and twist
+Main Features:
+	Biphasic
+Secondary Features:
+	
+Materials:
+	Referentially Transversely Isotropic Permeability
+	neo-Hookean
+Degrees of Freedom: 16094
+Results:
+	Steps Completed: 20
+	Equilibrium Iterations: 122
+	Right Hand Evaluations: 161
+	Siffness Reformations: 122
+	Other:
+		The maximum Von Mises stress is 0.582 at time t = 2000.
+Comments:
+	
+-->
 <febio_spec version="1.0">
 	<Module type="poro"/>
 	<Control>
-		<title>Spectral Permeability Trans Iso</title>
+		<title>Referentially Transversely Isotropic Permeability</title>
 		<time_steps>20</time_steps>
 		<step_size>100</step_size>
 		<max_refs>15</max_refs>

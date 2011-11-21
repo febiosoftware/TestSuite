@@ -149,7 +149,7 @@ for f in test:
 		result[10] = 10*int(10*(new_el_time-old_el_time)/float(el_denom))
 		# get the size of the plotfile
 		result[7] = os.path.getsize(pltname)
-		os.remove(pltname)
+		#os.remove(pltname)
 		flog.seek(0)
 		fstd.seek(0)
 		for line in difflib.unified_diff(flog.readlines(), fstd.readlines(), n=0):
