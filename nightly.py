@@ -194,7 +194,7 @@ if len(new) + len(modified) != 0: b_new = 1
 if len(deleted) != 0: b_del = 1
 if b_new or b_del:
   b_new = 1
-  f_std_tmp = test_dir + "/" + "std_tmp.txt"
+  f_std_tmp = test_dir + "/" + plat + "std_tmp.txt"
   f_std = test_dir + "/" + std_name + ".txt"
   std_tmp = open(f_std_tmp, "w")
   std = open(f_std, "r")
@@ -349,11 +349,7 @@ for solver in solvers:
 					if del_base in std_line:
 						#print "del_base", del_base
 						#print "std_line", std_line
-						try:
-							std_line = std.readline()
-						except IOError:
-							print "Reached the end of the std file"
-						is_del = 1
+						std_line = std.readline()
 						break
 			if b_new:
 				if base in new:
@@ -364,18 +360,20 @@ for solver in solvers:
 							std_tmp.write(str(result) + '\n')
 						else:
 							std_tmp.write(std_line)
-						try:
-							std_line = std.readline()
-						except IOError:
-							print "Reached the end of the std file"
+						std_line = std.readline()
 					else:
 						print "base", base
 						print "std_line", std_line
 						sys.exit("base and std_line do not match")
 			dummy.close()
 			os.remove(dummyname)
-# Close the std files
+# Finish the std files
 if b_new:
+	while True:
+		std_line = std.readline()
+		if len(std_line) == 0:
+			break # EOF
+		std_tmp.write(std_line)
 	std.close()
 	std_tmp.close()
 	shutil.copy(f_std_tmp, f_std)
