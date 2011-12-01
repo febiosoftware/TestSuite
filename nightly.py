@@ -294,8 +294,7 @@ for solver in solvers:
 						new_el_time = el_hr*3600 + el_min*60 + el_sec
 				for line in fstd:
 					if  line.find("Time in solver") != -1:
-						slv_hr  = int(line[17			is_del = 0
-:18])
+						slv_hr  = int(line[17:18])
 						slv_min = int(line[19:21])
 						slv_sec = int(line[22:24])
 						old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
