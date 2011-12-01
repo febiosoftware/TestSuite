@@ -53,7 +53,8 @@ else: os.environ['OMP_NUM_THREADS'] = '1'
 # open the results file
 test_dir = os.getcwd()
 res_name = "nightly_" + plat
-results = open(os.path.join(test_dir, res_name + ".txt"), "w")
+std_name = res_name + "_std"
+results = open(res_name + ".txt", "w")
 
 if plat == 'win':
 	febio_dir = 'C:/' + febio_name
@@ -63,7 +64,8 @@ if plat == 'win':
 		exe_dir = febio_dir + '/VS2008/Release'
 		results.close()
 		res_name = "nightly_win2"
-		results = open(os.path.join(test_dir, res_name + ".txt"), "w")
+		std_name = res_name + "_std"
+		results = open(res_name + ".txt", "w")
 	else:
 		exe_dir = febio_dir + '/Release'
 	febio = exe_dir + '/' + febio_name + '.exe'
@@ -170,7 +172,6 @@ slow = [
 	'superluco28',
 	'superludy03',
 	'superludy09',
-	'superlumi28',
 	'superlute02',
 	'superlute03']
 
@@ -180,6 +181,27 @@ inconsistent = []
 
 if args.find('f') != -1: exempt += slow + inconsistent
 if args.find('4') != -1: exempt += inconsistent
+
+
+# These problems are new, newly modified, or deleted
+new      = ['sh16']
+modified = ['bs05', 'di03', 'di04']
+deleted  = ['bp12']
+# Open the nightly_std file and a temporary nightly_std file
+b_new = 0
+b_del = 0
+if len(new) + len(modified) != 0: b_new = 1
+if len(deleted) != 0: b_del = 1
+if b_new or b_del:
+  b_new = 1
+  f_std_tmp = test_dir + "/" + "std_tmp.txt"
+  f_std = test_dir + "/" + std_name + ".txt"
+  std_tmp = open(f_std_tmp, "w")
+  std = open(f_std, "r")
+  std_line = std.readline()
+  while std_line[0] != "[":
+    std_tmp.write(std_line)
+    std_line = std.readline()
 
 
 # These problems use the new plot file format:
@@ -244,7 +266,10 @@ for solver in solvers:
 			else:
 				result[2] = 'Error'
 				nerrs = nerrs + 1
-			      
+			
+			# create std log for new and modified problems
+			if base in new or base in modified:
+				shutil.copy(logname, logstd)
 			# search the log file for the convergence info
 			try:
 				flog = open(logname, 'r')
@@ -318,8 +343,44 @@ for solver in solvers:
 				result[2] = 'OSError'
 			print result
 			results.write(str(result) + '\n')
+			# Write the temporary nightly_std file
+			if b_del:
+				for del_base in deleted:
+					if del_base in std_line:
+						print "del_base", del_base
+						print "std_line", std_line
+						try:
+							std_line = std.readline()
+						except IOError:
+							print "Reached the end of the std file"
+						is_del = 1
+						break
+			if b_new:
+				if base in new:
+					std_tmp.write(str(result) + '\n')
+				else:
+					if base in std_line:
+						if base in modified:
+							std_tmp.write(str(result) + '\n')
+						else:
+							std_tmp.write(std_line)
+						try:
+							std_line = std.readline()
+						except IOError:
+							print "Reached the end of the std file"
+					else:
+						print "base", base
+						print "std_line", std_line
+						sys.exit("base and std_line do not match")
 			dummy.close()
 			os.remove(dummyname)
+# Close the std files
+if b_new:
+	std.close()
+	std_tmp.close()
+	shutil.copy(f_std_tmp, f_std)
+	os.remove(f_std_tmp)
+
 
 # print a summary to the log file
 results.write("\nSummary:\n")
@@ -327,10 +388,9 @@ results.write("\tNormal termination : " + str(norms) + "\n")
 results.write("\tError termination  : " + str(nerrs) + "\n")
 results.close()
 
-# compare results.txt with nightly_'plat'.txt
+# compare results.txt with nightly_'plat'_std.txt
 os.chdir("..")
 results = open(res_name + ".txt", "r")
-std_name = res_name + "_std"
 std = open(std_name + ".txt", "r")
 for line in difflib.unified_diff(results.readlines(), std.readlines(), n=0):
 	sys.stdout.write(line)
