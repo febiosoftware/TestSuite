@@ -369,6 +369,7 @@ for solver in solvers:
 			os.remove(dummyname)
 # Finish the std files
 if b_new:
+	std_tmp.write(std_line)
 	while True:
 		std_line = std.readline()
 		if len(std_line) == 0:
