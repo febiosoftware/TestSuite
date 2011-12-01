@@ -186,7 +186,7 @@ if args.find('4') != -1: exempt += inconsistent
 # These problems are new, newly modified, or deleted
 new      = ['sh16']
 modified = ['bs05', 'di03', 'di04']
-deleted  = ['bp12']
+deleted  = ['mi28']
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
 b_del = 0
@@ -294,7 +294,8 @@ for solver in solvers:
 						new_el_time = el_hr*3600 + el_min*60 + el_sec
 				for line in fstd:
 					if  line.find("Time in solver") != -1:
-						slv_hr  = int(line[17:18])
+						slv_hr  = int(line[17			is_del = 0
+:18])
 						slv_min = int(line[19:21])
 						slv_sec = int(line[22:24])
 						old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
@@ -347,8 +348,8 @@ for solver in solvers:
 			if b_del:
 				for del_base in deleted:
 					if del_base in std_line:
-						print "del_base", del_base
-						print "std_line", std_line
+						#print "del_base", del_base
+						#print "std_line", std_line
 						try:
 							std_line = std.readline()
 						except IOError:
