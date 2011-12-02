@@ -184,9 +184,9 @@ if args.find('4') != -1: exempt += inconsistent
 
 
 # These problems are new, newly modified, or deleted
-new      = ['sh16']
-modified = ['bs05', 'di03', 'di04']
-deleted  = ['mi28']
+new      = ['mi28']
+modified = []
+deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
 b_del = 0
