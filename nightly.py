@@ -184,7 +184,7 @@ if args.find('4') != -1: exempt += inconsistent
 
 
 # These problems are new, newly modified, or deleted
-new      = []
+new      = ['te04', 'te05']
 modified = ['bp04',
 	    'bp10',
 	    'bp11',
@@ -226,7 +226,8 @@ xplt = ['bp11',
         'bs04',
         'bs05',
         'co42',
-        'ma15']
+        'ma15',
+        'te04']
 
 #run the test problems
 for solver in solvers:
