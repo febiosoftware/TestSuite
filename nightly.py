@@ -185,7 +185,17 @@ if args.find('4') != -1: exempt += inconsistent
 
 # These problems are new, newly modified, or deleted
 new      = []
-modified = []
+modified = ['bp04',
+	    'bp10',
+	    'bp11',
+	    'bp12',
+	    'bp13',
+	    'bp14',
+	    'bp15',
+	    'bp16',
+	    'bp17',
+	    'bs04',
+	    'bs05']
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
@@ -194,7 +204,7 @@ if len(new) + len(modified) != 0: b_new = 1
 if len(deleted) != 0: b_del = 1
 if b_new or b_del:
   b_new = 1
-  f_std_tmp = test_dir + "/" + plat + "std_tmp.txt"
+  f_std_tmp = test_dir + "/" + plat + "_std_tmp.txt"
   f_std = test_dir + "/" + std_name + ".txt"
   std_tmp = open(f_std_tmp, "w")
   std = open(f_std, "r")
@@ -270,6 +280,7 @@ for solver in solvers:
 			# create std log for new and modified problems
 			if base in new or base in modified:
 				shutil.copy(logname, logstd)
+				
 			# search the log file for the convergence info
 			try:
 				flog = open(logname, 'r')
@@ -343,6 +354,7 @@ for solver in solvers:
 				result[2] = 'OSError'
 			print result
 			results.write(str(result) + '\n')
+			
 			# Write the temporary nightly_std file
 			if b_del:
 				for del_base in deleted:

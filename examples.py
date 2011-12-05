@@ -35,6 +35,7 @@ os.environ['OMP_NUM_THREADS'] = '1'
 test_dir = "/home/sci/rawlins/Testing"
 os.chdir(test_dir)
 res_name = "examples"
+std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
 
 # Define FEBio directory, executable, and library
@@ -61,6 +62,26 @@ test.sort()
 # keep counters
 norms = 0			# nr of normal terminations
 nerrs = 0			# nr of error terminations
+
+# These problems are new, newly modified, or deleted
+new      = []
+modified = ['bp07', 'bp08', 'bp09', 'bs02', 'bs03']
+deleted  = []
+# Open the nightly_std file and a temporary nightly_std file
+b_new = 0
+b_del = 0
+if len(new) + len(modified) != 0: b_new = 1
+if len(deleted) != 0: b_del = 1
+if b_new or b_del:
+  b_new = 1
+  f_std_tmp = test_dir + "/" + plat + "_std_tmp.txt"
+  f_std = test_dir + "/" + std_name + ".txt"
+  std_tmp = open(f_std_tmp, "w")
+  std = open(f_std, "r")
+  std_line = std.readline()
+  while std_line[0] != "[":
+    std_tmp.write(std_line)
+    std_line = std.readline()
 
 # These problems use the new plot file format:
 xplt = ['bp11', 'bp12', 'bp13', 'bp14', 'bs02', 'bs03']
@@ -107,6 +128,10 @@ for f in test:
 	else:
 		result[2] = 'Error'
 		nerrs = nerrs + 1
+		
+	# create std log for new and modified problems
+	if base in new or base in modified:
+		shutil.copy(logname, logstd)
 		
 	#search the log file for the convergence info
 	try:
@@ -167,6 +192,29 @@ for f in test:
 	results.write(str(result) + '\n')
 	dummy.close()
 	os.remove(dummyname)
+			
+	# Write the temporary nightly_std file
+	if b_del:
+		for del_base in deleted:
+			if del_base in std_line:
+				#print "del_base", del_base
+				#print "std_line", std_line
+				std_line = std.readline()
+				break
+	if b_new:
+		if base in new:
+			std_tmp.write(str(result) + '\n')
+		else:
+			if base in std_line:
+				if base in modified:
+					std_tmp.write(str(result) + '\n')
+				else:
+					std_tmp.write(std_line)
+				std_line = std.readline()
+			else:
+				print "base", base
+				print "std_line", std_line
+				sys.exit("base and std_line do not match")
 
 # print a summary to the log file
 results.write("\nSummary:\n")
