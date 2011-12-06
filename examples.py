@@ -73,15 +73,14 @@ b_del = 0
 if len(new) + len(modified) != 0: b_new = 1
 if len(deleted) != 0: b_del = 1
 if b_new or b_del:
-  b_new = 1
-  f_std_tmp = test_dir + "/" + plat + "_std_tmp.txt"
-  f_std = test_dir + "/" + std_name + ".txt"
-  std_tmp = open(f_std_tmp, "w")
-  std = open(f_std, "r")
-  std_line = std.readline()
-  while std_line[0] != "[":
-    std_tmp.write(std_line)
-    std_line = std.readline()
+	f_std_tmp = test_dir + "/" + plat + "_ex_std_tmp.txt"
+	f_std = test_dir + "/" + std_name + ".txt"
+	std_tmp = open(f_std_tmp, "w")
+	std = open(f_std, "r")
+	std_line = std.readline()
+	while std_line[0] != "[":
+		std_tmp.write(std_line)
+		std_line = std.readline()
 
 # These problems use the new plot file format:
 xplt = ['bp11', 'bp12', 'bp13', 'bp14', 'bs02', 'bs03']
@@ -215,6 +214,19 @@ for f in test:
 				print "base", base
 				print "std_line", std_line
 				sys.exit("base and std_line do not match")
+
+# Finish the std files
+if b_new or b_del:
+	std_tmp.write(std_line)
+	while True:
+		std_line = std.readline()
+		if len(std_line) == 0:
+			break # EOF
+		std_tmp.write(std_line)
+	std.close()
+	std_tmp.close()
+	shutil.copy(f_std_tmp, f_std)
+	os.remove(f_std_tmp)
 
 # print a summary to the log file
 results.write("\nSummary:\n")

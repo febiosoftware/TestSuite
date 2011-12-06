@@ -184,18 +184,8 @@ if args.find('4') != -1: exempt += inconsistent
 
 
 # These problems are new, newly modified, or deleted
-new      = ['te04', 'te05']
-modified = ['bp04',
-	    'bp10',
-	    'bp11',
-	    'bp12',
-	    'bp13',
-	    'bp14',
-	    'bp15',
-	    'bp16',
-	    'bp17',
-	    'bs04',
-	    'bs05']
+new      = []
+modified = []
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
@@ -203,15 +193,14 @@ b_del = 0
 if len(new) + len(modified) != 0: b_new = 1
 if len(deleted) != 0: b_del = 1
 if b_new or b_del:
-  b_new = 1
-  f_std_tmp = test_dir + "/" + plat + "_std_tmp.txt"
-  f_std = test_dir + "/" + std_name + ".txt"
-  std_tmp = open(f_std_tmp, "w")
-  std = open(f_std, "r")
-  std_line = std.readline()
-  while std_line[0] != "[":
-    std_tmp.write(std_line)
-    std_line = std.readline()
+	f_std_tmp = test_dir + "/" + plat + "_std_tmp.txt"
+	f_std = test_dir + "/" + std_name + ".txt"
+	std_tmp = open(f_std_tmp, "w")
+	std = open(f_std, "r")
+	std_line = std.readline()
+	while std_line[0] != "[":
+		std_tmp.write(std_line)
+		std_line = std.readline()
 
 
 # These problems use the new plot file format:
@@ -381,7 +370,7 @@ for solver in solvers:
 			dummy.close()
 			os.remove(dummyname)
 # Finish the std files
-if b_new:
+if b_new or b_del:
 	std_tmp.write(std_line)
 	while True:
 		std_line = std.readline()
