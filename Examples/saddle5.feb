@@ -16,8 +16,7 @@ Results:
 	Right Hand Evaluations: 139
 	Siffness Reformations: 84
 	Other:
-		Node 55 (on the bottom edge of the top saddle block on the positive x-axis)
-		has a y-displacement of -0.235 at time t=1.
+		The maximum effective strain has a value of 0.309 units at time t=1.
  
 Comments:
 	

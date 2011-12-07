@@ -64,8 +64,8 @@ norms = 0			# nr of normal terminations
 nerrs = 0			# nr of error terminations
 
 # These problems are new, newly modified, or deleted
-new      = ['twist_cyl']
-modified = []
+new      = []
+modified = ['saddle5']
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
@@ -83,7 +83,7 @@ if b_new or b_del:
 		std_line = std.readline()
 
 # These problems use the new plot file format:
-xplt = ['bp11', 'bp12', 'bp13', 'bp14', 'bs02', 'bs03']
+xplt = ['bp11', 'bp12', 'bp13', 'bp14', 'bs02', 'bs03', 'twist_cyl']
 
 #run the test problems
 for f in test:
