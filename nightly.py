@@ -185,7 +185,7 @@ if args.find('4') != -1: exempt += inconsistent
 
 # These problems are new, newly modified, or deleted
 new      = []
-modified = []
+modified = ['mi30']
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
@@ -214,8 +214,8 @@ xplt = ['bp11',
         'bs01',
         'bs04',
         'bs05',
-        'co42',
         'ma15',
+        'mi30',
         'te04']
 
 #run the test problems
