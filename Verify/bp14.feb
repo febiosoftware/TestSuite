@@ -45,6 +45,7 @@ Comments:
 	</Control>
 	<Material>
 		<material id="1" name="Biphasic material" type="biphasic">
+			<phi0>0.2</phi0>
 			<solid type="neo-Hookean">
 				<density>1</density>
 				<E>1</E>
