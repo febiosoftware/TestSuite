@@ -55,16 +55,18 @@ Comments:
 				<M>0</M>
 				<alpha>0</alpha>
 			</permeability>
-			<diffusivity type="diff-const-iso">
-				<free_diff>0.001</free_diff>
-				<diff>0.0005</diff>
-			</diffusivity>
-			<solubility type="solub-const">
-				<solub>1</solub>
-			</solubility>
 			<osmotic_coefficient type="osm-coef-const">
 				<osmcoef>1</osmcoef>
 			</osmotic_coefficient>
+			<solute sol="1">
+				<diffusivity type="diff-const-iso">
+					<free_diff>0.001</free_diff>
+					<diff>0.0005</diff>
+				</diffusivity>
+				<solubility type="solub-const">
+					<solub>1</solub>
+				</solubility>
+			</solute>
 		</material>
 		<material id="2" name="Top Brick" type="biphasic-solute">
 			<phi0>0.2</phi0>
@@ -78,16 +80,18 @@ Comments:
 				<M>0</M>
 				<alpha>0</alpha>
 			</permeability>
-			<diffusivity type="diff-const-iso">
-				<free_diff>0.001</free_diff>
-				<diff>0.0005</diff>
-			</diffusivity>
-			<solubility type="solub-const">
-				<solub>1</solub>
-			</solubility>
 			<osmotic_coefficient type="osm-coef-const">
 				<osmcoef>1</osmcoef>
 			</osmotic_coefficient>
+			<solute sol="1">
+				<diffusivity type="diff-const-iso">
+					<free_diff>0.001</free_diff>
+					<diff>0.0005</diff>
+				</diffusivity>
+				<solubility type="solub-const">
+					<solub>1</solub>
+				</solubility>
+			</solute>
 		</material>
 	</Material>
 	<Geometry>
@@ -664,10 +668,10 @@ Comments:
 			<node id="44" bc="p" lc="3">1</node>
 		</prescribe>
 		<prescribe>
-			<node id="1" bc="c" lc="4">1</node>
-			<node id="2" bc="c" lc="4">1</node>
-			<node id="43" bc="c" lc="4">1</node>
-			<node id="44" bc="c" lc="4">1</node>
+			<node id="1" bc="c1" lc="4">1</node>
+			<node id="2" bc="c1" lc="4">1</node>
+			<node id="43" bc="c1" lc="4">1</node>
+			<node id="44" bc="c1" lc="4">1</node>
 		</prescribe>
 		<contact type="sliding3">
 			<laugon>0</laugon>
@@ -693,6 +697,11 @@ Comments:
 			<R>8.314e-06</R>
 			<T>298</T>
 		</Constants>
+		<Solutes>
+			<solute id="1" name="neutral">
+				<charge_number>0</charge_number>
+			</solute>
+		</Solutes>
 	</Globals>
 	<LoadData>
 		<loadcurve id="1" type="step">
@@ -719,12 +728,12 @@ Comments:
 			<var type="contact pressure"/>
 			<var type="displacement"/>
 			<var type="effective fluid pressure"/>
-			<var type="effective solute concentration"/>
+			<var type="effective solute 1 concentration"/>
 			<var type="fluid flux"/>
 			<var type="fluid pressure"/>
 			<var type="relative volume"/>
-			<var type="solute concentration"/>
-			<var type="solute flux"/>
+			<var type="solute 1 concentration"/>
+			<var type="solute 1 flux"/>
 			<var type="stress"/>
 		</plotfile>
 	</Output>

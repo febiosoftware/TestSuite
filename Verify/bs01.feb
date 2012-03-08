@@ -45,6 +45,11 @@ Comments:
 			<R>8.314e-6</R>
 			<T>298</T>
 		</Constants>
+		<Solutes>
+			<solute id="1" name="neutral">
+				<charge_number>0</charge_number>
+			</solute>
+		</Solutes>
 	</Globals>
 	<Material>
 		<material id="1" name="Biphasic with solute" type="biphasic-solute">
@@ -61,16 +66,18 @@ Comments:
 			<M>0</M>
 			<alpha>0</alpha>
 		  </permeability>
-		  <diffusivity name="Diffusivity" type="diff-const-iso">
-			<free_diff>0.001</free_diff>
-			<diff>0.001</diff>
-		  </diffusivity>
-		  <solubility name="Solubility" type="solub-const">
-			<solub>1.0</solub>
-		  </solubility>
 		  <osmotic_coefficient name="Osmotic Coefficient" type="osm-coef-const">
 			<osmcoef>1.0</osmcoef>
 		  </osmotic_coefficient>
+		  <solute sol="1">
+			  <diffusivity name="Diffusivity" type="diff-const-iso">
+				<free_diff>0.001</free_diff>
+				<diff>0.001</diff>
+			  </diffusivity>
+			  <solubility name="Solubility" type="solub-const">
+				<solub>1.0</solub>
+			  </solubility>
+		  </solute>
 		</material>
 	</Material>
 	<Geometry>
@@ -369,10 +376,10 @@ Comments:
 			<node id="84" bc="p" lc="1">-2.477572e-3</node>
 		</prescribe>
 		<prescribe>
-			<node id="21" bc="c" lc="1">1</node>
-			<node id="42" bc="c" lc="1">1</node>
-			<node id="63" bc="c" lc="1">1</node>
-			<node id="84" bc="c" lc="1">1</node>
+			<node id="21" bc="c1" lc="1">1</node>
+			<node id="42" bc="c1" lc="1">1</node>
+			<node id="63" bc="c1" lc="1">1</node>
+			<node id="84" bc="c1" lc="1">1</node>
 		</prescribe>
 	</Boundary>
 	<LoadData>
@@ -389,9 +396,9 @@ Comments:
 		  <var type="effective fluid pressure"/>
 		  <var type="fluid pressure"/>
 		  <var type="fluid flux"/>
-		  <var type="effective solute concentration"/>
-		  <var type="solute concentration"/>
-		  <var type="solute flux"/>
+		  <var type="effective solute 1 concentration"/>
+		  <var type="solute 1 concentration"/>
+		  <var type="solute 1 flux"/>
 		</plotfile>
 	</Output>
 </febio_spec>
