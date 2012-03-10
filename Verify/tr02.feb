@@ -2092,7 +2092,7 @@ Comments:
 		</plotfile>
 	</Output>
 	<Step>
-		<Module type="triphasic"/>
+		<Module type="solute"/>
 		<Control>
 			<analysis type="steady-state"/>
 			<title>Initial Swelling</title>
@@ -2116,7 +2116,7 @@ Comments:
 		</Control>
 	</Step>
 	<Step>
-		<Module type="triphasic"/>
+		<Module type="solute"/>
 		<Control>
 			<title>Stress-relaxation</title>
 			<final_time>2001</final_time>

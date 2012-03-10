@@ -28,7 +28,7 @@ Comments:
 
 -->	
 <febio_spec version="1.2">
-	<Module type="triphasic"/>
+	<Module type="solute"/>
 	<Control>
 		<time_steps>10000</time_steps>
 		<step_size>1</step_size>
