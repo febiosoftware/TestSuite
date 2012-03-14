@@ -188,7 +188,7 @@ if args.find('4') != -1: exempt += inconsistent
 
 # These problems are new, newly modified, or deleted
 new      = []
-modified = ['tr01', 'tr02', 'tr03']
+modified = []
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
