@@ -59,10 +59,9 @@ Comments:
 			    <E>1e-6</E>
 			    <v>0</v>
 			  </solid>
-			  <solid type="spherical fiber distribution">
-			    <density>1</density>
-			    <ksi>4</ksi>
-			    <beta>2.5</beta>
+			  <solid type="ellipsoidal fiber distribution">
+			    <ksi>4,4,4</ksi>
+			    <beta>2.5,2.5,2.5</beta>
 			  </solid>
 			</solid>
 			<permeability type="perm-const-iso">

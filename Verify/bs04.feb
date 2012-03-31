@@ -57,7 +57,6 @@ Comments:
 	<Material>
 		<material id="1" name="Biphasic with solute" type="biphasic-solute">
 		  <phi0>0.04</phi0>
-		  <fluid_density>1</fluid_density>
 		  <solid name="Solid Matrix" type="neo-Hookean">
 			<density>1</density>
 			<E>0.006</E>
