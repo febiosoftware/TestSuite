@@ -203,7 +203,7 @@ if febio_name == 'FEBio2': exempt += exempt2
 
 # These problems are new, newly modified, or deleted
 new      = []
-modified = ['tr02']
+modified = []
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
