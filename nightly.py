@@ -73,6 +73,12 @@ if plat == 'win':
 	out_dir = 'C:/Testing/' + febio_name + '_Logs/'
 	logs_dir = out_dir
 
+	# Move the executable to *.old
+	try:
+		shutil.copy(febio, febio.split('.')[0] + '_old.')
+	except IOError:
+		print "Error copying files"
+
 	# Print the svn revision number in the results file
 	version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
 	results.write("svn version : " + version + "\n")
