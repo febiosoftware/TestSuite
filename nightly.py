@@ -75,7 +75,7 @@ if plat == 'win':
 
 	# Move the executable to *.old
 	try:
-		shutil.copy(febio, febio.split('.')[0] + '_old.')
+		shutil.copy(febio, febio.split('.')[0] + '_old.exe')
 	except IOError:
 		print "Error copying files"
 
@@ -209,7 +209,7 @@ if febio_name == 'FEBio2': exempt += exempt2
 
 # These problems are new, newly modified, or deleted
 new      = []
-modified = ['bs01','bs04','bs05','tr01','tr02','tr03']
+modified = []
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
