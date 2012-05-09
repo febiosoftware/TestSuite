@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-import os, glob, platform, shutil, sys, subprocess, difflib, datetime
+import os, glob, platform, shutil, sys, subprocess, difflib, datetime, time
 #
 # This is the test suite script for our nightly build and test suite run.
 # This script runs a list of FEBio files and checks the results
