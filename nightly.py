@@ -75,7 +75,7 @@ if plat == 'win':
 
 	# Move the executable to *.old
 	try:
-		shutil.copy(febio, febio.split('.')[0] + '_old.exe')
+		shutil.move(febio, febio.split('.')[0] + '_old.exe')
 	except IOError:
 		print "Error copying files"
 
