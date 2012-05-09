@@ -72,6 +72,11 @@ if plat == 'win':
 
 	out_dir = 'C:/Testing/' + febio_name + '_Logs/'
 	logs_dir = out_dir
+	
+	# Exit if executable did not compile (exe is older than 12 hours)
+	if time.time() - os.path.getctime(febio) > 43200:
+		results.write("FEBio did not compile")
+		sys.exit("FEBio did not compile")
 
 	# Print the svn revision number in the results file
 	version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
