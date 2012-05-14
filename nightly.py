@@ -208,7 +208,8 @@ if febio_name == 'FEBio2': exempt += exempt2
 
 # These problems are new, newly modified, or deleted
 new      = []
-modified = []
+modified = ['bp04', 'bp10', 'bp11', 'bp12', 'bp13', 'bp14', 'bp15', 'bp16', 'bp17', 'bs04', 'bs05',
+	    'tr01', 'tr02', 'tr03']
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
