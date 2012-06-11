@@ -45,7 +45,7 @@ Comments:
 	</Control>
 	<Material>
 		<material id="1" name="Material1" type="viscoelastic">
-			<solid_id>2</solid_id>
+			<fiber type="vector"> 0.0000000e+000, 1.0000000e+000, 0.0000000e+000</fiber>
 			<g1>0.288</g1>
 			<g2>0.288</g2>
 			<g3>0.288</g3>
@@ -56,16 +56,15 @@ Comments:
 			<t3>1</t3>
 			<t4>10</t4>
 			<t5>100</t5>
-		</material>
-		<material id="2" name="Material2" type="trans iso Mooney-Rivlin">
-			<c1>47.93</c1>
-			<c2>-40.46</c2>
-			<c3>2.36</c3>
-			<c4>76.9</c4>
-			<c5>1584</c5>
-			<k>5000</k>
-			<lam_max>1.03</lam_max>
-			<fiber type="vector"> 0.0000000e+000, 1.0000000e+000, 0.0000000e+000</fiber>
+			<elastic id="2" name="Material2" type="trans iso Mooney-Rivlin">
+				<c1>47.93</c1>
+				<c2>-40.46</c2>
+				<c3>2.36</c3>
+				<c4>76.9</c4>
+				<c5>1584</c5>
+				<k>5000</k>
+				<lam_max>1.03</lam_max>
+			</elastic>
 		</material>
 	</Material>
 	<Geometry>
