@@ -17,7 +17,7 @@ Results:
 	Right Hand Evaluations: 258
 	Siffness Reformations: 62
 	Other:
-		The maximum displacement fluid pressure is 0.258 at time t=10.
+		The maximum displacement fluid pressure is 0.231 at time t=9.
 Comments:
 	Continuity of fluid pressure is enforced across the tied contact interface.  Due to the significant
 	disparity in permeability between the tied regions, large gradients in fluid pressure are
