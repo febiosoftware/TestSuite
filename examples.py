@@ -32,7 +32,7 @@ elif opsys == 'i686':
 os.environ['OMP_NUM_THREADS'] = '1'
 
 # open the results file
-test_dir = "/home/sci/rawlins/Testing"
+test_dir = "/home/sci/bhayden/Testing"
 os.chdir(test_dir)
 res_name = "examples"
 std_name = res_name + "_std"
@@ -41,13 +41,13 @@ results = open(res_name + ".txt", "w")
 # Define FEBio directory, executable, and library
 # Assumes that this script is run from FEBio/Testing
 # and that the executable is in FEBio/bin
-febio_dir = "/home/sci/rawlins/FEBio"
+febio_dir = "/home/sci/bhayden/FEBio"
 os.chdir(febio_dir)
 febio = febio_dir + '/bin/febio.' + plat
 febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
 
 # Define the log and plt output directory
-out_dir = '/scratch/rawlins/examples_test/'
+out_dir = '/scratch/bhayden/examples_test/'
 
 # Print the svn revision number in the results file
 version = subprocess.Popen(["svnversion"], stdout=subprocess.PIPE).communicate()[0]

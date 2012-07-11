@@ -95,7 +95,7 @@ else:
 	febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
 
 	# Define the log and plt output directory
-	out_dir = '/scratch/rawlins/febio_test/'
+	out_dir = '/scratch/bhayden/febio_test/'
 	logs_dir = 'Logs/'
 
 	if args.find('c') == -1:
