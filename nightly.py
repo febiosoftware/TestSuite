@@ -144,6 +144,7 @@ exempt = [
 	'skylinebp15',
 	'skylinebp16',
 	'skylinebp17',
+	'skylinebp19',
 	'skylinebs01',
 	'skylinebs04',
 	'skylinebs05',
