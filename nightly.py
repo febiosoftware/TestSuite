@@ -60,7 +60,7 @@ results = open(res_name + ".txt", "w")
 if plat == 'win':
 	febio_dir = 'C:/' + febio_name
 	if bits == '64bit':
-		exe_dir = febio_dir + '/x64/Release-x64'
+		exe_dir = febio_dir + '/x64/Release'
 	elif febio_name == 'FEBio2':
 		exe_dir = febio_dir + '/VS2008/Release'
 		results.close()
