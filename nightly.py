@@ -29,15 +29,17 @@ if len(sys.argv) > 2: args = sys.argv[2]
 else: args = ''
 
 # Set the default solvers
+# ** Noted removed skyline & superlu solvers. ** 
 if args.find('p') != -1: solvers = ['pardiso']
-else: solvers = ['pardiso', 'skyline', 'superlu']
+else: solvers = ['pardiso'] #, 'skyline', 'superlu']
 
 # Set the platform and specific solvers
 if opsys == 'i386':
 	plat = 'osx'
 elif opsys == 'ia64':
 	plat = 'alt'
-	solvers = ['pardiso', 'superlu', 'psldlt']
+	# old line - solvers = ['pardiso', 'superlu', 'psldlt']
+	solvers = ['pardiso', 'psldlt']
 elif opsys == 'x86_64':
 	plat = 'lnx64'
 elif sysplat == 'win32':
