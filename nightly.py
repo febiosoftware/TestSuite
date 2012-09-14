@@ -53,7 +53,6 @@ else: os.environ['OMP_NUM_THREADS'] = '1'
 #os.environ['OMP_NUM_THREADS'] = '4'
 
 # open the results file
-# user variable assumes the directory is e.g. /home/sci/rawlins
 test_dir = os.getcwd()
 res_name = "nightly_" + plat
 std_name = res_name + "_std"
@@ -98,6 +97,7 @@ else:
 	febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
 
 	# Define the log and plt output directory
+	# user variable assumes the directory is e.g. /home/sci/rawlins/Testing
 	user = test_dir.split('/')[3]
 	out_dir = '/scratch/' + user + '/febio_test/'
 	logs_dir = 'Logs/'

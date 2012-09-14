@@ -1,8 +1,8 @@
 #!/bin/bash
-# Usage: rename log or rename plt
+# Usage: rename log or rename plt to std file.
 
 if [ $# == 0 ]; then
-	echo "Usage: rename log or rename plt"
+	echo "Usage: rename log or rename plt to standard file."
 	exit
 fi
 
