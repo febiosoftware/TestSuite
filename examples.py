@@ -84,7 +84,7 @@ if b_new or b_del:
 		std_line = std.readline()
 
 # These problems use the new plot file format:
-xplt = ['bp11', 'bp12', 'bp13', 'bp14', 'bs02', 'bs03', 'twist_cyl']
+xplt = ['bp07', 'bp08', 'bp09', 'bs02', 'bs03', 'twist_cyl']
 
 #run the test problems
 for f in test:
