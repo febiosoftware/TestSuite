@@ -33,6 +33,8 @@ os.environ['OMP_NUM_THREADS'] = '1'
 
 # open the results file
 # user variable assumes the directory is e.g. /home/sci/rawlins/Testing
+Home = os.path.expanduser("~")
+os.chdir(Home + "/Testing")
 test_dir = os.getcwd()
 user = test_dir.split('/')[3]
 res_name = "examples"
