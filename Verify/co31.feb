@@ -503,4 +503,7 @@ Comments:
 			<loadpoint>2.4,2.4</loadpoint>
 		</loadcurve>
 	</LoadData>
+	<Output>
+		<plotfile type="febio"></plotfile>
+	</Output>
 </febio_spec>

@@ -430,4 +430,7 @@ Comments:
 			<var type="stress"/>
 		</plotfile>
 	</Output>
+	<Output>
+		<plotfile type="febio"></plotfile>
+	</Output>
 </febio_spec>

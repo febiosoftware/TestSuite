@@ -3313,4 +3313,7 @@ Comments:
 			</rigid_body>
 		</Constraints>
 	</Step>
+	<Output>
+		<plotfile type="febio"></plotfile>
+	</Output>
 </febio_spec>

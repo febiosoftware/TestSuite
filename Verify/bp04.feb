@@ -172,4 +172,14 @@ Comments:
 			<loadpoint>100,-0.1</loadpoint>
 		</loadcurve>
 	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="effective fluid pressure"/>
+			<var type="fluid flux"/>
+			<var type="fluid pressure"/>
+			<var type="relative volume"/>
+			<var type="stress"/>
+		</plotfile>
+	</Output>
 </febio_spec>

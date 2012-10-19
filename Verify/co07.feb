@@ -4934,7 +4934,7 @@ Comments:
 		</loadcurve>
 	</LoadData>
 	<Output>
-		<plotfile>
+		<plotfile type="febio">
 			<map field="velocity">CONTACT_TRACTION</map>
 		</plotfile>
 	</Output>

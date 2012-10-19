@@ -9380,4 +9380,7 @@ Comments:
 			<node id="3968">-1.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
 		</velocity>
 	</Initial>
+	<Output>
+		<plotfile type="febio"></plotfile>
+	</Output>
 </febio_spec>

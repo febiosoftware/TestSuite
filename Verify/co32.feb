@@ -1189,4 +1189,7 @@ Comments:
 			<loadpoint>  1.0000000000000000e+04, -5.0000000000000000e-01</loadpoint>
 		</loadcurve>
 	</LoadData>
+	<Output>
+		<plotfile type="febio"></plotfile>
+	</Output>
 </febio_spec>
