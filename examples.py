@@ -68,7 +68,7 @@ nerrs = 0			# nr of error terminations
 
 # These problems are new, newly modified, or deleted
 new      = []
-modified = []
+modified = ['bp07', 'bp08', 'bp09', 'bs02', 'bs03', 'twist_cyl']
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
