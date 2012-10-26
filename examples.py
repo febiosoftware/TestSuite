@@ -85,15 +85,16 @@ if b_new or b_del:
 		std_tmp.write(std_line)
 		std_line = std.readline()
 
-# These problems use the new plot file format:
-xplt = ['bp07', 'bp08', 'bp09', 'bs02', 'bs03', 'twist_cyl']
+# These problems use the new plot file format: (Note: all files now use the .xplt format)
+# xplt = ['bp07', 'bp08', 'bp09', 'bs02', 'bs03', 'congneo', 'hip_n10rb', 'incneo', 'open_knee', 'saddle5', 'twist_cyl']
 
 #run the test problems
 for f in test:
 	# strip the '.feb' from the input file name
 	base = f.split('.')[0]
-	if base in xplt: pext = '.xplt'
-	else: pext = '.plt'
+#	if base in xplt: pext = '.xplt'
+#	else: pext = '.plt'
+	pext = '.xplt'
 	# define the log and plt files
 	logname = out_dir + base + '.log'
 	logstd = out_dir + base + '_std.log'

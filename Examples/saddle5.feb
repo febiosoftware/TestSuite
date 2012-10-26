@@ -45233,4 +45233,7 @@ Comments:
 			<loadpoint>  1.0000000000000000e+05, -2.9999999999999999e-01</loadpoint>
 		</loadcurve>
 	</LoadData>
+	<Output>
+		<plotfile type="febio"></plotfile>
+	</Output>
 </febio_spec>
