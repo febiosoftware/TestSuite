@@ -6136,4 +6136,7 @@ Comments:
 			<loadpoint>62,6.2</loadpoint>
 		</loadcurve>
 	</LoadData>
+	<Output>
+		<plotfile type="febio"></plotfile>
+	</Output>
 </febio_spec>

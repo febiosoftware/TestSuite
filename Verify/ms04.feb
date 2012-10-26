@@ -1716,4 +1716,7 @@ Comments:
 			<analysis type="dynamic"></analysis>
 		</Control>
 	</Step>
+	<Output>
+		<plotfile type="febio"></plotfile>
+	</Output>
 </febio_spec>

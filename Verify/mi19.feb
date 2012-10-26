@@ -27517,4 +27517,7 @@ Comments:
 			<loadpoint>1,-18.2417</loadpoint>
 		</loadcurve>
 	</LoadData>
+	<Output>
+		<plotfile type="febio"></plotfile>
+	</Output>
 </febio_spec>

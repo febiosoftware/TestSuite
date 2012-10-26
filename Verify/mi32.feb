@@ -4734,6 +4734,7 @@ Comments:
 		</loadcurve>
 	</LoadData>
 	<Output>
+		<plotfile type="febio"></plotfile>
 		<logfile>
 			<rigid_body_data data="Fy"></rigid_body_data>
 		</logfile>

@@ -73,4 +73,7 @@ Comments:
 			<element_data data="Ex;Ey;Ez;Exy;Eyz;Exz"></element_data>
 		</logfile>
 	</Output>
+	<Output>
+		<plotfile type="febio"></plotfile>
+	</Output>
 </febio_spec>
