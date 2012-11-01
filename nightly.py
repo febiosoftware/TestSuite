@@ -194,15 +194,9 @@ inconsistent = []
 
 # These problems will not run in FEBio2
 exempt2 = [
-	    'pardisobs01',
-	    'pardisobs04',
-	    'pardisobs05',
 	    'pardisotr01',
 	    'pardisotr02',
 	    'pardisotr03',
-	    'superlubs01',
-	    'superlubs04',
-	    'superlubs05',
 	    'superlutr01',
 	    'superlutr02',
 	    'superlutr03']
