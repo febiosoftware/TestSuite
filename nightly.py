@@ -224,25 +224,25 @@ if b_new or b_del:
 		std_line = std.readline()
 
 
-# These problems use the new plot file format:
-xplt = ['bp04', 'bp10', 'bp11', 'bp12', 'bp13', 'bp14', 'bp15', 'bp16', 'bp17', 'bp18', 'bp19',
-        'bs01', 'bs04', 'bs05',
-        'co01', 'co02', 'co04', 'co07', 'co08', 'co09', 'co10', 'co11', 'co12', 'co13', 'co15', 'co16', 'co17',
-        'co18', 'co19', 'co20', 'co21', 'co22', 'co25', 'co26', 'co27', 'co28', 'co29', 'co30', 'co31', 'co32',
-        'co33', 'co34', 'co35', 'co36', 'co37', 'co38', 'co39', 'co40',
-        'di01', 'di02', 'di03', 'di04',
-        'dy01', 'dy02', 'dy03', 'dy04', 'dy05', 'dy07', 'dy09',
-        'fi01', 'fi02', 'fi03', 'fi04', 'fi05', 'fi06', 'fi07', 'fi08', 'fi09', 'fi10', 'fi11', 'fi12',
-        'fi13', 'fi14', 'fi15',
-        'ma01', 'ma02', 'ma03', 'ma05', 'ma06', 'ma07', 'ma11', 'ma12', 'ma13', 'ma14', 'ma15', 'ma16',
-        'mg01', 'mg02',
-        'mi01', 'mi02', 'mi03', 'mi04', 'mi05', 'mi06', 'mi09', 'mi16', 'mi17', 'mi19', 'mi24', 'mi25', 'mi26',
-        'mi27', 'mi28', 'mi29', 'mi30', 'mi31', 'mi32',
-        'ms01', 'ms02', 'ms03', 'ms04', 'mu02', 'mu03',
-        'ri01', 'ri02', 'ri03', 'ri04', 'ri05', 'ri06', 'ri07',
-        'sh01', 'sh02', 'sh03', 'sh04', 'sh05', 'sh07', 'sh10', 'sh13', 'sh14', 'sh15', 'sh16', 
-        'te01', 'te02', 'te03', 'te04', 'te05',
-        'tr01', 'tr02', 'tr03', 'tu01', 'tu02', 'tu03']
+# These problems use the new plot file format: (all problems now use the .xplt format)
+#xplt = ['bp04', 'bp10', 'bp11', 'bp12', 'bp13', 'bp14', 'bp15', 'bp16', 'bp17', 'bp18', 'bp19',
+#        'bs01', 'bs04', 'bs05',
+#        'co01', 'co02', 'co04', 'co07', 'co08', 'co09', 'co10', 'co11', 'co12', 'co13', 'co15', 'co16', 'co17',
+#        'co18', 'co19', 'co20', 'co21', 'co22', 'co25', 'co26', 'co27', 'co28', 'co29', 'co30', 'co31', 'co32',
+#        'co33', 'co34', 'co35', 'co36', 'co37', 'co38', 'co39', 'co40',
+#        'di01', 'di02', 'di03', 'di04',
+#        'dy01', 'dy02', 'dy03', 'dy04', 'dy05', 'dy07', 'dy09',
+#        'fi01', 'fi02', 'fi03', 'fi04', 'fi05', 'fi06', 'fi07', 'fi08', 'fi09', 'fi10', 'fi11', 'fi12',
+#        'fi13', 'fi14', 'fi15',
+#        'ma01', 'ma02', 'ma03', 'ma05', 'ma06', 'ma07', 'ma11', 'ma12', 'ma13', 'ma14', 'ma15', 'ma16',
+#        'mg01', 'mg02',
+#        'mi01', 'mi02', 'mi03', 'mi04', 'mi05', 'mi06', 'mi09', 'mi16', 'mi17', 'mi19', 'mi24', 'mi25', 'mi26',
+#        'mi27', 'mi28', 'mi29', 'mi30', 'mi31', 'mi32',
+#        'ms01', 'ms02', 'ms03', 'ms04', 'mu02', 'mu03',
+#        'ri01', 'ri02', 'ri03', 'ri04', 'ri05', 'ri06', 'ri07',
+#        'sh01', 'sh02', 'sh03', 'sh04', 'sh05', 'sh07', 'sh10', 'sh13', 'sh14', 'sh15', 'sh16', 
+#        'te01', 'te02', 'te03', 'te04', 'te05',
+#        'tr01', 'tr02', 'tr03', 'tu01', 'tu02', 'tu03']
 
 #run the test problems
 for solver in solvers:
@@ -250,8 +250,9 @@ for solver in solvers:
 		# strip the '.feb' from the input file name
 		base = f[:4]
 		if solver + base not in exempt:
-			if base in xplt: pext = '.xplt'
-			else: pext = '.plt'
+#			if base in xplt: pext = '.xplt'
+#			else: pext = '.plt'
+			pext = '.xplt'
 			# define the log and plt files
 			logname = out_dir + solver + '_' + base + '.log'
 			logstd = out_dir + solver + '_' + base + '_std.log'
