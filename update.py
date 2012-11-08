@@ -1,3 +1,3 @@
-new = ['fi16']
+new = []
 modified = []
 deleted = []
