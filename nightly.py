@@ -34,14 +34,15 @@ if args.find('p') != -1: solvers = ['pardiso']
 else: solvers = ['pardiso'] #, 'skyline', 'superlu']
 
 # Set the platform and specific solvers
-if opsys == 'i386':
-	plat = 'osx'
-elif opsys == 'ia64':
+if opsys == 'ia64':
 	plat = 'alt'
 	# old line - solvers = ['pardiso', 'superlu', 'psldlt']
 	solvers = ['pardiso', 'psldlt']
 elif opsys == 'x86_64':
-	plat = 'lnx64'
+	if host == 'katan':
+		plat = 'osx'	
+	else:
+		plat = 'lnx64'
 elif sysplat == 'win32':
 	plat = 'win'
 elif opsys == 'i686':
@@ -85,7 +86,8 @@ if plat == 'win':
 	results.write("svn version : " + version + "\n")
 else:
 	#Update the test suite
-	if plat == 'lnx64':
+	###Note I changed this for geting FEBio2 setup going it use to be lnx64
+	if plat == 'osx':
 		subprocess.call(['svn', 'up'])
 
 	# Define FEBio directory, executable, and library
