@@ -19,7 +19,7 @@ Results:
 	Right Hand Evaluations: 190
 	Siffness Reformations: 125
 Comments:
-	
+	Max fluid pressure = 0.0359 at t = 2000
 -->
 <febio_spec version="1.2">
 	<Module type="poro"/>
