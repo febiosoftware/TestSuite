@@ -1,3 +1,3 @@
-new = ['bp20']
+new = []
 modified = []
 deleted = []
