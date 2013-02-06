@@ -1,3 +1,3 @@
-new = ['co41']
+new = []
 modified = []
 deleted = []
