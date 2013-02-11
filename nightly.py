@@ -7,10 +7,6 @@ import os, glob, platform, shutil, sys, subprocess, difflib, datetime, time
 # The test results are stored in an output file
 #===============================================================================
 
-### This comment was added to test and see if the CIBC computers would write to 
-### the repository or not
-
-
 # Determine the operating system and host name
 host = platform.node().split('.')[0]
 opsys = platform.machine()
@@ -59,6 +55,7 @@ else: os.environ['OMP_NUM_THREADS'] = '1'
 
 # open the results file
 test_dir = os.getcwd()
+parsing_dir = test_dir + '/NightlyParsing/'
 res_name = "nightly_" + plat
 std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
@@ -423,11 +420,13 @@ results.write("\tError termination  : " + str(nerrs) + "\n")
 results.close()
 
 # compare results.txt with nightly_'plat'_std.txt
+pasingFile = open(parsing_dir + "NightlyRuns/" + host + ".txt", "w")
 os.chdir("..")
 results = open(res_name + ".txt", "r")
 std = open(std_name + ".txt", "r")
 for line in difflib.unified_diff(results.readlines(), std.readlines(), n=0):
 	sys.stdout.write(line)
+	parsingFile.write(line)
 results.close()
 std.close()
 
