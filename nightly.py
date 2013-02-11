@@ -7,6 +7,10 @@ import os, glob, platform, shutil, sys, subprocess, difflib, datetime, time
 # The test results are stored in an output file
 #===============================================================================
 
+### This comment was added to test and see if the CIBC computers would write to 
+### the repository or not
+
+
 # Determine the operating system and host name
 host = platform.node().split('.')[0]
 opsys = platform.machine()
