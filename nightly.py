@@ -433,3 +433,6 @@ std.close()
 # copy the results file to the Logs directory
 res_date = res_name + "_" + str(datetime.date.today()) + ".txt"
 shutil.copy(res_name + ".txt", logs_dir + res_date)
+
+#SVN Commit the parsing file
+subprocess.call(['svn', 'ci', parsingFile, '-m', '"Commiting nightly files for Parsing"'])
