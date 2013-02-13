@@ -55,7 +55,6 @@ else: os.environ['OMP_NUM_THREADS'] = '1'
 
 # open the results file
 test_dir = os.getcwd()
-parsing_dir = test_dir + '/Nightly_Parsing/'
 res_name = "nightly_" + plat
 std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
@@ -420,19 +419,14 @@ results.write("\tError termination  : " + str(nerrs) + "\n")
 results.close()
 
 # compare results.txt with nightly_'plat'_std.txt
-pasingFile = open(parsing_dir + "Nightly_Runs/" + host + ".txt", "w")
 os.chdir("..")
 results = open(res_name + ".txt", "r")
 std = open(std_name + ".txt", "r")
 for line in difflib.unified_diff(results.readlines(), std.readlines(), n=0):
 	sys.stdout.write(line)
-	parsingFile.write(line)
 results.close()
 std.close()
 
 # copy the results file to the Logs directory
 res_date = res_name + "_" + str(datetime.date.today()) + ".txt"
 shutil.copy(res_name + ".txt", logs_dir + res_date)
-
-#SVN Commit the parsing file
-subprocess.call(['svn', 'ci', parsingFile, '-m', '"Commiting nightly files for Parsing"'])
