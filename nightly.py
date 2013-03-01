@@ -12,8 +12,8 @@ host = platform.node().split('.')[0]
 opsys = platform.machine()
 sysplat = sys.platform
 bits = platform.architecture()[0]
-print 'host = ' + host
-print 'opsys = ' + opsys
+print("host = " + host)
+print("opsys = " + opsys)
 
 # Read the commanline arguments
 # Arguments are any of:
@@ -83,7 +83,7 @@ if plat == 'win':
 
 	# Print the svn revision number in the results file
 	version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
-	results.write("svn version : " + version + "\n")
+	results.write("svn version : " + str(version) + "\n")
 else:
 	#Update the test suite
 	###Note I changed this for geting FEBio2 setup going it use to be lnx64
@@ -115,7 +115,7 @@ else:
 			shutil.copy(febio, febio.split('.')[0] + '_old.' + plat)
 			shutil.copy(febio_lib, febio_lib.split('.')[0] + '_old.a')
 		except IOError:
-			print "Error copying files"
+			print("Error copying files")
 		command =['make', '-f', 'febio.mk', plat + 'clean' ]
 		subprocess.call(command)
 		command =['make', '-f', 'febio.mk', plat]
@@ -123,7 +123,7 @@ else:
 
 	# Print the svn revision number in the results file
 	version = subprocess.Popen(["svnversion"], stdout=subprocess.PIPE).communicate()[0]
-	results.write("svn version : " + version + "\n")
+	results.write("svn version : " + str(version) + "\n")
 
 # Define the test problems list.
 os.chdir(test_dir + "/Verify")
@@ -371,7 +371,7 @@ for solver in solvers:
 				result[2] = 'IOError'
 			except OSError:
 				result[2] = 'OSError'
-			print result
+			print(result)
 			results.write(str(result) + '\n')
 			
 			# Write the temporary nightly_std file
@@ -393,8 +393,8 @@ for solver in solvers:
 							std_tmp.write(std_line)
 						std_line = std.readline()
 					else:
-						print "base", base
-						print "std_line", std_line
+						print("base", base)
+						print("std_line", std_line)
 						sys.exit("base and std_line do not match")
 			dummy.close()
 			os.remove(dummyname)
