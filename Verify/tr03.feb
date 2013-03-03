@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- 
 Problem Description:
-One-dimensional osmotic loading of an inhomogeneous block consisting of a biphasic-solute material bonded to a triphasic material.  There are three solute species in this problem: A neutral solute in the biphasic-solute mixture, and two monovalent counter-ions in the triphasic mixture.  Solutes cannot transport from one material to the other, since there are no shared solute species. Therefore, the interface between the two materials is a solute-impermeant barrier, though it is permeable to the solvent.  An osmotic load is prescribed on the biphasic-solute material, by increasing the environment (bath) neutral solute concentration.  This osmotic load produces a transient response dominated by the diffusion of neutral solute into the biphasic-solute region, and eventual efflux of solvent from both triphasic and biphasic-solute regions.
+One-dimensional osmotic loading of an inhomogeneous block consisting of a biphasic-solute material bonded to a triphasic material.  There are three solute species in this problem: A neutral solute in the biphasic-solute mixture, and two monovalent counter-ions in the triphasic mixture.  Solutes cannot transport from one material to the other, since there are no shared solute species. Therefore, the interface between the two materials is a solute-impermeant barrier, though it is permeable to the solvent.  An osmotic load is prescribed on the biphasic-solute material, by increasing the environment (bath) neutral solute concentration.  This osmotic load produces a transient response dominated by the diffusion of neutral solute into the biphasic-solute region, and eventual efflux of solvent from both triphasic and biphasic-solute regions.  Since the triphasic material is bounded by ion-impermeant boundaries its electrical potential must be electrically grounded to prevent random fluctuations.  This grounding is done at the rigid impermeable bottom boundary (z=0) by prescribing the anion and cation effective concentrations to be equal to each other and equal to the initial value prescribed for these ions inside the triphasic material.  This method for electric grounding prescribes zero electric potential on the outside of the triphasic mixture, but the electric potential inside depends on the fixed charge density and is not necessarily zero.
 
 Main Features:
 	Combining triphasic and biphasic-solute materials in the same model
@@ -1669,6 +1669,18 @@ Comments:
 			<node id="144" bc="p" lc="3">1</node>
 			<node id="164" bc="p" lc="3">1</node>
 		</prescribe>
+		<prescribe>
+			<node id="1" bc="c2" lc="4">1</node>
+			<node id="22" bc="c2" lc="4">1</node>
+			<node id="43" bc="c2" lc="4">1</node>
+			<node id="64" bc="c2" lc="4">1</node>
+		</prescribe>
+		<prescribe>
+			<node id="1" bc="c3" lc="5">1</node>
+			<node id="22" bc="c3" lc="5">1</node>
+			<node id="43" bc="c3" lc="5">1</node>
+			<node id="64" bc="c3" lc="5">1</node>
+		</prescribe>
 	</Boundary>
 	<Initial>
 		<concentration sol="1">
@@ -2118,6 +2130,14 @@ Comments:
 		<loadcurve id="3" type="linear">
 			<loadpoint>0,-0.7308006</loadpoint>
 			<loadpoint>1,-1.4616012</loadpoint>
+		</loadcurve>
+		<loadcurve id="4" type="step">
+			<loadpoint>0,0</loadpoint>
+			<loadpoint>1,150</loadpoint>
+		</loadcurve>
+		<loadcurve id="5" type="step">
+			<loadpoint>0,0</loadpoint>
+			<loadpoint>1,150</loadpoint>
 		</loadcurve>
 	</LoadData>
 	<Output>
