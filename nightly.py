@@ -347,7 +347,7 @@ for solver in solvers:
 				fstd.close()
 				diffsize = os.path.getsize(diffname)
 				diffsize = 5*(diffsize/5000)
-				result[8] = diffsize
+				result[8] = int(diffsize)
 			except IOError:
 				result[2] = 'IOError'
 			except OSError:
