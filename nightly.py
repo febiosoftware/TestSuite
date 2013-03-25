@@ -335,7 +335,7 @@ for solver in solvers:
 				else: incr = 20
 				result[10] = incr*int((100/incr)*el_diff/float(el_denom))
 				# get the size of the plotfile and delete it
-				result[7] = os.path.getsize(pltname)
+				result[7] = int(os.path.getsize(pltname))
 				#os.remove(pltname)
 				# do a diff on the log file
 				flog.seek(0)
