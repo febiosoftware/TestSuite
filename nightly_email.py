@@ -14,6 +14,7 @@ msg = MIMEText(fp.read())
 fp.close()
 msg['Subject'] = 'Cron ' + sys.argv[1] + ' test: ' + host
 you = 'febio-test@sci.utah.edu'
+#you = 'rawlins@sci.utah.edu'
 msg['From'] = me
 msg['To'] = you
 s = smtplib.SMTP('mail.sci.utah.edu')
