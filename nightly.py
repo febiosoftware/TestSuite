@@ -33,12 +33,8 @@ else: args = ''
 if args.find('p') != -1: solvers = ['pardiso']
 else: solvers = ['pardiso'] #, 'skyline', 'superlu']
 
-# Set the platform and specific solvers
-if opsys == 'ia64':
-	plat = 'alt'
-	# old line - solvers = ['pardiso', 'superlu', 'psldlt']
-	solvers = ['pardiso', 'psldlt']
-elif opsys == 'x86_64':
+# Set the platform
+if opsys == 'x86_64':
 	if host == 'katan':
 		plat = 'osx'	
 	else:
@@ -139,6 +135,8 @@ nerrs = 0                       # nr of error terminations
 
 # Exempt problems: 
 exempt = [
+	# These files are the input files for a parameter optimization problem:
+	
 	# These problems require nonsymmetric matrices
 	'skylinebp07',
 	'skylinebp08',
@@ -205,6 +203,9 @@ exempt2 = [
 	    'superlutr02',
 	    'superlutr03']
 
+# These are parameter optimization problems
+paramopt = [
+	]
 if args.find('f') != -1: exempt += slow + inconsistent
 if args.find('4') != -1: exempt += inconsistent
 if febio_name == 'FEBio2': exempt += exempt2
@@ -233,13 +234,16 @@ for solver in solvers:
 		# strip the '.feb' from the input file name
 		base = f[:4]
 		if solver + base not in exempt:
-#			if base in xplt: pext = '.xplt'
-#			else: pext = '.plt'
-			pext = '.xplt'
+			if base in paramopt:
+				opt = 1
+				runflag = ' -s'
+			else:
+				opt = 0
+				runflag = ' -i'
 			# define the log and plt files
 			logname = out_dir + solver + '_' + base + '.log'
 			logstd = out_dir + solver + '_' + base + '_std.log'
-			pltname = out_dir + solver + '_' + base + pext
+			pltname = out_dir + solver + '_' + base + '.xplt'
 			diffname = out_dir + solver + '_' + base + '_diff.txt'
 			# open the dummy file
 			dummyname = out_dir + "dummy.txt"
@@ -249,13 +253,25 @@ for solver in solvers:
 			# TODO: check if the redirection will work on windows
 			#command = febio + ' -i ' + f + ' -o ' + logname + ' -p ' + pltname + \
 			#       ' -cnf ~/FEBio/' + solver + '.xml' + ' >& ../dummy.out'
-			command = [febio, '-i', f, '-o', logname, '-p', pltname, \
+			command = [febio, runflag, f, '-o', logname, '-p', pltname, \
 				'-cnf', febio_dir + '/' + solver + '.xml']
 			#print command
 			val = subprocess.call(command, stdout=dummy)
 			#print "Subprocess result: ", val
 
-			# create a variable that will store the results of the test
+			# Create a variable that will store the results of the test
+			
+			#Optimization input file
+			# Normal input file
+			# 0: solver
+			# 1: file
+			# 2: Normal/Error termination status
+			# 3: Major iterations
+			# 4: Minor iterations
+			# 5: Final objective value
+			if opt: result = [solver, base, "", 0, 0, 0.0]
+
+			# Normal input file
 			# 0: solver
 			# 1: file
 			# 2: Normal/Error termination status
@@ -267,7 +283,7 @@ for solver in solvers:
 			# 8: Log diff file size"/home/sci/rawlins/Testing"
 			# 9: Solve time ratio new/old
 			#10: Elapsed time ratio new/old
-			result = [solver, base, "", 0, 0, 0, 0, 0, 0, 0, 0]
+			else: result = [solver, base, "", 0, 0, 0, 0, 0, 0, 0, 0]
 			
 			# check the return value
 			if val==0:
