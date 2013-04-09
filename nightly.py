@@ -236,10 +236,10 @@ for solver in solvers:
 		if solver + base not in exempt:
 			if base in paramopt:
 				opt = 1
-				runflag = ' -s'
+				runflag = '-s'
 			else:
 				opt = 0
-				runflag = ' -i'
+				runflag = '-i'
 			# define the log and plt files
 			logname = out_dir + solver + '_' + base + '.log'
 			logstd = out_dir + solver + '_' + base + '_std.log'
