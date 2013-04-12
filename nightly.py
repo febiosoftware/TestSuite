@@ -136,76 +136,27 @@ nerrs = 0                       # nr of error terminations
 # Exempt problems: 
 exempt = [
 	# These files are the input files for a parameter optimization problem:
-	
-	# These problems require nonsymmetric matrices
-	'skylinebp07',
-	'skylinebp08',
-	'skylinebp09',
-	'skylinebp11',
-	'skylinebp12',
-	'skylinebp13',
-	'skylinebp14',
-	'skylinebp15',
-	'skylinebp16',
-	'skylinebp17',
-	'skylinebp19',
-	'skylinebs01',
-	'skylinebs04',
-	'skylinebs05',
-	'skylineco32',
-	'skylineco34',
-	'skylineco38',
-	'skylineco40',
-	'skylinetr01',
-	'skylinetr02',
-	'skylinetr03',
-	# These problems are too slow:
-	'skylinebp12',
-	'skylineco28',
-	'skylineco33',
-	'skylinedy09',
-	'skylinemi19',
-	'skylinemi28',
-	'skylineri02',
-	'skylineri04',
-	'superlubp07',
-	'superlubp08',
-	'superlubp09',
-	'superluco33',
-	'superlumi28',
-	'superluri02',
-	'superluri04']
+	  'oi01']
 	
 # These problems will be ignored for a fast run of the test suite:
-slow = [
-	'pardisoco33',
-	'pardisomi28',
-	'pardisori02',
-	'skylinete02',
-	'superluco28',
-	'superludy03',
-	'superludy09',
-	'superlute02',
-	'superlute03']
+slow = ['co33',
+	'mi28',
+	'ri02']
 
 # These problems give inconsistent convergence statistics results
 # when run with multiple threads:
 inconsistent = []
 
 # These problems will not run in FEBio2
-exempt2 = [
-	    'pardisomi33',
-	    'pardisotr01',
-	    'pardisotr02',
-	    'pardisotr03',
-	    'pardisotr04',
-	    'superlutr01',
-	    'superlutr02',
-	    'superlutr03']
+exempt2 = ['mi33',
+	   'tr01',
+	   'tr02',
+	   'tr03',
+	   'tr04']
 
 # These are parameter optimization problems
-paramopt = [
-	]
+paramopt = ['op01']
+
 if args.find('f') != -1: exempt += slow + inconsistent
 if args.find('4') != -1: exempt += inconsistent
 if febio_name == 'FEBio2': exempt += exempt2
@@ -233,7 +184,7 @@ for solver in solvers:
 	for f in test:
 		# strip the '.feb' from the input file name
 		base = f[:4]
-		if solver + base not in exempt:
+		if base not in exempt:
 			if base in paramopt:
 				opt = 1
 				runflag = '-s'
@@ -269,7 +220,9 @@ for solver in solvers:
 			# 3: Major iterations
 			# 4: Minor iterations
 			# 5: Final objective value
-			if opt: result = [solver, base, "", 0, 0, 0.0]
+			# 6: Plot file size
+			# 7: Log diff file size
+			if opt: result = [solver, base, "", 0, 0, 0.0, 0, 0]
 
 			# Normal input file
 			# 0: solver
@@ -280,7 +233,7 @@ for solver in solvers:
 			# 5: Number of RHS evaluations
 			# 6: Number of reformations
 			# 7: Plot file size
-			# 8: Log diff file size"/home/sci/rawlins/Testing"
+			# 8: Log diff file size
 			# 9: Solve time ratio new/old
 			#10: Elapsed time ratio new/old
 			else: result = [solver, base, "", 0, 0, 0, 0, 0, 0, 0, 0]
@@ -302,56 +255,62 @@ for solver in solvers:
 				flog = open(logname, 'r')
 				fstd = open(logstd, 'r')
 				diff = open(diffname, "w")
-				
-				for line in flog:
-					if  line.find("Number of time steps completed"        ) != -1: result[3] = int(line[55:])
-					if  line.find("Total number of equilibrium iterations") != -1: result[4] = int(line[55:])
-					if  line.find("Total number of right hand evaluations") != -1: result[5] = int(line[55:])
-					if  line.find("Total number of stiffness reformations") != -1: result[6] = int(line[55:])
-					if  line.find("Time in solver") != -1:
-						slv_hr  = int(line[17:18])
-						slv_min = int(line[19:21])
-						slv_sec = int(line[22:24])
-						new_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
-						#print "New solve time", new_slv_time
-					if  line.find("Elapsed time") != -1:
-						el_hr  = int(line[16:17])
-						el_min = int(line[18:20])
-						el_sec = int(line[21:23])
-						new_el_time = el_hr*3600 + el_min*60 + el_sec
-				for line in fstd:
-					if  line.find("Time in solver") != -1:
-						slv_hr  = int(line[17:18])
-						slv_min = int(line[19:21])
-						slv_sec = int(line[22:24])
-						old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
-						#print "Old solve time", old_slv_time
-					if  line.find("Elapsed time") != -1:
-						el_hr  = int(line[16:17])
-						el_min = int(line[18:20])
-						el_sec = int(line[21:23])
-						old_el_time = el_hr*3600 + el_min*60 + el_sec
-				# calculate percent difference (in incr% increments) in solve and elapse times
-				slv_denom = (new_slv_time + old_slv_time)/2
-				el_denom = (new_el_time + old_el_time)/2
-				if slv_denom == 0: slv_denom = 1
-				if el_denom == 0: el_denom = 1
-				slv_diff = new_slv_time - old_slv_time
-				el_diff = new_el_time - old_el_time
-				if abs(slv_diff) <= 3: slv_diff = 0
-				if abs(el_diff) <= 3: el_diff = 0
-				if slv_denom < 5: incr = 200
-				elif slv_denom < 20: incr = 100
-				elif slv_denom < 60: incr = 50
-				else: incr = 20
-				result[9]  = incr*int((100/incr)*slv_diff/float(slv_denom))
-				if el_denom < 5: incr = 200
-				elif el_denom < 20: incr = 100
-				elif el_denom < 60: incr = 50
-				else: incr = 20
-				result[10] = incr*int((100/incr)*el_diff/float(el_denom))
+				if opt:
+					for line in flog:
+						if line.find("Major iterations"     ) !=-1: result[3] = int(line[43:])
+						if line.find("Minor iterations"     ) !=-1: result[4] = int(line[43:])
+						if line.find("Final objective value") !=-1: result[5] = float(line[28:])
+				else:
+					for line in flog:
+						if  line.find("Number of time steps completed"        ) != -1: result[3] = int(line[55:])
+						if  line.find("Total number of equilibrium iterations") != -1: result[4] = int(line[55:])
+						if  line.find("Total number of right hand evaluations") != -1: result[5] = int(line[55:])
+						if  line.find("Total number of stiffness reformations") != -1: result[6] = int(line[55:])
+						if  line.find("Time in solver") != -1:
+							slv_hr  = int(line[17:18])
+							slv_min = int(line[19:21])
+							slv_sec = int(line[22:24])
+							new_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
+							#print "New solve time", new_slv_time
+						if  line.find("Elapsed time") != -1:
+							el_hr  = int(line[16:17])
+							el_min = int(line[18:20])
+							el_sec = int(line[21:23])
+							new_el_time = el_hr*3600 + el_min*60 + el_sec
+					for line in fstd:
+						if  line.find("Time in solver") != -1:
+							slv_hr  = int(line[17:18])
+							slv_min = int(line[19:21])
+							slv_sec = int(line[22:24])
+							old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
+							#print "Old solve time", old_slv_time
+						if  line.find("Elapsed time") != -1:
+							el_hr  = int(line[16:17])
+							el_min = int(line[18:20])
+							el_sec = int(line[21:23])
+							old_el_time = el_hr*3600 + el_min*60 + el_sec
+					# calculate percent difference (in incr% increments) in solve and elapse times
+					slv_denom = (new_slv_time + old_slv_time)/2
+					el_denom = (new_el_time + old_el_time)/2
+					if slv_denom == 0: slv_denom = 1
+					if el_denom == 0: el_denom = 1
+					slv_diff = new_slv_time - old_slv_time
+					el_diff = new_el_time - old_el_time
+					if abs(slv_diff) <= 3: slv_diff = 0
+					if abs(el_diff) <= 3: el_diff = 0
+					if slv_denom < 5: incr = 200
+					elif slv_denom < 20: incr = 100
+					elif slv_denom < 60: incr = 50
+					else: incr = 20
+					result[9]  = incr*int((100/incr)*slv_diff/float(slv_denom))
+					if el_denom < 5: incr = 200
+					elif el_denom < 20: incr = 100
+					elif el_denom < 60: incr = 50
+					else: incr = 20
+					result[10] = incr*int((100/incr)*el_diff/float(el_denom))
+
 				# get the size of the plotfile and delete it
-				result[7] = int(os.path.getsize(pltname))
+				result[7-opt] = int(os.path.getsize(pltname))
 				#os.remove(pltname)
 				# do a diff on the log file
 				flog.seek(0)
@@ -363,7 +322,7 @@ for solver in solvers:
 				fstd.close()
 				diffsize = os.path.getsize(diffname)
 				diffsize = 5*(diffsize/5000)
-				result[8] = int(diffsize)
+				result[8-opt] = int(diffsize)
 			except IOError:
 				result[2] = 'IOError'
 			except OSError:
