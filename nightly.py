@@ -136,7 +136,8 @@ nerrs = 0                       # nr of error terminations
 # Exempt problems: 
 exempt = [
 	# These files are the input files for a parameter optimization problem:
-	  'oi01']
+	  'oi01',
+	  'oi02']
 	
 # These problems will be ignored for a fast run of the test suite:
 slow = ['co33',
@@ -155,7 +156,8 @@ exempt2 = ['mi33',
 	   'tr04']
 
 # These are parameter optimization problems
-paramopt = ['op01']
+paramopt = ['op01',
+	    'op02']
 
 if args.find('f') != -1: exempt += slow + inconsistent
 if args.find('4') != -1: exempt += inconsistent
