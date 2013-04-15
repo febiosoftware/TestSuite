@@ -153,7 +153,9 @@ exempt2 = ['mi33',
 	   'tr01',
 	   'tr02',
 	   'tr03',
-	   'tr04']
+	   'tr04',
+           'op01',
+           'op02']
 
 # These are parameter optimization problems
 paramopt = ['op01',
