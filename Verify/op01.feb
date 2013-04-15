@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <febio_optimize>
-	<Model>MCA_Vessel.feb</Model>
+	<Model>oi01.feb</Model>
 	<Function>
 		<fnc lc="1">rigid.Fz</fnc>
 	</Function>
