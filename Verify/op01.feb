@@ -1,4 +1,19 @@
 <?xml version="1.0"?>
+<!--
+Problem Description:
+	This is the optimization file that runs oi01.feb as an input file.  See that file for more details.
+Main Features:
+	Optimization
+Results:
+	Major Iterations: 7
+	Minor Iterations: 24
+	Final objective value: 0.000661244
+	Other:
+		VWMaterial.c1   : 0.01
+		VWMaterial.c2   : 9.23332848020509
+Comments:
+	
+-->
 <febio_optimize>
 	<Model>oi01.feb</Model>
 	<Function>

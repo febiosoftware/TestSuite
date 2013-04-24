@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	This is the optimization file that runs oi02.feb as an input file.  See that file for more details.
+Main Features:
+	Optimization
+Results:
+	Major Iterations: 3
+	Minor Iterations: 12
+	Final objective value: 9.18575e-12
+	Other:
+		Biphasic.solid.E : 1.000002087210346
+		Biphasic.permeability.perm : 0.0009999990398228266
+Comments:
+	
+-->
 <febio_optimize>
   <Model>oi02.feb</Model>
   <Options>
