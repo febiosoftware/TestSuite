@@ -149,7 +149,8 @@ slow = ['co33',
 inconsistent = []
 
 # These problems will not run in FEBio2
-exempt2 = ['mi33',
+exempt2 = ['ht01',
+	   'mi33',
 	   'tr01',
 	   'tr02',
 	   'tr03',
@@ -161,6 +162,11 @@ exempt2 = ['mi33',
 paramopt = ['op01',
 	    'op02']
 
+
+# These are problems that report extra data fields
+dfield = ['ht01']
+
+# Read the commanline arguments
 if args.find('f') != -1: exempt += slow + inconsistent
 if args.find('4') != -1: exempt += inconsistent
 if febio_name == 'FEBio2': exempt += exempt2
@@ -189,12 +195,21 @@ for solver in solvers:
 		# strip the '.feb' from the input file name
 		base = f[:4]
 		if base not in exempt:
+			
+			# Test for parameter optimization problems
 			if base in paramopt:
 				opt = 1
 				runflag = '-s'
 			else:
 				opt = 0
 				runflag = '-i'
+			
+			# Test for extra data field problems
+			if base in dfield:
+				df_flg = 1
+				line_num = 0
+			else: df_flg = 0
+			
 			# define the log and plt files
 			logname = out_dir + solver + '_' + base + '.log'
 			logstd = out_dir + solver + '_' + base + '_std.log'
@@ -203,6 +218,7 @@ for solver in solvers:
 			# open the dummy file
 			dummyname = out_dir + "dummy.txt"
 			dummy = open(dummyname, "w")
+			
 			# run the FEBio problem
 			# we grab the exit value for termination status
 			# TODO: check if the redirection will work on windows
@@ -281,6 +297,12 @@ for solver in solvers:
 							el_min = int(line[18:20])
 							el_sec = int(line[21:23])
 							new_el_time = el_hr*3600 + el_min*60 + el_sec
+						if df_flg:
+							if line.find("N O N L I N E A R") != -1: result.append(float(line3.split(" ")[1]))
+							line_num += 1
+							if line_num > 2: line3 = line2
+							if line_num > 1: line2 = line1
+							line1 = line
 					for line in fstd:
 						if  line.find("Time in solver") != -1:
 							slv_hr  = int(line[17:18])
