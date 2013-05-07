@@ -5206,5 +5206,9 @@ Comments:
 		  <var type="contact pressure"/>
 		  <var type="contact gap"/>
 		</plotfile>
+		<logfile>
+			<element_data data="p">1</element_data>
+		</logfile>
+
 	</Output>
 </febio_spec>
