@@ -2441,5 +2441,8 @@ Comments:
 		  <var type="solute 1 concentration"/>
 		  <var type="solute 1 flux"/>
 		</plotfile>
-	</Output>
+	          <logfile>
+		          <element_data data="c1">1</element_data>
+	          </logfile>
+      </Output>
 </febio_spec>
