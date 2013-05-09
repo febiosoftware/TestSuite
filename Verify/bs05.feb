@@ -736,5 +736,8 @@ Comments:
 			<var type="solute 1 flux"/>
 			<var type="stress"/>
 		</plotfile>
-	</Output>
+	          <logfile>
+		          <element_data data="c1">1</element_data>
+	          </logfile>
+</Output>
 </febio_spec>
