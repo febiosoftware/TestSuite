@@ -1,4 +1,4 @@
 # Enter problems as: ['tr01', 'tr02']
 new = []
-modified = ['bp04', 'bp11', 'bp12', 'bp13', 'bp14', 'bp15', 'bp16', 'bp17', 'bp18', 'bp19', 'bp20']
+modified = []
 deleted = []
