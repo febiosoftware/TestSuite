@@ -309,7 +309,7 @@ for solver in solvers:
 							el_sec = int(line[21:23])
 							new_el_time = el_hr*3600 + el_min*60 + el_sec
 						if df_flg:
-							if line.find("N O N L I N E A R") != -1: result.append(float(line3.split(" ")[1]))
+							if line.find("N O N L I N E A R") != -1: result.append(line3.rstrip("\n").split(" ")[1])
 							line_num += 1
 							if line_num > 2: line3 = line2
 							if line_num > 1: line2 = line1
