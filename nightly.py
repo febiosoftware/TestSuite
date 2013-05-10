@@ -165,6 +165,7 @@ paramopt = ['op01',
 
 # These are problems that report extra data fields
 dfield = ['bp04',
+	  'bp10',
 	  'bp11',
 	  'bp12',
 	  'bp13',
