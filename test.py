@@ -17,10 +17,10 @@
 
 result = [0, 0, 0]
 n = 0
-flog = open("heat.log", "r")
+flog = open("pardiso_ht01.log", "r")
 for line in flog:
 	if line.find("N O N L I N E A R") !=-1:
-		result.append(float(line3.split(" ")[1]))
+		result.append(line3.rstrip("\n").split(" ")[1])
 		print(result)
 	n += 1
 	print(n)
