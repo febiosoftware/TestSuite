@@ -164,19 +164,7 @@ paramopt = ['op01',
 
 
 # These are problems that report extra data fields
-dfield = ['bp04',
-	  'bp10',
-	  'bp11',
-	  'bp12',
-	  'bp13',
-	  'bp14',
-	  'bp15',
-	  'bp16',
-	  'bp17',
-	  'bp18',
-	  'bp19',
-	  'bp20',
-	  'ht01']
+from logdata import dfield
 
 # Read the commanline arguments
 if args.find('f') != -1: exempt += slow + inconsistent
