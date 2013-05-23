@@ -655,9 +655,9 @@ Comments:
 			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
-	<logfile>
+	        <logfile>
 			<element_data data="p">1</element_data>
-		      </logfile>
+		</logfile>
 	</Output>
 	<Step>
 		<Module type="poro"/>
