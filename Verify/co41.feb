@@ -4605,5 +4605,8 @@ Comments:
 			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
+	    <logfile>
+			<node_data data="ux">1160</node_data>
+		</logfile>
 	</Output>
 </febio_spec>
