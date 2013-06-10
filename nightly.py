@@ -165,6 +165,7 @@ paramopt = ['op01',
 
 # These are problems that report extra data fields
 from logdata import dfield
+dfield0 = [col[0] for col in dfield]
 
 # Read the commanline arguments
 if args.find('f') != -1: exempt += slow + inconsistent
@@ -205,7 +206,7 @@ for solver in solvers:
 				runflag = '-i'
 			
 			# Test for extra data field problems
-			if base in dfield:
+			if base in dfield0:
 				df_flg = 1
 				line_num = 0
 			else: df_flg = 0

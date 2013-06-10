@@ -15,21 +15,27 @@
 #from email.mime.text import MIMEText
 #import struct
 
-result = [0, 0, 0]
-n = 0
-flog = open("pardiso_ht01.log", "r")
-for line in flog:
-	if line.find("N O N L I N E A R") !=-1:
-		result.append(line3.rstrip("\n").split(" ")[1])
-		print(result)
-	n += 1
-	print(n)
-	if n > 2: line3 = line2
-	if n > 1: line2 = line1
-	line1 = line
-flog.close()
-		
-		
+dfield = [['bp04', 'l'],
+          ['bp10', 'l']]
+dfield0 = [item[0] for item in dfield]
+print(dfield0)
+
+
+#result = [0, 0, 0]
+#n = 0
+#flog = open("pardiso_ht01.log", "r")
+#for line in flog:
+#	if line.find("N O N L I N E A R") !=-1:
+#		result.append(line3.rstrip("\n").split(" ")[1])
+#		print(result)
+#	n += 1
+#	print(n)
+#	if n > 2: line3 = line2
+#	if n > 1: line2 = line1
+#	line1 = line
+#flog.close()
+
+
 #print platform.architecture()
 #print platform.uname()
 #print struct.calcsize('P')
