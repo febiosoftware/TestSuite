@@ -3742,5 +3742,6 @@ Comments:
 		<plotfile type="febio"></plotfile>
 	    <logfile>
 			<element_data data="sz">60</element_data>
-		</logfile></Output>
+		</logfile>
+    </Output>
 </febio_spec>
