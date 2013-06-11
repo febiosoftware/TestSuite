@@ -39,7 +39,7 @@ Comments:
 		<pressure_stiffness>1</pressure_stiffness>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
-			<dtmax>0.1</dtmax>
+			<dtmax lc="2"></dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>100</opt_iter>
 		</time_stepper>
@@ -3366,6 +3366,11 @@ Comments:
 			<loadpoint>0,1</loadpoint>
 			<loadpoint>1,1</loadpoint>
 		</loadcurve>
+        <loadcurve id="2">
+			<loadpoint>0,1</loadpoint>
+			<loadpoint>1.8,0.1</loadpoint>
+            <loadpoint>1,0.1</loadpoint>			
+        </loadcurve>
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>

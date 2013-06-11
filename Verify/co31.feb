@@ -39,6 +39,12 @@ Comments:
 		<pressure_stiffness>0</pressure_stiffness>
 		<plot_level>PLOT_DEFAULT</plot_level>
 		<plane_strain>1</plane_strain>
+		<time_stepper>
+			<dtmin>0.1</dtmin>
+			<dtmax lc="2"></dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>24</opt_iter>
+		</time_stepper>
 	</Control>
 	<Material>
 		<material id="1" name="Material 1" type="Mooney-Rivlin">
@@ -502,8 +508,15 @@ Comments:
 			<loadpoint>0,0</loadpoint>
 			<loadpoint>2.4,2.4</loadpoint>
 		</loadcurve>
+        <loadcurve id="2">
+			<loadpoint>0,0</loadpoint>
+			<loadpoint>1.4,0.1</loadpoint>
+			<loadpoint>2.4,0.1</loadpoint>
+		</loadcurve>	
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-	</Output>
+	<logfile>
+			<element_data data="Ex">33</element_data>
+	</logfile></Output>
 </febio_spec>

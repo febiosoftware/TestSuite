@@ -34,6 +34,12 @@ Comments:
 		<rtol>0</rtol>
 		<lstol>0.9</lstol>
 		<plot_level>PLOT_DEFAULT</plot_level>
+		<time_stepper>
+			<dtmin>0.01</dtmin>
+			<dtmax lc="3"></dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>100</opt_iter>
+		</time_stepper>
 	</Control>
 	<Material>
 		<material id="1" name="Material 3" type="neo-Hookean">
@@ -118,6 +124,11 @@ Comments:
 			<loadpoint>0.2,-0.1</loadpoint>
 			<loadpoint>1,-0.1</loadpoint>
 		</loadcurve>
+		<loadcurve id="3">
+		    <loadpoint>0,0</loadpoint>
+			<loadpoint>0.3,0.01</loadpoint>
+			<loadpoint>1,0.01</loadpoint>
+		</loadcurve>	
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
