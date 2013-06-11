@@ -208,7 +208,7 @@ for solver in solvers:
 			# Test for extra data field problems
 			if base in dfield0:
 				df_time = dfield[dfield0.index(base)][1]
-				df_tline = "Time = " + df_time
+				df_tline = "Time = " + df_time + "\n"
 				df_flg = 1
 				found = 0
 				line_num = 0

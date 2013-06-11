@@ -15,35 +15,31 @@
 #from email.mime.text import MIMEText
 #import struct
 
-from logdata import dfield
+#from logdata import dfield
 
-dfield0 = [item[0] for item in dfield]
-print(dfield0)
-print(dfield)
-row = dfield0.index('co04')
-print(row)
-print(dfield[row][1])
+#dfield0 = [item[0] for item in dfield]
+#print(dfield0)
+#print(dfield)
+#row = dfield0.index('co04')
+#print(row)
+#print(dfield[row][1])
 
-#n = 0
-#found = 0
-#flog = open("pardiso_bp04.log", "r")
-#time1 = "1000"
-#time2 = "Time = " + time1
-#print(time2)
+n = 0
+found = 0
+flog = open("pardiso_co08.log", "r")
+time1 = "0.6"
+time2 = "Time = " + time1 + "\n"
+print(time2)
 
 
-#for line in flog:
-#	if line.find(time2) !=-1: found = 1
-#	if found: n += 1
-#	if n == 3:
-#		print(line.rstrip("\n").split(" ")[1])
-#		found = 0
-#		n = 0
-#	print(n)
-#	if n > 2: line3 = line2
-#	if n > 1: line2 = line1
-#	line1 = line
-#flog.close()
+for line in flog:
+	if line.find(time2) !=-1: found = 1
+	if found: n += 1
+	if n == 3:
+		print(line.rstrip("\n").split(" ")[1])
+		found = 0
+		n = 0
+flog.close()
 
 #result = [0, 0, 0]
 #n = 0
