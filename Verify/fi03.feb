@@ -88,5 +88,8 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-	</Output>
+        <logfile>
+			<node_data data="ux">6</node_data>
+	    </logfile>
+    </Output>
 </febio_spec>

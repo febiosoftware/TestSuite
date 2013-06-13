@@ -3374,5 +3374,8 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-	</Output>
+		<logfile>
+			<element_data data="Ex">1408</element_data>
+	    </logfile>
+    </Output>
 </febio_spec>

@@ -2906,5 +2906,8 @@ Comments:
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
+	    <logfile>
+			<element_data data="Ez">998</element_data>
+	    </logfile>	
 	</Output>
 </febio_spec>
