@@ -151,6 +151,12 @@ inconsistent = []
 # These problems will not run in FEBio2
 exempt2 = ['ht01',
 	   'mi33',
+	   'mp01',
+	   'mp02',
+	   'mp03',
+	   'mp06',
+	   'mp07',
+	   'mp08',
 	   'tr01',
 	   'tr02',
 	   'tr03',
