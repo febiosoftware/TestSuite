@@ -15,6 +15,16 @@
 #from email.mime.text import MIMEText
 #import struct
 
+flog = open("pardiso_op01_std.log", "r")
+
+result = [0, 0, 0]
+for line in flog:
+	if line.find("Final objective value") !=-1:
+		result[2] = line[28:39]
+		print(result)
+		print(line.split()[3])
+flog.close()
+
 #from logdata import dfield
 
 #dfield0 = [item[0] for item in dfield]
@@ -24,22 +34,21 @@
 #print(row)
 #print(dfield[row][1])
 
-n = 0
-found = 0
-flog = open("pardiso_co08.log", "r")
-time1 = "0.6"
-time2 = "Time = " + time1 + "\n"
-print(time2)
+#n = 0
+#found = 0
+#flog = open("pardiso_co08.log", "r")
+#time1 = "0.6"
+#time2 = "Time = " + time1 + "\n"
+#print(time2)
 
-
-for line in flog:
-	if line.find(time2) !=-1: found = 1
-	if found: n += 1
-	if n == 3:
-		print(line.rstrip("\n").split(" ")[1])
-		found = 0
-		n = 0
-flog.close()
+#for line in flog:
+#	if line.find(time2) !=-1: found = 1
+#	if found: n += 1
+#	if n == 3:
+#		print(line.rstrip("\n").split(" ")[1])
+#		found = 0
+#		n = 0
+#flog.close()
 
 #result = [0, 0, 0]
 #n = 0

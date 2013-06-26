@@ -289,7 +289,7 @@ for solver in solvers:
 					for line in flog:
 						if line.find("Major iterations"     ) !=-1: result[3] = int(line[43:])
 						if line.find("Minor iterations"     ) !=-1: result[4] = int(line[43:])
-						if line.find("Final objective value") !=-1: result[5] = line[28:39]
+						if line.find("Final objective value") !=-1: result[5] = line.split()[3]
 				else:
 					for line in flog:
 						if  line.find("Number of time steps completed"        ) != -1: result[3] = int(line[55:])
