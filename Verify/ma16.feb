@@ -432,5 +432,8 @@ Comments:
 	</Output>
 	<Output>
 		<plotfile type="febio"></plotfile>
+        <logfile>
+			<node_data data="uy">147</node_data>
+		</logfile>	
 	</Output>
 </febio_spec>

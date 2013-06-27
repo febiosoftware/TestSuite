@@ -946,5 +946,8 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-	</Output>
+		<logfile>
+			<element_data data="sx">36</element_data>
+		</logfile>
+		</Output>
 </febio_spec>

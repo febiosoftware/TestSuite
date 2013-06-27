@@ -1167,5 +1167,8 @@ Comments:
 			<var type="solute 3 flux"/>
 			<var type="stress"/>
 		</plotfile>
+		<logfile>
+			<element_data data="wz">31</element_data>
+		</logfile>
 	</Output>
 </febio_spec>

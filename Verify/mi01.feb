@@ -99,6 +99,9 @@ Comments:
 		</loadcurve>
 	</LoadData>
 	<Output>
-		<plotfile type="febio"></plotfile>
+	    <plotfile type="febio"></plotfile>
+	    <logfile>
+			<node_data data="uz">6</node_data>
+		</logfile>
 	</Output>
 </febio_spec>
