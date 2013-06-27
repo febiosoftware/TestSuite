@@ -13805,5 +13805,8 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
+		<logfile>
+			<element_data data="Ez">2328</element_data>
+		</logfile>
 	</Output>
 </febio_spec>

@@ -16,9 +16,9 @@ Results:
 	Steps Completed: 62
 	Equilibrium Iterations: 498
 	Right Hand Evaluations: 790
-	Siffness Reformations: 187
+	Stiffness Reformations: 187
 	Other:
-		The cylinder has a maximum y-diplacement of 0.108 units at time t=48.
+		The cylinder has a maximum y-displacement of 0.108 units at time t=48.
 Comments:
 	
 -->
@@ -6138,5 +6138,8 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
+		<logfile>
+			<node_data data="uy">1418</node_data>
+		</logfile>
 	</Output>
 </febio_spec>
