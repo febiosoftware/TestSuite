@@ -1525,6 +1525,9 @@ Comments:
 			<var type="fixed charge density"/>
 			<var type="stress"/>
 		</plotfile>
+        <logfile>
+          <element_data data="sz">40</element_data>
+        </logfile>		
 	</Output>
 	<Step>
 		<Module type="solute"/>

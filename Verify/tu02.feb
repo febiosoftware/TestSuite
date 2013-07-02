@@ -1414,5 +1414,8 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
+        <logfile>
+          <element_data data="sz">130</element_data>
+        </logfile>		
 	</Output>
 </febio_spec>

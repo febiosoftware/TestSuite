@@ -6656,5 +6656,8 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
+        <logfile>
+          <node_data data="uz">1000</node_data>
+        </logfile>
 	</Output>
 </febio_spec>

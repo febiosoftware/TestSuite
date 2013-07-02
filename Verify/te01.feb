@@ -75,5 +75,8 @@ Comments:
 	</Output>
 	<Output>
 		<plotfile type="febio"></plotfile>
+        <logfile>
+          <node_data data="uz">4</node_data>
+        </logfile>		
 	</Output>
 </febio_spec>

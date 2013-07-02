@@ -1542,6 +1542,9 @@ Comments:
 			<var type="solute 2 flux"/>
 			<var type="stress"/>
 		</plotfile>
+        <logfile>
+          <node_data data="uz">42</node_data>
+        </logfile>		
 	</Output>
 	<Step>
 		<Module type="solute"/>
