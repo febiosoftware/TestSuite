@@ -1718,5 +1718,8 @@ Comments:
 	</Step>
 	<Output>
 		<plotfile type="febio"></plotfile>
+        <logfile>
+          <element_data data="sz">306</element_data>
+        </logfile>		
 	</Output>
 </febio_spec>

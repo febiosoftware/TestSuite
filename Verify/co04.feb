@@ -2173,7 +2173,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 	    <logfile>
-			<node_data data="ux;uy;uz">30,96</node_data>
+			<node_data data="ux">30</node_data>
 		</logfile>
 	</Output>
 </febio_spec>
