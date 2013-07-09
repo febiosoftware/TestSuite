@@ -3603,5 +3603,8 @@ Comments:
 			<var type="specific strain energy"/>
 			<var type="density"/>
 		</plotfile>
+		<logfile>
+			<element_data data="Ez">574</element_data>
+		</logfile>
 	</Output>
 </febio_spec>

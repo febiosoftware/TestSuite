@@ -39,7 +39,7 @@ Comments:
 <!--
 		<time_stepper>
 			<dtmin>0.0166667</dtmin>
-			<dtmax>0.05</dtmax>
+			<dtmax lc= "3"</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>11</opt_iter>
 		</time_stepper>
@@ -2169,11 +2169,17 @@ Comments:
 			<loadpoint>1,-0.14</loadpoint>
 			<loadpoint>2,-0.14</loadpoint>
 		</loadcurve>
+		<loadcurve id="3">
+            <loadpoint>0,0</loadpoint>
+            <loadpoint>1.2,0.05</loadpoint>
+			<loadpoint>1,0.05</loadpoint>        
+
+       </loadcurve>
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
 	    <logfile>
-			<node_data data="ux">30</node_data>
+			<node_data data="uz">168</node_data>
 		</logfile>
 	</Output>
 </febio_spec>

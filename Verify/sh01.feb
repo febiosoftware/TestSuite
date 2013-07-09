@@ -4160,7 +4160,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
         <logfile>
-           <node_data data="uz">1976</node_data>
+           <node_data data="uz">773</node_data>
         </logfile>
 	</Output>
 </febio_spec>
