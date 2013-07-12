@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-#import os
+import os
 #import glob
 #import sys
 #import platform
@@ -11,19 +11,21 @@
 #import subprocess
 #import smtplib
 #import csv
-#import time
+import time
 #from email.mime.text import MIMEText
 #import struct
 
-flog = open("pardiso_op01_std.log", "r")
+	print(time.time() - os.path.getctime("FEBio2.exe")
 
-result = [0, 0, 0]
-for line in flog:
-	if line.find("Final objective value") !=-1:
-		result[2] = line[28:39]
-		print(result)
-		print(line.split()[3])
-flog.close()
+#flog = open("pardiso_op01_std.log", "r")
+
+#result = [0, 0, 0]
+#for line in flog:
+#	if line.find("Final objective value") !=-1:
+#		result[2] = line[28:39]
+#		print(result)
+#		print(line.split()[3])
+#flog.close()
 
 #from logdata import dfield
 
