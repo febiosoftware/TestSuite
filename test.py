@@ -15,7 +15,10 @@ import time
 #from email.mime.text import MIMEText
 #import struct
 
-	print(time.time() - os.path.getctime("FEBio2.exe")
+if time.time() - os.path.getctime("test.cron") > 43200:
+	print("Older than 12 hours")
+else:
+	print("Younger than 12 hours")
 
 #flog = open("pardiso_op01_std.log", "r")
 
