@@ -50,7 +50,7 @@ Comments:
 		<material id="1" name="Weinans Huiskes remodeling" type="remodeling solid">
 		  <min_density>0.1</min_density>
 		  <max_density>1.74</max_density>
-		  <solid type="Carter-Hayes">
+		  <solid type="Carter-Hayes (old)">
 			<density>1.74</density>
 			<c>3.790E+10</c>
 			<gamma>3.0</gamma>
