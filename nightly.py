@@ -75,6 +75,7 @@ if plat == 'win':
 	# Exit if executable did not compile (exe is older than 1 hour)
 	if time.time() - os.path.getctime(febio) > 3600:
 		results.write("FEBio did not compile")
+		print("FEBio did not compile")
 
 	# Print the svn revision number in the results file
 	version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
