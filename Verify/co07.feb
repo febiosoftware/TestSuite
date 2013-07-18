@@ -26,7 +26,8 @@ Comments:
 	converged with fewer iterations than BFGS, it took more than four times as long to do so.
 	However, with these setting, this contact method did better than the other three.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
+	<Module type="solid"/>
 	<Control>
 		<title>Cylinder and Block</title>
 		<time_steps>40</time_steps>

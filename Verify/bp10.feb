@@ -22,8 +22,8 @@ Results:
 Comments:
 	This problem can be compared to ma11, which does not use a poroelastic material.
 -->
-<febio_spec version="1.0">
-	<Module type="poro"/>
+<febio_spec version="1.2">
+	<Module type="biphasic"/>
 	<Control>
 		<title>Inflated Tube - Poroelastic</title>
 		<time_steps>10</time_steps>
@@ -1110,6 +1110,8 @@ Comments:
 			<node id="337" bc="p" lc="3">1</node>
 			<node id="358" bc="p" lc="3">1</node>
 		</prescribe>
+	</Boundary>
+	<Loads>
 		<pressure>
 			<quad4 id="1" lc="2" scale="1">     1,   190,   211,    22</quad4>
 			<quad4 id="2" lc="2" scale="1">    22,   211,   232,    43</quad4>
@@ -1120,7 +1122,7 @@ Comments:
 			<quad4 id="7" lc="2" scale="1">   127,   316,   337,   148</quad4>
 			<quad4 id="8" lc="2" scale="1">   148,   337,   358,   169</quad4>
 		</pressure>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1" type="step" extend="constant">
 			<loadpoint>0,0</loadpoint>
@@ -1146,7 +1148,7 @@ Comments:
 			<var type="stress"/>
 		</plotfile>
 			<logfile>
-			<element_data data="p">2</element_data>
-		        </logfile>
+				<element_data data="p">2</element_data>
+			</logfile>
       </Output>
 </febio_spec>

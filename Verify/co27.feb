@@ -23,7 +23,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>2D Foot model - sliding interfaces</title>
 		<time_steps>60</time_steps>
@@ -45,40 +45,16 @@ Comments:
 		<material id="1" name="floor" type="rigid body">
 			<density>1000</density>
 			<center_of_mass>0,0,0</center_of_mass>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="2" name="ALLCARTILAGE" type="rigid body">
 			<density>1000</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="3" name="CALCANEUS" type="rigid body">
 			<density>1000</density>
 			<center_of_mass>-81,120,0.5</center_of_mass>
-			<trans_x type="prescribed" lc="1">1</trans_x>
-			<trans_y type="prescribed" lc="2">1</trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="prescribed" lc="3">1</rot_z>
 		</material>
 		<material id="4" name="DPHAL" type="rigid body">
 			<density>1000</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="free"></rot_z>
 		</material>
 		<material id="5" name="META-PPHAL" type="neo-Hookean">
 			<E>1</E>
@@ -86,48 +62,18 @@ Comments:
 		</material>
 		<material id="6" name="METATARSAL" type="rigid body">
 			<density>1000</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="7" name="NAV-TAR" type="rigid body">
 			<density>1000</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="free"></rot_z>
 		</material>
 		<material id="8" name="NAVICULAR" type="rigid body">
 			<density>1000</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="free"></rot_z>
 		</material>
 		<material id="9" name="PPHAL" type="rigid body">
 			<density>1000</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="free"></rot_z>
 		</material>
 		<material id="10" name="PPHAL-DPHAL" type="rigid body">
 			<density>1000</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="free"></rot_z>
 		</material>
 		<material id="11" name="SOFT" type="Mooney-Rivlin">
 			<c1>1</c1>
@@ -136,48 +82,18 @@ Comments:
 		</material>
 		<material id="12" name="TAL-CAL" type="rigid body">
 			<density>1000</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="free"></rot_z>
 		</material>
 		<material id="13" name="TAL-NAV" type="rigid body">
 			<density>1000</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="free"></rot_z>
 		</material>
 		<material id="14" name="TALUS" type="rigid body">
 			<density>1000</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="free"></rot_z>
 		</material>
 		<material id="15" name="TAR-META" type="rigid body">
 			<density>1000</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="free"></rot_z>
 		</material>
 		<material id="16" name="TARSAL" type="rigid body">
 			<density>1000</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="free"></rot_z>
 		</material>
 	</Material>
 	<Geometry>
@@ -5769,6 +5685,88 @@ Comments:
 			</surface>
 		</contact>
 	</Boundary>
+	<Constraints>
+		<rigid_body mat="1">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="2">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="3">
+			<trans_x type="prescribed" lc="1">1</trans_x>
+			<trans_y type="prescribed" lc="2">1</trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="prescribed" lc="3">1</rot_z>
+		</rigid_body>
+		<rigid_body mat="4">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+		</rigid_body>
+		<rigid_body mat="6">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="7">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+		</rigid_body>
+		<rigid_body mat="8">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+		</rigid_body>
+		<rigid_body mat="9">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+		</rigid_body>
+		<rigid_body mat="10">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+		</rigid_body>
+		<rigid_body mat="12">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+		</rigid_body>
+		<rigid_body mat="13">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+		</rigid_body>
+		<rigid_body mat="14">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+		</rigid_body>
+		<rigid_body mat="15">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+		</rigid_body>
+		<rigid_body mat="16">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

@@ -24,7 +24,7 @@ Comments:
 	y = 0 and the verticle tube are constrained in the y-direction and two horizontal lines
 	intersecting the plane z = 5 and the horizontal tube are constrained in the z-direction.
 -->
-<febio_spec version="1.1">
+<febio_spec version="1.2">
 	<Module type="solid"/>
 	<Control>
 		<title>Two Cylinder Compression with Friction</title>

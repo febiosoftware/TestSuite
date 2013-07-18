@@ -22,7 +22,8 @@ Results:
 Comments:
 	Similar to problem c017, but with a greater coefficient of friction.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
+	<Module type="solid"/>
 	<Control>
 		<title>Sliding with Friction</title>
 		<time_steps>100</time_steps>
@@ -48,12 +49,6 @@ Comments:
 		</material>
 		<material id="2" name="Material 4" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 	</Material>
 	<Geometry>
@@ -113,6 +108,16 @@ Comments:
 			</surface>
 		</contact>
 	</Boundary>
+	<Constraints>
+		<rigid_body mat="2">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

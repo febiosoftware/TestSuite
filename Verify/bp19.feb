@@ -24,7 +24,7 @@ Comments:
 	observed across the interface.
 -->
 <febio_spec version="1.2">
-	<Module type="poro"/>
+	<Module type="biphasic"/>
 	<Control>
 		<time_steps>100000</time_steps>
 		<step_size>1</step_size>

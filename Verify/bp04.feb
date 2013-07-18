@@ -21,8 +21,8 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
-	<Module type="poro"/>
+<febio_spec version="1.2">
+	<Module type="biphasic"/>
 	<Control>
 		<title>Poroelastic Confined Compression</title>
 		<time_steps>400</time_steps>

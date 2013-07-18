@@ -20,7 +20,8 @@ Results:
 Comments:
 	Convergence and contact penetration are improved by setting auto="on" in the contact penalty.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
+	<Module type="solid"/>
 	<Control>
 		<title>Sliding Contact Block Compression</title>
 		<time_steps>10</time_steps>
@@ -39,7 +40,7 @@ Comments:
 		</time_stepper>
 	</Control>
 	<Material>
-		<material id="1" name="Material 1 (Mooney-Rivlin)" type="Mooney-Rivlin">
+		<material id="1" name="Material 1" type="Mooney-Rivlin">
 			<c1>100</c1>
 			<c2>0</c2>
 			<k>933.333</k>

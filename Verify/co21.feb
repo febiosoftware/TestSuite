@@ -21,7 +21,7 @@ Results:
 Comments:
 	This problem is similar to co07 but with friction.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Cylinder and Block</title>
 		<time_steps>40</time_steps>

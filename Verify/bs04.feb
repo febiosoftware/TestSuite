@@ -22,7 +22,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.1">
+<febio_spec version="1.2">
 	<Module type="solute"/>
 	<Control>
 		<title>Step Loading Solute Uptake</title>
@@ -2441,8 +2441,8 @@ Comments:
 		  <var type="solute concentration"/>
 		  <var type="solute flux"/>
 		</plotfile>
-	        <logfile>
-		          <element_data data="c">1</element_data>
-	        </logfile>
-      </Output>
+		<logfile>
+			<element_data data="c1">1</element_data>
+		</logfile>
+	</Output>
 </febio_spec>

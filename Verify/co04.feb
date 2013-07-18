@@ -25,7 +25,8 @@ Comments:
 	to better convergence and contact penetration using augmented Lagrangian.  Not using augmented
 	Lagrangian creates too much penetration.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
+	<Module type="solid"/>
 	<Control>
 		<title>Two Block Compression and Sliding</title>
 		<time_steps>40</time_steps>

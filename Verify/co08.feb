@@ -22,7 +22,8 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
+	<Module type="solid"/>
 	<Control>
 		<title>Rigid Wall Compression of Disk</title>
 		<time_steps>10</time_steps>

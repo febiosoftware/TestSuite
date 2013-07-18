@@ -22,8 +22,8 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.1">
-	<Module type="poro"/>
+<febio_spec version="1.2">
+	<Module type="biphasic"/>
 	<Control>
 		<time_steps>10000</time_steps>
 		<step_size>0.1</step_size>
@@ -354,13 +354,15 @@ Comments:
 			<node id="63" bc="p"/>
 			<node id="84" bc="p"/>
 		</fix>
+	</Boundary>
+	<Loads>
 		<fluidflux type="nonlinear" flux="fluid">
 			<quad4 id="1" lc="3" scale="1">     1,    22,    64,    43</quad4>
 		</fluidflux>
 		<normal_traction type="nonlinear" traction="effective">
 			<quad4 id="1" lc="2" scale="1">     1,    22,    64,    43</quad4>
 		</normal_traction>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1" type="step">
 			<loadpoint>0,0</loadpoint>
@@ -385,10 +387,8 @@ Comments:
 			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
-
 		<logfile>
 			<element_data data="p">1</element_data>
 		</logfile>
-
 	</Output>
 </febio_spec>

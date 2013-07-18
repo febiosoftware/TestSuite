@@ -25,7 +25,7 @@ Results:
 Comments:
 	Penetration is slightly better using augmented lagrangian, but convergence is better without it.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Two Cylinder Compression</title>
 		<time_steps>50</time_steps>
@@ -56,12 +56,6 @@ Comments:
 		</material>
 		<material id="3" name="Material 5" type="rigid body">
 			<density>1</density>
-			<trans_x type="prescribed" lc="1">1</trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 	</Material>
 	<Geometry>
@@ -3818,6 +3812,16 @@ Comments:
 			</surface>
 		</contact>
 	</Boundary>
+	<Constraints>
+		<rigid_body mat="3">
+			<trans_x type="prescribed" lc="1">1</trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

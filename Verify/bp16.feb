@@ -23,7 +23,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.1">
+<febio_spec version="1.2">
 	<Material>
 		<material id="1" name="Biphasic material" type="biphasic">
 			<phi0>0.2</phi0>
@@ -655,12 +655,12 @@ Comments:
 			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
-	        <logfile>
+		<logfile>
 			<element_data data="p">1</element_data>
 		</logfile>
 	</Output>
 	<Step>
-		<Module type="poro"/>
+		<Module type="biphasic"/>
 		<Control>
 			<time_steps>1</time_steps>
 			<step_size>0.1</step_size>
@@ -689,7 +689,7 @@ Comments:
 		</Boundary>
 	</Step>
 	<Step>
-		<Module type="poro"/>
+		<Module type="biphasic"/>
 		<Control>
 			<time_steps>100000</time_steps>
 			<step_size>0.1</step_size>
@@ -708,10 +708,10 @@ Comments:
 			</time_stepper>
 			<symmetric_biphasic>0</symmetric_biphasic>
 		</Control>
-		<Boundary>
+		<Loads>
 			<normal_traction type="nonlinear" traction="mixture">
 				<quad4 id="1" lc="3" scale="1">   167,   125,   126,   168</quad4>
 			</normal_traction>
-		</Boundary>
+		</Loads>
 	</Step>
 </febio_spec>

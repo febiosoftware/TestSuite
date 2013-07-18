@@ -23,7 +23,8 @@ Comments:
 	is greater.  This problem converges with fewer equilibrium iterations if the automatic time stepper
 	is turned off.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
+	<Module type="solid"/>
 	<Control>
 		<title>Two Element Sliding Contact</title>
 		<time_steps>10</time_steps>
@@ -128,5 +129,5 @@ Comments:
 	        <logfile>
 			<node_data data="z">4</node_data>
 		</logfile>
-        </Output>
+	</Output>
 </febio_spec>
