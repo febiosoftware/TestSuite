@@ -15,13 +15,16 @@ import subprocess
 #from email.mime.text import MIMEText
 #import struct
 
-version_str = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
-lines = version_str.split("\n")
-lines = [line.strip() for line in lines]
-for line in lines:
-	if line.find("Updated") !=-1:
-		version = line.split(" ")[3]
-print(version)
+output = subprocess.call(["svn", "up"])
+#version_str = subprocess.Popen(["svn", "up"], stdout=subprocess.PIPE).communicate()[0]
+#length = version_str.len()
+#lines = version_str.split("\n")
+#lines = [line.strip() for line in lines]
+#for line in lines:
+#	if line.find("revision") !=-1:
+#		version = line.split(" ")[2].strip(".")
+#version = "0"
+if output == 0: print("worked")
 
 #if time.time() - os.path.getctime("febio.xml") > 43200:
 #	print("Older than 12 hours")

@@ -97,8 +97,7 @@ if plat == 'win':
 		
 else:
 	#Update the test suite
-	###Note I changed this for geting FEBio2 setup going it use to be lnx64
-	if plat == 'osx':
+	if plat == 'lnx64':
 		subprocess.call(['svn', 'up'])
 
 	# Define FEBio directory, executable, and library
@@ -117,20 +116,32 @@ else:
 
 	if args.find('c') == -1:
 
-		# Do an svn update on nemo
+		# Do an svn update on lnx64
+		version = "0"
 		if plat == 'lnx64':
-			subprocess.call(['svn', 'up'])
+			output = subprocess.Popen(['svn', 'up'], stdout=subprocess.PIPE).communicate()[0]
+			output_lines = output.split("\n")
+			for line in output_lines:
+				if line.find("Updated") !=-1:
+					version = line.split(" ")[3].strip(".")
 
 		# Compile FEBio
-		try:
-			shutil.copy(febio, febio.split('.')[0] + '_old.' + plat)
-			shutil.copy(febio_lib, febio_lib.split('.')[0] + '_old.a')
-		except IOError:
-			print("Error copying files")
-		command =['make', '-f', 'febio.mk', plat + 'clean' ]
-		subprocess.call(command)
-		command =['make', '-f', 'febio.mk', plat]
-		subprocess.call(command)
+		if len(version) > 1:
+			try:
+				shutil.copy(febio, febio.split('.')[0] + '_old.' + plat)
+				shutil.copy(febio_lib, febio_lib.split('.')[0] + '_old.a')
+			except IOError:
+				print("Error copying files")
+			command =['make', '-f', 'febio.mk', plat + 'clean' ]
+			subprocess.call(command)
+			command =['make', '-f', 'febio.mk', plat]
+			output = subprocess.call(command)
+			if output == 0:
+				try:
+					shutil.copy(febio, febio.split('.')[0] + '_' + version + '.' + plat)
+				except IOError:
+					print("Error copying files")
+				
 
 	# Print the svn revision number in the results file
 	version = subprocess.Popen(["svnversion"], stdout=subprocess.PIPE).communicate()[0]
@@ -440,6 +451,3 @@ std.close()
 # copy the results file to the Logs directory
 res_date = res_name + "_" + str(datetime.date.today()) + ".txt"
 shutil.copy(res_name + ".txt", logs_dir + res_date)
-
-#SVN Commit the parsing file
-subprocess.call(['svn', 'ci', parsingFile, '-m', '"Commiting nightly files for Parsing"'])
