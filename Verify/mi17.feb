@@ -85,7 +85,7 @@ Comments:
 			<loadpoint>0,0</loadpoint>
 			<loadpoint>1,1</loadpoint>
 		</loadcurve>
-		<loadcurve id="2">
+		<loadcurve id="2" type="step">
 			<loadpoint>0,0</loadpoint>
 			<loadpoint>0.5,0.1</loadpoint>
 		</loadcurve>
