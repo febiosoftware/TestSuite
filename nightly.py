@@ -74,15 +74,27 @@ if plat == 'win':
 
 	out_dir = 'C:/Testing/' + febio_name + '_Logs/'
 	logs_dir = out_dir
+
+	# Print the svn revision number in the results file
+	version_str = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
+	results.write("svn version : " + str(version_str) + "\n")
+	version_lines = version_str.split("\n")
+	version_lines = [line.strip() for line in version_lines]
+	for line in version_lines:
+		if line.find("Updated") !=-1:
+			version = line.split(" ")[3]
 	
-	# Exit if executable did not compile (exe is older than 1 hour)
+	# Print message if executable did not compile (exe is older than 1 hour)
+	# or save a copy of the executable if it did.
 	if time.time() - os.path.getctime(febio) > 3600:
 		results.write("FEBio did not compile")
 		print("FEBio did not compile")
-
-	# Print the svn revision number in the results file
-	version = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
-	results.write("svn version : " + str(version) + "\n")
+	else:
+		try:
+			shutil.copy(febio, febio.split('.')[0] + '_' + version + '.exe')
+		except IOError:
+			print("Error copying files")
+		
 else:
 	#Update the test suite
 	###Note I changed this for geting FEBio2 setup going it use to be lnx64

@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
+#import os
 #import glob
 #import sys
 #import platform
@@ -8,17 +8,25 @@ import os
 #import filecmp
 #import difflib
 #import datetime
-#import subprocess
+import subprocess
 #import smtplib
 #import csv
-import time
+#import time
 #from email.mime.text import MIMEText
 #import struct
 
-if time.time() - os.path.getctime("test.cron") > 43200:
-	print("Older than 12 hours")
-else:
-	print("Younger than 12 hours")
+version_str = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
+lines = version_str.split("\n")
+lines = [line.strip() for line in lines]
+for line in lines:
+	if line.find("Updated") !=-1:
+		version = line.split(" ")[3]
+print(version)
+
+#if time.time() - os.path.getctime("febio.xml") > 43200:
+#	print("Older than 12 hours")
+#else:
+#	print("Younger than 12 hours")
 
 #flog = open("pardiso_op01_std.log", "r")
 
