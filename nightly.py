@@ -415,7 +415,7 @@ results.write("\tError termination  : " + str(nerrs) + "\n")
 results.close()
 
 # compare results.txt with nightly_'plat'_std.txt
-pasingFile = open(parsing_dir + "Nightly_Runs/" + host + ".txt", "w")
+parsingFile = open(parsing_dir + "Nightly_Runs/" + host + ".txt", "w")
 os.chdir("..")
 results = open(res_name + ".txt", "r")
 std = open(std_name + ".txt", "r")
