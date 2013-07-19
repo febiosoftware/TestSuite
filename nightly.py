@@ -55,6 +55,9 @@ res_name = "nightly_" + plat
 std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
 
+#Added to incorporate the testing parser
+parsing_dir = test_dir + '/Nightly_Parsing/'
+
 if plat == 'win':
 	febio_dir = 'C:/' + febio_name
 	if host == 'cibc-rd7':
@@ -412,11 +415,13 @@ results.write("\tError termination  : " + str(nerrs) + "\n")
 results.close()
 
 # compare results.txt with nightly_'plat'_std.txt
+pasingFile = open(parsing_dir + "Nightly_Runs/" + host + ".txt", "w")
 os.chdir("..")
 results = open(res_name + ".txt", "r")
 std = open(std_name + ".txt", "r")
 for line in difflib.unified_diff(results.readlines(), std.readlines(), n=0):
 	sys.stdout.write(line)
+	parsingFile.write(line)
 results.close()
 std.close()
 
