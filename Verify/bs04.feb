@@ -2442,7 +2442,7 @@ Comments:
 		  <var type="solute flux"/>
 		</plotfile>
 		<logfile>
-			<element_data data="c1">1</element_data>
+			<element_data data="c">1</element_data>
 		</logfile>
 	</Output>
 </febio_spec>
