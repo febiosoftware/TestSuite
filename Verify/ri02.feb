@@ -22,7 +22,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Engine</title>
 		<time_steps>62</time_steps>
@@ -48,49 +48,19 @@ Comments:
 		</material>
 		<material id="3" name="shaft2" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="free"></trans_z>
-			<rot_x type="free"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="4" name="shaft1" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="free"></trans_z>
-			<rot_x type="free"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="5" name="crank" type="rigid body">
 			<density>1</density>
 			<center_of_mass>0,0,0</center_of_mass>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="prescribed" lc="1">1</rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="6" name="piston1" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="free"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="7" name="piston2" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="free"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 	</Material>
 	<Geometry>
@@ -13797,6 +13767,40 @@ Comments:
 			<joint>-0.25,0,1.4</joint>
 		</contact>
 	</Boundary>
+	<Constraints>
+		<rigid_body mat="3">
+			<trans_x type="fixed"></trans_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="4">
+			<trans_x type="fixed"></trans_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="5">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="prescribed" lc="1">1</rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="6">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="7">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

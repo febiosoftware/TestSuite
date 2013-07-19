@@ -28,7 +28,7 @@ Comments:
 	fact contact converges somewhat faster than sliding_with_gaps, but the penetration is
 	is better with the latter.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Dynamic Balls with Body Force</title>
 		<time_steps>40</time_steps>
@@ -56,12 +56,6 @@ Comments:
 		</material>
 		<material id="2" name="Material 6" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="3" name="Material 7" type="neo-Hookean">
 			<E>500</E>
@@ -2230,11 +2224,21 @@ Comments:
 			</surface>
 		</contact>
 	</Boundary>
-	<Globals>
+	<Loads>
 		<body_force>
 			<z lc="1">1</z>
 		</body_force>
-	</Globals>
+	</Loads>
+	<Constraints>
+		<rigid_body mat="2">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,1</loadpoint>

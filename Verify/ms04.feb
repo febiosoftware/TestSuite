@@ -24,28 +24,16 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Multi-step example</title>
 	</Control>
 	<Material>
 		<material id="1" name="fixed" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="2" name="moving" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="free"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="3" name="spring" type="neo-Hookean">
 			<E>2e6</E>
@@ -1683,11 +1671,28 @@ Comments:
 			<node id="1248" rb="1"></node>
 		</contact>
 	</Boundary>
-	<Globals>
+	<Loads>
 		<body_force>
 			<z lc="1">1</z>
 		</body_force>
-	</Globals>
+	</Loads>
+	<Constraints>
+		<rigid_body mat="1">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="2">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,1</loadpoint>

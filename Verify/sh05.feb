@@ -21,7 +21,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Pressure on Disk</title>
 		<time_steps>100</time_steps>
@@ -1063,6 +1063,8 @@ Comments:
 			<node id="192" bc="xyz"></node>
 			<node id="193" bc="xyz"></node>
 		</fix>
+	</Boundary>
+	<Loads>
 		<pressure>
 			<quad4 id="1" lc="1" scale="1">     1,     8,     9,     2</quad4>
 			<quad4 id="2" lc="1" scale="1">     8,    15,    16,     9</quad4>
@@ -1245,7 +1247,7 @@ Comments:
 			<quad4 id="179" lc="1" scale="1">   168,   192,   193,   169</quad4>
 			<quad4 id="180" lc="1" scale="1">   169,   193,   170,   146</quad4>
 		</pressure>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

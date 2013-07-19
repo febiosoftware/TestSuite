@@ -20,7 +20,7 @@ Results:
 Comments:
 	Same as dy01.feb except that the element is a rigid body instead of a Neo-Hookean material.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Dynamic Element with Body Force</title>
 		<time_steps>10</time_steps>
@@ -43,12 +43,6 @@ Comments:
 	<Material>
 		<material id="1" name="Material 1" type="rigid body">
 			<density>1</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<trans_z type="free"></trans_z>
-			<rot_x type="free"></rot_x>
-			<rot_y type="free"></rot_y>
-			<rot_z type="free"></rot_z>
 		</material>
 	</Material>
 	<Geometry>
@@ -66,13 +60,11 @@ Comments:
 			<hex8 id="1" mat="1">     1,     5,     7,     3,     2,     6,     8,     4</hex8>
 		</Elements>
 	</Geometry>
-	<Boundary>
-	</Boundary>
-	<Globals>
+	<Loads>
 		<body_force>
 			<z lc="1">1</z>
 		</body_force>
-	</Globals>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,1</loadpoint>

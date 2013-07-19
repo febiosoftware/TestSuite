@@ -22,7 +22,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Knee Model</title>
 		<time_steps>10</time_steps>
@@ -49,31 +49,13 @@ Comments:
 		<material id="2" name="Femur (Rigid Body)" type="rigid body">
 			<density>1</density>
 			<center_of_mass>0,0,0</center_of_mass>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="prescribed" lc="1">1</rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="3" name="Tibia (Rigid Body)" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="4" name="Patella (Rigid Body)" type="rigid body">
 			<density>1</density>
 			<center_of_mass>0,0,0</center_of_mass>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="free"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 	</Material>
 	<Geometry>
@@ -1670,6 +1652,31 @@ Comments:
 			<hex8 id="574" mat="1">  1013,  1011,  1012,  1014,  1006,  1005,  1001,  1002</hex8>
 		</Elements>
 	</Geometry>
+	<Constraints>
+		<rigid_body mat="2">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="prescribed" lc="1">1</rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="3">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="4">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

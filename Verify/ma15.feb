@@ -21,7 +21,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.1">
+<febio_spec version="1.2">
 	<Module type="solid"/>
 	<Control>
 		<title>Linear Orthotropic</title>
@@ -130,10 +130,12 @@ Comments:
 			<node id="3" bc="xyz"/>
 			<node id="4" bc="xyz"/>
 		</fix>
+	</Boundary>
+	<Loads>
 		<pressure>
 			<quad4 id="1" lc="1" scale="-1">    45,    47,    48,    46</quad4>
 		</pressure>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1" type="smooth">
 			<loadpoint>0,0</loadpoint>

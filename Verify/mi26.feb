@@ -23,7 +23,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Gradient Material</title>
 		<time_steps>10</time_steps>
@@ -2777,6 +2777,8 @@ Comments:
 			<node id="1310" bc="z"></node>
 			<node id="1321" bc="z"></node>
 		</fix>
+	</Boundary>
+	<Loads>
 		<pressure>
 			<quad4 id="1" lc="1" scale="1">  1211,  1222,  1223,  1212</quad4>
 			<quad4 id="2" lc="1" scale="1">  1212,  1223,  1224,  1213</quad4>
@@ -2879,7 +2881,7 @@ Comments:
 			<quad4 id="99" lc="1" scale="1">  1318,  1329,  1330,  1319</quad4>
 			<quad4 id="100" lc="1" scale="1">  1319,  1330,  1331,  1320</quad4>
 		</pressure>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

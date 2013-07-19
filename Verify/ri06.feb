@@ -27,7 +27,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Rigid Joints</title>
 		<time_steps>10</time_steps>
@@ -55,13 +55,9 @@ Comments:
 		</material>
 		<material id="3" name="Material 3" type="rigid body">
 			<density>1</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="free"></trans_y>
-			<rot_z type="free"></rot_z>
 		</material>
 		<material id="4" name="Material 4" type="rigid body">
 			<density>1</density>
-			<trans_x type="prescribed" lc="1">1</trans_x>
 		</material>
 	</Material>
 	<Geometry>
@@ -746,6 +742,29 @@ Comments:
 			<node id="454" rb="4"></node>
 		</contact>
 	</Boundary>
+	<Constraints>
+		<rigid_body mat="2">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="3">
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+		</rigid_body>
+		<rigid_body mat="4">
+			<trans_x type="prescribed" lc="1">1</trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

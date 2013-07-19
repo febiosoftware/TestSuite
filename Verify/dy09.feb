@@ -22,7 +22,7 @@ Comments:
 	Penetration was slightly better with slinding_with_gaps contact, but congergence was significantly
 	better with facet to facet contact.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Colliding Cylinders</title>
 		<time_steps>100</time_steps>

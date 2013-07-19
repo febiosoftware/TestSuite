@@ -20,7 +20,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Dynamic Cantilever with Body Force</title>
 		<time_steps>84</time_steps>
@@ -335,11 +335,11 @@ Comments:
 			<node id="9" bc="xyz"></node>
 		</fix>
 	</Boundary>
-	<Globals>
+	<Loads>
 		<body_force>
 			<z lc="1">1</z>
 		</body_force>
-	</Globals>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,1</loadpoint>

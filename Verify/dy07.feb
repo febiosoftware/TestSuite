@@ -20,7 +20,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Dynamic Bar</title>
 		<time_steps>100</time_steps>

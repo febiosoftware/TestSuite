@@ -22,7 +22,7 @@ Comments:
 	All the nodes for the shell elements were constrained in x in order to eliminate
 	inconsistent convergence.
 -->
-<febio_spec version="1.1">
+<febio_spec version="1.2">
 	<Module type="solid"/>
 	<Control>
 		<title>Sheet Twist</title>

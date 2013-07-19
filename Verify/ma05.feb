@@ -20,7 +20,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Viscoelasticity</title>
 		<time_steps>5000</time_steps>
@@ -74,13 +74,15 @@ Comments:
 			<node id="6" bc="y"></node>
 			<node id="7" bc="z"></node>
 		</fix>
+	</Boundary>
+	<Loads>
 		<force>
 			<node id="5" bc="x" lc="1">1</node>
 			<node id="6" bc="x" lc="1">1</node>
 			<node id="7" bc="x" lc="1">1</node>
 			<node id="8" bc="x" lc="1">1</node>
 		</force>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0.0,0.0005</loadpoint>

@@ -20,7 +20,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Shell with Force on Center Node</title>
 		<time_steps>10</time_steps>
@@ -656,10 +656,12 @@ Comments:
 			<node id="121" bc="xyz"></node>
 			<node id="121" bc="uvw"></node>
 		</fix>
+	</Boundary>
+	<Loads>
 		<force>
 			<node id="61" bc="z" lc="1">1</node>
 		</force>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

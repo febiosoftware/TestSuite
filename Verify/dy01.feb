@@ -20,7 +20,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Dynamic Element with Body Force</title>
 		<time_steps>10</time_steps>
@@ -62,13 +62,11 @@ Comments:
 			<hex8 id="1" mat="1">     1,     5,     7,     3,     2,     6,     8,     4</hex8>
 		</Elements>
 	</Geometry>
-	<Boundary>
-	</Boundary>
-	<Globals>
+	<Loads>
 		<body_force>
 			<z lc="1">1</z>
 		</body_force>
-	</Globals>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,1</loadpoint>

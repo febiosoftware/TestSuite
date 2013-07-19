@@ -22,7 +22,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Twisted Ribbon</title>
 		<time_steps>10</time_steps>
@@ -10462,11 +10462,13 @@ Comments:
 			<node id="33" bc="xyz"></node>
 			<node id="33" bc="uvw"></node>
 		</fix>
+	</Boundary>
+	<Loads>
 		<force>
 			<node id="2145" bc="z" lc="1">1</node>
 			<node id="2113" bc="z" lc="2">1</node>
 		</force>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

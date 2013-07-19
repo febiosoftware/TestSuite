@@ -22,7 +22,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Multi-step Analysis</title>
 	</Control>
@@ -201,13 +201,13 @@ Comments:
 			<time_steps>10</time_steps>
 			<step_size>0.1</step_size>
 		</Control>
-		<Boundary>
+		<Loads>
 			<force>
 				<node id="93" bc="z" lc="1">1</node>
 				<node id="96" bc="z" lc="1">1</node>
 				<node id="99" bc="z" lc="1">1</node>
 			</force>
-		</Boundary>
+		</Loads>
 	</Step>
 	<Step>
 		<Control>

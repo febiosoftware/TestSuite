@@ -23,7 +23,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.1">
+<febio_spec version="1.2">
 	<Control>
 		<title>Plates with Rigid Joint</title>
 		<time_steps>10</time_steps>

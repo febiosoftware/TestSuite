@@ -22,7 +22,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.1">
+<febio_spec version="1.2">
 	<Module type="solid"/>
 	<Control>
 		<time_steps>10</time_steps>
@@ -11712,6 +11712,8 @@ Comments:
 			<node id="2312" bc="z"/>
 			<node id="2313" bc="z"/>
 		</fix>
+	</Boundary>
+	<Loads>
 		<traction>
 			<tri3 id="1" lc="1" tx="0" ty="1" tz="0">    23,  2105,  2106</tri3>
 			<tri3 id="2" lc="1" tx="0" ty="1" tz="0">  2119,  1483,  1484</tri3>
@@ -11746,7 +11748,7 @@ Comments:
 			<tri3 id="31" lc="1" tx="0" ty="1" tz="0">  2117,  1483,  2118</tri3>
 			<tri3 id="32" lc="1" tx="0" ty="1" tz="0">  2117,     3,     7</tri3>
 		</traction>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1" type="smooth">
 			<loadpoint>0,0</loadpoint>

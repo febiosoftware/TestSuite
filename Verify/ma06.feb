@@ -20,7 +20,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Viscoelastic Block</title>
 		<time_steps>50</time_steps>
@@ -777,6 +777,8 @@ Comments:
 			<node id="395" bc="yz"></node>
 			<node id="396" bc="yz"></node>
 		</fix>
+	</Boundary>
+	<Loads>
 		<pressure>
 			<quad4 id="1" lc="1" scale="1">   361,   367,   368,   362</quad4>
 			<quad4 id="2" lc="1" scale="1">   362,   368,   369,   363</quad4>
@@ -804,7 +806,7 @@ Comments:
 			<quad4 id="24" lc="1" scale="1">   388,   394,   395,   389</quad4>
 			<quad4 id="25" lc="1" scale="1">   389,   395,   396,   390</quad4>
 		</pressure>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0.005</loadpoint>

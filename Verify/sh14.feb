@@ -22,7 +22,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Disk and Cylinder</title>
 		<time_steps>10</time_steps>
@@ -49,23 +49,8 @@ Comments:
 		</material>
 		<material id="2" name="needle" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="prescribed" lc="1">1</trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 	</Material>
-<Output>
-	<plotfile>
-		<shell_strain>1</shell_strain>
-	</plotfile>
-	<logfile>
-		<element_data data="Ex;Ey;Ez">327</element_data>
-		<rigid_body_data data="Fx;Fy;Fz">2</rigid_body_data>
-	</logfile>
-</Output>
 	<Geometry>
 		<Nodes>
 			<node id="1">-2.5000000e-002, 0.0000000e+000, 0.0000000e+000</node>
@@ -6648,6 +6633,16 @@ Comments:
 			<node id="679" rb="2"></node>
 		</contact>
 	</Boundary>
+	<Constraints>
+		<rigid_body mat="2">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="prescribed" lc="1">1</trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>
@@ -6657,7 +6652,9 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
         <logfile>
-          <node_data data="uz">1000</node_data>
+			<element_data data="Ex;Ey;Ez">327</element_data>
+			<rigid_body_data data="Fx;Fy;Fz">2</rigid_body_data>
+			<node_data data="uz">1000</node_data>
         </logfile>
 	</Output>
 </febio_spec>

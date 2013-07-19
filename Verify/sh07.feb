@@ -23,7 +23,7 @@ Comments:
 	E was changed from 1 to 10 and the pressure was increased to the limit before
 	the results became inconsistent.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>1/8th Balloon Inflation</title>
 		<time_steps>10</time_steps>
@@ -340,6 +340,8 @@ Comments:
 			<node id="58" bc="xz"></node>
 			<node id="58" bc="u"></node>
 		</fix>
+	</Boundary>
+	<Loads>
 		<pressure>
 			<quad4 id="1" lc="1" scale="1">     1,     5,     6,     2</quad4>
 			<quad4 id="2" lc="1" scale="1">     5,     9,    10,     6</quad4>
@@ -387,7 +389,7 @@ Comments:
 			<quad4 id="44" lc="1" scale="1">    49,    56,    57,    50</quad4>
 			<quad4 id="45" lc="1" scale="1">    50,    57,    58,    51</quad4>
 		</pressure>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

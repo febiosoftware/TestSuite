@@ -23,7 +23,7 @@ Comments:
 	Note that rigid contact was not necessary because the cylinder and the disk together were
 	all one mesh.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Bellows</title>
 		<time_steps>10</time_steps>
@@ -42,8 +42,6 @@ Comments:
 		</material>
 		<material id="2" type="rigid body">
 			<density>1</density>
-			<trans_z type="prescribed" lc="1">1</trans_z>
-			<rot_x type="prescribed" lc="1">1</rot_x>
 		</material>
 	</Material>
 	<Geometry>
@@ -4558,6 +4556,12 @@ Comments:
 			<node id="193" bc="z"></node>
 		</fix>
 	</Boundary>
+	<Constraints>
+		<rigid_body mat="2">
+			<trans_z type="prescribed" lc="1">1</trans_z>
+			<rot_x type="prescribed" lc="1">1</rot_x>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

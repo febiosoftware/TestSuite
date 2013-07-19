@@ -20,7 +20,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Cantilevers with Nodal Springs</title>
 		<time_steps>50</time_steps>
@@ -344,11 +344,6 @@ Comments:
 			<node id="197" bc="xyz"></node>
 			<node id="198" bc="xyz"></node>
 		</fix>
-		<force>
-			<node id="102" bc="z" lc="1">1</node>
-			<node id="105" bc="z" lc="1">1</node>
-			<node id="108" bc="z" lc="1">1</node>
-		</force>
 		<spring>
 			<node>100, 93</node>
 			<E>50</E>
@@ -358,6 +353,13 @@ Comments:
 			<E>50</E>
 		</spring>
 	</Boundary>
+	<Loads>
+		<force>
+			<node id="102" bc="z" lc="1">1</node>
+			<node id="105" bc="z" lc="1">1</node>
+			<node id="108" bc="z" lc="1">1</node>
+		</force>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

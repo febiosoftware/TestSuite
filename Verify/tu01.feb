@@ -21,7 +21,7 @@ Results:
 Comments:
 	This is tutorial 1 in the PreView manual.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Tutorial 1</title>
 		<time_steps>10</time_steps>

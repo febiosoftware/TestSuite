@@ -20,7 +20,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Sinusoidal Pressure</title>
 		<time_steps>50</time_steps>
@@ -2489,6 +2489,8 @@ Comments:
 			<node id="1340" bc="xyz"></node>
 			<node id="1348" bc="xyz"></node>
 		</fix>
+	</Boundary>
+	<Loads>
 		<pressure>
 			<quad4 id="1" lc="1" scale="1">  1012,  1021,  1022,  1013</quad4>
 			<quad4 id="2" lc="1" scale="1">  1013,  1022,  1023,  1014</quad4>
@@ -2811,7 +2813,7 @@ Comments:
 			<quad4 id="319" lc="1" scale="1">  1346,  1347,  1099,  1098</quad4>
 			<quad4 id="320" lc="1" scale="1">  1347,  1348,  1100,  1099</quad4>
 		</pressure>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

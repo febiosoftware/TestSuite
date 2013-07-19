@@ -21,7 +21,7 @@ Comments:
 	All nodes needed to be constrained in y and Ry in order for
 	the termination stats to be consistent with the Pardiso solver.
 -->
-<febio_spec version="1.1">
+<febio_spec version="1.2">
 	<Module type="solid"/>
 	<Control>
 		<title>Cantilever Shell</title>
@@ -245,12 +245,14 @@ Comments:
 			<node id="33" bc="y"/>
 			<node id="33" bc="v"/>
 		</fix>
+	</Boundary>
+	<Loads>
 		<force>
 			<node id="31" bc="z" lc="1">1</node>
 			<node id="32" bc="z" lc="1">1</node>
 			<node id="33" bc="z" lc="1">1</node>
 		</force>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

@@ -28,7 +28,7 @@ Comments:
 	selection of the contact penalty parameter.  The other contact methods either
 	error terminated or had too significant penetration.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>untitled</title>
 		<time_steps>20</time_steps>
@@ -39,11 +39,6 @@ Comments:
 		<etol>0.01</etol>
 		<rtol>0</rtol>
 		<lstol>999</lstol>
-<!--
-		<linear_solver type="superlu">
-			<print_cnorm>1</print_cnorm>
-		</linear_solver>
--->
 	</Control>
 	<Material>
 		<material id="1" name="Material 1" type="neo-Hookean">
@@ -56,12 +51,6 @@ Comments:
 		</material>
 		<material id="3" name="Material 3" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="prescribed" lc="1">1</trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 	</Material>
 	<Geometry>
@@ -4908,6 +4897,16 @@ Comments:
 			</surface>
 		</contact>
 	</Boundary>
+	<Constraints>
+		<rigid_body mat="3">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="prescribed" lc="1">1</trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

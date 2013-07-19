@@ -21,7 +21,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Shear Strain</title>
 		<time_steps>10</time_steps>

@@ -21,7 +21,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.1">
+<febio_spec version="1.2">
 	<Module type="solid"/>
 	<Control>
 		<title>Beam w/Nodally Integrated Tet</title>
@@ -781,6 +781,8 @@ Comments:
 			<node id="187" bc="xyz"/>
 			<node id="188" bc="xyz"/>
 		</fix>
+	</Boundary>
+	<Loads>
 		<traction>
 			<tri3 id="1" lc="1" tx="0" ty="0" tz="-2000">    35,    64,    96</tri3>
 			<tri3 id="2" lc="1" tx="0" ty="0" tz="-2000">    93,    35,    96</tri3>
@@ -791,7 +793,7 @@ Comments:
 			<tri3 id="7" lc="1" tx="0" ty="0" tz="-2000">    34,    61,    96</tri3>
 			<tri3 id="8" lc="1" tx="0" ty="0" tz="-2000">    61,    33,    96</tri3>
 		</traction>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1" type="smooth">
 			<loadpoint>0,0</loadpoint>

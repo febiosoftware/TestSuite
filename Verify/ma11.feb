@@ -20,7 +20,7 @@ Results:
 Comments:
 	This problem can be compared to ma10, which uses a poroelastic material.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Inflated Tube - Elastic</title>
 		<time_steps>10</time_steps>
@@ -1059,6 +1059,8 @@ Comments:
 			<node id="377" bc="z"></node>
 			<node id="378" bc="z"></node>
 		</fix>
+	</Boundary>
+	<Loads>
 		<pressure>
 			<quad4 id="1" lc="2" scale="1">     1,   190,   211,    22</quad4>
 			<quad4 id="2" lc="2" scale="1">    22,   211,   232,    43</quad4>
@@ -1069,7 +1071,7 @@ Comments:
 			<quad4 id="7" lc="2" scale="1">   127,   316,   337,   148</quad4>
 			<quad4 id="8" lc="2" scale="1">   148,   337,   358,   169</quad4>
 		</pressure>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1" type="step" extend="constant">
 			<loadpoint>0,0</loadpoint>

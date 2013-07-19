@@ -20,7 +20,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Cantilever with Nodal Force</title>
 		<time_steps>10</time_steps>
@@ -1346,6 +1346,8 @@ Comments:
 			<node id="36" bc="xyz"></node>
 			<node id="61" bc="xyz"></node>
 		</fix>
+	</Boundary>
+	<Loads>
 		<force>
 			<node id="697" bc="z" lc="1">1</node>
 			<node id="721" bc="z" lc="1">1</node>
@@ -1385,7 +1387,7 @@ Comments:
 			<node id="755" bc="z" lc="1">1</node>
 			<node id="756" bc="z" lc="1">1</node>
 		</force>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

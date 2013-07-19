@@ -22,7 +22,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>2D Trans Iso Mooney-Rivlin Material</title>
 		<time_steps>50</time_steps>

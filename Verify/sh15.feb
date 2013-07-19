@@ -21,7 +21,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Shell Sheet with Body Force</title>
 		<time_steps>10</time_steps>
@@ -620,11 +620,11 @@ Comments:
 			<node id="121" bc="xyz"></node>
 		</fix>
 	</Boundary>
-	<Globals>
+	<Loads>
 		<body_force>
 			<z lc="1">1</z>
 		</body_force>
-	</Globals>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

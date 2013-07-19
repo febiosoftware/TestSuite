@@ -21,7 +21,7 @@ Results:
 Comments:
 	Similar to problem ma03 (linear orthotropic).
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>T-C Nonlinear Orthotropic Material</title>
 		<time_steps>10</time_steps>

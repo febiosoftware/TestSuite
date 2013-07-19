@@ -23,7 +23,7 @@ Comments:
 	Same as problem ms01.feb except that the nodes on the top of the free end of the beam
 	have a prescribed z-displacement instead of an applied force.
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Multi-step Analysis</title>
 	</Control>

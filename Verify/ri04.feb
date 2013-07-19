@@ -22,7 +22,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Bellows</title>
 		<time_steps>62</time_steps>
@@ -44,39 +44,15 @@ Comments:
 		</material>
 		<material id="2" name="Material02" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="3" name="Material03" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="free"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="4" name="Material04" type="rigid body">
 			<density>1</density>
-			<trans_x type="free"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="free"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="free"></rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 		<material id="5" name="Material05" type="rigid body">
 			<density>1</density>
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="prescribed" lc="1">1</rot_y>
-			<rot_z type="fixed"></rot_z>
 		</material>
 	</Material>
 	<Geometry>
@@ -6130,6 +6106,36 @@ Comments:
 			<joint>0,0,-0.5</joint>
 		</contact>
 	</Boundary>
+	<Constraints>
+		<rigid_body mat="2">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="3">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="fixed"></rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="4">
+			<trans_y type="fixed"></trans_y>
+			<rot_x type="fixed"></rot_x>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+		<rigid_body mat="5">
+			<trans_x type="fixed"></trans_x>
+			<trans_y type="fixed"></trans_y>
+			<trans_z type="fixed"></trans_z>
+			<rot_x type="fixed"></rot_x>
+			<rot_y type="prescribed" lc="1">1</rot_y>
+			<rot_z type="fixed"></rot_z>
+		</rigid_body>
+	</Constraints>
 	<LoadData>
 		<loadcurve id="1">
 			<loadpoint>0,0</loadpoint>

@@ -20,7 +20,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.0">
+<febio_spec version="1.2">
 	<Control>
 		<title>Arruda-Boyce</title>
 		<time_steps>10</time_steps>
@@ -919,6 +919,8 @@ Comments:
 			<node id="24" bc="xyz"/>
 			<node id="25" bc="xyz"/>
 		</fix>
+	</Boundary>
+	<Loads>
 		<traction>
 			<quad4 id="1" lc="1" tx="0" ty="0" tz="1">   501,   506,   507,   502</quad4>
 			<quad4 id="2" lc="1" tx="0" ty="0" tz="1">   502,   507,   508,   503</quad4>
@@ -937,7 +939,7 @@ Comments:
 			<quad4 id="15" lc="1" tx="0" ty="0" tz="1">   518,   523,   524,   519</quad4>
 			<quad4 id="16" lc="1" tx="0" ty="0" tz="1">   519,   524,   525,   520</quad4>
 		</traction>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1" type="smooth" extend="constant">
 			<loadpoint>0,0</loadpoint>

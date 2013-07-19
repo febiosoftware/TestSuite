@@ -21,7 +21,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.1">
+<febio_spec version="1.2">
 	<Control>
 		<title>Tetrahedral Cantilever Beam</title>
 		<time_steps>10</time_steps>
@@ -5071,6 +5071,8 @@ Comments:
 			<node id="779" bc="xyz"/>
 			<node id="931" bc="xyz"/>
 		</fix>
+	</Boundary>
+	<Loads>
 		<traction>
 			<tri3 id="1" lc="1" tx="0" ty="0" tz="-1">   190,   322,    67</tri3>
 			<tri3 id="2" lc="1" tx="0" ty="0" tz="-1">   108,   193,   107</tri3>
@@ -5121,7 +5123,7 @@ Comments:
 			<tri3 id="47" lc="1" tx="0" ty="0" tz="-1">   508,   199,   706</tri3>
 			<tri3 id="48" lc="1" tx="0" ty="0" tz="-1">     7,   344,   343</tri3>
 		</traction>
-	</Boundary>
+	</Loads>
 	<LoadData>
 		<loadcurve id="1" type="smooth" extend="constant">
 			<loadpoint>0,0</loadpoint>
