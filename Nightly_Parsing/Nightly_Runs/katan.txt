@@ -1,0 +1,858 @@
+Subject: [febio-test] Cron <bhayden@katan> /home/sci/bhayden/Testing/nightly.bash
+From: bhayden@katan.sci.utah.edu (Cron Daemon)
+Date: 9/11/2012 7:10 PM
+To: febio-test@sci.utah.edu
+
+/home/sci/bhayden/.bashrc: line 11: /home/sci/bhayden/.alias: No such file or directory
+( cd FECore; make clean)
+rm /home/sci/bhayden/FEBio/build/osx/FECore/*.o
+rm /home/sci/bhayden/FEBio/lib/fecore_osx.a
+( cd FEBio;  make clean) 
+rm /home/sci/bhayden/FEBio/build/osx/FEBio/*.o
+rm /home/sci/bhayden/FEBio/bin/febio.osx
+( cd FECore; make )
+icpc -c -o ../build/osx/FECore/BFGSSolver.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 BFGSSolver.cpp
+icpc -c -o ../build/osx/FECore/CompactMatrix.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 CompactMatrix.cpp
+CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+icpc -c -o ../build/osx/FECore/ConjGradIterSolver.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 ConjGradIterSolver.cpp
+CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+icpc -c -o ../build/osx/FECore/DenseMatrix.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 DenseMatrix.cpp
+icpc -c -o ../build/osx/FECore/FECore.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 FECore.cpp
+icpc -c -o ../build/osx/FECore/LUSolver.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 LUSolver.cpp
+icpc -c -o ../build/osx/FECore/LinearSolver.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 LinearSolver.cpp
+icpc -c -o ../build/osx/FECore/MatrixProfile.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 MatrixProfile.cpp
+icpc -c -o ../build/osx/FECore/NonLinearSystem.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 NonLinearSystem.cpp
+icpc -c -o ../build/osx/FECore/PSLDLTSolver.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 PSLDLTSolver.cpp
+CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+icpc -c -o ../build/osx/FECore/PardisoSolver.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 PardisoSolver.cpp
+CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+icpc -c -o ../build/osx/FECore/PardisoSolverDL.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 PardisoSolverDL.cpp
+CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+icpc -c -o ../build/osx/FECore/RCICGSolver.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 RCICGSolver.cpp
+CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+icpc -c -o ../build/osx/FECore/SkylineMatrix.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 SkylineMatrix.cpp
+icpc -c -o ../build/osx/FECore/SkylineSolver.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 SkylineSolver.cpp
+icpc -c -o ../build/osx/FECore/SparseMatrix.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 SparseMatrix.cpp
+icpc -c -o ../build/osx/FECore/SuperLUSolver.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 SuperLUSolver.cpp
+CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+icpc -c -o ../build/osx/FECore/SuperLU_MT_Solver.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 SuperLU_MT_Solver.cpp
+CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+icpc -c -o ../build/osx/FECore/WSMPSolver.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 WSMPSolver.cpp
+CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+icpc -c -o ../build/osx/FECore/colsol.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 colsol.cpp
+icpc -c -o ../build/osx/FECore/matrix.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 matrix.cpp
+icpc -c -o ../build/osx/FECore/qsort.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 qsort.cpp
+icpc -c -o ../build/osx/FECore/stdafx.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 stdafx.cpp
+icpc -c -o ../build/osx/FECore/vector.o -I../include -I.. -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -O3 -m64 vector.cpp
+( cd /home/sci/bhayden/FEBio/build/osx/FECore; ar -cvr /home/sci/bhayden/FEBio/lib/fecore_osx.a BFGSSolver.o CompactMatrix.o ConjGradIterSolver.o DenseMatrix.o FECore.o LUSolver.o LinearSolver.o MatrixProfile.o NonLinearSystem.o PSLDLTSolver.o PardisoSolver.o PardisoSolverDL.o RCICGSolver.o SkylineMatrix.o SkylineSolver.o SparseMatrix.o SuperLUSolver.o SuperLU_MT_Solver.o WSMPSolver.o colsol.o matrix.o qsort.o stdafx.o vector.o  )
+/usr/bin/ranlib: file: /home/sci/bhayden/FEBio/lib/fecore_osx.a(PardisoSolverDL.o) has no symbols
+/usr/bin/ranlib: file: /home/sci/bhayden/FEBio/lib/fecore_osx.a(stdafx.o) has no symbols
+a - BFGSSolver.o
+a - CompactMatrix.o
+a - ConjGradIterSolver.o
+a - DenseMatrix.o
+a - FECore.o
+a - LUSolver.o
+a - LinearSolver.o
+a - MatrixProfile.o
+a - NonLinearSystem.o
+a - PSLDLTSolver.o
+a - PardisoSolver.o
+a - PardisoSolverDL.o
+a - RCICGSolver.o
+a - SkylineMatrix.o
+a - SkylineSolver.o
+a - SparseMatrix.o
+a - SuperLUSolver.o
+a - SuperLU_MT_Solver.o
+a - WSMPSolver.o
+a - colsol.o
+a - matrix.o
+a - qsort.o
+a - stdafx.o
+a - vector.o
+( cd FEBio; make )
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/Archive.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. Archive.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/CommandManager.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. CommandManager.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/DataStore.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. DataStore.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/DumpFile.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. DumpFile.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FE2DFiberNeoHookean.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FE2DFiberNeoHookean.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FE2DTransIsoMooneyRivlin.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FE2DTransIsoMooneyRivlin.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FE2DTransIsoVerondaWestmann.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FE2DTransIsoVerondaWestmann.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FE3FieldElasticSolidDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FE3FieldElasticSolidDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEAnalysis.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEAnalysis.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEArrudaBoyce.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEArrudaBoyce.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEAugLagLinearConstraint.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEAugLagLinearConstraint.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEBio.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEBio.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEBioCommand.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEBioCommand.cpp -O3 -m64
+../FECore/CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+../FECore/CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+FEBioCommand.cpp(245): warning #268: the format string ends before this argument
+  		printf("Est. time remaining:  (not available)\n", nhour, nmin, nsec);
+  		                                                  ^
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEBioImport.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEBioImport.cpp -O3 -m64
+../FECore/CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+../FECore/CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+FEUT4Domain.h(72): warning #1125: function "FEElasticSolidDomain::ElementStiffness(FEModel &, int, matrix &)" is hidden by "FEUT4Domain::ElementStiffness" -- virtual function override intended?
+  	void ElementStiffness(FEModel& fem, FESolidElement& el, matrix& ke);
+  	     ^
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEBioPlotFile.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEBioPlotFile.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEBiphasic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEBiphasic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEBiphasicDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEBiphasicDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEBiphasicSolute.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEBiphasicSolute.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEBiphasicSoluteDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEBiphasicSoluteDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEBodyForce.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEBodyForce.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEBoundaryCondition.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEBoundaryCondition.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEBox.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEBox.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FECellGrowth.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FECellGrowth.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEConstBodyForce.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEConstBodyForce.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEContactDiagnostic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEContactDiagnostic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEContactInterface.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEContactInterface.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEContactSurface.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEContactSurface.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FECoordSysMap.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FECoordSysMap.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FECoupledTransIsoMooneyRivlin.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FECoupledTransIsoMooneyRivlin.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FECoupledTransIsoVerondaWestmann.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FECoupledTransIsoVerondaWestmann.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDamageMooneyRivlin.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDamageMooneyRivlin.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDamageNeoHookean.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDamageNeoHookean.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDamageTransIsoMooneyRivlin.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDamageTransIsoMooneyRivlin.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDiagnostic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDiagnostic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDiffConstIso.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDiffConstIso.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDiffConstOrtho.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDiffConstOrtho.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDiffRefIso.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDiffRefIso.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDiscreteDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDiscreteDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDiscreteMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDiscreteMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDiscreteSpringDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDiscreteSpringDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEDonnanEquilibrium.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEDonnanEquilibrium.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEEFDDonnanEquilibrium.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEEFDDonnanEquilibrium.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEEFDMooneyRivlin.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEEFDMooneyRivlin.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEEFDNeoHookean.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEEFDNeoHookean.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEEFDUncoupled.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEEFDUncoupled.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEEFDVerondaWestmann.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEEFDVerondaWestmann.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEElasticMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEElasticMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEElasticMixture.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEElasticMixture.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEElasticMultigeneration.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEElasticMultigeneration.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEElasticShellDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEElasticShellDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEElasticSolidDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEElasticSolidDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEElasticTrussDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEElasticTrussDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEElemElemList.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEElemElemList.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEElement.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEElement.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEElementLibrary.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEElementLibrary.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEElementTraits.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEElementTraits.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEEllipsoidalFiberDistribution.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEEllipsoidalFiberDistribution.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEException.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEException.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEExplicitSolidSolver.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEExplicitSolidSolver.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEFacet2FacetSliding.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEFacet2FacetSliding.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEFiberExpPow.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEFiberExpPow.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEFiberExpPowUncoupled.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEFiberExpPowUncoupled.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEFiberMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEFiberMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEFiberNeoHookean.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEFiberNeoHookean.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEFluidFlux.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEFluidFlux.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEFungOrthoCompressible.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEFungOrthoCompressible.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEFungOrthotropic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEFungOrthotropic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEGasserOgdenHolzapfel.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEGasserOgdenHolzapfel.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEGlobalMatrix.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEGlobalMatrix.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEGlobalVector.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEGlobalVector.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEHeatFlux.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEHeatFlux.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEHeatSolidDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEHeatSolidDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEHeatSolver.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEHeatSolver.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEHolmesMow.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEHolmesMow.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEIncompNeoHookean.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEIncompNeoHookean.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEIsotropicElastic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEIsotropicElastic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEIsotropicFourier.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEIsotropicFourier.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FELevelStructure.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FELevelStructure.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FELinearConstraint.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FELinearConstraint.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FELinearElastic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FELinearElastic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FELinearOrthotropic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FELinearOrthotropic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEMaterialPoint.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEMaterialPoint.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEMembraneMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEMembraneMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEMemoryDiagnostic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEMemoryDiagnostic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEMergedInterface.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEMergedInterface.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEMesh.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEMesh.cpp -O3 -m64
+FEUT4Domain.h(72): warning #1125: function "FEElasticSolidDomain::ElementStiffness(FEModel &, int, matrix &)" is hidden by "FEUT4Domain::ElementStiffness" -- virtual function override intended?
+  	void ElementStiffness(FEModel& fem, FESolidElement& el, matrix& ke);
+  	     ^
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEMicroMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEMicroMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEModel.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEModel.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEMooneyRivlin.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEMooneyRivlin.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEMultiphasic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEMultiphasic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEMultiphasicDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEMultiphasicDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEMuscleMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEMuscleMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FENNQuery.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FENNQuery.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FENeoHookean.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FENeoHookean.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FENeoHookeanTransIso.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FENeoHookeanTransIso.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FENodeElemList.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FENodeElemList.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FENodeNodeList.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FENodeNodeList.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FENodeReorder.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FENodeReorder.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEOctree.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEOctree.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEOgdenMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEOgdenMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEOgdenUnconstrained.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEOgdenUnconstrained.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEOptimizer.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEOptimizer.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEOrthoElastic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEOrthoElastic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEOsmCoefConst.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEOsmCoefConst.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEParameterList.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEParameterList.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPerfectOsmometer.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPerfectOsmometer.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPeriodicBoundary.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPeriodicBoundary.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPermConstIso.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPermConstIso.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPermHolmesMow.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPermHolmesMow.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPermRefIso.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPermRefIso.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPermRefOrtho.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPermRefOrtho.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPermRefTransIso.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPermRefTransIso.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPlotData.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPlotData.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPlotDataFactory.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPlotDataFactory.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPlotDomainData.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPlotDomainData.cpp -O3 -m64
+FEPlotDomainData.h(17): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotElementStress::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(31): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotRelativeVolume::Save" -- virtual function override intended?
+  		bool Save(FEDomain& dom, vector<float>& a);
+  		     ^
+
+FEPlotDomainData.h(40): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotActualFluidPressure::Save" -- virtual function override intended?
+  		bool Save(FEDomain& dom, vector<float>& a);
+  		     ^
+
+FEPlotDomainData.h(49): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotFluidFlux::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(58): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotNodalFluidFlux::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(67): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotActualSoluteConcentration::Save" -- virtual function override intended?
+  		bool Save(FEDomain& dom, vector<float>& a);
+  		     ^
+
+FEPlotDomainData.h(76): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotSoluteFlux::Save" -- virtual function override intended?
+  		bool Save(FEDomain& dom, vector<float>& a);
+  		     ^
+
+FEPlotDomainData.h(85): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotActualSolConcentration_::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(104): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotSolFlux_::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(123): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotElectricPotential::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(132): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotCurrentDensity::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(141): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotFixedChargeDensity::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(150): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotFiberVector::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(159): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotShellThickness::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(169): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotEffectiveFluidPressure::Save" -- virtual function override intended?
+  	bool Save(FEDomain& m, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(178): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotEffectiveSoluteConcentration::Save" -- virtual function override intended?
+  	bool Save(FEDomain& m, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(187): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotEffectiveSolConcentration_::Save" -- virtual function override intended?
+  	bool Save(FEDomain& m, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(206): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotDamage::Save" -- virtual function override intended?
+  	bool Save(FEDomain& m, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(215): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotReceptorLigandConcentration::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEPlotDomainData.h(224): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotUT4NodalStresses::Save" -- virtual function override intended?
+  	bool Save(FEDomain& dom, vector<float>& a);
+  	     ^
+
+FEUT4Domain.h(72): warning #1125: function "FEElasticSolidDomain::ElementStiffness(FEModel &, int, matrix &)" is hidden by "FEUT4Domain::ElementStiffness" -- virtual function override intended?
+  	void ElementStiffness(FEModel& fem, FESolidElement& el, matrix& ke);
+  	     ^
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPlotNodeData.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPlotNodeData.cpp -O3 -m64
+FEPlotNodeData.h(15): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotNodeDisplacement::Save" -- virtual function override intended?
+  	bool Save(FEMesh& m, vector<float>& a);
+  	     ^
+
+FEPlotNodeData.h(25): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotNodeVelocity::Save" -- virtual function override intended?
+  	bool Save(FEMesh& m, vector<float>& a);
+  	     ^
+
+FEPlotNodeData.h(35): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotNodeAcceleration::Save" -- virtual function override intended?
+  	bool Save(FEMesh& m, vector<float>& a);
+  	     ^
+
+FEPlotNodeData.h(44): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotNodeTemperature::Save" -- virtual function override intended?
+  	bool Save(FEMesh& m, vector<float>& a);
+  	     ^
+
+FEPlotNodeData.h(53): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotNodeReactionForces::Save" -- virtual function override intended?
+  	bool Save(FEMesh& m, vector<float>& a);
+  	     ^
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPlotSurfaceData.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPlotSurfaceData.cpp -O3 -m64
+FEPlotSurfaceData.h(21): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotContactGap::Save" -- virtual function override intended?
+  	bool Save(FESurface& surf, vector<float>& a);
+  	     ^
+
+FEPlotSurfaceData.h(39): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotContactPressure::Save" -- virtual function override intended?
+  	bool Save(FESurface& surf, vector<float>& a);
+  	     ^
+
+FEPlotSurfaceData.h(56): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotContactTraction::Save" -- virtual function override intended?
+  	bool Save(FESurface& surf, vector<float>& a);
+  	     ^
+
+FEPlotSurfaceData.h(72): warning #1125: function "FEPlotData::Save(FEModel &, Archive &)" is hidden by "FEPlotContactStatus::Save" -- virtual function override intended?
+  	bool Save(FESurface& surf, vector<float>& a);
+  	     ^
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPointBodyForce.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPointBodyForce.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPointConstraint.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPointConstraint.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPoroConstPerm.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPoroConstPerm.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPoroElastic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPoroElastic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPoroHolmesMow.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPoroHolmesMow.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPoroSolidDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPoroSolidDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPoroSolidSolver.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPoroSolidSolver.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPoroSoluteSolver.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPoroSoluteSolver.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPoroTraction.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPoroTraction.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPressureLoad.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPressureLoad.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPrintHBMatrixDiagnostic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPrintHBMatrixDiagnostic.cpp -O3 -m64
+../FECore/CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+../FECore/CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEPrintMatrixDiagnostic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEPrintMatrixDiagnostic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FERefIsoPerm.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FERefIsoPerm.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FERefOrthoPerm.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FERefOrthoPerm.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FERefTransIsoPerm.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FERefTransIsoPerm.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FERestartImport.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FERestartImport.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FERigid.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FERigid.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FERigidBody.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FERigidBody.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FERigidJoint.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FERigidJoint.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FERigidShellDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FERigidShellDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FERigidSolidDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FERigidSolidDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FERigidSurface.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FERigidSurface.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FERigidWallInterface.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FERigidWallInterface.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESFDMooneyRivlin.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESFDMooneyRivlin.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEShellDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEShellDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESlidingInterface.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESlidingInterface.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESlidingInterface2.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESlidingInterface2.cpp -O3 -m64
+DumpFile.h(90): warning #1563: taking the address of a temporary
+  		if (n>0) fwrite((T*) &v[0], sizeof(T), v.size(), m_fp);
+  		                     ^
+          detected during instantiation of "DumpFile &DumpFile::operator<<(std::vector<T, std::allocator<T>> &) [with T=bool]" at line 198 of "FESlidingInterface2.cpp"
+
+DumpFile.h(122): warning #1563: taking the address of a temporary
+  			fread((T*) &v[0], sizeof(T), n, m_fp);
+  			           ^
+          detected during instantiation of "DumpFile &DumpFile::operator>>(std::vector<T, std::allocator<T>> &) [with T=bool]" at line 213 of "FESlidingInterface2.cpp"
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESlidingInterface3.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESlidingInterface3.cpp -O3 -m64
+DumpFile.h(90): warning #1563: taking the address of a temporary
+  		if (n>0) fwrite((T*) &v[0], sizeof(T), v.size(), m_fp);
+  		                     ^
+          detected during instantiation of "DumpFile &DumpFile::operator<<(std::vector<T, std::allocator<T>> &) [with T=bool]" at line 226 of "FESlidingInterface3.cpp"
+
+DumpFile.h(122): warning #1563: taking the address of a temporary
+  			fread((T*) &v[0], sizeof(T), n, m_fp);
+  			           ^
+          detected during instantiation of "DumpFile &DumpFile::operator>>(std::vector<T, std::allocator<T>> &) [with T=bool]" at line 245 of "FESlidingInterface3.cpp"
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESlidingInterfaceBW.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESlidingInterfaceBW.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESolidDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESolidDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESolidSolver.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESolidSolver.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESolubConst.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESolubConst.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESolute.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESolute.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESoluteFlux.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESoluteFlux.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESolver.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESolver.cpp -O3 -m64
+../FECore/CompactMatrix.h(24): warning #1125: function "FECore::SparseMatrix::Create(FECore::SparseMatrixProfile &)" is hidden by "FECore::CompactMatrix::Create" -- virtual function override intended?
+  	virtual void Create(int N, int nz, double* pv, int *pi, int* pp);
+  	             ^
+
+../FECore/CompactMatrix.h(156): warning #1125: function "FECore::CompactMatrix::Create(int, int, double *, int *, int *)" is hidden by "FECore::CompactUnSymmMatrix::Create" -- virtual function override intended?
+  	void Create(SparseMatrixProfile& mp);
+  	     ^
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESphericalFiberDistribution.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESphericalFiberDistribution.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEStVenantKirchhoff.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEStVenantKirchhoff.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEStiffnessMatrix.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEStiffnessMatrix.cpp -O3 -m64
+FEUT4Domain.h(72): warning #1125: function "FEElasticSolidDomain::ElementStiffness(FEModel &, int, matrix &)" is hidden by "FEUT4Domain::ElementStiffness" -- virtual function override intended?
+  	void ElementStiffness(FEModel& fem, FESolidElement& el, matrix& ke);
+  	     ^
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESupplyBinding.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESupplyBinding.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESupplyConst.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESupplyConst.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESupplyMichaelisMenten.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESupplyMichaelisMenten.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESupplySynthesisBinding.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESupplySynthesisBinding.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESurface.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESurface.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESurfaceConstraint.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESurfaceConstraint.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FESurfaceLoad.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FESurfaceLoad.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETCNonlinearOrthotropic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETCNonlinearOrthotropic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETangentDiagnostic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETangentDiagnostic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETendonMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETendonMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETiedBiphasicInterface.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETiedBiphasicInterface.cpp -O3 -m64
+DumpFile.h(90): warning #1563: taking the address of a temporary
+  		if (n>0) fwrite((T*) &v[0], sizeof(T), v.size(), m_fp);
+  		                     ^
+          detected during instantiation of "DumpFile &DumpFile::operator<<(std::vector<T, std::allocator<T>> &) [with T=bool]" at line 196 of "FETiedBiphasicInterface.cpp"
+
+DumpFile.h(122): warning #1563: taking the address of a temporary
+  			fread((T*) &v[0], sizeof(T), n, m_fp);
+  			           ^
+          detected during instantiation of "DumpFile &DumpFile::operator>>(std::vector<T, std::allocator<T>> &) [with T=bool]" at line 211 of "FETiedBiphasicInterface.cpp"
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETiedContactSurface.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETiedContactSurface.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETiedInterface.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETiedInterface.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETractionLoad.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETractionLoad.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETransIsoMooneyRivlin.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETransIsoMooneyRivlin.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETransIsoVerondaWestmann.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETransIsoVerondaWestmann.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETransverselyIsotropic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETransverselyIsotropic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETriMembraneDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETriMembraneDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETriphasic.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETriphasic.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETriphasicDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETriphasicDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETrussDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETrussDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FETrussMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FETrussMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEUDGHexDomain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEUDGHexDomain.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEUT4Domain.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEUT4Domain.cpp -O3 -m64
+FEUT4Domain.h(72): warning #1125: function "FEElasticSolidDomain::ElementStiffness(FEModel &, int, matrix &)" is hidden by "FEUT4Domain::ElementStiffness" -- virtual function override intended?
+  	void ElementStiffness(FEModel& fem, FESolidElement& el, matrix& ke);
+  	     ^
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEUncoupledElasticMixture.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEUncoupledElasticMixture.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEUncoupledMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEUncoupledMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEUncoupledViscoElasticMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEUncoupledViscoElasticMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEVerondaWestmann.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEVerondaWestmann.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEViscoElasticMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEViscoElasticMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FEWrinkleOgdenMaterial.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FEWrinkleOgdenMaterial.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/FileImport.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. FileImport.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/Interrupt.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. Interrupt.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/LSDYNAPlotFile.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. LSDYNAPlotFile.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/LoadCurve.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. LoadCurve.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/Logfile.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. Logfile.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/MathParser.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. MathParser.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/PlotFile.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. PlotFile.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/Timer.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. Timer.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/XMLReader.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. XMLReader.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/colsol.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. colsol.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/console.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. console.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/diagnose.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. diagnose.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/fem.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. fem.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/getapppath.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. getapppath.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/hello.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. hello.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/input.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. input.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/kernel.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. kernel.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/levmar.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. levmar.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/mat3d.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. mat3d.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/optimize.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. optimize.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/powell.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. powell.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/restart.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. restart.cpp -O3 -m64
+FEUT4Domain.h(72): warning #1125: function "FEElasticSolidDomain::ElementStiffness(FEModel &, int, matrix &)" is hidden by "FEUT4Domain::ElementStiffness" -- virtual function override intended?
+  	void ElementStiffness(FEModel& fem, FESolidElement& el, matrix& ke);
+  	     ^
+
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/solve.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. solve.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/stdafx.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. stdafx.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/tens4d.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. tens4d.cpp -O3 -m64
+icpc -c -o /home/sci/bhayden/FEBio/build/osx/FEBio/validate.o -DLINUX -DMAC -DPARDISO -DSUPERLU -DSVN -DFEBIO_LICENSE -DNDEBUG -I../include -I.. validate.cpp -O3 -m64
+icpc -o /home/sci/bhayden/FEBio/bin/febio.osx -I../include -I.. /home/sci/bhayden/FEBio/build/osx/FEBio/*.o -O3 -m64 /home/sci/bhayden/FEBio/lib/fecore_osx.a /home/sci/bhayden/FEBio/lib/libsuperlu_4.0_osx.a /opt/intel/composer_xe_2011_sp1/mkl/lib/libmkl_intel_lp64.a /opt/intel/composer_xe_2011_sp1/mkl/lib/libmkl_intel_thread.a /opt/intel/composer_xe_2011_sp1/mkl/lib/libmkl_core.a /opt/intel/composer_xe_2011_sp1/mkl/lib/libmkl_pgi_thread.a /opt/intel/composer_xe_2011_sp1/lib/libiomp5.a -L/home/sci/bhayden/FEBio/lib -lkeygen_osx -lm
+host = katan
+opsys = i386
+['pardiso', 'bp04', 'Normal', 400, 668, 1068, 400, 820788, 0, 0, 0]
+['pardiso', 'bp10', 'Normal', 10, 37, 52, 37, 226196, 0, 0, 0]
+['pardiso', 'bp11', 'Normal', 28, 76, 104, 76, 75124, 0, 0, 0]
+['pardiso', 'bp12', 'Normal', 28, 84, 112, 84, 75124, 0, 0, 0]
+['pardiso', 'bp13', 'Normal', 28, 73, 101, 73, 75200, 0, 0, 0]
+['pardiso', 'bp14', 'Normal', 28, 98, 161, 98, 75200, 5, 0, 0]
+['pardiso', 'bp15', 'Normal', 84, 277, 382, 277, 402732, 180, 0, 0]
+['pardiso', 'bp16', 'Normal', 65, 193, 259, 193, 318568, 0, 0, 0]
+['pardiso', 'bp17', 'Normal', 36, 222, 327, 222, 2617160, 275, 0, 0]
+['pardiso', 'bp18', 'Normal', 400, 837, 1237, 400, 568064, 0, 0, 0]
+['pardiso', 'bp19', 'Normal', 62, 196, 258, 62, 7864432, 5, 0, 0]
+['pardiso', 'bs01', 'Normal', 28, 32, 70, 32, 97508, 25, 0, 0]
+['pardiso', 'bs04', 'Normal', 105, 200, 305, 200, 2876768, 45, 0, 0]
+['pardiso', 'bs05', 'Normal', 71, 204, 282, 204, 463420, 160, 0, 0]
+['pardiso', 'co01', 'Normal', 10, 20, 30, 10, 6108, 5, 0, 0]
+['pardiso', 'co02', 'Normal', 6, 31, 56, 6, 62820, 20, 0, 0]
+['pardiso', 'co04', 'Normal', 40, 334, 425, 46, 1833140, 275, 0, 0]
+['pardiso', 'co07', 'Normal', 40, 201, 335, 201, 4763220, 55, 0, 0]
+['pardiso', 'co08', 'Normal', 12, 105, 190, 18, 61924, 0, 0, 0]
+['pardiso', 'co09', 'Normal', 11, 71, 118, 13, 442108, 0, 0, 0]
+['pardiso', 'co10', 'Normal', 10, 48, 74, 10, 407524, 0, 0, 0]
+['pardiso', 'co11', 'Normal', 34, 397, 548, 60, 3533900, 135, 0, 0]
+['pardiso', 'co12', 'Normal', 34, 397, 548, 60, 3533900, 135, 0, 0]
+['pardiso', 'co13', 'Normal', 51, 204, 303, 52, 4869712, 190, 0, 0]
+['pardiso', 'co15', 'Normal', 51, 389, 554, 56, 4869712, 5, 0, 0]
+['pardiso', 'co16', 'Normal', 50, 486, 812, 65, 26428, 305, 0, 0]
+['pardiso', 'co17', 'Normal', 50, 73, 123, 50, 507484, 15, 0, 0]
+['pardiso', 'co18', 'Normal', 100, 934, 1544, 106, 51828, 150, 0, 0]
+['pardiso', 'co19', 'Normal', 75, 469, 780, 75, 1408284, 0, 0, 0]
+['pardiso', 'co20', 'Normal', 52, 517, 786, 62, 4962004, 30, 0, 0]
+['pardiso', 'co21', 'Normal', 56, 552, 769, 64, 5240644, 0, 0, 0]
+['pardiso', 'co22', 'Normal', 10, 128, 173, 14, 1213148, 70, 0, 0]
+['pardiso', 'co25', 'Normal', 10, 48, 65, 10, 112140, 0, 0, 0]
+['pardiso', 'co26', 'Normal', 10, 30, 40, 10, 41460, 0, 0, 0]
+['pardiso', 'co27', 'Normal', 24, 134, 160, 24, 2351348, 10, 0, 0]
+['pardiso', 'co28', 'Normal', 100, 611, 886, 611, 10537508, 705, 0, 0]
+['pardiso', 'co29', 'Normal', 101, 417, 546, 418, 2792716, 0, 0, 0]
+['pardiso', 'co30', 'Normal', 50, 405, 455, 66, 7884976, 0, 0, 0]
+['pardiso', 'co31', 'Normal', 24, 185, 257, 185, 259860, 5, 0, 0]
+['pardiso', 'co32', 'Normal', 20, 40, 60, 40, 322996, 5, 0, 0]
+['pardiso', 'co33', 'Normal', 56, 228, 402, 67, 53229940, 235, 20, 20]
+['pardiso', 'co34', 'Normal', 20, 46, 66, 46, 1601140, 20, 0, 0]
+['pardiso', 'co35', 'Normal', 10, 30, 40, 30, 103820, 0, 0, 0]
+['pardiso', 'co36', 'Normal', 18, 372, 1201, 44, 295436, 270, 0, 0]
+['pardiso', 'co37', 'Normal', 36, 422, 545, 60, 798580, 410, 0, 0]
+['pardiso', 'co38', 'Normal', 14, 85, 141, 89, 1627564, 100, 0, 0]
+['pardiso', 'co39', 'Normal', 15, 52, 67, 52, 454204, 5, 0, 0]
+['pardiso', 'co40', 'Normal', 10, 48, 62, 48, 886604, 60, 0, 0]
+['pardiso', 'di01', 'Normal', 10, 30, 40, 10, 2228, 0, 0, 0]
+['pardiso', 'di02', 'Normal', 10, 30, 40, 10, 13868, 0, 0, 0]
+['pardiso', 'di03', 'Normal', 50, 223, 283, 51, 243628, 0, 0, 0]
+['pardiso', 'di04', 'Normal', 10, 129, 198, 18, 181676, 0, 0, 0]
+['pardiso', 'dy01', 'Normal', 10, 10, 20, 10, 3908, 0, 0, 0]
+['pardiso', 'dy02', 'Normal', 167, 489, 656, 167, 1525468, 0, 0, 0]
+['pardiso', 'dy03', 'Normal', 41, 189, 301, 66, 4641208, 0, 0, 0]
+['pardiso', 'dy04', 'Normal', 50, 280, 431, 77, 3451852, 0, 0, 0]
+['pardiso', 'dy05', 'Normal', 10, 10, 20, 10, 3908, 0, 0, 0]
+['pardiso', 'dy07', 'Normal', 100, 200, 300, 100, 476372, 0, 0, 0]
+['pardiso', 'dy09', 'Normal', 100, 342, 492, 101, 24327316, 225, 0, 0]
+['pardiso', 'fi01', 'Normal', 10, 40, 50, 10, 10076, 5, 0, 0]
+['pardiso', 'fi02', 'Normal', 10, 55, 65, 10, 1796, 0, 0, 0]
+['pardiso', 'fi03', 'Normal', 50, 1049, 1802, 50, 6916, 445, 0, 0]
+['pardiso', 'fi04', 'Normal', 10, 30, 40, 10, 535964, 0, 0, 0]
+['pardiso', 'fi05', 'Normal', 10, 30, 40, 10, 535964, 5, 0, 0]
+['pardiso', 'fi06', 'Normal', 10, 30, 40, 10, 535964, 0, 0, 0]
+['pardiso', 'fi07', 'Normal', 10, 32, 42, 10, 535964, 0, 0, 0]
+['pardiso', 'fi08', 'Normal', 10, 30, 40, 10, 535964, 0, 0, 0]
+['pardiso', 'fi09', 'Normal', 10, 30, 40, 10, 535964, 5, 0, 0]
+['pardiso', 'fi10', 'Normal', 10, 30, 40, 10, 535964, 0, 0, 0]
+['pardiso', 'fi11', 'Normal', 10, 41, 51, 10, 535964, 0, 0, 0]
+['pardiso', 'fi12', 'Normal', 10, 30, 40, 10, 535964, 15, 0, 0]
+['pardiso', 'fi13', 'Normal', 11, 55, 84, 12, 579940, 45, 0, 0]
+['pardiso', 'fi14', 'Error', 0, 71, 121, 18, 96204, 105, 0, 0]
+['pardiso', 'fi15', 'Normal', 10, 35, 45, 10, 535964, 15, 0, 0]
+['pardiso', 'ma01', 'Normal', 12, 101, 129, 14, 89308, 0, 0, 0]
+['pardiso', 'ma02', 'Normal', 10, 30, 40, 10, 76732, 0, 0, 0]
+['pardiso', 'ma03', 'Normal', 10, 38, 48, 10, 88188, 0, 0, 0]
+['pardiso', 'ma05', 'Normal', 25, 30, 55, 25, 3716, 0, 0, 0]
+['pardiso', 'ma06', 'Normal', 14, 19, 33, 14, 190348, 0, 0, 0]
+['pardiso', 'ma07', 'Normal', 200, 605, 806, 200, 1232644, 275, 0, 0]
+['pardiso', 'ma11', 'Normal', 10, 36, 46, 36, 109772, 0, 0, 0]
+['pardiso', 'ma12', 'Normal', 10, 51, 62, 10, 88188, 0, 0, 0]
+['pardiso', 'ma13', 'Normal', 10, 46, 57, 10, 88188, 0, 0, 0]
+['pardiso', 'ma14', 'Normal', 10, 60, 80, 60, 185980, 5, 0, 0]
+['pardiso', 'ma15', 'Normal', 10, 48, 58, 10, 12216, 0, 0, 0]
+['pardiso', 'ma16', 'Normal', 47, 256, 346, 256, 231600, 305, 0, 0]
+['pardiso', 'mg01', 'Normal', 20, 107, 141, 107, 1202876, 0, 0, 0]
+['pardiso', 'mg02', 'Normal', 1, 9, 12, 9, 1339148, 0, 0, 0]
+['pardiso', 'mi01', 'Normal', 10, 52, 70, 10, 1796, 0, 0, 0]
+['pardiso', 'mi02', 'Normal', 10, 30, 40, 10, 281164, 0, 0, 0]
+['pardiso', 'mi03', 'Normal', 50, 125, 180, 125, 6916, 0, 0, 0]
+['pardiso', 'mi04', 'Normal', 10, 31, 41, 10, 1796, 0, 0, 0]
+['pardiso', 'mi05', 'Normal', 10, 50, 60, 10, 2716, 0, 0, 0]
+['pardiso', 'mi06', 'Normal', 10, 30, 40, 30, 69548, 0, 0, 0]
+['pardiso', 'mi09', 'Normal', 13, 68, 81, 13, 26428, 0, 0, 0]
+['pardiso', 'mi16', 'Normal', 16, 105, 134, 18, 783012, 0, 0, 0]
+['pardiso', 'mi17', 'Normal', 10, 10, 20, 10, 1796, 0, 0, 0]
+['pardiso', 'mi19', 'Normal', 4, 10, 17, 4, 955644, 0, 0, 0]
+['pardiso', 'mi24', 'Normal', 10, 37, 47, 37, 198828, 0, 0, 0]
+['pardiso', 'mi25', 'Normal', 10, 33, 43, 10, 6940, 0, 0, 0]
+['pardiso', 'mi26', 'Normal', 10, 40, 50, 10, 535964, 5, 0, 0]
+['pardiso', 'mi27', 'Normal', 10, 30, 40, 10, 143324, 0, 0, 0]
+['pardiso', 'mi28', 'Error', 3, 84, 184, 19, 20601396, 140, 0, 0]
+['pardiso', 'mi29', 'Normal', 10, 78, 88, 10, 55416900, 10, 0, 0]
+['pardiso', 'mi30', 'Normal', 29, 266, 363, 64, 62116, 50, 0, 0]
+['pardiso', 'mi31', 'Normal', 61, 744, 1054, 100, 1921928, 505, 0, 0]
+['pardiso', 'mi32', 'Normal', 12, 117, 151, 18, 1357364, 0, 0, 0]
+['pardiso', 'ms01', 'Normal', 50, 193, 243, 50, 143916, 0, 0, 0]
+['pardiso', 'ms02', 'Normal', 50, 204, 254, 50, 143916, 0, 0, 0]
+['pardiso', 'ms03', 'Normal', 50, 100, 150, 50, 8196, 0, 0, 0]
+['pardiso', 'ms04', 'Normal', 20, 155, 191, 24, 2308932, 0, 0, 0]
+['pardiso', 'mu02', 'Normal', 100, 200, 300, 100, 21076, 0, 0, 0]
+['pardiso', 'mu03', 'Normal', 10, 30, 40, 10, 1796, 0, 0, 0]
+['pardiso', 'ri01', 'Normal', 10, 30, 40, 10, 24468, 0, 0, 0]
+['pardiso', 'ri02', 'Normal', 62, 339, 712, 186, 15231340, 165, 0, 0]
+['pardiso', 'ri03', 'Normal', 10, 41, 51, 10, 925212, 0, 0, 0]
+['pardiso', 'ri04', 'Normal', 62, 491, 890, 186, 6748204, 230, 0, 0]
+['pardiso', 'ri05', 'Normal', 10, 53, 77, 10, 13644, 0, 0, 0]
+['pardiso', 'ri06', 'Normal', 17, 199, 342, 20, 208600, 205, 0, 0]
+['pardiso', 'ri07', 'Normal', 8, 81, 90, 12, 287284, 0, 0, 0]
+['pardiso', 'sh01', 'Normal', 10, 20, 30, 10, 1159676, 0, 0, 0]
+['pardiso', 'sh02', 'Normal', 14, 130, 161, 18, 45452, 0, 0, 0]
+['pardiso', 'sh03', 'Normal', 10, 50, 61, 10, 160524, 0, 0, 0]
+['pardiso', 'sh04', 'Normal', 21, 168, 209, 25, 317340, 0, 0, 0]
+['pardiso', 'sh05', 'Normal', 19, 139, 167, 20, 513372, 0, 0, 0]
+['pardiso', 'sh07', 'Normal', 13, 115, 146, 17, 92292, 15, 0, 0]
+['pardiso', 'sh10', 'Normal', 13, 98, 145, 17, 408104, 150, 0, 0]
+['pardiso', 'sh13', 'Normal', 29, 331, 399, 48, 352088, 325, 0, 0]
+['pardiso', 'sh14', 'Normal', 10, 64, 77, 10, 2774028, 0, 0, 0]
+['pardiso', 'sh15', 'Normal', 11, 55, 70, 12, 174780, 0, 0, 0]
+['pardiso', 'sh16', 'Normal', 10, 40, 50, 10, 3233724, 0, 0, 0]
+['pardiso', 'te01', 'Normal', 1, 12, 17, 2, 500, 0, 0, 0]
+['pardiso', 'te02', 'Normal', 10, 60, 70, 20, 1512596, 0, -100, 0]
+['pardiso', 'te03', 'Normal', 10, 32, 42, 32, 765340, 0, 0, 0]
+['pardiso', 'te04', 'Normal', 28, 324, 421, 43, 5873116, 0, 0, 0]
+['pardiso', 'te05', 'Normal', 38, 366, 478, 366, 671068, 0, 0, 0]
+['pardiso', 'tr01', 'Normal', 116, 328, 453, 328, 994256, 245, 0, 0]
+['pardiso', 'tr02', 'Normal', 51, 188, 261, 188, 1411408, 295, 0, 0]
+['pardiso', 'tr03', 'Normal', 49, 152, 201, 152, 381412, 160, 0, 0]
+['pardiso', 'tu01', 'Normal', 10, 29, 39, 10, 281164, 0, 0, 0]
+['pardiso', 'tu02', 'Normal', 10, 80, 90, 10, 282660, 0, 0, 0]
+['pardiso', 'tu03', 'Normal', 11, 88, 103, 13, 562840, 0, 0, 0]
+---  
++++  
+@@ -1,1 +1,1 @@
+-svn version : 3802
++svn version : 2126
+@@ -8,2 +8,2 @@
+-['pardiso', 'bp14', 'Normal', 28, 98, 161, 98, 75200, 5, 0, 0]
+-['pardiso', 'bp15', 'Normal', 84, 277, 382, 277, 402732, 180, 0, 0]
++['pardiso', 'bp14', 'Normal', 28, 98, 160, 98, 75200, 0, 0, 0]
++['pardiso', 'bp15', 'Normal', 84, 279, 383, 279, 402732, 0, 0, 0]
+@@ -11,1 +11,1 @@
+-['pardiso', 'bp17', 'Normal', 36, 222, 327, 222, 2617160, 275, 0, 0]
++['pardiso', 'bp17', 'Normal', 35, 217, 295, 217, 2548184, 0, 0, 0]
+@@ -13,8 +13,8 @@
+-['pardiso', 'bp19', 'Normal', 62, 196, 258, 62, 7864432, 5, 0, 0]
+-['pardiso', 'bs01', 'Normal', 28, 32, 70, 32, 97508, 25, 0, 0]
+-['pardiso', 'bs04', 'Normal', 105, 200, 305, 200, 2876768, 45, 0, 0]
+-['pardiso', 'bs05', 'Normal', 71, 204, 282, 204, 463420, 160, 0, 0]
+-['pardiso', 'co01', 'Normal', 10, 20, 30, 10, 6108, 5, 0, 0]
+-['pardiso', 'co02', 'Normal', 6, 31, 56, 6, 62820, 20, 0, 0]
+-['pardiso', 'co04', 'Normal', 40, 334, 425, 46, 1833140, 275, 0, 0]
+-['pardiso', 'co07', 'Normal', 40, 201, 335, 201, 4763220, 55, 0, 0]
++['pardiso', 'bp19', 'Normal', 62, 196, 258, 62, 7864432, 0, 0, 0]
++['pardiso', 'bs01', 'Normal', 28, 28, 56, 28, 97508, 0, 0, 0]
++['pardiso', 'bs04', 'Normal', 105, 200, 305, 200, 2876768, 0, 0, 0]
++['pardiso', 'bs05', 'Normal', 71, 203, 277, 203, 463420, 0, 0, 0]
++['pardiso', 'co01', 'Normal', 10, 20, 30, 10, 6108, 0, 0, 0]
++['pardiso', 'co02', 'Normal', 6, 31, 44, 7, 62820, 0, 0, 0]
++['pardiso', 'co04', 'Normal', 40, 331, 421, 45, 1833140, 0, 0, 0]
++['pardiso', 'co07', 'Normal', 40, 201, 336, 201, 4763220, 0, 0, 0]
+@@ -24,7 +24,7 @@
+-['pardiso', 'co11', 'Normal', 34, 397, 548, 60, 3533900, 135, 0, 0]
+-['pardiso', 'co12', 'Normal', 34, 397, 548, 60, 3533900, 135, 0, 0]
+-['pardiso', 'co13', 'Normal', 51, 204, 303, 52, 4869712, 190, 0, 0]
+-['pardiso', 'co15', 'Normal', 51, 389, 554, 56, 4869712, 5, 0, 0]
+-['pardiso', 'co16', 'Normal', 50, 486, 812, 65, 26428, 305, 0, 0]
+-['pardiso', 'co17', 'Normal', 50, 73, 123, 50, 507484, 15, 0, 0]
+-['pardiso', 'co18', 'Normal', 100, 934, 1544, 106, 51828, 150, 0, 0]
++['pardiso', 'co11', 'Normal', 34, 405, 539, 63, 3533900, 0, 0, 0]
++['pardiso', 'co12', 'Normal', 34, 405, 539, 63, 3533900, 0, 0, 0]
++['pardiso', 'co13', 'Normal', 51, 217, 324, 53, 4869712, 0, 0, 0]
++['pardiso', 'co15', 'Normal', 51, 389, 554, 56, 4869712, 0, 0, 0]
++['pardiso', 'co16', 'Normal', 50, 484, 813, 62, 26428, 0, 0, 0]
++['pardiso', 'co17', 'Normal', 50, 73, 123, 50, 507484, 0, 0, 0]
++['pardiso', 'co18', 'Normal', 100, 934, 1544, 106, 51828, 0, 0, 0]
+@@ -32,1 +32,1 @@
+-['pardiso', 'co20', 'Normal', 52, 517, 786, 62, 4962004, 30, 0, 0]
++['pardiso', 'co20', 'Normal', 52, 517, 786, 62, 4962004, 0, 0, 0]
+@@ -34,1 +34,1 @@
+-['pardiso', 'co22', 'Normal', 10, 128, 173, 14, 1213148, 70, 0, 0]
++['pardiso', 'co22', 'Normal', 10, 132, 179, 15, 1213148, 0, 0, 0]
+@@ -37,2 +37,2 @@
+-['pardiso', 'co27', 'Normal', 24, 134, 160, 24, 2351348, 10, 0, 0]
+-['pardiso', 'co28', 'Normal', 100, 611, 886, 611, 10537508, 705, 0, 0]
++['pardiso', 'co27', 'Normal', 24, 134, 160, 24, 2351348, 0, 0, 0]
++['pardiso', 'co28', 'Normal', 102, 611, 860, 613, 10744716, 0, 0, 0]
+@@ -41,4 +41,4 @@
+-['pardiso', 'co31', 'Normal', 24, 185, 257, 185, 259860, 5, 0, 0]
+-['pardiso', 'co32', 'Normal', 20, 40, 60, 40, 322996, 5, 0, 0]
+-['pardiso', 'co33', 'Normal', 56, 228, 402, 67, 53229940, 235, 20, 20]
+-['pardiso', 'co34', 'Normal', 20, 46, 66, 46, 1601140, 20, 0, 0]
++['pardiso', 'co31', 'Normal', 24, 185, 257, 185, 259860, 0, 0, 0]
++['pardiso', 'co32', 'Normal', 20, 40, 60, 40, 322996, 0, 0, 0]
++['pardiso', 'co33', 'Normal', 50, 217, 337, 52, 47708428, 0, 0, 0]
++['pardiso', 'co34', 'Normal', 20, 50, 70, 50, 1601140, 0, 0, 0]
+@@ -46,5 +46,5 @@
+-['pardiso', 'co36', 'Normal', 18, 372, 1201, 44, 295436, 270, 0, 0]
+-['pardiso', 'co37', 'Normal', 36, 422, 545, 60, 798580, 410, 0, 0]
+-['pardiso', 'co38', 'Normal', 14, 85, 141, 89, 1627564, 100, 0, 0]
+-['pardiso', 'co39', 'Normal', 15, 52, 67, 52, 454204, 5, 0, 0]
+-['pardiso', 'co40', 'Normal', 10, 48, 62, 48, 886604, 60, 0, 0]
++['pardiso', 'co36', 'Normal', 15, 154, 212, 20, 250568, 0, 0, 0]
++['pardiso', 'co37', 'Normal', 38, 455, 641, 65, 840868, 0, 0, 0]
++['pardiso', 'co38', 'Normal', 10, 64, 87, 64, 1213148, 0, 0, 0]
++['pardiso', 'co39', 'Normal', 15, 52, 67, 52, 454204, 0, 0, 0]
++['pardiso', 'co40', 'Normal', 10, 46, 59, 46, 886604, 0, 0, 0]
+@@ -61,2 +61,2 @@
+-['pardiso', 'dy09', 'Normal', 100, 342, 492, 101, 24327316, 225, 0, 0]
+-['pardiso', 'fi01', 'Normal', 10, 40, 50, 10, 10076, 5, 0, 0]
++['pardiso', 'dy09', 'Normal', 100, 343, 492, 101, 24327316, 0, 0, 0]
++['pardiso', 'fi01', 'Normal', 10, 39, 49, 10, 10076, 0, 0, 0]
+@@ -64,1 +64,1 @@
+-['pardiso', 'fi03', 'Normal', 50, 1049, 1802, 50, 6916, 445, 0, 0]
++['pardiso', 'fi03', 'Normal', 50, 1050, 1803, 50, 6916, 0, 0, 0]
+@@ -66,1 +66,1 @@
+-['pardiso', 'fi05', 'Normal', 10, 30, 40, 10, 535964, 5, 0, 0]
++['pardiso', 'fi05', 'Normal', 10, 30, 40, 10, 535964, 0, 0, 0]
+@@ -70,1 +70,1 @@
+-['pardiso', 'fi09', 'Normal', 10, 30, 40, 10, 535964, 5, 0, 0]
++['pardiso', 'fi09', 'Normal', 10, 30, 40, 10, 535964, 0, 0, 0]
+@@ -73,4 +73,4 @@
+-['pardiso', 'fi12', 'Normal', 10, 30, 40, 10, 535964, 15, 0, 0]
+-['pardiso', 'fi13', 'Normal', 11, 55, 84, 12, 579940, 45, 0, 0]
+-['pardiso', 'fi14', 'Error', 0, 71, 121, 18, 96204, 105, 0, 0]
+-['pardiso', 'fi15', 'Normal', 10, 35, 45, 10, 535964, 15, 0, 0]
++['pardiso', 'fi12', 'Normal', 10, 30, 40, 10, 535964, 0, 0, 0]
++['pardiso', 'fi13', 'Normal', 11, 53, 80, 12, 579940, 0, 0, 0]
++['pardiso', 'fi14', 'Normal', 15, 126, 212, 24, 755844, 0, 0, 0]
++['pardiso', 'fi15', 'Normal', 10, 35, 45, 10, 535964, 0, 0, 0]
+@@ -82,1 +82,1 @@
+-['pardiso', 'ma07', 'Normal', 200, 605, 806, 200, 1232644, 275, 0, 0]
++['pardiso', 'ma07', 'Normal', 200, 601, 801, 200, 1232644, 0, 0, 0]
+@@ -86,1 +86,1 @@
+-['pardiso', 'ma14', 'Normal', 10, 60, 80, 60, 185980, 5, 0, 0]
++['pardiso', 'ma14', 'Normal', 10, 60, 80, 60, 185980, 0, 0, 0]
+@@ -88,1 +88,1 @@
+-['pardiso', 'ma16', 'Normal', 47, 256, 346, 256, 231600, 305, 0, 0]
++['pardiso', 'ma16', 'Error', 7, 318, 846, 326, 44880, 0, 0, 0]
+@@ -93,1 +93,1 @@
+-['pardiso', 'mi03', 'Normal', 50, 125, 180, 125, 6916, 0, 0, 0]
++['pardiso', 'mi03', 'Normal', 50, 125, 179, 125, 6916, 0, 0, 0]
+@@ -103,1 +103,1 @@
+-['pardiso', 'mi26', 'Normal', 10, 40, 50, 10, 535964, 5, 0, 0]
++['pardiso', 'mi26', 'Normal', 10, 40, 50, 10, 535964, 0, 0, 0]
+@@ -105,5 +105,5 @@
+-['pardiso', 'mi28', 'Error', 3, 84, 184, 19, 20601396, 140, 0, 0]
+-['pardiso', 'mi29', 'Normal', 10, 78, 88, 10, 55416900, 10, 0, 0]
+-['pardiso', 'mi30', 'Normal', 29, 266, 363, 64, 62116, 50, 0, 0]
+-['pardiso', 'mi31', 'Normal', 61, 744, 1054, 100, 1921928, 505, 0, 0]
+-['pardiso', 'mi32', 'Normal', 12, 117, 151, 18, 1357364, 0, 0, 0]
++['pardiso', 'mi28', 'Normal', 10, 192, 351, 24, 55424100, 0, 0, 0]
++['pardiso', 'mi29', 'Normal', 10, 78, 88, 10, 55416900, 0, 0, 0]
++['pardiso', 'mi30', 'Normal', 25, 253, 335, 44, 54228, 0, 0, 0]
++['pardiso', 'mi31', 'Normal', 60, 725, 1034, 98, 1891476, 0, 0, 0]
++['pardiso', 'mi32', 'Normal', 12, 117, 150, 18, 1357364, 0, 0, 0]
+@@ -117,1 +117,1 @@
+-['pardiso', 'ri02', 'Normal', 62, 339, 712, 186, 15231340, 165, 0, 0]
++['pardiso', 'ri02', 'Normal', 62, 339, 574, 186, 15231340, 0, 0, 0]
+@@ -119,1 +119,1 @@
+-['pardiso', 'ri04', 'Normal', 62, 491, 890, 186, 6748204, 230, 0, 0]
++['pardiso', 'ri04', 'Normal', 62, 498, 790, 187, 6748204, 0, 0, 0]
+@@ -121,1 +121,1 @@
+-['pardiso', 'ri06', 'Normal', 17, 199, 342, 20, 208600, 205, 0, 0]
++['pardiso', 'ri06', 'Normal', 13, 137, 240, 26, 165064, 0, 0, 0]
+@@ -128,3 +128,3 @@
+-['pardiso', 'sh07', 'Normal', 13, 115, 146, 17, 92292, 15, 0, 0]
+-['pardiso', 'sh10', 'Normal', 13, 98, 145, 17, 408104, 150, 0, 0]
+-['pardiso', 'sh13', 'Normal', 29, 331, 399, 48, 352088, 325, 0, 0]
++['pardiso', 'sh07', 'Normal', 13, 115, 146, 17, 92292, 0, 0, 0]
++['pardiso', 'sh10', 'Normal', 11, 76, 92, 12, 350704, 0, 0, 0]
++['pardiso', 'sh13', 'Normal', 33, 424, 537, 59, 398600, 0, 0, 0]
+@@ -135,1 +135,1 @@
+-['pardiso', 'te02', 'Normal', 10, 60, 70, 20, 1512596, 0, -100, 0]
++['pardiso', 'te02', 'Normal', 10, 60, 70, 20, 1512596, 0, 0, 0]
+@@ -139,3 +139,3 @@
+-['pardiso', 'tr01', 'Normal', 116, 328, 453, 328, 994256, 245, 0, 0]
+-['pardiso', 'tr02', 'Normal', 51, 188, 261, 188, 1411408, 295, 0, 0]
+-['pardiso', 'tr03', 'Normal', 49, 152, 201, 152, 381412, 160, 0, 0]
++['pardiso', 'tr01', 'Normal', 116, 328, 453, 328, 994256, 0, 0, 0]
++['pardiso', 'tr02', 'Normal', 51, 188, 258, 188, 1411408, 0, 0, 0]
++['pardiso', 'tr03', 'Normal', 49, 152, 201, 152, 381412, 0, 0, 0]
+@@ -147,2 +147,2 @@
+-	Normal termination : 140
+-	Error termination  : 2
++	Normal termination : 362
++	Error termination  : 0
+

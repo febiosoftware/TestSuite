@@ -1,0 +1,42 @@
+--- 
++++ 
+@@ -1 +1,4 @@
+-FEBio did not compilesvn version : b"SubWCRev: 'C:\\Testing'\r\nLast committed at revision 4624\r\nMixed revision range 4623:4624\r\n"
++svn version : SubWCRev: 'C:\FEBio\Testing'
++Last committed at revision 2125
++Updated to revision 2126
++
+@@ -17 +20 @@
+-['pardiso', 'bs05', 'Normal', 71, 199, 274, 199, 468064, 5, 0, 0, '4.996']
++['pardiso', 'bs05', 'Normal', 71, 199, 274, 199, 468064, 0, 0, 0, '-0.00109439']
+@@ -44 +47 @@
+-['pardiso', 'co33', 'Normal', 55, 242, 376, 66, 33717852, 11, -20, -20]
++['pardiso', 'co33', 'Normal', 50, 217, 337, 52, 47708428, 0, 0, 0]
+@@ -63 +66 @@
+-['pardiso', 'dy09', 'Normal', 100, 342, 492, 101, 11997940, 0, 20, 20, '-2.12294']
++['pardiso', 'dy09', 'Normal', 100, 342, 492, 101, 11997940, 0, 0, 0, '-2.12294']
+@@ -109,2 +112,2 @@
+-['pardiso', 'mi28', 'Error', 10, 192, 351, 24, 5444640, 0, 0, 0, '0']
+-['pardiso', 'mi29', 'Error', 10, 78, 88, 10, 5440340, 0, 0, 0, '-1.86847']
++['pardiso', 'mi28', 'Normal', 10, 192, 351, 24, 5444640, 0, 0, 0, '0']
++['pardiso', 'mi29', 'Normal', 10, 78, 88, 10, 5440340, 0, 0, 0, '-1.86847']
+@@ -117 +120 @@
+-['pardiso', 'mp03', 'Normal', 49, 147, 196, 147, 502928, 0, -200, 0, '3.59431e-009']
++['pardiso', 'mp03', 'Normal', 49, 147, 196, 147, 502928, 0, 0, 0, '3.59431e-009']
+@@ -127,3 +130,3 @@
+-['pardiso', 'op01', 'Normal', 1, 9, '0', 121016, 1186]
+-['pardiso', 'op02', 'Normal', 1, 51, '0', 4928, 465]
+-['pardiso', 'ri01', 'Normal', 10, 30, 40, 10, 24712, 3, 0, 0, '0.204997']
++['pardiso', 'op01', 'Normal', 7, 24, '0.000661244', 121016, 0]
++['pardiso', 'op02', 'Normal', 3, 12, '.18575e-012', 4928, 0]
++['pardiso', 'ri01', 'Normal', 10, 30, 40, 10, 24712, 0, 0, 0, '0.204997']
+@@ -131 +134 @@
+-['pardiso', 'ri03', 'Normal', 10, 41, 51, 10, 767068, 19, 0, 0, '1.39667']
++['pardiso', 'ri03', 'Normal', 10, 41, 51, 10, 767068, 0, 0, 0, '1.39667']
+@@ -159,0 +163 @@
++
+@@ -161,2 +165,2 @@
+-	Normal termination : 155
+-	Error termination  : 2
++	Normal termination : 140
++	Error termination  : 0
