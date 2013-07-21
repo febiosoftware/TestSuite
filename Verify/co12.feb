@@ -3738,7 +3738,7 @@ Comments:
 			<loadpoint>0,0</loadpoint>
 			<loadpoint>1,-5.0</loadpoint>
 		</loadcurve>
-		<loadcurve id="2">
+		<loadcurve id="2" type="step">
             <loadpoint>0,0</loadpoint>
             <loadpoint>0.8,0.1</loadpoint>
 			<loadpoint>1,0.1</loadpoint>
