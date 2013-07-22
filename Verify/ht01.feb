@@ -800,6 +800,7 @@ Comments:
 	<Output>
 		<plotfile type="febio">
 			<var type="temperature"/>
+			<var type="heat flux"/>
 		</plotfile>
 		<logfile>
 			<node_data data="T">2</node_data>
