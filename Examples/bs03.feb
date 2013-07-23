@@ -3178,5 +3178,8 @@ Comments:
 		  <var type="solute concentration"/>
 		  <var type="solute flux"/>
 		</plotfile>
+		<logfile>
+          <element_data data="p">676</element_data>
+        </logfile>
 	</Output>
 </febio_spec>
