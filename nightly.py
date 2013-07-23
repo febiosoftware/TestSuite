@@ -77,7 +77,9 @@ if plat == 'win':
 
 	# Print the svn revision number in the results file
 	version_str = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
-	results.write("svn version : " + str(version_str) + "\n")
+	version_str = version_str.decode("utf8")
+	print(version_str)
+	results.write("svn version : " + version_str + "\n")
 	version_lines = version_str.split("\n")
 	version_lines = [line.strip() for line in version_lines]
 	for line in version_lines:
