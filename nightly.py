@@ -75,10 +75,10 @@ if plat == 'win':
 	out_dir = 'C:/Testing/' + febio_name + '_Logs/'
 	logs_dir = out_dir
 
-	# Print the svn revision number in the results file
+	# Print the FEBio svn revision number in the results file
+	os.chdir(febio_dir)
 	version_str = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
 	version_str = version_str.decode("utf8")
-	print(version_str)
 	results.write("svn version : " + version_str + "\n")
 	version_lines = version_str.split("\n")
 	version_lines = [line.strip() for line in version_lines]
