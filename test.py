@@ -8,14 +8,21 @@
 #import filecmp
 #import difflib
 #import datetime
-import subprocess
+#import subprocess
 #import smtplib
 #import csv
 #import time
 #from email.mime.text import MIMEText
 #import struct
 
-output = subprocess.call(["svn", "up"])
+tmp = "4632"
+svn_version = open("svn_version.py", "w")
+svn_version.write("version = " + tmp)
+svn_version.close()
+from svn_version import version
+if version > 0: print(version)
+
+#output = subprocess.call(["svn", "up"])
 #version_str = subprocess.Popen(["svn", "up"], stdout=subprocess.PIPE).communicate()[0]
 #length = version_str.len()
 #lines = version_str.split("\n")
@@ -24,7 +31,7 @@ output = subprocess.call(["svn", "up"])
 #	if line.find("revision") !=-1:
 #		version = line.split(" ")[2].strip(".")
 #version = "0"
-if output == 0: print("worked")
+#if output == 0: print("worked")
 
 #if time.time() - os.path.getctime("febio.xml") > 43200:
 #	print("Older than 12 hours")

@@ -116,17 +116,22 @@ else:
 
 	if args.find('c') == -1:
 
-		# Do an svn update on lnx64
-		version = "0"
+		# Do an svn update on lnx64 and write to svn_version.py
 		if plat == 'lnx64':
+			version = "0"
 			output = subprocess.Popen(['svn', 'up'], stdout=subprocess.PIPE).communicate()[0]
 			output_lines = output.split("\n")
 			for line in output_lines:
 				if line.find("Updated") !=-1:
 					version = line.split(" ")[3].strip(".")
+			svn_version = open("svn_version.py", "w")
+			svn_version.write("version = " + version)
+			svn_version.close()
 
-		# Compile FEBio
-		if len(version) > 1:
+
+		# Compile FEBio if it has been updated
+		from svn_version import version
+		if version > 0:
 			try:
 				shutil.copy(febio, febio.split('.')[0] + '_old.' + plat)
 				shutil.copy(febio_lib, febio_lib.split('.')[0] + '_old.a')
