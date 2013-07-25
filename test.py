@@ -4,7 +4,7 @@
 #import glob
 #import sys
 #import platform
-#import shutil
+import shutil
 #import filecmp
 #import difflib
 #import datetime
@@ -15,12 +15,17 @@
 #from email.mime.text import MIMEText
 #import struct
 
-tmp = "4632"
-svn_version = open("svn_version.py", "w")
-svn_version.write("version = " + tmp)
-svn_version.close()
-from svn_version import version
-if version > 0: print(version)
+version = 4672
+febio = "febio.lnx64"
+plat = "lnx64"
+shutil.copy(febio, febio.split('.')[0] + '_' + version + '.' + plat)
+
+#tmp = "4632"
+#svn_version = open("svn_version.py", "w")
+#svn_version.write("version = " + tmp)
+#svn_version.close()
+#from svn_version import version
+#if version > 0: print(version)
 
 #output = subprocess.call(["svn", "up"])
 #version_str = subprocess.Popen(["svn", "up"], stdout=subprocess.PIPE).communicate()[0]

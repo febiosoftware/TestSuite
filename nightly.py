@@ -145,7 +145,7 @@ else:
 			output = subprocess.call(command)
 			if output == 0:
 				try:
-					shutil.copy(febio, febio.split('.')[0] + '_' + version + '.' + plat)
+					shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + plat)
 				except IOError:
 					print("Error copying files")
 				
