@@ -25,8 +25,10 @@ print("opsys = " + opsys)
 
 if len(sys.argv) == 1: sys.exit("error: The name of the FEBio directory must be entered as an argument")
 febio_name = sys.argv[1]
+febio_lc_name = febio_name.lower()
 if len(sys.argv) > 2: args = sys.argv[2]
 else: args = ''
+print(febio_name)
 
 # Set the default solvers
 # ** Noted removed skyline & superlu solvers. ** 
@@ -51,7 +53,8 @@ else: os.environ['OMP_NUM_THREADS'] = '1'
 
 # open the results file
 test_dir = os.getcwd()
-res_name = "nightly_" + plat
+if febio_name == 'FEBio': res_name = "nightly_" + plat
+else: res_name = "nightly2_" + plat
 std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
 
@@ -64,10 +67,6 @@ if plat == 'win':
 		exe_dir = febio_dir + '/x64/Release'
 	elif febio_name == 'FEBio2':
 		exe_dir = febio_dir + '/VS2008/Release'
-		results.close()
-		res_name = "nightly_win2"
-		std_name = res_name + "_std"
-		results = open(res_name + ".txt", "w")
 	else:
 		exe_dir = febio_dir + '/Release'
 	febio = exe_dir + '/' + febio_name + '.exe'
@@ -99,7 +98,7 @@ if plat == 'win':
 		
 else:
 	#Update the test suite
-	if plat == 'lnx64':
+	if plat == 'lnx64' and febio_name == 'FEBio':
 		subprocess.call(['svn', 'up'])
 
 	# Define FEBio directory, executable, and library
@@ -107,14 +106,13 @@ else:
 	# and that the executable is in FEBio/bin
 	os.chdir("../" + febio_name)
 	febio_dir = os.getcwd()
-	febio = febio_dir + '/bin/febio.' + plat
-	febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
+	febio = febio_dir + '/bin/' + febio_lc_name + '.' + plat
 
 	# Define the log and plt output directory
 	# user variable assumes the directory is e.g. /home/sci/rawlins/Testing
 	user = test_dir.split('/')[3]
-	out_dir = '/scratch/' + user + '/febio_test/'
-	logs_dir = 'Logs/'
+	out_dir = '/scratch/' + user + '/' + febio_lc_name + '_test/'
+	logs_dir = febio_name + '_Logs/'
 
 	if args.find('c') == -1:
 
@@ -136,7 +134,6 @@ else:
 		if version > 0:
 			try:
 				shutil.copy(febio, febio.split('.')[0] + '_old.' + plat)
-				shutil.copy(febio_lib, febio_lib.split('.')[0] + '_old.a')
 			except IOError:
 				print("Error copying files")
 			command =['make', '-f', 'febio.mk', plat + 'clean' ]

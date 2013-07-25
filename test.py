@@ -1,10 +1,10 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-#import os
+import os
 #import glob
 #import sys
 #import platform
-import shutil
+#import shutil
 #import filecmp
 #import difflib
 #import datetime
@@ -15,10 +15,16 @@ import shutil
 #from email.mime.text import MIMEText
 #import struct
 
-version = 4672
-febio = "febio.lnx64"
-plat = "lnx64"
-shutil.copy(febio, febio.split('.')[0] + '_' + version + '.' + plat)
+os.system("cd ~/Testing")
+print(os.getcwd())
+
+#name = "FEBio"
+#print(name.lower())
+
+#version = 4672
+#febio = "febio.lnx64"
+#plat = "lnx64"
+#shutil.copy(febio, febio.split('.')[0] + '_' + version + '.' + plat)
 
 #tmp = "4632"
 #svn_version = open("svn_version.py", "w")
