@@ -68,7 +68,7 @@ nerrs = 0			# nr of error terminations
 
 # These problems are new, newly modified, or deleted
 new      = []
-modified = ['bp07', 'bp08', 'bp09', 'bs02', 'bs03', 'hip_n10rb', 'incneo', 'saddle5']
+modified = []
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
@@ -249,4 +249,4 @@ results_std.close()
 
 # copy the results file to the Logs directory
 res_date = res_name + "_" + str(datetime.date.today()) + ".txt"
-shutil.copy(res_name + ".txt", "Logs/" + res_date)
+shutil.copy(res_name + ".txt", "FEBio_Logs/" + res_date)
