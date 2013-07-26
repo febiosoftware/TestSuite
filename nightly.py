@@ -119,8 +119,9 @@ else:
 		# Do an svn update on lnx64 and write to svn_version.py
 		if plat == 'lnx64':
 			version = "0"
-			output = subprocess.Popen(['svn', 'up'], stdout=subprocess.PIPE).communicate()[0]
-			output_lines = output.split("\n")
+			version_str = subprocess.Popen(['svn', 'up'], stdout=subprocess.PIPE).communicate()[0]
+			version_str = version_str.decode("utf8")
+			output_lines = version_str.split("\n")
 			for line in output_lines:
 				if line.find("Updated") !=-1:
 					version = line.split(" ")[3].strip(".")
@@ -130,12 +131,9 @@ else:
 
 
 		# Compile FEBio if it has been updated
+		sys.path.append(os.getcwd())
 		from svn_version import version
 		if version > 0:
-			try:
-				shutil.copy(febio, febio.split('.')[0] + '_old.' + plat)
-			except IOError:
-				print("Error copying files")
 			command =['make', '-f', 'febio.mk', plat + 'clean' ]
 			subprocess.call(command)
 			command =['make', '-f', 'febio.mk', plat]
@@ -145,7 +143,7 @@ else:
 					shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + plat)
 				except IOError:
 					print("Error copying files")
-				
+			else: sys.exit("FEBio did not compile")	
 
 	# Print the svn revision number in the results file
 	version = subprocess.Popen(["svnversion"], stdout=subprocess.PIPE).communicate()[0]

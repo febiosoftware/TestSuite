@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
+#import os
 #import glob
 #import sys
 #import platform
@@ -8,15 +8,15 @@ import os
 #import filecmp
 #import difflib
 #import datetime
-#import subprocess
+import subprocess
 #import smtplib
 #import csv
 #import time
 #from email.mime.text import MIMEText
 #import struct
 
-os.system("cd ~/Testing")
-print(os.getcwd())
+#os.system("cd ~/Testing")
+#print(os.getcwd())
 
 #name = "FEBio"
 #print(name.lower())
@@ -33,9 +33,10 @@ print(os.getcwd())
 #from svn_version import version
 #if version > 0: print(version)
 
-#output = subprocess.call(["svn", "up"])
-#version_str = subprocess.Popen(["svn", "up"], stdout=subprocess.PIPE).communicate()[0]
-#length = version_str.len()
+output = subprocess.call(["svn", "up"])
+version_str = subprocess.Popen(["svn", "up"], stdout=subprocess.PIPE).communicate()[0]
+version_str = version_str.decode("utf8")
+print(version_str)
 #lines = version_str.split("\n")
 #lines = [line.strip() for line in lines]
 #for line in lines:
