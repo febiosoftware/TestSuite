@@ -88,8 +88,8 @@ if plat == 'win':
 	# Print message if executable did not compile (exe is older than 1 hour)
 	# or save a copy of the executable if it did.
 	if time.time() - os.path.getctime(febio) > 3600:
-		results.write("FEBio did not compile")
-		print("FEBio did not compile")
+		results.write("FEBio did not compile\n")
+		print("FEBio did not compile\n")
 	else:
 		try:
 			shutil.copy(febio, febio.split('.')[0] + '_' + version + '.exe')
