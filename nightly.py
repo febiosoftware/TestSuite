@@ -177,9 +177,7 @@ slow = ['co33',
 inconsistent = []
 
 # These problems will not run in FEBio2
-exempt2 = ['ht01',
-	   'mi33',
-	   'mp01',
+exempt2 = ['mp01',
 	   'mp02',
 	   'mp03',
 	   'mp06',
