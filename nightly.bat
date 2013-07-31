@@ -10,7 +10,7 @@ if %COMPUTERNAME%==CIBC-RD7 (
 		vcbuild C:\FEBio\FEBio.sln "Release|Win32" > %compare%
 	) else (
 		call "C:\Program Files\Microsoft Visual Studio 10.0\VC"\vcvarsall.bat
-		msbuild C:\FEBio2\VS2010\FEBio2.sln "Release|Win32" > %compare%
+		msbuild C:\FEBio2\VS2010\FEBio2.sln /p:Platform=Win32 /p:Configuration=Release > %compare%
 	)
 )
 C:\Testing\nightly.py %* >> %compare%
