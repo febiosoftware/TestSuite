@@ -66,7 +66,7 @@ if plat == 'win':
 	if host == 'cibc-rd7':
 		exe_dir = febio_dir + '/x64/Release'
 	elif febio_name == 'FEBio2':
-		exe_dir = febio_dir + '/VS2008/Release'
+		exe_dir = febio_dir + '/VS2010/Release'
 	else:
 		exe_dir = febio_dir + '/Release'
 	febio = exe_dir + '/' + febio_name + '.exe'
