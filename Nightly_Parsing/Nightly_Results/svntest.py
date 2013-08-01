@@ -7,5 +7,6 @@ current = os.getcwd()
 cwd = current.replace("\\", "/")
 
 path = ' /path:' + cwd + '/cibc-rd7.txt'
-arguments = '/command:commit ' +url + path, '\/message: "committing parsing results" /closeonend:2'
-subprocess.call(['TortoiseProc.exe', arguments])
+arguments = '/command:commit ' +url + path, ' \/logmsg: "committing parsing results" /closeonend:4'
+#subprocess.call(['TortoiseProc.exe', arguments])
+subprocess.call(['svn commit -m "Nightly Parsing Update"'])
