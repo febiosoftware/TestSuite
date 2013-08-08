@@ -136,7 +136,7 @@ else:
 		if version > 0:
 			command =['make', '-f', 'febio.mk', plat + 'clean' ]
 			subprocess.call(command)
-			command =['make', '-f', 'febio.mk', plat]
+			command =['make', '-f', 'febio.mk', plat + 'd']
 			output = subprocess.call(command)
 			if output == 0:
 				try:
