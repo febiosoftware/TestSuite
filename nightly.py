@@ -19,7 +19,6 @@ print("opsys = " + opsys)
 # Arguments are any of:
 # c: do not compile
 # p: use only Pardiso
-# f: do fast test (no long or inconsistent problems)
 # t: test on a few problems
 # 4: run with 4 threads
 
@@ -47,13 +46,17 @@ elif opsys == 'i686':
 	plat = 'lnx32'
 
 # Specify number of threads
-if (args.find('f') != -1) or (args.find('4') != -1): os.environ['OMP_NUM_THREADS'] = '4'
+dir_ext = ""
+if args.find('4') != -1:
+	os.environ['OMP_NUM_THREADS'] = '4'
+	dir_ext = "4"
 else: os.environ['OMP_NUM_THREADS'] = '1'
-#os.environ['OMP_NUM_THREADS'] = '4'
 
 # open the results file
 test_dir = os.getcwd()
-if febio_name == 'FEBio': res_name = "nightly_" + plat
+if febio_name == 'FEBio':
+	if dir_ext == "4": res_name = "nightly4_" + plat
+	else: res_name = "nightly_" + plat
 else: res_name = "nightly2_" + plat
 std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
@@ -71,7 +74,7 @@ if plat == 'win':
 		exe_dir = febio_dir + '/Release'
 	febio = exe_dir + '/' + febio_name + '.exe'
 
-	out_dir = 'C:/Testing/' + febio_name + '_Logs/'
+	out_dir = 'C:/Testing/' + febio_name + dir_ext + '_Logs/'
 	logs_dir = out_dir
 
 	# Print the FEBio svn revision number in the results file
@@ -98,7 +101,7 @@ if plat == 'win':
 		
 else:
 	#Update the test suite
-	if plat == 'lnx64' and febio_name == 'FEBio':
+	if plat == 'lnx64' and febio_name == 'FEBio' and dir_ext == "":
 		subprocess.call(['svn', 'up'])
 
 	# Define FEBio directory, executable, and library
@@ -111,13 +114,13 @@ else:
 	# Define the log and plt output directory
 	# user variable assumes the directory is e.g. /home/sci/rawlins/Testing
 	user = test_dir.split('/')[3]
-	out_dir = '/scratch/' + user + '/' + febio_lc_name + '_test/'
-	logs_dir = febio_name + '_Logs/'
+	out_dir = '/scratch/' + user + '/' + febio_lc_name + dir_ext + '_test/'
+	logs_dir = febio_name + dir_ext + '_Logs/'
 
 	if args.find('c') == -1:
 
 		# Do an svn update on lnx64 and write to svn_version.py
-		if plat == 'lnx64':
+		if plat == 'lnx64' and dir_ext == "":
 			version = "0"
 			version_str = subprocess.Popen(['svn', 'up'], stdout=subprocess.PIPE).communicate()[0]
 			version_str = version_str.decode("utf8")
@@ -133,7 +136,7 @@ else:
 		# Compile FEBio if it has been updated
 		sys.path.append(os.getcwd())
 		from svn_version import version
-		if version > 0:
+		if version > 0 and dir_ext == "":
 			command =['make', '-f', 'febio.mk', plat + 'clean' ]
 			subprocess.call(command)
 			command =['make', '-f', 'febio.mk', plat + 'd']
@@ -167,11 +170,6 @@ exempt = [
 	  'oi01',
 	  'oi02']
 	
-# These problems will be ignored for a fast run of the test suite:
-slow = ['co33',
-	'mi28',
-	'ri02']
-
 # These problems give inconsistent convergence statistics results
 # when run with multiple threads:
 inconsistent = []
@@ -200,8 +198,7 @@ from logdata import dfield
 dfield0 = [col[0] for col in dfield]
 
 # Read the commanline arguments
-if args.find('f') != -1: exempt += slow + inconsistent
-if args.find('4') != -1: exempt += inconsistent
+if dir_ext == "4": exempt += inconsistent
 if febio_name == 'FEBio2': exempt += exempt2
 
 # These problems are new, newly modified, or deleted
