@@ -1,0 +1,26 @@
+---  
++++  
+@@ -1,5 +1,1 @@
+-svn version : SubWCRev: 'C:\FEBio'
+-Last committed at revision 4800
+-Updated to revision 4802
+-
+-FEBio did not compile
++svn version : SubWCRev: 'C:\Testing'Last committed at revision 4352Updated to revision 4376
+@@ -17,1 +13,1 @@
+-['pardiso', 'bp19', 'Normal', 62, 196, 258, 62, 7865884, 0, -50, 0, '-3.85885e-013']
++['pardiso', 'bp19', 'Normal', 62, 196, 258, 62, 7865884, 0, 0, 0, '-3.85885e-013']
+@@ -37,1 +33,1 @@
+-['pardiso', 'co20', 'Normal', 52, 517, 786, 62, 3011380, 0, 0, 20, '-3.01398']
++['pardiso', 'co20', 'Normal', 52, 517, 786, 62, 3011380, 0, 0, 0, '-3.01398']
+@@ -43,1 +39,1 @@
+-['pardiso', 'co28', 'Normal', 102, 612, 861, 614, 6153828, 10, 0, 0, '4.08583']
++['pardiso', 'co28', 'Normal', 102, 612, 861, 614, 6153828, 0, 0, 0, '4.08583']
+@@ -129,2 +125,2 @@
+-['pardiso', 'op01', 'Normal', 1, 9, '0', 121016, 1185]
+-['pardiso', 'op02', 'Normal', 1, 51, '0', 4928, 465]
++['pardiso', 'op01', 'Normal', 7, 24, '0.000661244', 121016, 0]
++['pardiso', 'op02', 'Normal', 3, 12, '.18575e-012', 4928, 0]
+@@ -163,1 +159,1 @@
+-	Normal termination : 155
++	Normal termination : 140
