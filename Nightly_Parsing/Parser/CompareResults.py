@@ -1,8 +1,3 @@
-'''
-Created on Aug 10, 2012
-
-@author: Bryce
-'''
 def CompareResults(Results):            
    for file in Results._files:
         '''

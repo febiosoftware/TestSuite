@@ -1,8 +1,3 @@
-'''
-Created on Sep 10, 2012
-
-@author: Bryce
-'''
 from xlwt3 import Workbook
 import datetime
 

@@ -1,8 +1,3 @@
-'''
-Created on Aug 10, 2012
-
-@author: Bryce
-'''
 def CleanUpLine (line):
     line = line.replace("+", "")    #Remove any +
     line = line.replace("-", "")    #Remove any -
