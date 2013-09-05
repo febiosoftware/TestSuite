@@ -32,18 +32,17 @@ SaveFinalResultsHTML(results)
 
 print("Finished Parsing - Sending Email" ); 
 
-#Send out the results in an email 
-
 #Now email off the results from the parsing. 
 host = platform.node().split('.')[0]
 today = datetime.date.today()
 me = 'scirun-tester@sci.utah.edu'
 os.chdir("C:/Testing/Nightly_Parsing/Nightly_Results/")
-fp = open('nightly_results-' + str(today) + '.html, 'r')
+print('nightly_results-' + str(today) + '.html', 'r')
+fp = open('nightly_results-' + str(today) + '.html', 'r')
 msg = MIMEText(fp.read(), 'html')
 fp.close()
 msg['Subject'] = 'Nightly Parser ' + host
-you = bryce.c.hayden@gmail.com
+you = 'bhayden@sci.utah.edu'
 #you = 'febio-test@sci.utah.edu'
 msg['From'] = me
 msg['To'] = you
