@@ -435,13 +435,13 @@ results.write("\tError termination  : " + str(nerrs) + "\n")
 results.close()
 
 # compare results.txt with nightly_'plat'_std.txt
-parsingFile = open(parsing_dir + "Nightly_Runs/" + host + ".txt", "w")
+#parsingFile = open(parsing_dir + "Nightly_Runs/" + host + ".txt", "w")
 os.chdir("..")
 results = open(res_name + ".txt", "r")
 std = open(std_name + ".txt", "r")
 for line in difflib.unified_diff(results.readlines(), std.readlines(), n=0):
 	sys.stdout.write(line)
-	parsingFile.write(line)
+#	parsingFile.write(line)
 results.close()
 std.close()
 
@@ -450,4 +450,4 @@ res_date = res_name + "_" + str(datetime.date.today()) + ".txt"
 shutil.copy(res_name + ".txt", logs_dir + res_date)
 
 #SVN Commit the parsing file
-subprocess.call(['svn', 'ci', '-m', '"Commiting nightly files for Parsing"', 'Nightly_Parsing/Nightly_Runs/*.txt'])
+#subprocess.call(['svn', 'ci', '-m', '"Commiting nightly files for Parsing"', #'Nightly_Parsing/Nightly_Runs/*.txt'])
