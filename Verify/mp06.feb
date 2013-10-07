@@ -965,7 +965,7 @@ Comments:
 		</logfile>
 	</Output>
 	<Step name="Step01 Steady-State">
-		<Module type="solute"/>
+		<Module type="multiphasic"/>
 		<Control>
 			<time_steps>10</time_steps>
 			<step_size>0.1</step_size>
@@ -993,7 +993,7 @@ Comments:
 		</Constraints>
 	</Step>
 	<Step name="Step02 Transient">
-		<Module type="solute"/>
+		<Module type="multiphasic"/>
 		<Control>
 			<time_steps>72000</time_steps>
 			<step_size>0.1</step_size>

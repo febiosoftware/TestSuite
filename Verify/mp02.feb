@@ -2094,7 +2094,7 @@ Comments:
 		</logfile>
 	</Output>
 	<Step>
-		<Module type="solute"/>
+		<Module type="multiphasic"/>
 		<Control>
 			<analysis type="steady-state"/>
 			<title>Initial Swelling</title>
@@ -2118,7 +2118,7 @@ Comments:
 		</Control>
 	</Step>
 	<Step>
-		<Module type="solute"/>
+		<Module type="multiphasic"/>
 		<Control>
 			<title>Stress-relaxation</title>
 			<final_time>2001</final_time>

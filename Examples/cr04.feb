@@ -39,7 +39,7 @@ Comments:
 	
 -->
 <febio_spec version="1.2">
-	<Module type="solute"/>
+	<Module type="multiphasic"/>
 	<Control>
 		<time_steps>101</time_steps>
 		<step_size>36000</step_size>
