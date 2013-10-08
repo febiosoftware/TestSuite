@@ -67,7 +67,7 @@ norms = 0			# nr of normal terminations
 nerrs = 0			# nr of error terminations
 
 # These problems are new, newly modified, or deleted
-new      = ['cr04']
+new      = []
 modified = []
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
