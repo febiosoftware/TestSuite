@@ -1530,7 +1530,7 @@ Comments:
         </logfile>		
 	</Output>
 	<Step>
-		<Module type="multiphasic"/>
+		<Module type="solute"/>
 		<Control>
 			<analysis type="steady-state"/>
 			<time_steps>10</time_steps>
@@ -1553,7 +1553,7 @@ Comments:
 		</Control>
 	</Step>
 	<Step>
-		<Module type="multiphasic"/>
+		<Module type="solute"/>
 		<Control>
 			<time_steps>20000</time_steps>
 			<step_size>0.1</step_size>

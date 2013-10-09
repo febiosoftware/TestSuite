@@ -21,7 +21,7 @@ Comments:
 	
 -->
 <febio_spec version="1.2">
-	<Module type="multiphasic"/>
+	<Module type="solute"/>
 	<Control>
 		<title>Solute Diffusion - 1D</title>
 		<time_steps>20000</time_steps>
