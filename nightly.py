@@ -165,8 +165,7 @@ nerrs = 0                       # nr of error terminations
 # Exempt problems: 
 exempt = [
 	# These files are the input files for a parameter optimization problem:
-	  'oi01',
-	  'oi02']
+	  'oi01', 'oi02']
 	
 # These problems give inconsistent convergence statistics results
 # when run with multiple threads:
@@ -188,8 +187,7 @@ exempt2 = ['mp01',
            'op02']
 
 # These are parameter optimization problems
-paramopt = ['op01',
-	    'op02']
+paramopt = ['op01', 'op02', 'op03', 'op04']
 
 
 # These are problems that report extra data fields

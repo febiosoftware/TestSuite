@@ -19,7 +19,7 @@ Comments:
 	<Function>
 		<fnc lc="1">rigid.Fz</fnc>
 	</Function>
-	<Options type="constrained levmar">
+	<Options type="levmar">
 		<obj_tol>0.001</obj_tol>
 		<f_diff_scale>0.001</f_diff_scale>
 	</Options>

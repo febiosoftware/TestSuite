@@ -2,19 +2,31 @@
 # -*- coding: utf-8 -*-
 #import os
 #import glob
-#import sys
+import sys
 #import platform
 #import shutil
 #import filecmp
 #import difflib
 #import datetime
-import subprocess
+#import subprocess
 #import smtplib
 #import csv
 #import time
 #from email.mime.text import MIMEText
 #import struct
+import fileinput
 
+mod = fileinput.input("lines.txt", inplace=1)
+for mrow in mod:
+  if '2' in mrow: line2 = mod.tell()
+  if '9' in mrow:
+    sys.stdout.write(mrow.replace('9' + punc, 'nine'))
+    mod.seek(line2)
+    sys.stdout.write(mrow.replace('2' + punc, 'two'))
+  else:	sys.stdout.write(mrow) 
+fileinput.close()
+#punc = ""
+#if punc: print("It works")
 #os.system("cd ~/Testing")
 #print(os.getcwd())
 
@@ -33,10 +45,10 @@ import subprocess
 #from svn_version import version
 #if version > 0: print(version)
 
-output = subprocess.call(["svn", "up"])
-version_str = subprocess.Popen(["svn", "up"], stdout=subprocess.PIPE).communicate()[0]
-version_str = version_str.decode("utf8")
-print(version_str)
+#output = subprocess.call(["svn", "up"])
+#version_str = subprocess.Popen(["svn", "up"], stdout=subprocess.PIPE).communicate()[0]
+#version_str = version_str.decode("utf8")
+#print(version_str)
 #lines = version_str.split("\n")
 #lines = [line.strip() for line in lines]
 #for line in lines:
