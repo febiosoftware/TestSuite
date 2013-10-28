@@ -347,5 +347,8 @@ Comments:
 			<var type="solute 2 flux"/>
 			<var type="stress"/>
 		</plotfile>
+		<logfile>
+			<element_data data="c2">11</element_data>
+		</logfile>
 	</Output>
 </febio_spec>

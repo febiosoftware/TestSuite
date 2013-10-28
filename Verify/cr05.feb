@@ -783,5 +783,8 @@ Comments:
 			<var type="sbm 1 concentration"/>
 			<var type="referential solid volume fraction"/>
 		</plotfile>
+		<logfile>
+			<element_data data="wz">7</element_data>
+		</logfile>
 	</Output>
 </febio_spec>

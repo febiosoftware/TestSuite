@@ -1865,5 +1865,8 @@ Comments:
 			<var type="specific strain energy"/>
 			<var type="stress"/>
 		</plotfile>
+		<logfile>
+			<element_data data="E3">58</element_data>
+		</logfile>
 	</Output>
 </febio_spec>

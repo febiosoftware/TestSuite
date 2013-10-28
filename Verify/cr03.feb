@@ -269,5 +269,8 @@ Comments:
 			<var type="solute 5 flux"/>
 			<var type="stress"/>
 		</plotfile>
+		<logfile>
+			<element_data data="j5z">1</element_data>
+		</logfile>
 	</Output>
 </febio_spec>
