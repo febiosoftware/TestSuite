@@ -4919,7 +4919,7 @@ Comments:
 		</contact>
 	</Boundary>
 	<LoadData>
-		<loadcurve id="1">
+		<loadcurve id="1" type="step">
 			<loadpoint>0,0</loadpoint>
 			<loadpoint>1,0.1</loadpoint>
 			<loadpoint>4,0.1</loadpoint>

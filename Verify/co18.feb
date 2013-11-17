@@ -129,7 +129,7 @@ Comments:
 			<loadpoint>0.2,-0.1</loadpoint>
 			<loadpoint>1,-0.1</loadpoint>
 		</loadcurve>
-		<loadcurve id="3">
+		<loadcurve id="3" type="step">
 		    <loadpoint>0,0</loadpoint>
 			<loadpoint>0.3,0.01</loadpoint>
 			<loadpoint>1,0.01</loadpoint>
