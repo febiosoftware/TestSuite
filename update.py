@@ -1,4 +1,4 @@
 # Enter problems as: ['tr01', 'tr02']
 new = []
-modified = ['fi04', 'fi05', 'co18', 'co19', 'mi19']
+modified = ['co27', 'co18', 'fi04', 'tu02', 'ri03', 'ma15', 'ms04', 'co30', 'mi31', 'bp17']
 deleted = []
