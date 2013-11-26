@@ -619,7 +619,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
         <logfile>
-         <node_data data="uy">31</node_data>
+         <element_data data="s3">73</element_data>
         </logfile>	
 	</Output>
 </febio_spec>

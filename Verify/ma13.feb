@@ -621,7 +621,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
         <logfile>
-           <node_data data="uz">39</node_data>
+           <element_data data="s3">75</element_data>
 		</logfile>	
 	</Output>
 </febio_spec>
