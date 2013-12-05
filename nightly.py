@@ -172,17 +172,7 @@ exempt = [
 inconsistent = []
 
 # These problems will not run in FEBio2
-exempt2 = ['mp01',
-	   'mp02',
-	   'mp03',
-	   'mp06',
-	   'mp07',
-	   'mp08',
-	   'sh15',
-	   'tr01',
-	   'tr02',
-	   'tr03',
-	   'tr04',
+exempt2 = ['sh15',
 	   'op01',
 	   'op02',
 	   'op03',
