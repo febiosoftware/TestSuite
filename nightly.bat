@@ -6,9 +6,6 @@ if "%1" == "FEBio" (
 	vcbuild C:\FEBio\FEBio.sln "Release|x64" > %compare%
 ) else (
   if "%1" == "FEBio2" (
-REM 		call "C:\Program Files\Microsoft Visual Studio 9.0\VC"\vcvarsall.bat
-REM 		vcbuild C:\FEBio\FEBio.sln "Release|Win32" > %compare%
-REM 	) else (
 		call "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC"\vcvarsall.bat
 		msbuild C:\FEBio2\VS2010\FEBio2.sln /p:Platform=Win32 /p:Configuration=Release > %compare%
 	)
