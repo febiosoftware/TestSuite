@@ -5323,7 +5323,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 	    <logfile>
-			<node_data data="uz">2035</node_data>
+			<element_data data="sx">1313</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

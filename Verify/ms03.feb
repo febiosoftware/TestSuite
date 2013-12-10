@@ -88,7 +88,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 		<logfile>
-			<node_data data="uz">8</node_data>
+			<element_data data="sx">1</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

@@ -9383,7 +9383,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 	    <logfile>
-			<node_data data="ux">3756</node_data>
+			<element_data data="sy">2211</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

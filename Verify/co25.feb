@@ -679,7 +679,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 	    <logfile>
-			<node_data data="uz">56</node_data>
+			<element_data data="Ex">55</element_data>
 		</logfile>
 	
 	</Output>

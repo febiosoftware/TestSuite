@@ -244,7 +244,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 	    <logfile>
-			<node_data data="ux">52</node_data>
+			<element_data data="Ex">15</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

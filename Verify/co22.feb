@@ -6375,7 +6375,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 	    <logfile>
-			<node_data data="ux">2443</node_data>
+			<element_data data="sz">260</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

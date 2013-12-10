@@ -90,7 +90,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 		<logfile>
-			<node_data data="uy">8</node_data>
+			<element_data data="Ey">1</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

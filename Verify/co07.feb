@@ -4939,7 +4939,7 @@ Comments:
 			<map field="velocity">CONTACT_TRACTION</map>
 		</plotfile>
 	    <logfile>
-			<node_data data="uz">995</node_data>
+			<element_data data="sz">1140</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

@@ -1543,7 +1543,7 @@ Comments:
 			<var type="stress"/>
 		</plotfile>
         <logfile>
-          <node_data data="uz">42</node_data>
+          <element_data data="sy">12</element_data>
         </logfile>		
 	</Output>
 	<Step>

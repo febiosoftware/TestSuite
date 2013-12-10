@@ -2871,7 +2871,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 		<logfile>
-			<node_data data="uz">1246</node_data>
+			<element_data data="Ez">890</element_data>
 		</logfile>
 	</Output>
 </febio_spec>
