@@ -64,6 +64,13 @@ results = open(res_name + ".txt", "w")
 #Added to incorporate the testing parser
 parsing_dir = test_dir + '/Nightly_Parsing/'
 
+# These are problems that report extra data fields
+from logdata import dfield
+dfield0 = [col[0] for col in dfield]
+
+# These problems are new, newly modified, or deleted
+from update import new, modified, deleted
+
 if plat == 'win':
 	febio_dir = 'C:/' + febio_name
 	if febio_name == 'FEBio':
@@ -181,17 +188,9 @@ exempt2 = ['sh15',
 # These are parameter optimization problems
 paramopt = ['op01', 'op02', 'op03', 'op04']
 
-
-# These are problems that report extra data fields
-from logdata import dfield
-dfield0 = [col[0] for col in dfield]
-
 # Read the commanline arguments
 if dir_ext == "4": exempt += inconsistent
 if febio_name == 'FEBio2': exempt += exempt2
-
-# These problems are new, newly modified, or deleted
-from update import new, modified, deleted
 
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
@@ -199,8 +198,8 @@ b_del = 0
 if len(new) + len(modified) != 0: b_new = 1
 if len(deleted) != 0: b_del = 1
 if b_new or b_del:
-	f_std_tmp = test_dir + "/" + plat + "_std_tmp.txt"
 	f_std = test_dir + "/" + std_name + ".txt"
+	f_std_tmp = test_dir + "/" + std_name + "_tmp.txt"
 	std_tmp = open(f_std_tmp, "w")
 	std = open(f_std, "r")
 	std_line = std.readline()
