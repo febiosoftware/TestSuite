@@ -31,25 +31,27 @@ Comments:
 			<R>0</R>
 			<Fc>0</Fc>
 		</Constants>
-		<Generations>
-			<gen id="1">0.0</gen>
-			<gen id="2">0.5</gen>
-		</Generations>
 	</Globals>
 	<Material>
 		<material id="1" name="Multigeneration material" type="multigeneration">
-			<solid type="Holmes-Mow" gen="1">
-				<density>1</density>
-				<E>1</E>
-				<v>0</v>
-				<beta>0.5</beta>
-			</solid>
-			<solid type="Holmes-Mow" gen="2">
-				<density>1</density>
-				<E>1</E>
-				<v>0</v>
-				<beta>0.5</beta>
-			</solid>
+			<generation id="1">
+				<start_time>0.0</start_time>
+				<solid type="Holmes-Mow">
+					<density>1</density>
+					<E>1</E>
+					<v>0</v>
+					<beta>0.5</beta>
+				</solid>
+			</generation>
+			<generation id="2">
+				<start_time>0.5</start_time>
+				<solid type="Holmes-Mow">
+					<density>1</density>
+					<E>1</E>
+					<v>0</v>
+					<beta>0.5</beta>
+				</solid>
+			</generation>
 		</material>
 	</Material>
 	<Geometry>
