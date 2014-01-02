@@ -1526,7 +1526,7 @@ Comments:
 			<var type="stress"/>
 		</plotfile>
         <logfile>
-          <element_data data="sz">40</element_data>
+          <element_data data="c1">40</element_data>
         </logfile>		
 	</Output>
 	<Step>
