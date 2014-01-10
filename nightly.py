@@ -370,7 +370,10 @@ for solver in solvers:
 				fstd.close()
 				diffsize = os.path.getsize(diffname)
 				diffsize = 5*(diffsize/5000)
-				result[8-opt] = int(diffsize)
+				#result[8-opt] = int(diffsize)
+				# If all other statistics are the same, there are only differences in the
+				# residuals.  I decided to ignore this statistic.
+				result[8-opt] = 0
 			except IOError:
 				result[2] = 'IOError'
 			except OSError:
