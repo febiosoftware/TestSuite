@@ -20,7 +20,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.1">
+<febio_spec version="1.2">
 	<Module type="solute"/>
 	<Control>
 		<title>Spherical Gel - Osmotic Loading</title>
@@ -45,6 +45,13 @@ Comments:
 			<R>8.314e-6</R>
 			<T>298</T>
 		</Constants>
+		<Solutes>
+			<solute id="1" name="solute">
+				<charge_number>0</charge_number>
+				<molar_mass>1</molar_mass>
+				<density>1</density>
+			</solute>
+		</Solutes>
 	</Globals>
 	<Material>
 		<material id="1" name="Biphasic with solute" type="biphasic-solute">
@@ -60,13 +67,15 @@ Comments:
 			<M>0</M>
 			<alpha>0</alpha>
 		  </permeability>
-		  <diffusivity name="Diffusivity" type="diff-const-iso">
-			<free_diff>3.9e-4</free_diff>
-			<diff>2.75e-4</diff>
-		  </diffusivity>
-		  <solubility name="Solubility" type="solub-const">
-			<solub>1.0</solub>
-		  </solubility>
+		  <solute sol="1">
+			  <diffusivity name="Diffusivity" type="diff-const-iso">
+				<free_diff>3.9e-4</free_diff>
+				<diff>2.75e-4</diff>
+			  </diffusivity>
+			  <solubility name="Solubility" type="solub-const">
+				<solub>1.0</solub>
+			  </solubility>
+		  </solute>
 		  <osmotic_coefficient name="Osmotic Coefficient" type="osm-coef-const">
 			<osmcoef>1.0</osmcoef>
 		  </osmotic_coefficient>

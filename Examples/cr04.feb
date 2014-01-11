@@ -109,12 +109,10 @@ Comments:
 		<material id="1" name="Material2" type="multiphasic">
 			<phi0>0.02</phi0>
 			<fixed_charge_density>0</fixed_charge_density>
-			<solid type="solid mixture">
-				<solid type="neo-Hookean">
-					<density>1</density>
-					<E>12000</E>
-					<v>0</v>
-				</solid>
+			<solid type="neo-Hookean">
+				<density>1</density>
+				<E>12000</E>
+				<v>0</v>
 			</solid>
 			<permeability type="perm-const-iso">
 				<perm>1e-07</perm>

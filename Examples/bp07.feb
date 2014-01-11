@@ -20,8 +20,8 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.1">
-	<Module type="poro"/>
+<febio_spec version="1.2">
+	<Module type="biphasic"/>
 	<Control>
 		<time_steps>20</time_steps>
 		<step_size>0.1</step_size>
