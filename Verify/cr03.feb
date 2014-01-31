@@ -5,7 +5,15 @@ Dissociation of NaCl using reversible chemical reaction,
 
 [NaCl] <-> [Na+] + [Cl-]
 
-The three chemical species are described by three solutes in a multiphasic mixture.  Initially the mixture contains only NaCl at a concentration of 1, which then dissociates reversibly into its cation and anion components.  The analysis is performed in a domain consisting of a single finite element suitable for describing homogeneous processes. Since [Na+] and [Cl-] are charged, and since their concentrations are not prescribed on the boundaries of the finite element domain, it is necessary to ground the mixture electrically to prevent unbounded fluctuations in the electric potential.  Therefore two additional ions are included in the mixture, [K+] and [HCO3-], with prescribed boundary conditions that enforce zero electric potential.
+The three chemical species are described by three solutes in a multiphasic mixture. 
+Initially the mixture contains only NaCl at a concentration of 1, which then dissociates 
+reversibly into its cation and anion components.  The analysis is performed in a domain 
+consisting of a single finite element suitable for describing homogeneous processes. 
+Since [Na+] and [Cl-] are charged, and since their concentrations are not prescribed on 
+the boundaries of the finite element domain, it is necessary to ground the mixture electrically
+to prevent unbounded fluctuations in the electric potential.  Therefore two additional 
+ions are included in the mixture, [K+] and [HCO3-], with prescribed boundary conditions 
+that enforce zero electric potential.
  
 Main Features:
 	Reversible chemical reaction involving charged solutes
