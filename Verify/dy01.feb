@@ -76,7 +76,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 	    <logfile>
-			<element_data data="sy">5</element_data>
+			<node_data data="uz">1</node_data>
 		</logfile>
 	</Output>
 </febio_spec>
