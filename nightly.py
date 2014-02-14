@@ -182,7 +182,11 @@ inconsistent = []
 exempt2 = ['sh15']
 
 # These are parameter optimization problems
-paramopt = ['op01', 'op02', 'op03', 'op04']
+paramopt = [['op01', 'oi01'],
+	    ['op02', 'oi02'],
+	    ['op03', 'oi01'],
+	    ['op04', 'oi02']]
+paramopt0 = [col[0] for col in paramopt]
 
 # Read the commanline arguments
 if dir_ext == "4": exempt += inconsistent
@@ -210,14 +214,6 @@ for solver in solvers:
 		base = f[:4]
 		if base not in exempt:
 			
-			# Test for parameter optimization problems
-			if base in paramopt:
-				opt = 1
-				runflag = '-s'
-			else:
-				opt = 0
-				runflag = '-i'
-			
 			# Test for extra data field problems
 			if base in dfield0:
 				df_time = dfield[dfield0.index(base)][1]
@@ -236,14 +232,23 @@ for solver in solvers:
 			dummyname = out_dir + "dummy.txt"
 			dummy = open(dummyname, "w")
 			
+			# Test for parameter optimization problems
+			if base in paramopt0:
+				opt = 1
+				if febio_name == 'FEBio2':
+					fi = paramopt[paramopt0.index(base)][1]
+					command = [febio, '-i', fi + '.feb', '-s', f, '-o', logname, '-p', pltname, \
+						'-cnf', febio_dir + '/' + solver + '.xml']
+					#print(command)
+				else:
+					command = [febio, -s, f, '-o', logname, '-p', pltname, \
+						'-cnf', febio_dir + '/' + solver + '.xml']
+			else:
+				opt = 0
+				command = [febio, '-i', f, '-o', logname, '-p', pltname, \
+					'-cnf', febio_dir + '/' + solver + '.xml']
+			
 			# run the FEBio problem
-			# we grab the exit value for termination status
-			# TODO: check if the redirection will work on windows
-			#command = febio + ' -i ' + f + ' -o ' + logname + ' -p ' + pltname + \
-			#       ' -cnf ~/FEBio/' + solver + '.xml' + ' >& ../dummy.out'
-			command = [febio, runflag, f, '-o', logname, '-p', pltname, \
-				'-cnf', febio_dir + '/' + solver + '.xml']
-			#print command
 			val = subprocess.call(command, stdout=dummy)
 			#print "Subprocess result: ", val
 
