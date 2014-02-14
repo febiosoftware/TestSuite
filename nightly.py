@@ -179,11 +179,7 @@ exempt = [
 inconsistent = []
 
 # These problems will not run in FEBio2
-exempt2 = ['sh15',
-	   'op01',
-	   'op02',
-	   'op03',
-	   'op04']
+exempt2 = ['sh15']
 
 # These are parameter optimization problems
 paramopt = ['op01', 'op02', 'op03', 'op04']
