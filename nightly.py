@@ -241,7 +241,7 @@ for solver in solvers:
 						'-cnf', febio_dir + '/' + solver + '.xml']
 					#print(command)
 				else:
-					command = [febio, -s, f, '-o', logname, '-p', pltname, \
+					command = [febio, '-s', f, '-o', logname, '-p', pltname, \
 						'-cnf', febio_dir + '/' + solver + '.xml']
 			else:
 				opt = 0
