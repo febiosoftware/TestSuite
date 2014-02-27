@@ -142,8 +142,6 @@ else:
 		sys.path.append(os.getcwd())
 		from svn_version import version
 		if version > 0 and dir_ext == "":
-			command =['make', '-f', 'febio.mk', plat + 'clean' ]
-			subprocess.call(command)
 			command =['make', '-f', 'febio.mk', plat + 'd']
 			output = subprocess.call(command)
 			if output == 0:
