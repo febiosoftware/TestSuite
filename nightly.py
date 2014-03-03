@@ -40,6 +40,7 @@ if opsys == 'x86_64':
 		plat = 'osx'	
 	else:
 		plat = 'lnx64'
+	platd = plat + 'd'
 elif sysplat == 'win32':
 	plat = 'win'
 elif opsys == 'i686':
@@ -106,15 +107,19 @@ if plat == 'win':
 		
 else:
 	#Update the test suite
-	if plat == 'lnx64' and febio_name == 'FEBio' and dir_ext == "":
-		subprocess.call(['svn', 'up'])
+	subprocess.call(['svn', 'up'])
+	# If lastmod.txt has changed, the test suite has changes that need to be runs.
+	# Run 'touch lastmod.txt' on the commanline if there are changes.
+	# 86400 is the number of seconds in a day.
+	test_update = 0
+	if time.time() - os.path.getmtime('lastmod.txt') < 86400: test_update = 1
 
 	# Define FEBio directory, executable, and library
 	# Assumes that this script is run from Testing and the FEBio directory is on the same level
 	# and that the executable is in FEBio/bin
 	os.chdir("../" + febio_name)
 	febio_dir = os.getcwd()
-	febio = febio_dir + '/bin/' + febio_lc_name + '.' + plat + 'd'
+	febio = febio_dir + '/bin/' + febio_lc_name + '.' + platd
 
 	# Define the log and plt output directory
 	# user variable assumes the directory is e.g. /home/sci/rawlins/Testing
@@ -122,38 +127,32 @@ else:
 	out_dir = '/scratch/' + user + '/' + febio_lc_name + dir_ext + '_test/'
 	logs_dir = febio_name + dir_ext + '_Logs/'
 
-	if args.find('c') == -1:
+	if args.find('c') == -1: # if we don't explicitly say not to compile
 
 		# Do an svn update on lnx64 and write to svn_version.py
-		if plat == 'lnx64' and dir_ext == "":
-			version = "0"
-			version_str = subprocess.Popen(['svn', 'up'], stdout=subprocess.PIPE).communicate()[0]
-			version_str = version_str.decode("utf8")
-			output_lines = version_str.split("\n")
-			for line in output_lines:
-				if line.find("Updated") !=-1:
-					version = line.split(" ")[3].strip(".")
-			svn_version = open("svn_version.py", "w")
-			svn_version.write("version = " + version)
-			svn_version.close()
+		subprocess.call(['svn', 'up'])
+		version_str = subprocess.Popen(['svnversion'], stdout=subprocess.PIPE).communicate()[0]
+		version = version_str.split("\n")[0]
 
+		# Compile FEBio
+		command =['make', '-f', 'febio.mk', platd]
+		output = subprocess.call(command)
+		if output == 0:
+			# Test whether febio compiled
+			febio_update = 0
+			if time.time() - os.path.getctime(febio) < 3600: febio_update = 1
+			if not test_update and not febio_update:
+				results.write("Nothing to do")
+				sys.exit("Nothing to do")
 
-		# Compile FEBio if it has been updated
-		sys.path.append(os.getcwd())
-		from svn_version import version
-		if version > 0 and dir_ext == "":
-			command =['make', '-f', 'febio.mk', plat + 'd']
-			output = subprocess.call(command)
-			if output == 0:
-				try:
-					shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + plat)
-				except IOError:
-					print("Error copying files")
-			else: sys.exit("FEBio did not compile")	
+			# If febio did compile, create a copy of the executable
+			try:
+				shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + platd)
+			except IOError:
+				print("Error copying files")
+		else: sys.exit("FEBio did not compile")
+		
 
-	# Print the svn revision number in the results file
-	version = subprocess.Popen(["svnversion"], stdout=subprocess.PIPE).communicate()[0]
-	results.write("svn version : " + str(version) + "\n")
 
 # Define the test problems list.
 os.chdir(test_dir + "/Verify")

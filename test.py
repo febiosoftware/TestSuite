@@ -2,29 +2,36 @@
 # -*- coding: utf-8 -*-
 #import os
 #import glob
-import sys
+#import sys
 #import platform
 #import shutil
 #import filecmp
 #import difflib
 #import datetime
-#import subprocess
+import subprocess
 #import smtplib
 #import csv
 #import time
 #from email.mime.text import MIMEText
 #import struct
-import fileinput
+#import fileinput
 
-mod = fileinput.input("lines.txt", inplace=1)
-for mrow in mod:
-  if '2' in mrow: line2 = mod.tell()
-  if '9' in mrow:
-    sys.stdout.write(mrow.replace('9' + punc, 'nine'))
-    mod.seek(line2)
-    sys.stdout.write(mrow.replace('2' + punc, 'two'))
-  else:	sys.stdout.write(mrow) 
-fileinput.close()
+version_str = subprocess.Popen(['svnversion'], stdout=subprocess.PIPE).communicate()[0]
+print(version_str.split("\n")[0])
+
+#print(time.time())
+#print(os.path.getmtime('lastmod.txt'))
+#print(time.time() - os.path.getmtime('lastmod.txt'))
+
+#mod = fileinput.input("lines.txt", inplace=1)
+#for mrow in mod:
+#  if '2' in mrow: line2 = mod.tell()
+#  if '9' in mrow:
+#    sys.stdout.write(mrow.replace('9' + punc, 'nine'))
+#    mod.seek(line2)
+#    sys.stdout.write(mrow.replace('2' + punc, 'two'))
+#  else:	sys.stdout.write(mrow) 
+#fileinput.close()
 #punc = ""
 #if punc: print("It works")
 #os.system("cd ~/Testing")
