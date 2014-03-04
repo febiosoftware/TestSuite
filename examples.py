@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-import os, glob, platform, shutil, sys, subprocess, difflib, datetime
+import os, glob, platform, shutil, sys, subprocess, difflib, datetime, time
 #
 # This is the test suite script.
 # This script runs a list of FEBio files and checks the results
@@ -8,6 +8,7 @@ import os, glob, platform, shutil, sys, subprocess, difflib, datetime
 #===============================================================================
 
 # Determine the operating system and host name
+host = platform.node().split('.')[0]
 opsys = platform.machine()
 platform = sys.platform
 print 'opsys = ' + opsys
@@ -17,14 +18,14 @@ print 'opsys = ' + opsys
 solver = 'pardiso'
 
 # Set the platform and specific solvers
-if opsys == 'i386':
-	plat = 'osx'
-elif opsys == 'ia64':
-	plat = 'alt'
-elif opsys == 'x86_64':
-	plat = 'lnx64'
-elif platform == 'win32':
-	plat = 'exe'
+if opsys == 'x86_64':
+	if host == 'katan':
+		plat = 'osx'	
+	else:
+		plat = 'lnx64'
+	platd = plat + 'd'
+elif sysplat == 'win32':
+	plat = 'win'
 elif opsys == 'i686':
 	plat = 'lnx32'
 
@@ -41,13 +42,23 @@ res_name = "examples"
 std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
 
+# If examplesmod.txt has changed, the test suite has changes that need to be runs.
+# Run 'touch examplesmod.txt' on the commanline if there are changes.
+# 86400 is the number of seconds in a day.
+test_update = 0
+if time.time() - os.path.getmtime('examplesmod.txt') < 86400: test_update = 1
+
 # Define FEBio directory, executable, and library
 # Assumes that this script is run from ~/Testing
 # and that the executable is in FEBio/bin
 os.chdir("../FEBio")
 febio_dir = os.getcwd()
-febio = febio_dir + '/bin/febio.' + plat
-febio_lib = febio_dir + '/lib/fecore_' + plat + '.a'
+febio = febio_dir + '/bin/febio.' + platd
+
+# Test whether febio compiled
+if time.time() - os.path.getctime(febio) > 3600 and not test_update:
+	results.write("Nothing to do\n")
+	sys.exit("Nothing to do\n")
 
 # Define the log and plt output directory
 out_dir = '/scratch/' + user + '/examples_test/'

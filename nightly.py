@@ -87,7 +87,7 @@ if plat == 'win':
 	# Run 'touch lastmod.txt' on the commanline if there are changes.
 	# 86400 is the number of seconds in a day.
 	test_update = 0
-	if time.time() - os.path.getmtime('lastmod.txt') < 86400: test_update = 1
+	if time.time() - os.path.getmtime('verifymod.txt') < 86400: test_update = 1
 
 	# Print the FEBio svn revision number in the results file
 	os.chdir(febio_dir)
@@ -118,7 +118,7 @@ else:
 	# Run 'touch lastmod.txt' on the commanline if there are changes.
 	# 86400 is the number of seconds in a day.
 	test_update = 0
-	if time.time() - os.path.getmtime('lastmod.txt') < 86400: test_update = 1
+	if time.time() - os.path.getmtime('verifymod.txt') < 86400: test_update = 1
 
 	# Define FEBio directory, executable, and library
 	# Assumes that this script is run from Testing and the FEBio directory is on the same level
