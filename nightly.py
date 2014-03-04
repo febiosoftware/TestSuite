@@ -83,6 +83,12 @@ if plat == 'win':
 	out_dir = 'C:/Testing/' + febio_name + dir_ext + '_Logs/'
 	logs_dir = out_dir
 
+	# If lastmod.txt has changed, the test suite has changes that need to be runs.
+	# Run 'touch lastmod.txt' on the commanline if there are changes.
+	# 86400 is the number of seconds in a day.
+	test_update = 0
+	if time.time() - os.path.getmtime('lastmod.txt') < 86400: test_update = 1
+
 	# Print the FEBio svn revision number in the results file
 	os.chdir(febio_dir)
 	version_str = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
@@ -96,9 +102,9 @@ if plat == 'win':
 	
 	# Print message if executable did not compile (exe is older than 1 hour)
 	# or save a copy of the executable if it did.
-	if time.time() - os.path.getctime(febio) > 3600:
-		results.write("FEBio did not compile\n")
-		print("FEBio did not compile\n")
+	if time.time() - os.path.getctime(febio) > 3600 and not test_update:
+		results.write("Nothing to do\n")
+		sys.exit("Nothing to do\n")
 	else:
 		try:
 			shutil.copy(febio, febio.split('.')[0] + '_' + version + '.exe')
@@ -140,10 +146,9 @@ else:
 		if output == 0:
 			# Test whether febio compiled
 			febio_update = 0
-			if time.time() - os.path.getctime(febio) < 3600: febio_update = 1
-			if not test_update and not febio_update:
-				results.write("Nothing to do")
-				sys.exit("Nothing to do")
+			if time.time() - os.path.getctime(febio) > 3600 and not test_update:
+				results.write("Nothing to do\n")
+				sys.exit("Nothing to do\n")
 
 			# If febio did compile, create a copy of the executable
 			try:
