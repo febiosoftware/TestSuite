@@ -147,6 +147,7 @@ else:
 			# Test whether febio compiled
 			if time.time() - os.path.getctime(febio) > 3600 and not test_update:
 				results.write("Nothing to do\n")
+				print("Nothing to do\n")
 				sys.exit("Nothing to do\n")
 
 			# If febio did compile, create a copy of the executable
