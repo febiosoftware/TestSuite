@@ -83,8 +83,8 @@ if plat == 'win':
 	out_dir = 'C:/Testing/' + febio_name + dir_ext + '_Logs/'
 	logs_dir = out_dir
 
-	# If lastmod.txt has changed, the test suite has changes that need to be runs.
-	# Run 'touch lastmod.txt' on the commanline if there are changes.
+	# If verifymod.txt has changed, the test suite has changes that need to be runs.
+	# Run 'touch verifymod.txt' on the commanline if there are changes.
 	# 86400 is the number of seconds in a day.
 	test_update = 0
 	if time.time() - os.path.getmtime('verifymod.txt') < 86400: test_update = 1
@@ -114,8 +114,8 @@ if plat == 'win':
 else:
 	#Update the test suite
 	subprocess.call(['svn', 'up'])
-	# If lastmod.txt has changed, the test suite has changes that need to be runs.
-	# Run 'touch lastmod.txt' on the commanline if there are changes.
+	# If verifymod.txt has changed, the test suite has changes that need to be runs.
+	# Run 'touch verifymod.txt' on the commanline if there are changes.
 	# 86400 is the number of seconds in a day.
 	test_update = 0
 	if time.time() - os.path.getmtime('verifymod.txt') < 86400: test_update = 1
@@ -145,7 +145,6 @@ else:
 		output = subprocess.call(command)
 		if output == 0:
 			# Test whether febio compiled
-			febio_update = 0
 			if time.time() - os.path.getctime(febio) > 3600 and not test_update:
 				results.write("Nothing to do\n")
 				sys.exit("Nothing to do\n")
