@@ -5795,7 +5795,7 @@ Comments:
 			<loadpoint>50,-0.7</loadpoint>
 			<loadpoint>60,-0.7</loadpoint>
 		</loadcurve>
-		<loadcurve id="4">
+		<loadcurve id="4" type="step">
 			<loadpoint>0,0</loadpoint>
 			<loadpoint>23,3</loadpoint>
 			<loadpoint>60,3</loadpoint>

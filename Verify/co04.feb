@@ -2170,11 +2170,10 @@ Comments:
 			<loadpoint>1,-0.14</loadpoint>
 			<loadpoint>2,-0.14</loadpoint>
 		</loadcurve>
-		<loadcurve id="3">
+		<loadcurve id="3" type="step">
             <loadpoint>0,0</loadpoint>
             <loadpoint>1.2,0.05</loadpoint>
 			<loadpoint>1,0.05</loadpoint>        
-
        </loadcurve>
 	</LoadData>
 	<Output>
