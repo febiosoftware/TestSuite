@@ -62,6 +62,26 @@ else: res_name = "nightly2_" + plat
 std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
 
+# Define the test problems list.
+if args.find('t') != -1: test = ['co01.feb', 'co02.feb']
+else:
+	os.chdir(test_dir + "/Verify")
+	test = glob.glob("*.feb")
+	test.sort()
+	os.chdir(test_dir)
+
+# If verifymod.txt has changed, the test suite has changes that need to be runs.
+# Run 'date +%D > verifymod.txt' on the commanline if there are changes.
+# 86400 is the number of seconds in a day.
+test_update = 0
+if time.time() - os.path.getmtime('verifymod.txt') < 86400: test_update = 1
+# Test whether any .feb files have been updated
+if not test_update:
+	for f in test:
+		if time.time() - os.path.getmtime(test_dir + "/Verify/" + f) < 86400:
+			test_update = 1
+			break
+
 #Added to incorporate the testing parser
 parsing_dir = test_dir + '/Nightly_Parsing/'
 
@@ -82,12 +102,6 @@ if plat == 'win':
 
 	out_dir = 'C:/Testing/' + febio_name + dir_ext + '_Logs/'
 	logs_dir = out_dir
-
-	# If verifymod.txt has changed, the test suite has changes that need to be runs.
-	# Run 'touch verifymod.txt' on the commanline if there are changes.
-	# 86400 is the number of seconds in a day.
-	test_update = 0
-	if time.time() - os.path.getmtime('verifymod.txt') < 86400: test_update = 1
 
 	# Print the FEBio svn revision number in the results file
 	os.chdir(febio_dir)
@@ -115,11 +129,6 @@ if plat == 'win':
 else:
 	#Update the test suite
 	subprocess.call(['svn', 'up'])
-	# If verifymod.txt has changed, the test suite has changes that need to be runs.
-	# Run 'touch verifymod.txt' on the commanline if there are changes.
-	# 86400 is the number of seconds in a day.
-	test_update = 0
-	if time.time() - os.path.getmtime('verifymod.txt') < 86400: test_update = 1
 
 	# Define FEBio directory, executable, and library
 	# Assumes that this script is run from Testing and the FEBio directory is on the same level
@@ -157,15 +166,6 @@ else:
 				print("Error copying files")
 		else: sys.exit("FEBio did not compile")
 		
-
-
-# Define the test problems list.
-os.chdir(test_dir + "/Verify")
-if args.find('t') != -1: test = ['co01.feb', 'co02.feb']
-else:
-	test = glob.glob("*.feb")
-	test.sort()
-
 
 # keep counters
 norms = 0                       # nr of normal terminations
@@ -210,6 +210,7 @@ if b_new or b_del:
 		std_line = std.readline()
 
 #run the test problems
+os.chdir(test_dir + "/Verify")
 for solver in solvers:
 	for f in test:
 		# strip the '.feb' from the input file name
