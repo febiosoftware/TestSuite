@@ -75,12 +75,6 @@ else:
 # 86400 is the number of seconds in a day.
 test_update = 0
 if time.time() - os.path.getmtime('verifymod.txt') < 86400: test_update = 1
-# Test whether any .feb files have been updated
-if not test_update:
-	for f in test:
-		if time.time() - os.path.getmtime(test_dir + "/Verify/" + f) < 86400:
-			test_update = 1
-			break
 
 #Added to incorporate the testing parser
 parsing_dir = test_dir + '/Nightly_Parsing/'
@@ -114,7 +108,14 @@ if plat == 'win':
 		if line.find("Updated") !=-1:
 			version = line.split(" ")[3]
 	
-	# Print message if executable did not compile (exe is older than 1 hour)
+	# Test whether any .feb files have been updated
+	if not test_update:
+		for f in test:
+			if time.time() - os.path.getmtime(test_dir + "/Verify/" + f) < 86400:
+				test_update = 1
+				break
+
+			# Print message if executable did not compile (exe is older than 1 hour)
 	# or save a copy of the executable if it did.
 	if time.time() - os.path.getctime(febio) > 3600 and not test_update:
 		results.write("Nothing to do\n")
@@ -129,6 +130,13 @@ if plat == 'win':
 else:
 	#Update the test suite
 	subprocess.call(['svn', 'up'])
+
+	# Test whether any .feb files have been updated
+	if not test_update:
+		for f in test:
+			if time.time() - os.path.getmtime(test_dir + "/Verify/" + f) < 86400:
+				test_update = 1
+				break
 
 	# Define FEBio directory, executable, and library
 	# Assumes that this script is run from Testing and the FEBio directory is on the same level
