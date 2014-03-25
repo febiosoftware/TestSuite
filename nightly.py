@@ -188,6 +188,9 @@ exempt = [
 # when run with multiple threads:
 inconsistent = []
 
+# These problems will not run in FEBio1
+exempt1 = ['ma17']
+
 # These problems will not run in FEBio2
 exempt2 = ['sh15']
 
@@ -200,6 +203,7 @@ paramopt0 = [col[0] for col in paramopt]
 
 # Read the commanline arguments
 if dir_ext == "4": exempt += inconsistent
+if febio_name == 'FEBio': exempt += exempt1
 if febio_name == 'FEBio2': exempt += exempt2
 
 # Open the nightly_std file and a temporary nightly_std file
