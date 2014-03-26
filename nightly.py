@@ -189,7 +189,7 @@ exempt = [
 inconsistent = []
 
 # These problems will not run in FEBio1
-exempt1 = ['ma17']
+exempt1 = ['ma17', 'mg01', 'mg02']
 
 # These problems will not run in FEBio2
 exempt2 = ['sh15']
