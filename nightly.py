@@ -253,15 +253,15 @@ for solver in solvers:
 				if febio_name == 'FEBio2':
 					fi = paramopt[paramopt0.index(base)][1]
 					command = [febio, '-i', fi + '.feb', '-s', f, '-o', logname, '-p', pltname, \
-						'-cnf', febio_dir + '/' + solver + '.xml']
+						'-cnf', test_dir + '/' + solver + '.xml']
 					#print(command)
 				else:
 					command = [febio, '-s', f, '-o', logname, '-p', pltname, \
-						'-cnf', febio_dir + '/' + solver + '.xml']
+						'-cnf', test_dir + '/' + solver + '.xml']
 			else:
 				opt = 0
 				command = [febio, '-i', f, '-o', logname, '-p', pltname, \
-					'-cnf', febio_dir + '/' + solver + '.xml']
+					'-cnf', test_dir + '/' + solver + '.xml']
 			
 			# run the FEBio problem
 			val = subprocess.call(command, stdout=dummy)
