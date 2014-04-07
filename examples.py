@@ -55,8 +55,8 @@ os.chdir("../FEBio")
 febio_dir = os.getcwd()
 febio = febio_dir + '/bin/febio.' + platd
 
-# Test whether febio compiled
-if time.time() - os.path.getctime(febio) > 3600 and not test_update:
+# Test whether febio compiled. 10800 is 3 hours in seconds.
+if time.time() - os.path.getctime(febio) > 10800 and not test_update:
 	results.write("Nothing to do\n")
 	sys.exit("Nothing to do\n")
 
