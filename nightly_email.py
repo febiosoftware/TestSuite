@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 
 host = platform.node().split('.')[0]
 
-if host == 'winxp': me = 'rawlins@sci.utah.edu'
+if host == 'rawlins-PC': me = 'rawlins@sci.utah.edu'
 else: me = 'scirun-tester@sci.utah.edu'
 os.chdir("C:/Testing/" + sys.argv[1] + "_Logs")
 fp = open("nightly_compare.txt", 'r')

@@ -3,12 +3,12 @@
 #import os
 #import glob
 #import sys
-#import platform
+import platform
 #import shutil
 #import filecmp
 #import difflib
 #import datetime
-import subprocess
+#import subprocess
 #import smtplib
 #import csv
 #import time
@@ -16,8 +16,10 @@ import subprocess
 #import struct
 #import fileinput
 
-version_str = subprocess.Popen(['svnversion'], stdout=subprocess.PIPE).communicate()[0]
-print(version_str.split("\n")[0])
+host = platform.node().split('.')[0]
+print(host)
+#version_str = subprocess.Popen(['svnversion'], stdout=subprocess.PIPE).communicate()[0]
+#print(version_str.split("\n")[0])
 
 #print(time.time())
 #print(os.path.getmtime('lastmod.txt'))
