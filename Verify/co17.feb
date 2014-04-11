@@ -517,7 +517,7 @@ Comments:
 		<contact type="sliding_with_gaps">
 			<laugon>0</laugon>
 			<tolerance>0.02</tolerance>
-			<penalty>1</penalty>
+			<penalty>100</penalty>
 			<two_pass>0</two_pass>
 			<fric_coeff>0.2</fric_coeff>
 			<fric_penalty>0.005</fric_penalty>
@@ -577,5 +577,8 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
+		<logfile>
+			<element_data data="Ez">2</element_data>
+		</logfile>
 	</Output>
 </febio_spec>
