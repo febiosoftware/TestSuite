@@ -51,9 +51,9 @@ if time.time() - os.path.getmtime('examplesmod.txt') < 86400: test_update = 1
 # Define FEBio directory, executable, and library
 # Assumes that this script is run from ~/Testing
 # and that the executable is in FEBio/bin
-os.chdir("../FEBio")
+os.chdir("../FEBio2")
 febio_dir = os.getcwd()
-febio = febio_dir + '/bin/febio.' + platd
+febio = febio_dir + '/bin/febio2.' + platd
 
 # Test whether febio compiled. 10800 is 3 hours in seconds.
 if time.time() - os.path.getctime(febio) > 10800 and not test_update:
@@ -260,4 +260,4 @@ results_std.close()
 
 # copy the results file to the Logs directory
 res_date = res_name + "_" + str(datetime.date.today()) + ".txt"
-shutil.copy(res_name + ".txt", "FEBio_Logs/" + res_date)
+shutil.copy(res_name + ".txt", "FEBio2_Logs/" + res_date)
