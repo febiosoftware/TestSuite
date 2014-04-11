@@ -349,7 +349,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 	    <logfile>
-			<element_data data="Ez">63</element_data>
+			<element_data data="sz">26</element_data>
 		</logfile>
 	</Output>
 </febio_spec>
