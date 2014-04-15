@@ -44,17 +44,10 @@ Comments:
 		</Constants>
 	</Globals>
 	<Material>
-		<material id="1" name="Tissue" type="biphasic">
-			<phi0>0.2</phi0>
-			<solid type="Holmes-Mow">
-				<density>1</density>
-				<E>0.4</E>
-				<v>0</v>
-				<beta>0.35</beta>
-			</solid>
-			<permeability type="perm-const-iso">
-				<perm>0.001</perm>
-			</permeability>
+		<material id="1" name="Material 1" type="Holmes-Mow">
+		  <E>0.4</E>
+		  <v>0</v>
+		  <beta>0.35</beta>
 		</material>
 	</Material>
 	<Geometry>
