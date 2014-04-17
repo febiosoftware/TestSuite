@@ -51,7 +51,6 @@ Comments:
 			<c5>1</c5>
 			<k>100</k>
 			<lam_max>10</lam_max>
-			<fiber type="user"></fiber>
 		</material>
 	</Material>
 	<Geometry>
