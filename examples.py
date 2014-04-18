@@ -55,11 +55,6 @@ os.chdir("../FEBio2")
 febio_dir = os.getcwd()
 febio = febio_dir + '/bin/febio2.' + platd
 
-# Test whether febio compiled. 10800 is 3 hours in seconds.
-if time.time() - os.path.getctime(febio) > 10800 and not test_update:
-	results.write("Nothing to do\n")
-	sys.exit("Nothing to do\n")
-
 # Define the log and plt output directory
 out_dir = '/scratch/' + user + '/examples_test/'
 
@@ -72,6 +67,18 @@ os.chdir(test_dir + "/Examples")
 test = glob.glob("*.feb")
 test.sort()
 #test = [ 'Ei-adhesion.feb' ]
+
+# Test whether any .feb files have been updated
+if not test_update:
+	for f in test:
+		if time.time() - os.path.getmtime(test_dir + "/Verify/" + f) < 86400:
+			test_update = 1
+			break
+
+# Test whether febio compiled. 10800 is 3 hours in seconds.
+if time.time() - os.path.getctime(febio) > 10800 and not test_update:
+	results.write("Nothing to do\n")
+	sys.exit("Nothing to do\n")
 
 # keep counters
 norms = 0			# nr of normal terminations
