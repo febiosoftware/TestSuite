@@ -71,7 +71,7 @@ test.sort()
 # Test whether any .feb files have been updated
 if not test_update:
 	for f in test:
-		if time.time() - os.path.getmtime(test_dir + "/Verify/" + f) < 86400:
+		if time.time() - os.path.getmtime(test_dir + "/Examples/" + f) < 86400:
 			test_update = 1
 			break
 
