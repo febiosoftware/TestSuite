@@ -75,8 +75,8 @@ if not test_update:
 			test_update = 1
 			break
 
-# Test whether febio compiled. 10800 is 3 hours in seconds.
-if time.time() - os.path.getctime(febio) > 10800 and not test_update:
+# Test whether febio compiled in the last 20 hours.
+if time.time() - os.path.getctime(febio) > 72000 and not test_update:
 	results.write("Nothing to do\n")
 	sys.exit("Nothing to do\n")
 

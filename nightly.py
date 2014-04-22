@@ -162,8 +162,8 @@ else:
 		command =['make', '-f', 'febio.mk', platd]
 		output = subprocess.call(command)
 		if output == 0:
-			# Test whether febio compiled
-			if time.time() - os.path.getctime(febio) > 3600 and not test_update:
+			# Test whether febio compiled in the last 20 hours
+			if time.time() - os.path.getctime(febio) > 72000 and not test_update:
 				results.write("Nothing to do\n")
 				sys.exit("Nothing to do\n")
 
