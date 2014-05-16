@@ -159,7 +159,8 @@ else:
 		version = version_str.split("\n")[0]
 
 		# Compile FEBio
-		command =['make', '-f', 'febio.mk', platd]
+		os.chdir("build")
+		command =['make', platd]
 		output = subprocess.call(command)
 		if output == 0:
 			# Test whether febio compiled in the last 20 hours
@@ -173,7 +174,7 @@ else:
 			except IOError:
 				print("Error copying files")
 		else: sys.exit("FEBio did not compile")
-		
+		os.chdir("..")
 
 # keep counters
 norms = 0                       # nr of normal terminations
