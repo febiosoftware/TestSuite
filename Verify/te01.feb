@@ -23,8 +23,8 @@ Comments:
 <febio_spec version="1.2">
 	<Control>
 		<title>Tetrahedral Element</title>
-		<time_steps>1</time_steps>
-		<step_size>1</step_size>
+		<time_steps>4</time_steps>
+		<step_size>0.25</step_size>
 		<max_refs>15</max_refs>
 		<max_ups>10</max_ups>
 		<dtol>0.001</dtol>
