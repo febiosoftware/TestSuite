@@ -73,7 +73,7 @@ else:
 	test.sort()
 	os.chdir(test_dir)
 
-# If verifymod.txt has changed, the test suite has changes that need to be runs.
+# If verifymod.txt has changed, the test suite has changes that need to be run.
 # Run 'date +%D > verifymod.txt' on the commanline if there are changes.
 # 86400 is the number of seconds in a day.
 test_update = 0
@@ -118,9 +118,9 @@ if plat == 'win':
 		if line.find("Updated") !=-1:
 			version = line.split(" ")[3]
 	
-	# Print message if executable did not compile (exe is older than 1 hour)
+	# Print message if executable did not compile (exe is older than 20 hours)
 	# or save a copy of the executable if it did.
-	if time.time() - os.path.getctime(febio) > 3600 and not test_update:
+	if time.time() - os.path.getctime(febio) > 72000 and not test_update:
 		results.write("Nothing to do\n")
 		print("Nothing to do\n")
 		sys.exit("Nothing to do\n")
