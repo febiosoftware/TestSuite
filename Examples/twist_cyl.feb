@@ -61194,6 +61194,8 @@ Comments:
 	</Boundary>
 	<Constraints>
 		<rigid_body mat="2">
+			<rot_x type="fixed"/>
+			<rot_y type="fixed"/>
 			<rot_z type="prescribed" lc="1">1</rot_z>
 		</rigid_body>
 	</Constraints>
