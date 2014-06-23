@@ -4560,6 +4560,8 @@ Comments:
 		<rigid_body mat="2">
 			<trans_z type="prescribed" lc="1">1</trans_z>
 			<rot_x type="prescribed" lc="1">1</rot_x>
+			<rot_y type="fixed"/>
+			<rot_z type="fixed"/>
 		</rigid_body>
 	</Constraints>
 	<LoadData>
