@@ -4938,7 +4938,7 @@ Comments:
 		<plotfile type="febio">
 			<map field="velocity">CONTACT_TRACTION</map>
 		</plotfile>
-	    <logfile>
+		<logfile>
 			<element_data data="sz">1140</element_data>
 		</logfile>
 	</Output>

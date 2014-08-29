@@ -1820,8 +1820,8 @@ Comments:
 		</plotfile>
 		
 		<logfile>
-		    <element_data data="sz">1</element_data>
-	     </logfile>
+			<element_data data="sz">1</element_data>
+		</logfile>
 	</Output>
 </febio_spec>
 

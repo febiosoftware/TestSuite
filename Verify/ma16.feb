@@ -429,10 +429,7 @@ Comments:
 			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
-	</Output>
-	<Output>
-		<plotfile type="febio"></plotfile>
-        <logfile>
+		<logfile>
 			<element_data data="sx">21</element_data>
 		</logfile>	
 	</Output>

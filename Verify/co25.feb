@@ -678,7 +678,7 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-	    <logfile>
+		<logfile>
 			<element_data data="Ex">55</element_data>
 		</logfile>
 	

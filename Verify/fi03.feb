@@ -88,8 +88,8 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-        <logfile>
+		<logfile>
 			<element_data data="sx">1</element_data>
-	    </logfile>
+		</logfile>
     </Output>
 </febio_spec>

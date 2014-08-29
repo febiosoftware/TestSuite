@@ -73,7 +73,7 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-	    <logfile>
+		<logfile>
 			<node_data data="uz">2</node_data>
 		</logfile>
 	</Output>

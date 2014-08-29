@@ -126,7 +126,7 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-	        <logfile>
+		<logfile>
 			<node_data data="z">4</node_data>
 		</logfile>
 	</Output>

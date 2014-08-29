@@ -4081,7 +4081,7 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-	    <logfile>
+		<logfile>
 			<element_data data="Ey">1264</element_data>
 		</logfile>
 	</Output>

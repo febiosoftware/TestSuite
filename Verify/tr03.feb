@@ -1169,7 +1169,7 @@ Comments:
 			<var type="stress"/>
 		</plotfile>
 		<logfile>
-          <element_data data="sy">21</element_data>
-        </logfile>
+			<element_data data="sy">21</element_data>
+		</logfile>
 	</Output>
 </febio_spec>

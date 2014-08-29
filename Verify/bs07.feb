@@ -742,8 +742,8 @@ Comments:
 			<var type="stress"/>
 		</plotfile>
 		<logfile>
-		  <node_data data="y;uy;p;c" file="bso7-top.dat" delimiter="," name="y,uy,p,c">86:126:2</node_data>
-		  <node_data data="y;uy;p;c" file="bs07-bot.dat" delimiter="," name="y,uy,p,c">2:42:2</node_data>
+			<node_data data="y;uy;p;c" file="bso7-top.dat" delimiter="," name="y,uy,p,c">86:126:2</node_data>
+			<node_data data="y;uy;p;c" file="bs07-bot.dat" delimiter="," name="y,uy,p,c">2:42:2</node_data>
 		</logfile>
 	</Output>
 </febio_spec>

@@ -496,7 +496,7 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-	    <logfile>
+		<logfile>
 			<element_data data="sy">123</element_data>
 		</logfile>
 	</Output>

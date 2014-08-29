@@ -4605,7 +4605,7 @@ Comments:
 			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
-	    <logfile>
+		<logfile>
 			<element_data data="sx">411</element_data>
 		</logfile>
 	</Output>

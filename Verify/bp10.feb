@@ -1147,8 +1147,8 @@ Comments:
 			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
-			<logfile>
-				<element_data data="p">2</element_data>
-			</logfile>
-      </Output>
+		<logfile>
+			<element_data data="p">2</element_data>
+		</logfile>
+	</Output>
 </febio_spec>

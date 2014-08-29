@@ -1542,9 +1542,9 @@ Comments:
 			<var type="solute 2 flux"/>
 			<var type="stress"/>
 		</plotfile>
-        <logfile>
-          <element_data data="sy">12</element_data>
-        </logfile>		
+		<logfile>
+			<element_data data="sy">12</element_data>
+		</logfile>		
 	</Output>
 	<Step>
 		<Module type="solute"/>

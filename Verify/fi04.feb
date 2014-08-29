@@ -2893,6 +2893,6 @@ Comments:
 		<plotfile type="febio"></plotfile>
 		<logfile>
 			<element_data data="sz">1000</element_data>
-	    </logfile>
+		</logfile>
     </Output>
 </febio_spec>

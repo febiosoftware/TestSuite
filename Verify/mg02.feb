@@ -10848,9 +10848,9 @@ Comments:
 			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
-        <logfile>
-          <element_data data="sy">141</element_data>
-        </logfile>
+		<logfile>
+			<element_data data="sy">141</element_data>
+		</logfile>
 	</Output>
 	<Step>
 		<Module type="solid"/>

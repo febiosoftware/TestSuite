@@ -5322,7 +5322,7 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-	    <logfile>
+		<logfile>
 			<element_data data="sx">1313</element_data>
 		</logfile>
 	</Output>

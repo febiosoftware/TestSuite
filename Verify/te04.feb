@@ -11760,8 +11760,8 @@ Comments:
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-        <logfile>
-          <element_data data="Ey">3726</element_data>
-        </logfile>		
+		<logfile>
+			<element_data data="Ey">3726</element_data>
+		</logfile>		
 	</Output>
 </febio_spec>

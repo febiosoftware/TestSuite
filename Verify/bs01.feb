@@ -406,8 +406,8 @@ Comments:
 			<var type="solute 1 flux"/>
 			<var type="stress"/>
 		</plotfile>
-	          <logfile>
-		          <element_data data="c1">20</element_data>
-	          </logfile>
+		<logfile>
+			<element_data data="c1">20</element_data>
+		</logfile>
      </Output>
 </febio_spec>

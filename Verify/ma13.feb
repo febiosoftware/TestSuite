@@ -620,8 +620,8 @@ Comments:
 	</LoadData>
 	<Output>
 		<plotfile type="febio"></plotfile>
-        <logfile>
-           <element_data data="s3">75</element_data>
+		<logfile>
+			<element_data data="s3">75</element_data>
 		</logfile>	
 	</Output>
 </febio_spec>

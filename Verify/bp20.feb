@@ -547,9 +547,9 @@ Comments:
 			<var type="fluid pressure"/>
 			<var type="relative volume"/>
 			<var type="stress"/>
-	      </plotfile>
-	      <logfile>
-		          <element_data data="p">1</element_data>
-	      </logfile>
+		</plotfile>
+		<logfile>
+			<element_data data="p">1</element_data>
+		</logfile>
      </Output>
 </febio_spec>

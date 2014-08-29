@@ -3367,7 +3367,6 @@ Comments:
 		</plotfile>
 		<logfile>
 			<rigid_body_data data="Fz"/>
-			<rigid_body_data data="Fz"/>
 		</logfile>
 	</Output>
 </febio_spec>
