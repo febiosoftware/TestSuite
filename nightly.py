@@ -63,7 +63,7 @@ std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
 
 #Update the test suite
-subprocess.call(['svn', 'up'])
+if args.find('c') == -1: subprocess.call(['svn', 'up'])
 
 # Define the test problems list.
 if args.find('t') != -1: test = ['co01.feb', 'co02.feb']
