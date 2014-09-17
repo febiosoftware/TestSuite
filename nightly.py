@@ -58,7 +58,9 @@ test_dir = os.getcwd()
 if febio_name == 'FEBio':
 	if dir_ext == "4": res_name = "nightly4_" + plat
 	else: res_name = "nightly_" + plat
-else: res_name = "nightly2_" + plat
+else:
+	if dir_ext == "4": res_name = "nightly24_" + plat
+	else: res_name = "nightly2_" + plat
 std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
 
