@@ -514,5 +514,8 @@ Comments:
 			<var type="stress"/>
 			<var type="velocity"/>
 		</plotfile>
+		<logfile>
+			<element_data data="p">1</element_data>
+		</logfile>
 	</Output>
 </febio_spec>
