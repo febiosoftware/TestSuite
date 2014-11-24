@@ -6,4 +6,4 @@ if [ $# == 0 ]; then
 	exit
 fi
 
-cp pardiso_$1.log pardiso_$1_std.log
+cp -v pardiso_$1.log pardiso_$1_std.log
