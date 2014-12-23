@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A cube consisting of a single element is modeled with a
+	continuous fiber distribution with a 3D von-Mises distribution
+	density. The fiber dispersion parameter b is set to a large
+	value approximating infinity, so that the distribution is
+	nearly equivalent to a single fiber bundle oriented along the
+	z-direction. An isotropic strain is prescribed on the
+	cube. For these choices, the resulting stress response along z
+	may be compared to an analytical solution.
+Main Features:
+	Continuous fiber distribution
+Secondary Features:
+	Finite element integration scheme
+Materials:
+	solid mixture
+	neo-Hookean
+	continuous fiber distribution
+	fiber-exponential-power-law
+	von-Mises-3d
+	fibers-3d-fei
+Degrees of Freedom: 12
+Results:
+	Steps Completed: 100
+	Equilibrium Iterations: 100
+	Right Hand Evaluations: 200
+	Siffness Reformations: 100
+	Other:
+		The z-stress at time 1 is 186.823.
+Comments:
+	The solution for the z-stress as b goes to infinity is
+	190.016. This solution can be obtained by replacing the
+	continuous fiber distribution material with a fiber-exp-pow material
+	having identical fiber properties. This problem differs from
+	cf01.feb only by the choice of fiber integration scheme.
+-->
+<febio_spec version="1.2">
+	<Module type="solid"/>
+	<Control>
+		<time_steps>100</time_steps>
+		<step_size>0.01</step_size>
+		<max_refs>15</max_refs>
+		<max_ups>0</max_ups>
+		<dtol>0.001</dtol>
+		<etol>0.01</etol>
+		<rtol>0</rtol>
+		<lstol>0.9</lstol>
+		<time_stepper>
+			<dtmin>0.001</dtmin>
+			<dtmax>0.01</dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+		</time_stepper>
+		<analysis type="static"/>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="Material" type="solid mixture">
+			<mat_axis type="vector">
+				<a>0,0,1</a>
+				<d>1,0,0</d>
+			</mat_axis>
+			<solid type="neo-Hookean">
+				<density>1</density>
+				<E>1</E>
+				<v>0.3</v>
+			</solid>
+			<solid type="continuous fiber distribution">
+				<fibers type="fiber-exponential-power-law">
+					<alpha>2</alpha>
+					<beta>2</beta>
+					<ksi>5</ksi>
+					<mu>0</mu>
+				</fibers>
+				<distribution type="von-Mises-3d">
+					<b>30</b>
+				</distribution>
+				<scheme type="fibers-3d-fei">
+					<resolution>1796</resolution>
+				</scheme>
+			</solid>
+		</material>
+	</Material>
+	<Geometry>
+		<Nodes>
+			<node id="1"> -5.0000000e-01, -5.0000000e-01,  0.0000000e+00</node>
+			<node id="2"> -5.0000000e-01, -5.0000000e-01,  1.0000000e+00</node>
+			<node id="3"> -5.0000000e-01,  5.0000000e-01,  0.0000000e+00</node>
+			<node id="4"> -5.0000000e-01,  5.0000000e-01,  1.0000000e+00</node>
+			<node id="5">  5.0000000e-01, -5.0000000e-01,  0.0000000e+00</node>
+			<node id="6">  5.0000000e-01, -5.0000000e-01,  1.0000000e+00</node>
+			<node id="7">  5.0000000e-01,  5.0000000e-01,  0.0000000e+00</node>
+			<node id="8">  5.0000000e-01,  5.0000000e-01,  1.0000000e+00</node>
+		</Nodes>
+		<Elements>
+			<hex8 id="1" mat="1">     1,     5,     7,     3,     2,     6,     8,     4</hex8>
+		</Elements>
+	</Geometry>
+	<Boundary>
+		<fix>
+			<node id="1" bc="x"/>
+			<node id="2" bc="x"/>
+			<node id="3" bc="x"/>
+			<node id="4" bc="x"/>
+		</fix>
+		<fix>
+			<node id="1" bc="y"/>
+			<node id="2" bc="y"/>
+			<node id="5" bc="y"/>
+			<node id="6" bc="y"/>
+		</fix>
+		<fix>
+			<node id="1" bc="z"/>
+			<node id="3" bc="z"/>
+			<node id="5" bc="z"/>
+			<node id="7" bc="z"/>
+		</fix>
+		<prescribe>
+			<node id="5" bc="x" lc="1">1</node>
+			<node id="6" bc="x" lc="1">1</node>
+			<node id="7" bc="x" lc="1">1</node>
+			<node id="8" bc="x" lc="1">1</node>
+			<node id="3" bc="y" lc="1">1</node>
+			<node id="4" bc="y" lc="1">1</node>
+			<node id="7" bc="y" lc="1">1</node>
+			<node id="8" bc="y" lc="1">1</node>
+			<node id="2" bc="z" lc="1">1</node>
+			<node id="4" bc="z" lc="1">1</node>
+			<node id="6" bc="z" lc="1">1</node>
+			<node id="8" bc="z" lc="1">1</node>
+		</prescribe>
+	</Boundary>
+	<LoadData>
+		<loadcurve id="1" type="smooth">
+			<loadpoint>0,0</loadpoint>
+			<loadpoint>1,0.5</loadpoint>
+		</loadcurve>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="relative volume"/>
+			<var type="strain energy density"/>
+			<var type="stress"/>
+		</plotfile>
+	</Output>
+</febio_spec>
