@@ -70,7 +70,7 @@ if args.find('c') == -1: subprocess.call(['svn', 'up'])
 # Define the test problems list.
 if args.find('t') != -1: test = ['co01.feb', 'co02.feb']
 else:
-	os.chdir(test_dir + "/Verify2")
+	os.chdir(test_dir + "/Verify")
 	test = glob.glob("*.feb")
 	test.sort()
 	os.chdir(test_dir)
@@ -84,7 +84,7 @@ if time.time() - os.path.getmtime('verifymod.txt') < 86400: test_update = 1
 # Test whether any .feb files have been updated
 if not test_update:
 	for f in test:
-		if time.time() - os.path.getmtime(test_dir + "/Verify2/" + f) < 86400:
+		if time.time() - os.path.getmtime(test_dir + "/Verify/" + f) < 86400:
 			test_update = 1
 			break
 
@@ -219,7 +219,7 @@ if b_new or b_del:
 		std_line = std.readline()
 
 #run the test problems
-os.chdir(test_dir + "/Verify2")
+os.chdir(test_dir + "/Verify")
 for solver in solvers:
 	for f in test:
 		# strip the '.feb' from the input file name

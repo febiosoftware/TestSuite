@@ -37,7 +37,7 @@ Comments:
 		<lstol>0.9</lstol>
 		<time_stepper>
 			<dtmin>0.5</dtmin>
-			<dtmax>3</dtmax>
+			<dtmax lc="4">3</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>30</opt_iter>
 		</time_stepper>
@@ -5852,6 +5852,11 @@ Comments:
 			<loadpoint>40,-0.1</loadpoint>
 			<loadpoint>50,-0.7</loadpoint>
 			<loadpoint>60,-0.7</loadpoint>
+		</loadcurve>
+		<loadcurve id="4" type="step">
+			<loadpoint>0,0</loadpoint>
+			<loadpoint>23,3</loadpoint>
+			<loadpoint>60,3</loadpoint>
 		</loadcurve>
 	</LoadData>
 	<Output>
