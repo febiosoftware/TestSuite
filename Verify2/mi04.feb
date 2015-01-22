@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A displacement of 1 unit in the x-direction is prescribed for node 8.  Nodes 5, 6 and 7
+	(the other nodes on the right end of the element) are constrained to have the same x component
+	as element 8.
+Main Features:
+	Linear constraints
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 9
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 31
+	Right Hand Evaluations: 41
+	Siffness Reformations: 10
+	Other:
+		The volume is 1.05 units at time t=1.
+Comments:
+	Similar to problem mi01, but using alternative form of linear constraints.
+-->
+<febio_spec version="2.0">
+	<Module type="solid"/>
+	<Control>
+		<title>Linear Constraints</title>
+		<time_steps>10</time_steps>
+		<step_size>0.1</step_size>
+		<max_refs>15</max_refs>
+		<max_ups>10</max_ups>
+		<dtol>0.001</dtol>
+		<etol>0.01</etol>
+		<rtol>0</rtol>
+		<lstol>0.9</lstol>
+		<time_stepper>
+			<dtmin>0.01</dtmin>
+			<dtmax>0.1</dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+		</time_stepper>
+		<analysis type="static"/>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="Material 1" type="neo-Hookean">
+			<density>1</density>
+			<E>1</E>
+			<v>0.45</v>
+		</material>
+	</Material>
+	<Geometry>
+		<Nodes>
+			<node id="1">-5.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="2">-5.0000000e-001,-5.0000000e-001, 1.0000000e+000</node>
+			<node id="3">-5.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="4">-5.0000000e-001, 5.0000000e-001, 1.0000000e+000</node>
+			<node id="5"> 5.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="6"> 5.0000000e-001,-5.0000000e-001, 1.0000000e+000</node>
+			<node id="7"> 5.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="8"> 5.0000000e-001, 5.0000000e-001, 1.0000000e+000</node>
+		</Nodes>
+		<Elements type="hex8" mat="1" elset="Part7">
+			<elem id="1">     1,     5,     7,     3,     2,     6,     8,     4</elem>
+		</Elements>
+	</Geometry>
+	<Boundary>
+		<fix bc="z">
+			<node id="1"/>
+			<node id="3"/>
+			<node id="5"/>
+			<node id="7"/>
+		</fix>
+		<fix bc="y">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="5"/>
+			<node id="6"/>
+		</fix>
+		<fix bc="x">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+		</fix>
+		<prescribe bc="x" lc="1">
+			<node id="8">1</node>
+		</prescribe>
+		<linear_constraint node="5" bc="x">
+			<node id="8" bc="x">1</node>
+		</linear_constraint>
+		<linear_constraint node="6" bc="x">
+			<node id="8" bc="x">1</node>
+		</linear_constraint>
+		<linear_constraint node="7" bc="x">
+			<node id="8" bc="x">1</node>
+		</linear_constraint>
+	</Boundary>
+	<LoadData>
+		<loadcurve id="1" type="linear">
+			<loadpoint>0,0</loadpoint>
+			<loadpoint>1,1</loadpoint>
+		</loadcurve>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="relative volume"/>
+			<var type="stress"/>
+		</plotfile>
+		<logfile>
+			<element_data data="Ex">1</element_data>
+		</logfile>
+	</Output>
+</febio_spec>

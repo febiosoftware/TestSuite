@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A poroelastic block of 10 elements is compressed in the z-direction by -0.1 units
+	in time t=100, then allowed to relax to time t=1000.
+Main Features:
+	Poroelasticity
+Secondary Features:
+	Non-uniform element thickness in z-direction
+Materials:
+	Neo-Hookean
+	Poroelastic
+Degrees of Freedom: 80
+Results:
+	Steps Completed: 400
+	Equilibrium Iterations: 1371
+	Right Hand Evaluations: 2120
+	Siffness Reformations: 1109
+	Other:
+		The bottom element has a thickness of 0.3022 at time t=1000.
+Comments:
+	
+-->
+<febio_spec version="2.0">
+	<Module type="biphasic"/>
+	<Control>
+		<time_steps>12000</time_steps>
+		<step_size>0.1</step_size>
+		<max_refs>15</max_refs>
+		<max_ups>0</max_ups>
+		<dtol>0.001</dtol>
+		<etol>0.01</etol>
+		<rtol>0</rtol>
+		<ptol>0.01</ptol>
+		<lstol>0.9</lstol>
+		<time_stepper>
+			<dtmin>0.01</dtmin>
+			<dtmax lc="1"></dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+		</time_stepper>
+		<symmetric_biphasic>0</symmetric_biphasic>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="Biphasic" type="biphasic">
+			<phi0>0.2</phi0>
+			<solid type="Holmes-Mow">
+				<density>1</density>
+				<E>2</E>
+				<v>0</v>
+				<beta>0.5</beta>
+			</solid>
+			<permeability type="perm-const-iso">
+				<perm>0.003</perm>
+			</permeability>
+		</material>
+		<material id="2" name="Indentor" type="rigid body">
+			<density>1</density>
+			<center_of_mass>0,0,1</center_of_mass>
+		</material>
+	</Material>
+	<Geometry>
+		<Nodes>
+			<node id="1">-5.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="2">-5.0000000e-001,-5.0000000e-001, 2.0233274e-001</node>
+			<node id="3">-5.0000000e-001,-5.0000000e-001, 3.6419893e-001</node>
+			<node id="4">-5.0000000e-001,-5.0000000e-001, 4.9369188e-001</node>
+			<node id="5">-5.0000000e-001,-5.0000000e-001, 5.9728624e-001</node>
+			<node id="6">-5.0000000e-001,-5.0000000e-001, 6.8016173e-001</node>
+			<node id="7">-5.0000000e-001,-5.0000000e-001, 7.4646212e-001</node>
+			<node id="8">-5.0000000e-001,-5.0000000e-001, 7.9950244e-001</node>
+			<node id="9">-5.0000000e-001,-5.0000000e-001, 8.4193469e-001</node>
+			<node id="10">-5.0000000e-001,-5.0000000e-001, 8.7588049e-001</node>
+			<node id="11">-5.0000000e-001,-5.0000000e-001, 9.0303713e-001</node>
+			<node id="12">-5.0000000e-001,-5.0000000e-001, 9.2476244e-001</node>
+			<node id="13">-5.0000000e-001,-5.0000000e-001, 9.4214269e-001</node>
+			<node id="14">-5.0000000e-001,-5.0000000e-001, 9.5604689e-001</node>
+			<node id="15">-5.0000000e-001,-5.0000000e-001, 9.6717025e-001</node>
+			<node id="16">-5.0000000e-001,-5.0000000e-001, 9.7606894e-001</node>
+			<node id="17">-5.0000000e-001,-5.0000000e-001, 9.8318789e-001</node>
+			<node id="18">-5.0000000e-001,-5.0000000e-001, 9.8888305e-001</node>
+			<node id="19">-5.0000000e-001,-5.0000000e-001, 9.9343918e-001</node>
+			<node id="20">-5.0000000e-001,-5.0000000e-001, 9.9708408e-001</node>
+			<node id="21">-5.0000000e-001,-5.0000000e-001, 1.0000000e+000</node>
+			<node id="22">-5.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="23">-5.0000000e-001, 5.0000000e-001, 2.0233274e-001</node>
+			<node id="24">-5.0000000e-001, 5.0000000e-001, 3.6419893e-001</node>
+			<node id="25">-5.0000000e-001, 5.0000000e-001, 4.9369188e-001</node>
+			<node id="26">-5.0000000e-001, 5.0000000e-001, 5.9728624e-001</node>
+			<node id="27">-5.0000000e-001, 5.0000000e-001, 6.8016173e-001</node>
+			<node id="28">-5.0000000e-001, 5.0000000e-001, 7.4646212e-001</node>
+			<node id="29">-5.0000000e-001, 5.0000000e-001, 7.9950244e-001</node>
+			<node id="30">-5.0000000e-001, 5.0000000e-001, 8.4193469e-001</node>
+			<node id="31">-5.0000000e-001, 5.0000000e-001, 8.7588049e-001</node>
+			<node id="32">-5.0000000e-001, 5.0000000e-001, 9.0303713e-001</node>
+			<node id="33">-5.0000000e-001, 5.0000000e-001, 9.2476244e-001</node>
+			<node id="34">-5.0000000e-001, 5.0000000e-001, 9.4214269e-001</node>
+			<node id="35">-5.0000000e-001, 5.0000000e-001, 9.5604689e-001</node>
+			<node id="36">-5.0000000e-001, 5.0000000e-001, 9.6717025e-001</node>
+			<node id="37">-5.0000000e-001, 5.0000000e-001, 9.7606894e-001</node>
+			<node id="38">-5.0000000e-001, 5.0000000e-001, 9.8318789e-001</node>
+			<node id="39">-5.0000000e-001, 5.0000000e-001, 9.8888305e-001</node>
+			<node id="40">-5.0000000e-001, 5.0000000e-001, 9.9343918e-001</node>
+			<node id="41">-5.0000000e-001, 5.0000000e-001, 9.9708408e-001</node>
+			<node id="42">-5.0000000e-001, 5.0000000e-001, 1.0000000e+000</node>
+			<node id="43"> 5.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="44"> 5.0000000e-001,-5.0000000e-001, 2.0233274e-001</node>
+			<node id="45"> 5.0000000e-001,-5.0000000e-001, 3.6419893e-001</node>
+			<node id="46"> 5.0000000e-001,-5.0000000e-001, 4.9369188e-001</node>
+			<node id="47"> 5.0000000e-001,-5.0000000e-001, 5.9728624e-001</node>
+			<node id="48"> 5.0000000e-001,-5.0000000e-001, 6.8016173e-001</node>
+			<node id="49"> 5.0000000e-001,-5.0000000e-001, 7.4646212e-001</node>
+			<node id="50"> 5.0000000e-001,-5.0000000e-001, 7.9950244e-001</node>
+			<node id="51"> 5.0000000e-001,-5.0000000e-001, 8.4193469e-001</node>
+			<node id="52"> 5.0000000e-001,-5.0000000e-001, 8.7588049e-001</node>
+			<node id="53"> 5.0000000e-001,-5.0000000e-001, 9.0303713e-001</node>
+			<node id="54"> 5.0000000e-001,-5.0000000e-001, 9.2476244e-001</node>
+			<node id="55"> 5.0000000e-001,-5.0000000e-001, 9.4214269e-001</node>
+			<node id="56"> 5.0000000e-001,-5.0000000e-001, 9.5604689e-001</node>
+			<node id="57"> 5.0000000e-001,-5.0000000e-001, 9.6717025e-001</node>
+			<node id="58"> 5.0000000e-001,-5.0000000e-001, 9.7606894e-001</node>
+			<node id="59"> 5.0000000e-001,-5.0000000e-001, 9.8318789e-001</node>
+			<node id="60"> 5.0000000e-001,-5.0000000e-001, 9.8888305e-001</node>
+			<node id="61"> 5.0000000e-001,-5.0000000e-001, 9.9343918e-001</node>
+			<node id="62"> 5.0000000e-001,-5.0000000e-001, 9.9708408e-001</node>
+			<node id="63"> 5.0000000e-001,-5.0000000e-001, 1.0000000e+000</node>
+			<node id="64"> 5.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="65"> 5.0000000e-001, 5.0000000e-001, 2.0233274e-001</node>
+			<node id="66"> 5.0000000e-001, 5.0000000e-001, 3.6419893e-001</node>
+			<node id="67"> 5.0000000e-001, 5.0000000e-001, 4.9369188e-001</node>
+			<node id="68"> 5.0000000e-001, 5.0000000e-001, 5.9728624e-001</node>
+			<node id="69"> 5.0000000e-001, 5.0000000e-001, 6.8016173e-001</node>
+			<node id="70"> 5.0000000e-001, 5.0000000e-001, 7.4646212e-001</node>
+			<node id="71"> 5.0000000e-001, 5.0000000e-001, 7.9950244e-001</node>
+			<node id="72"> 5.0000000e-001, 5.0000000e-001, 8.4193469e-001</node>
+			<node id="73"> 5.0000000e-001, 5.0000000e-001, 8.7588049e-001</node>
+			<node id="74"> 5.0000000e-001, 5.0000000e-001, 9.0303713e-001</node>
+			<node id="75"> 5.0000000e-001, 5.0000000e-001, 9.2476244e-001</node>
+			<node id="76"> 5.0000000e-001, 5.0000000e-001, 9.4214269e-001</node>
+			<node id="77"> 5.0000000e-001, 5.0000000e-001, 9.5604689e-001</node>
+			<node id="78"> 5.0000000e-001, 5.0000000e-001, 9.6717025e-001</node>
+			<node id="79"> 5.0000000e-001, 5.0000000e-001, 9.7606894e-001</node>
+			<node id="80"> 5.0000000e-001, 5.0000000e-001, 9.8318789e-001</node>
+			<node id="81"> 5.0000000e-001, 5.0000000e-001, 9.8888305e-001</node>
+			<node id="82"> 5.0000000e-001, 5.0000000e-001, 9.9343918e-001</node>
+			<node id="83"> 5.0000000e-001, 5.0000000e-001, 9.9708408e-001</node>
+			<node id="84"> 5.0000000e-001, 5.0000000e-001, 1.0000000e+000</node>
+		</Nodes>
+		<Elements type="hex8" mat="1" elset="Part1">
+			<elem id="1">     1,    43,    64,    22,     2,    44,    65,    23</elem>
+			<elem id="2">     2,    44,    65,    23,     3,    45,    66,    24</elem>
+			<elem id="3">     3,    45,    66,    24,     4,    46,    67,    25</elem>
+			<elem id="4">     4,    46,    67,    25,     5,    47,    68,    26</elem>
+			<elem id="5">     5,    47,    68,    26,     6,    48,    69,    27</elem>
+			<elem id="6">     6,    48,    69,    27,     7,    49,    70,    28</elem>
+			<elem id="7">     7,    49,    70,    28,     8,    50,    71,    29</elem>
+			<elem id="8">     8,    50,    71,    29,     9,    51,    72,    30</elem>
+			<elem id="9">     9,    51,    72,    30,    10,    52,    73,    31</elem>
+			<elem id="10">    10,    52,    73,    31,    11,    53,    74,    32</elem>
+			<elem id="11">    11,    53,    74,    32,    12,    54,    75,    33</elem>
+			<elem id="12">    12,    54,    75,    33,    13,    55,    76,    34</elem>
+			<elem id="13">    13,    55,    76,    34,    14,    56,    77,    35</elem>
+			<elem id="14">    14,    56,    77,    35,    15,    57,    78,    36</elem>
+			<elem id="15">    15,    57,    78,    36,    16,    58,    79,    37</elem>
+			<elem id="16">    16,    58,    79,    37,    17,    59,    80,    38</elem>
+			<elem id="17">    17,    59,    80,    38,    18,    60,    81,    39</elem>
+			<elem id="18">    18,    60,    81,    39,    19,    61,    82,    40</elem>
+			<elem id="19">    19,    61,    82,    40,    20,    62,    83,    41</elem>
+			<elem id="20">    20,    62,    83,    41,    21,    63,    84,    42</elem>
+		</Elements>
+		<NodeSet name="RigidNodeset 1">    21,    42,    63,    84</NodeSet>
+	</Geometry>
+	<Boundary>
+		<fix bc="x">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="13"/>
+			<node id="14"/>
+			<node id="15"/>
+			<node id="16"/>
+			<node id="17"/>
+			<node id="18"/>
+			<node id="19"/>
+			<node id="20"/>
+			<node id="21"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="24"/>
+			<node id="25"/>
+			<node id="26"/>
+			<node id="27"/>
+			<node id="28"/>
+			<node id="29"/>
+			<node id="30"/>
+			<node id="31"/>
+			<node id="32"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="35"/>
+			<node id="36"/>
+			<node id="37"/>
+			<node id="38"/>
+			<node id="39"/>
+			<node id="40"/>
+			<node id="41"/>
+			<node id="42"/>
+			<node id="43"/>
+			<node id="44"/>
+			<node id="45"/>
+			<node id="46"/>
+			<node id="47"/>
+			<node id="48"/>
+			<node id="49"/>
+			<node id="50"/>
+			<node id="51"/>
+			<node id="52"/>
+			<node id="53"/>
+			<node id="54"/>
+			<node id="55"/>
+			<node id="56"/>
+			<node id="57"/>
+			<node id="58"/>
+			<node id="59"/>
+			<node id="60"/>
+			<node id="61"/>
+			<node id="62"/>
+			<node id="63"/>
+			<node id="64"/>
+			<node id="65"/>
+			<node id="66"/>
+			<node id="67"/>
+			<node id="68"/>
+			<node id="69"/>
+			<node id="70"/>
+			<node id="71"/>
+			<node id="72"/>
+			<node id="73"/>
+			<node id="74"/>
+			<node id="75"/>
+			<node id="76"/>
+			<node id="77"/>
+			<node id="78"/>
+			<node id="79"/>
+			<node id="80"/>
+			<node id="81"/>
+			<node id="82"/>
+			<node id="83"/>
+			<node id="84"/>
+		</fix>
+		<fix bc="y">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="13"/>
+			<node id="14"/>
+			<node id="15"/>
+			<node id="16"/>
+			<node id="17"/>
+			<node id="18"/>
+			<node id="19"/>
+			<node id="20"/>
+			<node id="21"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="24"/>
+			<node id="25"/>
+			<node id="26"/>
+			<node id="27"/>
+			<node id="28"/>
+			<node id="29"/>
+			<node id="30"/>
+			<node id="31"/>
+			<node id="32"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="35"/>
+			<node id="36"/>
+			<node id="37"/>
+			<node id="38"/>
+			<node id="39"/>
+			<node id="40"/>
+			<node id="41"/>
+			<node id="42"/>
+			<node id="43"/>
+			<node id="44"/>
+			<node id="45"/>
+			<node id="46"/>
+			<node id="47"/>
+			<node id="48"/>
+			<node id="49"/>
+			<node id="50"/>
+			<node id="51"/>
+			<node id="52"/>
+			<node id="53"/>
+			<node id="54"/>
+			<node id="55"/>
+			<node id="56"/>
+			<node id="57"/>
+			<node id="58"/>
+			<node id="59"/>
+			<node id="60"/>
+			<node id="61"/>
+			<node id="62"/>
+			<node id="63"/>
+			<node id="64"/>
+			<node id="65"/>
+			<node id="66"/>
+			<node id="67"/>
+			<node id="68"/>
+			<node id="69"/>
+			<node id="70"/>
+			<node id="71"/>
+			<node id="72"/>
+			<node id="73"/>
+			<node id="74"/>
+			<node id="75"/>
+			<node id="76"/>
+			<node id="77"/>
+			<node id="78"/>
+			<node id="79"/>
+			<node id="80"/>
+			<node id="81"/>
+			<node id="82"/>
+			<node id="83"/>
+			<node id="84"/>
+		</fix>
+		<fix bc="z">
+			<node id="1"/>
+			<node id="22"/>
+			<node id="43"/>
+			<node id="64"/>
+		</fix>
+		<fix bc="p">
+			<node id="21"/>
+			<node id="42"/>
+			<node id="63"/>
+			<node id="84"/>
+		</fix>
+	</Boundary>
+	<Contact>
+		<contact type="rigid">
+			<node id="21" rb="2"></node>
+			<node id="42" rb="2"></node>
+			<node id="63" rb="2"></node>
+			<node id="84" rb="2"></node>
+		</contact>
+	</Contact>
+	<Constraints>
+		<rigid_body mat="2">
+			<fixed bc="x"/>
+			<fixed bc="y"/>
+			<fixed bc="Rx"/>
+			<fixed bc="Ry"/>
+			<fixed bc="Rz"/>
+		</rigid_body>
+		<rigid_body mat="2">
+			<prescribed bc="z" lc="2">1</prescribed>
+		</rigid_body>
+	</Constraints>
+	<LoadData>
+		<loadcurve id="1" type="step">
+			<point>0,0</point>
+			<point>200,10</point>
+			<point>400,20</point>
+			<point>1000,100</point>
+		</loadcurve>
+		<loadcurve id="2" type="smooth">
+			<point>0,0</point>
+			<point>200,-0.2</point>
+		</loadcurve>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="effective fluid pressure"/>
+			<var type="fluid flux"/>
+			<var type="stress"/>
+		</plotfile>
+		<logfile>
+			<rigid_body_data file="CCsrlxFz.dat" data="Fz">2</rigid_body_data>
+		</logfile>
+	</Output>
+</febio_spec>

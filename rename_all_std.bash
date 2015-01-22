@@ -7,6 +7,8 @@ if [ $# == 0 ]; then
 	exit
 fi
 
+rm *_std.$1
+
 for input in $(ls *.$1); do
     cp -v $input ./${input%.*}_std.$1
 done
