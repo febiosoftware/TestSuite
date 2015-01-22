@@ -41,7 +41,7 @@ Comments:
 		<lstol>0.9</lstol>
 		<time_stepper>
 			<dtmin>5e-005</dtmin>
-			<dtmax lc="1"></dtmax>
+			<dtmax lc="2"></dtmax>
 			<max_retries>10</max_retries>
 			<opt_iter>50</opt_iter>
 		</time_stepper>
@@ -1468,7 +1468,7 @@ Comments:
 			<node id="641"/>
 			<node id="642"/>
 		</fix>
-		<prescribe bc="z" lc="2">
+		<prescribe bc="z" lc="1">
 			<node id="322">1</node>
 			<node id="323">1</node>
 			<node id="324">1</node>
@@ -1795,14 +1795,14 @@ Comments:
 	<LoadData>
 		<loadcurve id="1" type="linear">
 			<point>0,0</point>
-			<point>8,0.05</point>
-			<point>10,0.5</point>
-			<point>450,2.5</point>
+			<point>6,0.03</point>
+			<point>450,0.03</point>
 		</loadcurve>
 		<loadcurve id="2" type="linear">
 			<point>0,0</point>
-			<point>6,0.03</point>
-			<point>450,0.03</point>
+			<point>8,0.05</point>
+			<point>10,0.5</point>
+			<point>450,2.5</point>
 		</loadcurve>
 	</LoadData>
 	<Output>
