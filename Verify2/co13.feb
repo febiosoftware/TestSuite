@@ -37,6 +37,7 @@ Comments:
 		<etol>0.01</etol>
 		<rtol>0</rtol>
 		<lstol>0.9</lstol>
+		<pressure_stiffness>1</pressure_stiffness>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax>0.02</dtmax>
@@ -4056,7 +4057,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 		<logfile>
-			<element_data data="Ez">304</element_data>
+			<element_data data="Ez">944</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

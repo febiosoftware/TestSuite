@@ -41,8 +41,8 @@ Comments:
 	</Control>
 	<Globals>
 		<Constants>
-			<T>298</T>
-			<R>8.314e-006</R>
+			<T>0</T>
+			<R>0</R>
 			<Fc>0</Fc>
 		</Constants>
 	</Globals>
@@ -2569,16 +2569,8 @@ Comments:
 			<var type="solute 1 flux"/>
 			<var type="stress"/>
 		</plotfile>
-<!--
-		<time_stepper>
-			<dtmin>0.0166667</dtmin>
-			<dtmax lc= "3"</dtmax>
-			<max_retries>5</max_retries>
-			<opt_iter>11</opt_iter>
-		</time_stepper>
--->
 		<logfile>
-			<element_data data="Ez">296</element_data>
+			<element_data data="Ez">405</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

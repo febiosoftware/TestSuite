@@ -35,7 +35,7 @@ Comments:
  	<Globals>
 		<Constants>
 			<R>8.314e-6</R>
-			<T>298</T>
+			<T>293</T>
 			<Fc>96845e-9</Fc>
 		</Constants>
 		<Solutes>

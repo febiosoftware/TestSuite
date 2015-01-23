@@ -9404,7 +9404,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 		<logfile>
-			<element_data data="sy">2211</element_data>
+			<element_data data="sy">771</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

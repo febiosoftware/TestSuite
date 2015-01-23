@@ -852,5 +852,8 @@ Comments:
 			<var type="strain energy density"/>
 			<var type="stress"/>
 		</plotfile>
+		<logfile>
+			<rigid_body_data data="Fx">3</rigid_body_data>
+		</logfile>
 	</Output>
 </febio_spec>

@@ -155,7 +155,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 		<logfile>
-			<element_data data="Ez">2</element_data>
+			<element_data data="Ez">1</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

@@ -5749,7 +5749,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 		<logfile>
-			<element_data data="sx">1313</element_data>
+			<element_data data="sx">313</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

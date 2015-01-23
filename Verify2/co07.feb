@@ -5661,7 +5661,7 @@ Comments:
 			<var type="stress"/>
 		</plotfile>
 		<logfile>
-			<element_data data="sz">1140</element_data>
+			<element_data data="sz">140</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

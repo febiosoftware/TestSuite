@@ -56,9 +56,11 @@ else: os.environ['OMP_NUM_THREADS'] = '1'
 # open the results file
 test_dir = os.getcwd()
 if febio_name == 'FEBio':
+	verify = "/Verify"
 	if dir_ext == "4": res_name = "nightly4_" + plat
 	else: res_name = "nightly_" + plat
 else:
+	verify = "/Verify2"
 	if dir_ext == "4": res_name = "nightly24_" + plat
 	else: res_name = "nightly2_" + plat
 std_name = res_name + "_std"
@@ -70,7 +72,7 @@ if args.find('c') == -1: subprocess.call(['svn', 'up'])
 # Define the test problems list.
 if args.find('t') != -1: test = ['co01.feb', 'co02.feb']
 else:
-	os.chdir(test_dir + "/Verify")
+	os.chdir(test_dir + verify)
 	test = glob.glob("*.feb")
 	test.sort()
 	os.chdir(test_dir)
@@ -84,7 +86,7 @@ if time.time() - os.path.getmtime('verifymod.txt') < 86400: test_update = 1
 # Test whether any .feb files have been updated
 if not test_update:
 	for f in test:
-		if time.time() - os.path.getmtime(test_dir + "/Verify/" + f) < 86400:
+		if time.time() - os.path.getmtime(test_dir + verify + "/" + f) < 86400:
 			test_update = 1
 			break
 
@@ -219,7 +221,7 @@ if b_new or b_del:
 		std_line = std.readline()
 
 #run the test problems
-os.chdir(test_dir + "/Verify")
+os.chdir(test_dir + verify)
 for solver in solvers:
 	for f in test:
 		# strip the '.feb' from the input file name
@@ -232,6 +234,7 @@ for solver in solvers:
 				df_tline = "Time = " + df_time + "\n"
 				df_flg = 1
 				found = 0
+				data1 = 0
 				line_num = 0
 			else: df_flg = 0
 			
@@ -290,7 +293,8 @@ for solver in solvers:
 			# 8: Log diff file size
 			# 9: Solve time ratio new/old
 			#10: Elapsed time ratio new/old
-			else: result = [solver, base, "", 0, 0, 0, 0, 0, 0, 0, 0]
+			#11: Data field value
+			else: result = [solver, base, "", 0, 0, 0, 0, 0, 0, 0, 0, ""]
 			
 			# check the return value
 			if val==0:
@@ -332,10 +336,12 @@ for solver in solvers:
 							el_sec = int(line[21:23])
 							new_el_time = el_hr*3600 + el_min*60 + el_sec
 						if df_flg:
-							if line.find(df_tline) !=-1: found = 1
+							if line.find("Data Record #1") !=-1: data1 = 1
+							if line.find("Data Record #2") !=-1: data1 = 0
+							if line.find(df_tline) !=-1 and data1: found = 1
 							if found: line_num += 1
 							if line_num == 3:
-								result.append(line.rstrip("\n").split(" ")[1])
+								result[11] = line.rstrip("\n").split(" ")[1]
 								found = 0
 								line_num = 0
 					for line in fstd:

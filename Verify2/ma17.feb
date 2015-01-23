@@ -64,6 +64,10 @@ Comments:
 				<m>-100</m>
 				<mu>0.025</mu>
 				<k>1.55</k>
+				<mat_axis type="vector">
+					<a>0,0,1</a>
+					<d>1,0,0</d>
+				</mat_axis>
 			</solid>
 			<permeability type="perm-Holmes-Mow">
 				<perm>0.003</perm>

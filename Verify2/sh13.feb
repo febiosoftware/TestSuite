@@ -663,7 +663,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 		<logfile>
-			<element_data data="sy">40</element_data>
+			<element_data data="sy">39</element_data>
 		</logfile>		
 	</Output>
 </febio_spec>

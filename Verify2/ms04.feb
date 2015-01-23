@@ -1711,7 +1711,7 @@ Comments:
 	<Output>
 		<plotfile type="febio"></plotfile>
 		<logfile>
-			<element_data data="sz">306</element_data>
+			<element_data data="sz">307</element_data>
 		</logfile>		
 	</Output>
 	<Step name="Step01">
