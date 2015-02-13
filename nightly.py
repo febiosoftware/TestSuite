@@ -67,7 +67,7 @@ std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
 
 #Update the test suite
-if args.find('c') == -1: subprocess.call(['svn', 'up'])
+if args.find('c') == -1 and plat != 'osx': subprocess.call(['svn', 'up'])
 
 # Define the test problems list.
 if args.find('t') != -1: test = ['co01.feb', 'co02.feb']
@@ -152,7 +152,7 @@ else:
 	if args.find('c') == -1: # if we don't explicitly say not to compile
 
 		# Do an svn update on lnx64 and write to svn_version.py
-		subprocess.call(['svn', 'up'])
+		if plat != 'osx': subprocess.call(['svn', 'up'])
 		version_str = subprocess.Popen(['svnversion'], stdout=subprocess.PIPE).communicate()[0]
 		version = version_str.split("\n")[0]
 
