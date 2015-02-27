@@ -141,7 +141,7 @@ else:
 	# and that the executable is in FEBio/bin
 	os.chdir("../" + febio_name)
 	febio_dir = os.getcwd()
-	febio = febio_dir + '/bin/' + febio_lc_name + '.' + platd
+	febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + platd
 
 	# Define the log and plt output directory
 	# user variable assumes the directory is e.g. /home/sci/rawlins/Testing
