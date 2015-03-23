@@ -1,4 +1,4 @@
 # Enter problems as: ['tr01', 'tr02']
-new = []
-modified = []
+new = ['bs08']
+modified = ['fi03']
 deleted = []
