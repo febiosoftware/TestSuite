@@ -53,7 +53,7 @@ if time.time() - os.path.getmtime('examplesmod.txt') < 86400: test_update = 1
 # and that the executable is in FEBio/bin
 os.chdir("../FEBio2")
 febio_dir = os.getcwd()
-febio = febio_dir + '/bin/febio2.' + platd
+febio = febio_dir + '/build/bin/febio2.' + platd
 
 # Define the log and plt output directory
 out_dir = '/scratch/' + user + '/examples_test/'
