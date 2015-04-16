@@ -124,7 +124,7 @@ for f in test:
 	# run the FEBio problem
 	# we grab the exit value for termination status
 	command = [febio, '-i', f, '-o', logname, '-p', pltname, \
-		'-cnf', febio_dir + '/' + solver + '.xml']
+		'-cnf', test_dir + '/' + solver + '.xml']
 	#print command
 	val = subprocess.call(command, stdout=dummy)
 
