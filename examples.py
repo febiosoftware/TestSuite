@@ -84,8 +84,16 @@ if time.time() - os.path.getctime(febio) > 72000 and not test_update:
 norms = 0			# nr of normal terminations
 nerrs = 0			# nr of error terminations
 
+# Exempt problems:
+exempt = ['oi05']
+
+# Parameter optimization problems:
+paramopt = [['op05', 'oi05']]
+paramopt0 = [col[0] for col in paramopt]
+
+
 # These problems are new, newly modified, or deleted
-new      = []
+new      = ['op05']
 modified = []
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
@@ -105,137 +113,167 @@ if b_new or b_del:
 
 # These problems use the new plot file format: (Note: all files now use the .xplt format)
 # xplt = ['bp07', 'bp08', 'bp09', 'bs02', 'bs03', 'congneo', 'hip_n10rb', 'incneo', 'open_knee', 'saddle5', 'twist_cyl']
+pext = '.xplt'
 
 #run the test problems
 for f in test:
 	# strip the '.feb' from the input file name
 	base = f.split('.')[0]
-#	if base in xplt: pext = '.xplt'
-#	else: pext = '.plt'
-	pext = '.xplt'
-	# define the log and plt files
-	logname = out_dir + base + '.log'
-	logstd = out_dir + base + '_std.log'
-	pltname = out_dir + base + pext
-	diffname = out_dir + base + '_diff.txt'
-	# open the dummy file
-	dummyname = out_dir + "dummy.txt"
-	dummy = open(dummyname, "w")
-	# run the FEBio problem
-	# we grab the exit value for termination status
-	command = [febio, '-i', f, '-o', logname, '-p', pltname, \
-		'-cnf', test_dir + '/' + solver + '.xml']
-	#print command
-	val = subprocess.call(command, stdout=dummy)
+	if base not in exempt:
+		# define the log and plt files
+		logname = out_dir + base + '.log'
+		logstd = out_dir + base + '_std.log'
+		pltname = out_dir + base + pext
+		diffname = out_dir + base + '_diff.txt'
+		# open the dummy file
+		dummyname = out_dir + "dummy.txt"
+		dummy = open(dummyname, "w")
 
-	# create a variable that will store the results of the test
-	# 0: solver
-	# 1: file
-	# 2: Normal/Error termination status
-	# 3: Number of time steps
-	# 4: Number of iterations
-	# 5: Number of RHS evaluations
-	# 6: Number of reformations
-	# 7: Plot file size
-        # 8: Log diff file size
-        # 9: Solve time percent difference (new-old)/old
-        #10: Elapsed time percent difference (new-old)/old
-	result = [solver, base, "", 0, 0, 0, 0, 0, 0, 0, 0]
-	
-	# check the return value
-	if val==0:
-		result[2] = 'Normal'
-		norms = norms + 1
-	else:
-		result[2] = 'Error'
-		nerrs = nerrs + 1
-		
-	# create std log for new and modified problems
-	if base in new or base in modified:
-		shutil.copy(logname, logstd)
-		
-	#search the log file for the convergence info
-	try:
-		flog = open(logname, 'rt')
-		fstd = open(logstd, 'r')
-		diff = open(diffname, 'w')
-		
-		for line in flog:
-			if  line.find("Number of time steps completed"        ) != -1: result[3] = int(line[55:])
-			if  line.find("Total number of equilibrium iterations") != -1: result[4] = int(line[55:])
-			if  line.find("Total number of right hand evaluations") != -1: result[5] = int(line[55:])
-			if  line.find("Total number of stiffness reformations") != -1: result[6] = int(line[55:])
-			if  line.find("Time in solver") != -1:
-				slv_hr  = int(line[17:18])
-				slv_min = int(line[19:21])
-				slv_sec = int(line[22:24])
-				new_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
-			if  line.find("Elapsed time") != -1:
-				el_hr  = int(line[16:17])
-				el_min = int(line[18:20])
-				el_sec = int(line[21:23])
-				new_el_time = el_hr*3600 + el_min*60 + el_sec
-		for line in fstd:
-			if  line.find("Time in solver") != -1:
-				slv_hr  = int(line[17:18])
-				slv_min = int(line[19:21])
-				slv_sec = int(line[22:24])
-				old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
-			if  line.find("Elapsed time") != -1:
-				el_hr  = int(line[16:17])
-				el_min = int(line[18:20])
-				el_sec = int(line[21:23])
-				old_el_time = el_hr*3600 + el_min*60 + el_sec
-		slv_denom = old_slv_time
-		el_denom = old_el_time
-		if old_slv_time == 0: slv_denom = 1
-		if old_el_time == 0: el_denom = 1
-		# calculate percent change (in increments of 10%) in solve and elapse times
-		result[9]  = 10*int(10*(new_slv_time-old_slv_time)/float(slv_denom))
-		result[10] = 10*int(10*(new_el_time-old_el_time)/float(el_denom))
-		# get the size of the plotfile
-		result[7] = os.path.getsize(pltname)
-		#os.remove(pltname)
-		flog.seek(0)
-		fstd.seek(0)
-		for line in difflib.unified_diff(flog.readlines(), fstd.readlines(), n=0):
-			diff.write(line)
-		diff.close()
-		flog.close()
-		fstd.close()
-		diffsize = os.path.getsize(diffname)
-		result[8] = diffsize/1000
-	except IOError:
-		result[2] = 'IOError'
-	except OSError:
-		result[2] = 'OSError'
-	print result
-	results.write(str(result) + '\n')
-	dummy.close()
-	os.remove(dummyname)
-			
-	# Write the temporary nightly_std file
-	if b_del:
-		for del_base in deleted:
-			if del_base in std_line:
-				#print "del_base", del_base
-				#print "std_line", std_line
-				std_line = std.readline()
-				break
-	if b_new:
-		if base in new:
-			std_tmp.write(str(result) + '\n')
+		# Test for parameter optimization problems
+		if base in paramopt0:
+			opt = 1
+			fi = paramopt[paramopt0.index(base)][1]
+			command = [febio, '-i', fi + '.feb', '-s', f, '-o', logname, '-p', pltname, \
+				'-cnf', test_dir + '/' + solver + '.xml']
+			#print(command)
 		else:
-			if base in std_line:
-				if base in modified:
-					std_tmp.write(str(result) + '\n')
-				else:
-					std_tmp.write(std_line)
-				std_line = std.readline()
+			opt = 0
+			command = [febio, '-i', f, '-o', logname, '-p', pltname, \
+				'-cnf', test_dir + '/' + solver + '.xml']
+			
+		# run the FEBio problem
+		# we grab the exit value for termination status
+		#print command
+		val = subprocess.call(command, stdout=dummy)
+
+		# Create a variable that will store the results of the test
+		
+		#Optimization input file
+		# Normal input file
+		# 0: solver
+		# 1: file
+		# 2: Normal/Error termination status
+		# 3: Major iterations
+		# 4: Minor iterations
+		# 5: Final objective value
+		# 6: Plot file size
+		# 7: Log diff file size
+		if opt: result = [solver, base, "", 0, 0, 0.0, 0, 0]
+
+		# Normal input file
+		# 0: solver
+		# 1: file
+		# 2: Normal/Error termination status
+		# 3: Number of time steps
+		# 4: Number of iterations
+		# 5: Number of RHS evaluations
+		# 6: Number of reformations
+		# 7: Plot file size
+		# 8: Log diff file size
+		# 9: Solve time ratio new/old
+		#10: Elapsed time ratio new/old
+		else: result = [solver, base, "", 0, 0, 0, 0, 0, 0, 0, 0]
+
+		# check the return value
+		if val==0:
+			result[2] = 'Normal'
+			norms = norms + 1
+		else:
+			result[2] = 'Error'
+			nerrs = nerrs + 1
+			
+		# create std log for new and modified problems
+		if base in new or base in modified:
+			shutil.copy(logname, logstd)
+			
+		#search the log file for the convergence info
+		try:
+			flog = open(logname, 'rt')
+			fstd = open(logstd, 'r')
+			diff = open(diffname, 'w')
+			
+			if opt:
+				for line in flog:
+					if line.find("Major iterations"     ) !=-1: result[3] = int(line[43:])
+					if line.find("Minor iterations"     ) !=-1: result[4] = int(line[43:])
+					if line.find("Final objective value") !=-1: result[5] = line.split()[3]
 			else:
-				print "base", base
-				print "std_line", std_line
-				sys.exit("base and std_line do not match")
+				for line in flog:
+					if  line.find("Number of time steps completed"        ) != -1: result[3] = int(line[55:])
+					if  line.find("Total number of equilibrium iterations") != -1: result[4] = int(line[55:])
+					if  line.find("Total number of right hand evaluations") != -1: result[5] = int(line[55:])
+					if  line.find("Total number of stiffness reformations") != -1: result[6] = int(line[55:])
+					if  line.find("Time in solver") != -1:
+						slv_hr  = int(line[17:18])
+						slv_min = int(line[19:21])
+						slv_sec = int(line[22:24])
+						new_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
+					if  line.find("Elapsed time") != -1:
+						el_hr  = int(line[16:17])
+						el_min = int(line[18:20])
+						el_sec = int(line[21:23])
+						new_el_time = el_hr*3600 + el_min*60 + el_sec
+				for line in fstd:
+					if  line.find("Time in solver") != -1:
+						slv_hr  = int(line[17:18])
+						slv_min = int(line[19:21])
+						slv_sec = int(line[22:24])
+						old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
+					if  line.find("Elapsed time") != -1:
+						el_hr  = int(line[16:17])
+						el_min = int(line[18:20])
+						el_sec = int(line[21:23])
+						old_el_time = el_hr*3600 + el_min*60 + el_sec
+				slv_denom = old_slv_time
+				el_denom = old_el_time
+				if old_slv_time == 0: slv_denom = 1
+				if old_el_time == 0: el_denom = 1
+				# calculate percent change (in increments of 10%) in solve and elapse times
+				result[9]  = 10*int(10*(new_slv_time-old_slv_time)/float(slv_denom))
+				result[10] = 10*int(10*(new_el_time-old_el_time)/float(el_denom))
+			# get the size of the plotfile
+			result[7] = os.path.getsize(pltname)
+			#os.remove(pltname)
+			flog.seek(0)
+			fstd.seek(0)
+			for line in difflib.unified_diff(flog.readlines(), fstd.readlines(), n=0):
+				diff.write(line)
+			diff.close()
+			flog.close()
+			fstd.close()
+			diffsize = os.path.getsize(diffname)
+			result[8] = diffsize/1000
+		except IOError:
+			result[2] = 'IOError'
+		except OSError:
+			result[2] = 'OSError'
+		print result
+		results.write(str(result) + '\n')
+		dummy.close()
+		os.remove(dummyname)
+				
+		# Write the temporary nightly_std file
+		if b_del:
+			for del_base in deleted:
+				if del_base in std_line:
+					#print "del_base", del_base
+					#print "std_line", std_line
+					std_line = std.readline()
+					break
+		if b_new:
+			if base in new:
+				std_tmp.write(str(result) + '\n')
+			else:
+				if base in std_line:
+					if base in modified:
+						std_tmp.write(str(result) + '\n')
+					else:
+						std_tmp.write(std_line)
+					std_line = std.readline()
+				else:
+					print "base", base
+					print "std_line", std_line
+					sys.exit("base and std_line do not match")
 
 # Finish the std files
 if b_new or b_del:

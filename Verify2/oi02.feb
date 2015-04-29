@@ -3,6 +3,7 @@
 Problem Description:
 	A poroelastic block of 10 elements is compressed in the z-direction by -0.1 units
 	in time t=100, then allowed to relax to time t=1000.
+	This is the same problem as CCsrlxFit.feb in the Biphasic Examples on the forums.
 Main Features:
 	Poroelasticity
 Secondary Features:
