@@ -93,7 +93,7 @@ paramopt0 = [col[0] for col in paramopt]
 
 
 # These problems are new, newly modified, or deleted
-new      = ['op05']
+new      = []
 modified = []
 deleted  = []
 # Open the nightly_std file and a temporary nightly_std file
