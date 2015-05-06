@@ -66,7 +66,7 @@ results.write("svn version : " + version + "\n")
 os.chdir(test_dir + "/Examples")
 test = glob.glob("*.feb")
 test.sort()
-#test = [ 'Ei-adhesion.feb' ]
+#test = [ 'op05.feb' ]
 
 # Test whether any .feb files have been updated
 if not test_update:
@@ -188,7 +188,7 @@ for f in test:
 			
 		#search the log file for the convergence info
 		try:
-			flog = open(logname, 'rt')
+			flog = open(logname, 'r')
 			fstd = open(logstd, 'r')
 			diff = open(diffname, 'w')
 			
@@ -232,7 +232,7 @@ for f in test:
 				result[9]  = 10*int(10*(new_slv_time-old_slv_time)/float(slv_denom))
 				result[10] = 10*int(10*(new_el_time-old_el_time)/float(el_denom))
 			# get the size of the plotfile
-			result[7] = os.path.getsize(pltname)
+			result[7-opt] = int(os.path.getsize(pltname))
 			#os.remove(pltname)
 			flog.seek(0)
 			fstd.seek(0)
@@ -242,7 +242,8 @@ for f in test:
 			flog.close()
 			fstd.close()
 			diffsize = os.path.getsize(diffname)
-			result[8] = diffsize/1000
+			#result[8-opt] = diffsize/1000
+			result[8-opt] = 0 # decided to ignore this statistic
 		except IOError:
 			result[2] = 'IOError'
 		except OSError:
