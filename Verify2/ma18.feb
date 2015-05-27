@@ -2676,7 +2676,7 @@ Comments:
 			<node id="417"/>
 			<node id="418"/>
 		</fix>
-		<fix bc="x">
+		<fix bc="xy">
 			<node id="20"/>
 			<node id="28"/>
 		</fix>
