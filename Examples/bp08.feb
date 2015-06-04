@@ -16,7 +16,7 @@ Results:
 	Right Hand Evaluations: 103
 	Siffness Reformations: 76
 	Other:
-		
+		The x-component of the fluid flux for element 3188 is 0.1961 at time t=2.
 Comments:
 	
 -->
@@ -9185,7 +9185,7 @@ Comments:
 			<var type="stress"/>
 		</plotfile>
 		<logfile>
-          <element_data data="sz">560</element_data>
-        </logfile>
+			<element_data data="wx">3188</element_data>
+		</logfile>
 	</Output>
 </febio_spec>
