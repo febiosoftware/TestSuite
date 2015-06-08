@@ -258,6 +258,10 @@ for solver in solvers:
 				else:
 					command = [febio, '-s', f, '-o', logname, '-p', pltname, \
 						'-cnf', test_dir + '/' + solver + '.xml']
+			# Test for plugin problems
+			elif 'pi' in base:
+				command = [febio, '-i', f, '-o', logname, '-p', pltname, \
+					'-cnf', 'plugins/' + base + '_' + plat + '.xml']
 			else:
 				opt = 0
 				command = [febio, '-i', f, '-o', logname, '-p', pltname, \
