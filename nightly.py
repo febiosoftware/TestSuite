@@ -248,6 +248,7 @@ for solver in solvers:
 			dummy = open(dummyname, "w")
 			
 			# Test for parameter optimization problems
+			opt = 0
 			if base in paramopt0:
 				opt = 1
 				if febio_name == 'FEBio2':
@@ -263,7 +264,6 @@ for solver in solvers:
 				command = [febio, '-i', f, '-o', logname, '-p', pltname, \
 					'-cnf', 'plugins/' + base + '_' + plat + '.xml']
 			else:
-				opt = 0
 				command = [febio, '-i', f, '-o', logname, '-p', pltname, \
 					'-cnf', test_dir + '/' + solver + '.xml']
 			
