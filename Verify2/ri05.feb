@@ -192,13 +192,6 @@ Comments:
 			<node id="63" rb="2"></node>
 			<node id="64" rb="2"></node>
 		</contact>
-		<contact type="rigid joint">
-			<tolerance>0.01</tolerance>
-			<penalty>1000</penalty>
-			<body_a>2</body_a>
-			<body_b>3</body_b>
-			<joint>0,0.1,0.5</joint>
-		</contact>
 	</Contact>
 	<Constraints>
 		<rigid_body mat="2">
@@ -213,6 +206,13 @@ Comments:
 			<fixed bc="Rx"/>
 			<fixed bc="Rz"/>
 		</rigid_body>
+		<constraint type="rigid joint">
+			<tolerance>0.01</tolerance>
+			<penalty>1000</penalty>
+			<body_a>2</body_a>
+			<body_b>3</body_b>
+			<joint>0,0.1,0.5</joint>
+		</constraint>
 	</Constraints>
 	<LoadData>
 		<loadcurve id="1" type="linear">

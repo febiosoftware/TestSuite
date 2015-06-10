@@ -14537,34 +14537,6 @@ Comments:
 			<node id="3670" rb="7"></node>
 			<node id="3671" rb="7"></node>
 		</contact>
-		<contact type="rigid joint">
-			<tolerance>0.1</tolerance>
-			<penalty>10</penalty>
-			<body_a>5</body_a>
-			<body_b>4</body_b>
-			<joint>-0.868,0.419154,0</joint>
-		</contact>
-		<contact type="rigid joint">
-			<tolerance>0.1</tolerance>
-			<penalty>10</penalty>
-			<body_a>5</body_a>
-			<body_b>3</body_b>
-			<joint>-0.2784,-0.34,0</joint>
-		</contact>
-		<contact type="rigid joint">
-			<tolerance>0.1</tolerance>
-			<penalty>10</penalty>
-			<body_a>6</body_a>
-			<body_b>4</body_b>
-			<joint>-0.85,0,1.4</joint>
-		</contact>
-		<contact type="rigid joint">
-			<tolerance>0.1</tolerance>
-			<penalty>10</penalty>
-			<body_a>7</body_a>
-			<body_b>3</body_b>
-			<joint>-0.25,0,1.4</joint>
-		</contact>
 	</Contact>
 	<Constraints>
 		<rigid_body mat="3">
@@ -14601,6 +14573,34 @@ Comments:
 			<fixed bc="Ry"/>
 			<fixed bc="Rz"/>
 		</rigid_body>
+		<constraint type="rigid joint">
+			<tolerance>0.1</tolerance>
+			<penalty>10</penalty>
+			<body_a>5</body_a>
+			<body_b>4</body_b>
+			<joint>-0.868,0.419154,0</joint>
+		</constraint>
+		<constraint type="rigid joint">
+			<tolerance>0.1</tolerance>
+			<penalty>10</penalty>
+			<body_a>5</body_a>
+			<body_b>3</body_b>
+			<joint>-0.2784,-0.34,0</joint>
+		</constraint>
+		<constraint type="rigid joint">
+			<tolerance>0.1</tolerance>
+			<penalty>10</penalty>
+			<body_a>6</body_a>
+			<body_b>4</body_b>
+			<joint>-0.85,0,1.4</joint>
+		</constraint>
+		<constraint type="rigid joint">
+			<tolerance>0.1</tolerance>
+			<penalty>10</penalty>
+			<body_a>7</body_a>
+			<body_b>3</body_b>
+			<joint>-0.25,0,1.4</joint>
+		</constraint>
 	</Constraints>
 	<LoadData>
 		<loadcurve id="1" type="linear">
