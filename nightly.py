@@ -261,8 +261,13 @@ for solver in solvers:
 						'-cnf', test_dir + '/' + solver + '.xml']
 			# Test for plugin problems
 			elif 'pi' in base:
-				command = [febio, '-i', f, '-o', logname, '-p', pltname, \
-					'-cnf', 'plugins/' + base + '_' + plat + '.xml']
+				if base == 'pi03':
+					command = [febio, '-i', f, '-o', logname, '-p', pltname, \
+						'-cnf', 'plugins/' + base + '_' + plat + '.xml', \
+						'-task=angio plugins/angiofe.txt']
+				else:
+					command = [febio, '-i', f, '-o', logname, '-p', pltname, \
+						'-cnf', 'plugins/' + base + '_' + plat + '.xml']
 			else:
 				command = [febio, '-i', f, '-o', logname, '-p', pltname, \
 					'-cnf', test_dir + '/' + solver + '.xml']

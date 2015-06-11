@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
+	This is the same as co01 but run with the NeoHookeanPI plugin.
 	Two elements with sliding contact are compressed against each other.  The nodes on the left face of
 	the left element are constrained in the x-direction.  The nodes on the right face of the right element
 	are given a displacement of -0.2 in the x-direction in time t=1.
 Main Features:
+	Plugin
 	Facet to facet contact
 Secondary Features:
 	
