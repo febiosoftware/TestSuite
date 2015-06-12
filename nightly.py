@@ -70,7 +70,7 @@ results = open(res_name + ".txt", "w")
 if args.find('c') == -1 and plat != 'osx': subprocess.call(['svn', 'up'])
 
 # Define the test problems list.
-if args.find('t') != -1: test = ['co01.feb', 'co02.feb']
+if args.find('t') != -1: test = ['pi03.feb']
 else:
 	os.chdir(test_dir + verify)
 	test = glob.glob("*.feb")
@@ -264,7 +264,7 @@ for solver in solvers:
 				if base == 'pi03':
 					command = [febio, '-i', f, '-o', logname, '-p', pltname, \
 						'-cnf', 'plugins/' + base + '_' + plat + '.xml', \
-						'-task=angio plugins/angiofe.txt']
+						'-task=angio', 'plugins/angiofe.txt']
 				else:
 					command = [febio, '-i', f, '-o', logname, '-p', pltname, \
 						'-cnf', 'plugins/' + base + '_' + plat + '.xml']
