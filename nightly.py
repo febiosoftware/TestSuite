@@ -21,6 +21,7 @@ print("opsys = " + opsys)
 # p: use only Pardiso
 # t: test on a few problems
 # 4: run with 4 threads
+# r: use the Release version of FEBio2
 
 if len(sys.argv) == 1: sys.exit("error: The name of the FEBio directory must be entered as an argument")
 febio_name = sys.argv[1]
@@ -139,9 +140,14 @@ else:
 	# Define FEBio directory, executable, and library
 	# Assumes that this script is run from Testing and the FEBio directory is on the same level
 	# and that the executable is in FEBio/bin
-	os.chdir("../" + febio_name)
-	febio_dir = os.getcwd()
-	febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + platd
+	if args.find('r') != -1:
+		os.chdir("../Release/" + febio_name)
+		febio_dir = os.getcwd()
+		febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + plat
+	else:
+		os.chdir("../" + febio_name)
+		febio_dir = os.getcwd()
+		febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + platd
 
 	# Define the log and plt output directory
 	# user variable assumes the directory is e.g. /home/sci/rawlins/Testing
