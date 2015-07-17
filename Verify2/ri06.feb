@@ -730,8 +730,6 @@ Comments:
 			<elem id="194">   395,   399,   401,   397,   396,   400,   402,   398</elem>
 		</Elements>
 	</Geometry>
-	<Boundary>
-	</Boundary>
 	<Contact>
 		<contact type="rigid">
 			<node id="403" rb="3"></node>

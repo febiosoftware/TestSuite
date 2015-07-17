@@ -5716,8 +5716,6 @@ Comments:
 			<elem id="2342">   980,   981,   843,   842,  1173,  1174,  1036,  1035</elem>
 		</Elements>
 	</Geometry>
-	<Boundary>
-	</Boundary>
 	<Contact>
 		<contact type="rigid">
 			<node id="3105" rb="2"></node>

@@ -2119,8 +2119,6 @@ Comments:
 			<quad4 id="48">   519,   520,   525,   524</quad4>
 		</Surface>
 	</Geometry>
-	<Boundary>
-	</Boundary>
 	<Loads>
 		<body_load type="const">
 			<z lc="2">1</z>

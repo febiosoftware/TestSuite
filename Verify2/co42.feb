@@ -735,8 +735,6 @@ Comments:
 			<quad4 id="90">   357,   360,   372,   369</quad4>
 		</Surface>
 	</Geometry>
-	<Boundary>
-	</Boundary>
 	<Contact>
 		<contact type="rigid" name="Rigid01">
 			<node id="335" rb="3"></node>

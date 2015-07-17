@@ -736,8 +736,6 @@ Comments:
 			<elem id="80">   495,   547,   555,   503,   497,   549,   557,   505,   516,   551,   519,   499,   517,   552,   520,   500,   496,   548,   556,   504</elem>
 		</Elements>
 	</Geometry>
-	<Boundary>
-	</Boundary>
 	<Contact>
 		<contact type="rigid">
 			<node id="1" rb="2"></node>
