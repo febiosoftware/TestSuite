@@ -50,7 +50,8 @@ Comments:
 			<k>100</k>
 			<lam_max>10</lam_max>
 			<fiber type="vector"> 1.0000000e+000, 0.0000000e+000, 0.0000000e+000</fiber>
-			<active_contraction lc="1">
+			<active_contraction>
+				<ascl lc="1">1</ascl>
 				<ca0>4.75</ca0>
 				<beta>4.35</beta>
 				<l0>1.58</l0>
