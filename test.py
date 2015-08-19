@@ -3,11 +3,11 @@
 #import os
 #import glob
 #import sys
-import platform
+#import platform
 #import shutil
 #import filecmp
 #import difflib
-#import datetime
+from datetime import date
 #import subprocess
 #import smtplib
 #import csv
@@ -16,8 +16,8 @@ import platform
 #import struct
 #import fileinput
 
-host = platform.node().split('.')[0]
-print(host)
+#host = platform.node().split('.')[0]
+#print(host)
 #version_str = subprocess.Popen(['svnversion'], stdout=subprocess.PIPE).communicate()[0]
 #print(version_str.split("\n")[0])
 
@@ -261,8 +261,8 @@ print(host)
 
 #name = "file"
 #print name
-#date = datetime.date.today()
-#print date
+d = date.today()
+print(d)
 #name = name + str(date)
 #print name
 #test = "test.txt"

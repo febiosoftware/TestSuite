@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 import os, glob, platform, shutil, sys, subprocess, difflib, datetime, time
+from compile_plugins import CompilePlugins
 #
 # This is the test suite script for our nightly build and test suite run.
 # This script runs a list of FEBio files and checks the results
@@ -145,9 +146,11 @@ else:
 		febio_dir = os.getcwd()
 		febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + plat
 	else:
-		os.chdir("../" + febio_name)
-		febio_dir = os.getcwd()
+		os.chdir("../")
+		root_dir = os.getcwd() + '/'
+		febio_dir = root_dir + febio_name
 		febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + platd
+		os.chdir(febio_dir)
 
 	# Define the log and plt output directory
 	# user variable assumes the directory is e.g. /home/sci/rawlins/Testing
@@ -177,6 +180,11 @@ else:
 				shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + platd)
 			except IOError:
 				print("Error copying files")
+
+			# Compile the plugins
+			pic = CompilePlugins(plat, root_dir)
+			pic.launch()
+
 		else: sys.exit("FEBio did not compile")
 		os.chdir("..")
 
