@@ -68,6 +68,11 @@ else:
 std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
 
+# Get the root directory
+os.chdir("../")
+root_dir = os.getcwd() + '/'
+os.chdir(test_dir)
+
 #Update the test suite
 if args.find('c') == -1 and plat != 'osx': subprocess.call(['svn', 'up'])
 
@@ -137,6 +142,11 @@ if plat == 'win':
 		except IOError:
 			print("Error copying files")
 		
+		# Compile the plugins
+		os.chdir(test_dir)
+		pic = CompilePlugins(plat, root_dir)
+		pic.launch()
+
 else:
 	# Define FEBio directory, executable, and library
 	# Assumes that this script is run from Testing and the FEBio directory is on the same level
@@ -146,8 +156,6 @@ else:
 		febio_dir = os.getcwd()
 		febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + plat
 	else:
-		os.chdir("../")
-		root_dir = os.getcwd() + '/'
 		febio_dir = root_dir + febio_name
 		febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + platd
 		os.chdir(febio_dir)

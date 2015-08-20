@@ -11,6 +11,8 @@ class CompilePlugins:
 	def __init__(self, plat, root_dir):
 		self.plat = plat
 		self.root_dir = root_dir
+		self.test_dir = root_dir + 'Testing/'
+		self.plugins_dir = root_dir + 'Software/Plugins/'
 		self.plugins = ['NeoHookeanPI', 'FEWarp', 'Angio', 'PreStrain']
 
 	# compile using Makefile
@@ -31,18 +33,19 @@ class CompilePlugins:
 				plugin_lc = plugin.lower()
 				from_name = 'lib/lib' + plugin_lc + '_' + self.plat + ext
 				if i == 4:
-					shutil.copy(from_name, self.root_dir + 'Testing/Verify2/plugins')
+					shutil.copy(from_name, self.test_dir + 'Verify2/plugins')
 				else: 
 					if i == 3: from_name = 'lib/lib' + plugin_lc + 'fe_' + self.plat + ext
-					to_name = 'Testing/Verify2/plugins/pi0' + str(i) + '_' + self.plat + ext
-					shutil.copy(from_name, self.root_dir + to_name)
+					to_name = self.test_dir + 'Verify2/plugins/pi0' + str(i) + '_' + self.plat + ext
+					shutil.copy(from_name, to_name)
 			except IOError: sys.exit("Error copying " + plugin)
 
 	# compile using Visual Studio
 	def compileVS(self):
 
 		i = 0
-		d = date.today()
+		d = str(date.today())
+		os.chdir(self.test_dir)
 		
 		for plugin in self.plugins:
 			i = i + 1
@@ -50,20 +53,20 @@ class CompilePlugins:
 			output = subprocess.call(command)
 			if output != 0: sys.exit(plugin + " did not compile")
 			try:
-				from_name = plugin + '/VS2010/Release OpenMP/' + plugin + '.dll'
+				from_name = self.plugins_dir + plugin + '/VS2010/x64/Release/' + plugin + '.dll'
 				if i == 4:
-					shutil.copy(from_name, self.root_dir + 'Testing/Verify2/plugins')
+					shutil.copy(from_name, self.test_dir + 'Verify2/plugins')
 				else: 
-					if i == 3: from_name = plugin + '/VS2010/Release OpenMP/' + plugin + 'FE.dll'
-					to_name = 'Testing/Verify2/plugins/pi0' + str(i) + '_' + self.plat + ext
-					shutil.copy(from_name, self.root_dir + to_name)
+					if i == 3: from_name = self.plugins_dir + plugin + '/VS2010/x64/Release/' + plugin + 'FE.dll'
+					to_name = self.test_dir + 'Verify2/plugins/pi0' + str(i) + '_' + self.plat + '.dll'
+					shutil.copy(from_name, to_name)
 			except IOError: sys.exit("Error copying " + plugin)
 
 	# run the program
 	def launch(self):
 
 		# Update the Plugins directory
-		os.chdir(self.root_dir + 'Software/Plugins/')
+		os.chdir(self.plugins_dir)
 		subprocess.call(['svn', 'up'])
 		
 		if self.plat == 'win': self.compileVS()
