@@ -55,8 +55,15 @@ if args.find('4') != -1:
 	dir_ext = "4"
 else: os.environ['OMP_NUM_THREADS'] = '1'
 
-# open the results file
+# Define several directories
+code_dir = os.getcwd()
+os.chdir("..")
 test_dir = os.getcwd()
+os.chdir("..")
+root_dir = os.getcwd() + '/'
+os.chdir(test_dir)
+
+# Open the results file
 if febio_name == 'FEBio':
 	verify = "/Verify"
 	if dir_ext == "4": res_name = "nightly4_" + plat
@@ -67,11 +74,6 @@ else:
 	else: res_name = "nightly2_" + plat
 std_name = res_name + "_std"
 results = open(res_name + ".txt", "w")
-
-# Get the root directory
-os.chdir("../")
-root_dir = os.getcwd() + '/'
-os.chdir(test_dir)
 
 #Update the test suite
 if args.find('c') == -1 and plat != 'osx': subprocess.call(['svn', 'up'])

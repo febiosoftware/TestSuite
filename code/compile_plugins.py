@@ -45,7 +45,7 @@ class CompilePlugins:
 
 		i = 0
 		d = str(date.today())
-		os.chdir(self.test_dir)
+		os.chdir(self.test_dir + "code")
 		
 		for plugin in self.plugins:
 			i = i + 1

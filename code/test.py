@@ -1,13 +1,13 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-#import os
+import os
 #import glob
 #import sys
 #import platform
 #import shutil
 #import filecmp
 #import difflib
-from datetime import date
+#from datetime import date
 #import subprocess
 #import smtplib
 #import csv
@@ -15,6 +15,12 @@ from datetime import date
 #from email.mime.text import MIMEText
 #import struct
 #import fileinput
+
+current_dir = os.getcwd()
+print(current_dir)
+os.chdir("..")
+parent_dir = os.getcwd()
+print(parent_dir)
 
 #host = platform.node().split('.')[0]
 #print(host)
@@ -261,8 +267,8 @@ from datetime import date
 
 #name = "file"
 #print name
-d = date.today()
-print(d)
+#d = date.today()
+#print(d)
 #name = name + str(date)
 #print name
 #test = "test.txt"
