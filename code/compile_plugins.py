@@ -18,7 +18,7 @@ class CompilePlugins:
 	# compile using Makefile
 	def compileMake(self):
 
-		if self.plat == 'lnx64': ext = '.so'
+		if self.plat == 'lnx64d': ext = '.so'
 		else: ext = '.dylib'
 		i = 0
 		
@@ -39,7 +39,7 @@ class CompilePlugins:
 						if i == 3: from_name = 'lib/lib' + plugin_lc + 'fe_' + self.plat + ext
 						to_name = self.test_dir + 'Verify2/plugins/pi0' + str(i) + '_' + self.plat + ext
 						shutil.copy(from_name, to_name)
-				except IOError: print("Error copying " + plugin)
+				except IOError: print("Error copying " + from_name)
 
 	# compile using Visual Studio
 	def compileVS(self):
