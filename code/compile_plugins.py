@@ -25,20 +25,21 @@ class CompilePlugins:
 		# Compile the plugins
 		for plugin in self.plugins:
 			i = i + 1
-			os.chdir(plugin + '/build')
+			os.chdir(self.plugins_dir + plugin + '/build')
 			command = ['make', self.plat]
 			output = subprocess.call(command)
-			if output != 0: sys.exit(plugin + " did not compile")
-			try:
-				plugin_lc = plugin.lower()
-				from_name = 'lib/lib' + plugin_lc + '_' + self.plat + ext
-				if i == 4:
-					shutil.copy(from_name, self.test_dir + 'Verify2/plugins')
-				else: 
-					if i == 3: from_name = 'lib/lib' + plugin_lc + 'fe_' + self.plat + ext
-					to_name = self.test_dir + 'Verify2/plugins/pi0' + str(i) + '_' + self.plat + ext
-					shutil.copy(from_name, to_name)
-			except IOError: sys.exit("Error copying " + plugin)
+			if output != 0: print(plugin + " did not compile")
+			else:
+				try:
+					plugin_lc = plugin.lower()
+					from_name = 'lib/lib' + plugin_lc + '_' + self.plat + ext
+					if i == 4:
+						shutil.copy(from_name, self.test_dir + 'Verify2/plugins')
+					else: 
+						if i == 3: from_name = 'lib/lib' + plugin_lc + 'fe_' + self.plat + ext
+						to_name = self.test_dir + 'Verify2/plugins/pi0' + str(i) + '_' + self.plat + ext
+						shutil.copy(from_name, to_name)
+				except IOError: print("Error copying " + plugin)
 
 	# compile using Visual Studio
 	def compileVS(self):
@@ -51,16 +52,17 @@ class CompilePlugins:
 			i = i + 1
 			command = ['compile_plugin.bat', plugin, d]
 			output = subprocess.call(command)
-			if output != 0: sys.exit(plugin + " did not compile")
-			try:
-				from_name = self.plugins_dir + plugin + '/VS2010/x64/Release/' + plugin + '.dll'
-				if i == 4:
-					shutil.copy(from_name, self.test_dir + 'Verify2/plugins')
-				else: 
-					if i == 3: from_name = self.plugins_dir + plugin + '/VS2010/x64/Release/' + plugin + 'FE.dll'
-					to_name = self.test_dir + 'Verify2/plugins/pi0' + str(i) + '_' + self.plat + '.dll'
-					shutil.copy(from_name, to_name)
-			except IOError: sys.exit("Error copying " + plugin)
+			if output != 0: print(plugin + " did not compile")
+			else:
+				try:
+					from_name = self.plugins_dir + plugin + '/VS2010/x64/Release/' + plugin + '.dll'
+					if i == 4:
+						shutil.copy(from_name, self.test_dir + 'Verify2/plugins')
+					else: 
+						if i == 3: from_name = self.plugins_dir + plugin + '/VS2010/x64/Release/' + plugin + 'FE.dll'
+						to_name = self.test_dir + 'Verify2/plugins/pi0' + str(i) + '_' + self.plat + '.dll'
+						shutil.copy(from_name, to_name)
+				except IOError: sys.exit("Error copying " + plugin)
 
 	# run the program
 	def launch(self):

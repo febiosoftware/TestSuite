@@ -1,8 +1,12 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
+
 import os, glob, platform, shutil, sys, subprocess, difflib, datetime, time
 from compile_plugins import CompilePlugins
-#
+from logdata import dfield
+from update import new, modified, deleted
+
+
 # This is the test suite script for our nightly build and test suite run.
 # This script runs a list of FEBio files and checks the results
 # The test results are stored in an output file
@@ -56,7 +60,7 @@ if args.find('4') != -1:
 else: os.environ['OMP_NUM_THREADS'] = '1'
 
 # Define several directories
-code_dir = os.getcwd()
+code_dir = os.getcwd() + '/'
 os.chdir("..")
 test_dir = os.getcwd()
 os.chdir("..")
@@ -73,7 +77,7 @@ else:
 	if dir_ext == "4": res_name = "nightly24_" + plat
 	else: res_name = "nightly2_" + plat
 std_name = res_name + "_std"
-results = open(res_name + ".txt", "w")
+results = open('Logs/' + res_name + ".txt", "w")
 
 #Update the test suite
 if args.find('c') == -1 and plat != 'osx': subprocess.call(['svn', 'up'])
@@ -90,7 +94,7 @@ else:
 # Run 'date +%D > verifymod.txt' on the commanline if there are changes.
 # 86400 is the number of seconds in a day.
 test_update = 0
-if time.time() - os.path.getmtime('verifymod.txt') < 86400: test_update = 1
+if time.time() - os.path.getmtime('code/verifymod.txt') < 86400: test_update = 1
 
 # Test whether any .feb files have been updated
 if not test_update:
@@ -103,11 +107,8 @@ if not test_update:
 parsing_dir = test_dir + '/Nightly_Parsing/'
 
 # These are problems that report extra data fields
-from logdata import dfield
 dfield0 = [col[0] for col in dfield]
 
-# These problems are new, newly modified, or deleted
-from update import new, modified, deleted
 
 if plat == 'win':
 	febio_dir = 'C:/' + febio_name
@@ -118,7 +119,7 @@ if plat == 'win':
 		exe_dir = febio_dir + '/VS2010/x64/Release OpenMP'
 		febio = exe_dir + '/' + febio_name + 'x64mt.exe'
 
-	out_dir = 'C:/Testing/' + febio_name + dir_ext + '_Logs/'
+	out_dir = 'C:/Testing/Logs/' + febio_name + dir_ext + '_Logs/'
 	logs_dir = out_dir
 
 	# Print the FEBio svn revision number in the results file
@@ -145,7 +146,6 @@ if plat == 'win':
 			print("Error copying files")
 		
 		# Compile the plugins
-		os.chdir(test_dir)
 		pic = CompilePlugins(plat, root_dir)
 		pic.launch()
 
@@ -154,7 +154,7 @@ else:
 	# Assumes that this script is run from Testing and the FEBio directory is on the same level
 	# and that the executable is in FEBio/bin
 	if args.find('r') != -1:
-		os.chdir("../Release/" + febio_name)
+		os.chdir(root_dir + "Release/" + febio_name)
 		febio_dir = os.getcwd()
 		febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + plat
 	else:
@@ -166,7 +166,7 @@ else:
 	# user variable assumes the directory is e.g. /home/sci/rawlins/Testing
 	user = test_dir.split('/')[3]
 	out_dir = '/scratch/' + user + '/' + febio_lc_name + dir_ext + '_test/'
-	logs_dir = febio_name + dir_ext + '_Logs/'
+	logs_dir = 'Logs/' + febio_name + dir_ext + '_Logs/'
 
 	if args.find('c') == -1: # if we don't explicitly say not to compile
 
@@ -196,7 +196,6 @@ else:
 			pic.launch()
 
 		else: sys.exit("FEBio did not compile")
-		os.chdir("..")
 
 # keep counters
 norms = 0                       # nr of normal terminations
@@ -247,6 +246,7 @@ if b_new or b_del:
 #run the test problems
 os.chdir(test_dir + verify)
 for solver in solvers:
+	config_file = code_dir + solver + '.xml'
 	for f in test:
 		# strip the '.feb' from the input file name
 		base = f[:4]
@@ -278,11 +278,11 @@ for solver in solvers:
 				if febio_name == 'FEBio2':
 					fi = paramopt[paramopt0.index(base)][1]
 					command = [febio, '-i', fi + '.feb', '-s', f, '-o', logname, '-p', pltname, \
-						'-cnf', test_dir + '/' + solver + '.xml']
+						'-cnf', config_file]
 					#print(command)
 				else:
 					command = [febio, '-s', f, '-o', logname, '-p', pltname, \
-						'-cnf', test_dir + '/' + solver + '.xml']
+						'-cnf', config_file]
 			# Test for plugin problems
 			elif 'pi' in base:
 				if base == 'pi03':
@@ -294,7 +294,7 @@ for solver in solvers:
 						'-cnf', 'plugins/' + base + '_' + plat + '.xml']
 			else:
 				command = [febio, '-i', f, '-o', logname, '-p', pltname, \
-					'-cnf', test_dir + '/' + solver + '.xml']
+					'-cnf', config_file]
 			
 			# run the FEBio problem
 			val = subprocess.call(command, stdout=dummy)
@@ -480,9 +480,9 @@ results.close()
 
 # compare results.txt with nightly_'plat'_std.txt
 #parsingFile = open(parsing_dir + "Nightly_Runs/" + host + ".txt", "w")
-os.chdir("..")
-results = open(res_name + ".txt", "r")
-std = open(std_name + ".txt", "r")
+os.chdir(test_dir)
+results = open('Logs/' + res_name + ".txt", "r")
+std = open('Logs/' + std_name + ".txt", "r")
 for line in difflib.unified_diff(results.readlines(), std.readlines(), n=0):
 	sys.stdout.write(line)
 #	parsingFile.write(line)
@@ -491,7 +491,7 @@ std.close()
 
 # copy the results file to the Logs directory
 res_date = res_name + "_" + str(datetime.date.today()) + ".txt"
-shutil.copy(res_name + ".txt", logs_dir + res_date)
+shutil.copy('Logs' + res_name + ".txt", logs_dir + res_date)
 
 #SVN Commit the parsing file
 #subprocess.call(['svn', 'ci', '-m', '"Commiting nightly files for Parsing"', #'Nightly_Parsing/Nightly_Runs/*.txt'])
