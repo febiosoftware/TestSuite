@@ -192,7 +192,7 @@ else:
 				print("Error copying files")
 
 			# Compile the plugins
-			pic = CompilePlugins(plat, root_dir)
+			pic = CompilePlugins(platd, root_dir)
 			pic.launch()
 
 		else: sys.exit("FEBio did not compile")
