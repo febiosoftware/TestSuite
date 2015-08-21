@@ -14,9 +14,9 @@ Materials:
 Degrees of Freedom: 1032
 Results:
 	Steps Completed: 10
-	Equilibrium Iterations: 43
-	Right Hand Evaluations: 58
-	Siffness Reformations: 43
+	Equilibrium Iterations: 36
+	Right Hand Evaluations: 47
+	Siffness Reformations: 36
 	Other:
 		The cylinder has a maximum Effective strain of 1.58 at time t=1.
 Comments:

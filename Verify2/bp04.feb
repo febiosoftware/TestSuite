@@ -13,9 +13,9 @@ Materials:
 Degrees of Freedom: 80
 Results:
 	Steps Completed: 400
-	Equilibrium Iterations: 1371
-	Right Hand Evaluations: 2120
-	Siffness Reformations: 1109
+	Equilibrium Iterations: 668
+	Right Hand Evaluations: 1068
+	Siffness Reformations: 400
 	Other:
 		The Pressure for element 1 at time t=1000 is 1.73324e-006
 Comments:

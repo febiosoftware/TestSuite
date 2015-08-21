@@ -13,9 +13,9 @@ Materials:
 Degrees of Freedom: 328
 Results:
 	Steps Completed: 84
-	Equilibrium Iterations: 306
-	Right Hand Evaluations: 409
-	Siffness Reformations: 306
+	Equilibrium Iterations: 233
+	Right Hand Evaluations: 333
+	Siffness Reformations: 233
 	Other:
 		The maximum total fluid flux is 9.55e-5 at time t = 1000.
 Comments:

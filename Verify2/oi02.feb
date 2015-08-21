@@ -11,12 +11,12 @@ Secondary Features:
 Materials:
 	Neo-Hookean
 	Poroelastic
-Degrees of Freedom: 80
+Degrees of Freedom: 157
 Results:
-	Steps Completed: 400
-	Equilibrium Iterations: 1371
-	Right Hand Evaluations: 2120
-	Siffness Reformations: 1109
+	Steps Completed: 53
+	Equilibrium Iterations: 119
+	Right Hand Evaluations: 172
+	Siffness Reformations: 119
 	Other:
 		The bottom element has a thickness of 0.3022 at time t=1000.
 Comments:

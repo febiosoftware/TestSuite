@@ -15,9 +15,9 @@ Materials:
 Degrees of Freedom: 160
 Results:
 	Steps Completed: 65
-	Equilibrium Iterations: 125
-	Right Hand Evaluations: 190
-	Siffness Reformations: 125
+	Equilibrium Iterations: 137
+	Right Hand Evaluations: 202
+	Siffness Reformations: 137
 Comments:
 	Max fluid pressure = 0.0359 at t = 2000
 -->

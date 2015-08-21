@@ -13,8 +13,8 @@ Materials:
 Degrees of Freedom: 6340
 Results:
 	Steps Completed: 62
-	Equilibrium Iterations: 196
-	Right Hand Evaluations: 258
+	Equilibrium Iterations: 194
+	Right Hand Evaluations: 263
 	Siffness Reformations: 62
 	Other:
 		The maximum displacement fluid pressure is 0.231 at time t=9.

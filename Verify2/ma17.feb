@@ -18,12 +18,12 @@ Secondary Features:
 Materials:
 	PRLig
 	Biphasic
-Degrees of Freedom: 160
+Degrees of Freedom: 2131
 Results:
-	Steps Completed: 352
-	Equilibrium Iterations: 891
-	Right Hand Evaluations: 1244
-	Siffness Reformations: 352
+	Steps Completed: 1482
+	Equilibrium Iterations: 3172
+	Right Hand Evaluations: 4655
+	Siffness Reformations: 1482
 Comments:
 	Max z-stress = 9.75319 at t = 5.8
 -->

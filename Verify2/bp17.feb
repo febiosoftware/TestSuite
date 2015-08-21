@@ -12,10 +12,10 @@ Materials:
 	Holmes-Mow
 Degrees of Freedom: 5508
 Results:
-	Steps Completed: 39
-	Equilibrium Iterations: 330
-	Right Hand Evaluations: 613
-	Siffness Reformations: 332
+	Steps Completed: 37
+	Equilibrium Iterations: 176
+	Right Hand Evaluations: 256
+	Siffness Reformations: 176
 	Other:
 		The maximum total fluid flux is 1.5e-3 at time t = 20.
 Comments:
