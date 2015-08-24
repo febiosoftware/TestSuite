@@ -17,9 +17,9 @@ Materials:
 Degrees of Freedom: 576
 Results:
 	Steps Completed: 49
-	Equilibrium Iterations: 147
-	Right Hand Evaluations: 196
-	Siffness Reformations: 147
+	Equilibrium Iterations: 142
+	Right Hand Evaluations: 191
+	Siffness Reformations: 142
 	Other:
 		The peak electric potential is -7.37 at time t=1e4.
  

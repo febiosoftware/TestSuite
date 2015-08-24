@@ -31,9 +31,9 @@ Materials:
 Degrees of Freedom: 60
 Results:
 	Steps Completed: 303
-	Equilibrium Iterations: 450
-	Right Hand Evaluations: 753
-	Siffness Reformations: 450
+	Equilibrium Iterations: 561
+	Right Hand Evaluations: 864
+	Siffness Reformations: 561
 	Other:
 		The final NaCl concentration is 0.0848 and the final Na+ and Cl- concentrations are 0.9152, at time t=6.
  

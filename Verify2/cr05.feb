@@ -19,7 +19,7 @@ Materials:
 	Constant Reaction Rate
 Degrees of Freedom: 240
 Results:
-	Steps Completed: 101
+	Steps Completed: 305
 	Equilibrium Iterations: 305
 	Right Hand Evaluations: 610
 	Siffness Reformations: 305

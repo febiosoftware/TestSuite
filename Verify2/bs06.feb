@@ -14,9 +14,9 @@ Materials:
 Degrees of Freedom: 497
 Results:
 	Steps Completed: 65
-	Equilibrium Iterations: 193
-	Right Hand Evaluations: 353
-	Siffness Reformations: 193
+	Equilibrium Iterations: 187
+	Right Hand Evaluations: 337
+	Siffness Reformations: 187
 	Other:
 		The creep displacement at t=1e4 is -0.3593.
 Comments:

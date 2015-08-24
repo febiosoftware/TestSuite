@@ -15,9 +15,9 @@ Materials:
 Degrees of Freedom: 4191
 Results:
 	Steps Completed: 40
-	Equilibrium Iterations: 201
-	Right Hand Evaluations: 335
-	Siffness Reformations: 201
+	Equilibrium Iterations: 196
+	Right Hand Evaluations: 324
+	Siffness Reformations: 196
 	Other:
 		The bottom block has a maximum y-dispacement of 0.178 at time t=4.
 Comments:

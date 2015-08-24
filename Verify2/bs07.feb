@@ -13,9 +13,9 @@ Materials:
 Degrees of Freedom: 500
 Results:
 	Steps Completed: 170
-	Equilibrium Iterations: 333
-	Right Hand Evaluations: 610
-	Siffness Reformations: 333
+	Equilibrium Iterations: 326
+	Right Hand Evaluations: 598
+	Siffness Reformations: 326
 Comments:
 	
 -->

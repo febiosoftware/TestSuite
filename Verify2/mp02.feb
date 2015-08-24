@@ -24,9 +24,9 @@ Materials:
 Degrees of Freedom: 1907
 Results:
 	Steps Completed: 52
-	Equilibrium Iterations: 150
-	Right Hand Evaluations: 202
-	Siffness Reformations: 150
+	Equilibrium Iterations: 149
+	Right Hand Evaluations: 201
+	Siffness Reformations: 149
 	Other:
 		The peak compressive load is -4.45 at time t=201.
  

@@ -25,10 +25,10 @@ Materials:
 	Constant Solubility
 Degrees of Freedom: 608
 Results:
-	Steps Completed: 63
-	Equilibrium Iterations: 197
-	Right Hand Evaluations: 281
-	Siffness Reformations: 197
+	Steps Completed: 62
+	Equilibrium Iterations: 209
+	Right Hand Evaluations: 278
+	Siffness Reformations: 209
 	Other:
 		The tare load is 0.021 at time t=1.
 		The loading platen displacement is -0.934 at t=7201.

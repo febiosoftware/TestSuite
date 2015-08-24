@@ -23,10 +23,10 @@ Materials:
 	Constant Solubility
 Degrees of Freedom: 1907
 Results:
-	Steps Completed: 51
-	Equilibrium Iterations: 186
-	Right Hand Evaluations: 256
-	Siffness Reformations: 186
+	Steps Completed: 52
+	Equilibrium Iterations: 149
+	Right Hand Evaluations: 201
+	Siffness Reformations: 149
 	Other:
 		The peak compressive load is -4.45 at time t=201.
  

@@ -14,9 +14,9 @@ Materials:
 Degrees of Freedom: 2465
 Results:
 	Steps Completed: 105
-	Equilibrium Iterations: 200
-	Right Hand Evaluations: 305
-	Siffness Reformations: 200
+	Equilibrium Iterations: 187
+	Right Hand Evaluations: 292
+	Siffness Reformations: 187
 	Other:
 		The material has a minimum solute concentration of 6e-03 at time t=3113.
 Comments:

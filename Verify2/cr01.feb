@@ -35,9 +35,9 @@ Materials:
 Degrees of Freedom: 720
 Results:
 	Steps Completed: 45
-	Equilibrium Iterations: 227
-	Right Hand Evaluations: 441
-	Siffness Reformations: 227
+	Equilibrium Iterations: 230
+	Right Hand Evaluations: 456
+	Siffness Reformations: 230
 	Other:
 		The peak concentration of soluble matrix product is 0.00158 at z=0  and time t=4e7.
  

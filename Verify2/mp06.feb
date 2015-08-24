@@ -26,9 +26,9 @@ Materials:
 Degrees of Freedom: 608
 Results:
 	Steps Completed: 62
-	Equilibrium Iterations: 200
-	Right Hand Evaluations: 272
-	Siffness Reformations: 200
+	Equilibrium Iterations: 189
+	Right Hand Evaluations: 262
+	Siffness Reformations: 189
 	Other:
 		The tare load is 0.054 at time t=1.
 		The loading platen displacement is -0.5928 at t=7201.

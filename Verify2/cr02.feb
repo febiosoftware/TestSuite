@@ -35,9 +35,9 @@ Materials:
 Degrees of Freedom: 804
 Results:
 	Steps Completed: 200
-	Equilibrium Iterations: 736
-	Right Hand Evaluations: 2070
-	Siffness Reformations: 736
+	Equilibrium Iterations: 400
+	Right Hand Evaluations: 1598
+	Siffness Reformations: 400
 	Other:
 		The solid referential apparent density increases to 1.26 at the fixed end (z=0) and reduces to 0.796 at the loaded end (z=10), at time t=200.
  
