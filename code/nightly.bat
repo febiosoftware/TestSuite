@@ -1,4 +1,4 @@
-set compare=C:\Testing\%1_Logs\nightly_compare.txt
+set compare=C:\Testing\Logs\%1_Logs\nightly_compare.txt
 TortoiseProc /command:update /path:"C:\%1\" /closeonend:1
 TortoiseProc /command:update /path:"C:\Testing\" /closeonend:1
 if "%1" == "FEBio" (
@@ -10,4 +10,4 @@ if "%1" == "FEBio" (
 		msbuild C:\FEBio2\VS2010\FEBio2.sln /p:Platform=x64 /p:Configuration="Release OpenMP" > %compare%
 	)
 )
-C:\Testing\nightly.py %* >> %compare%
+C:\Testing\code\nightly.py %* >> %compare%
