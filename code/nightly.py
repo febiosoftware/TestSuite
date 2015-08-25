@@ -234,8 +234,8 @@ b_del = 0
 if len(new) + len(modified) != 0: b_new = 1
 if len(deleted) != 0: b_del = 1
 if b_new or b_del:
-	f_std = test_dir + "/" + std_name + ".txt"
-	f_std_tmp = test_dir + "/" + std_name + "_tmp.txt"
+	f_std = test_dir + "/Logs/" + std_name + ".txt"
+	f_std_tmp = test_dir + "/Logs" + std_name + "_tmp.txt"
 	std_tmp = open(f_std_tmp, "w")
 	std = open(f_std, "r")
 	std_line = std.readline()
@@ -491,7 +491,7 @@ std.close()
 
 # copy the results file to the Logs directory
 res_date = res_name + "_" + str(datetime.date.today()) + ".txt"
-shutil.copy('Logs' + res_name + ".txt", logs_dir + res_date)
+shutil.copy('Logs/' + res_name + ".txt", logs_dir + res_date)
 
 #SVN Commit the parsing file
 #subprocess.call(['svn', 'ci', '-m', '"Commiting nightly files for Parsing"', #'Nightly_Parsing/Nightly_Runs/*.txt'])
