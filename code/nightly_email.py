@@ -8,7 +8,7 @@ host = platform.node().split('.')[0]
 
 if host == 'rawlins-PC': me = 'rawlins@sci.utah.edu'
 else: me = 'scirun-tester@sci.utah.edu'
-os.chdir("C:/Testing/" + sys.argv[1] + "_Logs")
+os.chdir("C:/Testing/Logs/" + sys.argv[1] + "_Logs")
 fp = open("nightly_compare.txt", 'r')
 msg = MIMEText(fp.read())
 fp.close()
