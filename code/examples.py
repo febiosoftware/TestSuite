@@ -40,13 +40,13 @@ test_dir = os.getcwd()
 user = test_dir.split('/')[3]
 res_name = "examples"
 std_name = res_name + "_std"
-results = open(res_name + ".txt", "w")
+results = open("Logs/" + res_name + ".txt", "w")
 
 # If examplesmod.txt has changed, the test suite has changes that need to be runs.
 # Run 'touch examplesmod.txt' on the commanline if there are changes.
 # 86400 is the number of seconds in a day.
 test_update = 0
-if time.time() - os.path.getmtime('examplesmod.txt') < 86400: test_update = 1
+if time.time() - os.path.getmtime('code/examplesmod.txt') < 86400: test_update = 1
 
 # Define FEBio directory, executable, and library
 # Assumes that this script is run from ~/Testing
@@ -102,8 +102,8 @@ b_del = 0
 if len(new) + len(modified) != 0: b_new = 1
 if len(deleted) != 0: b_del = 1
 if b_new or b_del:
-	f_std_tmp = test_dir + "/" + plat + "_ex_std_tmp.txt"
-	f_std = test_dir + "/" + std_name + ".txt"
+	f_std_tmp = test_dir + "/Logs/" + plat + "_ex_std_tmp.txt"
+	f_std = test_dir + "/Logs/" + std_name + ".txt"
 	std_tmp = open(f_std_tmp, "w")
 	std = open(f_std, "r")
 	std_line = std.readline()
@@ -134,12 +134,12 @@ for f in test:
 			opt = 1
 			fi = paramopt[paramopt0.index(base)][1]
 			command = [febio, '-i', fi + '.feb', '-s', f, '-o', logname, '-p', pltname, \
-				'-cnf', test_dir + '/' + solver + '.xml']
+				'-cnf', test_dir + '/code/' + solver + '.xml']
 			#print(command)
 		else:
 			opt = 0
 			command = [febio, '-i', f, '-o', logname, '-p', pltname, \
-				'-cnf', test_dir + '/' + solver + '.xml']
+				'-cnf', test_dir + '/code/' + solver + '.xml']
 			
 		# run the FEBio problem
 		# we grab the exit value for termination status
@@ -297,7 +297,7 @@ results.write("\tError termination  : " + str(nerrs) + "\n")
 results.close()
 
 # compare results.txt with results_'plat'.txt
-os.chdir("..")
+os.chdir("../Logs")
 results = open("examples.txt", "r")
 results_std = open("examples_std.txt", "r")
 for line in difflib.unified_diff(results.readlines(), results_std.readlines(), n=0):
