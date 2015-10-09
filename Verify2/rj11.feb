@@ -22,7 +22,7 @@ Comments:
 	
 -->
 <febio_spec version="2.0">
-	<Module type="solid2"/>
+	<Module type="solid"/>
 	<Control>
 		<time_steps>1000</time_steps>
 		<step_size>0.001</step_size>
