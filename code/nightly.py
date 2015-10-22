@@ -357,16 +357,16 @@ for solver in solvers:
 						if  line.find("Total number of equilibrium iterations") != -1: result[4] = int(line[55:])
 						if  line.find("Total number of right hand evaluations") != -1: result[5] = int(line[55:])
 						if  line.find("Total number of stiffness reformations") != -1: result[6] = int(line[55:])
-						if  line.find("Time in solver") != -1:
-							slv_hr  = int(line[17:18])
-							slv_min = int(line[19:21])
-							slv_sec = int(line[22:24])
+						if  line.find("Time in linear solver") != -1:
+							slv_hr  = int(line[24:25])
+							slv_min = int(line[26:28])
+							slv_sec = int(line[29:31])
 							new_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
 							#print "New solve time", new_slv_time
 						if  line.find("Elapsed time") != -1:
-							el_hr  = int(line[16:17])
-							el_min = int(line[18:20])
-							el_sec = int(line[21:23])
+							el_hr  = int(line[37:38])
+							el_min = int(line[39:41])
+							el_sec = int(line[42:44])
 							new_el_time = el_hr*3600 + el_min*60 + el_sec
 						if df_flg:
 							if line.find("Data Record #1") !=-1: data1 = 1
