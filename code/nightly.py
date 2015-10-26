@@ -390,24 +390,24 @@ for solver in solvers:
 							el_sec = int(line[21:23])
 							old_el_time = el_hr*3600 + el_min*60 + el_sec
 					# calculate percent difference (in incr% increments) in solve and elapse times
-					slv_denom = (new_slv_time + old_slv_time)/2
-					el_denom = (new_el_time + old_el_time)/2
-					if slv_denom == 0: slv_denom = 1
-					if el_denom == 0: el_denom = 1
-					slv_diff = new_slv_time - old_slv_time
-					el_diff = new_el_time - old_el_time
-					if abs(slv_diff) <= 3: slv_diff = 0
-					if abs(el_diff) <= 3: el_diff = 0
-					if slv_denom < 5: incr = 200
-					elif slv_denom < 20: incr = 100
-					elif slv_denom < 60: incr = 50
-					else: incr = 20
 					# I decided not to report the time differences
+					#slv_denom = (new_slv_time + old_slv_time)/2
+					#el_denom = (new_el_time + old_el_time)/2
+					#if slv_denom == 0: slv_denom = 1
+					#if el_denom == 0: el_denom = 1
+					#slv_diff = new_slv_time - old_slv_time
+					#el_diff = new_el_time - old_el_time
+					#if abs(slv_diff) <= 3: slv_diff = 0
+					#if abs(el_diff) <= 3: el_diff = 0
+					#if slv_denom < 5: incr = 200
+					#elif slv_denom < 20: incr = 100
+					#elif slv_denom < 60: incr = 50
+					#else: incr = 20
 					#result[9]  = incr*int((100/incr)*slv_diff/float(slv_denom))
-					if el_denom < 5: incr = 200
-					elif el_denom < 20: incr = 100
-					elif el_denom < 60: incr = 50
-					else: incr = 20
+					#if el_denom < 5: incr = 200
+					#elif el_denom < 20: incr = 100
+					#elif el_denom < 60: incr = 50
+					#else: incr = 20
 					# I decided not to report the time differences
 					#result[10] = incr*int((100/incr)*el_diff/float(el_denom))
 
