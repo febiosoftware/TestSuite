@@ -185,11 +185,14 @@ else:
 				results.write("Nothing to do\n")
 				sys.exit("Nothing to do\n")
 
-			# If febio did compile, create a copy of the executable
-			try:
-				shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + platd)
-			except IOError:
-				print("Error copying files")
+			# If febio did compile, update svnrev.h, recompile and create a copy of the executable
+			if plat != 'osx':
+				execfile("svnrev.py")
+				command =['make', platd]
+				output = subprocess.call(command)
+				if output != 0: sys.exit("FEBio did not compile after updating svnrev.h")
+			shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + platd)
+			print("Error copying files")
 
 			# Compile the plugins
 			pic = CompilePlugins(platd, root_dir)
