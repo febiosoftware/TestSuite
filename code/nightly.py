@@ -192,7 +192,6 @@ else:
 				output = subprocess.call(command)
 				if output != 0: sys.exit("FEBio did not compile after updating svnrev.h")
 			shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + platd)
-			print("Error copying files")
 
 			# Compile the plugins
 			pic = CompilePlugins(platd, root_dir)
