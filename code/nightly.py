@@ -190,6 +190,9 @@ else:
 				execfile("svnrev.py")
 				command =['make', platd]
 				output = subprocess.call(command)
+				if output != 0: sys.exit("FEBio debug did not compile after updating svnrev.h")
+				command =['make', plat]
+				output = subprocess.call(command)
 				if output != 0: sys.exit("FEBio did not compile after updating svnrev.h")
 			shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + platd)
 
