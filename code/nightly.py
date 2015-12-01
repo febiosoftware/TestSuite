@@ -122,29 +122,35 @@ if plat == 'win':
 	out_dir = 'C:/Testing/Logs/' + febio_name + dir_ext + '_Logs/'
 	logs_dir = out_dir
 
-	# Print the FEBio svn revision number in the results file
-	os.chdir(febio_dir)
-	version_str = subprocess.Popen(["subwcrev", "."], stdout=subprocess.PIPE).communicate()[0]
-	version_str = version_str.decode("utf8")
-	results.write("svn version : " + version_str + "\n")
-	version_lines = version_str.split("\n")
-	version_lines = [line.strip() for line in version_lines]
-	for line in version_lines:
-		if line.find("Updated") !=-1:
-			version = line.split(" ")[3]
-	
-	# Print message if executable did not compile (exe is older than 20 hours)
-	# or save a copy of the executable if it did.
-	if time.time() - os.path.getctime(febio) > 72000 and not test_update:
-		results.write("Nothing to do\n")
-		print("Nothing to do\n")
-		sys.exit("Nothing to do\n")
-	else:
-		try:
-			shutil.copy(febio, febio.split('.')[0] + '_' + version + '.exe')
-		except IOError:
-			print("Error copying files")
+	if args.find('c') == -1: # if we don't explicitly say not to compile
 		
+		# Do an svn update on the FEBio directory
+		os.chdir(febio_dir)
+		subprocess.call(['svn', 'up'])
+		version_str = subprocess.Popen(['svnversion'], stdout=subprocess.PIPE).communicate()[0]
+		version = version_str.split("\r\n")[0]
+		
+		# Compile FEBio
+		command = [code_dir + 'vc_compile.bat']
+		output = subprocess.call(command)
+
+		if output == 0:
+			# Test whether febio compiled in the last 20 hours
+			if time.time() - os.path.getctime(febio) > 72000 and not test_update:
+				results.write("Nothing to do\n")
+				sys.exit("Nothing to do\n")
+
+			# If febio did compile, update svnrev.h, recompile and create a copy of the executable
+			os.chdir("VS2010/FEBioLib")
+			execfile("../svnrev.py")
+			os.chdir(febio_dir)
+			
+			command =[code_dir + 'vc_compile.bat']
+			output = subprocess.call(command)
+			if output != 0: sys.exit("FEBio did not compile after updating svnrev.h")
+
+			shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.exe')
+
 		# Compile the plugins
 		pic = CompilePlugins(plat, root_dir)
 		pic.launch()
@@ -179,6 +185,7 @@ else:
 		os.chdir("build")
 		command =['make', platd]
 		output = subprocess.call(command)
+		
 		if output == 0:
 			# Test whether febio compiled in the last 20 hours
 			if time.time() - os.path.getctime(febio) > 72000 and not test_update and args.find('c') == -1:

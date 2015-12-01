@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
+#import os
 #import glob
 #import sys
 #import platform
@@ -8,7 +8,7 @@ import os
 #import filecmp
 #import difflib
 #from datetime import date
-#import subprocess
+import subprocess
 #import smtplib
 #import csv
 #import time
@@ -16,11 +16,15 @@ import os
 #import struct
 #import fileinput
 
-current_dir = os.getcwd()
-print(current_dir)
-os.chdir("..")
-parent_dir = os.getcwd()
-print(parent_dir)
+command =['vc_compile.bat']
+output = subprocess.call(command)
+
+
+#current_dir = os.getcwd()
+#print(current_dir)
+#os.chdir("..")
+#parent_dir = os.getcwd()
+#print(parent_dir)
 
 #host = platform.node().split('.')[0]
 #print(host)
