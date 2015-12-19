@@ -749,7 +749,7 @@ Comments:
 		</Surface>
 	</Geometry>
 	<Boundary>
-		<prescribe bc="t" lc="4">
+		<prescribe bc="T" lc="4">
 			<node id="441">1</node>
 			<node id="442">1</node>
 			<node id="443">1</node>
