@@ -216,7 +216,9 @@ nerrs = 0                       # nr of error terminations
 # Exempt problems: 
 exempt = [
 	# These files are the input files for a parameter optimization problem:
-	  'oi01', 'oi02']
+	  'oi01', 'oi02',
+	# These files are the rve files for multiscale problems:
+	  'hi01']
 	
 # These problems give inconsistent convergence statistics results
 # when run with multiple threads:
