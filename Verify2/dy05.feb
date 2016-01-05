@@ -58,7 +58,7 @@ Comments:
 			<node id="8"> 5.0000000e-001, 5.0000000e-001, 1.0000000e+000</node>
 		</Nodes>
 		<Elements type="hex8" mat="1">
-			<elem>     1,     5,     7,     3,     2,     6,     8,     4</elem>
+			<elem id="1">     1,     5,     7,     3,     2,     6,     8,     4</elem>
 		</Elements>
 	</Geometry>
 	<Loads>
