@@ -41,6 +41,7 @@ Comments:
 		<rtol>0</rtol>
 		<lstol>999</lstol>
 		<analysis type="static"/>
+		<symmetric_stiffness>0</symmetric_stiffness>
 	</Control>
 	<Globals>
 		<Constants>
