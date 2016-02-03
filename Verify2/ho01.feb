@@ -41,7 +41,7 @@ Comments:
 	</Globals>
 	<Material>
 		<material id="1" name="Material1" type="micro-material">
-			<RVE>./ho01_rve.feb</RVE>
+			<RVE>./hi01.feb</RVE>
 		</material>
 	</Material>
 	<Geometry>
