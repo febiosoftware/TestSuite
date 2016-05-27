@@ -52,7 +52,7 @@ Comments:
 		<material id="1" name="Material 1" type="EFD neo-Hookean">
 			<E>1</E>
 			<v>0.3</v>
-			<beta>3,200,3</beta>
+			<beta>3,3,3</beta>
 			<ksi>3,200,200</ksi>
 		</material>
 	</Material>

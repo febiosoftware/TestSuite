@@ -53,7 +53,7 @@ Comments:
 			<c1>1</c1>
 			<c2>0</c2>
 			<k>100</k>
-			<beta>3,20,20</beta>
+			<beta>3,3,3</beta>
 			<ksi>3,20,20</ksi>
 		</material>
 	</Material>
