@@ -120,7 +120,7 @@ Comments:
 			<joint_origin>-150,0,2</joint_origin>
 			<translation_axis>1,0,0</translation_axis>
 			<transverse_axis>0,1,0</transverse_axis>
-			<prescribed_translation>150</prescribed_translation>
+			<prescribed_translation>1</prescribed_translation>
 			<translation lc="1">1</translation>
 		</constraint>
 		<constraint type="rigid prismatic joint" name="Joint02 Slider2-Ground prismatic">
