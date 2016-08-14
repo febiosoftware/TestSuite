@@ -11,10 +11,10 @@ Materials:
 	Uncoupled Viscoelastic
 Degrees of Freedom: 540
 Results:
-	Steps Completed: 47
-	Equilibrium Iterations: 256
-	Right Hand Evaluations: 346
-	Siffness Reformations: 256
+	Steps Completed: 46
+	Equilibrium Iterations: 250
+	Right Hand Evaluations: 338
+	Siffness Reformations: 250
 	Other:
 		See the stress-strain curve in ma07.jpg
 Comments:

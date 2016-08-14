@@ -12,10 +12,10 @@ Materials:
 	Rigid Bodies
 Degrees of Freedom: 1453
 Results:
-	Steps Completed: 41
-	Equilibrium Iterations: 485
-	Right Hand Evaluations: 640
-	Siffness Reformations: 73
+	Steps Completed: 30
+	Equilibrium Iterations: 359
+	Right Hand Evaluations: 445
+	Siffness Reformations: 51
 	Other:
 		The maximum displacement is 0.20 at time t=1.
 Comments:

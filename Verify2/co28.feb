@@ -14,10 +14,10 @@ Materials:
 Degrees of Freedom: 4882
 Results:
 	Steps Completed: 102
-	Equilibrium Iterations: 528
-	Right Hand Evaluations: 767
-	Siffness Reformations: 12
-	Other: The maximum effective strain is 4.79 at time t=1.
+	Equilibrium Iterations: 613
+	Right Hand Evaluations: 862
+	Siffness Reformations: 615
+	Other: The maximum effective strain is 4.78 at time t=1.
 		
 Comments:
 	This problem is similiar to co22 but with Ogden material and 100 time steps.
