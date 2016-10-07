@@ -3383,7 +3383,7 @@ Comments:
         <loadcurve id="2" type="step">
 			<loadpoint>0,1</loadpoint>
 			<loadpoint>1.8,0.1</loadpoint>
-            <loadpoint>1,0.1</loadpoint>			
+            <loadpoint>3,0.1</loadpoint>			
         </loadcurve>
 	</LoadData>
 	<Output>
