@@ -13,13 +13,15 @@ Materials:
 Degrees of Freedom: 602
 Results:
 	Steps Completed: 10
-	Equilibrium Iterations: 40
-	Right Hand Evaluations: 50
-	Siffness Reformations: 40
+	Equilibrium Iterations: 36
+	Right Hand Evaluations: 46
+	Siffness Reformations: 36
 	Other:
-		The maximum effective stress is 2.97e-3 units at time t=1.
+		The maximum effective stress is 2.27e-3 units at time t=1.
 Comments:
-	
+	The shell-rigid interface connects nodal positions and
+	directors, so that the shell edge rotates with the rigid
+	body
 -->
 <febio_spec version="2.0">
 	<Module type="solid"/>
@@ -536,14 +538,14 @@ Comments:
 	</Contact>
 	<Constraints>
 		<rigid_body mat="2">
-			<fixed bc="x"/>
+			<!--fixed bc="x"/-->
 			<fixed bc="y"/>
 			<fixed bc="z"/>
-			<fixed bc="Ry"/>
+			<fixed bc="Rx"/>
 			<fixed bc="Rz"/>
 		</rigid_body>
 		<rigid_body mat="2">
-			<prescribed bc="Rx" lc="1">1</prescribed>
+			<prescribed bc="Ry" lc="1">1</prescribed>
 		</rigid_body>
 	</Constraints>
 	<LoadData>
@@ -553,7 +555,12 @@ Comments:
 		</loadcurve>
 	</LoadData>
 	<Output>
-		<plotfile type="febio"></plotfile>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="stress"/>
+			<var type="shell thickness"/>
+			<var type="shell director"/>
+		</plotfile>
 		<logfile>
 			<element_data data="sy">39</element_data>
 		</logfile>		
