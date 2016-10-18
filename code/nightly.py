@@ -375,7 +375,7 @@ for solver in solvers:
 							slv_sec = int(line[29:31])
 							new_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
 							#print "New solve time", new_slv_time
-						if  line.find("Elapsed time") != -1:
+						if  line.find("elapsed time") != -1:
 							el_hr  = int(line[37:38])
 							el_min = int(line[39:41])
 							el_sec = int(line[42:44])
