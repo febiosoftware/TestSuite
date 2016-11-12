@@ -41,10 +41,12 @@ Comments:
 		<analysis type="static"/>
 	</Control>
 	<Material>
-		<material id="1" name="Material1" type="in-situ stretch uncoupled elastic"> 
+		<material id="1" name="Material1" type="prestrain elastic"> 
 			<density>1</density>
-			<pre_stretch>1</pre_stretch>
-			<elastic type="trans iso Mooney-Rivlin">
+			<prestrain type="in-situ stretch">
+				<stretch>1</stretch>
+			</prestrain>
+			<elastic type="coupled trans-iso Mooney-Rivlin">
 				<c1>4.36</c1>
 				<c2>0</c2>
 				<c3>2.4</c3>
