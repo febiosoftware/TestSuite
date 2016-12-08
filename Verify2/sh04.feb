@@ -10,14 +10,14 @@ Secondary Features:
 	Nodal Force
 Materials:
 	Neo-Hookean
-Degrees of Freedom: 600
-Results:
+Degrees of Freedom: 963
+Results
 	Steps Completed: 20
-	Equilibrium Iterations: 162
-	Right Hand Evaluations: 205
-	Siffness Reformations: 25
+	Equilibrium Iterations: 157
+	Right Hand Evaluations: 197
+	Siffness Reformations: 24
 	Other:
-		The raised corner has a z-displacement of 1.07 units at time t=1.
+		The raised corner has a z-displacement of 1.02 units at time t=1.
 Comments:
 	
 -->

@@ -9,14 +9,14 @@ Secondary Features:
 	Nodal Force
 Materials:
 	Neo-Hookean
-Degrees of Freedom: 180
-Results:
-	Steps Completed: 15
-	Equilibrium Iterations: 134
-	Right Hand Evaluations: 166
-	Siffness Reformations: 19
+Degrees of Freedom: 219
+Results
+	Steps Completed: 14
+	Equilibrium Iterations: 128
+	Right Hand Evaluations: 159
+	Siffness Reformations: 18
 	Other:
-		The free end has a z-displacement of 3.97 units at time t=1.
+		The free end has a z-displacement of 3.85 units at time t=1.
 Comments:
 	All nodes needed to be constrained in y and Ry in order for
 	the termination stats to be consistent with the Pardiso solver.

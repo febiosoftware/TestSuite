@@ -9,14 +9,14 @@ Secondary Features:
 	Nodal Force
 Materials:
 	Neo-Hookean
-Degrees of Freedom: 522
-Results:
+Degrees of Freedom: 885
+Results
 	Steps Completed: 10
-	Equilibrium Iterations: 50
-	Right Hand Evaluations: 62
+	Equilibrium Iterations: 49
+	Right Hand Evaluations: 60
 	Siffness Reformations: 10
 	Other:
-		The center node has a z-displacement of 0.261 at time t=1.
+		The center node has a z-displacement of 0.242 at time t=1.
 Comments:
 	
 -->
