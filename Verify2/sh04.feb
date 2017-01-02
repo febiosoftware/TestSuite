@@ -10,7 +10,7 @@ Secondary Features:
 	Nodal Force
 Materials:
 	Neo-Hookean
-Degrees of Freedom: 963
+Degrees of Freedom: 600
 Results
 	Steps Completed: 20
 	Equilibrium Iterations: 157

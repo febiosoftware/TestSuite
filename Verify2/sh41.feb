@@ -9,7 +9,7 @@ Main Features:
 Secondary Features:
 Materials:
 	trans iso Mooney-Rivlin material with fiber vector = 8.66e-1, 5e-1, 0
-Degrees of Freedom: 58
+Degrees of Freedom: 34
 Results
 	Steps Completed: 10
 	Equilibrium Iterations: 39

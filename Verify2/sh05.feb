@@ -10,11 +10,11 @@ Secondary Features:
 	
 Materials:
 	Neo-Hookean
-Degrees of Freedom: 1593
+Degrees of Freedom: 1014
 Results
 	Steps Completed: 18
 	Equilibrium Iterations: 126
-	Right Hand Evaluations: 158
+	Right Hand Evaluations: 156
 	Siffness Reformations: 19
 	Other:
 		The disk has a maximum z-displacement of 0.713 at time t=1.

@@ -11,14 +11,14 @@ Secondary Features:
 	Non-uniform element distribution
 Materials:
 	St.Venant-Kirchhoff
-Degrees of Freedom: 5839
+Degrees of Freedom: 3673
 Results
 	Steps Completed: 10
 	Equilibrium Iterations: 59
 	Right Hand Evaluations: 71
 	Siffness Reformations: 10
 	Other:
-		The maximum effective strain is 0.193 at time t=1.@@
+		The maximum effective strain is 0.193 at time t=1.
 Comments:
 	
 -->

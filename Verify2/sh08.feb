@@ -10,14 +10,14 @@ Secondary Features:
 	
 Materials:
 	Neo-Hookean
-Degrees of Freedom: 916
+Degrees of Freedom: 586
 Results
 	Steps Completed: 10
 	Equilibrium Iterations: 40
 	Right Hand Evaluations: 50
 	Siffness Reformations: 40
 	Other:
-		The maximum effective stress is 2.97e-3 units at time t=1.@@
+		The maximum effective stress is 2.97e-3 units at time t=1.
 Comments:
 	
 -->

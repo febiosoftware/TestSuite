@@ -11,12 +11,12 @@ Main Features:
 Secondary Features:
 Materials:
 	Mooney-Rivlin
-Degrees of Freedom: 2044
+Degrees of Freedom: 1732
 Results
 	Steps Completed: 10
-	Equilibrium Iterations: 36
-	Right Hand Evaluations: 46
-	Siffness Reformations: 36
+	Equilibrium Iterations: 35
+	Right Hand Evaluations: 45
+	Siffness Reformations: 35
 	Other:
 		The maximum effective stress is 180 units at time t=1.
 Comments:

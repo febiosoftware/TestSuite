@@ -9,12 +9,12 @@ Main Features:
 Secondary Features:
 Materials:
 	neo-Hookean
-Degrees of Freedom: 1288
+Degrees of Freedom: 778
 Results
-	Steps Completed: 17
-	Equilibrium Iterations: 178
-	Right Hand Evaluations: 316
-	Siffness Reformations: 178
+	Steps Completed: 16
+	Equilibrium Iterations: 174
+	Right Hand Evaluations: 296
+	Siffness Reformations: 174
 	Other:
 		The maximum z-displacement is -0.09342 units at time t=1.
 Comments:

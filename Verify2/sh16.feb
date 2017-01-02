@@ -10,14 +10,14 @@ Secondary Features:
 	
 Materials:
 	Neo-Hookean
-Degrees of Freedom: 917
+Degrees of Freedom: 587
 Results
 	Steps Completed: 10
 	Equilibrium Iterations: 36
 	Right Hand Evaluations: 46
 	Siffness Reformations: 36
 	Other:
-		The maximum effective stress is 2.27e-3 units at time t=1.@@
+		The maximum effective stress is 2.27e-3 units at time t=1.
 Comments:
 	The shell-rigid interface connects nodal positions and
 	directors, so that the shell edge rotates with the rigid

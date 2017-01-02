@@ -10,7 +10,7 @@ Main Features:
 Secondary Features:
 Materials:
 	solid mixture (neo-Hookean,continuous fiber distribution)
-Degrees of Freedom: 24
+Degrees of Freedom: 12
 Results
 	Steps Completed: 106
 	Equilibrium Iterations: 676

@@ -3,13 +3,13 @@
 Problem Description:
 	Two box elements attached with shells are compressed against each other.
 	Top face of top box prescribed z displacement of -1.2 in time t=1.
-Main Features:
+	Main Features:
 	Shells
 	sliding-tension-compression contact
 Secondary Features:
 Materials:
 	neo-Hookean
-Degrees of Freedom: 60
+Degrees of Freedom: 36
 Results
 	Steps Completed: 10
 	Equilibrium Iterations: 20
@@ -233,8 +233,5 @@ Comments:
 			<var type="contact pressure"/>
 			<var type="relative volume"/>
 		</plotfile>
-		<logfile>
-			<node_data data="z">4</node_data>
-		</logfile>
 	</Output>
 </febio_spec>
