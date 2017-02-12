@@ -10,10 +10,10 @@ Materials:
 	Multiphasic
 Degrees of Freedom: 808
 Results:
-	Steps Completed: 58
-	Equilibrium Iterations: 263
-	Right Hand Evaluations: 367
-	Siffness Reformations: 263
+	Steps Completed: 57
+	Equilibrium Iterations: 252
+	Right Hand Evaluations: 349
+	Siffness Reformations: 252
 	Other:
 		The effective fluid pressure at node 1 and t=4001 is -0.5218
 Comments:
