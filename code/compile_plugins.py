@@ -55,11 +55,11 @@ class CompilePlugins:
 			if output != 0: print(plugin + " did not compile")
 			else:
 				try:
-					from_name = self.plugins_dir + plugin + '/VS2010/x64/Release/' + plugin + '.dll'
+					from_name = self.plugins_dir + plugin + '/VS2013/x64/Release/' + plugin + '.dll'
 					if i == 4:
 						shutil.copy(from_name, self.test_dir + 'Verify2/plugins')
 					else: 
-						if i == 3: from_name = self.plugins_dir + plugin + '/VS2010/x64/Release/' + plugin + 'FE.dll'
+						if i == 3: from_name = self.plugins_dir + plugin + '/VS2013/x64/Release/' + plugin + 'FE.dll'
 						to_name = self.test_dir + 'Verify2/plugins/pi0' + str(i) + '_' + self.plat + '.dll'
 						shutil.copy(from_name, to_name)
 				except IOError: sys.exit("Error copying " + plugin)

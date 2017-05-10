@@ -19,6 +19,7 @@ sysplat = sys.platform
 bits = platform.architecture()[0]
 print("host = " + host)
 print("opsys = " + opsys)
+print("sysplat = " + sysplat)
 
 # Read the commanline arguments
 # Arguments are any of:
@@ -116,8 +117,8 @@ if plat == 'win':
 		exe_dir = febio_dir + '/x64/Release'
 		febio = exe_dir + '/' + febio_name + '.exe'
 	elif febio_name == 'FEBio2':
-		exe_dir = febio_dir + '/VS2010/x64/Release OpenMP'
-		febio = exe_dir + '/' + febio_name + 'x64mt.exe'
+		exe_dir = febio_dir + '/VS2013/x64/Release OMP'
+		febio = exe_dir + '/' + febio_name + '.exe'
 
 	out_dir = 'C:/Testing/Logs/' + febio_name + dir_ext + '_Logs/'
 	logs_dir = out_dir
@@ -136,12 +137,12 @@ if plat == 'win':
 
 		if output == 0:
 			# Test whether febio compiled in the last 20 hours
-			if time.time() - os.path.getctime(febio) > 72000 and not test_update:
+			if time.time() - os.path.getmtime(febio) > 72000 and not test_update:
 				results.write("Nothing to do\n")
 				sys.exit("Nothing to do\n")
 
 			# If febio did compile, update svnrev.h, recompile and create a copy of the executable
-			os.chdir("VS2010/FEBioLib")
+			os.chdir("VS2013/FEBioLib")
 			execfile("../svnrev.py")
 			os.chdir(febio_dir)
 			
