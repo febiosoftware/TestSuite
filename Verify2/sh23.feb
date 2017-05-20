@@ -13,11 +13,11 @@ Materials:
 Degrees of Freedom: 5016
 Results
 	Steps Completed: 40
-	Equilibrium Iterations: 212
-	Right Hand Evaluations: 319
-	Siffness Reformations: 212
+	Equilibrium Iterations: 168
+	Right Hand Evaluations: 251
+	Siffness Reformations: 168
 	Other:
-		The maximum effective stress is 3.81 units at time t=1.
+		The maximum effective stress is 3.69 units at time t=1.
 Comments:
 -->
 <febio_spec version="2.0">
@@ -5453,7 +5453,7 @@ Comments:
 		<contact type="sliding-tension-compression">
 			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
-			<penalty>1</penalty>
+			<penalty>0.01</penalty>
 			<two_pass>1</two_pass>
 			<auto_penalty>1</auto_penalty>
          			<symmetric_stiffness>0</symmetric_stiffness>

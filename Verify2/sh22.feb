@@ -13,12 +13,12 @@ Materials:
 	neo-Hookean
 Degrees of Freedom: 4044
 Results
-	Steps Completed: 26
-	Equilibrium Iterations: 139
-	Right Hand Evaluations: 175
-	Siffness Reformations: 139
+	Steps Completed: 25
+	Equilibrium Iterations: 146
+	Right Hand Evaluations: 174
+	Siffness Reformations: 146
 	Other:
-		The maximum effective stress is 5.11 units at time t=1.
+		The maximum effective stress is 4.81 units at time t=0.970.
 Comments:
 -->
 <febio_spec version="2.0">
@@ -36,7 +36,7 @@ Comments:
 			<dtmin>0.01</dtmin>
 			<dtmax>0.1</dtmax>
 			<max_retries>5</max_retries>
-			<opt_iter>10</opt_iter>
+			<opt_iter>15</opt_iter>
 		</time_stepper>
 		<analysis type="static"/>
 	</Control>
@@ -2344,9 +2344,9 @@ Comments:
 	</Boundary>
 	<Contact>
 		<contact type="sliding-tension-compression">
-			<laugon>0</laugon>
-			<tolerance>0.01</tolerance>
-			<penalty>1</penalty>
+			<laugon>1</laugon>
+			<tolerance>0.5</tolerance>
+			<penalty>0.01</penalty>
 			<two_pass>1</two_pass>
 			<auto_penalty>1</auto_penalty>
          			<symmetric_stiffness>0</symmetric_stiffness>

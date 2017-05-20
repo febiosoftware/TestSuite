@@ -12,12 +12,12 @@ Materials:
 	Mooney-Rivlin
 Degrees of Freedom: 2620
 Results
-	Steps Completed: 25
-	Equilibrium Iterations: 113
-	Right Hand Evaluations: 149
-	Siffness Reformations: 113
+	Steps Completed: 27
+	Equilibrium Iterations: 139
+	Right Hand Evaluations: 199
+	Siffness Reformations: 140
 	Other:
-		The maximum effective stress is 20.4 units at time t=1.
+		The maximum effective stress is 30.7 units at time t=0.970.
 Comments:
 -->
 <febio_spec version="2.0">
@@ -37,6 +37,7 @@ Comments:
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
+		<symmetric_stiffness>0</symmetric_stiffness>
 		<analysis type="static"/>
 	</Control>
 	<Globals>
@@ -51,25 +52,25 @@ Comments:
 				<density>1</density>
 				<c1>1</c1>
 				<c2>0</c2>
-				<k>1.33333</k>
+				<k>1000</k>
 		</material>
 		<material id="2" name="mat1" type="Mooney-Rivlin">
 				<density>1</density>
 				<c1>100</c1>
 				<c2>0</c2>
-				<k>1.33333</k>
+				<k>1e4</k>
 		</material>
 		<material id="3" name="mat1" type="Mooney-Rivlin">
 				<density>1</density>
 				<c1>100</c1>
 				<c2>0</c2>
-				<k>1.33333</k>
+				<k>1e4</k>
 		</material>
 		<material id="4" name="mat1" type="Mooney-Rivlin">
 				<density>1</density>
 				<c1>100</c1>
 				<c2>0</c2>
-				<k>1.33333</k>
+				<k>1e5</k>
 		</material>
 	</Material>
 	<Geometry>
@@ -2767,13 +2768,13 @@ Comments:
 	<Contact>
 		<contact type="sliding-tension-compression">
 			<laugon>0</laugon>
-			<tolerance>0.01</tolerance>
-			<penalty>10</penalty>
+			<tolerance>0.2</tolerance>
+			<penalty>0.1</penalty>
 			<two_pass>1</two_pass>
 			<auto_penalty>1</auto_penalty>
-         			<symmetric_stiffness>0</symmetric_stiffness>
+         		<symmetric_stiffness>0</symmetric_stiffness>
 			<search_radius>1</search_radius>
-         			<tension>0</tension>
+         		<tension>0</tension>
 			<search_tol>0.01</search_tol>
 			<minaug>0</minaug>
 			<maxaug>10</maxaug>
