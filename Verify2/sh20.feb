@@ -14,9 +14,9 @@ Materials:
 Degrees of Freedom: 1732
 Results
 	Steps Completed: 10
-	Equilibrium Iterations: 35
-	Right Hand Evaluations: 45
-	Siffness Reformations: 35
+	Equilibrium Iterations: 31
+	Right Hand Evaluations: 43
+	Siffness Reformations: 31
 	Other:
 		The maximum effective stress is 180 units at time t=1.
 Comments:
@@ -38,6 +38,7 @@ Comments:
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
+		<symmetric_stiffness>0</symmetric_stiffness>
 		<analysis type="static"/>
 	</Control>
 	<Globals>

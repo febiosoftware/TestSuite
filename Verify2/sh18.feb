@@ -13,9 +13,9 @@ Materials:
 Degrees of Freedom: 128
 Results
 	Steps Completed: 10
-	Equilibrium Iterations: 49
-	Right Hand Evaluations: 61
-	Siffness Reformations: 49
+	Equilibrium Iterations: 20
+	Right Hand Evaluations: 30
+	Siffness Reformations: 20
 	Other:
 		The maximum shell strain is -0.0939 units at time t=1.
 Comments:
@@ -37,6 +37,7 @@ Comments:
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
+		<symmetric_stiffness>0</symmetric_stiffness>
 		<analysis type="static"/>
 	</Control>
 	<Globals>

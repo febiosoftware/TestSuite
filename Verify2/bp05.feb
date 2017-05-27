@@ -16,10 +16,10 @@ Materials:
 	Biphasic
 Degrees of Freedom: 359
 Results:
-	Steps Completed: 65
-	Equilibrium Iterations: 182
-	Right Hand Evaluations: 247
-	Siffness Reformations: 182
+	Steps Completed: 62
+	Equilibrium Iterations: 175
+	Right Hand Evaluations: 237
+	Siffness Reformations: 175
 	Other:
 	
 Comments:
