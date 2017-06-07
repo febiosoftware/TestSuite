@@ -25,15 +25,30 @@ Comments:
 	is greater.  This problem converges with fewer equilibrium iterations if the automatic time stepper
 	is turned off.
 -->
-<febio_spec version="1.2">
+<febio_spec version="2.0">
 	<Module type="solid"/>
 	<Control>
 		<title>Two Element Sliding Contact</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
+		<max_refs>15</max_refs>
+		<max_ups>10</max_ups>
+		<dtol>0.001</dtol>
+		<etol>0.01</etol>
+		<rtol>0</rtol>
+		<lstol>0.9</lstol>
+		<analysis type="static"/>
 	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
 	<Material>
-		<material id="1" type="neohookeanpi">
+		<material id="1" name="Material01" type="neohookeanpi">
+			<density>1</density>
 			<E>1</E>
 			<v>0</v>
 		</material>
@@ -57,79 +72,96 @@ Comments:
 			<node id="15"> 5.0000000e-001, 5.0000000e-001, 1.0000000e+000</node>
 			<node id="16"> 5.0000000e-001, 5.0000000e-001, 2.0000000e+000</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,     5,     7,     3,     2,     6,     8,     4</hex8>
-			<hex8 id="2" mat="1">     9,    13,    15,    11,    10,    14,    16,    12</hex8>
+		<Elements type="hex8" mat="1" elset="Part1">
+			<elem id="1">     1,     5,     7,     3,     2,     6,     8,     4</elem>
+			<elem id="2">     9,    13,    15,    11,    10,    14,    16,    12</elem>
 		</Elements>
+		<NodeSet name="FixedNodeset01">
+			<node id="1"/>
+			<node id="3"/>
+			<node id="5"/>
+			<node id="7"/>
+		</NodeSet>
+		<NodeSet name="FixedNodeset02">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="13"/>
+			<node id="14"/>
+			<node id="15"/>
+			<node id="16"/>
+		</NodeSet>
+		<NodeSet name="FixedNodeset03">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="13"/>
+			<node id="14"/>
+			<node id="15"/>
+			<node id="16"/>
+		</NodeSet>
+		<NodeSet name="Nodeset01">
+			<node id="10"/>
+			<node id="12"/>
+			<node id="14"/>
+			<node id="16"/>
+		</NodeSet>
+		<Surface name="MasterSurface01">
+			<quad4 id="1">     2,     6,     8,     4</quad4>
+		</Surface>
+		<Surface name="SlaveSurface01">
+			<quad4 id="1">    11,    15,    13,     9</quad4>
+		</Surface>
 	</Geometry>
 	<Boundary>
-		<fix>
-			<node id="1" bc="x"></node>
-			<node id="1" bc="y"></node>
-			<node id="1" bc="z"></node>
-			<node id="2" bc="x"></node>
-			<node id="2" bc="y"></node>
-			<node id="3" bc="x"></node>
-			<node id="3" bc="y"></node>
-			<node id="3" bc="z"></node>
-			<node id="4" bc="x"></node>
-			<node id="4" bc="y"></node>
-			<node id="5" bc="x"></node>
-			<node id="5" bc="y"></node>
-			<node id="5" bc="z"></node>
-			<node id="6" bc="x"></node>
-			<node id="6" bc="y"></node>
-			<node id="7" bc="x"></node>
-			<node id="7" bc="y"></node>
-			<node id="7" bc="z"></node>
-			<node id="8" bc="x"></node>
-			<node id="8" bc="y"></node>
-			<node id="9" bc="x"></node>
-			<node id="9" bc="y"></node>
-			<node id="10" bc="x"></node>
-			<node id="10" bc="y"></node>
-			<node id="11" bc="x"></node>
-			<node id="11" bc="y"></node>
-			<node id="12" bc="x"></node>
-			<node id="12" bc="y"></node>
-			<node id="13" bc="x"></node>
-			<node id="13" bc="y"></node>
-			<node id="14" bc="x"></node>
-			<node id="14" bc="y"></node>
-			<node id="15" bc="x"></node>
-			<node id="15" bc="y"></node>
-			<node id="16" bc="x"></node>
-			<node id="16" bc="y"></node>
-		</fix>
-		<prescribe>
-			<node id="10" bc="z" lc="1">1</node>
-			<node id="12" bc="z" lc="1">1</node>
-			<node id="14" bc="z" lc="1">1</node>
-			<node id="16" bc="z" lc="1">1</node>
-		</prescribe>
-		<contact type="facet-to-facet sliding">
+		<fix bc="z" set="FixedNodeset01"/>
+		<fix bc="y" set="FixedNodeset02"/>
+		<fix bc="x" set="FixedNodeset03"/>
+		<prescribe bc="z" lc="1" set="Nodeset01">1</prescribe>
+	</Boundary>
+	<Contact>
+		<contact type="facet-to-facet sliding" name="SlidingInterface01">
 			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
 			<penalty>100</penalty>
+			<two_pass>0</two_pass>
 			<auto_penalty>1</auto_penalty>
-			<surface type="master">
-				<quad4 id="1">     2,     6,     8,     4</quad4>
-			</surface>
-			<surface type="slave">
-				<quad4 id="2">    11,    15,    13,     9</quad4>
-			</surface>
+			<fric_coeff>0</fric_coeff>
+			<fric_penalty>0</fric_penalty>
+			<search_tol>0.01</search_tol>
+			<minaug>0</minaug>
+			<maxaug>10</maxaug>
+			<gaptol>0</gaptol>
+			<seg_up>0</seg_up>
+			<surface type="master" set="MasterSurface01"/>
+			<surface type="slave" set="SlaveSurface01"/>
 		</contact>
-	</Boundary>
+	</Contact>
 	<LoadData>
-		<loadcurve id="1">
-			<loadpoint>0,0</loadpoint>
-			<loadpoint>1,-0.2</loadpoint>
+		<loadcurve id="1" type="linear">
+			<point>0,0</point>
+			<point>1,-0.2</point>
 		</loadcurve>
 	</LoadData>
 	<Output>
-		<plotfile type="febio"></plotfile>
-	        <logfile>
-			<node_data data="z">4</node_data>
-		</logfile>
+		<plotfile type="febio"/>
 	</Output>
 </febio_spec>
