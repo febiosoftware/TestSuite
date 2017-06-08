@@ -84,7 +84,7 @@ results = open('Logs/' + res_name + ".txt", "w")
 if args.find('c') == -1 and plat != 'osx': subprocess.call(['svn', 'up'])
 
 # Define the test problems list.
-if args.find('t') != -1: test = ['pi03.feb']
+if args.find('t') != -1: test = ['op01.feb']
 else:
 	os.chdir(test_dir + verify)
 	test = glob.glob("*.feb")
@@ -320,12 +320,11 @@ for solver in solvers:
 			# 0: solver
 			# 1: file
 			# 2: Normal/Error termination status
-			# 3: Major iterations
-			# 4: Minor iterations
-			# 5: Final objective value
-			# 6: Plot file size
-			# 7: Log diff file size
-			if opt: result = [solver, base, "", 0, 0, 0.0, 0, 0]
+			# 3: Final objective value
+			# 4: Total iterations
+			# 5: Plot file size
+			# 6: Log diff file size
+			if opt: result = [solver, base, "", 0.0, 0, 0, 0]
 
 			# Normal input file
 			# 0: solver
@@ -361,9 +360,8 @@ for solver in solvers:
 				diff = open(diffname, "w")
 				if opt:
 					for line in flog:
-						if line.find("Major iterations"     ) !=-1: result[3] = int(line[43:])
-						if line.find("Minor iterations"     ) !=-1: result[4] = int(line[43:])
-						if line.find("Final objective value") !=-1: result[5] = line.split()[3]
+						if line.find("Final objective value") !=-1: result[3] = line.split()[5]
+						if line.find("Total iterations"     ) !=-1: result[4] = int(line[43:])
 				else:
 					for line in flog:
 						if  line.find("Number of time steps completed"        ) != -1: result[3] = int(line[55:])
@@ -425,7 +423,7 @@ for solver in solvers:
 					#result[10] = incr*int((100/incr)*el_diff/float(el_denom))
 
 				# get the size of the plotfile and delete it
-				result[7-opt] = int(os.path.getsize(pltname))
+				result[7-2*opt] = int(os.path.getsize(pltname))
 				#os.remove(pltname)
 				# do a diff on the log file
 				flog.seek(0)
@@ -437,7 +435,7 @@ for solver in solvers:
 				fstd.close()
 				diffsize = os.path.getsize(diffname)
 				diffsize = 5*(diffsize/5000)
-				#result[8-opt] = int(diffsize)
+				#result[8-2*opt] = int(diffsize)
 				# If all other statistics are the same, there are only differences in the
 				# residuals.  I decided to ignore this statistic.
 			except IOError:
