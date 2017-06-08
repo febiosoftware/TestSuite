@@ -19,9 +19,6 @@ Comments:
 		<obj_tol>0.001</obj_tol>
 		<f_diff_scale>0.001</f_diff_scale>
 	</Options>
-  <Function>
-    <fnc lc="1">Indentor.Fz</fnc>
-  </Function>
 	<Parameters>
 		<param name="fem.material['Biphasic'].solid.E">0.5, 0.0, 5.0,1.0</param>
 		<param name="fem.material['Biphasic'].permeability.perm">0.0005, 0.00005, 0.01,0.001</param>
