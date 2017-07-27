@@ -20,11 +20,11 @@ Comments:
 		<f_diff_scale>0.001</f_diff_scale>
 	</Options>
 	<Parameters>
-		<param name="fem.material['Biphasic'].solid.E">0.5, 0.0, 5.0,1.0</param>
-		<param name="fem.material['Biphasic'].permeability.perm">0.0005, 0.00005, 0.01,0.001</param>
+		<param name="fem.material('Biphasic').solid.E">0.5, 0.0, 5.0,1.0</param>
+		<param name="fem.material('Biphasic').permeability.perm">0.0005, 0.00005, 0.01,0.001</param>
 	</Parameters>
 	<Objective type="data-fit">
-		<fnc name="fem.rigidbody['Indentor'].Fz"/>
+		<fnc name="fem.rigidbody('Indentor').Fz"/>
 		<data>
 			<point>163.03811, -0.455468</point>
 			<point>172.950488, -0.47018</point>

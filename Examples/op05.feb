@@ -15,22 +15,19 @@ Results:
 Comments:
 	
 -->
-<febio_optimize>
-  <Model>oi05.feb</Model>
-  <Options>
+<febio_optimize version="1.0">
+  <Options type="levmar">
     <obj_tol>1e-6</obj_tol>
     <f_diff_scale>1e-4</f_diff_scale>
   </Options>
-  <Function>
-    <fnc lc="1">Platen.Fz</fnc>
-  </Function>
   <Parameters>
-    <param name="Cartilage.permeability.perm">0.001, 0.0001, 0.002, 0.005</param>
-    <param name="Cartilage.solid.ground.E">0.33, 0.1, 1, 1</param>
-    <param name="Cartilage.solid.fibers.ksi">0.9, 0.2, 3, 1</param>
-</Parameters>
-  <LoadData>
-    <loadcurve id="1">
+    <param name="fem.material('Cartilage').permeability.perm">0.001, 0.0001, 0.002, 0.005</param>
+    <param name="fem.material('Cartilage').solid.ground.E">0.33, 0.1, 1, 1</param>
+    <param name="fem.material('Cartilage').solid.fibers.ksi">0.9, 0.2, 3, 1</param>
+  </Parameters>
+  <Objective type="data-fit">
+    <fnc name="fem.rigidbody('Platen').Fz"/>
+    <data>
 		<point>0,0</point>
 		<point>0.4,3.0149e-006</point>
 		<point>0.8,4.5223e-006</point>
@@ -4363,6 +4360,6 @@ Comments:
 		<point>1732.44,-0.0040953</point>
 		<point>1732.84,-0.0040953</point>
 		<point>1733.24,-0.0041631</point>
-	</loadcurve>
-  </LoadData>
+	  </data>
+  </Objective>
 </febio_optimize>

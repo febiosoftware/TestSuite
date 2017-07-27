@@ -20,11 +20,11 @@ Comments:
 		<f_diff_scale>0.001</f_diff_scale>
 	</Options>
 	<Parameters>
-		<param name="fem.material['VWMaterial'].c1">0.12, .01, 1</param>
-		<param name="fem.material['VWMaterial'].c2">9.28, 5, 20</param>
+		<param name="fem.material('VWMaterial').c1">0.12, .01, 1</param>
+		<param name="fem.material('VWMaterial').c2">9.28, 5, 20</param>
 	</Parameters>
 	<Objective type="data-fit">
-		<fnc name="fem.rigidbody['rigid'].Fz"/>
+		<fnc name="fem.rigidbody('rigid').Fz"/>
 		<data>
 			<point>	0	,	-3.68727E-05	</point>
 			<point>	0.01	,	-1.19761E-05	</point>
