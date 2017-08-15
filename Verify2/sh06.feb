@@ -35,7 +35,6 @@ Comments:
 		<etol>0.01</etol>
 		<rtol>0</rtol>
 		<lstol>0.9</lstol>
-		<pressure_stiffness>0</pressure_stiffness>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax>0.1</dtmax>
@@ -414,6 +413,7 @@ Comments:
 		<surface_load type="pressure">
 			<pressure lc="1">1.0</pressure>
 			<linear>0</linear>
+			<pressure_stiffness>0</pressure_stiffness>
 			<surface set="surface01"/>
 		</surface_load>
 	</Loads>

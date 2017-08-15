@@ -33,7 +33,6 @@ Comments:
 		<etol>0.01</etol>
 		<rtol>1e+010</rtol>
 		<lstol>0.9</lstol>
-		<pressure_stiffness>1</pressure_stiffness>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax>0.1</dtmax>
