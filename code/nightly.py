@@ -229,6 +229,9 @@ exempt1 = ['bp23', 'ma17', 'mg01', 'mg02']
 # These problems will not run in FEBio2
 exempt2 = ['sh15']
 
+# These problems have issues on Windows
+exempt_win = ['rj04']
+
 # These are parameter optimization problems
 paramopt = [['op01', 'oi01'],
 	    ['op02', 'oi02'],
@@ -240,6 +243,7 @@ paramopt0 = [col[0] for col in paramopt]
 if dir_ext == "4": exempt += inconsistent
 if febio_name == 'FEBio': exempt += exempt1
 if febio_name == 'FEBio2': exempt += exempt2
+if plat == 'win': exempt += exempt_win
 
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
