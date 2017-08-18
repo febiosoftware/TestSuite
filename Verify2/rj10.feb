@@ -10,10 +10,10 @@ Materials:
 	rigid body
 Degrees of Freedom: 6
 Results:
-	Steps Completed: 189
-	Equilibrium Iterations: 1941
-	Right Hand Evaluations: 4172
-	Siffness Reformations: 1941
+	Steps Completed: 106
+	Equilibrium Iterations: 595
+	Right Hand Evaluations: 993
+	Siffness Reformations: 595
 	Other:
 
 Comments:
@@ -40,6 +40,7 @@ Comments:
 		<alpha>0.9</alpha>
 		<beta>0.3025</beta>
 		<gamma>0.6</gamma>
+		<symmetric_stiffness>0</symmetric_stiffness>
 	</Control>
 	<Globals>
 		<Constants>

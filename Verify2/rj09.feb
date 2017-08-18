@@ -12,7 +12,7 @@ Degrees of Freedom: 6
 Results:
 	Steps Completed: 10
 	Equilibrium Iterations: 20
-	Right Hand Evaluations: 67
+	Right Hand Evaluations: 62
 	Siffness Reformations: 20
 	Other:
 
@@ -40,6 +40,7 @@ Comments:
 		<alpha>0.5</alpha>
 		<beta>0.25</beta>
 		<gamma>1.0</gamma>
+		<symmetric_stiffness>0</symmetric_stiffness>
 	</Control>
 	<Globals>
 		<Constants>

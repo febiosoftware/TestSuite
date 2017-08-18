@@ -12,9 +12,9 @@ Materials:
 Degrees of Freedom: 13
 Results:
 	Steps Completed: 720
-	Equilibrium Iterations: 2456
-	Right Hand Evaluations: 4957
-	Siffness Reformations: 2456
+	Equilibrium Iterations: 2459
+	Right Hand Evaluations: 5099
+	Siffness Reformations: 2459
 	Other:
 
 Comments:
@@ -41,6 +41,7 @@ Comments:
 		<beta>0.3025</beta>
 		<gamma>0.6</gamma>
 		<analysis type="dynamic"/>
+		<symmetric_stiffness>0</symmetric_stiffness>
 	</Control>
 	<Globals>
 		<Constants>
