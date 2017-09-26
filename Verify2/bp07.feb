@@ -9614,9 +9614,9 @@ Comments:
 			<var type="fluid flux"/>
 			<var type="relative volume"/>
 			<var type="stress"/>
+		</plotfile>
 		<logfile>
 			<element_data data="wx">3188</element_data>
 		</logfile>
-		</plotfile>
 	</Output>
 </febio_spec>
