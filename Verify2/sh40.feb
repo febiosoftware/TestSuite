@@ -119,6 +119,7 @@ Comments:
 			<var type="shell strain"/>
 		</plotfile>
 		<logfile>
+			<element_data data="sx">1</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

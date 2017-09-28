@@ -178,5 +178,8 @@ Comments:
 			<var type="rigid angular acceleration"/>
 			<var type="rigid kinetic energy"/>
 		</plotfile>
+		<logfile>
+			<rigid_body_data data="Fy"></rigid_body_data>
+		</logfile>
 	</Output>
 </febio_spec>

@@ -1455,6 +1455,9 @@ Comments:
 			<var type="solute 2 flux"/>
 			<var type="stress"/>
 		</plotfile>
+		<logfile>
+			<element_data data="p">21</element_data>
+		</logfile>
 	</Output>
 	<Step name="Step01 Swelling">
 		<Module type="multiphasic"/>

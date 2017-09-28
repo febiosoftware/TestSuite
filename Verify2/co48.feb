@@ -5671,7 +5671,7 @@ Comments:
 		  <var type="contact pressure"/>
 		</plotfile>
 		<logfile>
-			<element_data data="sz">119</element_data>
+			<node_data data="uy">789</node_data>
 		</logfile>
 	</Output>
 </febio_spec>

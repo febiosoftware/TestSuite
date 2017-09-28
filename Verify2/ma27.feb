@@ -134,5 +134,8 @@ Comments:
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
+		<logfile>
+			<element_data data="sz">1</element_data>
+		</logfile>
 	</Output>
 </febio_spec>

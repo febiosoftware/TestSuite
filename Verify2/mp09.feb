@@ -2094,5 +2094,8 @@ Comments:
 			<var type="solute 4 flux"/>
 			<var type="stress"/>
 		</plotfile>
+		<logfile>
+			<element_data data="sy">1</element_data>
+		</logfile>
 	</Output>
 </febio_spec>
