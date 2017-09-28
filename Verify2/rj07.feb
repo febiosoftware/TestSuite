@@ -135,7 +135,7 @@ Comments:
 		<logfile>
 			<rigid_body_data file="rj07.dat" data="KE"></rigid_body_data>
 			<rigid_connector_data file="rj07RC.dat" data="RCFx;RCFy;RCFz;RCMx;RCMy;RCMz"></rigid_connector_data>
-			<rigid_body_data data="Fy"></rigid_body_data>
+			<rigid_body_data data="Fy">1</rigid_body_data>
 		</logfile>
 	</Output>
 </febio_spec>

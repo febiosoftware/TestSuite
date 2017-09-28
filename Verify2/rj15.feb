@@ -254,7 +254,7 @@ Comments:
 			<var type="velocity"/>
 		</plotfile>
 		<logfile>
-			<rigid_body_data data="Fy"></rigid_body_data>
+			<rigid_body_data data="qx">2</rigid_body_data>
 		</logfile>
 	</Output>
 </febio_spec>

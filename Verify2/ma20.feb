@@ -108,7 +108,7 @@ Comments:
 			<var type="relative volume"/>
 		</plotfile>
 		<logfile>
-			<element_data data="sz">1</element_data>
+			<element_data data="Ex">1</element_data>
 		</logfile>
 	</Output>
 </febio_spec>
