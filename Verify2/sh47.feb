@@ -175,7 +175,7 @@ Comments:
 			<var type="shell strain"/>
 		</plotfile>
 		<logfile>
-			<node_data data="z">4</node_data>
+			<node_data data="y">9</node_data>
 		</logfile>
 	</Output>
 </febio_spec>

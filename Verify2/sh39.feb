@@ -717,7 +717,7 @@ Comments:
 			<var type="shell strain"/>
 		</plotfile>
 		<logfile>
-			<node_data data="z">4</node_data>
+			<element_data data="sx">18</element_data>
 		</logfile>
 	</Output>
 </febio_spec>

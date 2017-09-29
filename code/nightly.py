@@ -385,13 +385,13 @@ for solver in solvers:
 							new_el_time = el_hr*3600 + el_min*60 + el_sec
 						if df_flg:
 							if line.find("Data Record #1") !=-1: data1 = 1
-							if line.find("Data Record #2") !=-1: data1 = 0
+							if data1: line_num += 1
 							if line.find(df_tline) !=-1 and data1: found = 1
-							if found: line_num += 1
-							if line_num == 3:
-								result[11] = line.rstrip("\n").split(" ")[1]
+							if line_num == 6:
+								if found: result[11] = line.rstrip("\n").split(" ")[1]
 								found = 0
 								line_num = 0
+								data1 = 0
 					for line in fstd:
 						if  line.find("Time in solver") != -1:
 							slv_hr  = int(line[17:18])

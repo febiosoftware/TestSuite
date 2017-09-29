@@ -363,6 +363,7 @@ Comments:
 			<var type="shell strain"/>
 		</plotfile>
 		<logfile>
+			<element_data data="sy">31</element_data>
 			<node_data file="sh17.dat" data="uz">121,113</node_data>
 		</logfile>
 	</Output>

@@ -235,7 +235,7 @@ Comments:
 			<var type="relative volume"/>
 		</plotfile>
 		<logfile>
-			<element_data data="sx">1</element_data>
+			<element_data data="sz">2</element_data>
 		</logfile>
 	</Output>
 </febio_spec>
