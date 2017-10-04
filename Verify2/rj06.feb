@@ -737,9 +737,9 @@ Comments:
 			<var type="rigid kinetic energy"/>
 			<var type="stress"/>
 			<var type="velocity"/>
-		<logfile>
-			<rigid_body_data data="Fy"></rigid_body_data>
-		</logfile>
 		</plotfile>
+		<logfile>
+			<rigid_body_data data="qz">2</rigid_body_data>
+		</logfile>
 	</Output>
 </febio_spec>
