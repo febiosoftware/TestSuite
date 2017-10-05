@@ -18,7 +18,7 @@ class CompilePlugins:
 	# compile using Makefile
 	def compileMake(self):
 
-		if self.plat == 'lnx64d': ext = '.so'
+		if self.plat == 'lnx64s': ext = '.so'
 		else: ext = '.dylib'
 		i = 0
 		

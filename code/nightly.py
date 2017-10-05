@@ -48,6 +48,7 @@ if opsys == 'x86_64':
 	else:
 		plat = 'lnx64'
 	platd = plat + 'd'
+	plats = plat + 's'
 elif sysplat == 'win32':
 	plat = 'win'
 elif opsys == 'i686':
@@ -167,6 +168,7 @@ else:
 	else:
 		febio_dir = root_dir + febio_name
 		febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + platd
+		febios = febio_dir + '/build/bin/' + febio_lc_name + '.' + plats
 		os.chdir(febio_dir)
 
 	# Define the log and plt output directory
@@ -199,13 +201,16 @@ else:
 				command =['make', platd]
 				output = subprocess.call(command)
 				if output != 0: sys.exit("FEBio debug did not compile after updating svnrev.h")
-				command =['make', plat]
-				output = subprocess.call(command)
-				if output != 0: print("FEBio did not compile after updating svnrev.h")
+			command =['make', plat]
+			output = subprocess.call(command)
+			if output != 0: print("FEBio (no debug) did not compile after updating svnrev.h")
+			command =['make', plats]
+			output = subprocess.call(command)
+			if output != 0: print("FEBio (sequential) did not compile after updating svnrev.h")
 			shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + platd)
 
 			# Compile the plugins
-			pic = CompilePlugins(platd, root_dir)
+			pic = CompilePlugins(plats, root_dir)
 			pic.launch()
 
 		else: sys.exit("FEBio did not compile")
@@ -303,11 +308,11 @@ for solver in solvers:
 			# Test for plugin problems
 			elif 'pi' in base:
 				if base == 'pi03':
-					command = [febio, '-i', f, '-o', logname, '-p', pltname, \
+					command = [febios, '-i', f, '-o', logname, '-p', pltname, \
 						'-cnf', 'plugins/' + base + '_' + plat + '.xml', \
 						'-task=angio', 'plugins/angiofe.txt']
 				else:
-					command = [febio, '-i', f, '-o', logname, '-p', pltname, \
+					command = [febios, '-i', f, '-o', logname, '-p', pltname, \
 						'-cnf', 'plugins/' + base + '_' + plat + '.xml']
 			else:
 				command = [febio, '-i', f, '-o', logname, '-p', pltname, \
