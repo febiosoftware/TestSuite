@@ -17,7 +17,6 @@
 			<opt_iter>10</opt_iter>
 		</time_stepper>
 		<analysis type="static"/>
-		<plane_strain>1</plane_strain>
 	</Control>
 	<Globals>
 		<Constants>
