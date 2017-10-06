@@ -2,7 +2,7 @@
 <!--
 Problem Description:
 	PreStrain Plugin using the pre-strain uncoupled elastic material, element data F0
-	and the pre-strain constraint.
+	and the pre-strain constraint.  This is the same as exaple problem test9_ps_wc.feb.
 Main Features:
 	Plugin
 	PreStrain

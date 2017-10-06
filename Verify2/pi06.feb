@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	PreStrain Plugin using the pre-strain uncoupled elastic material and element data F0.
+	PreStrain Plugin using the pre-strain uncoupled elastic material and element data F0. This is the same as example problem test9_ps.feb.
 Main Features:
 	Plugin
 	PreStrain

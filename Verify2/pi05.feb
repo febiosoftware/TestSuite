@@ -2,7 +2,7 @@
 <!--
 Problem Description:
 	PreStrain Plugin using the in-situ stretch uncoupled elastic material, a prescribed pre_stretch
-	and the in-situ stretch constraint.
+	and the in-situ stretch constraint.  This is the same as the example problem test9_is_wc.feb.
 Main Features:
 	Plugin
 	PreStrain
