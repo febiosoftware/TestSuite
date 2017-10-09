@@ -81,7 +81,7 @@ Comments:
 				<distribution type="von-Mises-3d">
 					<b>3</b>
 				</distribution>
-				<scheme type="fibers-3d-gkt-uncoupled">
+				<scheme type="fibers-3d-gkt">
 					<nph>11</nph>
 					<nth>31</nth>
 				</scheme>
