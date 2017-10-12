@@ -120,6 +120,7 @@ if plat == 'win':
 	elif febio_name == 'FEBio2':
 		exe_dir = febio_dir + '/VS2013/x64/Release OMP'
 		febio = exe_dir + '/' + febio_name + '.exe'
+	febios = febio
 
 	out_dir = 'C:/Testing/Logs/' + febio_name + dir_ext + '_Logs/'
 	logs_dir = out_dir
