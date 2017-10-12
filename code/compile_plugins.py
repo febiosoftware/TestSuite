@@ -13,7 +13,7 @@ class CompilePlugins:
 		self.root_dir = root_dir
 		self.test_dir = root_dir + 'Testing/'
 		self.plugins_dir = root_dir + 'Software/Plugins/'
-		self.plugins = ['NeoHookeanPI', 'FEWarp', 'Angio', 'PreStrain']
+		self.plugins = ['NeoHookeanPI', 'FEWarp', 'Angio', 'PreStrain', 'AngioFE2']
 
 	# compile using Makefile
 	def compileMake(self):
@@ -33,7 +33,7 @@ class CompilePlugins:
 				try:
 					plugin_lc = plugin.lower()
 					from_name = 'lib/lib' + plugin_lc + '_' + self.plat + ext
-					if i == 4:
+					if i == 4 or i == 5:
 						shutil.copy(from_name, self.test_dir + 'Verify2/plugins')
 					else: 
 						if i == 3: from_name = 'lib/lib' + plugin_lc + 'fe_' + self.plat + ext
@@ -56,7 +56,7 @@ class CompilePlugins:
 			else:
 				try:
 					from_name = self.plugins_dir + plugin + '/VS2013/x64/Release/' + plugin + '.dll'
-					if i == 4:
+					if i == 4 or i == 5:
 						shutil.copy(from_name, self.test_dir + 'Verify2/plugins')
 					else: 
 						if i == 3: from_name = self.plugins_dir + plugin + '/VS2013/x64/Release/' + plugin + 'FE.dll'

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<febio_spec version="2.5">
+	<Module type="solid"/>
+	<Control>
+		<time_steps>48</time_steps>
+		<step_size>0.05</step_size>
+		<max_refs>15</max_refs>
+		<max_ups>10</max_ups>
+		<dtol>0.01</dtol>
+		<etol>0.01</etol>
+		<rtol>0</rtol>
+		<lstol>0.9</lstol>
+		<analysis type="static"/>
+		<time_stepper>
+			<dtmin>0.01</dtmin>
+			<dtmax lc="1">1.0</dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>15</opt_iter>
+		</time_stepper>
+	</Control>
+	<Include>plugins/pi08/globals.feb</Include>
+	<Include>plugins/pi08/materials.feb</Include>
+	<Include>plugins/pi08/geometry_md.feb</Include>
+	<LoadData>
+		<loadcurve id="1" type="step">
+			<point>0.05,1.0</point>
+			<point>0.1,1.0</point>
+			<point>0.15,1.0</point>
+			<point>0.2,1.0</point>
+			<point>0.25,1.0</point>
+			<point>0.3,1.0</point>
+			<point>0.35,1.0</point>
+			<point>0.4,1.0</point>
+			<point>0.45,1.0</point>
+			<point>0.5,1.0</point>
+			<point>0.55,1.0</point>
+			<point>0.6,1.0</point>
+			<point>0.65,1.0</point>
+			<point>0.7,1.0</point>
+			<point>0.75,1.0</point>
+			<point>0.8,1.0</point>
+			<point>0.85,1.0</point>
+			<point>0.9,1.0</point>
+			<point>0.95,1.0</point>
+			<point>1.0,1.0</point>
+			<point>1.05,1.0</point>
+			<point>1.1,1.0</point>
+			<point>1.15,1.0</point>
+			<point>1.2,1.0</point>
+			<point>1.25,1.0</point>
+			<point>1.3,1.0</point>
+			<point>1.35,1.0</point>
+			<point>1.4,1.0</point>
+			<point>1.45,1.0</point>
+			<point>1.5,1.0</point>
+			<point>1.55,1.0</point>
+			<point>1.6,1.0</point>
+			<point>1.65,1.0</point>
+			<point>1.7,1.0</point>
+			<point>1.75,1.0</point>
+			<point>1.8,1.0</point>
+			<point>1.85,1.0</point>
+			<point>1.9,1.0</point>
+			<point>1.95,1.0</point>
+			<point>2.0,1.0</point>
+			<point>2.05,1.0</point>
+			<point>2.1,1.0</point>
+			<point>2.15,1.0</point>
+			<point>2.2,1.0</point>
+			<point>2.25,1.0</point>
+			<point>2.3,1.0</point>
+			<point>2.35,1.0</point>
+			<point>2.4,1.0</point>
+		</loadcurve>
+	</LoadData>
+	<Include>plugins/pi08/output.feb</Include>
+</febio_spec>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<febio_spec version="2.5">
+	<Material>
+		<material id="1" name="Material01" type="angio_mat">
+			<a>3.72e-12</a>
+			<b>0.004</b>					
+			<N>2.0</N>
+			<matrix_density>3</matrix_density>
+			<composite_material>1</composite_material>
+			<length_adjustment>1.0</length_adjustment>
+			
+			<!-- stiffness factor of 1.0 ignored-->
+			
+			<matrix type="viscoelastic">
+				<t1>0.0000025</t1>
+				<g0>0.0</g0>
+				<g1>1.0</g1>
+				<elastic type="EFD neo-Hookean">
+					<E>0.00003452</E>
+					<v>0.</v>
+					<beta>2.5,2.5,2.5</beta> 
+					<ksi>0.0003452,0.0003452,0.0003452</ksi>
+				</elastic>
+			</matrix>
+			<common_properties type="angio_properties">
+				<fiber_initializer type="random_fiber_initializer_non_mangling"/>
+				<fragment_seeder type="MD">
+					<number_fragments>100</number_fragments>
+					<initial_vessel_length>42.0</initial_vessel_length>
+				</fragment_seeder>
+				<vessel type="viscoelastic">
+					<t1>0.0000025</t1>
+					<g0>0.0</g0>
+					<g1>1.0</g1>
+					<elastic type="neo-Hookean">
+						<E>0.003452</E>
+						<v>0.0</v>
+					</elastic>
+				</vessel>
+				<brancher type="psuedo_defered_branch">
+					<length_to_branch type="normal_distribution">
+						<mean>80</mean>
+						<stddev>5</stddev>
+					</length_to_branch>
+					<time_to_emerge type="normal_distribution">
+						<mean>0.5</mean>
+						<stddev>0.125</stddev>
+					</time_to_emerge>
+				</brancher>
+				<grow_direction_modifiers>
+					<gdm type="unit_length">
+					</gdm>
+					<gdm type="density_length">
+					</gdm>
+					<gdm type="segment_length">
+					</gdm>
+					<gdm type="default_grow_direction">
+					</gdm>
+					<gdm type="branch_grow_direction">
+					</gdm>
+					<gdm type="gradient_grow_direction">
+						<threshold>0.01</threshold>
+					</gdm>
+					<gdm type="anastamosis_grow_direction">
+					</gdm>
+				</grow_direction_modifiers>
+				<boundary_condition type="bouncy">
+					<angio_boundary_groups>1</angio_boundary_groups>
+					<mbc type="same"/>
+				</boundary_condition>
+			</common_properties>
+		</material>
+		<material id="2" name="Material02" type="angio_mat">
+			<a>3.72e-12</a>
+			<b>0.004</b>					
+			<N>2.0</N>
+			<matrix_density>5</matrix_density>
+			<composite_material>1</composite_material>
+			<length_adjustment>1.0</length_adjustment>
+
+			<!-- stiffness factor of 1.0 ignored-->
+			
+			<matrix type="viscoelastic">
+				<t1>0.0000025</t1>
+				<g0>0.0</g0>
+				<g1>1.0</g1>
+				<elastic type="EFD neo-Hookean">
+					<E>0.00003452</E>
+					<v>0.</v>
+					<beta>2.5,2.5,2.5</beta> 
+					<ksi>0.0003452,0.0003452,0.0003452</ksi>
+				</elastic>
+				<!--
+				<elastic type="Holmes-Mow">
+					<E>0.5</E>
+					<v>0.35</v>
+					<beta>0.25</beta>
+					<mat_axis type="vector" >
+						<a>1,0,0</a>
+						<d>0,0.5,0</d>
+					</mat_axis>
+				</elastic>
+				-->
+			</matrix>
+			<common_properties type="angio_properties">
+				<fiber_initializer type="random_fiber_initializer_non_mangling"/>
+				<fragment_seeder type="MD">
+					<number_fragments>100</number_fragments>
+					<initial_vessel_length>42.0</initial_vessel_length>
+				</fragment_seeder>
+				<vessel type="viscoelastic">
+					<t1>0.0000025</t1>
+					<g0>0.0</g0>
+					<g1>1.0</g1>
+					<elastic type="neo-Hookean">
+						<E>0.003452</E>
+						<v>0.0</v>
+					</elastic>
+				</vessel>
+				<brancher type="psuedo_defered_branch">
+					<length_to_branch type="normal_distribution">
+						<mean>80</mean>
+						<stddev>5</stddev>
+					</length_to_branch>
+					<time_to_emerge type="normal_distribution">
+						<mean>0.5</mean>
+						<stddev>0.125</stddev>
+					</time_to_emerge>
+				</brancher>
+				<grow_direction_modifiers>
+					<gdm type="unit_length">
+					</gdm>
+					<gdm type="density_length">
+					</gdm>
+					<gdm type="segment_length">
+					</gdm>
+					<gdm type="default_grow_direction">
+					</gdm>
+					<gdm type="branch_grow_direction">
+					</gdm>
+					<gdm type="gradient_grow_direction">
+						<threshold>0.01</threshold>
+					</gdm>
+					<gdm type="anastamosis_grow_direction">
+					</gdm>
+				</grow_direction_modifiers>
+				<boundary_condition type="bouncy">
+					<mbc type="same"/>
+				</boundary_condition>
+			</common_properties>
+		</material>
+	</Material>
+</febio_spec>

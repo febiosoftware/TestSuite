@@ -1,7 +1,8 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os, glob, platform, shutil, sys, subprocess, difflib, datetime, time
+import os, glob, platform, shutil, sys, subprocess, difflib, datetime, time, csv
+from collections import deque
 from compile_plugins import CompilePlugins
 from logdata import dfield
 from update import new, modified, deleted
@@ -308,7 +309,7 @@ for solver in solvers:
 						'-cnf', config_file]
 			# Test for plugin problems
 			elif 'pi' in base:
-				if base == 'pi03':
+				if base == 'pi08' or base == 'pi09':
 					command = [febios, '-i', f, '-o', logname, '-p', pltname, \
 						'-cnf', 'plugins/' + base + '_' + plat + '.xml', \
 						'-task=angio', 'plugins/angiofe.txt']
@@ -452,6 +453,12 @@ for solver in solvers:
 				result[2] = 'IOError'
 			except OSError:
 				result[2] = 'OSError'
+			
+			# Get the total vessel length from the AngioFE2 out_log.csv file
+			if base == 'pi08' or base == 'pi09':
+				with open('out_log.csv', 'rb') as csvfile:
+					result[11] = deque(csv.reader(csvfile), 1)[0][3]
+			
 			print(result)
 			results.write(str(result) + '\n')
 			
