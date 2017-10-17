@@ -203,31 +203,31 @@ for f in test:
 					if  line.find("Total number of equilibrium iterations") != -1: result[4] = int(line[55:])
 					if  line.find("Total number of right hand evaluations") != -1: result[5] = int(line[55:])
 					if  line.find("Total number of stiffness reformations") != -1: result[6] = int(line[55:])
-					if  line.find("Time in solver") != -1:
-						slv_hr  = int(line[17:18])
-						slv_min = int(line[19:21])
-						slv_sec = int(line[22:24])
-						new_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
-					if  line.find("Elapsed time") != -1:
-						el_hr  = int(line[16:17])
-						el_min = int(line[18:20])
-						el_sec = int(line[21:23])
-						new_el_time = el_hr*3600 + el_min*60 + el_sec
-				for line in fstd:
-					if  line.find("Time in solver") != -1:
-						slv_hr  = int(line[17:18])
-						slv_min = int(line[19:21])
-						slv_sec = int(line[22:24])
-						old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
-					if  line.find("Elapsed time") != -1:
-						el_hr  = int(line[16:17])
-						el_min = int(line[18:20])
-						el_sec = int(line[21:23])
-						old_el_time = el_hr*3600 + el_min*60 + el_sec
-				slv_denom = old_slv_time
-				el_denom = old_el_time
-				if old_slv_time == 0: slv_denom = 1
-				if old_el_time == 0: el_denom = 1
+#					if  line.find("Time in linear solver") != -1:
+#						slv_hr  = int(line[17:18])
+#						slv_min = int(line[19:21])
+#						slv_sec = int(line[22:24])
+#						new_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
+#					if  line.find("Elapsed time") != -1:
+#						el_hr  = int(line[16:17])
+#						el_min = int(line[18:20])
+#						el_sec = int(line[21:23])
+#						new_el_time = el_hr*3600 + el_min*60 + el_sec
+#				for line in fstd:
+#					if  line.find("Time in linear solver") != -1:
+#						slv_hr  = int(line[17:18])
+#						slv_min = int(line[19:21])
+#						slv_sec = int(line[22:24])
+#						old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
+#					if  line.find("Elapsed time") != -1:
+#						el_hr  = int(line[16:17])
+#						el_min = int(line[18:20])
+#						el_sec = int(line[21:23])
+#						old_el_time = el_hr*3600 + el_min*60 + el_sec
+#				slv_denom = old_slv_time
+#				el_denom = old_el_time
+#				if old_slv_time == 0: slv_denom = 1
+#				if old_el_time == 0: el_denom = 1
 				# I decided not to report the time differences.
 				# calculate percent change (in increments of 10%) in solve and elapse times
 				#result[9]  = 10*int(10*(new_slv_time-old_slv_time)/float(slv_denom))

@@ -399,18 +399,18 @@ for solver in solvers:
 								found = 0
 								line_num = 0
 								data1 = 0
-					for line in fstd:
-						if  line.find("Time in solver") != -1:
-							slv_hr  = int(line[17:18])
-							slv_min = int(line[19:21])
-							slv_sec = int(line[22:24])
-							old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
+#					for line in fstd:
+#						if  line.find("Time in solver") != -1:
+#							slv_hr  = int(line[17:18])
+#							slv_min = int(line[19:21])
+#							slv_sec = int(line[22:24])
+#							old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
 							#print "Old solve time", old_slv_time
-						if  line.find("Elapsed time") != -1:
-							el_hr  = int(line[16:17])
-							el_min = int(line[18:20])
-							el_sec = int(line[21:23])
-							old_el_time = el_hr*3600 + el_min*60 + el_sec
+#						if  line.find("Elapsed time") != -1:
+#							el_hr  = int(line[16:17])
+#							el_min = int(line[18:20])
+#							el_sec = int(line[21:23])
+#							old_el_time = el_hr*3600 + el_min*60 + el_sec
 					# calculate percent difference (in incr% increments) in solve and elapse times
 					# I decided not to report the time differences
 					#slv_denom = (new_slv_time + old_slv_time)/2

@@ -8,16 +8,20 @@
 #import filecmp
 #import difflib
 #from datetime import date
-import subprocess
+#import subprocess
 #import smtplib
-#import csv
+import csv
+from collections import deque
 #import time
 #from email.mime.text import MIMEText
 #import struct
 #import fileinput
 
-command =['vc_compile.bat']
-output = subprocess.call(command)
+with open('out_log.csv', 'rb') as f:
+		print deque(csv.reader(f), 1)[0][3]
+	
+#command =['vc_compile.bat']
+#output = subprocess.call(command)
 
 
 #current_dir = os.getcwd()
