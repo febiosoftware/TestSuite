@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 import os, glob, platform, shutil, sys, subprocess, difflib, datetime, time
+from ex_logdata import dfield
 #
 # This is the test suite script.
 # This script runs a list of FEBio files and checks the results
@@ -80,6 +81,9 @@ if time.time() - os.path.getctime(febio) > 72000 and not test_update:
 	results.write("Nothing to do\n")
 	sys.exit("Nothing to do\n")
 
+# These are problems that report extra data fields
+dfield0 = [col[0] for col in dfield]
+
 # keep counters
 norms = 0			# nr of normal terminations
 nerrs = 0			# nr of error terminations
@@ -120,6 +124,17 @@ for f in test:
 	# strip the '.feb' from the input file name
 	base = f.split('.')[0]
 	if base not in exempt:
+
+		# Test for extra data field problems
+		if base in dfield0:
+			df_time = dfield[dfield0.index(base)][1]
+			df_tline = "Time = " + df_time + "\n"
+			df_flg = 1
+			found = 0
+			data1 = 0
+			line_num = 0
+		else: df_flg = 0
+			
 		# define the log and plt files
 		logname = out_dir + base + '.log'
 		logstd = out_dir + base + '_std.log'
@@ -171,7 +186,7 @@ for f in test:
 		# 8: Log diff file size
 		# 9: Solve time ratio new/old
 		#10: Elapsed time ratio new/old
-		else: result = [solver, base, "", 0, 0, 0, 0, 0, 0, 0, 0]
+		else: result = [solver, base, "", 0, 0, 0, 0, 0, 0, 0, 0, ""]
 
 		# check the return value
 		if val==0:
@@ -201,6 +216,16 @@ for f in test:
 					if  line.find("Total number of equilibrium iterations") != -1: result[4] = int(line[55:])
 					if  line.find("Total number of right hand evaluations") != -1: result[5] = int(line[55:])
 					if  line.find("Total number of stiffness reformations") != -1: result[6] = int(line[55:])
+
+					if df_flg:
+						if line.find("Data Record #1") !=-1: data1 = 1
+						if data1: line_num += 1
+						if line.find(df_tline) !=-1 and data1: found = 1
+						if line_num == 6:
+							if found: result[11] = line.rstrip("\n").split(" ")[1]
+							found = 0
+							line_num = 0
+							data1 = 0
 #					if  line.find("Time in linear solver") != -1:
 #						slv_hr  = int(line[17:18])
 #						slv_min = int(line[19:21])
