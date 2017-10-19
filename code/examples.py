@@ -153,11 +153,10 @@ for f in test:
 		# 0: solver
 		# 1: file
 		# 2: Normal/Error termination status
-		# 3: Major iterations
-		# 4: Minor iterations
-		# 5: Final objective value
-		# 6: Plot file size
-		# 7: Log diff file size
+		# 3: Final objective value
+		# 4: Total iterations
+		# 5: Plot file size
+		# 6: Log diff file size
 		if opt: result = [solver, base, "", 0.0, 0, 0, 0]
 
 		# Normal input file
@@ -232,7 +231,7 @@ for f in test:
 				#result[9]  = 10*int(10*(new_slv_time-old_slv_time)/float(slv_denom))
 				#result[10] = 10*int(10*(new_el_time-old_el_time)/float(el_denom))
 			# get the size of the plotfile
-			result[7-opt] = int(os.path.getsize(pltname))
+			result[7-2*opt] = int(os.path.getsize(pltname))
 			#os.remove(pltname)
 			flog.seek(0)
 			fstd.seek(0)
@@ -243,7 +242,6 @@ for f in test:
 			fstd.close()
 			diffsize = os.path.getsize(diffname)
 			#result[8-opt] = diffsize/1000
-			result[7-2*opt] = int(os.path.getsize(pltname))
 		except IOError:
 			result[2] = 'IOError'
 		except OSError:
