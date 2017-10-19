@@ -158,7 +158,7 @@ for f in test:
 		# 5: Final objective value
 		# 6: Plot file size
 		# 7: Log diff file size
-		if opt: result = [solver, base, "", 0, 0, 0.0, 0, 0]
+		if opt: result = [solver, base, "", 0.0, 0, 0, 0]
 
 		# Normal input file
 		# 0: solver
@@ -194,9 +194,8 @@ for f in test:
 			
 			if opt:
 				for line in flog:
-					if line.find("Major iterations"     ) !=-1: result[3] = int(line[43:])
-					if line.find("Minor iterations"     ) !=-1: result[4] = int(line[43:])
-					if line.find("Final objective value") !=-1: result[5] = line.split()[3]
+						if line.find("Final objective value") !=-1: result[3] = line.split()[5]
+						if line.find("Total iterations"     ) !=-1: result[4] = int(line[43:])
 			else:
 				for line in flog:
 					if  line.find("Number of time steps completed"        ) != -1: result[3] = int(line[55:])
@@ -244,7 +243,7 @@ for f in test:
 			fstd.close()
 			diffsize = os.path.getsize(diffname)
 			#result[8-opt] = diffsize/1000
-			result[8-opt] = 0 # decided to ignore this statistic
+			result[7-2*opt] = int(os.path.getsize(pltname))
 		except IOError:
 			result[2] = 'IOError'
 		except OSError:
