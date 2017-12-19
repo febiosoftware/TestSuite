@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This is the multi-domain problem in the Angio2\Examples folder -->
 <febio_spec version="2.5">
 	<Module type="solid"/>
 	<Control>
