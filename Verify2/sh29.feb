@@ -2,7 +2,7 @@
 <!--
 Problem Description:
 Shell(quad8) constrained on edges is compressed by rigid shell(quad8).
-Rigid shell is prescribed z dispalcement of -2 at t=1.
+Rigid shell is prescribed z displacement of -2 at t=1.
 Main Features:
 	quad8 shells
 	sliding-tension-compression contact
@@ -12,11 +12,11 @@ Materials:
 Degrees of Freedom: 10657
 Results
 	Steps Completed: 10
-	Equilibrium Iterations: 32
-	Right Hand Evaluations: 44
-	Siffness Reformations: 32
+	Equilibrium Iterations: 40
+	Right Hand Evaluations: 56
+	Siffness Reformations: 40
 	Other:
-		The maximum effective stress is 0.0333 units at time t=1.
+		The maximum effective stress is 0.0344 units at time t=1.
 Comments:
 -->
 <febio_spec version="2.0">
@@ -36,7 +36,6 @@ Comments:
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
-		<symmetric_stiffness>0</symmetric_stiffness>
 		<analysis type="static"/>
 	</Control>
 	<Globals>
@@ -2671,7 +2670,7 @@ Comments:
 			<elem id="625">649,675,676,650,1950,1976,1951,1949</elem>
 		</Elements>
 		<Elements type="quad8" mat="2" elset="Part3">
-			<elem id="626">1977,1979,1980,1978,1981,1984,1983,1982</elem>
+			<elem id="626">1977,1978,1980,1979,1982,1983,1984,1981</elem>
 		</Elements>
 		<ElementData>
 			<element id="1">
@@ -7381,7 +7380,7 @@ Comments:
 			<quad8 id="625">649,675,676,650,1950,1976,1951,1949</quad8>
 		</Surface>
 		<Surface name="patch2z">
-			<quad8 id="1">1977,1979,1980,1978,1981,1984,1983,1982</quad8>
+			<quad8 id="1">1977,1978,1980,1979,1982,1983,1984,1981</quad8>
 		</Surface>
 	</Geometry>
 	<Boundary>
@@ -7396,18 +7395,18 @@ Comments:
 	</Boundary>
 	<Contact>
 		<contact type="sliding-tension-compression">
-			<laugon>0</laugon>
-			<tolerance>0.01</tolerance>
-			<penalty>1000</penalty>
-			<two_pass>1</two_pass>
+			<laugon>1</laugon>
+			<tolerance>0</tolerance>
+			<penalty>0.1</penalty>
+			<two_pass>0</two_pass>
 			<auto_penalty>1</auto_penalty>
 			<symmetric_stiffness>0</symmetric_stiffness>
 			<search_radius>1</search_radius>
-			<tension>1</tension>
+			<tension>0</tension>
 			<search_tol>0.01</search_tol>
 			<minaug>0</minaug>
 			<maxaug>10</maxaug>
-			<gaptol>0</gaptol>
+			<gaptol>0.01</gaptol>
 			<seg_up>0</seg_up>
 			<surface type="master" set="patch2z"/>
 			<surface type="slave" set="patch1z"/>
