@@ -37,9 +37,6 @@ Comments:
 			<opt_iter>10</opt_iter>
 		</time_stepper>
 		<analysis type="dynamic"/>
-		<alpha>0.9</alpha>
-		<beta>0.3025</beta>
-		<gamma>0.6</gamma>
 		<symmetric_stiffness>0</symmetric_stiffness>
 	</Control>
 	<Globals>
