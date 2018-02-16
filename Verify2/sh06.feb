@@ -351,7 +351,7 @@ Comments:
 		</ElementData>
 	</Geometry>
 	<Boundary>
-		<fix bc="v">
+		<fix bc="sy">
 			<node id="1"/>
 			<node id="5"/>
 			<node id="9"/>
@@ -363,7 +363,7 @@ Comments:
 			<node id="45"/>
 			<node id="52"/>
 		</fix>
-		<fix bc="u">
+		<fix bc="sx">
 			<node id="1"/>
 			<node id="2"/>
 			<node id="3"/>

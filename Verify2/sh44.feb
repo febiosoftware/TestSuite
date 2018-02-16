@@ -385,7 +385,7 @@ Comments:
 	</Geometry>
 	<Boundary>
 		<fix bc="xyz" set="patch-x"/>
-		<fix bc="uvw" set="patch-x"/>
+		<fix bc="sxyz" set="patch-x"/>
 	</Boundary>
 	<Contact>
 		<contact type="rigid" name="RigidInterface02">

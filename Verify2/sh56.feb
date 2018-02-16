@@ -1377,7 +1377,7 @@ Comments:
 	</Geometry>
 	<Boundary>
 		<fix bc="xyz" set="edge"/>
-		<fix bc="uvw" set="edge"/>
+		<fix bc="sxyz" set="edge"/>
 	</Boundary>
 	<Loads>
 		<surface_load type="pressure">

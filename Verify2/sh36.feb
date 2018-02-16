@@ -100,7 +100,7 @@ Comments:
 		</Surface>
 	</Geometry>
 	<Boundary>
-		<fix bc="uvw" set="face">
+		<fix bc="sxyz" set="face">
 		</fix>
 		<prescribe bc="z" lc="1" set="face">1</prescribe>
 	</Boundary>

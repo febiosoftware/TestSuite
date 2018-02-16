@@ -162,7 +162,7 @@ Comments:
 			<node id="2"/>
 			<node id="3"/>
 		</fix>
-		<fix bc="uvw">
+		<fix bc="sxyz">
 			<node id="1"/>
 			<node id="2"/>
 			<node id="3"/>

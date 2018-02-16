@@ -7388,10 +7388,10 @@ Comments:
 		<fix bc="xyz" set="patch1x"/>
 		<fix bc="xyz" set="patch1-y"/>
 		<fix bc="xyz" set="patch1y"/>
-		<fix bc="uvw" set="patch1-x"/>
-		<fix bc="uvw" set="patch1x"/>
-		<fix bc="uvw" set="patch1-y"/>
-		<fix bc="uvw" set="patch1y"/>
+		<fix bc="sxyz" set="patch1-x"/>
+		<fix bc="sxyz" set="patch1x"/>
+		<fix bc="sxyz" set="patch1-y"/>
+		<fix bc="sxyz" set="patch1y"/>
 	</Boundary>
 	<Contact>
 		<contact type="sliding-tension-compression">

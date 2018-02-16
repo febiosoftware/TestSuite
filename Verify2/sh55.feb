@@ -105,7 +105,7 @@ Comments:
 		</Surface>
 	</Geometry>
 	<Boundary>
-		<fix bc="uvw" set="patchz"/>
+		<fix bc="sxyz" set="patchz"/>
 	</Boundary>
 	<Loads>
 		<surface_load type="pressure">

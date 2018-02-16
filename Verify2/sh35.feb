@@ -697,7 +697,7 @@ Comments:
 	</Geometry>
 	<Boundary>
 		<fix bc="xyz" set="patch-x"/>
-		<fix bc="uvw" set="patch-x"/>
+		<fix bc="sxyz" set="patch-x"/>
 		<fix bc="y" set="patchz"/>
 	</Boundary>
 	<Loads>
