@@ -1420,11 +1420,7 @@ Comments:
 			<var type="current density"/>
 			<var type="displacement"/>
 			<var type="effective fluid pressure"/>
-			<var type="effective solute 1 concentration"/>
-			<var type="effective solute 2 concentration"/>
-			<var type="effective solute 3 concentration"/>
-			<var type="effective solute 4 concentration"/>
-			<var type="effective solute 5 concentration"/>
+			<var type="effective solute concentration"/>
 			<var type="electric potential"/>
 			<var type="fixed charge density"/>
 			<var type="fluid flux"/>
@@ -1433,20 +1429,10 @@ Comments:
 			<var type="referential fixed charge density"/>
 			<var type="referential solid volume fraction"/>
 			<var type="relative volume"/>
-			<var type="sbm 1 referential apparent density"/>
-			<var type="sbm 2 referential apparent density"/>
-			<var type="sbm 1 concentration"/>
-			<var type="sbm 2 concentration"/>
-			<var type="solute 1 concentration"/>
-			<var type="solute 2 concentration"/>
-			<var type="solute 3 concentration"/>
-			<var type="solute 4 concentration"/>
-			<var type="solute 5 concentration"/>
-			<var type="solute 1 flux"/>
-			<var type="solute 2 flux"/>
-			<var type="solute 3 flux"/>
-			<var type="solute 4 flux"/>
-			<var type="solute 5 flux"/>
+			<var type="sbm referential apparent density"/>
+			<var type="sbm concentration"/>
+			<var type="solute concentration"/>
+			<var type="solute flux"/>
 			<var type="stress"/>
 			<var type="velocity"/>
 		</plotfile>

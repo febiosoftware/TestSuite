@@ -532,7 +532,7 @@ Comments:
 			<var type="stress"/>
 			<var type="velocity"/>
 			<var type="density"/>
-			<var type="sbm 1 concentration"/>
+			<var type="sbm concentration"/>
 			<var type="referential solid volume fraction"/>
 		</plotfile>
 		<logfile>

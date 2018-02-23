@@ -1159,21 +1159,15 @@ Comments:
 			<var type="current density"/>
 			<var type="displacement"/>
 			<var type="effective fluid pressure"/>
-			<var type="effective solute 1 concentration"/>
-			<var type="effective solute 2 concentration"/>
-			<var type="effective solute 3 concentration"/>
+			<var type="effective solute concentration"/>
 			<var type="electric potential"/>
 			<var type="fixed charge density"/>
 			<var type="fluid flux"/>
 			<var type="fluid pressure"/>
 			<var type="reaction forces"/>
 			<var type="relative volume"/>
-			<var type="solute 1 concentration"/>
-			<var type="solute 2 concentration"/>
-			<var type="solute 3 concentration"/>
-			<var type="solute 1 flux"/>
-			<var type="solute 2 flux"/>
-			<var type="solute 3 flux"/>
+			<var type="solute concentration"/>
+			<var type="solute flux"/>
 			<var type="stress"/>
 		</plotfile>
 		<logfile>

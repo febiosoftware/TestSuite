@@ -2560,13 +2560,7 @@ Comments:
 			<var type="contact gap"/>
 			<var type="contact pressure"/>
 			<var type="displacement"/>
-			<var type="effective fluid pressure"/>
-			<var type="effective solute 1 concentration"/>
-			<var type="fluid flux"/>
-			<var type="fluid pressure"/>
 			<var type="relative volume"/>
-			<var type="solute 1 concentration"/>
-			<var type="solute 1 flux"/>
 			<var type="stress"/>
 		</plotfile>
 		<logfile>

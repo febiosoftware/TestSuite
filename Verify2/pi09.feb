@@ -2400,13 +2400,13 @@
 		<plotfile type="febio2">
 			<var type="displacement"/>
 			<var type="effective fluid pressure"/>
-			<var type="effective solute 1 concentration"/>
+			<var type="effective solute concentration"/>
 			<var type="fluid flux"/>
-			<var type="solute 1 concentration"/>
-			<var type="effective solute 1 concentration"/>
-			<var type="sbm 1 concentration"/>
-			<var type="sbm 1 referential apparent density"/>
-			<var type="solute 1 flux"/>
+			<var type="solute concentration"/>
+			<var type="effective solute concentration"/>
+			<var type="sbm concentration"/>
+			<var type="sbm referential apparent density"/>
+			<var type="solute flux"/>
 			<var type="stress"/>
 			<var type="angio stress"/>
 			<var type="vessel stress"/>
@@ -2414,7 +2414,6 @@
 			<var type="fiber vector"/>
 			<var type="angio ECM alpha"/>
 			<var type="referential solid volume fraction"/>
-			<var type="fluid flux"/>
 			<var type="fluid pressure"/>
 			<var type="osmolarity"/>
 		</plotfile>

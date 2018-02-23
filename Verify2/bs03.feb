@@ -3193,7 +3193,7 @@ Comments:
 			<var type="fluid flux"/>
 			<var type="fluid pressure"/>
 			<var type="relative volume"/>
-			<var type="solute 1 concentration"/>
+			<var type="solute concentration"/>
 			<var type="stress"/>
 		</plotfile>
 		<logfile>

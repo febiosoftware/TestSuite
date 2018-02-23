@@ -1879,8 +1879,8 @@ Comments:
 			<var type="effective fluid pressure"/>
 			<var type="fluid flux"/>
 			<var type="fluid pressure"/>
-			<var type="sbm 1 concentration"/>
-			<var type="sbm 1 referential apparent density"/>
+			<var type="sbm concentration"/>
+			<var type="sbm referential apparent density"/>
 			<var type="density"/>
 			<var type="strain energy density"/>
 			<var type="specific strain energy"/>
