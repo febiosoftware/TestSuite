@@ -5,7 +5,7 @@ Problem Description:
 	Right face of right block is prescribed x displacmenet of 0.5 at t=1.
 Main Features:
 	quad4 shells
-	tied-biphasic contact
+	tied-elastic contact
 Secondary Features:
 Materials:
 	neo-Hookean
@@ -339,13 +339,13 @@ Comments:
 		<prescribe bc="x" lc="1" set="box2x">1</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="tied-biphasic">
+		<contact type="tied-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.05</tolerance>
 			<penalty>100</penalty>
 			<two_pass>1</two_pass>
 			<auto_penalty>1</auto_penalty>
-         			<symmetric_stiffness>0</symmetric_stiffness>
+         		<symmetric_stiffness>0</symmetric_stiffness>
 			<minaug>0</minaug>
 			<maxaug>10</maxaug>
 			<gaptol>0.01</gaptol>
