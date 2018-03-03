@@ -1177,7 +1177,7 @@ Comments:
 		</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="sliding2">
+		<contact type="sliding-biphasic">
 			<laugon>0</laugon>
 			<tolerance>0.05</tolerance>
 			<two_pass>1</two_pass>

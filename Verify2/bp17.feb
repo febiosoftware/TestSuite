@@ -5187,7 +5187,7 @@ Comments:
 		</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="sliding2">
+		<contact type="sliding-biphasic">
 			<laugon>1</laugon>
 			<tolerance>0.2</tolerance>
 			<penalty>1</penalty>

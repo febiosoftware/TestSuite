@@ -660,7 +660,7 @@ Comments:
 			<node id="147" rb="3"></node>
 			<node id="168" rb="3"></node>
 		</contact>
-		<contact type="sliding2">
+		<contact type="sliding-biphasic">
 			<laugon>0</laugon>
 			<tolerance>0.2</tolerance>
 			<penalty>10</penalty>

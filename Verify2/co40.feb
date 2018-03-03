@@ -3520,7 +3520,7 @@ Comments:
 			<node id="1429" rb="2"></node>
 			<node id="1430" rb="2"></node>
 		</contact>
-		<contact type="sliding2">
+		<contact type="sliding-biphasic">
 			<laugon>1</laugon>
 			<tolerance>0.5</tolerance>
 			<penalty>1</penalty>
