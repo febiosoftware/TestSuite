@@ -5,7 +5,7 @@ Shell(quad8) constrained on edges is compressed by rigid shell(quad8).
 Rigid shell is prescribed z displacement of -2 at t=1.
 Main Features:
 	quad8 shells
-	sliding-tension-compression contact
+	sliding-elastic contact
 Secondary Features:
 Materials:
 	neo-Hookean
@@ -7394,7 +7394,7 @@ Comments:
 		<fix bc="sxyz" set="patch1y"/>
 	</Boundary>
 	<Contact>
-		<contact type="sliding-tension-compression">
+		<contact type="sliding-elastic">
 			<laugon>1</laugon>
 			<tolerance>0</tolerance>
 			<penalty>0.1</penalty>

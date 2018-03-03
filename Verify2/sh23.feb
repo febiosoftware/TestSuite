@@ -6,7 +6,7 @@ Problem Description:
 	Two shells have same stiffness to converge.
 Main Features:
 	quad4 shells
-	sliding-tension-compression contact
+	sliding-elastic contact
 Secondary Features:
 Materials:
 	neo-Hookean
@@ -5451,7 +5451,7 @@ Comments:
 		<prescribe bc="z" lc="2" set="box2z">1</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="sliding-tension-compression">
+		<contact type="sliding-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
 			<penalty>0.01</penalty>

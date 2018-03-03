@@ -6,7 +6,7 @@ Problem Description:
 	Top face of top box prescribed z displacement of -1.2 in time t=1.
 Main Features:
 	quad8 shells
-	sliding-tension-compression contact
+	sliding-elastic contact
 Secondary Features:
 Materials:
 	neo-Hookean
@@ -185,7 +185,7 @@ Comments:
 		<prescribe bc="z" lc="1" set="box2z">1</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="sliding-tension-compression">
+		<contact type="sliding-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
 			<penalty>100</penalty>

@@ -4,7 +4,7 @@ Problem Description:
 	An element with friction has a z-displacement of -0.1 units from time t=0 to t=0.2
 	and an x-displacement of 3 units from time t=0.2 to t=1 along a rigid body.
 Main Features:
-	Sliding Contact with Friction using sliding-tension-compression
+	Sliding Contact with Friction using sliding-elastic
 	Rigid Bodies
 Secondary Features:
 	Broyden method
@@ -114,7 +114,7 @@ Comments:
 		</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="sliding-tension-compression">
+		<contact type="sliding-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.001</tolerance>
 			<penalty>5</penalty>

@@ -714,7 +714,7 @@ Comments:
 		<prescribe bc="c5" lc="6" set="Nodeset06">1</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="sliding-tension-compression" name="TCInterface01">
+		<contact type="sliding-elastic" name="TCInterface01">
 			<laugon>0</laugon>
 			<tolerance>0.2</tolerance>
 			<gaptol>0</gaptol>

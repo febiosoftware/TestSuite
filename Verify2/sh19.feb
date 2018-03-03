@@ -7,7 +7,7 @@ Problem Description:
 	Top shell is 100 times stiffer to converge.
 Main Features:
 	quad4 shells
-	sliding-tension-compression contact
+	sliding-elastic contact
 Secondary Features:
 Materials:
 	Mooney-Rivlin
@@ -607,7 +607,7 @@ Comments:
 		<prescribe bc="z" lc="1" set="box2z">1</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="sliding-tension-compression">
+		<contact type="sliding-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
 			<penalty>100</penalty>

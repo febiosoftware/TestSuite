@@ -10,7 +10,7 @@ Main Features:
 Secondary Features:
 	Non-uniform element thickness in r-direction.
 	Axisymmetry modeled using wedge geometry and symmetry plane with 
-	sliding-tension-compression contact interface.
+	sliding-elastic contact interface.
 Materials:
 	Neo-Hookean
 	Biphasic
@@ -483,7 +483,7 @@ Comments:
 		</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="sliding-tension-compression">
+		<contact type="sliding-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.2</tolerance>
 			<gaptol>0</gaptol>

@@ -5,7 +5,7 @@ Problem Description:
 	from time t=0 to t=1 and then a displacement of 3 units in the x-direction from time t=1 to
 	t=4.  It presses down then slides with friction along a softer block.
 Main Features:
-	Sliding Contact with Friction using sliding-tension-compression
+	Sliding Contact with Friction using sliding-elastic
 Secondary Features:
 	Broyden method
 Materials:
@@ -5625,7 +5625,7 @@ Comments:
 		</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="sliding-tension-compression">
+		<contact type="sliding-elastic">
 			<laugon>1</laugon>
 			<tolerance>0.01</tolerance>
 			<penalty>5</penalty>

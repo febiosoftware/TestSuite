@@ -500,7 +500,7 @@ Comments:
 		</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="sliding-tension-compression">
+		<contact type="sliding-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.2</tolerance>
 			<penalty>10000</penalty>
@@ -511,7 +511,7 @@ Comments:
 			<surface type="master" set="MasterSurface01"/>
 			<surface type="slave" set="SlaveSurface01"/>
 		</contact>
-		<contact type="sliding-tension-compression">
+		<contact type="sliding-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.2</tolerance>
 			<penalty>1000</penalty>

@@ -5,7 +5,7 @@ Problem Description:
 	Rigid box is prescribed z dispalcement of -2 at t=1.
 Main Features:
 	quad4 shells
-	sliding-tension-compression contact
+	sliding-elastic contact
 Secondary Features:
 Materials:
 	neo-Hookean
@@ -4690,7 +4690,7 @@ Comments:
 		<fix bc="xyz" set="patchy"/>
 	</Boundary>
 	<Contact>
-		<contact type="sliding-tension-compression">
+		<contact type="sliding-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.01</tolerance>
 			<penalty>0.01</penalty>
