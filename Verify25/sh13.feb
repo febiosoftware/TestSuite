@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<febio_spec version="2.5">
+	<Module type="solid"/>
+	<Control>
+		<time_steps>10</time_steps>
+		<step_size>0.1</step_size>
+		<max_refs>15</max_refs>
+		<max_ups>0</max_ups>
+		<diverge_reform>1</diverge_reform>
+		<reform_each_time_step>1</reform_each_time_step>
+		<dtol>0.001</dtol>
+		<etol>0.01</etol>
+		<rtol>0</rtol>
+		<lstol>0.9</lstol>
+		<min_residual>1e-020</min_residual>
+		<qnmethod>0</qnmethod>
+		<time_stepper>
+			<dtmin>0.01</dtmin>
+			<dtmax>0.1</dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+		</time_stepper>
+		<analysis type="static"/>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="Material1" type="neo-Hookean">
+			<density>1</density>
+			<E>1e+006</E>
+			<v>0</v>
+		</material>
+	</Material>
+	<Geometry>
+		<Nodes name="sh13">
+			<node id="1"> 0.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="2"> 0.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="3"> 0.0000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="4"> 5.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="5"> 5.0000000e-001, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="6"> 1.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="7"> 1.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="8"> 1.0000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="9"> 1.5000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="10"> 1.5000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="11"> 2.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="12"> 2.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="13"> 2.0000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="14"> 2.5000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="15"> 2.5000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="16"> 3.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="17"> 3.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="18"> 3.0000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="19"> 3.5000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="20"> 3.5000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="21"> 4.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="22"> 4.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="23"> 4.0000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="24"> 4.5000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="25"> 4.5000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="26"> 5.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="27"> 5.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="28"> 5.0000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="29"> 5.5000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="30"> 5.5000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="31"> 6.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="32"> 6.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="33"> 6.0000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="34"> 6.5000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="35"> 6.5000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="36"> 7.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="37"> 7.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="38"> 7.0000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="39"> 7.5000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="40"> 7.5000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="41"> 8.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="42"> 8.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="43"> 8.0000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="44"> 8.5000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="45"> 8.5000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="46"> 9.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="47"> 9.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="48"> 9.0000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="49"> 9.5000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="50"> 9.5000000e+000, 1.0000000e+000, 0.0000000e+000</node>
+			<node id="51"> 1.0000000e+001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="52"> 1.0000000e+001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="53"> 1.0000000e+001, 1.0000000e+000, 0.0000000e+000</node>
+		</Nodes>
+		<Elements type="quad8" mat="1" name="Part2">
+			<elem id="1">     1,     6,     8,     3,     4,     7,     5,     2</elem>
+			<elem id="2">     6,    11,    13,     8,     9,    12,    10,     7</elem>
+			<elem id="3">    11,    16,    18,    13,    14,    17,    15,    12</elem>
+			<elem id="4">    16,    21,    23,    18,    19,    22,    20,    17</elem>
+			<elem id="5">    21,    26,    28,    23,    24,    27,    25,    22</elem>
+			<elem id="6">    26,    31,    33,    28,    29,    32,    30,    27</elem>
+			<elem id="7">    31,    36,    38,    33,    34,    37,    35,    32</elem>
+			<elem id="8">    36,    41,    43,    38,    39,    42,    40,    37</elem>
+			<elem id="9">    41,    46,    48,    43,    44,    47,    45,    42</elem>
+			<elem id="10">    46,    51,    53,    48,    49,    52,    50,    47</elem>
+		</Elements>
+		<NodeSet name="FixedDisplacement01">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+		</NodeSet>
+		<NodeSet name="FixedShellDisplacement01">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+		</NodeSet>
+		<NodeSet name="ForceNodeset24">
+			<node id="51"/>
+			<node id="53"/>
+		</NodeSet>
+		<ElementSet name="unnamed_set01">
+			<elem id="1"/>
+		</ElementSet>
+	</Geometry>
+	<MeshData>
+		<ElementData var="shell thickness" elem_set="Part2">
+			<elem lid="1">0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1</elem>
+			<elem lid="2">0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1</elem>
+			<elem lid="3">0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1</elem>
+			<elem lid="4">0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1</elem>
+			<elem lid="5">0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1</elem>
+			<elem lid="6">0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1</elem>
+			<elem lid="7">0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1</elem>
+			<elem lid="8">0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1</elem>
+			<elem lid="9">0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1</elem>
+			<elem lid="10">0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1</elem>
+		</ElementData>
+	</MeshData>
+	<Boundary>
+		<fix bc="x,y,z" node_set="FixedDisplacement01"/>
+		<fix bc="sx,sy,sz" node_set="FixedShellDisplacement01"/>
+	</Boundary>
+	<Loads>
+		<nodal_load bc="z" node_set="ForceNodeset24">
+			<scale lc="1">-0.0005</scale>
+		</nodal_load>
+	</Loads>
+	<LoadData>
+		<loadcurve id="1" type="smooth">
+			<point>0,0</point>
+			<point>1,1</point>
+		</loadcurve>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="shell director"/>
+			<var type="shell strain"/>
+			<var type="shell thickness"/>
+			<var type="stress"/>
+		</plotfile>
+		<logfile>
+			<element_data data="sx" elem_set="unnamed_set01"/>
+		</logfile>
+	</Output>
+</febio_spec>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<febio_spec version="2.5">
+	<Module type="solid"/>
+	<Control>
+		<time_steps>72</time_steps>
+		<step_size>0.5</step_size>
+		<max_refs>15</max_refs>
+		<max_ups>0</max_ups>
+		<diverge_reform>1</diverge_reform>
+		<reform_each_time_step>1</reform_each_time_step>
+		<dtol>0.001</dtol>
+		<etol>0.01</etol>
+		<rtol>0</rtol>
+		<lstol>0.9</lstol>
+		<min_residual>1e-020</min_residual>
+		<qnmethod>0</qnmethod>
+		<time_stepper>
+			<dtmin>0.0001</dtmin>
+			<dtmax>0.5</dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+		</time_stepper>
+		<analysis type="dynamic"/>
+		<alpha>0.5</alpha>
+		<beta>0.5</beta>
+		<gamma>1</gamma>
+		<symmetric_stiffness>0</symmetric_stiffness>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="Ground" type="rigid body">
+			<density>1e-009</density>
+			<center_of_mass>0,0,0</center_of_mass>
+		</material>
+		<material id="2" name="Crank" type="rigid body">
+			<density>1e-009</density>
+			<center_of_mass>0,0,0</center_of_mass>
+		</material>
+		<material id="3" name="Conrod" type="rigid body">
+			<density>1e-009</density>
+		</material>
+		<material id="4" name="Slider" type="rigid body">
+			<density>1e-009</density>
+		</material>
+	</Material>
+	<Geometry>
+		<Nodes name="rj04">
+			<node id="1"> 0.0000000e+000,-5.0000000e+000,-2.2204460e-016</node>
+			<node id="2"> 0.0000000e+000,-5.0000000e+000, 2.0000000e+000</node>
+			<node id="3"> 0.0000000e+000, 5.0000000e+000,-2.2204460e-016</node>
+			<node id="4"> 0.0000000e+000, 5.0000000e+000, 2.0000000e+000</node>
+			<node id="5"> 3.0000000e+001,-5.0000000e+000,-2.2204460e-016</node>
+			<node id="6"> 3.0000000e+001,-5.0000000e+000, 2.0000000e+000</node>
+			<node id="7"> 3.0000000e+001, 5.0000000e+000,-2.2204460e-016</node>
+			<node id="8"> 3.0000000e+001, 5.0000000e+000, 2.0000000e+000</node>
+			<node id="9"> 3.0000000e+001,-5.0000000e+000,-2.0000000e+000</node>
+			<node id="10"> 3.0000000e+001,-5.0000000e+000, 0.0000000e+000</node>
+			<node id="11"> 3.0000000e+001, 5.0000000e+000,-2.0000000e+000</node>
+			<node id="12"> 3.0000000e+001, 5.0000000e+000, 0.0000000e+000</node>
+			<node id="13"> 1.2000000e+002,-5.0000000e+000,-2.0000000e+000</node>
+			<node id="14"> 1.2000000e+002,-5.0000000e+000, 0.0000000e+000</node>
+			<node id="15"> 1.2000000e+002, 5.0000000e+000,-2.0000000e+000</node>
+			<node id="16"> 1.2000000e+002, 5.0000000e+000, 0.0000000e+000</node>
+			<node id="17"> 1.0500000e+002,-1.0000000e+001,-2.2204460e-016</node>
+			<node id="18"> 1.0500000e+002,-1.0000000e+001, 2.0000000e+000</node>
+			<node id="19"> 1.0500000e+002, 1.0000000e+001,-2.2204460e-016</node>
+			<node id="20"> 1.0500000e+002, 1.0000000e+001, 2.0000000e+000</node>
+			<node id="21"> 1.3500000e+002,-1.0000000e+001,-2.2204460e-016</node>
+			<node id="22"> 1.3500000e+002,-1.0000000e+001, 2.0000000e+000</node>
+			<node id="23"> 1.3500000e+002, 1.0000000e+001,-2.2204460e-016</node>
+			<node id="24"> 1.3500000e+002, 1.0000000e+001, 2.0000000e+000</node>
+		</Nodes>
+		<Elements type="hex8" mat="2" name="Part1">
+			<elem id="1">     1,     5,     7,     3,     2,     6,     8,     4</elem>
+		</Elements>
+		<Elements type="hex8" mat="3" name="Part2">
+			<elem id="2">     9,    13,    15,    11,    10,    14,    16,    12</elem>
+		</Elements>
+		<Elements type="hex8" mat="4" name="Part3">
+			<elem id="3">    17,    21,    23,    19,    18,    22,    24,    20</elem>
+		</Elements>
+	</Geometry>
+	<Boundary>
+		<rigid_body mat="1">
+			<fixed bc="x"/>
+			<fixed bc="y"/>
+			<fixed bc="z"/>
+			<fixed bc="Rx"/>
+			<fixed bc="Ry"/>
+			<fixed bc="Rz"/>
+		</rigid_body>
+	</Boundary>
+	<Constraints>
+		<constraint type="rigid revolute joint" name="Joint01 ground-crank">
+			<body_a>1</body_a>
+			<body_b>2</body_b>
+			<tolerance>0</tolerance>
+			<gaptol>0.0001</gaptol>
+			<angtol>0.0001</angtol>
+			<force_penalty>1e+012</force_penalty>
+			<moment_penalty>1e+020</moment_penalty>
+			<joint_origin>0,0,0</joint_origin>
+			<rotation_axis>0,0,1</rotation_axis>
+			<transverse_axis>1,0,0</transverse_axis>
+			<minaug>0</minaug>
+			<maxaug>10</maxaug>
+			<prescribed_rotation>1</prescribed_rotation>
+			<rotation lc="1">1</rotation>
+			<moment>0</moment>
+		</constraint>
+		<constraint type="rigid revolute joint" name="Joint02 crank-conrod">
+			<body_a>2</body_a>
+			<body_b>3</body_b>
+			<tolerance>0</tolerance>
+			<gaptol>0.0001</gaptol>
+			<angtol>0.0001</angtol>
+			<force_penalty>1e+012</force_penalty>
+			<moment_penalty>1e+016</moment_penalty>
+			<joint_origin>30,0,0</joint_origin>
+			<rotation_axis>0,0,1</rotation_axis>
+			<transverse_axis>1,0,0</transverse_axis>
+			<minaug>0</minaug>
+			<maxaug>10</maxaug>
+			<prescribed_rotation>0</prescribed_rotation>
+			<rotation>0</rotation>
+			<moment>0</moment>
+		</constraint>
+		<constraint type="rigid revolute joint" name="Joint03 conrod-slider">
+			<body_a>3</body_a>
+			<body_b>4</body_b>
+			<tolerance>0</tolerance>
+			<gaptol>0.0001</gaptol>
+			<angtol>0.0001</angtol>
+			<force_penalty>1e+012</force_penalty>
+			<moment_penalty>1e+016</moment_penalty>
+			<joint_origin>130,0,0</joint_origin>
+			<rotation_axis>0,0,1</rotation_axis>
+			<transverse_axis>1,0,0</transverse_axis>
+			<minaug>0</minaug>
+			<maxaug>10</maxaug>
+			<prescribed_rotation>0</prescribed_rotation>
+			<rotation>0</rotation>
+			<moment>0</moment>
+		</constraint>
+		<constraint type="rigid prismatic joint" name="Joint04 ground-slider">
+			<body_a>1</body_a>
+			<body_b>4</body_b>
+			<tolerance>0</tolerance>
+			<gaptol>0.0001</gaptol>
+			<angtol>0.0001</angtol>
+			<force_penalty>1e+012</force_penalty>
+			<moment_penalty>1e+016</moment_penalty>
+			<joint_origin>0,0,0</joint_origin>
+			<translation_axis>1,0,0</translation_axis>
+			<transverse_axis>0,1,0</transverse_axis>
+			<minaug>0</minaug>
+			<maxaug>10</maxaug>
+			<prescribed_translation>0</prescribed_translation>
+			<translation>0</translation>
+			<force>0</force>
+		</constraint>
+	</Constraints>
+	<Initial>
+		<rigid_body mat="2">
+			<initial_velocity>0,0,0</initial_velocity>
+		</rigid_body>
+		<rigid_body mat="2">
+			<initial_angular_velocity>0,0,0.174533</initial_angular_velocity>
+		</rigid_body>
+		<rigid_body mat="3">
+			<initial_velocity>0,2.61799,0</initial_velocity>
+		</rigid_body>
+		<rigid_body mat="3">
+			<initial_angular_velocity>0,0,-0.0581776</initial_angular_velocity>
+		</rigid_body>
+	</Initial>
+	<LoadData>
+		<loadcurve id="1" type="smooth">
+			<point>0,0</point>
+			<point>36,6.283185307</point>
+		</loadcurve>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="acceleration"/>
+			<var type="displacement"/>
+			<var type="reaction forces"/>
+			<var type="rigid acceleration"/>
+			<var type="rigid angular acceleration"/>
+			<var type="rigid angular position"/>
+			<var type="rigid angular velocity"/>
+			<var type="rigid force"/>
+			<var type="rigid kinetic energy"/>
+			<var type="rigid position"/>
+			<var type="rigid torque"/>
+			<var type="rigid velocity"/>
+			<var type="stress"/>
+			<var type="velocity"/>
+		</plotfile>
+		<logfile>
+			<rigid_body_data data="Fy">4</rigid_body_data>
+			<rigid_connector_data file="rj04.dat" data="RCFx;RCFy;RCFz;RCMx;RCMy;RCMz">1,2,3,4</rigid_connector_data>
+		</logfile>
+	</Output>
+</febio_spec>

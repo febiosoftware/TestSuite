@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<febio_spec version="2.5">
+	<Module type="solid"/>
+	<Control>
+		<time_steps>10</time_steps>
+		<step_size>0.1</step_size>
+		<max_refs>15</max_refs>
+		<max_ups>0</max_ups>
+		<diverge_reform>1</diverge_reform>
+		<reform_each_time_step>1</reform_each_time_step>
+		<dtol>0.001</dtol>
+		<etol>0.01</etol>
+		<rtol>0</rtol>
+		<lstol>0.9</lstol>
+		<min_residual>1e-020</min_residual>
+		<qnmethod>0</qnmethod>
+		<time_stepper>
+			<dtmin>0.01</dtmin>
+			<dtmax>0.1</dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+		</time_stepper>
+		<analysis type="static"/>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>293</T>
+			<R>0.008314</R>
+			<Fc>0.0965</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="shell2" type="neo-Hookean">
+			<density>1</density>
+			<E>1</E>
+			<v>0</v>
+		</material>
+	</Material>
+	<Geometry>
+		<Nodes name="sh55">
+			<node id="1">-5.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="2">-5.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="3"> 5.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="4"> 5.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="5"> 0.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="6">-5.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="7"> 0.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="8"> 5.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+		</Nodes>
+		<Elements type="quad8" mat="1" name="Part3">
+			<elem id="1">     1,     3,     4,     2,     5,     8,     7,     6</elem>
+		</Elements>
+		<NodeSet name="unnamed_set01">
+			<node id="4"/>
+		</NodeSet>
+		<NodeSet name="patchz">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+		</NodeSet>
+		<NodeSet name="unnamed_set01">
+			<node id="4"/>
+		</NodeSet>
+		<Surface name="patchz">
+			<quad8 id="1">     1,     3,     4,     2,     5,     8,     7,     6</quad8>
+		</Surface>
+	</Geometry>
+	<MeshData>
+		<ElementData var="shell thickness" elem_set="Part3">
+			<elem lid="1">0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01</elem>
+		</ElementData>
+	</MeshData>
+	<Boundary>
+		<fix bc="sx,sy,sz" node_set="patchz"/>
+	</Boundary>
+	<Loads>
+		<surface_load type="pressure" surface="patchz">
+			<pressure lc="1">0.1</pressure>
+			<linear>0</linear>
+		</surface_load>
+	</Loads>
+	<LoadData>
+		<loadcurve id="1" type="linear">
+			<point>0,0</point>
+			<point>1,1</point>
+		</loadcurve>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="relative volume"/>
+			<var type="shell director"/>
+			<var type="shell strain"/>
+			<var type="stress"/>
+		</plotfile>
+		<logfile>
+			<node_data data="z" node_set="unnamed_set01"/>
+		</logfile>
+	</Output>
+</febio_spec>
