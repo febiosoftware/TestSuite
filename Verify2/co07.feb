@@ -5621,13 +5621,12 @@ Comments:
 		</prescribe>
 	</Boundary>
 	<Contact>
-		<contact type="sliding-biphasic">
+		<contact type="sliding-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.05</tolerance>
 			<penalty>0.01</penalty>
 			<two_pass>1</two_pass>
 			<auto_penalty>1</auto_penalty>
-			<pressure_penalty>0</pressure_penalty>
 			<symmetric_stiffness>1</symmetric_stiffness>
 			<search_radius>1</search_radius>
 			<surface type="master" set="MasterSurface01"/>

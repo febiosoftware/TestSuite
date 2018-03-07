@@ -3520,13 +3520,12 @@ Comments:
 			<node id="1429" rb="2"></node>
 			<node id="1430" rb="2"></node>
 		</contact>
-		<contact type="sliding-biphasic">
+		<contact type="sliding-elastic">
 			<laugon>1</laugon>
 			<tolerance>0.5</tolerance>
 			<penalty>1</penalty>
 			<two_pass>0</two_pass>
 			<auto_penalty>1</auto_penalty>
-			<pressure_penalty>0</pressure_penalty>
 			<symmetric_stiffness>0</symmetric_stiffness>
 			<search_radius>1</search_radius>
 			<surface type="master" set="MasterSurface00"/>

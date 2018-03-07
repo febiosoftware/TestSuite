@@ -67,11 +67,11 @@ Comments:
 			<node id="7">  5.0000000e-01,  5.0000000e-01,  0.0000000e+00</node>
 			<node id="8">  5.0000000e-01,  5.0000000e-01,  1.0000000e+00</node>
 		</Nodes>
-		<Elements type="quad4" mat="1" elset="Part2">
-			<elem id="2">     2,     6,     8,     4</elem>
-		</Elements>
 		<Elements type="hex8" mat="2" elset="Part1">
 			<elem id="1">     1,     5,     7,     3,     2,     6,     8,     4</elem>
+		</Elements>
+		<Elements type="quad4" mat="1" elset="Part2">
+			<elem id="2">     2,     6,     8,     4</elem>
 		</Elements>
 		<ElementData>
 			<element id="2">

@@ -79,10 +79,10 @@ Comments:
 			<node id="19">5.0000000e-01,5.0000000e-01,5.0000000e-01</node>
 			<node id="20">5.0000000e-01,5.0000000e-01,1.0000000e+00</node>
 		</Nodes>
-		<Elements type="hex20" mat="1" elset="Part3">
+		<Elements type="hex20" mat="1" elset="Part1">
 			<elem id="1">1,13,18,6,3,15,20,8,9,16,11,4,10,17,12,5,2,14,19,7</elem>
 		</Elements>
-		<Elements type="quad8" mat="2" elset="Part3">
+		<Elements type="quad8" mat="2" elset="Part2">
 			<elem id="2">3,15,20,8,10,17,12,5</elem>
 		</Elements>
 		<ElementData>

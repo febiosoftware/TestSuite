@@ -13065,7 +13065,7 @@ Comments:
 			<node id="1303"/>
 			<node id="1324"/>
 		</NodeSet>
-		<Surface name="FluidRotationalVelocity2">
+		<Surface name="FluidRotationalVelocity1">
 			<quad4 id="1">    21,    42,   714,   693</quad4>
 			<quad4 id="2">    42,    63,   735,   714</quad4>
 			<quad4 id="3">    63,    84,   756,   735</quad4>
@@ -13139,7 +13139,7 @@ Comments:
 		<fix bc="ef" node_set="FixedFluidDilatation1"/>
 	</Boundary>
 	<Loads>
-		<surface_load type="fluid rotational velocity" surface="FluidRotationalVelocity2">
+		<surface_load type="fluid rotational velocity" surface="FluidRotationalVelocity1">
 			<angular_speed lc="1">2</angular_speed>
 			<axis>  0.0000000e+00,  0.0000000e+00,  1.0000000e+00</axis>
 			<origin>  0.0000000e+00,  0.0000000e+00,  0.0000000e+00</origin>

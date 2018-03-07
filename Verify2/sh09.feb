@@ -42,7 +42,7 @@ Comments:
 		<plot_level>PLOT_DEFAULT</plot_level>
 	</Control>
 	<Material>
-		<material id="1" name="membrane" type="St.Venant-Kirchhoff">
+		<material id="1" name="membrane" type="isotropic elastic">
 			<E>1.396e+006</E>
 			<v>0.386</v>
 		</material>

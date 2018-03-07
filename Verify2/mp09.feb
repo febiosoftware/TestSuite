@@ -1208,7 +1208,7 @@ Comments:
 			<ptol>0</ptol>
 			<penalty>10</penalty>
 			<auto_penalty>1</auto_penalty>
-			<two_pass>2</two_pass>
+			<two_pass>1</two_pass>
 			<search_tol>0.01</search_tol>
 			<pressure_penalty>10</pressure_penalty>
 			<concentration_penalty>10</concentration_penalty>

@@ -96,10 +96,10 @@ Comments:
 			<node id="31">5.0000000e-01,5.0000000e-01,0.0000000e+00</node>
 			<node id="32">5.0000000e-01,5.0000000e-01,5.0000000e-01</node>
 		</Nodes>
-		<Elements type="hex20" mat="3" elset="Part3">
+		<Elements type="hex20" mat="3" elset="Part1">
 			<elem id="1">1,13,18,6,3,15,20,8,9,16,11,4,10,17,12,5,2,14,19,7</elem>
 		</Elements>
-		<Elements type="hex20" mat="1" elset="Part3">
+		<Elements type="hex20" mat="1" elset="Part2">
 			<elem id="2">21,28,31,24,1,13,18,6,26,30,27,23,9,16,11,4,22,29,32,25</elem>
 		</Elements>
 		<Elements type="quad8" mat="2" elset="Part3">
