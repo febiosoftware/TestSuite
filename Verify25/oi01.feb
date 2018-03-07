@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Optimization input file for op01.feb.  One end of a cylindrical tube of Veronda-Westmann material
+	is rigidly connected to a rigid body that is displaced 1 unit in the z-direction at t = 6.
+Main Features:
+	Optimization
+Secondary Features:
+	
+Materials:
+	Veronda-Westmann
+	Rigid body
+Degrees of Freedom: 5953
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 29
+	Right Hand Evaluations: 39
+	Siffness Reformations: 29
+	Other:
+		The maximum effective Lagrange strain is 0.32 at time t = 6.
+		Note that these results are for the optimized parameters:
+		VWMaterial.c1   : 0.01
+		VWMaterial.c2   : 9.2333
+Comments:
+	
+-->
 <febio_spec version="2.5">
 	<Module type="solid"/>
 	<Control>
