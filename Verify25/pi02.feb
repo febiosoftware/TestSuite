@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A circular template is warped to a square target using the warping plugin.
+Main Features:
+	Plugin
+	Warping
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 15876
+Results:
+	Steps Completed: 12
+	Equilibrium Iterations: 66
+	Right Hand Evaluations: 87
+	Siffness Reformations: 14
+	Other:
+		The x-displacement of node 6338 is 3.27678 at time t=1.
+Comments:
+	
+-->
 <febio_spec version="2.5">
 	<Module type="solid"/>
 	<Control>
@@ -12587,9 +12608,6 @@
 			<elem id="4095">  8315,  8445,  8447,  8317,  8316,  8446,  8448,  8318</elem>
 			<elem id="4096">  8317,  8447,  8449,  8319,  8318,  8448,  8450,  8320</elem>
 		</Elements>
-		<NodeSet name="unnamed_set01">
-			<node id="6338"/>
-		</NodeSet>
 		<NodeSet name="FixedNodeset01">
 			<node id="1"/>
 			<node id="2"/>
@@ -21564,13 +21582,43 @@
 		<fix bc="x,y" node_set="FixedNodeset01"/>
 		<fix bc="z" node_set="FixedNodeset02"/>
 	</Boundary>
+	<Constraints>
+		<constraint type="warp-image">
+			<template file="plugins/template.raw">
+				<size>64,64,1</size>
+			</template>
+			<target file="plugins/target.raw">
+				<size>64,64,1</size>
+			</target>
+			<range_min>0,0,0</range_min>
+			<range_max>64,64,0</range_max>
+			<penalty lc="1">1</penalty>
+			<blur lc="2">1</blur>
+			<laugon>1</laugon>
+			<altol>0.1</altol>
+		</constraint>
+	</Constraints>
+	<LoadData>
+		<loadcurve id="1" type="linear">
+			<loadpoint>0.0,0</loadpoint>
+			<loadpoint>0.5,10</loadpoint>
+			<loadpoint>1.0,50</loadpoint>
+		</loadcurve>
+		<loadcurve id="2" type="linear">
+			<loadpoint>0.0,10</loadpoint>
+			<loadpoint>1.0, 0</loadpoint>
+		</loadcurve>
+	</LoadData>
 	<Output>
 		<plotfile type="febio">
 			<var type="displacement"/>
 			<var type="stress"/>
+			<var type="warp-template"/>
+			<var type="warp-target"/>
+			<var type="warp-energy"/>
 		</plotfile>
 		<logfile>
-			<node_data data="ux" node_set="unnamed_set01"/>
+			<node_data data="ux">6338</node_data>
 		</logfile>
 	</Output>
 </febio_spec>

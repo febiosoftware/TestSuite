@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	PreStrain Plugin using the pre-strain uncoupled elastic material and element data F0. This is the same as example problem test9_ps.feb.
+Main Features:
+	Plugin
+	PreStrain
+Secondary Features:
+	
+Materials:
+	pre-strain uncoupled elastic
+	trans iso Mooney-Rivlin
+Degrees of Freedom: 468
+Results:
+	Steps Completed: 1
+	Equilibrium Iterations: 15
+	Right Hand Evaluations: 15
+	Siffness Reformations: 2
+	Other:
+		The 1st principal stress for element 65 is 10.9751 at time t=1.
+Comments:
+	
+-->
 <febio_spec version="2.5">
 	<Module type="solid"/>
 	<Control>
@@ -30,7 +52,20 @@
 		</Constants>
 	</Globals>
 	<Material>
-		<material id="1" name="Material1"></material>
+		<material id="1" name="Material1" type="prestrain elastic"> 
+			<density>1</density>
+			<prestrain type="prestrain gradient"/>
+			<elastic type="coupled trans-iso Mooney-Rivlin">
+				<c1>4.36</c1>
+				<c2>0</c2>
+				<c3>2.4</c3>
+				<c4>30.6</c4>
+				<c5>323</c5>
+				<k>100</k>
+				<lambda>1.055</lambda>
+			</elastic>
+			<fiber type="local">1,2,4</fiber>
+		</material>
 	</Material>
 	<Geometry>
 		<Nodes name="pi06">

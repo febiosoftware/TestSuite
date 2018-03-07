@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- the offset for all measurements is 10^14-->
+<!-- This is the multiphasic problem in the Angio2\Examples folder -->
 <febio_spec version="2.5">
 	<Module type="multiphasic"/>
 	<Globals>
 		<Constants>
-			<T>298</T>
+		<!--
+			<T>293</T>
+			<R>8.314</R>
+			<Fc>96.485</Fc>
+			
+			<T>293</T>
+			<R>8.314</R>
+			<Fc>0.96485</Fc>
+			-->
 			<R>6.2063</R>
-			<Fc>9.6485e+022</Fc>
+			<T>298</T>
+			<Fc>96485e18</Fc>
+			<seed>1393430475</seed>
 		</Constants>
 		<Solutes>
 			<solute id="1" name="VEGF165">
@@ -17,13 +29,92 @@
 	</Globals>
 	<Material>
 		<material id="1" name="s0" type="multiphasic">
+			<!-- from klevis's ecm material-->
 			<phi0>0.15</phi0>
 			<fixed_charge_density>0</fixed_charge_density>
+			<solid type="angio_mat">
+				<a>2.776e-10</a>
+				<b>2.5e-12</b>					
+				<N>2.0</N>
+				
+				<matrix_density>3</matrix_density>
+				<composite_material>1</composite_material>
+				<length_adjustment>1.0</length_adjustment>
+				
+				<matrix type="viscoelastic">
+					<t1>0.00000125</t1>
+					<g0>0.0</g0>
+					<g1>1.0</g1>
+					<elastic type="EFD neo-Hookean">
+						<E>0.00257</E>
+						<v>0.1</v>
+						<beta>2.5,2.5,2.5</beta> 
+						<ksi>0.0257,0.0257,0.0257</ksi>
+					</elastic>
+				</matrix>
+
+				<common_properties type="angio_properties">
+					<fragment_seeder type="MDbyVolume">
+						<number_fragments>100</number_fragments>
+						<initial_vessel_length>42.0</initial_vessel_length>
+					</fragment_seeder>
+					
+					<vessel type="viscoelastic">
+						<t1>0.00001</t1>
+						<g0>0.0</g0>
+						<g1>1.0</g1>
+						<elastic type="neo-Hookean">
+							<E>0.257</E>
+							<v>0.0</v>
+						</elastic>
+					</vessel>
+					
+					<brancher type="psuedo_defered_branch">
+						<length_to_branch type="normal_distribution">
+							<mean>100</mean>
+							<stddev>6</stddev>
+						</length_to_branch>
+						<time_to_emerge type="normal_distribution">
+							<mean>0.5</mean>
+							<stddev>0.125</stddev>
+						</time_to_emerge>
+					</brancher>
+					<grow_direction_modifiers>
+						<gdm type="unit_length">
+						</gdm>
+						<gdm type="density_length">
+						</gdm>
+						<gdm type="segment_length">
+						</gdm>
+						<gdm type="default_grow_direction">
+						</gdm>
+						<!--
+							<collagen_direction type="plot2_ggp">
+								<field_name>matrix concecntration gradient</field_name>
+							</collagen_direction>
+							-->
+
+						<gdm type="anastamosis_grow_direction">
+							<search_radius>25.0</search_radius>
+						</gdm>
+						<gdm type="branch_grow_direction">
+						</gdm>
+						<!-- include density gradient deflection ?-->
+					</grow_direction_modifiers>
+					
+					<boundary_condition type="bouncy">
+						<angio_boundary_groups>3</angio_boundary_groups>
+						<mbc type="pass_through"/>
+					</boundary_condition>
+					<fiber_initializer type="random_fiber_initializer_non_mangling"/>
+				</common_properties>
+			</solid>
+				
 			<permeability type="perm-const-iso">
 				<perm>3.5e-017</perm>
 			</permeability>
 			<osmotic_coefficient type="osm-coef-const">
-				<osmcoef>8.64e-037</osmcoef>
+				<osmcoef>8.64e-37</osmcoef>
 			</osmotic_coefficient>
 			<solute sol="1">
 				<diffusivity type="diff-const-iso">
@@ -33,8 +124,11 @@
 				<solubility type="solub-const">
 					<solub>1</solub>
 				</solubility>
+				<supply type="supply-const">
+					<supp>1</supp>
+				</supply>
 			</solute>
-		</material>
+			</material>
 	</Material>
 	<Geometry>
 		<Nodes name="Object01">
@@ -4360,111 +4454,26 @@
 			<node id="484"/>
 		</NodeSet>
 	</Geometry>
-	<LoadData>
-		<loadcurve id="1" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="2" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="3" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="4" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="5" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="6" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="7" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="8" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="9" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="10" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="11" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="12" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="13" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="14" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="15" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="16" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="17" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="18" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="19" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="20" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="21" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-		<loadcurve id="22" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
-	</LoadData>
 	<Output>
 		<plotfile type="febio">
 			<var type="displacement"/>
-			<var type="fiber vector"/>
-			<var type="stress"/>
 			<var type="effective fluid pressure"/>
-			<var type="fluid pressure"/>
-			<var type="fluid flux"/>
-			<var type="osmolarity"/>
-			<var type="referential solid volume fraction"/>
 			<var type="effective solute concentration"/>
-			<var type="sbm referential apparent density"/>
-			<var type="sbm concentration"/>
+			<var type="fluid flux"/>
 			<var type="solute concentration"/>
+			<var type="effective solute concentration"/>
+			<var type="sbm concentration"/>
+			<var type="sbm referential apparent density"/>
 			<var type="solute flux"/>
+			<var type="stress"/>
+			<var type="angio stress"/>
+			<var type="vessel stress"/>
+			<var type="matrix stress"/>
+			<var type="fiber vector"/>
+			<var type="angio ECM alpha"/>
+			<var type="referential solid volume fraction"/>
+			<var type="fluid pressure"/>
+			<var type="osmolarity"/>
 		</plotfile>
 	</Output>
 	<Step name="Step02">
@@ -4483,54 +4492,54 @@
 			<lstol>0.9</lstol>
 			<min_residual>1e-020</min_residual>
 			<qnmethod>0</qnmethod>
-			<analysis type="steady-state"/>
+			<analysis type="dynamic"/>
 		</Control>
 		<Boundary>
 			<fix bc="x,y,z" node_set="All_Nodes"/>
 			<fix bc="u,v,w" node_set="All_Nodes"/>
 			<fix bc="p" node_set="All_Nodes"/>
 			<prescribe bc="c1" node_set="PrescribedConcentration01">
-				<scale lc="1">0</scale>
+				<scale>0</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration02">
-				<scale lc="2">0</scale>
+				<scale>0</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration03">
-				<scale lc="3">0</scale>
+				<scale>0</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration04">
-				<scale lc="4">0.2</scale>
+				<scale>0.2</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration05">
-				<scale lc="5">0.4</scale>
+				<scale>0.4</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration06">
-				<scale lc="6">0.6</scale>
+				<scale>0.6</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration07">
-				<scale lc="7">0.8</scale>
+				<scale>0.8</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration08">
-				<scale lc="8">1</scale>
+				<scale>1</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration09">
-				<scale lc="9">1.2</scale>
+				<scale>1.2</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration10">
-				<scale lc="10">1.2</scale>
+				<scale>1.2</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration11">
-				<scale lc="11">1.2</scale>
+				<scale>1.2</scale>
 				<relative>0</relative>
 			</prescribe>
 		</Boundary>
@@ -4551,6 +4560,7 @@
 			<lstol>0.9</lstol>
 			<min_residual>1e-020</min_residual>
 			<qnmethod>0</qnmethod>
+			<analysis type="dynamic"/>
 		</Control>
 		<Boundary>
 			<fix bc="x,y,z" node_set="FixedDisplacement01"/>
@@ -4558,47 +4568,47 @@
 			<fix bc="u,v,w" node_set="All_Nodes"/>
 			<fix bc="p" node_set="All_Nodes"/>
 			<prescribe bc="c1" node_set="PrescribedConcentration01">
-				<scale lc="12">0</scale>
+				<scale>0</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration02">
-				<scale lc="13">0</scale>
+				<scale>0</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration03">
-				<scale lc="14">0</scale>
+				<scale>0</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration04">
-				<scale lc="15">0.2</scale>
+				<scale>0.2</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration05">
-				<scale lc="16">0.4</scale>
+				<scale>0.4</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration06">
-				<scale lc="17">0.6</scale>
+				<scale>0.6</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration07">
-				<scale lc="18">0.8</scale>
+				<scale>0.8</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration08">
-				<scale lc="19">1</scale>
+				<scale>1</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration09">
-				<scale lc="20">1.2</scale>
+				<scale>1.2</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration10">
-				<scale lc="21">1.2</scale>
+				<scale>1.2</scale>
 				<relative>0</relative>
 			</prescribe>
 			<prescribe bc="c1" node_set="PrescribedConcentration11">
-				<scale lc="22">1.2</scale>
+				<scale>1.2</scale>
 				<relative>0</relative>
 			</prescribe>
 		</Boundary>
