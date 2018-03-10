@@ -1658,6 +1658,220 @@
 			<node id="461"/>
 			<node id="462"/>
 		</NodeSet>
+		<NodeSet name="PrescribedFluidDilatation1">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="13"/>
+			<node id="14"/>
+			<node id="15"/>
+			<node id="16"/>
+			<node id="17"/>
+			<node id="18"/>
+			<node id="19"/>
+			<node id="20"/>
+			<node id="21"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="24"/>
+			<node id="25"/>
+			<node id="26"/>
+			<node id="27"/>
+			<node id="28"/>
+			<node id="29"/>
+			<node id="30"/>
+			<node id="31"/>
+			<node id="32"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="35"/>
+			<node id="36"/>
+			<node id="37"/>
+			<node id="38"/>
+			<node id="39"/>
+			<node id="40"/>
+			<node id="41"/>
+			<node id="42"/>
+			<node id="421"/>
+			<node id="422"/>
+			<node id="423"/>
+			<node id="424"/>
+			<node id="425"/>
+			<node id="426"/>
+			<node id="427"/>
+			<node id="428"/>
+			<node id="429"/>
+			<node id="430"/>
+			<node id="431"/>
+			<node id="432"/>
+			<node id="433"/>
+			<node id="434"/>
+			<node id="435"/>
+			<node id="436"/>
+			<node id="437"/>
+			<node id="438"/>
+			<node id="439"/>
+			<node id="440"/>
+			<node id="441"/>
+			<node id="442"/>
+			<node id="443"/>
+			<node id="444"/>
+			<node id="445"/>
+			<node id="446"/>
+			<node id="447"/>
+			<node id="448"/>
+			<node id="449"/>
+			<node id="450"/>
+			<node id="451"/>
+			<node id="452"/>
+			<node id="453"/>
+			<node id="454"/>
+			<node id="455"/>
+			<node id="456"/>
+			<node id="457"/>
+			<node id="458"/>
+			<node id="459"/>
+			<node id="460"/>
+			<node id="461"/>
+			<node id="462"/>
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="13"/>
+			<node id="14"/>
+			<node id="15"/>
+			<node id="16"/>
+			<node id="17"/>
+			<node id="18"/>
+			<node id="19"/>
+			<node id="20"/>
+			<node id="21"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="24"/>
+			<node id="25"/>
+			<node id="26"/>
+			<node id="27"/>
+			<node id="28"/>
+			<node id="29"/>
+			<node id="30"/>
+			<node id="31"/>
+			<node id="32"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="35"/>
+			<node id="36"/>
+			<node id="37"/>
+			<node id="38"/>
+			<node id="39"/>
+			<node id="40"/>
+			<node id="41"/>
+			<node id="42"/>
+			<node id="421"/>
+			<node id="422"/>
+			<node id="423"/>
+			<node id="424"/>
+			<node id="425"/>
+			<node id="426"/>
+			<node id="427"/>
+			<node id="428"/>
+			<node id="429"/>
+			<node id="430"/>
+			<node id="431"/>
+			<node id="432"/>
+			<node id="433"/>
+			<node id="434"/>
+			<node id="435"/>
+			<node id="436"/>
+			<node id="437"/>
+			<node id="438"/>
+			<node id="439"/>
+			<node id="440"/>
+			<node id="441"/>
+			<node id="442"/>
+			<node id="443"/>
+			<node id="444"/>
+			<node id="445"/>
+			<node id="446"/>
+			<node id="447"/>
+			<node id="448"/>
+			<node id="449"/>
+			<node id="450"/>
+			<node id="451"/>
+			<node id="452"/>
+			<node id="453"/>
+			<node id="454"/>
+			<node id="455"/>
+			<node id="456"/>
+			<node id="457"/>
+			<node id="458"/>
+			<node id="459"/>
+			<node id="460"/>
+			<node id="461"/>
+			<node id="462"/>
+		</NodeSet>
+		<NodeSet name="PrescribedFluidDilatation2">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="13"/>
+			<node id="14"/>
+			<node id="15"/>
+			<node id="16"/>
+			<node id="17"/>
+			<node id="18"/>
+			<node id="19"/>
+			<node id="20"/>
+			<node id="21"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="24"/>
+			<node id="25"/>
+			<node id="26"/>
+			<node id="27"/>
+			<node id="28"/>
+			<node id="29"/>
+			<node id="30"/>
+			<node id="31"/>
+			<node id="32"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="35"/>
+			<node id="36"/>
+			<node id="37"/>
+			<node id="38"/>
+			<node id="39"/>
+			<node id="40"/>
+			<node id="41"/>
+			<node id="42"/>
+		</NodeSet>
 		<Surface name="NormalFlowConstraint1">
 			<quad4 id="1">    41,    39,    40,    42</quad4>
 			<quad4 id="2">    39,    37,    38,    40</quad4>
@@ -1702,91 +1916,35 @@
 			<quad4 id="19">   457,   459,   460,   458</quad4>
 			<quad4 id="20">   459,   461,   462,   460</quad4>
 		</Surface>
-		<Surface name="FluidDilatationDownstream">
-			<quad4 id="1">   421,   423,   424,   422</quad4>
-			<quad4 id="2">   423,   425,   426,   424</quad4>
-			<quad4 id="3">   425,   427,   428,   426</quad4>
-			<quad4 id="4">   427,   429,   430,   428</quad4>
-			<quad4 id="5">   429,   431,   432,   430</quad4>
-			<quad4 id="6">   431,   433,   434,   432</quad4>
-			<quad4 id="7">   433,   435,   436,   434</quad4>
-			<quad4 id="8">   435,   437,   438,   436</quad4>
-			<quad4 id="9">   437,   439,   440,   438</quad4>
-			<quad4 id="10">   439,   441,   442,   440</quad4>
-			<quad4 id="11">   441,   443,   444,   442</quad4>
-			<quad4 id="12">   443,   445,   446,   444</quad4>
-			<quad4 id="13">   445,   447,   448,   446</quad4>
-			<quad4 id="14">   447,   449,   450,   448</quad4>
-			<quad4 id="15">   449,   451,   452,   450</quad4>
-			<quad4 id="16">   451,   453,   454,   452</quad4>
-			<quad4 id="17">   453,   455,   456,   454</quad4>
-			<quad4 id="18">   455,   457,   458,   456</quad4>
-			<quad4 id="19">   457,   459,   460,   458</quad4>
-			<quad4 id="20">   459,   461,   462,   460</quad4>
-			<quad4 id="21">    41,    39,    40,    42</quad4>
-			<quad4 id="22">    39,    37,    38,    40</quad4>
-			<quad4 id="23">    37,    35,    36,    38</quad4>
-			<quad4 id="24">    35,    33,    34,    36</quad4>
-			<quad4 id="25">    33,    31,    32,    34</quad4>
-			<quad4 id="26">    31,    29,    30,    32</quad4>
-			<quad4 id="27">    29,    27,    28,    30</quad4>
-			<quad4 id="28">    27,    25,    26,    28</quad4>
-			<quad4 id="29">    25,    23,    24,    26</quad4>
-			<quad4 id="30">    23,    21,    22,    24</quad4>
-			<quad4 id="31">    21,    19,    20,    22</quad4>
-			<quad4 id="32">    19,    17,    18,    20</quad4>
-			<quad4 id="33">    17,    15,    16,    18</quad4>
-			<quad4 id="34">    15,    13,    14,    16</quad4>
-			<quad4 id="35">    13,    11,    12,    14</quad4>
-			<quad4 id="36">    11,     9,    10,    12</quad4>
-			<quad4 id="37">     9,     7,     8,    10</quad4>
-			<quad4 id="38">     7,     5,     6,     8</quad4>
-			<quad4 id="39">     5,     3,     4,     6</quad4>
-			<quad4 id="40">     3,     1,     2,     4</quad4>
-		</Surface>
-		<Surface name="FluidDilatationUpstream">
-			<quad4 id="1">    41,    39,    40,    42</quad4>
-			<quad4 id="2">    39,    37,    38,    40</quad4>
-			<quad4 id="3">    37,    35,    36,    38</quad4>
-			<quad4 id="4">    35,    33,    34,    36</quad4>
-			<quad4 id="5">    33,    31,    32,    34</quad4>
-			<quad4 id="6">    31,    29,    30,    32</quad4>
-			<quad4 id="7">    29,    27,    28,    30</quad4>
-			<quad4 id="8">    27,    25,    26,    28</quad4>
-			<quad4 id="9">    25,    23,    24,    26</quad4>
-			<quad4 id="10">    23,    21,    22,    24</quad4>
-			<quad4 id="11">    21,    19,    20,    22</quad4>
-			<quad4 id="12">    19,    17,    18,    20</quad4>
-			<quad4 id="13">    17,    15,    16,    18</quad4>
-			<quad4 id="14">    15,    13,    14,    16</quad4>
-			<quad4 id="15">    13,    11,    12,    14</quad4>
-			<quad4 id="16">    11,     9,    10,    12</quad4>
-			<quad4 id="17">     9,     7,     8,    10</quad4>
-			<quad4 id="18">     7,     5,     6,     8</quad4>
-			<quad4 id="19">     5,     3,     4,     6</quad4>
-			<quad4 id="20">     3,     1,     2,     4</quad4>
-		</Surface>
 	</Geometry>
+	<MeshData>
+		<NodeData name="down_stream" generator="math" node_set="PrescribedFluidDilatation1">
+			<math>1e-9*Y</math>
+		</NodeData>
+		<NodeData name="up_stream" generator="math" node_set="PrescribedFluidDilatation2">
+			<math>1e-9*(Y-10)</math>
+		</NodeData>
+	</MeshData>
 	<Boundary>
 		<fix bc="wx,wy" node_set="FixedFluidVelocity1"/>
 		<fix bc="wz" node_set="FixedFluidVelocity2"/>
+		<prescribe bc="ef" node_set="PrescribedFluidDilatation1">
+			<scale lc="1">1</scale>
+			<relative>0</relative>
+			<value node_data="down_stream"/>
+		</prescribe>
+		<prescribe bc="ef" node_set="PrescribedFluidDilatation2">
+			<scale lc="2">1</scale>
+			<relative>0</relative>
+			<value node_data="up_stream"/>
+		</prescribe>
 	</Boundary>
 	<Loads>
 		<body_load type="const">
-			<x lc="1">0</x>
-			<y lc="2">1</y>
-			<z lc="3">0</z>
+			<x lc="3">0</x>
+			<y lc="4">1</y>
+			<z lc="5">0</z>
 		</body_load>
-		<surface_load type="fluid BC formula" surface="FluidDilatationDownstream">
-			<scale lc="4">1</scale>
-			<bc>ef</bc>
-			<formula>0.000000001*Y</formula>
-		</surface_load>
-		<surface_load type="fluid BC formula" surface="FluidDilatationUpstream">
-			<scale lc="5">1</scale>
-			<bc>ef</bc>
-			<formula>0.000000001*Y-0.00000001</formula>
-		</surface_load>
 	</Loads>
 	<Contact>
 	</Contact>
@@ -1797,6 +1955,7 @@
 			<penalty>1e+006</penalty>
 			<minaug>0</minaug>
 			<maxaug>0</maxaug>
+			<rhs>0</rhs>
 		</constraint>
 		<constraint type="normal fluid flow" name="NormalFlowConstraint2" surface="NormalFlowConstraint2">
 			<laugon>0</laugon>
@@ -1804,6 +1963,7 @@
 			<penalty>1e+006</penalty>
 			<minaug>0</minaug>
 			<maxaug>0</maxaug>
+			<rhs>0</rhs>
 		</constraint>
 	</Constraints>
 	<LoadData>
@@ -1831,6 +1991,7 @@
 	<Output>
 		<plotfile type="febio">
 			<var type="displacement"/>
+			<var type="stress"/>
 			<var type="fluid pressure"/>
 			<var type="fluid acceleration"/>
 			<var type="fluid dilatation"/>
