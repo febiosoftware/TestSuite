@@ -53,10 +53,7 @@
 		<Elements type="hex8" mat="1" name="Part4">
 			<elem id="1">     1,     5,     7,     3,     2,     6,     8,     4</elem>
 		</Elements>
-		<NodeSet name="unnamed_set01">
-			<node id="1"/>
-		</NodeSet>
-		<NodeSet name="unnamed_set01">
+		<NodeSet name="nodeset01">
 			<node id="1"/>
 		</NodeSet>
 	</Geometry>
@@ -84,7 +81,7 @@
 	<Output>
 		<plotfile type="febio"/>
 		<logfile>
-			<node_data data="uz" node_set="unnamed_set01"/>
+			<node_data data="uz" node_set="nodeset01"/>
 		</logfile>
 	</Output>
 </febio_spec>
