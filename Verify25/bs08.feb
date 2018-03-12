@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	1D solute transport under the action of a prescribed flux.
+Main Features:
+	Biphasic with Solute
+	prescribed solute flux
+Secondary Features:
+	Must point controller
+Materials:
+	Neo-Hookean
+	biphasic-solute
+Degrees of Freedom: 244
+Results:
+	Steps Completed: 72
+	Equilibrium Iterations: 144
+	Right Hand Evaluations: 381
+	Siffness Reformations: 144
+Comments:
+	At steady state, the upstream solute concentration is 1
+-->
 <febio_spec version="2.5">
 	<Module type="solute"/>
 	<Control>

@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Step loading of cylindrical disk in unconfined compression.
+	The solute concentration is initially uniform in the disk and equal to the prescribed bath concentration.
+	A step compressive strain cause solute concentration to increase in the disk, before desorbing back down.
+	Units: length = mm, force = N, time = s, mole = nanomol; stress = MPa, concentration = mM.
+Main Features:
+	Biphasic with Solute
+Secondary Features:
+	
+Materials:
+	biphasic-solute
+Degrees of Freedom: 2465
+Results:
+	Steps Completed: 105
+	Equilibrium Iterations: 187
+	Right Hand Evaluations: 292
+	Siffness Reformations: 187
+	Other:
+		The material has a minimum solute concentration of 6e-03 at time t=3113.
+Comments:
+	
+-->
 <febio_spec version="2.5">
 	<Module type="solute"/>
 	<Control>

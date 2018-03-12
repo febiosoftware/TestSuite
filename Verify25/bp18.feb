@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A biphasic-viscoelastic block of 10 elements is compressed in the z-direction by -0.1 units
+	in time t=100, then allowed to relax to time t=1000.
+Main Features:
+	Viscoelastic solid in a biphasic mixture
+Secondary Features:
+	Non-uniform element thickness in z-direction
+Materials:
+	neo-Hookean
+	viscoelastic
+	biphasic
+Degrees of Freedom: 80
+Results:
+	Steps Completed: 400
+	Equilibrium Iterations: 837
+	Right Hand Evaluations: 1237
+	Siffness Reformations: 400
+	Other:
+		The peak total fluid flux is 9.95e-4 at time t=100.
+Comments:
+	
+-->
 <febio_spec version="2.5">
 	<Module type="biphasic"/>
 	<Control>

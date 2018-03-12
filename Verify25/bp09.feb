@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Cylinder with Referentially  Orthotropic Permeability material undergoes pressure change and twist
+Main Features:
+	Biphasic
+Secondary Features:
+	
+Materials:
+	Referentially Orthotropic Permeability
+	neo-Hookean
+Degrees of Freedom: 16095
+Results:
+	Steps Completed: 8
+	Equilibrium Iterations: 42
+	Right Hand Evaluations: 50
+	Siffness Reformations: 42
+	Other:
+		The x-component of the fluid flux for element 3188 is 2.5 at time t=2.
+Comments:
+	
+-->
 <febio_spec version="2.5">
 	<Module type="biphasic"/>
 	<Control>

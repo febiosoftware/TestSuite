@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	1D confined biphasic creep under the action of a body force
+Main Features:
+	Biphasic with body force
+Materials:
+	Biphasic
+	neo-Hookean
+Degrees of Freedom: 240
+Results:
+	Steps Completed: 434
+	Equilibrium Iterations: 699
+	Right Hand Evaluations: 1133
+	Siffness Reformations: 699
+	Other:
+		The creep displacement at t=4000 is -1e-4.
+Comments:
+	The density of the solid is higher than that of the fluid,
+	leading to creep consolidation under the action of the
+	external body force.
+-->
 <febio_spec version="2.5">
 	<Module type="biphasic"/>
 	<Control>

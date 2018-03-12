@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Two biphasic bodies, one with hexahedral mesh and the other with tetrahedral mesh, tied at interface.
+	The body with hexahedral mesh is much less permeable than the one with the tetrahedral mesh.
+	A normal mixture traction is prescribed on the less permeable body and a transient response ensues.
+Main Features:
+	Tied biphasic contact interface
+Secondary Features:
+	Normal biphasic mixture traction
+Materials:
+	Biphasic with neo-Hookean solid and constant isotropic permeability
+Degrees of Freedom: 6340
+Results:
+	Steps Completed: 62
+	Equilibrium Iterations: 194
+	Right Hand Evaluations: 263
+	Siffness Reformations: 62
+	Other:
+		The maximum displacement fluid pressure is 0.231 at time t=9.
+Comments:
+	Continuity of fluid pressure is enforced across the tied contact interface.  Due to the significant
+	disparity in permeability between the tied regions, large gradients in fluid pressure are
+	observed across the interface.
+-->
 <febio_spec version="2.5">
 	<Module type="biphasic"/>
 	<Control>
