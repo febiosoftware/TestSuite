@@ -7,8 +7,12 @@ from compile_plugins import CompilePlugins
 from logdata import dfield
 from update import new, modified, deleted
 
-
 # This is the test suite script for our nightly build and test suite run.
+# It has been modified to run on nemo.sci.utah.edu (a Linux machine)
+# This script does the following things:
+# 1. Does an svn update 
+# 2. compiles FEBio
+# 3. Runs the test suite
 # This script runs a list of FEBio files and checks the results
 # The test results are stored in an output file
 #===============================================================================
@@ -22,7 +26,7 @@ print("host = " + host)
 print("opsys = " + opsys)
 print("sysplat = " + sysplat)
 
-# Read the commanline arguments
+# Read the commandline arguments
 # Arguments are any of:
 # c: do not compile
 # p: use only Pardiso
@@ -43,17 +47,9 @@ if args.find('p') != -1: solvers = ['pardiso']
 else: solvers = ['pardiso'] #, 'skyline', 'superlu']
 
 # Set the platform
-if opsys == 'x86_64':
-	if host == 'katan':
-		plat = 'osx'	
-	else:
-		plat = 'lnx64'
-	platd = plat + 'd'
-	plats = plat + 's'
-elif sysplat == 'win32':
-	plat = 'win'
-elif opsys == 'i686':
-	plat = 'lnx32'
+plat = 'lnx64'
+platd = plat + 'd'
+plats = plat + 's'
 
 # Specify number of threads
 dir_ext = ""
