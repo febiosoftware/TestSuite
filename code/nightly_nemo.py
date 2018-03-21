@@ -48,8 +48,6 @@ else: solvers = ['pardiso'] #, 'skyline', 'superlu']
 
 # Set the platform
 plat = 'lnx64'
-platd = plat + 'd'
-plats = plat + 's'
 
 # Specify number of threads
 dir_ext = ""
@@ -108,110 +106,61 @@ parsing_dir = test_dir + '/Nightly_Parsing/'
 # These are problems that report extra data fields
 dfield0 = [col[0] for col in dfield]
 
-
-if plat == 'win':
-	febio_dir = 'C:/' + febio_name
-	if febio_name == 'FEBio':
-		exe_dir = febio_dir + '/x64/Release'
-		febio = exe_dir + '/' + febio_name + '.exe'
-	elif febio_name == 'FEBio2':
-		exe_dir = febio_dir + '/VS2013/x64/Release OMP'
-		febio = exe_dir + '/' + febio_name + '.exe'
-	febios = febio
-
-	out_dir = 'C:/Testing/Logs/' + febio_name + dir_ext + '_Logs/'
-	logs_dir = out_dir
-
-	if args.find('c') == -1: # if we don't explicitly say not to compile
-		
-		# Do an svn update on the FEBio directory
-		os.chdir(febio_dir)
-		subprocess.call(['svn', 'up'])
-		version_str = subprocess.Popen(['svnversion'], stdout=subprocess.PIPE).communicate()[0]
-		version = version_str.split("\r\n")[0]
-		
-		# Compile FEBio
-		command = [code_dir + 'vc_compile.bat']
-		output = subprocess.call(command)
-
-		if output == 0:
-			# Test whether febio compiled in the last 20 hours
-			if time.time() - os.path.getmtime(febio) > 72000 and not test_update:
-				results.write("Nothing to do\n")
-				sys.exit("Nothing to do\n")
-
-			# If febio did compile, update svnrev.h, recompile and create a copy of the executable
-			os.chdir("VS2013/FEBioLib")
-			execfile("../svnrev.py")
-			os.chdir(febio_dir)
-			
-			command =[code_dir + 'vc_compile.bat']
-			output = subprocess.call(command)
-			if output != 0: sys.exit("FEBio did not compile after updating svnrev.h")
-
-			shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.exe')
-
-		# Compile the plugins
-		pic = CompilePlugins(plat, root_dir)
-		pic.launch()
-
+# Define FEBio directory, executable, and library
+# Assumes that this script is run from Testing and the FEBio directory is on the same level
+# and that the executable is in FEBio/bin
+if args.find('r') != -1:
+	os.chdir(root_dir + "Release/" + febio_name)
+	febio_dir = os.getcwd()
+	febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + plat
 else:
-	# Define FEBio directory, executable, and library
-	# Assumes that this script is run from Testing and the FEBio directory is on the same level
-	# and that the executable is in FEBio/bin
-	if args.find('r') != -1:
-		os.chdir(root_dir + "Release/" + febio_name)
-		febio_dir = os.getcwd()
-		febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + plat
-	else:
-		febio_dir = root_dir + febio_name
-		febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + platd
-		febios = febio_dir + '/build/bin/' + febio_lc_name + '.' + plats
-		os.chdir(febio_dir)
+	febio_dir = root_dir + febio_name
+	febio = febio_dir + '/build/bin/' + febio_lc_name + '.' + plat
+	os.chdir(febio_dir)
 
-	# Define the log and plt output directory
-	# user variable assumes the directory is e.g. /home/sci/rawlins/Testing
-	user = test_dir.split('/')[3]
-	out_dir = '/scratch/' + user + '/' + febio_lc_name + dir_ext + '_test/'
-	logs_dir = 'Logs/' + febio_name + dir_ext + '_Logs/'
+# Define the log and plt output directory
+# user variable assumes the directory is e.g. /home/sci/rawlins/Testing
+user = test_dir.split('/')[3]
+out_dir = '/scratch/' + user + '/' + febio_lc_name + dir_ext + '_test/'
+logs_dir = 'Logs/' + febio_name + dir_ext + '_Logs/'
 
-	if args.find('c') == -1: # if we don't explicitly say not to compile
+if args.find('c') == -1: # if we don't explicitly say not to compile
 
-		# Do an svn update on lnx64 and write to svn_version.py
-		if plat != 'osx': subprocess.call(['svn', 'up'])
-		version_str = subprocess.Popen(['svnversion'], stdout=subprocess.PIPE).communicate()[0]
-		version = version_str.split("\n")[0]
+	# Do an svn update on lnx64 and write to svn_version.py
+	if plat != 'osx': subprocess.call(['svn', 'up'])
+	version_str = subprocess.Popen(['svnversion'], stdout=subprocess.PIPE).communicate()[0]
+	version = version_str.split("\n")[0]
 
-		# Compile FEBio
-		os.chdir("build")
-		command =['make', platd]
-		output = subprocess.call(command)
-		
-		if output == 0:
-			# Test whether febio compiled in the last 20 hours
-			if time.time() - os.path.getctime(febio) > 72000 and not test_update and args.find('c') == -1:
-				results.write("Nothing to do\n")
-				sys.exit("Nothing to do\n")
+	# Compile FEBio
+	os.chdir("build")
+	command =['make', plat]
+	output = subprocess.call(command)
+	
+	if output == 0:
+		# Test whether febio compiled in the last 20 hours
+		if time.time() - os.path.getctime(febio) > 72000 and not test_update and args.find('c') == -1:
+			results.write("Nothing to do\n")
+			sys.exit("Nothing to do\n")
 
-			# If febio did compile, update svnrev.h, recompile and create a copy of the executable
-			if plat != 'osx':
-				execfile("svnrev.py")
-				command =['make', platd]
-				output = subprocess.call(command)
-				if output != 0: sys.exit("FEBio debug did not compile after updating svnrev.h")
+		# If febio did compile, update svnrev.h, recompile and create a copy of the executable
+		if plat != 'osx':
+			execfile("svnrev.py")
 			command =['make', plat]
 			output = subprocess.call(command)
-			if output != 0: print("FEBio (no debug) did not compile after updating svnrev.h")
-			command =['make', plats]
-			output = subprocess.call(command)
-			if output != 0: print("FEBio (sequential) did not compile after updating svnrev.h")
-			shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + platd)
+			if output != 0: sys.exit("FEBio debug did not compile after updating svnrev.h")
+		command =['make', plat]
+		output = subprocess.call(command)
+		if output != 0: print("FEBio (no debug) did not compile after updating svnrev.h")
+		command =['make', plats]
+		output = subprocess.call(command)
+		if output != 0: print("FEBio (sequential) did not compile after updating svnrev.h")
+		shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + plat)
 
-			# Compile the plugins
-			pic = CompilePlugins(plats, root_dir)
-			pic.launch()
+		# Compile the plugins
+		pic = CompilePlugins(plats, root_dir)
+		pic.launch()
 
-		else: sys.exit("FEBio did not compile")
+	else: sys.exit("FEBio did not compile")
 
 # keep counters
 norms = 0                       # nr of normal terminations
@@ -232,9 +181,6 @@ exempt1 = ['bp23', 'ma17', 'mg01', 'mg02']
 # These problems will not run in FEBio2
 exempt2 = ['sh15']
 
-# These problems have issues on Windows
-exempt_win = ['rj04']
-
 # These are parameter optimization problems
 paramopt = [['op01', 'oi01'],
 	    ['op02', 'oi02'],
@@ -246,7 +192,6 @@ paramopt0 = [col[0] for col in paramopt]
 if dir_ext == "4": exempt += inconsistent
 if febio_name == 'FEBio': exempt += exempt1
 if febio_name == 'FEBio2': exempt += exempt2
-if plat == 'win': exempt += exempt_win
 
 # Open the nightly_std file and a temporary nightly_std file
 b_new = 0
@@ -306,11 +251,11 @@ for solver in solvers:
 			# Test for plugin problems
 			elif 'pi' in base:
 				if base == 'pi08' or base == 'pi09':
-					command = [febios, '-i', f, '-o', logname, '-p', pltname, \
+					command = [febio, '-i', f, '-o', logname, '-p', pltname, \
 						'-cnf', 'plugins/' + base + '_' + plat + '.xml', \
 						'-task=angio', 'plugins/angiofe.txt']
 				else:
-					command = [febios, '-i', f, '-o', logname, '-p', pltname, \
+					command = [febio, '-i', f, '-o', logname, '-p', pltname, \
 						'-cnf', 'plugins/' + base + '_' + plat + '.xml']
 			else:
 				command = [febio, '-i', f, '-o', logname, '-p', pltname, \
@@ -395,39 +340,6 @@ for solver in solvers:
 								found = 0
 								line_num = 0
 								data1 = 0
-#					for line in fstd:
-#						if  line.find("Time in solver") != -1:
-#							slv_hr  = int(line[17:18])
-#							slv_min = int(line[19:21])
-#							slv_sec = int(line[22:24])
-#							old_slv_time = slv_hr*3600 + slv_min*60 + slv_sec
-							#print "Old solve time", old_slv_time
-#						if  line.find("Elapsed time") != -1:
-#							el_hr  = int(line[16:17])
-#							el_min = int(line[18:20])
-#							el_sec = int(line[21:23])
-#							old_el_time = el_hr*3600 + el_min*60 + el_sec
-					# calculate percent difference (in incr% increments) in solve and elapse times
-					# I decided not to report the time differences
-					#slv_denom = (new_slv_time + old_slv_time)/2
-					#el_denom = (new_el_time + old_el_time)/2
-					#if slv_denom == 0: slv_denom = 1
-					#if el_denom == 0: el_denom = 1
-					#slv_diff = new_slv_time - old_slv_time
-					#el_diff = new_el_time - old_el_time
-					#if abs(slv_diff) <= 3: slv_diff = 0
-					#if abs(el_diff) <= 3: el_diff = 0
-					#if slv_denom < 5: incr = 200
-					#elif slv_denom < 20: incr = 100
-					#elif slv_denom < 60: incr = 50
-					#else: incr = 20
-					#result[9]  = incr*int((100/incr)*slv_diff/float(slv_denom))
-					#if el_denom < 5: incr = 200
-					#elif el_denom < 20: incr = 100
-					#elif el_denom < 60: incr = 50
-					#else: incr = 20
-					# I decided not to report the time differences
-					#result[10] = incr*int((100/incr)*el_diff/float(el_denom))
 
 				# get the size of the plotfile and delete it
 				result[7-2*opt] = int(os.path.getsize(pltname))
