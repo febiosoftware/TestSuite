@@ -58,7 +58,10 @@ Comments:
 			<c4>1</c4>
 			<c5>1</c5>
 			<lam_max>10</lam_max>
-			<fiber type="spherical"> 1.0000000e+000, 1.0000000e+000, 1.0000000e+000</fiber>
+			<fiber type="spherical">
+				<center>1,1,1</center>
+				<vector>1,0,0</vector>
+			</fiber>
 		</material>
 	</Material>
 	<Geometry>
