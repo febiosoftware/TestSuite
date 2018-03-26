@@ -32,20 +32,9 @@
 	</Globals>
 	<Material>
 		<material id="1" name="billet" type="Ogden unconstrained">
-			<density>1</density>
-			<cp>0.1</cp>
 			<c1>0.0329</c1>
-			<c2>0</c2>
-			<c3>0</c3>
-			<c4>0</c4>
-			<c5>0</c5>
-			<c6>0</c6>
 			<m1>6.82</m1>
-			<m2>1</m2>
-			<m3>1</m3>
-			<m4>1</m4>
-			<m5>1</m5>
-			<m6>1</m6>
+			<cp>0.1</cp>
 		</material>
 		<material id="2" name="top" type="rigid body">
 			<density>1</density>
@@ -6378,10 +6367,10 @@
 			<quad4 id="39">  2381,  2402,  2482,  2461</quad4>
 			<quad4 id="40">  2402,  2401,  2481,  2482</quad4>
 		</Surface>
-		<Surface name="MasterSurface01">
+		<Surface name="MasterSurface02">
 			<quad4 id="1">  2497,  2493,  2494,  2498</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="SlaveSurface02">
 			<quad4 id="1">  2344,  2323,  2403,  2424</quad4>
 			<quad4 id="2">  2323,  2324,  2404,  2403</quad4>
 			<quad4 id="3">  2324,  2325,  2405,  2404</quad4>
@@ -6431,8 +6420,8 @@
 			<slave surface="SlaveSurface01"/>
 		</SurfacePair>
 		<SurfacePair name="TCInterface02">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="MasterSurface02"/>
+			<slave surface="SlaveSurface02"/>
 		</SurfacePair>
 	</Geometry>
 	<Boundary>
@@ -6463,38 +6452,20 @@
 		<contact type="sliding-elastic" name="TCInterface01" surface_pair="TCInterface01">
 			<laugon>1</laugon>
 			<tolerance>0.2</tolerance>
-			<gaptol>0</gaptol>
 			<penalty>1</penalty>
-			<auto_penalty>1</auto_penalty>
 			<two_pass>0</two_pass>
-			<search_tol>0.01</search_tol>
+			<auto_penalty>1</auto_penalty>
 			<symmetric_stiffness>0</symmetric_stiffness>
 			<search_radius>1</search_radius>
-			<seg_up>0</seg_up>
-			<tension>0</tension>
-			<minaug>0</minaug>
-			<maxaug>10</maxaug>
-			<fric_coeff>0</fric_coeff>
-			<smooth_aug>0</smooth_aug>
-			<node_reloc>0</node_reloc>
 		</contact>
 		<contact type="sliding-elastic" name="TCInterface02" surface_pair="TCInterface02">
 			<laugon>1</laugon>
 			<tolerance>0.2</tolerance>
-			<gaptol>0</gaptol>
 			<penalty>1</penalty>
-			<auto_penalty>1</auto_penalty>
 			<two_pass>0</two_pass>
-			<search_tol>0.01</search_tol>
+			<auto_penalty>1</auto_penalty>
 			<symmetric_stiffness>0</symmetric_stiffness>
 			<search_radius>1</search_radius>
-			<seg_up>0</seg_up>
-			<tension>0</tension>
-			<minaug>0</minaug>
-			<maxaug>10</maxaug>
-			<fric_coeff>0</fric_coeff>
-			<smooth_aug>0</smooth_aug>
-			<node_reloc>0</node_reloc>
 		</contact>
 	</Contact>
 	<LoadData>
