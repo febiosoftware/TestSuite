@@ -39,6 +39,7 @@ Comments:
 		</time_stepper>
 		<symmetric_stiffness>0</symmetric_stiffness>
 		<analysis type="static"/>
+		<min_residual>1e-18</min_residual>
 	</Control>
 	<Globals>
 		<Constants>
