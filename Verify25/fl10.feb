@@ -1520,7 +1520,6 @@
 	</LoadData>
 	<Output>
 		<plotfile type="febio">
-			<var type="displacement"/>
 			<var type="fluid pressure"/>
 			<var type="fluid acceleration"/>
 			<var type="fluid dilatation"/>

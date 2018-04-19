@@ -1864,7 +1864,6 @@
 	</LoadData>
 	<Output>
 		<plotfile type="febio">
-			<var type="displacement"/>
 			<var type="stress"/>
 			<var type="fluid pressure"/>
 			<var type="fluid acceleration"/>
