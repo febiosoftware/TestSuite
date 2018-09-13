@@ -212,7 +212,7 @@ else: #Linux and OSX
 			shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + platd)
 			
 			# Plugins
-			if nopi == 0
+			if nopi == 0:
 				command =['make', plats]
 				output = subprocess.call(command)
 				if output != 0: print("FEBio (sequential) did not compile after updating svnrev.h")
@@ -233,7 +233,7 @@ nerrs = 0                       # nr of error terminations
 exempt = ['oi01', 'oi02', 'hi01']
 	
 # Don't run plugin problems
-if nopi == 1
+if nopi == 1:
 	exempt += ['pi01', 'pi02', 'pi03', 'pi04', 'pi05', 'pi06', 'pi07', 'pi08', 'pi09']
 	
 # These problems give inconsistent convergence statistics results
