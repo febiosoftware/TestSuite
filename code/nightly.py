@@ -30,6 +30,9 @@ print("sysplat = " + sysplat)
 # 4: run with 4 threads
 # r: use the Release version of FEBio2
 
+#Run without plugins
+nopi == 1
+
 if len(sys.argv) == 1: sys.exit("error: The name of the FEBio directory must be entered as an argument")
 febio_name = sys.argv[1]
 febio_lc_name = febio_name.lower()
@@ -159,7 +162,7 @@ if plat == 'win':
 		pic = CompilePlugins(plat, root_dir)
 		pic.launch()
 
-else:
+else: #Linux and OSX
 	# Define FEBio directory, executable, and library
 	# Assumes that this script is run from Testing and the FEBio directory is on the same level
 	# and that the executable is in FEBio/bin
@@ -206,14 +209,17 @@ else:
 			command =['make', plat]
 			output = subprocess.call(command)
 			if output != 0: print("FEBio (no debug) did not compile after updating svnrev.h")
-			command =['make', plats]
-			output = subprocess.call(command)
-			if output != 0: print("FEBio (sequential) did not compile after updating svnrev.h")
 			shutil.copy(febio, febio.split('.')[0] + '_' + str(version) + '.' + platd)
+			
+			# Plugins
+			if nopi = 0
+				command =['make', plats]
+				output = subprocess.call(command)
+				if output != 0: print("FEBio (sequential) did not compile after updating svnrev.h")
 
-			# Compile the plugins
-			pic = CompilePlugins(plats, root_dir)
-			pic.launch()
+				# Compile the plugins
+				pic = CompilePlugins(plats, root_dir)
+				pic.launch()
 
 		else: sys.exit("FEBio did not compile")
 
@@ -225,6 +231,10 @@ nerrs = 0                       # nr of error terminations
 	# These files are the input files for parameter optimization
 	# and the rve files for multiscale problems:
 exempt = ['oi01', 'oi02', 'hi01']
+	
+# Don't run plugin problems
+if nopi = 1
+	exempt += ['pi01', 'pi02', 'pi03', 'pi04', 'pi05', 'pi06', 'pi07', 'pi08', 'pi09']
 	
 # These problems give inconsistent convergence statistics results
 # when run with multiple threads:
