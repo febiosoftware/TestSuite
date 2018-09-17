@@ -38,7 +38,6 @@ Comments:
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
-		<plot_level>PLOT_DEFAULT</plot_level>
 	</Control>
 	<Material>
 		<material id="1" name="Material 1" type="linear elastic">

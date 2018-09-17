@@ -38,7 +38,6 @@ Comments:
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
-		<plot_level>PLOT_DEFAULT</plot_level>
 		<analysis type="dynamic"></analysis>
 	</Control>
 	<Material>
