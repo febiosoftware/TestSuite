@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 
+Problem Description:
+Unconfined compression creep response of charged multiphasic material containing CaCl2. 
+The solid matrix consists of a neo-Hookean ground matrix + ellipsoidal fiber distribution.
+A two-step analysis is performed: (1) The first step (from 0 to 1 s) is a steady-state analysis
+needed to produce equilibrium free swelling by raising the fixed charged density from zero 
+to the final desired value. During this step the loading platen is maintained stationary so
+that the swelling produces a small tare load. (2) The second step (from 1 to 7201 s) is a 
+transient analysis where a constant compressive load (0.471) is prescribed to the loading platen
+while the material undergoes creep deformation. 
+
+Main Features:
+	Multiphasic material
+Secondary Features:
+	Multistep analysis
+	Axisymmetric analysis (wedge geometry, rigid plane of symmetry, tension-compression contact)
+	Contact with rigid platen
+Materials:
+	Multiphasic
+	EFD neo-Hookean
+	Holmes-Mow Permeability
+	Constant Osmotic Coefficient
+	Constant Isotropic Diffusivity
+	Constant Solubility
+Degrees of Freedom: 608
+Results:
+	Steps Completed: 62
+	Equilibrium Iterations: 209
+	Right Hand Evaluations: 278
+	Siffness Reformations: 209
+	Other:
+		The tare load is 0.021 at time t=1.
+		The loading platen displacement is -0.934 at t=7201.
+ 
+Comments:
+	
+-->
 <febio_spec version="2.5">
 	<Module type="multiphasic"/>
 	<Globals>
