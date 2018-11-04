@@ -683,8 +683,8 @@
 			<tolerance>0</tolerance>
 			<gaptol>0.0001</gaptol>
 			<angtol>0.0001</angtol>
-			<force_penalty>1e+012</force_penalty>
-			<moment_penalty>1e+012</moment_penalty>
+			<force_penalty>1e+03</force_penalty>
+			<moment_penalty>1e+03</moment_penalty>
 			<joint_origin>0,0,0</joint_origin>
 			<joint_axis>0,0,1</joint_axis>
 			<transverse_axis>1,0,0</transverse_axis>
