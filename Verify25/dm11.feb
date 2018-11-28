@@ -41,15 +41,16 @@
 					<E>10</E>
 					<beta>2.5</beta>
 					<lam0>1.1</lam0>
-					<theta>0</theta>
-					<phi>0</phi>
+					<mat_axis type="angles">
+						<theta>0</theta>
+						<phi>0</phi>
+					</mat_axis>
 				</elastic>
 				<damage type="CDF step">
 					<mu>0.3</mu>
 					<Dmax>1</Dmax>
 				</damage>
-				<criterion type="DC max normal Lagrange strain">
-				</criterion>
+				<criterion type="DC max normal Lagrange strain"/>
 			</solid>
 		</material>
 	</Material>

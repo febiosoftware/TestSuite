@@ -41,16 +41,17 @@
 					<E>10</E>
 					<beta>2.5</beta>
 					<lam0>1.1</lam0>
-					<theta>0</theta>
-					<phi>0</phi>
+					<mat_axis type="angles">
+						<theta>0</theta>
+						<phi>0</phi>
+					</mat_axis>
 				</elastic>
 				<damage type="CDF log-normal">
 					<mu>3</mu>
 					<sigma>0.1</sigma>
 					<Dmax>1</Dmax>
 				</damage>
-				<criterion type="DC max normal stress">
-				</criterion>
+				<criterion type="DC max normal stress"/>
 			</solid>
 		</material>
 	</Material>
