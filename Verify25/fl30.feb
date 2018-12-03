@@ -24,6 +24,7 @@
 		</time_stepper>
 		<analysis type="dynamic"/>
 		<symmetric_stiffness>0</symmetric_stiffness>
+		<equation_scheme>1</equation_scheme>
 	</Control>
 	<Globals>
 		<Constants>
@@ -4320,7 +4321,7 @@
 			<node id="4274"> 1.0000000e+000, 1.0000000e+000, 2.5000000e-002</node>
 			<node id="4275"> 1.0000000e+000, 1.0000000e+000, 5.0000000e-002</node>
 		</Nodes>
-		<Elements type="HEX20G8" mat="1" name="Part1">
+		<Elements type="hex20" mat="1" name="Part1">
 			<elem id="1">     1,   174,   179,     6,     3,   176,   181,     8,   124,   177,   126,     4,   125,   178,   127,     5,     2,   175,   180,     7</elem>
 			<elem id="2">     6,   179,   184,    11,     8,   181,   186,    13,   126,   182,   128,     9,   127,   183,   129,    10,     7,   180,   185,    12</elem>
 			<elem id="3">    11,   184,   189,    16,    13,   186,   191,    18,   128,   187,   130,    14,   129,   188,   131,    15,    12,   185,   190,    17</elem>

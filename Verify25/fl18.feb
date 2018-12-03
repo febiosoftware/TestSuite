@@ -15,9 +15,10 @@
 		<lstol>0.9</lstol>
 		<min_residual>1e-016</min_residual>
 		<rhoi>0.5</rhoi>
-		<qnmethod>2</qnmethod>
+		<qnmethod>1</qnmethod>
 		<analysis type="dynamic"/>
 		<symmetric_stiffness>0</symmetric_stiffness>
+		<equation_scheme>1</equation_scheme>
 	</Control>
 	<Globals>
 		<Constants>

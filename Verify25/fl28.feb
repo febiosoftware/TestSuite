@@ -15,7 +15,7 @@
 		<lstol>0.9</lstol>
 		<min_residual>5e-016</min_residual>
 		<rhoi>0</rhoi>
-		<qnmethod>2</qnmethod>
+		<qnmethod>1</qnmethod>
 		<time_stepper>
 			<dtmin>0.1</dtmin>
 			<dtmax lc="1"></dtmax>
@@ -24,6 +24,7 @@
 		</time_stepper>
 		<analysis type="dynamic"/>
 		<symmetric_stiffness>0</symmetric_stiffness>
+		<equation_scheme>1</equation_scheme>
 	</Control>
 	<Globals>
 		<Constants>

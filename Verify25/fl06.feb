@@ -18,6 +18,7 @@
 		<qnmethod>1</qnmethod>
 		<analysis type="steady-state"/>
 		<symmetric_stiffness>0</symmetric_stiffness>
+		<equation_scheme>1</equation_scheme>
 	</Control>
 	<Globals>
 		<Constants>

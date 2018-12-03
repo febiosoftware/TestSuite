@@ -36,7 +36,7 @@ Comments:
 		<ptol>0.01</ptol>
 		<lstol>0.9</lstol>
 		<min_residual>1e-020</min_residual>
-		<qnmethod>0</qnmethod>
+		<qnmethod>1</qnmethod>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax lc="1"></dtmax>

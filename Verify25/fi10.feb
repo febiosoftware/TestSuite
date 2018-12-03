@@ -39,7 +39,7 @@
 			<c5>1</c5>
 			<lam_max>10</lam_max>
 			<k>100</k>
-			<fiber type="user"></fiber>
+			<fiber type="user"/>
 		</material>
 	</Material>
 	<Geometry>
