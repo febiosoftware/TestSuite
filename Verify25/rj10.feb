@@ -21,9 +21,7 @@
 			<opt_iter>10</opt_iter>
 		</time_stepper>
 		<analysis type="dynamic"/>
-		<alpha>1</alpha>
-		<beta>0.25</beta>
-		<gamma>0.5</gamma>
+		<rhoi>0</rhoi>
 		<symmetric_stiffness>0</symmetric_stiffness>
 	</Control>
 	<Globals>
@@ -686,8 +684,8 @@
 			<tolerance>0.1</tolerance>
 			<gaptol>0</gaptol>
 			<angtol>0</angtol>
-			<force_penalty>1e+0</force_penalty>
-			<moment_penalty>1e+0</moment_penalty>
+			<force_penalty>1e+3</force_penalty>
+			<moment_penalty>1e+3</moment_penalty>
 			<joint_origin>0,0,0</joint_origin>
 			<minaug>0</minaug>
 			<maxaug>10</maxaug>

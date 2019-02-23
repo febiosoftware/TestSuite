@@ -2,8 +2,8 @@
 <febio_spec version="2.5">
 	<Module type="solid"/>
 	<Control>
-		<time_steps>360</time_steps>
-		<step_size>0.1</step_size>
+		<time_steps>36</time_steps>
+		<step_size>1</step_size>
 		<max_refs>15</max_refs>
 		<max_ups>0</max_ups>
 		<diverge_reform>1</diverge_reform>
@@ -16,14 +16,12 @@
 		<qnmethod>0</qnmethod>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
-			<dtmax>0.1</dtmax>
+			<dtmax>1</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
 		<analysis type="dynamic"/>
-		<alpha>0.5</alpha>
-		<beta>0.5</beta>
-		<gamma>1</gamma>
+		<rhoi>0.5</rhoi>
 		<symmetric_stiffness>0</symmetric_stiffness>
 	</Control>
 	<Globals>
