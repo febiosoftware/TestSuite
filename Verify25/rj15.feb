@@ -113,8 +113,8 @@
 			<tolerance>0</tolerance>
 			<gaptol>1e-008</gaptol>
 			<angtol>1e-008</angtol>
-			<force_penalty>1e+012</force_penalty>
-			<moment_penalty>1e+016</moment_penalty>
+			<force_penalty>1e+0</force_penalty>
+			<moment_penalty>1e+0</moment_penalty>
 			<joint_origin>0,0,0</joint_origin>
 			<joint_axis>1,0,0</joint_axis>
 			<transverse_axis>0,0,1</transverse_axis>
@@ -133,8 +133,8 @@
 			<tolerance>0</tolerance>
 			<gaptol>1e-008</gaptol>
 			<angtol>1e-008</angtol>
-			<force_penalty>1e+012</force_penalty>
-			<moment_penalty>1e+016</moment_penalty>
+			<force_penalty>1e+0</force_penalty>
+			<moment_penalty>1e+0</moment_penalty>
 			<joint_origin>0,0,0</joint_origin>
 			<joint_axis>0,0,1</joint_axis>
 			<transverse_axis>1,0,0</transverse_axis>
@@ -153,8 +153,8 @@
 			<tolerance>0</tolerance>
 			<gaptol>1e-008</gaptol>
 			<angtol>1e-008</angtol>
-			<force_penalty>1e+012</force_penalty>
-			<moment_penalty>1e+016</moment_penalty>
+			<force_penalty>1e+0</force_penalty>
+			<moment_penalty>1e+0</moment_penalty>
 			<joint_origin>0,0,0</joint_origin>
 			<joint_axis>0,1,0</joint_axis>
 			<transverse_axis>1,0,0</transverse_axis>
