@@ -41,7 +41,6 @@ Comments:
 			<opt_iter>50</opt_iter>
 		</time_stepper>
 		<analysis type="static"/>
-		<plot_level>PLOT_DEFAULT</plot_level>
 		<optimize_bw>1</optimize_bw>
 	</Control>
 	<Globals>
