@@ -33,7 +33,7 @@ Comments:
 		<time_steps>160</time_steps>
 		<step_size>1.7888</step_size>
 		<max_refs>5</max_refs>
-		<qnmethod>2</qnmethod>
+		<qnmethod>1</qnmethod>
 		<max_ups>50</max_ups>
 		<dtol>0.001</dtol>
 		<vtol>0.001</vtol>
