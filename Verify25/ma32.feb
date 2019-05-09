@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	Compressive pressurel loading of a cube made of porous
+	Compressive pressure loading of a cube made of porous
 	neo-Hookean material.
 Main Features:
 	Porous neo-Hookean material.
