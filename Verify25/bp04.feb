@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	A poroelastic block of 10 elements is compressed in the z-direction by -0.1 units
+	A biphasic block of 10 elements is compressed in the z-direction by -0.1 units
 	in time t=100, then allowed to relax to time t=1000.
 Main Features:
-	Poroelasticity
+	Biphasic analysis and biphasic material
 Secondary Features:
 	Non-uniform element thickness in z-direction
 Materials:
 	Neo-Hookean
-	Poroelastic
+	Biphasic
 Degrees of Freedom: 80
 Results:
 	Steps Completed: 400
@@ -17,7 +17,7 @@ Results:
 	Right Hand Evaluations: 1068
 	Siffness Reformations: 400
 	Other:
-		The Pressure for element 1 at time t=1000 is 1.73324e-006
+		The Z-stress for element 1 at time t=100 is -0.344644
 Comments:
 	
 -->
