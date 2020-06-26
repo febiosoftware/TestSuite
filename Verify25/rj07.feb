@@ -94,6 +94,7 @@
 			<prescribed_rotation>0</prescribed_rotation>
 			<rotation>0</rotation>
 			<moment>0</moment>
+			<auto_penalty>1</auto_penalty>
 		</constraint>
 	</Constraints>
 	<LoadData>
