@@ -39,8 +39,10 @@
 			</solid>
 			<solid type="uncoupled prescribed uniaxial active contraction">
 				<T0 lc="1">0.5</T0>
-				<theta>0</theta>
-				<phi>90</phi>
+				<mat_axis type="angles">
+					<theta>0</theta>
+					<phi>90</phi>
+				</mat_axis>
 			</solid>
 		</material>
 	</Material>
