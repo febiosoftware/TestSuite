@@ -464,7 +464,7 @@
 			<node id="288"/>
 			<node id="289"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad8 id="1">    93,    82,    84,    95,    89,    83,    90,    94</quad8>
 			<quad8 id="2">    95,    84,    86,    97,    90,    85,    91,    96</quad8>
 			<quad8 id="3">    97,    86,    88,    99,    91,    87,    92,    98</quad8>
@@ -475,7 +475,7 @@
 			<quad8 id="8">   117,   106,   108,   119,   112,   107,   113,   118</quad8>
 			<quad8 id="9">   119,   108,   110,   121,   113,   109,   114,   120</quad8>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad8 id="1">    61,    69,    71,    63,    66,    70,    67,    62</quad8>
 			<quad8 id="2">    63,    71,    73,    65,    67,    72,    68,    64</quad8>
 			<quad8 id="3">    69,    77,    79,    71,    74,    78,    75,    70</quad8>
@@ -485,8 +485,8 @@
 			<elem id="10"/>
 		</ElementSet>
 		<SurfacePair name="TiedElasticInterface01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<MeshData>

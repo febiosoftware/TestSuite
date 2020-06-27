@@ -1153,14 +1153,14 @@
 			<node id="155"/>
 			<node id="156"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad4 id="1">     1,    27,    28,     2</quad4>
 			<quad4 id="2">    27,    53,    54,    28</quad4>
 			<quad4 id="3">    53,    79,    80,    54</quad4>
 			<quad4 id="4">    79,   105,   106,    80</quad4>
 			<quad4 id="5">   105,   131,   132,   106</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">   271,   213,   214,   272</quad4>
 			<quad4 id="2">   329,   271,   272,   330</quad4>
 			<quad4 id="3">   387,   329,   330,   388</quad4>
@@ -1169,8 +1169,8 @@
 			<elem id="60"/>
 		</ElementSet>
 		<SurfacePair name="TCInterface01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<Boundary>

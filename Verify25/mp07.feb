@@ -795,10 +795,10 @@ Comments:
 			<node id="121"/>
 			<node id="122"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad4 id="1">   123,   125,   126,   124</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">     1,    62,    64,     3</quad4>
 			<quad4 id="2">     5,     3,    64,    66</quad4>
 			<quad4 id="3">     7,     5,    66,    68</quad4>
@@ -830,10 +830,10 @@ Comments:
 			<quad4 id="29">    59,    57,   118,   120</quad4>
 			<quad4 id="30">    61,    59,   120,   122</quad4>
 		</Surface>
-		<Surface name="MasterSurface02">
+		<Surface name="SecondarySurface02">
 			<quad4 id="1">   127,   129,   130,   128</quad4>
 		</Surface>
-		<Surface name="SlaveSurface02">
+		<Surface name="PrimarySurface02">
 			<tri3 id="1">    62,    63,    64</tri3>
 			<quad4 id="2">    63,    65,    66,    64</quad4>
 			<quad4 id="3">    65,    67,    68,    66</quad4>
@@ -869,12 +869,12 @@ Comments:
 			<elem id="2"/>
 		</ElementSet>
 		<SurfacePair name="TCInterface01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 		<SurfacePair name="TCInterface02">
-			<master surface="MasterSurface02"/>
-			<slave surface="SlaveSurface02"/>
+			<master surface="SecondarySurface02"/>
+			<slave surface="PrimarySurface02"/>
 		</SurfacePair>
 	</Geometry>
 	<MeshData>

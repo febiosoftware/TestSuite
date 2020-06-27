@@ -4021,7 +4021,7 @@
 			<node id="2015"/>
 			<node id="2016"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad4 id="1">  1023,  1026,  1074,  1071</quad4>
 			<quad4 id="2">  1026,  1029,  1077,  1074</quad4>
 			<quad4 id="3">  1029,  1032,  1080,  1077</quad4>
@@ -4183,7 +4183,7 @@
 			<quad4 id="159">  1953,  1956,  2004,  2001</quad4>
 			<quad4 id="160">  1956,  1959,  2007,  2004</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">     3,     6,    54,    51</quad4>
 			<quad4 id="2">     6,     9,    57,    54</quad4>
 			<quad4 id="3">     9,    12,    60,    57</quad4>
@@ -4349,8 +4349,8 @@
 			<elem id="624"/>
 		</ElementSet>
 		<SurfacePair name="TCInterface01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<Boundary>

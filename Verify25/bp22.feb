@@ -655,18 +655,18 @@ Comments:
 			<node id="147"/>
 			<node id="168"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad4 id="1">   106,   148,   127,    85</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">    21,    63,    84,    42</quad4>
 		</Surface>
 		<ElementSet name="unnamed_set01">
 			<elem id="1"/>
 		</ElementSet>
 		<SurfacePair name="BiphasicContact01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<Boundary>

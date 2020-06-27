@@ -1469,10 +1469,10 @@
 			<node id="650"/>
 			<node id="676"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad4 id="1">   679,   683,   681,   677</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">     1,    27,    28,     2</quad4>
 			<quad4 id="2">     2,    28,    29,     3</quad4>
 			<quad4 id="3">     3,    29,    30,     4</quad4>
@@ -2103,8 +2103,8 @@
 			<elem id="213"/>
 		</ElementSet>
 		<SurfacePair name="TCInterface01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<MeshData>

@@ -3605,7 +3605,7 @@
 			<node id="9"/>
 			<node id="10"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad4 id="1">  1701,  1694,  1743,  1750</quad4>
 			<quad4 id="2">  1694,  1695,  1744,  1743</quad4>
 			<quad4 id="3">  1701,  1702,  1695,  1694</quad4>
@@ -3691,7 +3691,7 @@
 			<quad4 id="83">  1759,  1766,  1790,  1783</quad4>
 			<quad4 id="84">  1766,  1765,  1789,  1790</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">   172,   182,   184,   174</quad4>
 			<quad4 id="2">   174,   184,   186,   176</quad4>
 			<quad4 id="3">   176,   186,   188,   178</quad4>
@@ -3729,8 +3729,8 @@
 			<elem id="60"/>
 		</ElementSet>
 		<SurfacePair name="SlidingInterface01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<Boundary>

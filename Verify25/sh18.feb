@@ -143,15 +143,15 @@
 		<NodeSet name="unnamed_set01">
 			<node id="4"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad8 id="1">     2,     6,     8,     4,    12,    19,    16,    13</quad8>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad8 id="1">    26,    38,    33,    21,    31,    36,    29,    24</quad8>
 		</Surface>
 		<SurfacePair name="TCInterface01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<MeshData>

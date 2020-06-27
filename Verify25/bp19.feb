@@ -6717,7 +6717,7 @@ Comments:
 			<quad4 id="39">  1679,  1637,  1638,  1680</quad4>
 			<quad4 id="40">  1721,  1679,  1680,  1722</quad4>
 		</Surface>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<tri3 id="1">  2183,  2161,  2184</tri3>
 			<tri3 id="2">  2184,  2161,  2162</tri3>
 			<tri3 id="3">  2161,  2139,  2162</tri3>
@@ -6759,7 +6759,7 @@ Comments:
 			<tri3 id="39">  1765,  1743,  1766</tri3>
 			<tri3 id="40">  1766,  1743,  1744</tri3>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">     1,    43,    44,     2</quad4>
 			<quad4 id="2">    43,    85,    86,    44</quad4>
 			<quad4 id="3">    85,   127,   128,    86</quad4>
@@ -6805,8 +6805,8 @@ Comments:
 			<elem id="1"/>
 		</ElementSet>
 		<SurfacePair name="TiedBiphasicInterface01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<Boundary>

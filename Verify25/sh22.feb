@@ -2312,7 +2312,7 @@
 		<NodeSet name="unnamed_set01">
 			<node id="4"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad8 id="1">     9,   118,   132,    23,    84,   123,    89,    14</quad8>
 			<quad8 id="2">    23,   132,   146,    37,    89,   137,    94,    28</quad8>
 			<quad8 id="3">    37,   146,   160,    51,    94,   151,    99,    42</quad8>
@@ -2339,7 +2339,7 @@
 			<quad8 id="24">   487,   596,   610,   501,   535,   601,   540,   492</quad8>
 			<quad8 id="25">   501,   610,   624,   515,   540,   615,   545,   506</quad8>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad8 id="1">   642,   774,   757,   625,   727,   768,   721,   636</quad8>
 			<quad8 id="2">   659,   791,   774,   642,   733,   785,   727,   653</quad8>
 			<quad8 id="3">   676,   808,   791,   659,   739,   802,   733,   670</quad8>
@@ -2367,8 +2367,8 @@
 			<quad8 id="25">  1238,  1370,  1353,  1221,  1279,  1364,  1273,  1232</quad8>
 		</Surface>
 		<SurfacePair name="TCInterface01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<MeshData>

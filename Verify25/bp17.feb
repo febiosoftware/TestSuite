@@ -5128,7 +5128,7 @@ Comments:
 			<node id="1875"/>
 			<node id="1900"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad4 id="1">  1121,  1087,  1088,  1122</quad4>
 			<quad4 id="2">  1087,  1053,  1054,  1088</quad4>
 			<quad4 id="3">  1053,  1019,  1020,  1054</quad4>
@@ -5162,7 +5162,7 @@ Comments:
 			<quad4 id="31">   101,    67,    68,   102</quad4>
 			<quad4 id="32">    67,    33,    34,    68</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">  1500,  1501,  1902,  1901</quad4>
 			<quad4 id="2">  1501,  1502,  1903,  1902</quad4>
 			<quad4 id="3">  1502,  1503,  1904,  1903</quad4>
@@ -5192,8 +5192,8 @@ Comments:
 			<elem id="1"/>
 		</ElementSet>
 		<SurfacePair name="BiphasicContact01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<Boundary>

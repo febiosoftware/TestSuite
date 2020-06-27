@@ -1308,7 +1308,7 @@
 			<node id="171"/>
 			<node id="172"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad4 id="1">    89,    93,    94,    90</quad4>
 			<quad4 id="2">    93,    97,    98,    94</quad4>
 			<quad4 id="3">    97,   101,   102,    98</quad4>
@@ -1330,7 +1330,7 @@
 			<quad4 id="19">   161,   165,   166,   162</quad4>
 			<quad4 id="20">   165,   169,   170,   166</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">    87,    83,    84,    88</quad4>
 			<quad4 id="2">    83,    79,    80,    84</quad4>
 			<quad4 id="3">    79,    75,    76,    80</quad4>
@@ -1357,8 +1357,8 @@
 			<elem id="21"/>
 		</ElementSet>
 		<SurfacePair name="MultiphasicContact01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<Boundary>

@@ -8879,7 +8879,7 @@
 			<node id="3967"/>
 			<node id="3968"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad4 id="1">     4,     8,    72,    68</quad4>
 			<quad4 id="2">     8,    12,    76,    72</quad4>
 			<quad4 id="3">    12,    16,    80,    76</quad4>
@@ -9121,7 +9121,7 @@
 			<quad4 id="239">  1916,  1920,  1984,  1980</quad4>
 			<quad4 id="240">  1920,  1860,  1924,  1984</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">  2004,  2008,  2072,  2068</quad4>
 			<quad4 id="2">  2008,  2012,  2076,  2072</quad4>
 			<quad4 id="3">  2012,  2016,  2080,  2076</quad4>
@@ -9367,8 +9367,8 @@
 			<elem id="771"/>
 		</ElementSet>
 		<SurfacePair name="SlidingContact01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<Boundary>

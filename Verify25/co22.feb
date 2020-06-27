@@ -6315,10 +6315,10 @@
 			<node id="2481"/>
 			<node id="2482"/>
 		</NodeSet>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad4 id="1">  2483,  2487,  2488,  2484</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">  2364,  2362,  2442,  2444</quad4>
 			<quad4 id="2">  2363,  2365,  2445,  2443</quad4>
 			<quad4 id="3">  2366,  2364,  2444,  2446</quad4>
@@ -6360,10 +6360,10 @@
 			<quad4 id="39">  2381,  2402,  2482,  2461</quad4>
 			<quad4 id="40">  2402,  2401,  2481,  2482</quad4>
 		</Surface>
-		<Surface name="MasterSurface02">
+		<Surface name="SecondarySurface02">
 			<quad4 id="1">  2497,  2493,  2494,  2498</quad4>
 		</Surface>
-		<Surface name="SlaveSurface02">
+		<Surface name="PrimarySurface02">
 			<quad4 id="1">  2344,  2323,  2403,  2424</quad4>
 			<quad4 id="2">  2323,  2324,  2404,  2403</quad4>
 			<quad4 id="3">  2324,  2325,  2405,  2404</quad4>
@@ -6409,12 +6409,12 @@
 			<elem id="260"/>
 		</ElementSet>
 		<SurfacePair name="SlidingInterface01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 		<SurfacePair name="SlidingInterface02">
-			<master surface="MasterSurface02"/>
-			<slave surface="SlaveSurface02"/>
+			<master surface="SecondarySurface02"/>
+			<slave surface="PrimarySurface02"/>
 		</SurfacePair>
 	</Geometry>
 	<Boundary>

@@ -1995,7 +1995,7 @@
 			<elem id="896">   919,   918,   943,   944,  1017,  1016,  1041,  1042</elem>
 			<elem id="897">   938,   939,   944,   943,  1036,  1037,  1042,  1041</elem>
 		</Elements>
-		<Surface name="MasterSurface01">
+		<Surface name="SecondarySurface01">
 			<quad4 id="1">   950,   945,   970,   975</quad4>
 			<quad4 id="2">   945,   946,   971,   970</quad4>
 			<quad4 id="3">   950,   951,   946,   945</quad4>
@@ -2045,7 +2045,7 @@
 			<quad4 id="47">   980,   985,  1001,   996</quad4>
 			<quad4 id="48">   985,   984,  1000,  1001</quad4>
 		</Surface>
-		<Surface name="SlaveSurface01">
+		<Surface name="PrimarySurface01">
 			<quad4 id="1">   474,   469,   485,   490</quad4>
 			<quad4 id="2">   469,   470,   486,   485</quad4>
 			<quad4 id="3">   470,   471,   487,   486</quad4>
@@ -2199,8 +2199,8 @@
 			<elem id="426"/>
 		</ElementSet>
 		<SurfacePair name="SlidingInterface01">
-			<master surface="MasterSurface01"/>
-			<slave surface="SlaveSurface01"/>
+			<master surface="SecondarySurface01"/>
+			<slave surface="PrimarySurface01"/>
 		</SurfacePair>
 	</Geometry>
 	<Boundary>
