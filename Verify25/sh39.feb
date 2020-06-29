@@ -60,7 +60,7 @@
 		<material id="2" name="shell1" type="rigid body">
 			<density>1</density>
 		</material>
-		<material id="3" name="shell1" type="rigid body">
+		<material id="3" name="shell2" type="rigid body">
 			<density>1</density>
 		</material>
 	</Material>

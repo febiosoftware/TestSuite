@@ -37,19 +37,19 @@
 			<c2>0</c2>
 			<k>933.333</k>
 		</material>
-		<material id="2" name="mat1" type="Mooney-Rivlin">
+		<material id="2" name="mat2" type="Mooney-Rivlin">
 			<density>1</density>
 			<c1>100</c1>
 			<c2>0</c2>
 			<k>933.333</k>
 		</material>
-		<material id="3" name="mat1" type="Mooney-Rivlin">
+		<material id="3" name="mat3" type="Mooney-Rivlin">
 			<density>1</density>
 			<c1>10000</c1>
 			<c2>0</c2>
 			<k>93333.3</k>
 		</material>
-		<material id="4" name="mat1" type="Mooney-Rivlin">
+		<material id="4" name="mat4" type="Mooney-Rivlin">
 			<density>1</density>
 			<c1>100</c1>
 			<c2>0</c2>

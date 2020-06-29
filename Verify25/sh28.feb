@@ -36,7 +36,7 @@
 			<E>1</E>
 			<v>0</v>
 		</material>
-		<material id="2" name="mat1" type="rigid body">
+		<material id="2" name="mat2" type="rigid body">
 			<density>1</density>
 		</material>
 	</Material>

@@ -9,7 +9,7 @@
 		</Constants>
 	</Globals>
 	<Material>
-		<material id="1" name="Material 1" type="Ogden unconstrained">
+		<material id="1" name="Material-1" type="Ogden unconstrained">
 			<density>1</density>
 			<cp>1</cp>
 			<c1>0.0329</c1>
@@ -25,7 +25,7 @@
 			<m5>1</m5>
 			<m6>1</m6>
 		</material>
-		<material id="2" name="Material 1" type="rigid body">
+		<material id="2" name="Material-2" type="rigid body">
 			<density>1</density>
 			<center_of_mass>0,0,0</center_of_mass>
 		</material>

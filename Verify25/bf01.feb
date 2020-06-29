@@ -59,7 +59,7 @@ Final displacement of node 216: 0.685675, -0.260793, -0.405853
         </plotfile>
     </Output>
     <Material>
-        <material id="1" type="Ogden">
+        <material id="1" name="Material1" type="Ogden">
             <c1>1.0000000e-03</c1>
             <m1>8</m1>
             <c2>1.0000000e-03</c2>

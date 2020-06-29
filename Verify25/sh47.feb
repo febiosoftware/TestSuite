@@ -30,13 +30,13 @@
 		</Constants>
 	</Globals>
 	<Material>
-		<material id="1" name="Material2" type="rigid body">
+		<material id="1" name="Material1" type="rigid body">
 			<density>1e-009</density>
 		</material>
 		<material id="2" name="Material2" type="rigid body">
 			<density>1e-009</density>
 		</material>
-		<material id="3" name="Material2" type="rigid body">
+		<material id="3" name="Material3" type="rigid body">
 			<density>1e-009</density>
 		</material>
 		<material id="4" name="ground" type="rigid body">

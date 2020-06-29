@@ -56,10 +56,10 @@
 				</scheme>
 			</solid>
 		</material>
-		<material id="2" name="mat1" type="rigid body">
+		<material id="2" name="mat2" type="rigid body">
 			<density>1</density>
 		</material>
-		<material id="3" name="mat1" type="rigid body">
+		<material id="3" name="mat3" type="rigid body">
 			<density>1</density>
 		</material>
 	</Material>

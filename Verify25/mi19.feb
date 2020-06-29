@@ -35,7 +35,7 @@
 			<E>1e-012</E>
 			<v>0.3</v>
 		</material>
-		<material id="2" name="Mat1" type="neo-Hookean">
+		<material id="2" name="Mat2" type="neo-Hookean">
 			<density>1</density>
 			<E>1e-009</E>
 			<v>0.3</v>

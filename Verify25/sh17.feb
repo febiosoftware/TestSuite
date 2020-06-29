@@ -36,17 +36,17 @@
 			<E>1</E>
 			<v>0</v>
 		</material>
-		<material id="2" name="mat1" type="neo-Hookean">
+		<material id="2" name="mat2" type="neo-Hookean">
 			<density>1</density>
 			<E>1</E>
 			<v>0</v>
 		</material>
-		<material id="3" name="mat1" type="neo-Hookean">
+		<material id="3" name="mat3" type="neo-Hookean">
 			<density>1</density>
 			<E>1</E>
 			<v>0</v>
 		</material>
-		<material id="4" name="mat1" type="neo-Hookean">
+		<material id="4" name="mat4" type="neo-Hookean">
 			<density>1</density>
 			<E>1</E>
 			<v>0</v>

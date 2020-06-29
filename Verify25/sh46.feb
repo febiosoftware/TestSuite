@@ -30,7 +30,7 @@
 		</Constants>
 	</Globals>
 	<Material>
-		<material id="1" name="Material2" type="neo-Hookean">
+		<material id="1" name="Material1" type="neo-Hookean">
 			<density>1</density>
 			<E>1</E>
 			<v>0</v>
@@ -38,10 +38,10 @@
 		<material id="2" name="Material2" type="rigid body">
 			<density>1</density>
 		</material>
-		<material id="3" name="Material2" type="rigid body">
+		<material id="3" name="Material3" type="rigid body">
 			<density>1</density>
 		</material>
-		<material id="4" name="Material2" type="neo-Hookean">
+		<material id="4" name="Material4" type="neo-Hookean">
 			<density>1</density>
 			<E>1</E>
 			<v>0</v>
