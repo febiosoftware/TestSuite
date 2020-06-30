@@ -18142,8 +18142,6 @@ Comments:
 			<fric_coeff>0</fric_coeff>
 			<smooth_aug>0</smooth_aug>
 			<node_reloc>0</node_reloc>
-			<flip_master>0</flip_master>
-			<flip_slave>0</flip_slave>
 		</contact>
 	</Contact>
 	<LoadData>
