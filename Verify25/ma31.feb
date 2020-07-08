@@ -33,6 +33,7 @@
 		<material id="1" name="Viscoelastic solid" type="uncoupled reactive viscoelastic">
 			<kinetics>1</kinetics>
 			<trigger>0</trigger>
+			<k>2000</k>
 			<elastic type="Mooney-Rivlin">
 				<density>1</density>
 				<c1>1</c1>

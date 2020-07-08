@@ -43,9 +43,9 @@
 			<t4>0</t4>
 			<t5>0</t5>
 			<t6>0</t6>
+			<k>1000</k>
 			<elastic type="Ogden">
 				<density>1</density>
-				<k>1000</k>
 				<c1>1</c1>
 				<c2>0</c2>
 				<c3>0</c3>

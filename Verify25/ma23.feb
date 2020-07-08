@@ -31,11 +31,11 @@
 	</Globals>
 	<Material>
 		<material id="1" name="Material1" type="uncoupled solid mixture">
+			<density>1</density>
+			<k>1000</k>
 			<solid type="Mooney-Rivlin">
-				<density>1</density>
 				<c1>1</c1>
 				<c2>0</c2>
-				<k>1000</k>
 			</solid>
 			<solid type="uncoupled prescribed trans iso active contraction">
 				<T0 lc="1">0.5</T0>
