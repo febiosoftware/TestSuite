@@ -21379,9 +21379,9 @@
 			<scale lc="2">1</scale>
 			<traction>0,1,0</traction>
 		</surface_load>
-		<surface_load type="fluid displacement" surface="FluidVelocity1">
+		<surface_load type="fluid velocity" surface="FluidVelocity1">
 			<scale lc="1">1</scale>
-			<displacement>1,0,0</displacement>
+			<velocity>1,0,0</velocity>
 		</surface_load>
 	</Loads>
 	<LoadData>
@@ -21397,16 +21397,16 @@
 	</LoadData>
 	<Output>
 		<plotfile type="febio">
-			<var type="displacement"/>
+			<var type="velocity"/>
 			<var type="fluid pressure"/>
 			<var type="fluid acceleration"/>
 			<var type="fluid dilatation"/>
 			<var type="fluid rate of deformation"/>
 			<var type="fluid stress"/>
 			<var type="fluid surface force"/>
-			<var type="fluid displacement"/>
+			<var type="fluid velocity"/>
 			<var type="fluid vorticity"/>
-			<var type="nodal fluid displacement"/>
+			<var type="nodal fluid velocity"/>
 		</plotfile>
 	</Output>
 </febio_spec>

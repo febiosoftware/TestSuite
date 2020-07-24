@@ -3550,10 +3550,10 @@
 			<var type="fluid mass flow rate"/>
 			<var type="fluid rate of deformation"/>
 			<var type="fluid stress"/>
-			<var type="fluid displacement"/>
+			<var type="fluid velocity"/>
 			<var type="fluid volume ratio"/>
 			<var type="fluid vorticity"/>
-			<var type="nodal fluid displacement"/>
+			<var type="nodal fluid velocity"/>
 		</plotfile>
 	</Output>
 </febio_spec>
