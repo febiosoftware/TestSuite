@@ -1230,16 +1230,16 @@
 	</LoadData>
 	<Output>
 		<plotfile type="febio">
-			<var type="velocity"/>
+			<var type="displacement"/>
 			<var type="fluid pressure"/>
 			<var type="fluid acceleration"/>
 			<var type="fluid dilatation"/>
 			<var type="fluid rate of deformation"/>
 			<var type="fluid shear viscosity"/>
 			<var type="fluid stress"/>
-			<var type="fluid velocity"/>
+			<var type="fluid displacement"/>
 			<var type="fluid vorticity"/>
-			<var type="nodal fluid velocity"/>
+			<var type="nodal fluid displacement"/>
 		</plotfile>
 	</Output>
 </febio_spec>

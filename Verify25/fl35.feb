@@ -17275,7 +17275,7 @@
 		<fix bc="wx,wy,wz" node_set="FixedFluidVelocity01"/>
 	</Boundary>
 	<Loads>
-		<surface_load type="fluid rotational velocity" surface="FluidRotationalVelocity1">
+		<surface_load type="fluid rotational displacement" surface="FluidRotationalVelocity1">
 			<angular_speed lc="1">1</angular_speed>
 			<axis>0,0,1</axis>
 			<origin>0,0,0</origin>
@@ -17289,15 +17289,15 @@
 	</LoadData>
 	<Output>
 		<plotfile type="febio">
-			<var type="velocity"/>
+			<var type="displacement"/>
 			<var type="fluid pressure"/>
 			<var type="fluid acceleration"/>
 			<var type="fluid dilatation"/>
 			<var type="fluid rate of deformation"/>
 			<var type="fluid stress"/>
-			<var type="fluid velocity"/>
+			<var type="fluid displacement"/>
 			<var type="fluid vorticity"/>
-			<var type="nodal fluid velocity"/>
+			<var type="nodal fluid displacement"/>
 		</plotfile>
 	</Output>
 </febio_spec>

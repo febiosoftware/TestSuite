@@ -13093,12 +13093,12 @@
 		<fix bc="ef" node_set="FixedFluidDilatation1"/>
 	</Boundary>
 	<Loads>
-		<surface_load type="fluid rotational velocity" surface="FluidRotationalVelocity1">
+		<surface_load type="fluid rotational displacement" surface="FluidRotationalVelocity1">
 			<angular_speed lc="1">2</angular_speed>
 			<axis>0,0,1</axis>
 			<origin>0,0,0</origin>
 		</surface_load>
-		<surface_load type="fluid rotational velocity" surface="FluidRotationalVelocity2">
+		<surface_load type="fluid rotational displacement" surface="FluidRotationalVelocity2">
 			<angular_speed lc="2">1</angular_speed>
 			<axis>0,0,1</axis>
 			<origin>0,0,0</origin>
@@ -13121,10 +13121,10 @@
 			<var type="fluid dilatation"/>
 			<var type="fluid rate of deformation"/>
 			<var type="fluid stress"/>
-			<var type="fluid velocity"/>
+			<var type="fluid displacement"/>
 			<var type="fluid volume ratio"/>
 			<var type="fluid vorticity"/>
-			<var type="nodal fluid velocity"/>
+			<var type="nodal fluid displacement"/>
 		</plotfile>
 	</Output>
 	<Step name="Step02">

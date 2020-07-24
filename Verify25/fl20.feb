@@ -19590,9 +19590,9 @@
 		<fix bc="wx,wy" node_set="FixedFluidVelocity2"/>
 	</Boundary>
 	<Loads>
-		<surface_load type="fluid velocity" surface="FluidVelocityVector1">
+		<surface_load type="fluid displacement" surface="FluidVelocityVector1">
 			<scale lc="1">1</scale>
-			<velocity>1,0,0</velocity>
+			<displacement>1,0,0</displacement>
 		</surface_load>
 	</Loads>
 	<LoadData>
@@ -19609,10 +19609,10 @@
 			<var type="fluid rate of deformation"/>
 			<var type="fluid stress"/>
 			<var type="fluid surface force"/>
-			<var type="fluid velocity"/>
+			<var type="fluid displacement"/>
 			<var type="fluid volume ratio"/>
 			<var type="fluid vorticity"/>
-			<var type="nodal fluid velocity"/>
+			<var type="nodal fluid displacement"/>
 		</plotfile>
 	</Output>
 </febio_spec>
