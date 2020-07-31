@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A 10x10 element shell sheet is constrained in x,y,z along the edges and
+	has a body force of 0 units at time t=0 to 1 unit at time t=1.
+Main Features:
+	EAS Shells
+	Body Force
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 606
+Results
+	Steps Completed: 15
+	Equilibrium Iterations: 59
+	Right Hand Evaluations: 78
+	Siffness Reformations: 59
+	Other:
+		The sheet has a maximum z-displacement of -0.303 units at time t=1.
+Comments:
+	
+-->
+<febio_spec version="2.5">
+	<Module type="solid"/>
+	<Control>
+		<time_steps>100</time_steps>
+		<step_size>0.01</step_size>
+		<max_refs>25</max_refs>
+		<max_ups>0</max_ups>
+		<diverge_reform>1</diverge_reform>
+		<reform_each_time_step>1</reform_each_time_step>
+		<dtol>0.001</dtol>
+		<etol>0.01</etol>
+		<rtol>0</rtol>
+		<lstol>0.9</lstol>
+		<min_residual>1e-020</min_residual>
+		<qnmethod>0</qnmethod>
+		<time_stepper>
+			<dtmin>0.01</dtmin>
+			<dtmax>0.1</dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+		</time_stepper>
+		<analysis type="static"/>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="Material 1" type="neo-Hookean">
+			<density>1</density>
+			<E>1.5</E>
+			<v>0</v>
+		</material>
+	</Material>
+	<Geometry>
+		<Nodes name="sh10">
+			<node id="1">-5.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="2">-5.0000000e-001,-4.0000000e-001, 0.0000000e+000</node>
+			<node id="3">-5.0000000e-001,-3.0000000e-001, 0.0000000e+000</node>
+			<node id="4">-5.0000000e-001,-2.0000000e-001, 0.0000000e+000</node>
+			<node id="5">-5.0000000e-001,-1.0000000e-001, 0.0000000e+000</node>
+			<node id="6">-5.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="7">-5.0000000e-001, 1.0000000e-001, 0.0000000e+000</node>
+			<node id="8">-5.0000000e-001, 2.0000000e-001, 0.0000000e+000</node>
+			<node id="9">-5.0000000e-001, 3.0000000e-001, 0.0000000e+000</node>
+			<node id="10">-5.0000000e-001, 4.0000000e-001, 0.0000000e+000</node>
+			<node id="11">-5.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="12">-4.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="13">-4.0000000e-001,-4.0000000e-001, 0.0000000e+000</node>
+			<node id="14">-4.0000000e-001,-3.0000000e-001, 0.0000000e+000</node>
+			<node id="15">-4.0000000e-001,-2.0000000e-001, 0.0000000e+000</node>
+			<node id="16">-4.0000000e-001,-1.0000000e-001, 0.0000000e+000</node>
+			<node id="17">-4.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="18">-4.0000000e-001, 1.0000000e-001, 0.0000000e+000</node>
+			<node id="19">-4.0000000e-001, 2.0000000e-001, 0.0000000e+000</node>
+			<node id="20">-4.0000000e-001, 3.0000000e-001, 0.0000000e+000</node>
+			<node id="21">-4.0000000e-001, 4.0000000e-001, 0.0000000e+000</node>
+			<node id="22">-4.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="23">-3.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="24">-3.0000000e-001,-4.0000000e-001, 0.0000000e+000</node>
+			<node id="25">-3.0000000e-001,-3.0000000e-001, 0.0000000e+000</node>
+			<node id="26">-3.0000000e-001,-2.0000000e-001, 0.0000000e+000</node>
+			<node id="27">-3.0000000e-001,-1.0000000e-001, 0.0000000e+000</node>
+			<node id="28">-3.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="29">-3.0000000e-001, 1.0000000e-001, 0.0000000e+000</node>
+			<node id="30">-3.0000000e-001, 2.0000000e-001, 0.0000000e+000</node>
+			<node id="31">-3.0000000e-001, 3.0000000e-001, 0.0000000e+000</node>
+			<node id="32">-3.0000000e-001, 4.0000000e-001, 0.0000000e+000</node>
+			<node id="33">-3.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="34">-2.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="35">-2.0000000e-001,-4.0000000e-001, 0.0000000e+000</node>
+			<node id="36">-2.0000000e-001,-3.0000000e-001, 0.0000000e+000</node>
+			<node id="37">-2.0000000e-001,-2.0000000e-001, 0.0000000e+000</node>
+			<node id="38">-2.0000000e-001,-1.0000000e-001, 0.0000000e+000</node>
+			<node id="39">-2.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="40">-2.0000000e-001, 1.0000000e-001, 0.0000000e+000</node>
+			<node id="41">-2.0000000e-001, 2.0000000e-001, 0.0000000e+000</node>
+			<node id="42">-2.0000000e-001, 3.0000000e-001, 0.0000000e+000</node>
+			<node id="43">-2.0000000e-001, 4.0000000e-001, 0.0000000e+000</node>
+			<node id="44">-2.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="45">-1.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="46">-1.0000000e-001,-4.0000000e-001, 0.0000000e+000</node>
+			<node id="47">-1.0000000e-001,-3.0000000e-001, 0.0000000e+000</node>
+			<node id="48">-1.0000000e-001,-2.0000000e-001, 0.0000000e+000</node>
+			<node id="49">-1.0000000e-001,-1.0000000e-001, 0.0000000e+000</node>
+			<node id="50">-1.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="51">-1.0000000e-001, 1.0000000e-001, 0.0000000e+000</node>
+			<node id="52">-1.0000000e-001, 2.0000000e-001, 0.0000000e+000</node>
+			<node id="53">-1.0000000e-001, 3.0000000e-001, 0.0000000e+000</node>
+			<node id="54">-1.0000000e-001, 4.0000000e-001, 0.0000000e+000</node>
+			<node id="55">-1.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="56"> 0.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="57"> 0.0000000e+000,-4.0000000e-001, 0.0000000e+000</node>
+			<node id="58"> 0.0000000e+000,-3.0000000e-001, 0.0000000e+000</node>
+			<node id="59"> 0.0000000e+000,-2.0000000e-001, 0.0000000e+000</node>
+			<node id="60"> 0.0000000e+000,-1.0000000e-001, 0.0000000e+000</node>
+			<node id="61"> 0.0000000e+000, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="62"> 0.0000000e+000, 1.0000000e-001, 0.0000000e+000</node>
+			<node id="63"> 0.0000000e+000, 2.0000000e-001, 0.0000000e+000</node>
+			<node id="64"> 0.0000000e+000, 3.0000000e-001, 0.0000000e+000</node>
+			<node id="65"> 0.0000000e+000, 4.0000000e-001, 0.0000000e+000</node>
+			<node id="66"> 0.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="67"> 1.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="68"> 1.0000000e-001,-4.0000000e-001, 0.0000000e+000</node>
+			<node id="69"> 1.0000000e-001,-3.0000000e-001, 0.0000000e+000</node>
+			<node id="70"> 1.0000000e-001,-2.0000000e-001, 0.0000000e+000</node>
+			<node id="71"> 1.0000000e-001,-1.0000000e-001, 0.0000000e+000</node>
+			<node id="72"> 1.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="73"> 1.0000000e-001, 1.0000000e-001, 0.0000000e+000</node>
+			<node id="74"> 1.0000000e-001, 2.0000000e-001, 0.0000000e+000</node>
+			<node id="75"> 1.0000000e-001, 3.0000000e-001, 0.0000000e+000</node>
+			<node id="76"> 1.0000000e-001, 4.0000000e-001, 0.0000000e+000</node>
+			<node id="77"> 1.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="78"> 2.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="79"> 2.0000000e-001,-4.0000000e-001, 0.0000000e+000</node>
+			<node id="80"> 2.0000000e-001,-3.0000000e-001, 0.0000000e+000</node>
+			<node id="81"> 2.0000000e-001,-2.0000000e-001, 0.0000000e+000</node>
+			<node id="82"> 2.0000000e-001,-1.0000000e-001, 0.0000000e+000</node>
+			<node id="83"> 2.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="84"> 2.0000000e-001, 1.0000000e-001, 0.0000000e+000</node>
+			<node id="85"> 2.0000000e-001, 2.0000000e-001, 0.0000000e+000</node>
+			<node id="86"> 2.0000000e-001, 3.0000000e-001, 0.0000000e+000</node>
+			<node id="87"> 2.0000000e-001, 4.0000000e-001, 0.0000000e+000</node>
+			<node id="88"> 2.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="89"> 3.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="90"> 3.0000000e-001,-4.0000000e-001, 0.0000000e+000</node>
+			<node id="91"> 3.0000000e-001,-3.0000000e-001, 0.0000000e+000</node>
+			<node id="92"> 3.0000000e-001,-2.0000000e-001, 0.0000000e+000</node>
+			<node id="93"> 3.0000000e-001,-1.0000000e-001, 0.0000000e+000</node>
+			<node id="94"> 3.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="95"> 3.0000000e-001, 1.0000000e-001, 0.0000000e+000</node>
+			<node id="96"> 3.0000000e-001, 2.0000000e-001, 0.0000000e+000</node>
+			<node id="97"> 3.0000000e-001, 3.0000000e-001, 0.0000000e+000</node>
+			<node id="98"> 3.0000000e-001, 4.0000000e-001, 0.0000000e+000</node>
+			<node id="99"> 3.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="100"> 4.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="101"> 4.0000000e-001,-4.0000000e-001, 0.0000000e+000</node>
+			<node id="102"> 4.0000000e-001,-3.0000000e-001, 0.0000000e+000</node>
+			<node id="103"> 4.0000000e-001,-2.0000000e-001, 0.0000000e+000</node>
+			<node id="104"> 4.0000000e-001,-1.0000000e-001, 0.0000000e+000</node>
+			<node id="105"> 4.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="106"> 4.0000000e-001, 1.0000000e-001, 0.0000000e+000</node>
+			<node id="107"> 4.0000000e-001, 2.0000000e-001, 0.0000000e+000</node>
+			<node id="108"> 4.0000000e-001, 3.0000000e-001, 0.0000000e+000</node>
+			<node id="109"> 4.0000000e-001, 4.0000000e-001, 0.0000000e+000</node>
+			<node id="110"> 4.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+			<node id="111"> 5.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
+			<node id="112"> 5.0000000e-001,-4.0000000e-001, 0.0000000e+000</node>
+			<node id="113"> 5.0000000e-001,-3.0000000e-001, 0.0000000e+000</node>
+			<node id="114"> 5.0000000e-001,-2.0000000e-001, 0.0000000e+000</node>
+			<node id="115"> 5.0000000e-001,-1.0000000e-001, 0.0000000e+000</node>
+			<node id="116"> 5.0000000e-001, 0.0000000e+000, 0.0000000e+000</node>
+			<node id="117"> 5.0000000e-001, 1.0000000e-001, 0.0000000e+000</node>
+			<node id="118"> 5.0000000e-001, 2.0000000e-001, 0.0000000e+000</node>
+			<node id="119"> 5.0000000e-001, 3.0000000e-001, 0.0000000e+000</node>
+			<node id="120"> 5.0000000e-001, 4.0000000e-001, 0.0000000e+000</node>
+			<node id="121"> 5.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
+		</Nodes>
+		<Elements type="q4eas" mat="1" name="Part1">
+			<elem id="1">     1,    12,    13,     2</elem>
+			<elem id="2">     2,    13,    14,     3</elem>
+			<elem id="3">     3,    14,    15,     4</elem>
+			<elem id="4">     4,    15,    16,     5</elem>
+			<elem id="5">     5,    16,    17,     6</elem>
+			<elem id="6">     6,    17,    18,     7</elem>
+			<elem id="7">     7,    18,    19,     8</elem>
+			<elem id="8">     8,    19,    20,     9</elem>
+			<elem id="9">     9,    20,    21,    10</elem>
+			<elem id="10">    10,    21,    22,    11</elem>
+			<elem id="11">    12,    23,    24,    13</elem>
+			<elem id="12">    13,    24,    25,    14</elem>
+			<elem id="13">    14,    25,    26,    15</elem>
+			<elem id="14">    15,    26,    27,    16</elem>
+			<elem id="15">    16,    27,    28,    17</elem>
+			<elem id="16">    17,    28,    29,    18</elem>
+			<elem id="17">    18,    29,    30,    19</elem>
+			<elem id="18">    19,    30,    31,    20</elem>
+			<elem id="19">    20,    31,    32,    21</elem>
+			<elem id="20">    21,    32,    33,    22</elem>
+			<elem id="21">    23,    34,    35,    24</elem>
+			<elem id="22">    24,    35,    36,    25</elem>
+			<elem id="23">    25,    36,    37,    26</elem>
+			<elem id="24">    26,    37,    38,    27</elem>
+			<elem id="25">    27,    38,    39,    28</elem>
+			<elem id="26">    28,    39,    40,    29</elem>
+			<elem id="27">    29,    40,    41,    30</elem>
+			<elem id="28">    30,    41,    42,    31</elem>
+			<elem id="29">    31,    42,    43,    32</elem>
+			<elem id="30">    32,    43,    44,    33</elem>
+			<elem id="31">    34,    45,    46,    35</elem>
+			<elem id="32">    35,    46,    47,    36</elem>
+			<elem id="33">    36,    47,    48,    37</elem>
+			<elem id="34">    37,    48,    49,    38</elem>
+			<elem id="35">    38,    49,    50,    39</elem>
+			<elem id="36">    39,    50,    51,    40</elem>
+			<elem id="37">    40,    51,    52,    41</elem>
+			<elem id="38">    41,    52,    53,    42</elem>
+			<elem id="39">    42,    53,    54,    43</elem>
+			<elem id="40">    43,    54,    55,    44</elem>
+			<elem id="41">    45,    56,    57,    46</elem>
+			<elem id="42">    46,    57,    58,    47</elem>
+			<elem id="43">    47,    58,    59,    48</elem>
+			<elem id="44">    48,    59,    60,    49</elem>
+			<elem id="45">    49,    60,    61,    50</elem>
+			<elem id="46">    50,    61,    62,    51</elem>
+			<elem id="47">    51,    62,    63,    52</elem>
+			<elem id="48">    52,    63,    64,    53</elem>
+			<elem id="49">    53,    64,    65,    54</elem>
+			<elem id="50">    54,    65,    66,    55</elem>
+			<elem id="51">    56,    67,    68,    57</elem>
+			<elem id="52">    57,    68,    69,    58</elem>
+			<elem id="53">    58,    69,    70,    59</elem>
+			<elem id="54">    59,    70,    71,    60</elem>
+			<elem id="55">    60,    71,    72,    61</elem>
+			<elem id="56">    61,    72,    73,    62</elem>
+			<elem id="57">    62,    73,    74,    63</elem>
+			<elem id="58">    63,    74,    75,    64</elem>
+			<elem id="59">    64,    75,    76,    65</elem>
+			<elem id="60">    65,    76,    77,    66</elem>
+			<elem id="61">    67,    78,    79,    68</elem>
+			<elem id="62">    68,    79,    80,    69</elem>
+			<elem id="63">    69,    80,    81,    70</elem>
+			<elem id="64">    70,    81,    82,    71</elem>
+			<elem id="65">    71,    82,    83,    72</elem>
+			<elem id="66">    72,    83,    84,    73</elem>
+			<elem id="67">    73,    84,    85,    74</elem>
+			<elem id="68">    74,    85,    86,    75</elem>
+			<elem id="69">    75,    86,    87,    76</elem>
+			<elem id="70">    76,    87,    88,    77</elem>
+			<elem id="71">    78,    89,    90,    79</elem>
+			<elem id="72">    79,    90,    91,    80</elem>
+			<elem id="73">    80,    91,    92,    81</elem>
+			<elem id="74">    81,    92,    93,    82</elem>
+			<elem id="75">    82,    93,    94,    83</elem>
+			<elem id="76">    83,    94,    95,    84</elem>
+			<elem id="77">    84,    95,    96,    85</elem>
+			<elem id="78">    85,    96,    97,    86</elem>
+			<elem id="79">    86,    97,    98,    87</elem>
+			<elem id="80">    87,    98,    99,    88</elem>
+			<elem id="81">    89,   100,   101,    90</elem>
+			<elem id="82">    90,   101,   102,    91</elem>
+			<elem id="83">    91,   102,   103,    92</elem>
+			<elem id="84">    92,   103,   104,    93</elem>
+			<elem id="85">    93,   104,   105,    94</elem>
+			<elem id="86">    94,   105,   106,    95</elem>
+			<elem id="87">    95,   106,   107,    96</elem>
+			<elem id="88">    96,   107,   108,    97</elem>
+			<elem id="89">    97,   108,   109,    98</elem>
+			<elem id="90">    98,   109,   110,    99</elem>
+			<elem id="91">   100,   111,   112,   101</elem>
+			<elem id="92">   101,   112,   113,   102</elem>
+			<elem id="93">   102,   113,   114,   103</elem>
+			<elem id="94">   103,   114,   115,   104</elem>
+			<elem id="95">   104,   115,   116,   105</elem>
+			<elem id="96">   105,   116,   117,   106</elem>
+			<elem id="97">   106,   117,   118,   107</elem>
+			<elem id="98">   107,   118,   119,   108</elem>
+			<elem id="99">   108,   119,   120,   109</elem>
+			<elem id="100">   109,   120,   121,   110</elem>
+		</Elements>
+		<NodeSet name="FixedDisplacement01">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="44"/>
+			<node id="45"/>
+			<node id="55"/>
+			<node id="56"/>
+			<node id="66"/>
+			<node id="67"/>
+			<node id="77"/>
+			<node id="78"/>
+			<node id="88"/>
+			<node id="89"/>
+			<node id="99"/>
+			<node id="100"/>
+			<node id="110"/>
+			<node id="111"/>
+			<node id="112"/>
+			<node id="113"/>
+			<node id="114"/>
+			<node id="115"/>
+			<node id="116"/>
+			<node id="117"/>
+			<node id="118"/>
+			<node id="119"/>
+			<node id="120"/>
+			<node id="121"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement02">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="44"/>
+			<node id="45"/>
+			<node id="55"/>
+			<node id="56"/>
+			<node id="66"/>
+			<node id="67"/>
+			<node id="77"/>
+			<node id="78"/>
+			<node id="88"/>
+			<node id="89"/>
+			<node id="99"/>
+			<node id="100"/>
+			<node id="110"/>
+			<node id="111"/>
+			<node id="112"/>
+			<node id="113"/>
+			<node id="114"/>
+			<node id="115"/>
+			<node id="116"/>
+			<node id="117"/>
+			<node id="118"/>
+			<node id="119"/>
+			<node id="120"/>
+			<node id="121"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement03">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="44"/>
+			<node id="45"/>
+			<node id="55"/>
+			<node id="56"/>
+			<node id="66"/>
+			<node id="67"/>
+			<node id="77"/>
+			<node id="78"/>
+			<node id="88"/>
+			<node id="89"/>
+			<node id="99"/>
+			<node id="100"/>
+			<node id="110"/>
+			<node id="111"/>
+			<node id="112"/>
+			<node id="113"/>
+			<node id="114"/>
+			<node id="115"/>
+			<node id="116"/>
+			<node id="117"/>
+			<node id="118"/>
+			<node id="119"/>
+			<node id="120"/>
+			<node id="121"/>
+		</NodeSet>
+		<ElementSet name="unnamed_set01">
+			<elem id="86"/>
+		</ElementSet>
+	</Geometry>
+	<MeshData>
+		<ElementData var="shell thickness" elem_set="Part1">
+			<elem lid="1">0.01,0.01,0.01,0.01</elem>
+			<elem lid="2">0.01,0.01,0.01,0.01</elem>
+			<elem lid="3">0.01,0.01,0.01,0.01</elem>
+			<elem lid="4">0.01,0.01,0.01,0.01</elem>
+			<elem lid="5">0.01,0.01,0.01,0.01</elem>
+			<elem lid="6">0.01,0.01,0.01,0.01</elem>
+			<elem lid="7">0.01,0.01,0.01,0.01</elem>
+			<elem lid="8">0.01,0.01,0.01,0.01</elem>
+			<elem lid="9">0.01,0.01,0.01,0.01</elem>
+			<elem lid="10">0.01,0.01,0.01,0.01</elem>
+			<elem lid="11">0.01,0.01,0.01,0.01</elem>
+			<elem lid="12">0.01,0.01,0.01,0.01</elem>
+			<elem lid="13">0.01,0.01,0.01,0.01</elem>
+			<elem lid="14">0.01,0.01,0.01,0.01</elem>
+			<elem lid="15">0.01,0.01,0.01,0.01</elem>
+			<elem lid="16">0.01,0.01,0.01,0.01</elem>
+			<elem lid="17">0.01,0.01,0.01,0.01</elem>
+			<elem lid="18">0.01,0.01,0.01,0.01</elem>
+			<elem lid="19">0.01,0.01,0.01,0.01</elem>
+			<elem lid="20">0.01,0.01,0.01,0.01</elem>
+			<elem lid="21">0.01,0.01,0.01,0.01</elem>
+			<elem lid="22">0.01,0.01,0.01,0.01</elem>
+			<elem lid="23">0.01,0.01,0.01,0.01</elem>
+			<elem lid="24">0.01,0.01,0.01,0.01</elem>
+			<elem lid="25">0.01,0.01,0.01,0.01</elem>
+			<elem lid="26">0.01,0.01,0.01,0.01</elem>
+			<elem lid="27">0.01,0.01,0.01,0.01</elem>
+			<elem lid="28">0.01,0.01,0.01,0.01</elem>
+			<elem lid="29">0.01,0.01,0.01,0.01</elem>
+			<elem lid="30">0.01,0.01,0.01,0.01</elem>
+			<elem lid="31">0.01,0.01,0.01,0.01</elem>
+			<elem lid="32">0.01,0.01,0.01,0.01</elem>
+			<elem lid="33">0.01,0.01,0.01,0.01</elem>
+			<elem lid="34">0.01,0.01,0.01,0.01</elem>
+			<elem lid="35">0.01,0.01,0.01,0.01</elem>
+			<elem lid="36">0.01,0.01,0.01,0.01</elem>
+			<elem lid="37">0.01,0.01,0.01,0.01</elem>
+			<elem lid="38">0.01,0.01,0.01,0.01</elem>
+			<elem lid="39">0.01,0.01,0.01,0.01</elem>
+			<elem lid="40">0.01,0.01,0.01,0.01</elem>
+			<elem lid="41">0.01,0.01,0.01,0.01</elem>
+			<elem lid="42">0.01,0.01,0.01,0.01</elem>
+			<elem lid="43">0.01,0.01,0.01,0.01</elem>
+			<elem lid="44">0.01,0.01,0.01,0.01</elem>
+			<elem lid="45">0.01,0.01,0.01,0.01</elem>
+			<elem lid="46">0.01,0.01,0.01,0.01</elem>
+			<elem lid="47">0.01,0.01,0.01,0.01</elem>
+			<elem lid="48">0.01,0.01,0.01,0.01</elem>
+			<elem lid="49">0.01,0.01,0.01,0.01</elem>
+			<elem lid="50">0.01,0.01,0.01,0.01</elem>
+			<elem lid="51">0.01,0.01,0.01,0.01</elem>
+			<elem lid="52">0.01,0.01,0.01,0.01</elem>
+			<elem lid="53">0.01,0.01,0.01,0.01</elem>
+			<elem lid="54">0.01,0.01,0.01,0.01</elem>
+			<elem lid="55">0.01,0.01,0.01,0.01</elem>
+			<elem lid="56">0.01,0.01,0.01,0.01</elem>
+			<elem lid="57">0.01,0.01,0.01,0.01</elem>
+			<elem lid="58">0.01,0.01,0.01,0.01</elem>
+			<elem lid="59">0.01,0.01,0.01,0.01</elem>
+			<elem lid="60">0.01,0.01,0.01,0.01</elem>
+			<elem lid="61">0.01,0.01,0.01,0.01</elem>
+			<elem lid="62">0.01,0.01,0.01,0.01</elem>
+			<elem lid="63">0.01,0.01,0.01,0.01</elem>
+			<elem lid="64">0.01,0.01,0.01,0.01</elem>
+			<elem lid="65">0.01,0.01,0.01,0.01</elem>
+			<elem lid="66">0.01,0.01,0.01,0.01</elem>
+			<elem lid="67">0.01,0.01,0.01,0.01</elem>
+			<elem lid="68">0.01,0.01,0.01,0.01</elem>
+			<elem lid="69">0.01,0.01,0.01,0.01</elem>
+			<elem lid="70">0.01,0.01,0.01,0.01</elem>
+			<elem lid="71">0.01,0.01,0.01,0.01</elem>
+			<elem lid="72">0.01,0.01,0.01,0.01</elem>
+			<elem lid="73">0.01,0.01,0.01,0.01</elem>
+			<elem lid="74">0.01,0.01,0.01,0.01</elem>
+			<elem lid="75">0.01,0.01,0.01,0.01</elem>
+			<elem lid="76">0.01,0.01,0.01,0.01</elem>
+			<elem lid="77">0.01,0.01,0.01,0.01</elem>
+			<elem lid="78">0.01,0.01,0.01,0.01</elem>
+			<elem lid="79">0.01,0.01,0.01,0.01</elem>
+			<elem lid="80">0.01,0.01,0.01,0.01</elem>
+			<elem lid="81">0.01,0.01,0.01,0.01</elem>
+			<elem lid="82">0.01,0.01,0.01,0.01</elem>
+			<elem lid="83">0.01,0.01,0.01,0.01</elem>
+			<elem lid="84">0.01,0.01,0.01,0.01</elem>
+			<elem lid="85">0.01,0.01,0.01,0.01</elem>
+			<elem lid="86">0.01,0.01,0.01,0.01</elem>
+			<elem lid="87">0.01,0.01,0.01,0.01</elem>
+			<elem lid="88">0.01,0.01,0.01,0.01</elem>
+			<elem lid="89">0.01,0.01,0.01,0.01</elem>
+			<elem lid="90">0.01,0.01,0.01,0.01</elem>
+			<elem lid="91">0.01,0.01,0.01,0.01</elem>
+			<elem lid="92">0.01,0.01,0.01,0.01</elem>
+			<elem lid="93">0.01,0.01,0.01,0.01</elem>
+			<elem lid="94">0.01,0.01,0.01,0.01</elem>
+			<elem lid="95">0.01,0.01,0.01,0.01</elem>
+			<elem lid="96">0.01,0.01,0.01,0.01</elem>
+			<elem lid="97">0.01,0.01,0.01,0.01</elem>
+			<elem lid="98">0.01,0.01,0.01,0.01</elem>
+			<elem lid="99">0.01,0.01,0.01,0.01</elem>
+			<elem lid="100">0.01,0.01,0.01,0.01</elem>
+		</ElementData>
+	</MeshData>
+	<Boundary>
+		<fix bc="z" node_set="FixedDisplacement01"/>
+		<fix bc="y" node_set="FixedDisplacement02"/>
+		<fix bc="x" node_set="FixedDisplacement03"/>
+	</Boundary>
+	<Loads>
+		<body_load type="const">
+			<x lc="1">0</x>
+			<y lc="2">0</y>
+			<z lc="3">1</z>
+		</body_load>
+	</Loads>
+	<LoadData>
+		<loadcurve id="1" type="smooth">
+			<point>0,0</point>
+			<point>0.1,0.01</point>
+			<point>1,1</point>
+		</loadcurve>
+		<loadcurve id="2" type="smooth">
+			<point>0,0</point>
+			<point>1,1</point>
+		</loadcurve>
+		<loadcurve id="3" type="linear">
+			<point>0,0</point>
+			<point>1,1</point>
+		</loadcurve>
+	</LoadData>
+	<Output>
+		<plotfile type="febio"/>
+		<logfile>
+			<element_data data="sz" elem_set="unnamed_set01"/>
+		</logfile>
+	</Output>
+</febio_spec>
