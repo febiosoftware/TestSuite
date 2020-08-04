@@ -20019,7 +20019,7 @@
 			<parabolic>0</parabolic>
 		</surface_load>
 		<surface_load type="fluid backflow stabilization" surface="BackflowStabilization1">
-			<beta lc="2">0</beta>
+			<beta lc="2">1</beta>
 		</surface_load>
 		<surface_load type="fluid tangential stabilization" surface="TangentialStabilization1">
 			<beta lc="3">1</beta>
