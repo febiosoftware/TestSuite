@@ -18,12 +18,12 @@ Secondary Features:
 Materials:
         Newtonian Fluid
         Holzapfel with fibers
-Degrees of Freedom: 7115
+Degrees of Freedom: 7109
 Results:
-	Steps Completed: 512
-	Equilibrium Iterations: 6968
-	Right Hand Evaluations: 13767
-	Stiffness Reformations: 262
+	Steps Completed: 519
+	Equilibrium Iterations: 6358
+	Right Hand Evaluations: 11190
+	Stiffness Reformations: 241
 	Other:
 		The z-nodal fluid velocity is 0.7513965 at time 0.2501
 		for node 999

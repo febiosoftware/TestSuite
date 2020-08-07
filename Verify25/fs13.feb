@@ -18,10 +18,10 @@ Materials:
         Mooney Rivlin
 Degrees of Freedom: 7109
 Results:
-	Steps Completed: 404
-	Equilibrium Iterations: 4588
-	Right Hand Evaluations: 7884
-	Stiffness Reformations: 170
+	Steps Completed: 401
+	Equilibrium Iterations: 4222
+	Right Hand Evaluations: 6994
+	Stiffness Reformations: 153
 	Other:
 		The z- fluid velocity is 1.35545 at time 0.2499
 		for node 999

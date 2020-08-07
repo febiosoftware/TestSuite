@@ -18,12 +18,12 @@ Secondary Features:
 Materials:
         Powell Eyring Fluid
         Mooney Rivlin
-Degrees of Freedom: 7115
+Degrees of Freedom: 7109
 Results:
 	Steps Completed: 500
-	Equilibrium Iterations: 4526
-	Right Hand Evaluations: 7113
-	Stiffness Reformations: 162
+	Equilibrium Iterations: 4383
+	Right Hand Evaluations: 6975
+	Stiffness Reformations: 156
 	Other:
 		The z-nodal fluid velocity is 0.722601 at time 0.25
 		for node 999

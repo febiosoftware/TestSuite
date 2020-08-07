@@ -15,11 +15,11 @@ Secondary Features:
 Materials:
         Newtonian Fluid
         neo-Hookean
-Degrees of Freedom: 7115
+Degrees of Freedom: 7109
 Results:
 	Steps Completed: 500
-	Equilibrium Iterations: 2332
-	Right Hand Evaluations: 3438
+	Equilibrium Iterations: 2346
+	Right Hand Evaluations: 3418
 	Stiffness Reformations: 501
 	Other:
 		The z-nodal fluid velocity is 0.744621 at time 0.25

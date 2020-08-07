@@ -13,9 +13,9 @@ Materials:
 Degrees of Freedom: 616
 Results:
 	Steps Completed: 250
-	Equilibrium Iterations: 850
-	Right Hand Evaluations: 1354
-	Stiffness Reformations: 412
+	Equilibrium Iterations: 851
+	Right Hand Evaluations: 1324
+	Stiffness Reformations: 395
 	Other:
 		The x-nodal fluid velocity is 1.0 at time 2.5 for node 242
 Comments:

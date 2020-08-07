@@ -18,12 +18,12 @@ Secondary Features:
 Materials:
        Carreau Fluid
         Mooney Rivlin
-Degrees of Freedom: 7115
+Degrees of Freedom: 7109
 Results:
-	Steps Completed: 500
-	Equilibrium Iterations: 4420
-	Right Hand Evaluations: 7245
-	Stiffness Reformations: 157
+	Steps Completed: 502
+	Equilibrium Iterations: 4353
+	Right Hand Evaluations: 6976
+	Stiffness Reformations: 155
 	Other:
 		The z-nodal fluid velocity is 0.727278 at time 0.25
 		for node 999

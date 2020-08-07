@@ -19,12 +19,12 @@ Secondary Features:
 Materials:
         Newtonian Fluid
         Mooney Rivlin
-Degrees of Freedom: 7115
+Degrees of Freedom: 7109
 Results:
-	Steps Completed: 279
-	Equilibrium Iterations: 2343
-	Right Hand Evaluations: 3625
-	Stiffness Reformations: 83
+	Steps Completed: 284
+	Equilibrium Iterations: 2616
+	Right Hand Evaluations: 4371
+	Stiffness Reformations: 96
 	Other:
 		The z-nodal fluid velocity is 0.501478 at time 0.5
 		for node 999

@@ -17,12 +17,12 @@ Secondary Features:
 	No ref each step
 Materials:
         Newtonian Fluid
-Degrees of Freedom: 30628
+Degrees of Freedom: 30607
 Results:
 	Steps Completed: 50
-	Equilibrium Iterations: 311
-	Right Hand Evaluations: 470
-	Stiffness Reformations: 6
+	Equilibrium Iterations: 291
+	Right Hand Evaluations: 382
+	Stiffness Reformations: 5
 	Other:
 		The total nodal fluid velocity is 5.68929 at time 0.5
 		for node 5

@@ -17,9 +17,9 @@ Materials:
 Degrees of Freedom: 4206
 Results:
 	Steps Completed: 161
-	Equilibrium Iterations: 1651
-	Right Hand Evaluations: 2178
-	Stiffness Reformations: 30
+	Equilibrium Iterations: 1594
+	Right Hand Evaluations: 1993
+	Stiffness Reformations: 29
 	Other:
 		The y-displacement is 0.461658 at time 286.2
 		for node 810
