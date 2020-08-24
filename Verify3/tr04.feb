@@ -1,0 +1,1332 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<febio_spec version="3.0">
+	<Module type="solute"/>
+	<Globals>
+		<Constants>
+			<T>293</T>
+			<R>8.314e-06</R>
+			<Fc>9.65e-05</Fc>
+		</Constants>
+		<Solutes>
+			<solute id="1" name="Na+">
+				<charge_number>1</charge_number>
+				<molar_mass>1</molar_mass>
+				<density>1</density>
+			</solute>
+			<solute id="2" name="Cl-">
+				<charge_number>-1</charge_number>
+				<molar_mass>1</molar_mass>
+				<density>1</density>
+			</solute>
+		</Solutes>
+	</Globals>
+	<Material>
+		<material id="1" name="Triphasic" type="triphasic">
+			<phi0>0.2</phi0>
+			<fixed_charge_density lc="1">-200</fixed_charge_density>
+			<solid type="neo-Hookean">
+				<density>1</density>
+				<E>1</E>
+				<v>0</v>
+			</solid>
+			<permeability type="perm-const-iso">
+				<perm>0.001</perm>
+			</permeability>
+			<osmotic_coefficient type="osm-coef-const">
+				<osmcoef>1</osmcoef>
+			</osmotic_coefficient>
+			<solute sol="1">
+				<diffusivity type="diff-const-iso">
+					<free_diff>0.0005</free_diff>
+					<diff>0.0005</diff>
+				</diffusivity>
+				<solubility type="solub-const">
+					<solub>1</solub>
+				</solubility>
+			</solute>
+			<solute sol="2">
+				<diffusivity type="diff-const-iso">
+					<free_diff>0.0008</free_diff>
+					<diff>0.0008</diff>
+				</diffusivity>
+				<solubility type="solub-const">
+					<solub>1</solub>
+				</solubility>
+			</solute>
+		</material>
+	</Material>
+	<Mesh>
+		<Nodes name="Object01">
+			<node id="1">-0.5,-0.5,0</node>
+			<node id="2">-0.5,-0.5,0.0026782653</node>
+			<node id="3">-0.5,-0.5,0.0058921838</node>
+			<node id="4">-0.5,-0.5,0.0097488859</node>
+			<node id="5">-0.5,-0.5,0.014376928</node>
+			<node id="6">-0.5,-0.5,0.019930579</node>
+			<node id="7">-0.5,-0.5,0.026594961</node>
+			<node id="8">-0.5,-0.5,0.034592218</node>
+			<node id="9">-0.5,-0.5,0.044188927</node>
+			<node id="10">-0.5,-0.5,0.055704978</node>
+			<node id="11">-0.5,-0.5,0.069524239</node>
+			<node id="12">-0.5,-0.5,0.086107352</node>
+			<node id="13">-0.5,-0.5,0.10600709</node>
+			<node id="14">-0.5,-0.5,0.12988677</node>
+			<node id="15">-0.5,-0.5,0.15854239</node>
+			<node id="16">-0.5,-0.5,0.19292913</node>
+			<node id="17">-0.5,-0.5,0.23419323</node>
+			<node id="18">-0.5,-0.5,0.28371014</node>
+			<node id="19">-0.5,-0.5,0.34313043</node>
+			<node id="20">-0.5,-0.5,0.41443478</node>
+			<node id="21">-0.5,-0.5,0.5</node>
+			<node id="22">-0.5,-0.5,0.58556522</node>
+			<node id="23">-0.5,-0.5,0.65686957</node>
+			<node id="24">-0.5,-0.5,0.71628986</node>
+			<node id="25">-0.5,-0.5,0.76580677</node>
+			<node id="26">-0.5,-0.5,0.80707087</node>
+			<node id="27">-0.5,-0.5,0.84145761</node>
+			<node id="28">-0.5,-0.5,0.87011323</node>
+			<node id="29">-0.5,-0.5,0.89399291</node>
+			<node id="30">-0.5,-0.5,0.91389265</node>
+			<node id="31">-0.5,-0.5,0.93047576</node>
+			<node id="32">-0.5,-0.5,0.94429502</node>
+			<node id="33">-0.5,-0.5,0.95581107</node>
+			<node id="34">-0.5,-0.5,0.96540778</node>
+			<node id="35">-0.5,-0.5,0.97340504</node>
+			<node id="36">-0.5,-0.5,0.98006942</node>
+			<node id="37">-0.5,-0.5,0.98562307</node>
+			<node id="38">-0.5,-0.5,0.99025111</node>
+			<node id="39">-0.5,-0.5,0.99410782</node>
+			<node id="40">-0.5,-0.5,0.99732173</node>
+			<node id="41">-0.5,-0.5,1</node>
+			<node id="42">-0.5,0.5,0</node>
+			<node id="43">-0.5,0.5,0.0026782653</node>
+			<node id="44">-0.5,0.5,0.0058921838</node>
+			<node id="45">-0.5,0.5,0.0097488859</node>
+			<node id="46">-0.5,0.5,0.014376928</node>
+			<node id="47">-0.5,0.5,0.019930579</node>
+			<node id="48">-0.5,0.5,0.026594961</node>
+			<node id="49">-0.5,0.5,0.034592218</node>
+			<node id="50">-0.5,0.5,0.044188927</node>
+			<node id="51">-0.5,0.5,0.055704978</node>
+			<node id="52">-0.5,0.5,0.069524239</node>
+			<node id="53">-0.5,0.5,0.086107352</node>
+			<node id="54">-0.5,0.5,0.10600709</node>
+			<node id="55">-0.5,0.5,0.12988677</node>
+			<node id="56">-0.5,0.5,0.15854239</node>
+			<node id="57">-0.5,0.5,0.19292913</node>
+			<node id="58">-0.5,0.5,0.23419323</node>
+			<node id="59">-0.5,0.5,0.28371014</node>
+			<node id="60">-0.5,0.5,0.34313043</node>
+			<node id="61">-0.5,0.5,0.41443478</node>
+			<node id="62">-0.5,0.5,0.5</node>
+			<node id="63">-0.5,0.5,0.58556522</node>
+			<node id="64">-0.5,0.5,0.65686957</node>
+			<node id="65">-0.5,0.5,0.71628986</node>
+			<node id="66">-0.5,0.5,0.76580677</node>
+			<node id="67">-0.5,0.5,0.80707087</node>
+			<node id="68">-0.5,0.5,0.84145761</node>
+			<node id="69">-0.5,0.5,0.87011323</node>
+			<node id="70">-0.5,0.5,0.89399291</node>
+			<node id="71">-0.5,0.5,0.91389265</node>
+			<node id="72">-0.5,0.5,0.93047576</node>
+			<node id="73">-0.5,0.5,0.94429502</node>
+			<node id="74">-0.5,0.5,0.95581107</node>
+			<node id="75">-0.5,0.5,0.96540778</node>
+			<node id="76">-0.5,0.5,0.97340504</node>
+			<node id="77">-0.5,0.5,0.98006942</node>
+			<node id="78">-0.5,0.5,0.98562307</node>
+			<node id="79">-0.5,0.5,0.99025111</node>
+			<node id="80">-0.5,0.5,0.99410782</node>
+			<node id="81">-0.5,0.5,0.99732173</node>
+			<node id="82">-0.5,0.5,1</node>
+			<node id="83">0.5,-0.5,0</node>
+			<node id="84">0.5,-0.5,0.0026782653</node>
+			<node id="85">0.5,-0.5,0.0058921838</node>
+			<node id="86">0.5,-0.5,0.0097488859</node>
+			<node id="87">0.5,-0.5,0.014376928</node>
+			<node id="88">0.5,-0.5,0.019930579</node>
+			<node id="89">0.5,-0.5,0.026594961</node>
+			<node id="90">0.5,-0.5,0.034592218</node>
+			<node id="91">0.5,-0.5,0.044188927</node>
+			<node id="92">0.5,-0.5,0.055704978</node>
+			<node id="93">0.5,-0.5,0.069524239</node>
+			<node id="94">0.5,-0.5,0.086107352</node>
+			<node id="95">0.5,-0.5,0.10600709</node>
+			<node id="96">0.5,-0.5,0.12988677</node>
+			<node id="97">0.5,-0.5,0.15854239</node>
+			<node id="98">0.5,-0.5,0.19292913</node>
+			<node id="99">0.5,-0.5,0.23419323</node>
+			<node id="100">0.5,-0.5,0.28371014</node>
+			<node id="101">0.5,-0.5,0.34313043</node>
+			<node id="102">0.5,-0.5,0.41443478</node>
+			<node id="103">0.5,-0.5,0.5</node>
+			<node id="104">0.5,-0.5,0.58556522</node>
+			<node id="105">0.5,-0.5,0.65686957</node>
+			<node id="106">0.5,-0.5,0.71628986</node>
+			<node id="107">0.5,-0.5,0.76580677</node>
+			<node id="108">0.5,-0.5,0.80707087</node>
+			<node id="109">0.5,-0.5,0.84145761</node>
+			<node id="110">0.5,-0.5,0.87011323</node>
+			<node id="111">0.5,-0.5,0.89399291</node>
+			<node id="112">0.5,-0.5,0.91389265</node>
+			<node id="113">0.5,-0.5,0.93047576</node>
+			<node id="114">0.5,-0.5,0.94429502</node>
+			<node id="115">0.5,-0.5,0.95581107</node>
+			<node id="116">0.5,-0.5,0.96540778</node>
+			<node id="117">0.5,-0.5,0.97340504</node>
+			<node id="118">0.5,-0.5,0.98006942</node>
+			<node id="119">0.5,-0.5,0.98562307</node>
+			<node id="120">0.5,-0.5,0.99025111</node>
+			<node id="121">0.5,-0.5,0.99410782</node>
+			<node id="122">0.5,-0.5,0.99732173</node>
+			<node id="123">0.5,-0.5,1</node>
+			<node id="124">0.5,0.5,0</node>
+			<node id="125">0.5,0.5,0.0026782653</node>
+			<node id="126">0.5,0.5,0.0058921838</node>
+			<node id="127">0.5,0.5,0.0097488859</node>
+			<node id="128">0.5,0.5,0.014376928</node>
+			<node id="129">0.5,0.5,0.019930579</node>
+			<node id="130">0.5,0.5,0.026594961</node>
+			<node id="131">0.5,0.5,0.034592218</node>
+			<node id="132">0.5,0.5,0.044188927</node>
+			<node id="133">0.5,0.5,0.055704978</node>
+			<node id="134">0.5,0.5,0.069524239</node>
+			<node id="135">0.5,0.5,0.086107352</node>
+			<node id="136">0.5,0.5,0.10600709</node>
+			<node id="137">0.5,0.5,0.12988677</node>
+			<node id="138">0.5,0.5,0.15854239</node>
+			<node id="139">0.5,0.5,0.19292913</node>
+			<node id="140">0.5,0.5,0.23419323</node>
+			<node id="141">0.5,0.5,0.28371014</node>
+			<node id="142">0.5,0.5,0.34313043</node>
+			<node id="143">0.5,0.5,0.41443478</node>
+			<node id="144">0.5,0.5,0.5</node>
+			<node id="145">0.5,0.5,0.58556522</node>
+			<node id="146">0.5,0.5,0.65686957</node>
+			<node id="147">0.5,0.5,0.71628986</node>
+			<node id="148">0.5,0.5,0.76580677</node>
+			<node id="149">0.5,0.5,0.80707087</node>
+			<node id="150">0.5,0.5,0.84145761</node>
+			<node id="151">0.5,0.5,0.87011323</node>
+			<node id="152">0.5,0.5,0.89399291</node>
+			<node id="153">0.5,0.5,0.91389265</node>
+			<node id="154">0.5,0.5,0.93047576</node>
+			<node id="155">0.5,0.5,0.94429502</node>
+			<node id="156">0.5,0.5,0.95581107</node>
+			<node id="157">0.5,0.5,0.96540778</node>
+			<node id="158">0.5,0.5,0.97340504</node>
+			<node id="159">0.5,0.5,0.98006942</node>
+			<node id="160">0.5,0.5,0.98562307</node>
+			<node id="161">0.5,0.5,0.99025111</node>
+			<node id="162">0.5,0.5,0.99410782</node>
+			<node id="163">0.5,0.5,0.99732173</node>
+			<node id="164">0.5,0.5,1</node>
+		</Nodes>
+		<Elements type="hex8" name="Part12">
+			<elem id="1">1,83,124,42,2,84,125,43</elem>
+			<elem id="2">2,84,125,43,3,85,126,44</elem>
+			<elem id="3">3,85,126,44,4,86,127,45</elem>
+			<elem id="4">4,86,127,45,5,87,128,46</elem>
+			<elem id="5">5,87,128,46,6,88,129,47</elem>
+			<elem id="6">6,88,129,47,7,89,130,48</elem>
+			<elem id="7">7,89,130,48,8,90,131,49</elem>
+			<elem id="8">8,90,131,49,9,91,132,50</elem>
+			<elem id="9">9,91,132,50,10,92,133,51</elem>
+			<elem id="10">10,92,133,51,11,93,134,52</elem>
+			<elem id="11">11,93,134,52,12,94,135,53</elem>
+			<elem id="12">12,94,135,53,13,95,136,54</elem>
+			<elem id="13">13,95,136,54,14,96,137,55</elem>
+			<elem id="14">14,96,137,55,15,97,138,56</elem>
+			<elem id="15">15,97,138,56,16,98,139,57</elem>
+			<elem id="16">16,98,139,57,17,99,140,58</elem>
+			<elem id="17">17,99,140,58,18,100,141,59</elem>
+			<elem id="18">18,100,141,59,19,101,142,60</elem>
+			<elem id="19">19,101,142,60,20,102,143,61</elem>
+			<elem id="20">20,102,143,61,21,103,144,62</elem>
+			<elem id="21">21,103,144,62,22,104,145,63</elem>
+			<elem id="22">22,104,145,63,23,105,146,64</elem>
+			<elem id="23">23,105,146,64,24,106,147,65</elem>
+			<elem id="24">24,106,147,65,25,107,148,66</elem>
+			<elem id="25">25,107,148,66,26,108,149,67</elem>
+			<elem id="26">26,108,149,67,27,109,150,68</elem>
+			<elem id="27">27,109,150,68,28,110,151,69</elem>
+			<elem id="28">28,110,151,69,29,111,152,70</elem>
+			<elem id="29">29,111,152,70,30,112,153,71</elem>
+			<elem id="30">30,112,153,71,31,113,154,72</elem>
+			<elem id="31">31,113,154,72,32,114,155,73</elem>
+			<elem id="32">32,114,155,73,33,115,156,74</elem>
+			<elem id="33">33,115,156,74,34,116,157,75</elem>
+			<elem id="34">34,116,157,75,35,117,158,76</elem>
+			<elem id="35">35,117,158,76,36,118,159,77</elem>
+			<elem id="36">36,118,159,77,37,119,160,78</elem>
+			<elem id="37">37,119,160,78,38,120,161,79</elem>
+			<elem id="38">38,120,161,79,39,121,162,80</elem>
+			<elem id="39">39,121,162,80,40,122,163,81</elem>
+			<elem id="40">40,122,163,81,41,123,164,82</elem>
+		</Elements>
+		<NodeSet name="FixedDisplacement01">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="3"/>
+			<n id="4"/>
+			<n id="5"/>
+			<n id="6"/>
+			<n id="7"/>
+			<n id="8"/>
+			<n id="9"/>
+			<n id="10"/>
+			<n id="11"/>
+			<n id="12"/>
+			<n id="13"/>
+			<n id="14"/>
+			<n id="15"/>
+			<n id="16"/>
+			<n id="17"/>
+			<n id="18"/>
+			<n id="19"/>
+			<n id="20"/>
+			<n id="21"/>
+			<n id="22"/>
+			<n id="23"/>
+			<n id="24"/>
+			<n id="25"/>
+			<n id="26"/>
+			<n id="27"/>
+			<n id="28"/>
+			<n id="29"/>
+			<n id="30"/>
+			<n id="31"/>
+			<n id="32"/>
+			<n id="33"/>
+			<n id="34"/>
+			<n id="35"/>
+			<n id="36"/>
+			<n id="37"/>
+			<n id="38"/>
+			<n id="39"/>
+			<n id="40"/>
+			<n id="41"/>
+			<n id="42"/>
+			<n id="43"/>
+			<n id="44"/>
+			<n id="45"/>
+			<n id="46"/>
+			<n id="47"/>
+			<n id="48"/>
+			<n id="49"/>
+			<n id="50"/>
+			<n id="51"/>
+			<n id="52"/>
+			<n id="53"/>
+			<n id="54"/>
+			<n id="55"/>
+			<n id="56"/>
+			<n id="57"/>
+			<n id="58"/>
+			<n id="59"/>
+			<n id="60"/>
+			<n id="61"/>
+			<n id="62"/>
+			<n id="63"/>
+			<n id="64"/>
+			<n id="65"/>
+			<n id="66"/>
+			<n id="67"/>
+			<n id="68"/>
+			<n id="69"/>
+			<n id="70"/>
+			<n id="71"/>
+			<n id="72"/>
+			<n id="73"/>
+			<n id="74"/>
+			<n id="75"/>
+			<n id="76"/>
+			<n id="77"/>
+			<n id="78"/>
+			<n id="79"/>
+			<n id="80"/>
+			<n id="81"/>
+			<n id="82"/>
+			<n id="83"/>
+			<n id="84"/>
+			<n id="85"/>
+			<n id="86"/>
+			<n id="87"/>
+			<n id="88"/>
+			<n id="89"/>
+			<n id="90"/>
+			<n id="91"/>
+			<n id="92"/>
+			<n id="93"/>
+			<n id="94"/>
+			<n id="95"/>
+			<n id="96"/>
+			<n id="97"/>
+			<n id="98"/>
+			<n id="99"/>
+			<n id="100"/>
+			<n id="101"/>
+			<n id="102"/>
+			<n id="103"/>
+			<n id="104"/>
+			<n id="105"/>
+			<n id="106"/>
+			<n id="107"/>
+			<n id="108"/>
+			<n id="109"/>
+			<n id="110"/>
+			<n id="111"/>
+			<n id="112"/>
+			<n id="113"/>
+			<n id="114"/>
+			<n id="115"/>
+			<n id="116"/>
+			<n id="117"/>
+			<n id="118"/>
+			<n id="119"/>
+			<n id="120"/>
+			<n id="121"/>
+			<n id="122"/>
+			<n id="123"/>
+			<n id="124"/>
+			<n id="125"/>
+			<n id="126"/>
+			<n id="127"/>
+			<n id="128"/>
+			<n id="129"/>
+			<n id="130"/>
+			<n id="131"/>
+			<n id="132"/>
+			<n id="133"/>
+			<n id="134"/>
+			<n id="135"/>
+			<n id="136"/>
+			<n id="137"/>
+			<n id="138"/>
+			<n id="139"/>
+			<n id="140"/>
+			<n id="141"/>
+			<n id="142"/>
+			<n id="143"/>
+			<n id="144"/>
+			<n id="145"/>
+			<n id="146"/>
+			<n id="147"/>
+			<n id="148"/>
+			<n id="149"/>
+			<n id="150"/>
+			<n id="151"/>
+			<n id="152"/>
+			<n id="153"/>
+			<n id="154"/>
+			<n id="155"/>
+			<n id="156"/>
+			<n id="157"/>
+			<n id="158"/>
+			<n id="159"/>
+			<n id="160"/>
+			<n id="161"/>
+			<n id="162"/>
+			<n id="163"/>
+			<n id="164"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement02">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="3"/>
+			<n id="4"/>
+			<n id="5"/>
+			<n id="6"/>
+			<n id="7"/>
+			<n id="8"/>
+			<n id="9"/>
+			<n id="10"/>
+			<n id="11"/>
+			<n id="12"/>
+			<n id="13"/>
+			<n id="14"/>
+			<n id="15"/>
+			<n id="16"/>
+			<n id="17"/>
+			<n id="18"/>
+			<n id="19"/>
+			<n id="20"/>
+			<n id="21"/>
+			<n id="22"/>
+			<n id="23"/>
+			<n id="24"/>
+			<n id="25"/>
+			<n id="26"/>
+			<n id="27"/>
+			<n id="28"/>
+			<n id="29"/>
+			<n id="30"/>
+			<n id="31"/>
+			<n id="32"/>
+			<n id="33"/>
+			<n id="34"/>
+			<n id="35"/>
+			<n id="36"/>
+			<n id="37"/>
+			<n id="38"/>
+			<n id="39"/>
+			<n id="40"/>
+			<n id="41"/>
+			<n id="42"/>
+			<n id="43"/>
+			<n id="44"/>
+			<n id="45"/>
+			<n id="46"/>
+			<n id="47"/>
+			<n id="48"/>
+			<n id="49"/>
+			<n id="50"/>
+			<n id="51"/>
+			<n id="52"/>
+			<n id="53"/>
+			<n id="54"/>
+			<n id="55"/>
+			<n id="56"/>
+			<n id="57"/>
+			<n id="58"/>
+			<n id="59"/>
+			<n id="60"/>
+			<n id="61"/>
+			<n id="62"/>
+			<n id="63"/>
+			<n id="64"/>
+			<n id="65"/>
+			<n id="66"/>
+			<n id="67"/>
+			<n id="68"/>
+			<n id="69"/>
+			<n id="70"/>
+			<n id="71"/>
+			<n id="72"/>
+			<n id="73"/>
+			<n id="74"/>
+			<n id="75"/>
+			<n id="76"/>
+			<n id="77"/>
+			<n id="78"/>
+			<n id="79"/>
+			<n id="80"/>
+			<n id="81"/>
+			<n id="82"/>
+			<n id="83"/>
+			<n id="84"/>
+			<n id="85"/>
+			<n id="86"/>
+			<n id="87"/>
+			<n id="88"/>
+			<n id="89"/>
+			<n id="90"/>
+			<n id="91"/>
+			<n id="92"/>
+			<n id="93"/>
+			<n id="94"/>
+			<n id="95"/>
+			<n id="96"/>
+			<n id="97"/>
+			<n id="98"/>
+			<n id="99"/>
+			<n id="100"/>
+			<n id="101"/>
+			<n id="102"/>
+			<n id="103"/>
+			<n id="104"/>
+			<n id="105"/>
+			<n id="106"/>
+			<n id="107"/>
+			<n id="108"/>
+			<n id="109"/>
+			<n id="110"/>
+			<n id="111"/>
+			<n id="112"/>
+			<n id="113"/>
+			<n id="114"/>
+			<n id="115"/>
+			<n id="116"/>
+			<n id="117"/>
+			<n id="118"/>
+			<n id="119"/>
+			<n id="120"/>
+			<n id="121"/>
+			<n id="122"/>
+			<n id="123"/>
+			<n id="124"/>
+			<n id="125"/>
+			<n id="126"/>
+			<n id="127"/>
+			<n id="128"/>
+			<n id="129"/>
+			<n id="130"/>
+			<n id="131"/>
+			<n id="132"/>
+			<n id="133"/>
+			<n id="134"/>
+			<n id="135"/>
+			<n id="136"/>
+			<n id="137"/>
+			<n id="138"/>
+			<n id="139"/>
+			<n id="140"/>
+			<n id="141"/>
+			<n id="142"/>
+			<n id="143"/>
+			<n id="144"/>
+			<n id="145"/>
+			<n id="146"/>
+			<n id="147"/>
+			<n id="148"/>
+			<n id="149"/>
+			<n id="150"/>
+			<n id="151"/>
+			<n id="152"/>
+			<n id="153"/>
+			<n id="154"/>
+			<n id="155"/>
+			<n id="156"/>
+			<n id="157"/>
+			<n id="158"/>
+			<n id="159"/>
+			<n id="160"/>
+			<n id="161"/>
+			<n id="162"/>
+			<n id="163"/>
+			<n id="164"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement03">
+			<n id="41"/>
+			<n id="82"/>
+			<n id="123"/>
+			<n id="164"/>
+		</NodeSet>
+		<NodeSet name="PrescribedBC237">
+			<n id="1"/>
+			<n id="42"/>
+			<n id="83"/>
+			<n id="124"/>
+		</NodeSet>
+		<NodeSet name="PrescribedBC238">
+			<n id="41"/>
+			<n id="82"/>
+			<n id="123"/>
+			<n id="164"/>
+		</NodeSet>
+		<NodeSet name="PrescribedBC239">
+			<n id="1"/>
+			<n id="42"/>
+			<n id="83"/>
+			<n id="124"/>
+		</NodeSet>
+		<NodeSet name="PrescribedBC240">
+			<n id="41"/>
+			<n id="82"/>
+			<n id="123"/>
+			<n id="164"/>
+		</NodeSet>
+		<NodeSet name="PrescribedBC241">
+			<n id="1"/>
+			<n id="42"/>
+			<n id="83"/>
+			<n id="124"/>
+		</NodeSet>
+		<NodeSet name="PrescribedBC242">
+			<n id="41"/>
+			<n id="82"/>
+			<n id="123"/>
+			<n id="164"/>
+		</NodeSet>
+		<NodeSet name="InitialConcentration01">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="3"/>
+			<n id="4"/>
+			<n id="5"/>
+			<n id="6"/>
+			<n id="7"/>
+			<n id="8"/>
+			<n id="9"/>
+			<n id="10"/>
+			<n id="11"/>
+			<n id="12"/>
+			<n id="13"/>
+			<n id="14"/>
+			<n id="15"/>
+			<n id="16"/>
+			<n id="17"/>
+			<n id="18"/>
+			<n id="19"/>
+			<n id="20"/>
+			<n id="21"/>
+			<n id="22"/>
+			<n id="23"/>
+			<n id="24"/>
+			<n id="25"/>
+			<n id="26"/>
+			<n id="27"/>
+			<n id="28"/>
+			<n id="29"/>
+			<n id="30"/>
+			<n id="31"/>
+			<n id="32"/>
+			<n id="33"/>
+			<n id="34"/>
+			<n id="35"/>
+			<n id="36"/>
+			<n id="37"/>
+			<n id="38"/>
+			<n id="39"/>
+			<n id="40"/>
+			<n id="41"/>
+			<n id="42"/>
+			<n id="43"/>
+			<n id="44"/>
+			<n id="45"/>
+			<n id="46"/>
+			<n id="47"/>
+			<n id="48"/>
+			<n id="49"/>
+			<n id="50"/>
+			<n id="51"/>
+			<n id="52"/>
+			<n id="53"/>
+			<n id="54"/>
+			<n id="55"/>
+			<n id="56"/>
+			<n id="57"/>
+			<n id="58"/>
+			<n id="59"/>
+			<n id="60"/>
+			<n id="61"/>
+			<n id="62"/>
+			<n id="63"/>
+			<n id="64"/>
+			<n id="65"/>
+			<n id="66"/>
+			<n id="67"/>
+			<n id="68"/>
+			<n id="69"/>
+			<n id="70"/>
+			<n id="71"/>
+			<n id="72"/>
+			<n id="73"/>
+			<n id="74"/>
+			<n id="75"/>
+			<n id="76"/>
+			<n id="77"/>
+			<n id="78"/>
+			<n id="79"/>
+			<n id="80"/>
+			<n id="81"/>
+			<n id="82"/>
+			<n id="83"/>
+			<n id="84"/>
+			<n id="85"/>
+			<n id="86"/>
+			<n id="87"/>
+			<n id="88"/>
+			<n id="89"/>
+			<n id="90"/>
+			<n id="91"/>
+			<n id="92"/>
+			<n id="93"/>
+			<n id="94"/>
+			<n id="95"/>
+			<n id="96"/>
+			<n id="97"/>
+			<n id="98"/>
+			<n id="99"/>
+			<n id="100"/>
+			<n id="101"/>
+			<n id="102"/>
+			<n id="103"/>
+			<n id="104"/>
+			<n id="105"/>
+			<n id="106"/>
+			<n id="107"/>
+			<n id="108"/>
+			<n id="109"/>
+			<n id="110"/>
+			<n id="111"/>
+			<n id="112"/>
+			<n id="113"/>
+			<n id="114"/>
+			<n id="115"/>
+			<n id="116"/>
+			<n id="117"/>
+			<n id="118"/>
+			<n id="119"/>
+			<n id="120"/>
+			<n id="121"/>
+			<n id="122"/>
+			<n id="123"/>
+			<n id="124"/>
+			<n id="125"/>
+			<n id="126"/>
+			<n id="127"/>
+			<n id="128"/>
+			<n id="129"/>
+			<n id="130"/>
+			<n id="131"/>
+			<n id="132"/>
+			<n id="133"/>
+			<n id="134"/>
+			<n id="135"/>
+			<n id="136"/>
+			<n id="137"/>
+			<n id="138"/>
+			<n id="139"/>
+			<n id="140"/>
+			<n id="141"/>
+			<n id="142"/>
+			<n id="143"/>
+			<n id="144"/>
+			<n id="145"/>
+			<n id="146"/>
+			<n id="147"/>
+			<n id="148"/>
+			<n id="149"/>
+			<n id="150"/>
+			<n id="151"/>
+			<n id="152"/>
+			<n id="153"/>
+			<n id="154"/>
+			<n id="155"/>
+			<n id="156"/>
+			<n id="157"/>
+			<n id="158"/>
+			<n id="159"/>
+			<n id="160"/>
+			<n id="161"/>
+			<n id="162"/>
+			<n id="163"/>
+			<n id="164"/>
+		</NodeSet>
+		<NodeSet name="InitialConcentration01">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="3"/>
+			<n id="4"/>
+			<n id="5"/>
+			<n id="6"/>
+			<n id="7"/>
+			<n id="8"/>
+			<n id="9"/>
+			<n id="10"/>
+			<n id="11"/>
+			<n id="12"/>
+			<n id="13"/>
+			<n id="14"/>
+			<n id="15"/>
+			<n id="16"/>
+			<n id="17"/>
+			<n id="18"/>
+			<n id="19"/>
+			<n id="20"/>
+			<n id="21"/>
+			<n id="22"/>
+			<n id="23"/>
+			<n id="24"/>
+			<n id="25"/>
+			<n id="26"/>
+			<n id="27"/>
+			<n id="28"/>
+			<n id="29"/>
+			<n id="30"/>
+			<n id="31"/>
+			<n id="32"/>
+			<n id="33"/>
+			<n id="34"/>
+			<n id="35"/>
+			<n id="36"/>
+			<n id="37"/>
+			<n id="38"/>
+			<n id="39"/>
+			<n id="40"/>
+			<n id="41"/>
+			<n id="42"/>
+			<n id="43"/>
+			<n id="44"/>
+			<n id="45"/>
+			<n id="46"/>
+			<n id="47"/>
+			<n id="48"/>
+			<n id="49"/>
+			<n id="50"/>
+			<n id="51"/>
+			<n id="52"/>
+			<n id="53"/>
+			<n id="54"/>
+			<n id="55"/>
+			<n id="56"/>
+			<n id="57"/>
+			<n id="58"/>
+			<n id="59"/>
+			<n id="60"/>
+			<n id="61"/>
+			<n id="62"/>
+			<n id="63"/>
+			<n id="64"/>
+			<n id="65"/>
+			<n id="66"/>
+			<n id="67"/>
+			<n id="68"/>
+			<n id="69"/>
+			<n id="70"/>
+			<n id="71"/>
+			<n id="72"/>
+			<n id="73"/>
+			<n id="74"/>
+			<n id="75"/>
+			<n id="76"/>
+			<n id="77"/>
+			<n id="78"/>
+			<n id="79"/>
+			<n id="80"/>
+			<n id="81"/>
+			<n id="82"/>
+			<n id="83"/>
+			<n id="84"/>
+			<n id="85"/>
+			<n id="86"/>
+			<n id="87"/>
+			<n id="88"/>
+			<n id="89"/>
+			<n id="90"/>
+			<n id="91"/>
+			<n id="92"/>
+			<n id="93"/>
+			<n id="94"/>
+			<n id="95"/>
+			<n id="96"/>
+			<n id="97"/>
+			<n id="98"/>
+			<n id="99"/>
+			<n id="100"/>
+			<n id="101"/>
+			<n id="102"/>
+			<n id="103"/>
+			<n id="104"/>
+			<n id="105"/>
+			<n id="106"/>
+			<n id="107"/>
+			<n id="108"/>
+			<n id="109"/>
+			<n id="110"/>
+			<n id="111"/>
+			<n id="112"/>
+			<n id="113"/>
+			<n id="114"/>
+			<n id="115"/>
+			<n id="116"/>
+			<n id="117"/>
+			<n id="118"/>
+			<n id="119"/>
+			<n id="120"/>
+			<n id="121"/>
+			<n id="122"/>
+			<n id="123"/>
+			<n id="124"/>
+			<n id="125"/>
+			<n id="126"/>
+			<n id="127"/>
+			<n id="128"/>
+			<n id="129"/>
+			<n id="130"/>
+			<n id="131"/>
+			<n id="132"/>
+			<n id="133"/>
+			<n id="134"/>
+			<n id="135"/>
+			<n id="136"/>
+			<n id="137"/>
+			<n id="138"/>
+			<n id="139"/>
+			<n id="140"/>
+			<n id="141"/>
+			<n id="142"/>
+			<n id="143"/>
+			<n id="144"/>
+			<n id="145"/>
+			<n id="146"/>
+			<n id="147"/>
+			<n id="148"/>
+			<n id="149"/>
+			<n id="150"/>
+			<n id="151"/>
+			<n id="152"/>
+			<n id="153"/>
+			<n id="154"/>
+			<n id="155"/>
+			<n id="156"/>
+			<n id="157"/>
+			<n id="158"/>
+			<n id="159"/>
+			<n id="160"/>
+			<n id="161"/>
+			<n id="162"/>
+			<n id="163"/>
+			<n id="164"/>
+		</NodeSet>
+		<NodeSet name="InitialFluidPressure01">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="3"/>
+			<n id="4"/>
+			<n id="5"/>
+			<n id="6"/>
+			<n id="7"/>
+			<n id="8"/>
+			<n id="9"/>
+			<n id="10"/>
+			<n id="11"/>
+			<n id="12"/>
+			<n id="13"/>
+			<n id="14"/>
+			<n id="15"/>
+			<n id="16"/>
+			<n id="17"/>
+			<n id="18"/>
+			<n id="19"/>
+			<n id="20"/>
+			<n id="21"/>
+			<n id="22"/>
+			<n id="23"/>
+			<n id="24"/>
+			<n id="25"/>
+			<n id="26"/>
+			<n id="27"/>
+			<n id="28"/>
+			<n id="29"/>
+			<n id="30"/>
+			<n id="31"/>
+			<n id="32"/>
+			<n id="33"/>
+			<n id="34"/>
+			<n id="35"/>
+			<n id="36"/>
+			<n id="37"/>
+			<n id="38"/>
+			<n id="39"/>
+			<n id="40"/>
+			<n id="41"/>
+			<n id="42"/>
+			<n id="43"/>
+			<n id="44"/>
+			<n id="45"/>
+			<n id="46"/>
+			<n id="47"/>
+			<n id="48"/>
+			<n id="49"/>
+			<n id="50"/>
+			<n id="51"/>
+			<n id="52"/>
+			<n id="53"/>
+			<n id="54"/>
+			<n id="55"/>
+			<n id="56"/>
+			<n id="57"/>
+			<n id="58"/>
+			<n id="59"/>
+			<n id="60"/>
+			<n id="61"/>
+			<n id="62"/>
+			<n id="63"/>
+			<n id="64"/>
+			<n id="65"/>
+			<n id="66"/>
+			<n id="67"/>
+			<n id="68"/>
+			<n id="69"/>
+			<n id="70"/>
+			<n id="71"/>
+			<n id="72"/>
+			<n id="73"/>
+			<n id="74"/>
+			<n id="75"/>
+			<n id="76"/>
+			<n id="77"/>
+			<n id="78"/>
+			<n id="79"/>
+			<n id="80"/>
+			<n id="81"/>
+			<n id="82"/>
+			<n id="83"/>
+			<n id="84"/>
+			<n id="85"/>
+			<n id="86"/>
+			<n id="87"/>
+			<n id="88"/>
+			<n id="89"/>
+			<n id="90"/>
+			<n id="91"/>
+			<n id="92"/>
+			<n id="93"/>
+			<n id="94"/>
+			<n id="95"/>
+			<n id="96"/>
+			<n id="97"/>
+			<n id="98"/>
+			<n id="99"/>
+			<n id="100"/>
+			<n id="101"/>
+			<n id="102"/>
+			<n id="103"/>
+			<n id="104"/>
+			<n id="105"/>
+			<n id="106"/>
+			<n id="107"/>
+			<n id="108"/>
+			<n id="109"/>
+			<n id="110"/>
+			<n id="111"/>
+			<n id="112"/>
+			<n id="113"/>
+			<n id="114"/>
+			<n id="115"/>
+			<n id="116"/>
+			<n id="117"/>
+			<n id="118"/>
+			<n id="119"/>
+			<n id="120"/>
+			<n id="121"/>
+			<n id="122"/>
+			<n id="123"/>
+			<n id="124"/>
+			<n id="125"/>
+			<n id="126"/>
+			<n id="127"/>
+			<n id="128"/>
+			<n id="129"/>
+			<n id="130"/>
+			<n id="131"/>
+			<n id="132"/>
+			<n id="133"/>
+			<n id="134"/>
+			<n id="135"/>
+			<n id="136"/>
+			<n id="137"/>
+			<n id="138"/>
+			<n id="139"/>
+			<n id="140"/>
+			<n id="141"/>
+			<n id="142"/>
+			<n id="143"/>
+			<n id="144"/>
+			<n id="145"/>
+			<n id="146"/>
+			<n id="147"/>
+			<n id="148"/>
+			<n id="149"/>
+			<n id="150"/>
+			<n id="151"/>
+			<n id="152"/>
+			<n id="153"/>
+			<n id="154"/>
+			<n id="155"/>
+			<n id="156"/>
+			<n id="157"/>
+			<n id="158"/>
+			<n id="159"/>
+			<n id="160"/>
+			<n id="161"/>
+			<n id="162"/>
+			<n id="163"/>
+			<n id="164"/>
+		</NodeSet>
+		<ElementSet name="unnamed_set01">
+			<e id="12"/>
+		</ElementSet>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part12" mat="Triphasic"/>
+	</MeshDomains>
+	<Boundary>
+		<bc name="FixedDisplacement01" type="fix" node_set="FixedDisplacement01">
+			<dofs>x</dofs>
+		</bc>
+		<bc name="FixedDisplacement02" type="fix" node_set="FixedDisplacement02">
+			<dofs>y</dofs>
+		</bc>
+		<bc name="FixedDisplacement03" type="fix" node_set="FixedDisplacement03">
+			<dofs>z</dofs>
+		</bc>
+		<bc name="PrescribedBC237" type="prescribe" node_set="PrescribedBC237">
+			<dof>c1</dof>
+			<scale lc="2">150</scale>
+			<relative>0</relative>
+		</bc>
+		<bc name="PrescribedBC238" type="prescribe" node_set="PrescribedBC238">
+			<dof>c1</dof>
+			<scale lc="3">150</scale>
+			<relative>0</relative>
+		</bc>
+		<bc name="PrescribedBC239" type="prescribe" node_set="PrescribedBC239">
+			<dof>p</dof>
+			<scale lc="4">1</scale>
+			<relative>0</relative>
+		</bc>
+		<bc name="PrescribedBC240" type="prescribe" node_set="PrescribedBC240">
+			<dof>p</dof>
+			<scale lc="5">1</scale>
+			<relative>0</relative>
+		</bc>
+		<bc name="PrescribedBC241" type="prescribe" node_set="PrescribedBC241">
+			<dof>c2</dof>
+			<scale lc="6">150</scale>
+			<relative>0</relative>
+		</bc>
+		<bc name="PrescribedBC242" type="prescribe" node_set="PrescribedBC242">
+			<dof>c2</dof>
+			<scale lc="7">150</scale>
+			<relative>0</relative>
+		</bc>
+	</Boundary>
+	<Initial>
+		<ic type="init_dof" node_set="InitialConcentration01">
+			<dof>c1</dof>
+			<value>150</value>
+		</ic>
+		<ic type="init_dof" node_set="InitialConcentration01">
+			<dof>c2</dof>
+			<value>150</value>
+		</ic>
+		<ic type="init_dof" node_set="InitialFluidPressure01">
+			<dof>p</dof>
+			<value>-0.730801</value>
+		</ic>
+	</Initial>
+	<Step>
+		<step id="1" name="Step01">
+			<Control>
+				<analysis>STEADY-STATE</analysis>
+				<time_steps>4</time_steps>
+				<step_size>0.25</step_size>
+				<solver>
+					<max_refs>15</max_refs>
+					<max_ups>0</max_ups>
+					<diverge_reform>1</diverge_reform>
+					<reform_each_time_step>1</reform_each_time_step>
+					<dtol>0.001</dtol>
+					<etol>0.01</etol>
+					<rtol>0</rtol>
+					<ptol>0.01</ptol>
+					<ctol>0.01</ctol>
+					<lstol>0.9</lstol>
+					<min_residual>1e-20</min_residual>
+					<qnmethod>BROYDEN</qnmethod>
+					<symmetric_stiffness>0</symmetric_stiffness>
+				</solver>
+				<time_stepper>
+					<dtmin>0.01</dtmin>
+					<dtmax>0.25</dtmax>
+					<max_retries>5</max_retries>
+					<opt_iter>10</opt_iter>
+				</time_stepper>
+			</Control>
+		</step>
+		<step id="2" name="Step02">
+			<Control>
+				<analysis>STEADY-STATE</analysis>
+				<time_steps>4</time_steps>
+				<step_size>0.25</step_size>
+				<solver>
+					<max_refs>15</max_refs>
+					<max_ups>0</max_ups>
+					<diverge_reform>1</diverge_reform>
+					<reform_each_time_step>1</reform_each_time_step>
+					<dtol>0.001</dtol>
+					<etol>0.01</etol>
+					<rtol>0</rtol>
+					<ptol>0.01</ptol>
+					<ctol>0.01</ctol>
+					<lstol>0.9</lstol>
+					<min_residual>1e-20</min_residual>
+					<qnmethod>BROYDEN</qnmethod>
+					<symmetric_stiffness>0</symmetric_stiffness>
+				</solver>
+				<time_stepper>
+					<dtmin>0.01</dtmin>
+					<dtmax>0.25</dtmax>
+					<max_retries>5</max_retries>
+					<opt_iter>10</opt_iter>
+				</time_stepper>
+			</Control>
+		</step>
+	</Step>
+	<LoadData>
+		<load_controller id="1" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<points>
+				<point>0,0</point>
+				<point>1,-200</point>
+			</points>
+		</load_controller>
+		<load_controller id="2" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<points>
+				<point>0,1</point>
+				<point>1,1</point>
+				<point>2,1.486078676</point>
+			</points>
+		</load_controller>
+		<load_controller id="3" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<points>
+				<point>0,0</point>
+				<point>1,1</point>
+			</points>
+		</load_controller>
+		<load_controller id="4" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<points>
+				<point>0,0</point>
+				<point>1,-0.7308006</point>
+			</points>
+		</load_controller>
+		<load_controller id="5" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<points>
+				<point>0,0</point>
+				<point>1,-0.7308006</point>
+			</points>
+		</load_controller>
+		<load_controller id="6" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<points>
+				<point>0,1</point>
+				<point>1,1</point>
+				<point>2,0.672911883</point>
+			</points>
+		</load_controller>
+		<load_controller id="7" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<points>
+				<point>0,0</point>
+				<point>1,1</point>
+			</points>
+		</load_controller>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="current density"/>
+			<var type="displacement"/>
+			<var type="reaction forces"/>
+			<var type="relative volume"/>
+			<var type="stress"/>
+			<var type="effective fluid pressure"/>
+			<var type="fluid pressure"/>
+			<var type="fluid flux"/>
+			<var type="effective solute concentration"/>
+			<var type="electric potential"/>
+			<var type="fixed charge density"/>
+			<var type="solute concentration"/>
+			<var type="solute flux"/>
+		</plotfile>
+		<logfile>
+			<element_data data="sy" elem_set="unnamed_set01"/>
+		</logfile>
+	</Output>
+</febio_spec>

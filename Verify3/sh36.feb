@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<febio_spec version="3.0">
+	<Module type="solid"/>
+	<Control>
+		<analysis>STATIC</analysis>
+		<time_steps>100</time_steps>
+		<step_size>0.01</step_size>
+		<solver>
+			<max_refs>15</max_refs>
+			<max_ups>0</max_ups>
+			<diverge_reform>1</diverge_reform>
+			<reform_each_time_step>1</reform_each_time_step>
+			<dtol>0.001</dtol>
+			<etol>0.01</etol>
+			<rtol>0</rtol>
+			<lstol>0.9</lstol>
+			<min_residual>1e-20</min_residual>
+			<qnmethod>BFGS</qnmethod>
+			<rhoi>-2</rhoi>
+		</solver>
+		<time_stepper>
+			<dtmin>0.001</dtmin>
+			<dtmax>0.01</dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+		</time_stepper>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>293</T>
+			<R>0.008314</R>
+			<Fc>0.0965</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="mat1" type="solid mixture">
+			<density>1</density>
+			<mat_axis type="vector">
+				<a>0,0,1</a>
+				<d>1,0,0</d>
+			</mat_axis>
+			<solid type="neo-Hookean">
+				<E>1</E>
+				<v>0.3</v>
+			</solid>
+			<solid type="continuous fiber distribution">
+				<fibers type="fiber-exponential-power-law">
+					<alpha>2</alpha>
+					<beta>2</beta>
+					<ksi>5</ksi>
+					<mu>0</mu>
+				</fibers>
+				<distribution type="von-Mises-3d">
+					<b>30</b>
+				</distribution>
+				<scheme type="fibers-3d-gkt">
+					<nph>11</nph>
+					<nth>31</nth>
+				</scheme>
+			</solid>
+		</material>
+	</Material>
+	<Mesh>
+		<Nodes name="Object01">
+			<node id="1">-0.5,-0.5,0</node>
+			<node id="2">-0.5,0.5,0</node>
+			<node id="3">0.5,-0.5,0</node>
+			<node id="4">0.5,0.5,0</node>
+		</Nodes>
+		<Elements type="quad4" name="Part1">
+			<elem id="1">     1,     3,     4,     2</elem>
+		</Elements>
+		<NodeSet name="face">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="3"/>
+			<n id="4"/>
+		</NodeSet>
+		<NodeSet name="face">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="3"/>
+			<n id="4"/>
+		</NodeSet>
+		<ElementSet name="unnamed_set01">
+			<e id="1"/>
+		</ElementSet>
+	</Mesh>
+	<MeshDomains>
+		<ShellDomain name="Part1" mat="mat1"/>
+	</MeshDomains>
+	<MeshData>
+		<ElementData var="shell thickness" elem_set="Part1">
+			<e lid="1">0.01,0.01,0.01,0.01</e>
+		</ElementData>
+	</MeshData>
+	<Boundary>
+		<bc name="FixedShellDisplacement01" type="fix" node_set="face">
+			<dofs>sx,sy,sz</dofs>
+		</bc>
+		<bc name="face" type="prescribe" node_set="face">
+			<dof>z</dof>
+			<scale lc="1">1</scale>
+			<relative>0</relative>
+		</bc>
+	</Boundary>
+	<LoadData>
+		<load_controller id="1" type="loadcurve">
+			<interpolate>SMOOTH</interpolate>
+			<points>
+				<point>0,0</point>
+				<point>1,0.005</point>
+			</points>
+		</load_controller>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="shell director"/>
+			<var type="shell strain"/>
+			<var type="stress"/>
+		</plotfile>
+		<logfile>
+			<element_data data="sx" elem_set="unnamed_set01"/>
+		</logfile>
+	</Output>
+</febio_spec>
