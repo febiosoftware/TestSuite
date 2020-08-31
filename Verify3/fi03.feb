@@ -37,7 +37,6 @@
 			<k>10000</k>
 			<lam_max>10</lam_max>
 			<fiber type="vector">0,0,1</fiber>
-			<laugon>1</laugon>
 		</material>
 	</Material>
 	<Mesh>
@@ -83,7 +82,9 @@
 		</ElementSet>
 	</Mesh>
 	<MeshDomains>
-		<SolidDomain name="Part1" mat="Material 1"/>
+		<SolidDomain name="Part1" mat="Material 1">
+			<laugon>1</laugon>
+		</SolidDomain>
 	</MeshDomains>
 	<Boundary>
 		<bc name="FixedDisplacement01" type="fix" node_set="FixedDisplacement01">

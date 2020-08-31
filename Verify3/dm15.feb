@@ -35,7 +35,7 @@
 	<Material>
 		<material id="1" name="Material2" type="uncoupled solid mixture">
 			<density>1</density>
-			<k>0</k>
+			<k>10000</k>
 			<solid type="Mooney-Rivlin">
 				<c1>0.0325</c1>
 				<c2>0</c2>
@@ -45,7 +45,6 @@
 					<E>10</E>
 					<beta>2.5</beta>
 					<lam0>1.1</lam0>
-					<k>10000</k>
 					<fiber type="angles">
 						<theta>0</theta>
 						<phi>0</phi>
