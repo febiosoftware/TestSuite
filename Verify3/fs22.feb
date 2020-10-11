@@ -18727,7 +18727,7 @@ Comments:
 			<var type="fluid volume ratio"/>
 			<var type="fluid vorticity"/>
 			<var type="nodal fluid velocity"/>
-			<var type="nodal relative fluid velocity"/>
+			<var type="nodal fluid flux"/>
 			<var type="relative fluid velocity"/>
 		</plotfile>
 	</Output>
