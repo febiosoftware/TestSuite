@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Forced response of rigid block connected to ground with prismatic joint, rigid spring and sinusoidal contractile force.
+Main Features:
+	Rigid contractile force
+Secondary Features:
+	Rigid spring, rigid prismatic joint
+Materials:
+	Rigid body
+Degrees of Freedom: 6
+Results:
+	Steps Completed: 600
+	Equilibrium Iterations: 615
+	Right Hand Evaluations: 1215
+	Siffness Reformations: 600
+Comments:
+	The analytical solution for the Z-position of the block is
+	(8/5)(7+8 cos(2 pi t))(sin(pi t))^4
+-->
+<febio_spec version="3.0">
+	<Module type="solid"/>
+	<Control>
+		<analysis>DYNAMIC</analysis>
+		<time_steps>600</time_steps>
+		<step_size>0.002</step_size>
+		<solver>
+			<max_refs>15</max_refs>
+			<max_ups>10</max_ups>
+			<diverge_reform>1</diverge_reform>
+			<reform_each_time_step>1</reform_each_time_step>
+			<dtol>0.001</dtol>
+			<etol>0.01</etol>
+			<rtol>0</rtol>
+			<lstol>0.9</lstol>
+			<min_residual>1e-20</min_residual>
+			<qnmethod>BROYDEN</qnmethod>
+			<rhoi>1</rhoi>
+			<symmetric_stiffness>0</symmetric_stiffness>
+		</solver>
+		<time_stepper>
+			<dtmin>0.0001</dtmin>
+			<dtmax>0.002</dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+		</time_stepper>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="Mass" type="rigid body">
+			<density>1</density>
+			<center_of_mass>0,0,0.5</center_of_mass>
+		</material>
+		<material id="2" name="Ground" type="rigid body">
+			<density>1</density>
+			<center_of_mass>0,0,0</center_of_mass>
+		</material>
+	</Material>
+	<Mesh>
+		<Nodes name="Object03">
+			<node id="1">-0.5,-0.5,0</node>
+			<node id="2">-0.5,-0.5,1</node>
+			<node id="3">-0.5,0.5,0</node>
+			<node id="4">-0.5,0.5,1</node>
+			<node id="5">0.5,-0.5,0</node>
+			<node id="6">0.5,-0.5,1</node>
+			<node id="7">0.5,0.5,0</node>
+			<node id="8">0.5,0.5,1</node>
+		</Nodes>
+		<Elements type="hex8" name="Part1">
+			<elem id="1">1,5,7,3,2,6,8,4</elem>
+		</Elements>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part1" mat="Mass"/>
+	</MeshDomains>
+	<Rigid>
+		<rigid_constraint name="RigidConstraint1" type="fix">
+			<rb>2</rb>
+			<dofs>Rx,Ry,Rz,Ru,Rv,Rw</dofs>
+		</rigid_constraint>
+		<rigid_connector type="rigid spring" name="Spring">
+			<body_a>2</body_a>
+			<body_b>1</body_b>
+			<k>157.91367</k>
+			<insertion_a>0,0,-5</insertion_a>
+			<insertion_b>0,0,0</insertion_b>
+		</rigid_connector>
+		<rigid_connector type="rigid contractile force" name="Contractile force">
+			<body_a>2</body_a>
+			<body_b>1</body_b>
+			<f0 lc="1">315.82734</f0>
+			<insertion_a>0,0,6</insertion_a>
+			<insertion_b>0,0,1</insertion_b>
+		</rigid_connector>
+		<rigid_connector type="rigid prismatic joint" name="Prismatic joint">
+			<body_a>2</body_a>
+			<body_b>1</body_b>
+			<tolerance>0</tolerance>
+			<gaptol>0.0001</gaptol>
+			<angtol>0.0001</angtol>
+			<force_penalty>1000</force_penalty>
+			<moment_penalty>1000</moment_penalty>
+			<auto_penalty>1</auto_penalty>
+			<joint_origin>0,0,0.5</joint_origin>
+			<translation_axis>0,0,1</translation_axis>
+			<transverse_axis>1,0,0</transverse_axis>
+			<minaug>0</minaug>
+			<maxaug>10</maxaug>
+			<prescribed_translation>0</prescribed_translation>
+			<translation>0</translation>
+			<force>0</force>
+		</rigid_connector>
+	</Rigid>
+	<LoadData>
+		<load_controller id="1" type="loadcurve">
+			<interpolate>SMOOTH</interpolate>
+			<extend>REPEAT</extend>
+			<points>
+				<point>0,0</point>
+				<point>0.0033333333333,0.000986635785845</point>
+				<point>0.0066666666666,0.00394264934268</point>
+				<point>0.0099999999999,0.00885637463548</point>
+				<point>0.0133333333332,0.0157084194354</point>
+				<point>0.0166666666665,0.0244717418519</point>
+				<point>0.0199999999998,0.0351117570552</point>
+				<point>0.0233333333331,0.0475864737661</point>
+				<point>0.0266666666664,0.0618466599769</point>
+				<point>0.0299999999997,0.0778360372475</point>
+				<point>0.033333333333,0.0954915028107</point>
+				<point>0.0366666666663,0.11474337861</point>
+				<point>0.0399999999996,0.135515686287</point>
+				<point>0.0433333333329,0.157726447033</point>
+				<point>0.0466666666662,0.181288005122</point>
+				<point>0.0499999999995,0.20610737385</point>
+				<point>0.0533333333328,0.232086602506</point>
+				<point>0.0566666666661,0.259123162944</point>
+				<point>0.0599999999994,0.287110354212</point>
+				<point>0.0633333333327,0.315937723652</point>
+				<point>0.066666666666,0.345491502807</point>
+				<point>0.0699999999993,0.375655056411</point>
+				<point>0.0733333333326,0.4063093427</point>
+				<point>0.0766666666659,0.437333383211</point>
+				<point>0.0799999999992,0.468604740228</point>
+				<point>0.0833333333325,0.499999999992</point>
+				<point>0.0866666666658,0.531395259757</point>
+				<point>0.0899999999991,0.562666616774</point>
+				<point>0.0933333333324,0.593690657284</point>
+				<point>0.0966666666657,0.624344943574</point>
+				<point>0.099999999999,0.654508497179</point>
+				<point>0.103333333332,0.684062276333</point>
+				<point>0.106666666666,0.712889645773</point>
+				<point>0.109999999999,0.740876837042</point>
+				<point>0.113333333332,0.76791339748</point>
+				<point>0.116666666665,0.793892626137</point>
+				<point>0.119999999999,0.818711994866</point>
+				<point>0.123333333332,0.842273552956</point>
+				<point>0.126666666665,0.864484313703</point>
+				<point>0.129999999999,0.88525662138</point>
+				<point>0.133333333332,0.90450849718</point>
+				<point>0.136666666665,0.922163962744</point>
+				<point>0.139999999999,0.938153340016</point>
+				<point>0.143333333332,0.952413526227</point>
+				<point>0.146666666665,0.964888242939</point>
+				<point>0.149999999998,0.975528258143</point>
+				<point>0.153333333332,0.984291580561</point>
+				<point>0.156666666665,0.991143625362</point>
+				<point>0.159999999998,0.996057350655</point>
+				<point>0.163333333332,0.999013364213</point>
+				<point>0.166666666665,1</point>
+				<point>0.169999999998,0.999013364215</point>
+				<point>0.173333333332,0.996057350659</point>
+				<point>0.176666666665,0.991143625367</point>
+				<point>0.179999999998,0.984291580569</point>
+				<point>0.183333333331,0.975528258153</point>
+				<point>0.186666666665,0.964888242951</point>
+				<point>0.189999999998,0.952413526241</point>
+				<point>0.193333333331,0.938153340031</point>
+				<point>0.196666666665,0.922163962761</point>
+				<point>0.199999999998,0.904508497199</point>
+				<point>0.203333333331,0.8852566214</point>
+				<point>0.206666666665,0.864484313724</point>
+				<point>0.209999999998,0.842273552979</point>
+				<point>0.213333333331,0.81871199489</point>
+				<point>0.216666666664,0.793892626163</point>
+				<point>0.219999999998,0.767913397507</point>
+				<point>0.223333333331,0.740876837069</point>
+				<point>0.226666666664,0.712889645802</point>
+				<point>0.229999999998,0.684062276362</point>
+				<point>0.233333333331,0.654508497208</point>
+				<point>0.236666666664,0.624344943604</point>
+				<point>0.239999999998,0.593690657315</point>
+				<point>0.243333333331,0.562666616805</point>
+				<point>0.246666666664,0.531395259788</point>
+				<point>0.249999999997,0.500000000024</point>
+				<point>0.253333333331,0.468604740259</point>
+				<point>0.256666666664,0.437333383242</point>
+				<point>0.259999999997,0.406309342731</point>
+				<point>0.263333333331,0.375655056442</point>
+				<point>0.266666666664,0.345491502836</point>
+				<point>0.269999999997,0.315937723681</point>
+				<point>0.273333333331,0.287110354241</point>
+				<point>0.276666666664,0.259123162972</point>
+				<point>0.279999999997,0.232086602533</point>
+				<point>0.28333333333,0.206107373875</point>
+				<point>0.286666666664,0.181288005146</point>
+				<point>0.289999999997,0.157726447056</point>
+				<point>0.29333333333,0.135515686308</point>
+				<point>0.296666666664,0.11474337863</point>
+				<point>0.299999999997,0.0954915028291</point>
+				<point>0.30333333333,0.0778360372643</point>
+				<point>0.306666666664,0.061846659992</point>
+				<point>0.309999999997,0.0475864737794</point>
+				<point>0.31333333333,0.0351117570667</point>
+				<point>0.316666666663,0.0244717418616</point>
+				<point>0.319999999997,0.0157084194432</point>
+				<point>0.32333333333,0.00885637464137</point>
+				<point>0.326666666663,0.00394264934662</point>
+				<point>0.329999999997,0.000986635787817</point>
+				<point>0.33333333333,0</point>
+			</points>
+		</load_controller>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="rigid acceleration"/>
+			<var type="rigid force"/>
+			<var type="rigid position"/>
+			<var type="rigid velocity"/>
+			<var type="stress"/>
+		</plotfile>
+	</Output>
+</febio_spec>
