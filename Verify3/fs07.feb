@@ -84,13 +84,13 @@ Comments:
 				<v>0</v>
 			</solid>
 		</material>
-		<material id="2" name="Material1" type="Gasser-Ogden-Holzapfel-uncoupled">
+		<material id="2" name="Material1" type="Holzapfel-Gasser-Ogden">
 		  <density>1000</density>
 		  <c>60000</c>
 			<k1>180000</k1>
 			<k2>100</k2>
 			<kappa>0</kappa>
-			<gamma>0.5</gamma>
+			<gamma>28.6479</gamma>
 			<k>5e+07</k>
 		</material>
 	</Material>
