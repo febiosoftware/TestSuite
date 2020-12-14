@@ -77,6 +77,10 @@
 			<rb>1</rb>
 			<dofs>Rx,Ry,Rz,Ru,Rv,Rw</dofs>
 		</rigid_constraint>
+		<rigid_constraint name="RigidFixed111" type="fix">
+			<rb>2</rb>
+			<dofs>Rx,Ry,Ru,Rv,Rw</dofs>
+		</rigid_constraint>
 		<rigid_connector type="rigid prismatic joint" name="Joint01 Prismatic Joint">
 			<body_a>1</body_a>
 			<body_b>2</body_b>
