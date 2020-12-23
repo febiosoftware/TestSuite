@@ -2592,11 +2592,6 @@ a spatially non-uniform pressure load on the surface of a cube.
 	<MeshDomains>
 		<SolidDomain name="Part1" mat="Material1"/>
 	</MeshDomains>
-	<MeshData>
-		<SurfaceData name="pressure" generator="math" datatype="scalar" surface="PressureLoad1">
-			<math>1.4142*(0.7071 - X*X - (Z-0.5)*(Z-0.5))</math>
-		</SurfaceData>
-	</MeshData>
 	<Boundary>
 		<bc name="FixedDisplacement1" type="fix" node_set="@surface:FixedDisplacement1">
 			<dofs>x,y,z</dofs>
@@ -2604,7 +2599,7 @@ a spatially non-uniform pressure load on the surface of a cube.
 	</Boundary>
 	<Loads>
 		<surface_load name="PressureLoad1" type="pressure" surface="PressureLoad1">
-			<pressure lc="1" type="map">pressure</pressure>
+			<pressure lc="1" type="math">1.4142*(0.7071 - X*X - (Z-0.5)*(Z-0.5))</pressure>
 			<linear>0</linear>
 			<symmetric_stiffness>0</symmetric_stiffness>
 		</surface_load>
