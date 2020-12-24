@@ -48,7 +48,6 @@
 					<alpha>2</alpha>
 					<beta>2</beta>
 					<ksi>5</ksi>
-					<mu>0</mu>
 				</fibers>
 				<distribution type="von-Mises-3d">
 					<b>30</b>
