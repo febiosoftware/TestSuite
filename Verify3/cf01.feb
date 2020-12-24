@@ -44,7 +44,7 @@
 				<v>0.3</v>
 			</solid>
 			<solid type="continuous fiber distribution">
-				<fibers type="fiber-exponential-power-law">
+				<fibers type="fiber-exp-pow">
 					<alpha>2</alpha>
 					<beta>2</beta>
 					<ksi>5</ksi>

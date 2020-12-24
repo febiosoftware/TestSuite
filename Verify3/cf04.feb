@@ -45,7 +45,7 @@
 					<a>1,1,0</a>
 					<d>0,0,1</d>
 				</mat_axis>
-				<fibers type="fiber-exponential-power-law">
+				<fibers type="fiber-exp-pow">
 					<alpha>20</alpha>
 					<beta>2</beta>
 					<ksi>5</ksi>
@@ -64,7 +64,7 @@
 					<a>1,-1,0</a>
 					<d>0,0,1</d>
 				</mat_axis>
-				<fibers type="fiber-exponential-power-law">
+				<fibers type="fiber-exp-pow">
 					<alpha>20</alpha>
 					<beta>2</beta>
 					<ksi>5</ksi>
