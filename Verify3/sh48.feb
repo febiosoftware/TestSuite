@@ -121,7 +121,6 @@
 			<var type="shell director"/>
 			<var type="shell strain"/>
 			<var type="stress"/>
-			<var type="fluid flux"/>
 		</plotfile>
 		<logfile>
 			<element_data data="Ez"/>
