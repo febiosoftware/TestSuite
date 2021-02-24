@@ -738,7 +738,7 @@
 			<minaug>0</minaug>
 			<maxaug>10</maxaug>
 			<gaptol>0</gaptol>
-			<seg_up>0</seg_up>
+			<seg_up>4</seg_up>
 			<update_penalty>0</update_penalty>
 		</contact>
 	</Contact>
