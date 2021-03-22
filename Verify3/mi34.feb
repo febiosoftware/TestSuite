@@ -5,6 +5,9 @@
 		<analysis>STATIC</analysis>
 		<time_steps>500</time_steps>
 		<step_size>0.0001</step_size>
+		<solver>
+			<mass_lumping>1</mass_lumping>
+		</solver>
 	</Control>
 	<Globals>
 		<Constants>
