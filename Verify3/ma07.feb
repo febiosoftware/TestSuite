@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Modeling of ligament cyclic Stress Relaxation.
+Main Features:
+	Uncoupled viscoelasticity
+	Fiber material
+Secondary Features:
+	Cyclic deformation
+	Must points
+Materials:
+	Trans-Iso Mooney-Rivlin
+	Uncoupled Viscoelastic
+Degrees of Freedom: 540
+Results:
+	Steps Completed: 199
+	Equilibrium Iterations: 571
+	Right Hand Evaluations: 770
+	Siffness Reformations: 199
+	Other:
+		See the stress-strain curve in ma07.jpg
+Comments:
+	This problem is from the article "Finite element implementation of anisotropic
+	quasilinear viscoelasticity using a discrete spectrum approximation", Puso and Weiss,
+	Journal of Biomechanical Engineering, 1997
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

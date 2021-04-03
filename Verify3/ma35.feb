@@ -3,10 +3,9 @@
 Problem Description:
 	Sinusoidal deformational loading of a cube from tension to
 	compression. The material is reactive viscoelastic, with the
-	strong bonds (elastic response) given by a Mooney-Rivlin
-	material, and the weak bonds (viscous response) also given by a
-	Mooney-Rivlin material.  The bond relaxation is exponential,
-	with type I bond kinetics.
+	strong bonds (elastic response) given by a Holmes-Mow
+	material, and the weak bonds (viscous response) given by a
+	neo-Hookean material.  The bond relaxation is of type Fung.
 Main Features:
 	Reactive viscoelastic material.
 Secondary Features:
@@ -15,13 +14,13 @@ Materials:
 	reactive viscoelastic
 	Holmes-Mow
 	neo-Hookean
-	relaxation-power
+	relaxation-exponential
 Degrees of Freedom: 12
 Results:
 	Steps Completed: 500
-	Equilibrium Iterations: 1488
-	Right Hand Evaluations: 1988
-	Siffness Reformations: 1488
+	Equilibrium Iterations: 1270
+	Right Hand Evaluations: 1770
+	Siffness Reformations: 1270
 	Other:
 Comments:
 	
@@ -60,20 +59,21 @@ Comments:
 		</Constants>
 	</Globals>
 	<Material>
-		<material id="1" name="Viscoelastic solid" type="uncoupled reactive viscoelastic">
+		<material id="1" name="Viscoelastic solid" type="reactive viscoelastic">
 			<kinetics>1</kinetics>
 			<trigger>0</trigger>
-			<k>2000</k>
-			<elastic type="Mooney-Rivlin">
-				<c1>1</c1>
-				<c2>0.5</c2>
+			<elastic type="Holmes-Mow">
+				<E>1</E>
+				<v>0.3</v>
+				<beta>2</beta>
 			</elastic>
-			<bond type="Mooney-Rivlin">
-				<c1>1</c1>
-				<c2>0.5</c2>
+			<bond type="neo-Hookean">
+				<E>1</E>
+				<v>0.3</v>
 			</bond>
-			<relaxation type="relaxation-exponential">
-				<tau>0.2</tau>
+			<relaxation type="relaxation-Fung">
+				<tau1>0.02</tau1>
+				<tau2>0.2</tau2>
 			</relaxation>
 		</material>
 	</Material>
@@ -109,7 +109,7 @@ Comments:
 			<n id="5"/>
 			<n id="7"/>
 		</NodeSet>
-		<NodeSet name="PrescribedBC150">
+		<NodeSet name="PrescribedBC145">
 			<n id="2"/>
 			<n id="4"/>
 			<n id="6"/>
@@ -132,7 +132,7 @@ Comments:
 		<bc name="FixedDisplacement03" type="fix" node_set="FixedDisplacement03">
 			<dofs>z</dofs>
 		</bc>
-		<bc name="PrescribedBC150" type="prescribe" node_set="PrescribedBC150">
+		<bc name="PrescribedBC145" type="prescribe" node_set="PrescribedBC145">
 			<dof>z</dof>
 			<scale lc="1">0.25</scale>
 			<relative>0</relative>
@@ -159,7 +159,6 @@ Comments:
 	<Output>
 		<plotfile type="febio">
 			<var type="displacement"/>
-			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
 		<logfile>

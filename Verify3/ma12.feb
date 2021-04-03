@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A 5x6x5 element block undergoes a prescribed displacement of 1 unit in the z-direction.
+	Nodal constraints are specified for the 1/8th symmetric representation of the expansion
+	of a block in the z-direction.
+Main Features:
+	Fung Orthotropic material
+Secondary Features:
+	
+Materials:
+	Fung Orthotropic
+Degrees of Freedom: 636
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 39
+	Right Hand Evaluations: 49
+	Siffness Reformations: 10
+	Other:
+		The maximum total displacement is 1.08 units at time t=1.
+Comments:
+	Similar to problem ma03 (linear orthotropic).
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

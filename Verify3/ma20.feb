@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Active isotropic contraction of a cube whose passive (elastic) component
+	is neo-Hookean (isotropic).
+Main Features:
+	Prescribed isotropic active contraction.
+Secondary Features:
+	Solid mixture
+Materials:
+	prescribed isotropic active contraction
+	neo-Hookean
+Degrees of Freedom: 12
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 30
+	Right Hand Evaluations: 40
+	Siffness Reformations: 30
+	Other:
+		The side of the cube reduces by -0.1424 at time t = 1.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

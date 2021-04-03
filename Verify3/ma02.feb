@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	An 8x4x4 element block has its left end nodes constrained in x,y,z and its right end
+	nodes constrained in y,z with a prescribed displacement of 1 unit in the x-direction.
+Main Features:
+	Ogden unconstrained material
+Secondary Features:
+	
+Materials:
+	Ogden unconstrained
+Degrees of Freedom: 550
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 30
+	Right Hand Evaluations: 40
+	Siffness Reformations: 10
+
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

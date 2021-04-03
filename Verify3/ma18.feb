@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Circular disk subjected to uniform tensile pressure on its
+	lateral boundary.  The material is an orthotropic
+	conewise linear elastic solid, with material axes rotated
+	about the z-axis.
+Main Features:
+	Orthotropic conewise linear elastic solid
+Secondary Features:
+	Material directions not along coordinate axes
+	Pressure
+Materials:
+	orthotropic CLE
+Degrees of Freedom: 832
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 89
+	Right Hand Evaluations: 99
+	Siffness Reformations: 89
+	Other:
+		
+Comments:
+	The disk deforms into an ellipse whose axes are not aligned
+	with the coordinate directions.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

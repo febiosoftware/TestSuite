@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Active uniaxial contraction of a cube whose passive (elastic) component
+	is Mooney-Rivlin (isotropic).
+Main Features:
+	Prescribed uniaxial active contraction along the x-direction.
+Secondary Features:
+	Uncoupled solid mixture
+Materials:
+	uncoupled prescribed uniaxial active contraction
+	Mooney-Rivlin
+Degrees of Freedom: 12
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 30
+	Right Hand Evaluations: 40
+	Siffness Reformations: 30
+	Other:
+		The cube shrinks by -0.07172 along x and elongates by
+		0.03784 along y and z at time t = 1.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

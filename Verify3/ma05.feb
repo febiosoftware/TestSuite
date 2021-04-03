@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A viscoelastic element has a prescribed x-diplacement of 0.0005 at time t=1.
+Main Features:
+	Viscoelasticity
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+	Viscoelastic
+Degrees of Freedom: 12
+Results:
+	Steps Completed: 25
+	Equilibrium Iterations: 30
+	Right Hand Evaluations: 55
+	Siffness Reformations: 25
+	Other:
+		The element has a maximum displacement of 0.002 at time t=0.2127.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

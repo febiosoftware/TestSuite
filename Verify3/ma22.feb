@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Active transversely isotropic contraction of a cube whose passive (elastic) component
+	is neo-Hookean (isotropic).
+Main Features:
+	Prescribed transversely isotropic active contraction in the
+	y-z plane.
+Secondary Features:
+	Solid mixture
+Materials:
+	prescribed trans iso active contraction
+	neo-Hookean
+Degrees of Freedom: 12
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 45
+	Right Hand Evaluations: 55
+	Siffness Reformations: 45
+	Other:
+		The cube elongates by 0.1982 along x and shrinks by
+		-0.2099 along y and z at time t = 1.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

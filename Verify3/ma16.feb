@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Viscoelastic response of cantilever beam.
+Main Features:
+	Uncoupled viscoelasticity
+Secondary Features:
+	Must points
+Materials:
+	Ogden
+	Uncoupled Viscoelastic
+Degrees of Freedom: 540
+Results:
+	Steps Completed: 46
+	Equilibrium Iterations: 250
+	Right Hand Evaluations: 338
+	Siffness Reformations: 250
+	Other:
+		See the stress-strain curve in ma07.jpg
+Comments:
+	This problem tests the uncoupled viscoelastic
+	formulation, since bending is a good test for mesh locking.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>
