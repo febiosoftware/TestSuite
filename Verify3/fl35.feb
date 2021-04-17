@@ -33,7 +33,7 @@
 	<Material>
 		<material id="1" name="Material1" type="fluid">
 			<density>1</density>
-			<k>1e+09</k>
+			<k>1e+12</k>
 			<viscous type="Newtonian fluid">
 				<mu>1</mu>
 				<kappa>0</kappa>

@@ -17229,7 +17229,7 @@
 			<n id="8420"/>
 			<n id="8421"/>
 		</NodeSet>
-		<Surface name="FluidFlowResistance1">
+		<Surface name="FluidPressure1">
 			<quad4 id="1">2,11,10,1</quad4>
 			<quad4 id="2">11,20,19,10</quad4>
 			<quad4 id="3">20,29,28,19</quad4>
@@ -18786,9 +18786,8 @@
 		</bc>
 	</Boundary>
 	<Loads>
-		<surface_load name="FluidFlowResistance01" type="fluid resistance" surface="FluidFlowResistance1">
-			<R lc="1">0</R>
-			<pressure_offset lc="2">0.05</pressure_offset>
+		<surface_load name="FluidPressure01" type="fluid pressure" surface="FluidPressure1">
+			<pressure lc="2">0.05</pressure>
 		</surface_load>
 		<surface_load name="FluidBackflowStabilization01" type="fluid backflow stabilization" surface="FluidBackflowStabilization1">
 			<beta lc="3">1</beta>
