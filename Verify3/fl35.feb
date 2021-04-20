@@ -2,7 +2,7 @@
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>
-		<analysis>STEADY-STATE</analysis>
+		<analysis>DYNAMIC</analysis>
 		<time_steps>2</time_steps>
 		<step_size>0.5</step_size>
 		<solver>
@@ -33,7 +33,7 @@
 	<Material>
 		<material id="1" name="Material1" type="fluid">
 			<density>1</density>
-			<k>1e+12</k>
+			<k>1e+9</k>
 			<viscous type="Newtonian fluid">
 				<mu>1</mu>
 				<kappa>0</kappa>
