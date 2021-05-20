@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+	Requires oi06 input file. 
+-->
+<febio_optimize version="2.0">
+	<Options type="constrained levmar">
+		<obj_tol>1e-7</obj_tol>
+		<f_diff_scale>0.001</f_diff_scale>
+		<log_level>LOG_DEFAULT</log_level>
+		<print_level>PRINT_ITERATIONS</print_level>
+	</Options>
+	<Parameters>
+		<param name="fem.material('Material1').v">0,-1,0.5</param>
+	</Parameters>
+	<Objective type="node-data">
+		<var type="uy"/>
+		<data>
+			<node id="8">0.0194104</node>
+			<node id="12">-0.0194104</node>
+			<node id="14">0.0194104</node>
+			<node id="18">-0.0194104</node>
+		</data>
+	</Objective>
+</febio_optimize>
