@@ -1483,7 +1483,7 @@ Comments:
 			<var type="fluid rate of deformation"/>
 			<var type="fluid stress"/>
 			<var type="fluid velocity"/>
-			<var type="fluid volume ratio"/>
+			<var type="porosity"/>
 			<var type="fluid vorticity"/>
 			<var type="nodal fluid velocity"/>
 			<var type="nodal fluid flux"/>
