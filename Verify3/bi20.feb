@@ -4651,7 +4651,7 @@ Comments:
 			<var type="nodal fluid velocity"/>
 			<var type="fluid flux"/>
 			<var type="nodal fluid flux"/>
-			<var type="fluid volume fraction"/>
+			<var type="porosity"/>
 			<var type="solid volume fraction"/>
 		</plotfile>
 	</Output>
