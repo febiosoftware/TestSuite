@@ -4398,7 +4398,7 @@
 			<two_pass>1</two_pass>
 			<search_tol>0.01</search_tol>
 			<symmetric_stiffness>0</symmetric_stiffness>
-			<search_radius>1</search_radius>
+			<search_radius>20</search_radius>
 			<seg_up>0</seg_up>
 			<tension>0</tension>
 			<minaug>0</minaug>
