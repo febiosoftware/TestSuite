@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Mild steel
+-->
+<febio_spec version="3.0">
+	<Module type="solid"/>
+	<Control>
+		<analysis>STATIC</analysis>
+		<time_steps>500</time_steps>
+		<step_size>0.03</step_size>
+		<solver>
+			<max_refs>50</max_refs>
+			<max_ups>10</max_ups>
+			<diverge_reform>1</diverge_reform>
+			<reform_each_time_step>1</reform_each_time_step>
+			<dtol>0.001</dtol>
+			<etol>0.01</etol>
+			<rtol>0</rtol>
+			<lstol>0.9</lstol>
+			<min_residual>1e-20</min_residual>
+			<qnmethod>BFGS</qnmethod>
+			<rhoi>-2</rhoi>
+			<symmetric_stiffness>0</symmetric_stiffness>
+		</solver>
+		<time_stepper>
+			<dtmin>0.003</dtmin>
+			<dtmax>0.03</dtmax>
+			<max_retries>5</max_retries>
+			<opt_iter>20</opt_iter>
+		</time_stepper>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="mild steel" type="reactive plasticity">
+			<density>1</density>
+			<isochoric>1</isochoric>
+			<elastic type="neo-Hookean">
+				<E>206000</E>
+				<v>0.3</v>
+			</elastic>
+			<yield_criterion type="DC von Mises stress"/>
+			<flow_curve type="PFC user">
+			  <plastic_response type="point">
+			    <interpolate>SMOOTH</interpolate>
+			    <points>
+			      <point>0.000840290999999999, 173.100016064487</point>
+			      <point>0.0048289228182718, 188.35062548264</point>
+			      <point>0.00985737817219414, 203.601234900792</point>
+			      <point>0.0160877710887503, 218.851844318945</point>
+			      <point>0.02369304201661, 234.102453737098</point>
+			      <point>0.032856850616208, 249.353063155251</point>
+			      <point>0.0437734767574443, 264.603672573403</point>
+			      <point>0.0566477286169301, 279.854281991556</point>
+			      <point>0.0716948569735365, 295.104891409709</point>
+			      <point>0.0891404749597274, 310.355500827862</point>
+			      <point>0.109220482649928, 325.606110246014</point>
+			      <point>0.132180995965099, 340.856719664167</point>
+			      <point>0.158278279451124, 356.10732908232</point>
+			      <point>0.18777868255219, 371.357938500472</point>
+			      <point>0.22095857905237, 386.608547918625</point>
+			      <point>0.258104309401627, 401.859157336778</point>
+			      <point>0.29951212567828, 417.109766754931</point>
+			      <point>0.345488138970085, 432.360376173083</point>
+			      <point>0.396348268981527, 447.610985591236</point>
+			      <point>0.452418195696586, 462.861595009389</point>
+			      <point>0.514033312944815, 478.112204427542</point>
+			      <point>0.581538683734559, 493.362813845694</point>
+			      <point>0.655288997230953, 508.613423263847</point>
+			      <point>0.73564852726845, 523.864032682</point>
+			      <point>0.822991092298084, 539.114642100153</point>
+			      <point>0.917700016678969, 554.365251518305</point>
+			      <point>1.02016809323165, 569.615860936458</point>
+			      <point>1.13079754697817, 584.866470354611</point>
+			      <point>1.24999999999999, 600.117079772763</point>
+			      <point>1.37819643735086, 615.367689190916</point>
+			    </points>
+			  </plastic_response>
+			</flow_curve>
+		</material>
+	</Material>
+	<Mesh>
+		<Nodes name="Object01">
+			<node id="1">-0.5,-0.5,0</node>
+			<node id="2">-0.5,-0.5,1</node>
+			<node id="3">-0.5,0.5,0</node>
+			<node id="4">-0.5,0.5,1</node>
+			<node id="5">0.5,-0.5,0</node>
+			<node id="6">0.5,-0.5,1</node>
+			<node id="7">0.5,0.5,0</node>
+			<node id="8">0.5,0.5,1</node>
+		</Nodes>
+		<Elements type="hex8" name="Part1">
+			<elem id="1">1,5,7,3,2,6,8,4</elem>
+		</Elements>
+		<NodeSet name="FixedDisplacement1">
+			<n id="5"/>
+			<n id="6"/>
+			<n id="7"/>
+			<n id="8"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement2">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="5"/>
+			<n id="6"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement3">
+			<n id="1"/>
+			<n id="3"/>
+			<n id="5"/>
+			<n id="7"/>
+		</NodeSet>
+		<NodeSet name="PrescribedDisplacement1">
+			<n id="2"/>
+			<n id="4"/>
+			<n id="6"/>
+			<n id="8"/>
+		</NodeSet>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part1" mat="mild steel"/>
+	</MeshDomains>
+	<Boundary>
+		<bc name="FixedDisplacement01" type="fix" node_set="FixedDisplacement1">
+			<dofs>x</dofs>
+		</bc>
+		<bc name="FixedDisplacement02" type="fix" node_set="FixedDisplacement2">
+			<dofs>y</dofs>
+		</bc>
+		<bc name="FixedDisplacement03" type="fix" node_set="FixedDisplacement3">
+			<dofs>z</dofs>
+		</bc>
+		<bc name="PrescribedDisplacement1" type="prescribe" node_set="PrescribedDisplacement1">
+			<dof>z</dof>
+			<scale lc="1">2.5</scale>
+			<relative>0</relative>
+		</bc>
+	</Boundary>
+	<LoadData>
+		<load_controller id="1" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<extend>EXTRAPOLATE</extend>
+			<points>
+			  <point>0,0</point>
+			  <point>15,1</point>
+			</points>
+		</load_controller>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="damage"/>
+			<var type="displacement"/>
+			<var type="elasticity"/>
+			<var type="intact bond fraction"/>
+			<var type="Lagrange strain"/>
+			<var type="right stretch"/>
+			<var type="right Hencky"/>
+			<var type="octahedral plastic strain"/>
+			<var type="reaction forces"/>
+			<var type="relative volume"/>
+			<var type="stress"/>
+		</plotfile>
+	</Output>
+</febio_spec>
