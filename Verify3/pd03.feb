@@ -39,12 +39,14 @@ This model simulates reactive plastic damage in a material using octahedral shea
 	<Material>
 		<material id="1" name="Material1" type="reactive plastic damage">
 			<density>1</density>
-			<nf>20</nf>
-			<Y0>600</Y0>
-			<Ymax>1000</Ymax>
-			<w0>0.75</w0>
-			<we>0</we>
-			<r>1</r>
+			<flow_curve type="PFC paper">
+			  <nf>20</nf>
+			  <Y0>600</Y0>
+			  <Ymax>1000</Ymax>
+			  <w0>0.75</w0>
+			  <we>0</we>
+			  <r>1</r>
+			</flow_curve>
 			<isochoric>1</isochoric>
 			<elastic type="neo-Hookean">
 				<E>200000</E>

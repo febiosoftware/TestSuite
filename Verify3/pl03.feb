@@ -39,12 +39,14 @@ This model demonstrates the response of a reactive plasticity material which has
 	<Material>
 		<material id="1" name="Material1" type="reactive plasticity">
 			<density>1</density>
-			<nf>10</nf>
-			<Y0>600</Y0>
-			<Ymax>1000</Ymax>
-			<w0>1</w0>
-			<we>0</we>
-			<r>1</r>
+			<flow_curve type="PFC paper">
+			  <nf>10</nf>
+			  <Y0>600</Y0>
+			  <Ymax>1000</Ymax>
+			  <w0>1</w0>
+			  <we>0</we>
+			  <r>1</r>
+			</flow_curve>
 			<isochoric>1</isochoric>
 			<elastic type="neo-Hookean">
 				<E>200000</E>
