@@ -47,9 +47,9 @@ Mild steel
 			<yield_criterion type="DC von Mises stress"/>
 			<flow_curve type="PFC math">
 			  <nf>15</nf>
-			  <emin>0.00084030</emin>
-			  <emax>1.25</emax>
-			  <plastic_response type="math">565.32*(0.0095037+eps)^0.2589</plastic_response>
+			  <e0>0.00084030</e0>
+			  <emax>1.3</emax>
+			  <plastic_response>565.32*(0.0095037+eps)^0.2589</plastic_response>
 			</flow_curve>
 		</material>
 	</Material>
