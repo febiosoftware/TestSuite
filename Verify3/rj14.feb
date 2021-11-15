@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A block connected to an inclined plane using a planar joint, constrained by a spring, under the action of gravity, in a dynamic analysis.
+Main Features:
+	Rigid planar joint
+Secondary Features:
+	Rigid spring
+	Time integration using midpoint rule
+Materials:
+	rigid body
+Degrees of Freedom: 6
+Results:
+	Steps Completed: 1000
+	Equilibrium Iterations: 2000
+	Right Hand Evaluations: 3103
+	Siffness Reformations: 2000
+	Other:
+
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

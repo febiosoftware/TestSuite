@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Cleveland Clinic 2-d foot model
+Main Features:
+	Rigid-wall contact
+	Rigid Bodies
+Secondary Features:
+	Multiple prescribed displacement loadcurves
+Materials:
+	Neo-Hookean
+	Mooney-Rivlin
+	Rigid Bodies
+Degrees of Freedom: 
+Results:
+	Steps Completed: 24
+	Equilibrium Iterations: 134
+	Right Hand Evaluations: 160
+	Siffness Reformations: 24
+	Other:
+		The maximum effective strain is 0.227 units and occurs in the muscle
+		above the ball of the foot at time t=41.23
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Contact of two non-conforming multiphasic layers under displacement control
+Main Features:
+	Multiphasic contact
+Secondary Features:
+	
+Materials:
+	Multiphasic
+Degrees of Freedom: 13294
+Results:
+	Steps Completed: 20
+	Equilibrium Iterations: 86
+	Right Hand Evaluations: 126
+	Siffness Reformations: 86
+	Other:
+		The effective fluid pressure at node 34 and t=3 is -0.4152
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="multiphasic"/>
 	<Globals>

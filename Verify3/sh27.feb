@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Two blocks (20-node hex) with shells(quad8) with tied contact are pulled against each other.
+	Right face of right block is prescribed x displacmenet of 0.5 at t=1.
+Main Features:
+	quad8 shells
+	tied-elastic contact
+Secondary Features:
+Materials:
+	neo-Hookean
+Degrees of Freedom: 987
+Results
+	Steps Completed: 10
+	Equilibrium Iterations: 72
+	Right Hand Evaluations: 84
+	Siffness Reformations: 72
+	Other:
+		The maximum x-shell strain is 0.292 units at time t=1.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

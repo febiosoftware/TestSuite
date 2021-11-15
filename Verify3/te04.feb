@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Cook's membrane problem for unstructured nodally integrated tet mesh.  The left
+	face is constrained and a traction force of 50 kPa is applied in the y-direction
+	to the right face.
+Main Features:
+	Nodally integrated tet
+Secondary Features:
+	Traction force
+Materials:
+	Mooney-Rivlin
+Degrees of Freedom: 4494
+Results:
+	Steps Completed: 28
+	Equilibrium Iterations: 324
+	Right Hand Evaluations: 421
+	Siffness Reformations: 43
+	Other:
+		The maximum Von Mises stress is 207 at time t=1.
+ 
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

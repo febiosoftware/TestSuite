@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 
+Problem Description:
+One-dimensional steady-state electrophoresis and electro-osmosis of a triphasic material.  To examine the phenomena of electrophoresis and electroosmosis, consider a tissue described by a triphasic material with ions Na+ and Cl- and a negatively charged solid matrix. The tissue (thickness h = 1 mm) is located between an upstream and a downstream bath. In these baths, due to electroneutrality and the absence of a charged solid matrix, the anion and cation concentrations must be the same. The salt concentrations in the upstream and downstream baths may also be taken to be the same (c0 = 150 mM), to prevent diffusion and osmosis. To produce electrophoresis and electroosmosis, ramp up the electric potential from psi0 = 0 mV to 10 mV in the upstream bath, whereas the downstream bath is maintained at a 0 mV, thereby creating an electric potential gradient across the tissue thickness. Also let the pressure equal ambient conditions (0 MPa) in both baths, to prevent permeation and barophoresis. All of these conditions may be combined to produce the following boundary conditions: On the upstream side, the effective fluid pressure is pe_u = - 2 R T c0, the effective concentrations are ce_u[Na] = c0 exp(Fc psi0/R T) and ce_u[Cl] = c0 exp(-Fc psi0/R T), and on the downstream side, pe_d = -2 R T c0, ce_d[Na] = c0, ce_d[Cl]=c0. For initial conditions, it may be assumed that the electric potential upstream is initially zero, thus pe = -2 R T c0, ce[Na]=c0, and ce[Cl]=c0 throughout the tissue initially.  The fixed charge density is ramped from 0 to -200 mM in Step 1.  The upstream electric potential is ramped in Step 2.
+
+Main Features:
+	Formulating boundary conditions to prescribe a known external electric potential
+Secondary Features:
+	Steady-state triphasic analysis
+Materials:
+	Triphasic
+	Neo-Hookean
+	Constant Isotropic Permeability
+	Constant Osmotic Coefficient
+	Constant Isotropic Diffusivity
+	Constant Solubility
+Degrees of Freedom: 652
+Results:
+	Steps Completed: 4
+	Equilibrium Iterations: 16
+	Right Hand Evaluations: 20
+	Siffness Reformations: 16
+	Other:
+		The peak electric current density is 8.1e-6 A/mm^2 at t=2.
+		The peak solvent flux is 1.5e-4 mm/s at t=2.
+ 
+Comments:
+
+-->	
 <febio_spec version="3.0">
 	<Module type="solute"/>
 	<Globals>

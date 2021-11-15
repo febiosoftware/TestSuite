@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Strip biaxial stretching of an elastic sheet with a circular hole.  An initially
+	square sheet with a circular hole has it's right face stretched in the x-direction
+	508 units.  The left face is constrained in the x-direction and the upper and
+	lower faces are constrained in the y-direction.  Quarter symmetry is used.
+Main Features:
+	Verification problem for FEBio paper.
+Secondary Features:
+	
+Materials:
+	Mooney-Rivlin
+Degrees of Freedom: 223
+Results:
+	Steps Completed: 25
+	Equilibrium Iterations: 253
+	Right Hand Evaluations: 335
+	Siffness Reformations: 44
+	Other:
+		The maximum Von Mises stress is 27.2 at time t=1.
+ 
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

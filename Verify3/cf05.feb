@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A rectangular strip consisting of hex20 elements is modeled with two
+	continuous fiber distribution, each with a 2D von-Mises distribution
+	density. The two fiber bundles lie in the x-y plane and are oriented at +45 deg. and -45
+	deg. relative to the x-direction. The left and right ends of the strip are interfaced
+	with rigid bodies. The left end is fixed and a displacement is prescribed on the
+	right end, along x.
+Main Features:
+	Continuous fiber distribution
+Secondary Features:
+	Trapezoidal integration scheme
+Materials:
+	solid mixture
+	neo-Hookean
+	continuous fiber distribution
+	fiber-exponential-power-law
+	von-Mises-2d
+	fibers-2d-trapezoidal
+Degrees of Freedom: 1450
+Results:
+	Steps Completed: 15
+	Equilibrium Iterations: 46
+	Right Hand Evaluations: 61
+	Siffness Reformations: 46
+	Other:
+		The x-reaction force at time 1 is -35.69
+Comments:
+	The fiber-exponential-power-law properties are selected to
+	produce a highly nonlinear response for the reaction
+	force. Compare to cf04.feb which uses 3D von-Mises
+	distribution densities.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

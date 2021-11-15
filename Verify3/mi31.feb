@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Geometrically onlinear.analysis of a cantilever beam.  A 269.35 N load is applied
+	in the y-direction to a 10 m beam (100 mm thick x 150 mm high).  Results are
+	consistent with the analytical solution.
+Main Features:
+	Verification problem for FEBio paper.
+Secondary Features:
+	Nodal force
+Materials:
+	Isotropic elastic
+Degrees of Freedom: 4800
+Results:
+	Steps Completed: 60
+	Equilibrium Iterations: 738
+	Right Hand Evaluations: 1032
+	Siffness Reformations: 97
+	Other:
+		The maximum y-displacement is 8.18e3 at time t=1.
+ 
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

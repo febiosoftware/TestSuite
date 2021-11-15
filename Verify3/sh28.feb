@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Shell constrained on edges is compressed by rigid box element.
+	Rigid box is prescribed z dispalcement of -2 at t=1.
+Main Features:
+	quad4 shells
+	sliding-elastic contact
+Secondary Features:
+Materials:
+	neo-Hookean
+Degrees of Freedom: 3757
+Results
+	Steps Completed: 10
+	Equilibrium Iterations: 32
+	Right Hand Evaluations: 42
+	Siffness Reformations: 32
+	Other:
+		The maximum effective stress is 0.0288 units at time t=1.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

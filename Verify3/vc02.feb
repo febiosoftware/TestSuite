@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	The top of a cylinder with a cavity is initially depressed so that the volume of the cavity
+	is reduced.  The volume of the cavity is then held constant and the top of the cylinder returns
+	to it's initial position.
+Main Features:
+	Volume constraint
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 6393
+Results:
+	Step 1:
+	Steps Completed: 10
+	Equilibrium Iterations: 24
+	Right Hand Evaluations: 34
+	Siffness Reformations: 10
+	Step 2:
+	Steps Completed: 10
+	Equilibrium Iterations: 171
+	Right Hand Evaluations: 244
+	Siffness Reformations: 14
+	Other:
+		The x-displacement of node 1685 at time t=2 is 0.06716
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Globals>

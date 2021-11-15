@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Axisymmetric section of circular pipe of Newtonian fluid material undergoing
+	poiseuille flow. Normal flow constraint added to inlet and outlet
+Main Features:
+        prescribed pressure
+        steady state
+	normal flow constraint
+	Broyden
+Secondary Features:
+        Newtonian fluid
+        no diverge reform
+        no ref each time step
+Materials:
+	Newtonian Fluid
+Degrees of Freedom: 3277
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 23
+	Right Hand Evaluations: 38
+	Stiffness Reformations: 1
+	Other:
+		The total nodal fluid velocity at node 861 at t=1 is 12.6321.
+Comments:
+       
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

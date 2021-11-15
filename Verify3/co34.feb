@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Two incongruent cylindrical sections are compressed against each other in plain strain.
+Main Features:
+	Sliding2 non-symmetric contact
+	Rigid contact
+Secondary Features:
+	Optional output of the matrix condition number using the SuperLU solver (remove the
+	comment lines below to activate this option).
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 50332
+Results:
+	Solver: SuperLU
+	Steps Completed: 20
+	Equilibrium Iterations: 46
+	Right Hand Evaluations: 66
+	Siffness Reformations: 46
+	Other:
+		The lower edge of top cylinder has a y-displacement of -0.0512 (node 468)
+		at time t=1.  The top edge of the bottom cylinder has a y-displacement of
+		-0.0493 (node 378), so there is slight penetration.
+ 
+Comments:
+	The penetration is actually a bit better using Augmented Lagrangian, but this
+	demonstrates that a reasonable penetration can be obtained with trial-and-error
+	selection of the contact penalty parameter.  The other contact methods either
+	error terminated or had too significant penetration.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

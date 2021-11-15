@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A tetrahedral element has a prescribed displacement of -0.5 units in the z-direction
+	on the top node.
+Main Features:
+	Tetrahedral element
+Secondary Features:
+	
+Materials:
+	Mooney-Rivlin
+Degrees of Freedom: 3
+Results:
+	Steps Completed: 1
+	Equilibrium Iterations: 12
+	Right Hand Evaluations: 17
+	Siffness Reformations: 2
+	Other:
+		Top node has a displacement of 0.3224 at time t=1.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A rigid block subject to gravity bounces off a deformable 25 x 25 element membrane,
+	also subject to gravity.
+Main Features:
+	Facet to facet contact
+	Dynamic analysis
+Secondary Features:
+	Body force
+Materials:
+	Neo-Hookean
+	Rigid Body
+Degrees of Freedom: 3457
+Results:
+	Solver: Pardiso
+	Steps Completed: 50
+	Equilibrium Iterations: 405
+	Right Hand Evaluations: 455
+	Siffness Reformations: 66
+	Other:
+		The plate has a max z-displacement of -0.3727 (node 1982) at time t=5.
+ 
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Dynamic analysis of two cylinders colliding with each other.  The cylinder on the right
+	is given an initial velocity of -1 units in the x-direction.
+Main Features:
+	Dynamic analysis
+	Facet to facet contact
+Secondary Features:
+	Initial velocity
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 11904
+Results:
+	Steps Completed: 100
+	Equilibrium Iterations: 343
+	Right Hand Evaluations: 492
+	Siffness Reformations: 101
+	Other:
+		The cylinder on the left (-x direction) has a maximum x-displacement of -8.42 at time t=10.
+Comments:
+	Penetration was slightly better with slinding_with_gaps contact, but congergence was significantly
+	better with facet to facet contact.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

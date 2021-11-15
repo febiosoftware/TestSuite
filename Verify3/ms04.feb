@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Multi-step and dynamic analysis.  A spring attaches two rigid plates.  The upper
+	plate is fixed and the lower plate is allowed to fall with gravity from time t=0
+	to t=1.  It then detaches from the spring, which is allowed to recoil dynamically.
+Main Features:
+	Multi-step analysis
+	Dynamic analysis
+	Body force
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+	Rigid Bodies
+Degrees of Freedom: 3817
+Results:
+	Steps Completed: 20
+	Equilibrium Iterations: 155
+	Right Hand Evaluations: 191
+	Siffness Reformations: 24
+	Other:
+		The plate has a velocity of 1.29 at time t=1.5.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Globals>

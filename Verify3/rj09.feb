@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A prismatic joint with a prescribed translation in a static analysis.
+Main Features:
+	Rigid prismatic joint with prescribed translation
+Secondary Features:
+	Rigid spring
+Materials:
+	rigid body
+Degrees of Freedom: 6
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 20
+	Right Hand Evaluations: 62
+	Siffness Reformations: 20
+	Other:
+
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

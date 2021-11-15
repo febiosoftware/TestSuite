@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Flow through a quarter torus. Prescribed pressure at inlet, 0
+	pressure outlet, with normal flow constraint and tan/back
+	stabilization. Steady state.
+Main Features:
+        prescribed pressure
+        Steady state
+	Post BL
+	Broyden
+	Normal Flow Constraint
+	Backflow stabilization
+	tangential stabilization
+Secondary Features:
+        no ref each step
+	gen alpha
+	No diverge reform
+	Newtonian fluid
+Materials:
+	Newtonian Fluid
+Degrees of Freedom: 31267
+Results:
+	Steps Completed: 5
+	Equilibrium Iterations: 130
+	Right Hand Evaluations: 310
+	Stiffness Reformations: 3
+	Other:
+		The total nodal fluid velocity at node 6781 at t=1 is 0.25483.
+Comments:
+       
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

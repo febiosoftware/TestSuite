@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A cylinder is attached to a rigid disk with a prescribed x-rotation and z-translation,
+	each of 1 unit at time t=1.
+Main Features:
+	Rigid Bodies
+Secondary Features:
+	Prescribed displacement and rotation
+Materials:
+	Neo-Hookean
+	Rigid Body
+Degrees of Freedom: 4055
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 41
+	Right Hand Evaluations: 51
+	Siffness Reformations: 10
+	Other:
+		The first node down from highest edge of the cylinder has a z-displacement
+		of 1.547 at time t=1.
+Comments:
+	Note that rigid contact was not necessary because the cylinder and the disk together were
+	all one mesh.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

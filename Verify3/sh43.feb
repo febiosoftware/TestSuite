@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Cantilever shell(quad8) attached with rigid box is applied torque along y direction.
+	Torque on rigid body is prescribed along y of 1e-10 at t=1.
+	Front and back face of left edge of shell is fixed.
+Main Features:
+	quad8 shells
+Secondary Features:
+Materials:
+	neo-Hookean
+Degrees of Freedom: 778
+Results
+	Steps Completed: 16
+	Equilibrium Iterations: 174
+	Right Hand Evaluations: 296
+	Siffness Reformations: 174
+	Other:
+		The maximum z-displacement is -0.09342 units at time t=1.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

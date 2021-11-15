@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	An 8x2x2 element block is attached with rigid contact to a rigid body that has an
+	applied force of 0.05 units at time t=1.
+Main Features:
+	Rigid Contact
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 190
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 30
+	Right Hand Evaluations: 40
+	Siffness Reformations: 10
+	Other:
+		The x-displacement of the rigid body is 0.205 at time t=1.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

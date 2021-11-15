@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A stiff section of a cylinder has a prescribed displacement in the z-direction 0f -0.35 units
+	from time t=0 to t=1 and then a displacement of 3 units in the x-direction from time t=1 to
+	t=4.  It presses down then slides with friction along a softer block.
+Main Features:
+	Sliding Contact with Friction
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 4191
+Results:
+	Steps Completed: 56
+	Equilibrium Iterations: 554
+	Right Hand Evaluations: 765
+	Siffness Reformations: 64
+	Other:
+		The maximum y-dislacement of the block is 0.382 at time t=4.
+Comments:
+	This problem is similar to co07 but with friction.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

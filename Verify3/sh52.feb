@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Shell element is stretched along z direction.
+	Back face of shell is fixed and front face of shell is prescribed z displacment of 0.001 at t=1.
+Main Features:
+	quad4 shells
+Secondary Features:
+Materials:
+	neo-Hookean
+Degrees of Freedom: 12
+Results
+	Steps Completed: 10
+	Equilibrium Iterations: 10
+	Right Hand Evaluations: 20
+	Siffness Reformations: 10
+	Other:
+		The maximum z-shell strain is 0.01 units at time t=1.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

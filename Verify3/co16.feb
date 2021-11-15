@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A smaller element with a prescribed z-displacement of -0.1 units from time t=0 to
+	t=0.5 and x-displacement of 0.3 units from time t=0.5 to t=1 compresses a larger
+	element with contact and friction.
+Main Features:
+	Sliding Contact with Friction
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 32
+Results:
+	Steps Completed: 50
+	Equilibrium Iterations: 448
+	Right Hand Evaluations: 735
+	Siffness Reformations: 62
+	Other:
+		The minimum edge angle for the smaller element is 72.4 degrees at time t=1.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

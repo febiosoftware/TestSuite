@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Quarter disk with shell is compressed by a rigid wall.
+	rigid_wall contact is prescribed with x displacement of 0.5 at t=0.5.
+	Normal of rigid wall needs be against normal of shell.
+Main Features:
+	quad4 shells
+	rigid_wall contact
+Secondary Features:
+Materials:
+	neo-Hookean
+Degrees of Freedom: 258
+Results
+	Steps Completed: 11
+	Equilibrium Iterations: 74
+	Right Hand Evaluations: 157
+	Siffness Reformations: 74
+	Other:
+		The maximum effective stress is 0.739 units at time t=0.5.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

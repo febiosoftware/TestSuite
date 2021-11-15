@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A strip is pulled off of a rigid surface using sticky contact.
+Main Features:
+	Sticky contact
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 1071
+Results:
+	Steps Completed: 27
+	Equilibrium Iterations: 241
+	Right Hand Evaluations: 286
+	Siffness Reformations: 32
+	Other:
+		The x-stress for element 92 at time t=0.2615 is 0.0099
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

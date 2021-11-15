@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+Shell(quad8) constrained on edges is compressed by rigid shell(quad8).
+Rigid shell is prescribed z displacement of -2 at t=1.
+Main Features:
+	quad8 shells
+	sliding-elastic contact
+Secondary Features:
+Materials:
+	neo-Hookean
+Degrees of Freedom: 10657
+Results
+	Steps Completed: 10
+	Equilibrium Iterations: 40
+	Right Hand Evaluations: 56
+	Siffness Reformations: 40
+	Other:
+		The maximum effective stress is 0.0344 units at time t=1.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

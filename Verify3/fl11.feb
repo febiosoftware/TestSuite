@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Tube where a rotational velocity is prescribed on inner and
+	outer walls. This is a couette flow problem.
+Main Features:
+        Rotational velocity
+Secondary Features:
+        Dynamic
+        Gen alpha
+	Newtonian fluid
+Materials:
+	Newtonian Fluid
+Degrees of Freedom: 3968
+Results:
+	Steps Completed: 50
+	Equilibrium Iterations: 125
+	Right Hand Evaluations: 175
+	Stiffness Reformations: 125
+	Other:
+		The total nodal fluid velocity at node 683 at t=0.5 is 0.74998.
+Comments:
+       
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

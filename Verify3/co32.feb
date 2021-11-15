@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Two blocks undergo confined compression with non-conforming mesh contact
+	between them.  The bottom block is defined with a variable thickness mesh.
+Main Features:
+	Sliding2 contact
+Secondary Features:
+	
+Materials:
+	Holmes-Mow
+Degrees of Freedom: 600
+Results:
+	Solver: Pardiso
+	Steps Completed: 20
+	Equilibrium Iterations: 40
+	Right Hand Evaluations: 60
+	Siffness Reformations: 40
+	Other:
+		The contact surface has a y-displacement of -0.255 at time t=5000
+ 
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

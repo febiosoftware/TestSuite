@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Two 5 x 5 element blocks are compressed against each other with contact
+	between them.
+Main Features:
+	Facet-to-facet contact
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 468
+Results:
+	Solver: Pardiso
+	Steps Completed: 10
+	Equilibrium Iterations: 30
+	Right Hand Evaluations: 40
+	Siffness Reformations: 30
+	Other:
+		The corner of the interface between the two blocks (node 201)
+		has an x-displacement of 0.596 at time t=1
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

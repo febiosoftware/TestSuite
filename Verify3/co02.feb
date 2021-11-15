@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	An element with prescribed displacement of -0.5 units in the z-direction compresses
+	a 5x5x4 element block with sliding contact.
+Main Features:
+	Contact using the sliding_with_gaps algorithm
+Secondary Features:
+	
+Materials:
+	Mooney-Rivlin
+Degrees of Freedom: 368
+Results:
+	Steps Completed: 6
+	Equilibrium Iterations: 31
+	Right Hand Evaluations: 44
+	Siffness Reformations: 7
+	Other:
+		The bottom of the top element (node 187) has a z-displacement of -0.215 at time t=1.
+Comments:
+	Convergence and contact penetration are improved by setting auto="on" in the contact penalty.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

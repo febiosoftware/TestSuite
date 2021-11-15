@@ -1,4 +1,49 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 
+Problem Description:
+Solid remodeling of a one-dimensional bar with square cross-section, fixed on one end (z=0) and 
+subjected to a compressive normal traction on the other end (z=10) and a uniform shear traction on 
+its lateral boundaries.  The solid material of the bar behaves as a neo-Hookean material with Young's 
+modulus varying as a power law of the apparent solid density (a Carter-Hayes material).  The solid remodels
+ by adjusting the apparent solid density until the specific strain energy (strain energy per mass) becomes 
+ uniform.  The remodeling process is described by a chemical reaction,
+
+[cells] + [nutrients] -> [cells] + [solid matrix]
+
+where [cells] and [nutrients] are not modeled explicitly. The [solid matrix] is modeled with a solid-bound 
+molecule called "solid".  The initial value of the solid apparent density is set to 1.0.  No upper bound is 
+placed on this solid apparent density.  The reaction rate is dependent on the difference between the current 
+and user-specified homeostatic specific strain energy according to the Huiskes model, which may produce
+positive or negative rates of solid matrix deposition (growth or degradation).  Since chemical reactions 
+are currently implemented only in multiphasic mixtures, the analysis necessarily includes a fluid phase in the 
+porous solid, though the fluid pressure is prescribed to be zero on the boundaries.  The remodeling process 
+achieves a steady-state response.
+ 
+Main Features:
+	Solid remodeling using multiphasic material with chemical reactions.
+Secondary Features:
+	Huiskes reaction rate
+Materials:
+	Multiphasic
+	Carter-Hayes
+	Constant Isotropic Permeability
+	Constant Osmotic Coefficient
+	Constant Isotropic Diffusivity
+	Constant Solubility
+	Mass-Action-Forward
+	Huiskes Reaction Rate
+Degrees of Freedom: 804
+Results:
+	Steps Completed: 200
+	Equilibrium Iterations: 400
+	Right Hand Evaluations: 1598
+	Siffness Reformations: 400
+	Other:
+		The solid referential apparent density increases to 1.26 at the fixed end (z=0) and reduces to 0.796 at the loaded end (z=10), at time t=200.
+ 
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="multiphasic"/>
 	<Control>

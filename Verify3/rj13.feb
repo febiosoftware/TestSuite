@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A universal joint formed from a combination of three links and two revolute joints in a dynamic analysis.
+Main Features:
+	Demonstrating how to create a universal joint
+Secondary Features:
+	Rigid revolute joint with prescribed rotation
+	Time integration using midpoint rule
+Materials:
+	rigid body
+Degrees of Freedom: 18
+Results:
+	Steps Completed: 360
+	Equilibrium Iterations: 1080
+	Right Hand Evaluations: 1529
+	Siffness Reformations: 1080
+	Other:
+
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

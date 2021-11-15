@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A cantilever beam composed of tetrahedral elements has a traction force of
+	-1 unit in the z-direction applied to free end.
+Main Features:
+	Tetrahedral element
+Secondary Features:
+	Traction force
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 2937
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 60
+	Right Hand Evaluations: 70
+	Siffness Reformations: 20
+	Other:
+		The free end of the cantilever has a maximum displacement of
+		6.18 units at time t=1.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

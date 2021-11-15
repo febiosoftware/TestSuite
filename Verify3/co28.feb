@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A 2-dimensional billet block is compressed between two rigid bodies which each have a
+	prescribed z-displacement (compressing the block) of 0.6 units from time t=0 to t=1.
+Main Features:
+	Sliding Contact
+	Rigid Bodies
+Secondary Features:
+	Full Newton (max_ups = 0)
+Materials:
+	Odgen
+	Rigid Bodies
+Degrees of Freedom: 4882
+Results:
+	Steps Completed: 102
+	Equilibrium Iterations: 613
+	Right Hand Evaluations: 862
+	Siffness Reformations: 615
+	Other: The maximum effective strain is 4.78 at time t=1.
+		
+Comments:
+	This problem is similiar to co22 but with Ogden material and 100 time steps.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

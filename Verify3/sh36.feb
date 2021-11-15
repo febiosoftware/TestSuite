@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Shell with continuous fiber distribution of 3D von-Mises distribution where the distribution
+	is heavily along z direction.
+	Back face is fixed and front face is prescribed z displaacement of 0.005 at t=1.
+Main Features:
+	quad4 shells
+	von-Mises-3d with b=30
+Secondary Features:
+Materials:
+	solid mixture (neo-Hookean,continuous fiber distribution)
+Degrees of Freedom: 12
+Results
+	Steps Completed: 106
+	Equilibrium Iterations: 676
+	Right Hand Evaluations: 900
+	Siffness Reformations: 676
+	Other:
+		The maximum z-stress is 373 units at time t=1.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

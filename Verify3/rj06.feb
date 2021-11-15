@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Cylindrical joint with precribed joint rotation and translation in a static analysis.
+Main Features:
+	Rigid cylindrical joint
+	Prescribed rotation and translation of cylindrical joint
+Secondary Features:
+
+Materials:
+	rigid body
+Degrees of Freedom: 6
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 20
+	Right Hand Evaluations: 30
+	Siffness Reformations: 20
+	Other:
+
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

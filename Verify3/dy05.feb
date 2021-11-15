@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	An element has a body force of 0 units at t=0 to 1 unit at t=1 applied in the z-direction.
+Main Features:
+	Body force
+	Dynamic analysis
+Secondary Features:
+	Rigid body
+Materials:
+	Rigid body
+Degrees of Freedom: 6
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 10
+	Right Hand Evaluations: 20
+	Siffness Reformations: 10
+	Other:
+		At time t=1 all nodes have a z-displacement of -0.452
+Comments:
+	Same as dy01.feb except that the element is a rigid body instead of a Neo-Hookean material.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

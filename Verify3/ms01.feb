@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Multi-step analysis.  A cantilever beam has a force in the z-direction of 0 units at
+	time t=0 to 1 unit at time t=1 applied to the top nodes of it's free end.  Dynamic
+	analysis is then applied to time t=2.5.
+Main Features:
+	Multi-step analysis
+	Dynamic analysis
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 270
+Results:
+	Steps Completed: 30
+	Equilibrium Iterations: 117
+	Right Hand Evaluations: 147
+	Siffness Reformations: 30
+	Other:
+		The beam has a maximum z-displacement of 0.471 units at time t=2.5.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Globals>

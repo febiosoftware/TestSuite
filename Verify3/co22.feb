@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A 2-dimensional billet block is compressed between two rigid bodies in plain strain
+	which each have a prescribed z-displacement (compressing the block) of 0.6 units
+	from time t=0 to t=1.
+Main Features:
+	Sliding Contact
+	Augmented Lagrangian
+	Rigid Bodies
+Secondary Features:
+	None
+Materials:
+	Neo-Hookean
+	Rigid Bodies
+Degrees of Freedom: 4882
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 131
+	Right Hand Evaluations: 178
+	Siffness Reformations: 15
+	Other:
+		Maximum x-displacement of 0.716 (node 2443) at time t=1.
+Comments:
+	Gets better convergence and less contact penetration using augmented Lagrangian.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

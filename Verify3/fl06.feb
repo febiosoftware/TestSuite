@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A 10x10x1 block of Newtonian fluid material undergoing Couette
+	flow, with up to
+	345 units of fluid viscous traction in x-direction in 5 seconds (logarithmic
+	intervals every 0.2 seconds). Leads to same velocity as other
+	Couette flow problems
+Main Features:
+        Steady State
+        Prescribed fluid viscous traction
+	Newtonian fluid
+Secondary Features:
+	generalized-alpha
+Materials:
+	Newtonian Fluid
+Degrees of Freedom: 580
+Results:
+	Steps Completed: 25
+	Equilibrium Iterations: 68
+	Right Hand Evaluations: 93
+	Stiffness Reformations: 68
+	Other:
+		The total nodal fluid velocity at node 232 at t=5 is 4983.61.
+Comments:
+       
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Shell element is prescribed surface pressure on front face.
+	Back face of shell is fixed and front face is prescribed pressure load of 0.1 at t=1.
+Main Features:
+	quad4 shells
+Secondary Features:
+Materials:
+	neo-Hookean
+Degrees of Freedom: 12
+Results
+	Steps Completed: 10
+	Equilibrium Iterations: 31
+	Right Hand Evaluations: 41
+	Siffness Reformations: 31
+	Other:
+		The maximum z-shell strain is -0.0905 units at time t=1.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Cylinder with shell compresses and slides against a softer block.
+	Top face of cylinder is prescribed z dispacement 0f -1.35 and then x displacement of 3 at t=4.
+	Two shells have same stiffness to converge.
+Main Features:
+	quad4 shells
+	sliding-elastic contact
+Secondary Features:
+Materials:
+	neo-Hookean
+Degrees of Freedom: 5016
+Results
+	Steps Completed: 40
+	Equilibrium Iterations: 170
+	Right Hand Evaluations: 251
+	Siffness Reformations: 170
+	Other:
+		The maximum effective stress is 3.69 units at time t=1.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A crank-slider linkage with precribed revolute joint rotation in a static analysis.
+Main Features:
+	Rigid prismatic joint
+	Rigid revolute joint
+	Prescribed rotation of revolute joint
+Secondary Features:
+
+Materials:
+	rigid body
+Degrees of Freedom: 18
+Results:
+	Steps Completed: 144
+	Equilibrium Iterations: 432
+	Right Hand Evaluations: 576
+	Siffness Reformations: 432
+	Other:
+
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

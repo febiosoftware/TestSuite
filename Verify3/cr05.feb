@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 
+Problem Description:
+One-dimensional analysis of interstitial growth where the net reaction molar volume is not zero.  This analysis models the chemical reaction
+
+[nutrient] -> [solid]
+
+where the molar volume of the solid is different from that of the nutrient.  The [nutrient] is not modeled explicitly, whereas the [solid] product is modeled as a solid-bound molecule.The 1D analysis is performed on a cube of height h=1.  The multiphasic material consists of a solid and a fluid phase (no explicit solutes).  The top surface of the cube is traction-free and free-draining.  Continuous interstitial solid deposition decreases the solid matrix porosity and concomitantly pressurizes the interstitial fluid as it squeezes it out of the decreasing pore volume. The progressive interstitial pressurization causes the tissue to swell initially, until the fluid pressure achieves a steady-state value that drives fluid out at the same rate as the pore volume decreases, producing a steady-state swelling response.
+
+Main Features:
+	Multiphasic material with chemical reaction where Vbar is not equal to zero
+Secondary Features:
+Materials:
+	Multiphasic
+	Neo-Hookean
+	Constant Isotropic Permeability
+	Constant Osmotic Coefficient
+	Mass-Action-Forward
+	Constant Reaction Rate
+Degrees of Freedom: 240
+Results:
+	Steps Completed: 305
+	Equilibrium Iterations: 305
+	Right Hand Evaluations: 610
+	Siffness Reformations: 305
+	Other:
+		The steady-state surface displacement is 3.32e-4 at time t=3.
+ 
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="multiphasic"/>
 	<Control>

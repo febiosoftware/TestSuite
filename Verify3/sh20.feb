@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Box (20-node hex) attached with shell(quad8) is compressed
+	against a multi-elements block(20-node hex) attached with shell (quad8).
+	Top face of box is prescribed z dispacement of -0.7 in time t=1.
+	Top shell is 100 times stiffer to converge.
+Main Features:
+	quad8 shells
+	sliding-elastic contact
+Secondary Features:
+Materials:
+	Mooney-Rivlin
+Degrees of Freedom: 1732
+Results
+	Steps Completed: 10
+	Equilibrium Iterations: 31
+	Right Hand Evaluations: 43
+	Siffness Reformations: 31
+	Other:
+		The maximum effective stress is 180 units at time t=1.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

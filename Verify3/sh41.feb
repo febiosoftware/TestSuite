@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Shell(quad8) element with trans iso Mooney-Rivlin material is stretched along x direction.
+	Left edge is fixed along x, bottom edge is fixed along y, and right edge is 
+	prescribed x displacement of 1 at t=1. 
+Main Features:
+	quad8 shells
+Secondary Features:
+Materials:
+	trans iso Mooney-Rivlin material with fiber vector = 8.66e-1, 5e-1, 0
+Degrees of Freedom: 34
+Results
+	Steps Completed: 10
+	Equilibrium Iterations: 39
+	Right Hand Evaluations: 49
+	Siffness Reformations: 39
+	Other:
+		The maximum y-displacement is -0.374 units at time t=1.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

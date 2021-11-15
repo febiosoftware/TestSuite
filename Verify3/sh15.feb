@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Shell verification problem.  Compare to analytical solution for cantilever beam.
+	A 10x1 tri6 element shell sheet is fixed at one end and
+	loaded at the opposite end using a downward force of
+	0.001. The exact solution for the tip deflection is 0.004.
+Main Features:
+	Shells
+	Nodal Force
+Secondary Features:
+	tri6
+Materials:
+	Isotropic Elastic
+Degrees of Freedom: 360
+Results
+	Steps Completed: 10
+	Equilibrium Iterations: 20
+	Right Hand Evaluations: 30
+	Siffness Reformations: 20
+	Other:
+		The sheet has a maximum displacement of 0.003991 units at time t=1.
+Comments:
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

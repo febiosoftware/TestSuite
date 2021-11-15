@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Two elements with sliding contact are compressed against each other.  The nodes on the left face of
+	the left element are constrained in the x-direction.  The nodes on the right face of the right element
+	are given a displacement of -0.2 in the x-direction in time t=1.
+Main Features:
+	Facet to facet contact
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 12
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 20
+	Right Hand Evaluations: 30
+	Siffness Reformations: 10
+	Other:
+		The interface between the two elements (node 2) has a z-displacement of -0.0995 at time t=1.
+Comments:
+	Not using the augmented Lagrangian gives slightly better convergence, but the contact penetration
+	is greater.  This problem converges with fewer equilibrium iterations if the automatic time stepper
+	is turned off.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

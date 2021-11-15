@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	An element of 2d trans iso Mooney-Rivlin material with fiber orientation in the
+	z-direction is given a prescribed displacement on the right end nodes of 1 unit
+	at time t=1.  The left end nodes are constrained in the x-direction.
+Main Features:
+	2D Trans Iso Mooney-Rivlin material
+Secondary Features:
+	
+Materials:
+	2D Trans Iso Mooney-Rivlin
+Degrees of Freedom: 
+Results:
+	Steps Completed: 50
+	Equilibrium Iterations: 1038
+	Right Hand Evaluations: 1861
+	Siffness Reformations: 56
+	Other:
+		The top nodes have a maximum displacement in the negative z-direction of 
+		-0.0509 at time t=0.4
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

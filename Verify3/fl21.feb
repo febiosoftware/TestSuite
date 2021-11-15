@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	Flow through a quarter pipe. Carreau fluid, plug fluid normal
+	velocity load with ef=0 outlet. 
+Main Features:
+        fluid normal velocity load
+        Non-Newtonian fluid
+Secondary Features:
+	generalized alpha
+	dynamic
+	Broyden
+	No diverge reform
+	no ref each step
+Materials:
+	Carreau Fluid
+Degrees of Freedom: 17592
+Results:
+	Steps Completed: 50
+	Equilibrium Iterations: 200
+	Right Hand Evaluations: 286
+	Stiffness Reformations: 4
+	Other:
+		The fluid shear viscosity at node 4470 at t=5 is 0.517261.
+Comments:
+        Material parameters from
+        Cho YI and Kensey KR (1991). Biorheology, 28:241-262.
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

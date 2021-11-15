@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A 10x10x10 block of Trans-isotropic Veronda-Westmann material has a user defined
+	fiber direction.  The fibers range from horizontal in the x-direction at x = -0.5
+	to nearly vertical at x = 0.5.  The block undergoes an expansion of 0.2 units in
+	the z-direction at time t=1.
+Main Features:
+	Fiber with user defined direction
+Secondary Features:
+	
+Materials:
+	Trans-iso Veronda-Westmann
+Degrees of Freedom: 3630
+Results:
+	Steps Completed: 10
+	Equilibrium Iterations: 41
+	Right Hand Evaluations: 51
+	Siffness Reformations: 10
+	Other:
+		The maximum effective strain is 0.354 at time t=1.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

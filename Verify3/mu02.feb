@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A two element muscle material with fiber orientation in the x-direction has a
+	prescribed x-displacement of -0.01 units at time t=1.
+Main Features:
+	Muscle Material
+Secondary Features:
+	
+Materials:
+	Muscle Material
+Degrees of Freedom: 20
+Results:
+	Steps Completed: 100
+	Equilibrium Iterations: 200
+	Right Hand Evaluations: 300
+	Siffness Reformations: 100
+	Other:
+		The top of the material has a z-displacement of 2.36e-3 units at time t=1.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

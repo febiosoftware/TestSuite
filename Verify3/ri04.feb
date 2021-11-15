@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A cylinder is confined between two rigid disks; the top one constrained in x,y,z, and
+	the bottom one connected by a rigid bar and rigid joints to a vertical rotating disk
+	with prescribed rotation of 6.2 radians in time t=62.
+Main Features:
+	Rigid Bodies
+	Rigid Joints
+Secondary Features:
+	
+Materials:
+	Neo-Hookean
+Degrees of Freedom: 5216
+Results:
+	Steps Completed: 62
+	Equilibrium Iterations: 498
+	Right Hand Evaluations: 790
+	Stiffness Reformations: 187
+	Other:
+		The cylinder has a maximum y-displacement of 0.108 units at time t=48.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

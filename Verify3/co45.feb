@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Problem Description:
+	A block with friction has a z-displacement of -0.4 units from time t=0 to t=0.2
+	and an x-displacement of 3 units from time t=0.2 to t=1 along a rigid body.
+Main Features:
+	Sliding Contact with Friction using sliding-elastic
+	Rigid Bodies
+Secondary Features:
+	Broyden method
+Materials:
+	Neo-Hookean
+	Rigid Body
+Degrees of Freedom: 612
+Results:
+	Steps Completed: 50
+	Equilibrium Iterations: 202
+	Right Hand Evaluations: 305
+	Siffness Reformations: 51
+	Other:
+		The peak effective strain of the block is 0.384 at time t=1.
+Comments:
+	
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>
