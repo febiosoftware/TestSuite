@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Cylinder(20-node hex) with shell(quad8) compresses and slides against 
-	a softer block(20-node hex) with shell(quad8).
-	Top face of cylinder is prescribed z dispacement 0f -1.35 and then x displacement of 3 at t=4.
-	Two shells have same stiffness to converge.
-Main Features:
-	quad8 shells
-	sliding-elastic contact
-Secondary Features:
-Materials:
-	neo-Hookean
-Degrees of Freedom: 18288
-Results
-	Steps Completed: 40
-	Equilibrium Iterations: 156
-	Right Hand Evaluations: 196
-	Siffness Reformations: 156
-	Other:
-		The maximum effective stress is 86.2 units at time t=4.
-Comments:
+Cylinder(20-node hex) with shell(quad8) compresses and slides against 
+a softer block(20-node hex) with shell(quad8).
+Top face of cylinder is prescribed z dispacement 0f -1.35 and then x displacement of 3 at t=4.
+Two shells have same stiffness to converge.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

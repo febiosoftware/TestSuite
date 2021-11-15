@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A Rigid ball with a prescribed displacement of -5.0 units in the z-direction
-	pushes down and slides on a cantilever board.
-Main Features:
-	Contact with sliding_with_gaps algorithm
-	Rigid Bodies
-Secondary Features:
-	None
-Materials:
-	Neo-Hookean
-	Rigid Body
-Degrees of Freedom: 751
-Results:
-	Solver: Pardiso
-	Steps Completed: 34
-	Equilibrium Iterations: 406
-	Right Hand Evaluations: 540
-	Siffness Reformations: 63
-	Other:
-		The cantilever has a maximum z-displacement of -2.15 (node 259) at time t=0.3963
-Comments:
-	Convergence and contact penetration are better without using augmented Lagrangian.
+A Rigid ball with a prescribed displacement of -5.0 units in the z-direction
+pushes down and slides on a cantilever board.
+
+Convergence and contact penetration are better without using augmented Lagrangian.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

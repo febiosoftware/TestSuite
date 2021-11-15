@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with MooneyRivlin solid.
-Main Features:
-	Pressure
-	FSI traction
-	Solid symmetry
-	Normal flow constraint
-Secondary Features:
-        Backflow stab
-        tangential stab
-	Broyden
-	No diverge ref
-	No ref each step
-Materials:
-        Newtonian Fluid
-        Mooney Rivlin
-Degrees of Freedom: 7109
-Results:
-	Steps Completed: 404
-	Equilibrium Iterations: 4588
-	Right Hand Evaluations: 7884
-	Stiffness Reformations: 170
-	Other:
-		The z fluid velocity is 1.35545 at time 0.2499
-		for node 999
-Comments:
-        
+Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with MooneyRivlin solid.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

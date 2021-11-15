@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A shell element is applied body force along z direction with dynamic analysis.
-	constant body load along z of 1.
-Main Features:
-	quad4 shells
-	constant body load
-Secondary Features:
-Materials:
-	neo-Hookean
-Degrees of Freedom: 24
-Results
-	Steps Completed: 10
-	Equilibrium Iterations: 10
-	Right Hand Evaluations: 20
-	Siffness Reformations: 10
-	Other:
-		The maximum z displacement is -0.452 units at time t=1.
-Comments:
+A shell element is applied body force along z direction with dynamic analysis.
+constant body load along z of 1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

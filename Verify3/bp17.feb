@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	2D biphasic contact between a semicylindrical block and a rectangular
-	block under displacement control.
-Main Features:
-	Permeability
-Secondary Features:
-	Must point curve
-Materials:
-	Biphasic
-	HolmesMow
-Degrees of Freedom: 5508
-Results:
-	Steps Completed: 37
-	Equilibrium Iterations: 176
-	Right Hand Evaluations: 256
-	Siffness Reformations: 176
-	Other:
-		The maximum total fluid flux is 1.5e3 at time t = 20.
-Comments:
-	
+2D biphasic contact between a semicylindrical block and a rectangular
+block under displacement control.
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

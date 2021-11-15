@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A disk three elements thick with it's edge nodes constrained in x,y,z, has a
-	sinusoidal pressure applied to time t=1.
-Main Features:
-	Pressure
-Secondary Features:
-	Sinusoidal loadcurve
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 3660
-Results:
-	Steps Completed: 16
-	Equilibrium Iterations: 105
-	Right Hand Evaluations: 134
-	Siffness Reformations: 18
-	Other:
-		The maximum z-displacement is 0.349 at time t=0.727
-Comments:
-	
+A disk three elements thick with it's edge nodes constrained in x,y,z, has a
+sinusoidal pressure applied to time t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

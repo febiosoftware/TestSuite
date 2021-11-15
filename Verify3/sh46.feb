@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Two rigid shell plates attached by shell strips are connected with rigid joint and stretched 
-	along x direction.
-	Rigid plates have constraints of rigid joint.
-	Left end of left strip is fixed, and right end of right strip is prescribed x displacement of 1 at t=1.
-Main Features:
-	quad4 shells
-	rigid joint constraint
-Secondary Features:
-Materials:
-	neo-Hookean
-Degrees of Freedom: 99
-Results
-	Steps Completed: 10
-	Equilibrium Iterations: 59
-	Right Hand Evaluations: 88
-	Siffness Reformations: 10
-	Other:
-		The maximum y-displacement is 0.435 units at time t=1.
-Comments:
+Two rigid shell plates attached by shell strips are connected with rigid joint and stretched 
+along x direction.
+Rigid plates have constraints of rigid joint.
+Left end of left strip is fixed, and right end of right strip is prescribed x displacement of 1 at t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

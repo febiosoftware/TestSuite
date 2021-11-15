@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Uniaxial loading of a bar that is rotated about the Z-axis by 30 degrees.
-	The preferred material directions are aligned along and perpendicular
-	to the long axis of the bar.
-Main Features:
-	Material directions not along coordinate axes.
-Secondary Features:
-	Pressure
-Materials:
-	Linear Orthotropic
-Degrees of Freedom: 132
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 52
-	Right Hand Evaluations: 62
-	Siffness Reformations: 10
-	Other:
-		The end of the bar has a total displacement of 0.85 units at time t = 1.
-Comments:
-	
+Uniaxial loading of a bar that is rotated about the Z-axis by 30 degrees.
+The preferred material directions are aligned along and perpendicular
+to the long axis of the bar.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

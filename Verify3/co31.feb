@@ -1,29 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A 10 x 10 element planar block rises (with compression) in plane strain
-	over a ramped rigid bump.
-Main Features:
-	Sliding with gaps contact
-Secondary Features:
-	Augmented Lagrangian
-	Plane strain
-Materials:
-	Mooney-Rivlin
-	Rigid Body
-Degrees of Freedom: 462
-Results:
-	Solver: Pardiso
-	Steps Completed: 24
-	Equilibrium Iterations: 185
-	Right Hand Evaluations: 257
-	Siffness Reformations: 185
-	Other:
-		The left bottom corner (node 2) has a y-displacement of 0.030 at time t=1.2.
- 
-Comments:
-	This model has significant pentration without using Augmented Lagrangian.  The sliding_with_gaps
-	contact algorithm performed significantly better than the other three contact algorithms.
+A 10 x 10 element planar block rises (with compression) in plane strain
+over a ramped rigid bump.
+
+This model has significant pentration without using Augmented Lagrangian.  The sliding_with_gaps
+contact algorithm performed significantly better than the other three contact algorithms.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A stiff block with prescribed displacement of -0.14 units in the z-direction from time t=0
-	to t=1 and then -0.8 units in the x-direction from time t=1 to t=2 compresses then slides
-	across a larger softer block.
-Main Features:
-	Sliding_with_gaps contact
-	Augmented Lagrangian
-Secondary Features:
-	Multiple displacement loadcurves
-Materials:
-	Mooney-Rivlin
-Degrees of Freedom: 2149
-Results:
-	Solver: Pardiso
-	Steps Completed: 40
-	Equilibrium Iterations: 339
-	Right Hand Evaluations: 434
-	Siffness Reformations: 46
-	Other:
-		Node 36 (on the edge of the lower block) has a z-displacement of -0.15 at time t=1.4
-Comments:
-	Does not converge with auto="on" in the contact penalty.  Turning the auto time stepper off leads
-	to better convergence and contact penetration using augmented Lagrangian.  Not using augmented
-	Lagrangian creates too much penetration.
+A stiff block with prescribed displacement of -0.14 units in the z-direction from time t=0
+to t=1 and then -0.8 units in the x-direction from time t=1 to t=2 compresses then slides
+across a larger softer block.
+
+Does not converge with auto="on" in the contact penalty.  Turning the auto time stepper off leads
+to better convergence and contact penetration using augmented Lagrangian.  Not using augmented
+Lagrangian creates too much penetration.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

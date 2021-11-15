@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Cantilever shell is applied nodal force along z direction in dynamic analysis.
-	Front and back face of left edge is fixed, and right edge is applied nodal_load along z of 1 in t=0-1.
-Main Features:
-	quad4 shells
-Secondary Features:
-Materials:
-	neo-Hookean
-Degrees of Freedom: 300
-Results
-	Steps Completed: 105
-	Equilibrium Iterations: 433
-	Right Hand Evaluations: 565
-	Siffness Reformations: 433
-	Other:
-		The maximum z-displacement is 2.43 units at time t=0.7.
-Comments:
+Cantilever shell is applied nodal force along z direction in dynamic analysis.
+Front and back face of left edge is fixed, and right edge is applied nodal_load along z of 1 in t=0-1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

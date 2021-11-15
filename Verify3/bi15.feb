@@ -1,35 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	BFSI Taylor slip problem that models Couette flow over a rigid porous layer. Tangential velocity prescribed on top of fluid layer, with no slip wall at bottom of porous domain, where an interface is shared between the two. 0 pressure and displacement throughout. Tet4
-Main Features:
-	BFSI
-	porous solid
-	permeability
-	tangential velocity
-	Tet4
-Secondary Features:
-	Broyden
-	no ref each step
-	no diverge reform
-	Newtonian fluid
-	PostBL
-Materials:
-	NeoHookean
-	Poroelastic
-	Newtonian
-	Constant Permeability
-Degrees of Freedom: 5664
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 10
-	Right Hand Evaluations: 20
-	Siffness Reformations: 1
-	Other:
-		The xnodal flux for node 220 at time t=1 is 0.83404
-Comments:
-	Similar examples seen in results of
-       Shim JJ, Maas SA, Weiss JA, Ateshian GA. (2021) J Biomech Eng, In Press.
+BFSI Taylor slip problem that models Couette flow over a rigid porous layer. Tangential velocity prescribed on top of fluid layer, with no slip wall at bottom of porous domain, where an interface is shared between the two. 0 pressure and displacement throughout. Tet4
+
+Similar examples seen in results of
+   Shim JJ, Maas SA, Weiss JA, Ateshian GA. (2021) J Biomech Eng, In Press.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

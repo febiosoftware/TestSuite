@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Forced response of rigid block connected to ground with prismatic joint, rigid spring and sinusoidal contractile force.
-Main Features:
-	Rigid contractile force
-Secondary Features:
-	Rigid spring, rigid prismatic joint
-Materials:
-	Rigid body
-Degrees of Freedom: 6
-Results:
-	Steps Completed: 600
-	Equilibrium Iterations: 615
-	Right Hand Evaluations: 1215
-	Siffness Reformations: 600
-Comments:
-	The analytical solution for the Z-position of the block is
-	(8/5)(7+8 cos(2 pi t))(sin(pi t))^4
+Forced response of rigid block connected to ground with prismatic joint, rigid spring and sinusoidal contractile force.
+
+The analytical solution for the Z-position of the block is
+(8/5)(7+8 cos(2 pi t))(sin(pi t))^4
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

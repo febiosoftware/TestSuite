@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A soft sphere impacts a stiff wall and recoils.  The max x-displacement for node 40 (center of
-	far side of sphere) is 0.9438 and occurs at time t = 0.0223
-Main Features:
-	Explicit solver
-Secondary Features:
-	dynamic analysis
-Materials:
-	Neo-Hookean
-Results:
-	Steps Completed: 500
-	Equilibrium Iterations: 500
-	Right Hand Evaluations: 500
-	Siffness Reformations: 0
-	Other:
-		The x-displacement of Node 40 is 0.9438 at t = 0.0223
-Comments:
-	
+A soft sphere impacts a stiff wall and recoils.  The max x-displacement for node 40 (center of
+far side of sphere) is 0.9438 and occurs at time t = 0.0223
 -->
 <febio_spec version="3.0">
 	<Module type="explicit-solid"/>

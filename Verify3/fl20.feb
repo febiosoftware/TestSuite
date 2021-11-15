@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Flow past a tilted plate. The domain is a circle. Creates a
-	Karman vortex street. Hex unstructured, rhoi=0
-Main Features:
-        fluid velocity load
-        fluid surface force
-	dynamic
-Secondary Features:
-        Newtonian fluid
-	generalized alpha
-	Broyden
-	No diverge reform
-	no ref each step
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 16066
-Results:
-	Steps Completed: 300
-	Equilibrium Iterations: 1120
-	Right Hand Evaluations: 1422
-	Stiffness Reformations: 17
-	Other:
-		The x-fluid surface force on plate at t=30 is 0.401019.
-Comments:
-        
+Flow past a tilted plate. The domain is a circle. Creates a
+Karman vortex street. Hex unstructured, rhoi=0
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

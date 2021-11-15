@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Two cylindrical tubes at 90 degrees are compressed against each other.  The ends of
-	one tube are constrained in x,y,z and the ends of the other tube have a prescribed
-	displacement of -6.0 units in the x-direction.
-Main Features:
-	Sliding Contact with Friction
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 5568
-Results:
-	Steps Completed: 52
-	Equilibrium Iterations: 517
-	Right Hand Evaluations: 786
-	Siffness Reformations: 62
-	Other:
-		The center node on the back of the horizontal tube (node 1491) has an x-displacement
-		of -4.132 at time t=1.
-Comments:
-	This problem is the same as co15 but with friction.  Two vertical lines intersecting the plane
-	y = 0 and the verticle tube are constrained in the y-direction and two horizontal lines
-	intersecting the plane z = 5 and the horizontal tube are constrained in the z-direction.
+Two cylindrical tubes at 90 degrees are compressed against each other.  The ends of
+one tube are constrained in x,y,z and the ends of the other tube have a prescribed
+displacement of -6.0 units in the x-direction.
+
+This problem is the same as co15 but with friction.  Two vertical lines intersecting the plane
+y = 0 and the verticle tube are constrained in the y-direction and two horizontal lines
+intersecting the plane z = 5 and the horizontal tube are constrained in the z-direction.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

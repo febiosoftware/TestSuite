@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A spherical joint with two prescribed rotations in a dynamic analysis.
-Main Features:
-	Spherical joint with two prescribed rotations
-Secondary Features:
-	Integration using Hilber-Hughes-Taylor family
-Materials:
-	rigid body
-Degrees of Freedom: 6
-Results:
-	Steps Completed: 106
-	Equilibrium Iterations: 595
-	Right Hand Evaluations: 993
-	Siffness Reformations: 595
-	Other:
-
-Comments:
-	
+A spherical joint with two prescribed rotations in a dynamic analysis.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

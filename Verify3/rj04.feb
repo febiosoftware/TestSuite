@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A crank-slider linkage with precribed revolute joint rotation in a dynamic analysis.
-Main Features:
-	Rigid prismatic joint
-	Rigid revolute joint
-	Prescribed rotation of revolute joint
-Secondary Features:
-	Time integration using midpoint rule
-	Specification of initial velocity and angular velocity of rigid body
-	Logfile output of rigid connector data
-Materials:
-	rigid body
-Degrees of Freedom: 18
-Results:
-	Steps Completed: 72
-	Equilibrium Iterations: 216
-	Right Hand Evaluations: 288
-	Siffness Reformations: 216
-	Other:
-
-Comments:
-	
+A crank-slider linkage with precribed revolute joint rotation in a dynamic analysis.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

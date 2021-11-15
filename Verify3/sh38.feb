@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Shell strip with continuous fiber distribution of 3D von-Mises distribution where distribution is 
-	heavily along x direction.
-	Left edge with rigid constaint is fixed and right edge with rigid constraint is 
-	prescribed x displacement of 2 at t=1.
-Main Features:
-	quad4 shells
-	von-Mises-3d with b=3
-Secondary Features:
-Materials:
-	solid mixture (neo-Hookean,continuous fiber distribution)
-Degrees of Freedom: 271
-Results
-	Steps Completed: 15
-	Equilibrium Iterations: 45
-	Right Hand Evaluations: 60
-	Siffness Reformations: 45
-	Other:
-		The maximum effective stress is 126 units at time t=1.
-Comments:
+Shell strip with continuous fiber distribution of 3D von-Mises distribution where distribution is 
+heavily along x direction.
+Left edge with rigid constaint is fixed and right edge with rigid constraint is 
+prescribed x displacement of 2 at t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

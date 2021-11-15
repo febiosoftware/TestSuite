@@ -1,35 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A rectangular strip consisting of hex20 elements is modeled with two
-	continuous fiber distribution, each with a 3D ellipsoidal distribution
-	density. The two fiber bundles are oriented at +45 deg. and -45
-	deg. relative to the x-direction. The left and right ends of the strip are interfaced
-	with rigid bodies. The left end is fixed and a displacement is prescribed on the
-	right end, along x.
-Main Features:
-	Continuous fiber distribution
-Secondary Features:
-	Gauss-Kronrod-Trapezoidal integration scheme
-Materials:
-	solid mixture
-	neo-Hookean
-	continuous fiber distribution
-	fiber-exponential-power-law
-	ellipsoidal
-	fibers-3d-gkt
-Degrees of Freedom: 1450
-Results:
-	Steps Completed: 15
-	Equilibrium Iterations: 44
-	Right Hand Evaluations: 59
-	Siffness Reformations: 44
-	Other:
-		The x-reaction force at time 1 is -29.32
-Comments:
-	The fiber-exponential-power-law properties are selected to
-	produce a highly nonlinear response for the reaction
-	force.
+A rectangular strip consisting of hex20 elements is modeled with two
+continuous fiber distribution, each with a 3D ellipsoidal distribution
+density. The two fiber bundles are oriented at +45 deg. and -45
+deg. relative to the x-direction. The left and right ends of the strip are interfaced
+with rigid bodies. The left end is fixed and a displacement is prescribed on the
+right end, along x.
+
+The fiber-exponential-power-law properties are selected to
+produce a highly nonlinear response for the reaction
+force.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

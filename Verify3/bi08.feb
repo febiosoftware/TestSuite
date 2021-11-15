@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	BFSI Blood flow through wedge with resistance and pressure offset at outlet, pulsatile
-	inlet. Newtonian fluid with MooneyRivlin solid. With must points. 
-Main Features:
-	BFSI
-    Normal fluid vel
-    Fixed/Prescribed ef
-	Resistance BC with offset pressure
-	BFSI traction
-	Solid symmetry
-	must points
-Secondary Features:
-    Backflow stab
-    tangential stab
-	Broyden
-	No diverge ref
-	No ref each step
-Materials:
-        Newtonian Fluid
-        Mooney Rivlin
-Degrees of Freedom: 7109
-Results:
-	Steps Completed: 281
-	Equilibrium Iterations: 2482
-	Right Hand Evaluations: 4154
-	Stiffness Reformations: 89
-	Other:
-		The znodal fluid velocity is 0.501422 at time 0.5
-		for node 999
-Comments:
-        
+BFSI Blood flow through wedge with resistance and pressure offset at outlet, pulsatile
+inlet. Newtonian fluid with MooneyRivlin solid. With must points.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

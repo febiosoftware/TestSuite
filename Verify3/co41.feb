@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A serpentine surface is compressed along the x-direction experiencing self-contact and
-	demonstrating the need of reducing the search_radius contact parameter from it's default
-	value of 1.
-Main Features:
-	Contact
-	search_radius
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 2318
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 44
-	Right Hand Evaluations: 61
-	Siffness Reformations: 44
-	Other:
-		The max effective stress is 0.365 at time t = 1.
-Comments:
-	
+A serpentine surface is compressed along the x-direction experiencing self-contact and
+demonstrating the need of reducing the search_radius contact parameter from it's default
+value of 1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

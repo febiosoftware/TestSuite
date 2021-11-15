@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Tube where a rotational velocity is prescribed on inner and
-	outer walls. This is a couette flow problem. Steady state only
-	2 time steps
-Main Features:
-        Rotational velocity
-        Steady state
-Secondary Features:
-        Gen alpha
-	Newtonian fluid
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 10080
-Results:
-	Steps Completed: 2
-	Equilibrium Iterations: 7
-	Right Hand Evaluations: 15
-	Stiffness Reformations: 7
-	Other:
-		The total nodal fluid velocity at node 1691 at t=1 is 1.3032.
-Comments:
-       
+Tube where a rotational velocity is prescribed on inner and
+outer walls. This is a couette flow problem. Steady state only
+2 time steps
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

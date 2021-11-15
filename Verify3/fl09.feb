@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A rectangular channel of Newtonian fluid material undergoing
-	poiseuille flow. 
-Main Features:
-        prescribed pressure
-        steady state
-Secondary Features:
-	Newtonian fluid
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 2360
-Results:
-	Steps Completed: 1
-	Equilibrium Iterations: 3
-	Right Hand Evaluations: 4
-	Stiffness Reformations: 1
-	Other:
-		The total nodal fluid velocity at node 862 at t=1 is 25.
-Comments:
-       
+A rectangular channel of Newtonian fluid material undergoing
+poiseuille flow.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

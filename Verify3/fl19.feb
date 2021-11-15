@@ -1,33 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Flow in rectangular channel with flow expansion towards
-	outlet. Prescribes pressure and constrains normal flow, with
-	back and tan stabilization
-Main Features:
-        Prescribed ef (pressure)
-	Post BL
-	Backflow/Tangential Stabilization
-	normal flow constraint
-Secondary Features:
-        Newtonian fluid
-        dynamic
-	generalized alpha
-	Broyden
-	No diverge reform
-	no ref each step
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 11684
-Results:
-	Steps Completed: 100
-	Equilibrium Iterations: 912
-	Right Hand Evaluations: 1124
-	Stiffness Reformations: 17
-	Other:
-		The fluid pressure on node 3182 at t=100 is 1.29093.
-Comments:
-        
+Flow in rectangular channel with flow expansion towards
+outlet. Prescribes pressure and constrains normal flow, with
+back and tan stabilization
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

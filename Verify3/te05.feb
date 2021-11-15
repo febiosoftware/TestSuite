@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Cantilever beam problem with unstructured nodally integrated tets.  A shear
-	traction of 2000 units is applied to the free end.
-Main Features:
-	Nodally integrated tet.
-Secondary Features:
-	
-Materials:
-	Mooney-Rivlin
-Degrees of Freedom: 549
-Results:
-	Steps Completed: 38
-	Equilibrium Iterations: 366
-	Right Hand Evaluations: 478
-	Siffness Reformations: 366
-	Other:
-		The maximum total displacement is 8.4 units at time t=1.
- 
-Comments:
-	
+Cantilever beam problem with unstructured nodally integrated tets.  A shear
+traction of 2000 units is applied to the free end.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

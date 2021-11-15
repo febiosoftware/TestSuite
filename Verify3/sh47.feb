@@ -1,27 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Two rigid shell plates with prismatric joint on ground are connected by rigid shell strip with 
-	revolute joint, and prescribed a translation.
-	Rigid plates and strips have constraints of rigid revolute joint.
-	Rigid plates and rigid ground has constraints of rigid prismatic joint, and prismatic joint on left plate is 
-	prescribed a translation of 1 at t=1.
-Main Features:
-	quad4 shells
-	rigid revolute joint constraint
-	rigid prismatic joint constraint
-Secondary Features:
-Materials:
-	rigid body
-Degrees of Freedom: 18
-Results
-	Steps Completed: 15
-	Equilibrium Iterations: 45
-	Right Hand Evaluations: 60
-	Siffness Reformations: 45
-	Other:
-		The maximum y-displacement is 155 units at time t=1.
-Comments:
+Two rigid shell plates with prismatric joint on ground are connected by rigid shell strip with 
+revolute joint, and prescribed a translation.
+Rigid plates and strips have constraints of rigid revolute joint.
+Rigid plates and rigid ground has constraints of rigid prismatic joint, and prismatic joint on left plate is 
+prescribed a translation of 1 at t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Two element structure.  Node 1 is constrained in x,y,z.  Node 12 has an x-displacement of
-	1 unit at time t=1.  The z-displacement of node 10 is the negative of the x-displacement
-	of node 12.  Node 3 is constrained to move only in the y-direction.
-Main Features:
-	Linear constraints
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 28
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 50
-	Right Hand Evaluations: 60
-	Siffness Reformations: 10
-	Other:
-		The coordinates of node 10 at t=1 are: x=1.312, y=-0.4283, z=0.
-Comments:
-	
+Two element structure.  Node 1 is constrained in x,y,z.  Node 12 has an x-displacement of
+1 unit at time t=1.  The z-displacement of node 10 is the negative of the x-displacement
+of node 12.  Node 3 is constrained to move only in the y-direction.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

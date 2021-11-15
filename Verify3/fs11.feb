@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Blood flow through wedge with 0 pressure at outlet, pulsatile
-	inlet. Cross fluid with MooneyRivlin solid
-Main Features:
-        Normal fluid vel
-        Fixed/Prescribed ef
-	FSI traction
-	Solid symmetry
-	Cross
-Secondary Features:
-        Backflow stab
-        tangential stab
-	Broyden
-	No diverge ref
-	No ref each step
-Materials:
-        Cross Fluid
-        Mooney Rivlin
-Degrees of Freedom: 7115
-Results:
-	Steps Completed: 501
-	Equilibrium Iterations: 5160
-	Right Hand Evaluations: 8464
-	Stiffness Reformations: 187
-	Other:
-		The znodal fluid velocity is 0.732456 at time 0.2499
-		for node 999
-Comments:
-        Material parameters from
-        Cho YI and Kensey KR (1991). Biorheology, 28:241262.
+Blood flow through wedge with 0 pressure at outlet, pulsatile
+inlet. Cross fluid with MooneyRivlin solid
+
+Material parameters from
+Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

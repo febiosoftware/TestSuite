@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	An element with friction has a z-displacement of -0.1 units from time t=0 to t=0.2
-	and an x-displacement of 3 units from time t=0.2 to t=1 along a rigid body.
-Main Features:
-	Sliding Contact with Friction using sliding-elastic
-	Rigid Bodies
-Secondary Features:
-	Broyden method
-Materials:
-	Neo-Hookean
-	Rigid Body
-Degrees of Freedom: 20
-Results:
-	Steps Completed: 100
-	Equilibrium Iterations: 852
-	Right Hand Evaluations: 957
-	Siffness Reformations: 101
-	Other:
-		The effective strain of the element is 0.121 at time t=1.
-Comments:
-	Partial contact slip initiates at time t=0.23 and full contact slip at t=0.25.
+An element with friction has a z-displacement of -0.1 units from time t=0 to t=0.2
+and an x-displacement of 3 units from time t=0.2 to t=1 along a rigid body.
+
+Partial contact slip initiates at time t=0.23 and full contact slip at t=0.25.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

@@ -1,33 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Internal pressurization of multiphasic arterial wall
-Main Features:
-	Holzapfel-Gasser-Ogden unconstrained material for arterial wall
-	Combined application of mixture normal traction and fluid pressure
-Secondary Features:
-	Steady-state multiphasic analysis
-Materials:
-	Multiphasic
-	HGO unconstrained
-Degrees of Freedom: 4208
-Results:
-	Steps Completed: 22
-	Equilibrium Iterations: 127
-	Right Hand Evaluations: 151
-	Siffness Reformations: 127
-Comments:
-	Units: mm-N-s
-	The fluid pressure prescribed on the inner wall is an effective fluid 
-	pressure, calculated from the desired actual pressure and the 
-	osmolarity of the (implicit) fluid inside the artery (300 mM). 
-	From t=0 to t=1 the fixed-charge density of the arterial wall is 
-	increased, while the inner arterial wall is prescribed zero actual 
-	fluid pressure (effective fluid pressure = -0.7432716 MPa).
-	From t=1 to t=2 the mixture normal traction decreases from 0 to 
-	-0.013 MPa linearly while the actual fluid pressure is increased 
-	from 0 to 0.013 MPa (effective fluid pressure increases from 
-	-0.7432716 MPa to -0.7302716 MPa).
+Internal pressurization of multiphasic arterial wall
+
+Units: mm-N-s
+The fluid pressure prescribed on the inner wall is an effective fluid 
+pressure, calculated from the desired actual pressure and the 
+osmolarity of the (implicit) fluid inside the artery (300 mM). 
+From t=0 to t=1 the fixed-charge density of the arterial wall is 
+increased, while the inner arterial wall is prescribed zero actual 
+fluid pressure (effective fluid pressure = -0.7432716 MPa).
+From t=1 to t=2 the mixture normal traction decreases from 0 to 
+-0.013 MPa linearly while the actual fluid pressure is increased 
+from 0 to 0.013 MPa (effective fluid pressure increases from 
+-0.7432716 MPa to -0.7302716 MPa).
 -->
 <febio_spec version="3.0">
 	<Module type="multiphasic"/>

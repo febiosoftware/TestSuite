@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Two box elements attached with shells are compressed against each other.
-	Top face of top box prescribed z displacement of -1.2 in time t=1.
-	Main Features:
-	Shells
-	sliding-elastic contact
-Secondary Features:
-Materials:
-	neo-Hookean
-Degrees of Freedom: 36
-Results
-	Steps Completed: 10
-	Equilibrium Iterations: 20
-	Right Hand Evaluations: 33
-	Siffness Reformations: 20
-	Other:
-		The maximum shell strain is -0.0939 units at time t=1.
-Comments:
+Two box elements attached with shells are compressed against each other.
+Top face of top box prescribed z displacement of -1.2 in time t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

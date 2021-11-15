@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Active transversely isotropic contraction of a cube whose passive (elastic) component
-	is Mooney-Rivlin (isotropic).
-Main Features:
-	Prescribed transversely isotropic active contraction in the
-	y-z plane.
-Secondary Features:
-	Uncoupled solid mixture
-Materials:
-	uncoupled prescribed trans iso active contraction
-	Mooney-Rivlin
-Degrees of Freedom: 12
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 30
-	Right Hand Evaluations: 40
-	Siffness Reformations: 30
-	Other:
-		The cube elongates by 0.07709 along x and shrinks by
-		-0.0366 along y and z at time t = 1.
-Comments:
-	
+Active transversely isotropic contraction of a cube whose passive (elastic) component
+is Mooney-Rivlin (isotropic).
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

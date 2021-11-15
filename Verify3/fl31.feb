@@ -1,33 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	24x24 biased lid driven cavity box problem RE=400. x-vel prescribed on the
-	lid of the box to create vortex within. Uses must points to
-	shorten problem to reach steady state. Tet10 elements
-Main Features:
-        prescribe tangential vel
-        Broyden
-	Must points
-	Tet10
-Secondary Features:
-        Dynamic
-        no ref each step
-	gen alpha
-	No diverge reform
-	Newtonian fluid
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 22948
-Results:
-	Steps Completed: 58
-	Equilibrium Iterations: 258
-	Right Hand Evaluations: 327
-	Stiffness Reformations: 5
-	Other:
-		The total nodal fluid velocity at node 626 at t=1000 is 0.126178.
-Comments:
-        Similar examples seen in results of
-        Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):021001-021001-17.
+24x24 biased lid driven cavity box problem RE=400. x-vel prescribed on the
+lid of the box to create vortex within. Uses must points to
+shorten problem to reach steady state. Tet10 elements
+
+Similar examples seen in results of
+Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):021001-021001-17.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

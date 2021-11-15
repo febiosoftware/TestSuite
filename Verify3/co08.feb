@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A quarter disk is compressed by a rigid wall with a prescribed displacement of 0.5
-	units in the y-direction from time t=0 to t=0.5 and then returning to 0 displacement
-	from time t=0.5 to t=1.
-Main Features:
-	Rigid Wall Contact
-Secondary Features:
-	Nodal constraints using prescribed displacement of 0.
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 212
-Results:
-	Steps Completed: 12
-	Equilibrium Iterations: 105
-	Right Hand Evaluations: 190
-	Siffness Reformations: 18
-	Other:
-		The corner of the disk touching the rigid wall has a y-displacement of
-		0.493 at time t=0.5
-Comments:
-	
+A quarter disk is compressed by a rigid wall with a prescribed displacement of 0.5
+units in the y-direction from time t=0 to t=0.5 and then returning to 0 displacement
+from time t=0.5 to t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

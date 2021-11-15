@@ -1,32 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	64x64 biased lid driven cavity box problem RE=400. x-vel prescribed on the
-	lid of the box to create vortex within. Uses must points to
-	shorten problem to reach steady state
-Main Features:
-        prescribe tangential vel
-        Broyden
-	Must points
-Secondary Features:
-        Dynamic
-        no ref each step
-	gen alpha
-	No diverge reform
-	Newtonian fluid
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 24452
-Results:
-	Steps Completed: 58
-	Equilibrium Iterations: 222
-	Right Hand Evaluations: 284
-	Stiffness Reformations: 4
-	Other:
-		The total nodal fluid velocity at node 4226 at t=1000 is 0.126651.
-Comments:
-        Similar examples seen in results of
-        Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):021001-021001-17.
+64x64 biased lid driven cavity box problem RE=400. x-vel prescribed on the
+lid of the box to create vortex within. Uses must points to
+shorten problem to reach steady state
+
+Similar examples seen in results of
+Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):021001-021001-17.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

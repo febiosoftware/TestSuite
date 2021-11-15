@@ -1,33 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Tube domain (curved inlet) where there is a flow past the center
-	cylinder. RE=100 and towards the end a Karman vortex street
-	forms. Hex 8 elements biased towards center
-Main Features:
-        fluid velocity load
-        fluid surface force
-	dynamic
-	Broyden
-Secondary Features:
-        Backward euler
-	Newtonian fluid
-	No diverge reform
-	no ref each step
-	fluid viscous traction
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 6206
-Results:
-	Steps Completed: 1000
-	Equilibrium Iterations: 3656
-	Right Hand Evaluations: 4690
-	Stiffness Reformations: 54
-	Other:
-		The y-fluid surface force on inner wall at t=200 is 0.00920429.
-Comments:
-        Similar examples seen in supplemental section of
-        Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):021001-021001-17.
+Tube domain (curved inlet) where there is a flow past the center
+cylinder. RE=100 and towards the end a Karman vortex street
+forms. Hex 8 elements biased towards center
+
+Similar examples seen in supplemental section of
+Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):021001-021001-17.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

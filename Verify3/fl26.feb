@@ -1,30 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Flow through a quarter pipe. Powell-Eyring fluid, plug fluid normal
-	velocity load with ef=0 outlet. 
-Main Features:
-        fluid normal velocity load
-        Non-Newtonian fluid
-Secondary Features:
-	generalized alpha
-	dynamic
-	Broyden
-	No diverge reform
-	no ref each step
-Materials:
-	Powell-Eyring Fluid
-Degrees of Freedom: 17592
-Results:
-	Steps Completed: 50
-	Equilibrium Iterations: 190
-	Right Hand Evaluations: 263
-	Stiffness Reformations: 3
-	Other:
-		The fluid shear viscosity at node 4470 at t=5 is 0.512843.
-Comments:
-        Material parameters from
-        Cho YI and Kensey KR (1991). Biorheology, 28:241-262.
+Flow through a quarter pipe. Powell-Eyring fluid, plug fluid normal
+velocity load with ef=0 outlet. 
+
+Material parameters from
+Cho YI and Kensey KR (1991). Biorheology, 28:241-262.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

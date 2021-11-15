@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A hexagonal rod with unique element geometry and linear constraints between the nodes
-	has a prescribed displacement of 18.2417 units at time t=1 that is equal and opposite
-	on the two ends.
-Main Features:
-	Linear Constraints
-Secondary Features:
-	Unique element geometry
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 13399
-Results:
-	Steps Completed: 4
-	Equilibrium Iterations: 13
-	Right Hand Evaluations: 20
-	Siffness Reformations: 4
-	Other:
-		The nodes on the corners of the hexagon have a radial displacement of 0.373 at
-		time t=1.
-Comments:
-	
+A hexagonal rod with unique element geometry and linear constraints between the nodes
+has a prescribed displacement of 18.2417 units at time t=1 that is equal and opposite
+on the two ends.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

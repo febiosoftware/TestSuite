@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A biphasic block is attached to an elastic foundation. A
-	mixture traction is prescribed on the biphasic surface.
-Main Features:
-	Interfacing biphasic and elastic materials.
-Secondary Features:
-	Nonlinear mixture traction.
-Materials:
-	NeoHookean
-	Biphasic
-	Constant permeability
-Degrees of Freedom: 3118
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 30
-	Right Hand Evaluations: 40
-	Siffness Reformations: 30
-	Other:
-		The effective fluid pressure for node 1002 at time t=1 is 0.2186
-Comments:
-	
+A biphasic block is attached to an elastic foundation. A
+mixture traction is prescribed on the biphasic surface.
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

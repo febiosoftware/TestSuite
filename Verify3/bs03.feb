@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Osmotic loading of spherical gel, using externally prescribed solute concentration.
-	Units: length = mm, force = N, time = s, mole = nanomol; stress = MPa, concentration = mM.
-Main Features:
-	Biphasic with Solute
-Secondary Features:
-	
-Materials:
-	biphasicsolute
-Degrees of Freedom: 6116
-Results:
-	Steps Completed: 86
-	Equilibrium Iterations: 295
-	Right Hand Evaluations: 387
-	Siffness Reformations: 295
-	Other:
-		The weighted average of the relative volume has a minimum value of 0.715 at t=117.8s
-Comments:
-	
+Osmotic loading of spherical gel, using externally prescribed solute concentration.
+Units: length = mm, force = N, time = s, mole = nanomol; stress = MPa, concentration = mM.
 -->
 <febio_spec version="3.0">
 	<Module type="solute"/>

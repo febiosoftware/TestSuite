@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
- This file was created with FEBio Studio version 1.0.0 
+This file was created with FEBio Studio version 1.0.0 
+
+
+
+BFSI ultrafiltration of viscous fluid through biphasic layer. Step pressure prescribed on rigid top platen interfacing viscous fluid, which interfaces a porous media domain, which interfaces a rigid porous platen with 0 p. Up to t=100s when steady state is reached.
+
+Similar examples seen in results of
+   Shim JJ, Maas SA, Weiss JA, Ateshian GA. (2021) J Biomech Eng, In Press.
 -->
 
 <!--

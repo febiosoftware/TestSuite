@@ -1,28 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A 2-D quarter billet with 1/4th symmetrical representation is compressed by a rigid bar
-	with prescribed y-displacement of -0.3 units in time t=1.
-Main Features:
-	Facet to facet Contact
-	Rigid Bodies
-Secondary Features:
-	
-Materials:
-	Ogden
-	Rigid Body
-Degrees of Freedom:1221 
-Results:
-	Steps Completed: 101
-	Equilibrium Iterations: 417
-	Right Hand Evaluations: 546
-	Siffness Reformations: 418
-	Other:
-		The bottom right corner of the billet has an x-displacement of .708 units at
-		time t=1.
-Comments:
-	This problem is similar to co28 but with quater symmetry.  It has good penetration results
-	and converges faster with augmented Lagrangian turned off 
+A 2-D quarter billet with 1/4th symmetrical representation is compressed by a rigid bar
+with prescribed y-displacement of -0.3 units in time t=1.
+
+This problem is similar to co28 but with quater symmetry.  It has good penetration results
+and converges faster with augmented Lagrangian turned off
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

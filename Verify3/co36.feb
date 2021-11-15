@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A small hollow sphere rests inside a larger rigid hollow sphere and is allowed to
-	contract due to the force of gravity.
-Main Features:
-	Sliding Contact
-Secondary Features:
-	Augmented Lagrangian
-Materials:
-	Neo-Hookean
-	Rigid Bodies
-Degrees of Freedom: 445
-Results:
-	Steps Completed: 16
-	Equilibrium Iterations: 169
-	Right Hand Evaluations: 242
-	Siffness Reformations: 22
-	Other:
-		The maximum effective strain is 0.189 at time t=1.
-Comments:
-	
+A small hollow sphere rests inside a larger rigid hollow sphere and is allowed to
+contract due to the force of gravity.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

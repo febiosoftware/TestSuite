@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A 10x10x1 element plate has nodes 1 and 2 constrained in x,y,z.  All other nodes are constrained
-	in the z-direction.  Nodes 241 and 242 have a prescribed y-displacement of 1 unit at t=1.  The
-	x-displacement of nodes 21 and 22 is the same as the y-displacement of nodes 241 and 242.
-Main Features:
-	Linear constraints
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 598
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 30
-	Right Hand Evaluations: 40
-	Siffness Reformations: 30
-	Other:
-		At time t=1 the coordinates of node 22 are: x=-4, y=5.659, z=1.
-Comments:
-	
+A 10x10x1 element plate has nodes 1 and 2 constrained in x,y,z.  All other nodes are constrained
+in the z-direction.  Nodes 241 and 242 have a prescribed y-displacement of 1 unit at t=1.  The
+x-displacement of nodes 21 and 22 is the same as the y-displacement of nodes 241 and 242.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

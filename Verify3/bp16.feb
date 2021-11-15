@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	1D biphasic contact between two bricks under load control (creep).  This
-	problem demonstrates how to set up a twostep analysis to implement load
-	control.
-Main Features:
-	Permeability
-	Step control
-Secondary Features:
-	Must point curve
-Materials:
-	Biphasic
-	HolmesMow
-Degrees of Freedom: 328
-Results:
-	Steps Completed: 65
-	Equilibrium Iterations: 137
-	Right Hand Evaluations: 203
-	Siffness Reformations: 137
-	Other:
-		The maximum total fluid flux is 1.01e4 at time t = 1000.
-Comments:
-	
+1D biphasic contact between two bricks under load control (creep).  This
+problem demonstrates how to set up a twostep analysis to implement load
+control.
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A pendulum in a dynamic analysis.
-Main Features:
-	Rigid revolute joint
-	Constant body force
-Secondary Features:
-	Time integration using midpoint rule
-	Logfile output of rigid connector data
-Materials:
-	rigid body
-Degrees of Freedom: 3
-Results:
-	Steps Completed: 1000
-	Equilibrium Iterations: 3452
-	Right Hand Evaluations: 5250
-	Siffness Reformations: 3452
-	Other:
-
-Comments:
-	
+A pendulum in a dynamic analysis.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

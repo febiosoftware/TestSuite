@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- 
-Problem Description:
+<!--
 This analysis reproduces the results of the study by DiMicco and Sah (2003) who examined 
 the one-dimensional spatial distribution of synthesized cartilage matrix products under the
 following assumptions: (1) Cells synthesize matrix products in soluble form, at a constant rate.
@@ -18,31 +17,6 @@ Degradation:
 [bound matrix product] -> [soluble degraded product]
 
 In this analysis, cells and nutrients are not modeled explicitly.  The [soluble matrix product] is modeled as a solute named "soluble", the [soluble degraded product] is modeled as a soluted named "degraded", and the [bound matrix product] is modeled as a solid-bound molecule named "bound".  Three chemical reactions are defined in this mixture, named "soluble synthesis", "binding" and "degradation".  The analysis is performed over a one-dimensional domain.
-
-Main Features:
-	Multiphasic material with chemical reactions.
-Secondary Features:
-	Solid-bound molecules.
-Materials:
-	Multiphasic
-	Neo-Hookean
-	Constant Isotropic Permeability
-	Constant Osmotic Coefficient
-	Constant Isotropic Diffusivity
-	Constant Solubility
-	Mass-Action-Forward
-	Constant Reaction Rate
-Degrees of Freedom: 720
-Results:
-	Steps Completed: 45
-	Equilibrium Iterations: 230
-	Right Hand Evaluations: 456
-	Siffness Reformations: 230
-	Other:
-		The peak concentration of soluble matrix product is 0.00158 at z=0  and time t=4e7.
- 
-Comments:
-	
 -->
 <febio_spec version="3.0">
 	<Module type="multiphasic"/>

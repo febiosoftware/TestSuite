@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-	This is a modification of mi04 that addes load curves to some of the linear constraints. 
+This is a modification of mi04 that addes load curves to some of the linear constraints.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

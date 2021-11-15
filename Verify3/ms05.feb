@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A elastic block is stretched 1 unit in the x-direction to time t = 1 and then allowed
-	to recoil dynamically to time t = 5.  This example illustrates the use of a fixed
-	boundary condition inside a multi-step analysis.
-Main Features:
-	Multi-step
-	Fixed boundary conditions
-Secondary Features:
-	Dynamic analysis
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 250
-Results:
-	Steps Completed: 40 (second step)
-	Equilibrium Iterations: 184
-	Right Hand Evaluations: 225
-	Siffness Reformations: 40
-	Other:
-		The acceleration in the x-direction of node 25 is 12.8947 at time t = 5.
-Comments:
-	
+A elastic block is stretched 1 unit in the x-direction to time t = 1 and then allowed
+to recoil dynamically to time t = 5.  This example illustrates the use of a fixed
+boundary condition inside a multi-step analysis.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

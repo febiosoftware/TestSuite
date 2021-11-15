@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Multigeneration growth in a loaded cantilever beam.  There are two intermingled growth
-	generations in this analysis.  In generation 1, the beam is loaded and undergoes a large
-	deflection.  Generation 2 grows in the loaded state. The load is subsequently removed 
-	and the cantilever recovers to a residually stressed state.
-Main Features:
-	Multigeneration
-Secondary Features:
-Materials:
-	HolmesMow elastic solid
-Degrees of Freedom: 6300
-Results:
-	Steps Completed: 20
-	Equilibrium Iterations: 107
-	Right Hand Evaluations: 141
-	Siffness Reformations: 107
-	Other:
-		The deflection of the beam (Ydisplacement of node 561) is 4.564
-		after unloading, due to the growth of the second generation in the
-		deformed state.
-Comments:
-	This problem is from the article "Multigenerational interstitial growth of biological 
-	tissues", Ateshian and Ricken, Biomech Model Mechanobiol, 2010
+Multigeneration growth in a loaded cantilever beam.  There are two intermingled growth
+generations in this analysis.  In generation 1, the beam is loaded and undergoes a large
+deflection.  Generation 2 grows in the loaded state. The load is subsequently removed 
+and the cantilever recovers to a residually stressed state.
+
+This problem is from the article "Multigenerational interstitial growth of biological 
+tissues", Ateshian and Ricken, Biomech Model Mechanobiol, 2010
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

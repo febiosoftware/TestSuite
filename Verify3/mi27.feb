@@ -1,28 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Gradient mesh problem.  A 10x5x5 block has gradient mesh in the x-direction with a
-	ratio of 1.2 (set up in PreView).  The left face of the block has a fixed constraint
-	in the x-direction, the front face has a fixed constraint in the y-direction, and
-	the bottom face has a fixed constraint in the z-direction.  A dispacement of .5 units
-	at time t=1 is prescribed in the x-direction on the right face.
-Main Features:
-	Gradient mesh
-Secondary Features:
-	
-Materials:
-	Mooney-Rivlin
-Degrees of Freedom: 1020
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 30
-	Right Hand Evaluations: 40
-	Siffness Reformations: 10
-	Other:
-		The maximum total dispacement is 0.521 at time t=1.
- 
-Comments:
-	
+Gradient mesh problem.  A 10x5x5 block has gradient mesh in the x-direction with a
+ratio of 1.2 (set up in PreView).  The left face of the block has a fixed constraint
+in the x-direction, the front face has a fixed constraint in the y-direction, and
+the bottom face has a fixed constraint in the z-direction.  A dispacement of .5 units
+at time t=1 is prescribed in the x-direction on the right face.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

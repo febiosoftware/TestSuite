@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Poiseuille flow through circular pipe. Pressure prescribed at
-	inlet, 0 at outlet. Fully developed flow form, 1 step SS
-Main Features:
-        prescribed pressure
-        steady state
-Secondary Features:
-	Broyden
-	No diverge reform
-	Newtonian fluid
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 23471
-Results:
-	Steps Completed: 1
-	Equilibrium Iterations: 3
-	Right Hand Evaluations: 4
-	Stiffness Reformations: 1
-	Other:
-		The total nodal fluid velocity at node 6421 at t=1 is 12.8399.
-Comments:
-        
+Poiseuille flow through circular pipe. Pressure prescribed at
+inlet, 0 at outlet. Fully developed flow form, 1 step SS
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

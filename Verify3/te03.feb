@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A block composed of tetrahedral elements has its left end nodes fixed and
-	the right end nodes have a displacement of 1 unit in the x-direction at time
-	t=1.
-Main Features:
-	Tetrahedral element
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 1145
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 32
-	Right Hand Evaluations: 42
-	Siffness Reformations: 32
-	Other:
-		The maximum z displacement is -0.197 units at time t=1.
-Comments:
-	
+A block composed of tetrahedral elements has its left end nodes fixed and
+the right end nodes have a displacement of 1 unit in the x-direction at time
+t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

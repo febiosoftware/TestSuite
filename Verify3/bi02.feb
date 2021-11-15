@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A BFSI block of 10 elements is compressed in the zdirection by 0.1 units
-	in time t=100, then allowed to relax to time t=1000.
-Main Features:
-	BFSI
-	porous solid
-	moving boundary
-	permeability
-Secondary Features:
-	Broyden
-	No reform each step
-Materials:
-	NeoHookean
-	Poroelastic
-	Newtonian
-Degrees of Freedom: 212
-Results:
-	Steps Completed: 400
-	Equilibrium Iterations: 1447
-	Right Hand Evaluations: 2989
-	Stiffness Reformations: 420
-	Other:
-		The z-flux for element 10 at time t=100 is 9.94671e-04
-Comments:
-	
+A BFSI block of 10 elements is compressed in the zdirection by 0.1 units
+in time t=100, then allowed to relax to time t=1000.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

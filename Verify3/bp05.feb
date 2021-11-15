@@ -1,29 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Biphasic unconfined compression of a circular disk.  The disk is modeled using
-	a wedge with 30 elements along the radial direction. It has a radius of 3 mm
-	and a thickness of 1 mm. It is compressed in the zdirection by 0.2 mm using 
-	a step function, then allowed to relax to time t=1e4 s.
-Main Features:
-	Biphasic
-Secondary Features:
-	Nonuniform element thickness in rdirection.
-	Axisymmetry modeled using wedge geometry and symmetry plane with 
-	slidingelastic contact interface.
-Materials:
-	NeoHookean
-	Biphasic
-Degrees of Freedom: 359
-Results:
-	Steps Completed: 62
-	Equilibrium Iterations: 175
-	Right Hand Evaluations: 237
-	Siffness Reformations: 175
-	Other:
-	
-Comments:
-	
+Biphasic unconfined compression of a circular disk.  The disk is modeled using
+a wedge with 30 elements along the radial direction. It has a radius of 3 mm
+and a thickness of 1 mm. It is compressed in the zdirection by 0.2 mm using 
+a step function, then allowed to relax to time t=1e4 s.
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

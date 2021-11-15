@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A cantilever beam has a nodal force in the z-direction of 0 units at time t=0 and
-	-0.00001 units at time t=1 applied to the right end nodes.
-Main Features:
-	Nodal force
-Secondary Features:
-	Non-uniform element thickness in the x-direction
-Materials:
-	Isotropic Elastic
-Degrees of Freedom: 2157
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 30
-	Right Hand Evaluations: 40
-	Siffness Reformations: 10
-	Other:
-		The right end nodes have a maximum total displacement of 0.0979 at time t=1.
-Comments:
-	
+A cantilever beam has a nodal force in the z-direction of 0 units at time t=0 and
+-0.00001 units at time t=1 applied to the right end nodes.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

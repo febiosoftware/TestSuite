@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A semi-spherical body in contact with a block, both consisting of Ogden unconstrained material.
-	The semi-spherical body is displaced 0.2 units in the z-direction (into the block) at time t=1.
-Main Features:
-	Ogden unconstrained
-Secondary Features:
-	Sliding2 Contact applied to elastic materials
-	Augmented Lagrangian
-Materials:
-	Ogden unconstrained
-	Rigid Bodies
-Degrees of Freedom: 1453
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 48
-	Right Hand Evaluations: 62
-	Siffness Reformations: 48
-	Other:
-		The maximum displacement is 0.20 at time t=1.
-Comments:
-	
+A semi-spherical body in contact with a block, both consisting of Ogden unconstrained material.
+The semi-spherical body is displaced 0.2 units in the z-direction (into the block) at time t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

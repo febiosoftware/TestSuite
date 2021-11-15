@@ -1,34 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- 
-Problem Description:
+<!--
 Damage response of a solid mixture consisting of a neo-Hookean ground
 matrix and a single fiber bundle oriented along the z-axis.  Only the
 fiber can undergo damage.  A cube modeled with a single element is
 subjected to a prescribed tensile deformation along z, with
 traction-free surfaces along x and y.
-
-Main Features:
-	Damage material
-Secondary Features:
-	Solid mixture
-Materials:
-	solid mixture
-	neo-Hookean
-	fiber-pow-linear
-	elastic damage
-	CDF Simo
-	DC max normal Lagrange strain
-Degrees of Freedom: 12
-Results:
-	Steps Completed: 100
-	Equilibrium Iterations: 200
-	Right Hand Evaluations: 300
-	Siffness Reformations: 200
-	Other:
-		The peak normal stress along z is 0.3377 at time t=1.0.
- 
-Comments:
-	
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

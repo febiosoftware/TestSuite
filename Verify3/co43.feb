@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Patch contact of multiphasic rectangular strips in unconfined compression stress relaxation
-Main Features:
-	Multiphasic contact
-Secondary Features:
-	
-Materials:
-	Multiphasic
-Degrees of Freedom: 808
-Results:
-	Steps Completed: 57
-	Equilibrium Iterations: 252
-	Right Hand Evaluations: 349
-	Siffness Reformations: 252
-	Other:
-		The effective fluid pressure at node 1 and t=4001 is -0.5218
-Comments:
-	
+Patch contact of multiphasic rectangular strips in unconfined compression stress relaxation
 -->
 <febio_spec version="3.0">
 	<Module type="multiphasic"/>

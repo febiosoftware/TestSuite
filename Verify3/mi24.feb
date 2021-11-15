@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A 2-D quarter billet is compressed with 1/4th symmetrical representation using a
-	prescribed y-displacement of 0.4 units on the -y nodes from time t=0 to t=1.
-Main Features:
-	Prescribed displacement with nodal constraints.
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 1220
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 37
-	Right Hand Evaluations: 47
-	Siffness Reformations: 37
-	Other:
-		
-Comments:
-	
+A 2-D quarter billet is compressed with 1/4th symmetrical representation using a
+prescribed y-displacement of 0.4 units on the -y nodes from time t=0 to t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

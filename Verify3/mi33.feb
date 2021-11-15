@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	This problem demonstrates bone remodeling using the Weinans Huiskes remodeling material.
-Main Features:
-	Bone remodeling
-Secondary Features:
-	
-Materials:
-	Weinans Huiskes remodeling
-	Carter-Hayes
-Degrees of Freedom: 5128
-Results:
-	Steps Completed: 100
-	Equilibrium Iterations: 526
-	Right Hand Evaluations: 1874
-	Siffness Reformations: 526
-	Other:
-		The minimum density is 0.1 at time t = 10.
-Comments:
-	
+This problem demonstrates bone remodeling using the Weinans Huiskes remodeling material.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Strip with shell constrained with rigid box is pulled off from a rigid surface using sticky contact.
-	Rigid box is prescribed z displacement of 4 at t=1.
-Main Features:
-	quad4 shells
-	sticky contact
-Secondary Features:
-Materials:
-	neo-Hookean
-Degrees of Freedom: 1203
-Results
-	Steps Completed: 15
-	Equilibrium Iterations: 81
-	Right Hand Evaluations: 101
-	Siffness Reformations: 81
-	Other:
-		The maximum effective stress is 0.0374 units at time t=1.
-Comments:
+Strip with shell constrained with rigid box is pulled off from a rigid surface using sticky contact.
+Rigid box is prescribed z displacement of 4 at t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

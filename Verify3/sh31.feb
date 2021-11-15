@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
 Strip(20-node hex) with shell(quad8) constrained with rigid box is pulled off from 
 a rigid surface using sticky contact.
 Rigid box is prescribed z displacement of 4 at t=1.
-Main Features:
-	quad8 shells
-	sticky contact
-Secondary Features:
-Materials:
-	neo-Hookean
-Degrees of Freedom: 3891
-Results
-	Steps Completed: 17
-	Equilibrium Iterations: 135
-	Right Hand Evaluations: 162
-	Siffness Reformations: 138
-	Other:
-		The maximum effective stress is 0.022 units at time t=1.
-Comments:
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

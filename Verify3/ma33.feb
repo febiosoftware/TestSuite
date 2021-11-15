@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Confined compression creep loading of a cube made of a
-	biphasic material with porous	neoHookean solid matrix.
-Main Features:
-	Porous neoHookean solid in a biphasic material
-Secondary Features:
-	Biphasic analysis
-Materials:
-	porous neoHookean
-	HolmesMow permeability
-	biphasic
-Degrees of Freedom: 160
-Results:
-	Steps Completed: 69
-	Equilibrium Iterations: 218
-	Right Hand Evaluations: 288
-	Siffness Reformations: 69
-	Other:
-Comments:
-	Final creep deformation (Zdisplacement of node 21) is 0.645891
+Confined compression creep loading of a cube made of a
+biphasic material with porousneoHookean solid matrix.
+
+Final creep deformation (Zdisplacement of node 21) is 0.645891
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

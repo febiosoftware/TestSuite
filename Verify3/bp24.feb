@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	3D axisymmetric analysis of cylindrical plug, modeled as wedge
-	with symmetry plane, loaded under displacement control
-Main Features:
-	Symmetry plane involving solid and shell nodes
-Materials:
-	Biphasic
-	neoHookean
-Degrees of Freedom: 1959
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 41
-	Right Hand Evaluations: 61
-	Siffness Reformations: 41
-	Other:
-		The maximum radial (x)displacement at t=1 is 0.1817.
-Comments:
-	The solid deformation and fluid pressure exhibit axisymmetry.
+3D axisymmetric analysis of cylindrical plug, modeled as wedge
+with symmetry plane, loaded under displacement control
+
+The solid deformation and fluid pressure exhibit axisymmetry.
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A shell disk constrained in x,y,z on the edges is diplaced in the z-direction by
-	a rigid element with a prescribed z-displacement of -0.5 units at time t=1.
-Main Features:
-	Shells
-	Sliding with gaps Contact
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 1087
-Results
-	Steps Completed: 11
-	Equilibrium Iterations: 67
-	Right Hand Evaluations: 78
-	Siffness Reformations: 12
-	Other:
-		The maximum shear stress is 0.162857 units at time t=1.
-Comments:
-	
+A shell disk constrained in x,y,z on the edges is diplaced in the z-direction by
+a rigid element with a prescribed z-displacement of -0.5 units at time t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

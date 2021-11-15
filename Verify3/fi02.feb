@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	An element of trans iso Mooney-Rivlin material has a prescribed displacement
-	in the x-direction on the right end nodes of 1 unit at time t=1.  The left end
-	nodes are constrained in the x-direction.
-Main Features:
-	Trans Iso Mooney-Rivlin material
-Secondary Features:
-	
-Materials:
-	Trans Iso Mooney-Rivlin
-Degrees of Freedom: 12
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 55
-	Right Hand Evaluations: 65
-	Siffness Reformations: 10
-	Other:
-		The top nodes have a displacement of -0.295 at time t=1.
-Comments:
-	
+An element of trans iso Mooney-Rivlin material has a prescribed displacement
+in the x-direction on the right end nodes of 1 unit at time t=1.  The left end
+nodes are constrained in the x-direction.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
- This file was created with FEBio Studio version 1.0.0 
+This file was created with FEBio Studio version 1.0.0 
+
+
+
+BFSI Generalized Taylor slip problem that models Couette and Poiseuille flow over a deformable porous layer. Tangential velocity prescribed on top of fluid layer, with no slip wall at bottom of porous domain, where an interface is shared between the two. Prescribed pressure and displacement allowed in x direction.
+
+Similar examples seen in results of
+   Shim JJ, Maas SA, Weiss JA, Ateshian GA. (2021) J Biomech Eng, In Press.
 -->
 <!--
 Problem Description:

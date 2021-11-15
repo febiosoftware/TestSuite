@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- 
-Problem Description:
+<!--
 One-dimensional osmotic loading of an inhomogeneous block consisting of a biphasic-solute material bonded to a triphasic material.  There are three solute species in this problem: A neutral solute in the biphasic-solute mixture, and two monovalent counter-ions in the triphasic mixture.  Solutes cannot transport from one material to the other, since there are no shared solute species. Therefore, the interface between the two materials is a solute-impermeant barrier, though it is permeable to the solvent.  An osmotic load is prescribed on the biphasic-solute material, by increasing the environment (bath) neutral solute concentration.  This osmotic load produces a transient response dominated by the diffusion of neutral solute into the biphasic-solute region, and eventual efflux of solvent from both triphasic and biphasic-solute regions.  Since the triphasic material is bounded by ion-impermeant boundaries its electrical potential must be electrically grounded to prevent random fluctuations.  This grounding is done at the rigid impermeable bottom boundary (z=0) by prescribing the anion and cation effective concentrations to be equal to each other and equal to the initial value prescribed for these ions inside the triphasic material.  This method for electric grounding prescribes zero electric potential on the outside of the triphasic mixture, but the electric potential inside depends on the fixed charge density and is not necessarily zero.
-
-Main Features:
-	Combining triphasic and biphasic-solute materials in the same model
-Secondary Features:
-	
-Materials:
-	Triphasic
-	Biphasic-Solute
-	Neo-Hookean
-	Constant Isotropic Permeability
-	Constant Osmotic Coefficient
-	Constant Isotropic Diffusivity
-	Constant Solubility
-Degrees of Freedom: 572
-Results:
-	Steps Completed: 49
-	Equilibrium Iterations: 142
-	Right Hand Evaluations: 191
-	Siffness Reformations: 142
-	Other:
-		The peak electric potential is -23.7 at time t=1e4.
- 
-Comments:
-
--->	
+-->
 <febio_spec version="3.0">
 	<Module type="solute"/>
 	<Control>

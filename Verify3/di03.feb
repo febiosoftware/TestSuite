@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Two cantilever boards are connected by nodal springs on their free ends and a vertical force
-	 curve of 0 units at t=0 and 100 units at t=1 is applied to the right board.
-Main Features:
-	Nodal springs
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 540
-Results:
-	Steps Completed: 50
-	Equilibrium Iterations: 223
-	Right Hand Evaluations: 383
-	Siffness Reformations: 51
-	Other:
-		At time t=1, the maximum total displacement is 4.53.
-Comments:
-	
+Two cantilever boards are connected by nodal springs on their free ends and a vertical force
+ curve of 0 units at t=0 and 100 units at t=1 is applied to the right board.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

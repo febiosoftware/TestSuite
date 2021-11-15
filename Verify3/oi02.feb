@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A poroelastic block of 10 elements is compressed in the zdirection by 0.1 units
-	in time t=100, then allowed to relax to time t=1000.
-	This is the same problem as CCsrlxFit.feb in the Biphasic Examples on the forums.
-Main Features:
-	Poroelasticity
-Secondary Features:
-	Nonuniform element thickness in zdirection
-Materials:
-	NeoHookean
-	Poroelastic
-Degrees of Freedom: 157
-Results:
-	Steps Completed: 53
-	Equilibrium Iterations: 119
-	Right Hand Evaluations: 172
-	Siffness Reformations: 119
-	Other:
-		The bottom element has a thickness of 0.3022 at time t=1000.
-Comments:
-	
+A poroelastic block of 10 elements is compressed in the zdirection by 0.1 units
+in time t=100, then allowed to relax to time t=1000.
+This is the same problem as CCsrlxFit.feb in the Biphasic Examples on the forums.
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

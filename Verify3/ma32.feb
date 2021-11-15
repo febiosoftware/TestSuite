@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Compressive pressure loading of a cube made of porous
-	neoHookean material.
-Main Features:
-	Porous neoHookean material.
-Secondary Features:
-	
-Materials:
-	porous neoHookean
-Degrees of Freedom: 12
-Results:
-	Steps Completed: 100
-	Equilibrium Iterations: 300
-	Right Hand Evaluations: 400
-	Siffness Reformations: 300
-	Other:
-Comments:
-	Relative volume at final time point is 0.127
+Compressive pressure loading of a cube made of porous
+neoHookean material.
+
+Relative volume at final time point is 0.127
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

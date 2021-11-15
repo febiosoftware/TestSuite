@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Rotational couette flow on a cylinder. Steady state. 
-Main Features:
-        rotational velocity 
-        steady state
-Secondary Features:
-	gen alpha
-	Newtonian fluid
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 32481
-Results:
-	Steps Completed: 2
-	Equilibrium Iterations: 5
-	Right Hand Evaluations: 11
-	Stiffness Reformations: 5
-	Other:
-		The total nodal fluid velocity at node 4372 at t=1 is 0.500136.
-Comments:
-       
+Rotational couette flow on a cylinder. Steady state.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

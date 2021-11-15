@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Block with shell is compressed and slided against a larger and softer block with shell.
-	Top face of top blox is prescribed z dispacement of -0.64 and then x displacement of -0.8 at t=2.
-	Both shells have same stiffness to converge
-Main Features:
-	quad4 shells
-	sliding-elastic contact
-Secondary Features:
-Materials:
-	Mooney-Rivlin
-Degrees of Freedom: 2620
-Results
-	Steps Completed: 27
-	Equilibrium Iterations: 139
-	Right Hand Evaluations: 199
-	Siffness Reformations: 140
-	Other:
-		The maximum effective stress is 30.7 units at time t=0.970.
-Comments:
+Block with shell is compressed and slided against a larger and softer block with shell.
+Top face of top blox is prescribed z dispacement of -0.64 and then x displacement of -0.8 at t=2.
+Both shells have same stiffness to converge
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

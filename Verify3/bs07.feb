@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	1D diffusion across a biphasicsolute contact interface between two bricks.
-Main Features:
-	Biphasic with Solute
-	Contact
-Secondary Features:
-	Must point controller
-Materials:
-	NeoHookean
-	biphasicsolute
-Degrees of Freedom: 500
-Results:
-	Steps Completed: 170
-	Equilibrium Iterations: 326
-	Right Hand Evaluations: 598
-	Siffness Reformations: 326
-Comments:
-	
+1D diffusion across a biphasicsolute contact interface between two bricks.
 -->
 <febio_spec version="3.0">
 	<Module type="solute"/>

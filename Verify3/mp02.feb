@@ -1,38 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
- 
-Problem Description:
 Unconfined compression stressrelaxation of multiphasic material with NaCl whose solid matrix
 consists of a spherical fiber distribution.  A twostep analysis is performed, where the
 first step is a steadystate analysis needed to produce equilibrium free swelling by raising
 the fixed charged density from zero to the final desired value.  The second step is a
 transient analysis where the compressive displacement prescribed on the top surface
-is relative to the freeswelling state. 
-
-Main Features:
-	Multiphasic material
-Secondary Features:
-	Relative prescribed displacements
-Materials:
-	Multiphasic
-	Solid Mixture
-	NeoHookean
-	Spherical Fiber Distribution
-	Constant Isotropic Permeability
-	Constant Osmotic Coefficient
-	Constant Isotropic Diffusivity
-	Constant Solubility
-Degrees of Freedom: 1907
-Results:
-	Steps Completed: 52
-	Equilibrium Iterations: 149
-	Right Hand Evaluations: 201
-	Siffness Reformations: 149
-	Other:
-		The peak compressive load is 4.45 at time t=201.
- 
-Comments:
-	
+is relative to the freeswelling state.
 -->
 <febio_spec version="3.0">
 	<Module type="multiphasic"/>

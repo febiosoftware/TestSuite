@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Knee Model.  The femur and patella are free to rotate about the y-axis.  The former
-	has a prescribed rotatioon of 1.57 radians at time t=1.  Ligaments are attached
-	between the femur and the tibia; the front one going over the patella.
-Main Features:
-	Rigid Bodies
-Secondary Features:
-	Prescribed rotation
-Materials:
-	Mooney-Rivlin
-	Rigid Bodies
-Degrees of Freedom: 662
-Results:
-	Steps Completed: 8
-	Equilibrium Iterations: 81
-	Right Hand Evaluations: 90
-	Siffness Reformations: 12
-	Other:
-		The top of the patella has a z-displacement of 0.526 at time t=1.
-Comments:
-	
+Knee Model.  The femur and patella are free to rotate about the y-axis.  The former
+has a prescribed rotatioon of 1.57 radians at time t=1.  Ligaments are attached
+between the femur and the tibia; the front one going over the patella.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

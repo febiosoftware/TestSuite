@@ -1,28 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Bottom half of a rectangular channel of Newtonian fluid material undergoing
-	poiseuille flow. It is tilted by 30 degrees and normal flow
-	constraint on inlet and outlet
-Main Features:
-        prescribed pressure
-        normal flow constraint
-Secondary Features:
-        generalized-alpha
-        Steady State
-	Newtonian fluid
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 1280
-Results:
-	Steps Completed: 1
-	Equilibrium Iterations: 4
-	Right Hand Evaluations: 6
-	Stiffness Reformations: 4
-	Other:
-		The total nodal fluid velocity at node 462 at t=5 is 25.
-Comments:
-       
+Bottom half of a rectangular channel of Newtonian fluid material undergoing
+poiseuille flow. It is tilted by 30 degrees and normal flow
+constraint on inlet and outlet
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- 
-Problem Description:
+<!--
 Dissociation of NaCl using reversible chemical reaction,
 
 [NaCl] <-> [Na+] + [Cl-]
@@ -14,31 +13,6 @@ the boundaries of the finite element domain, it is necessary to ground the mixtu
 to prevent unbounded fluctuations in the electric potential.  Therefore two additional 
 ions are included in the mixture, [K+] and [HCO3-], with prescribed boundary conditions 
 that enforce zero electric potential.
- 
-Main Features:
-	Reversible chemical reaction involving charged solutes
-Secondary Features:
-	Electrical grounding of multiphasic mixture
-Materials:
-	Multiphasic
-	neo-Hookean
-	Constant Isotropic Permeability
-	Constant Osmotic Coefficient
-	Constant Isotropic Diffusivity
-	Constant Solubility
-	Mass-Action-Reversible
-	Constant Reaction Rate
-Degrees of Freedom: 60
-Results:
-	Steps Completed: 303
-	Equilibrium Iterations: 561
-	Right Hand Evaluations: 864
-	Siffness Reformations: 561
-	Other:
-		The final NaCl concentration is 0.0848 and the final Na+ and Cl- concentrations are 0.9152, at time t=6.
- 
-Comments:
-	
 -->
 <febio_spec version="3.0">
 	<Module type="multiphasic"/>

@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Block with prescribed displacement of 2.5 units in z-direction from time t=0 to t=1
-	sliding and compressing against inclined rigid body plane.
-Main Features:
-	Rigid Wall Contact.
-Secondary Features:
-	Load curve for contact penalty
-Materials:
-	Neo-Hookean
-	Rigid Bodies
-Degrees of Freedom: 1924
-Results:
-	Solver: Pardiso
-	Steps Completed: 10
-	Equilibrium Iterations: 48
-	Right Hand Evaluations: 74
-	Siffness Reformations: 10
-	Other:
-		The maximum effective strain is 0.723 at time t=1.
-Comments:
-	
+Block with prescribed displacement of 2.5 units in z-direction from time t=0 to t=1
+sliding and compressing against inclined rigid body plane.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

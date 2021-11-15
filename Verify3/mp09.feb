@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Tied contact of multiphasic rectangular blocks in unconfined
-	compression under a prescribed uniform normal traction
-Main Features:
-	Tied multiphasic contact
-Secondary Features:
-	Tied multiphasic domains each contain two shared solutes (one
-	charged and the other neutral), and one nonshared solute (charged)
-Materials:
-	Multiphasic
-Degrees of Freedom: 1540
-Results:
-	Steps Completed: 20
-	Equilibrium Iterations: 58
-	Right Hand Evaluations: 78
-	Siffness Reformations: 58
-Comments:
-	The tied interface enforces continuity of the effective fluid
-	pressure and the effective solute concentrations for those
-	solutes shared by the two tied domains
+Tied contact of multiphasic rectangular blocks in unconfined
+compression under a prescribed uniform normal traction
+
+The tied interface enforces continuity of the effective fluid
+pressure and the effective solute concentrations for those
+solutes shared by the two tied domains
 -->
 <febio_spec version="3.0">
 	<Module type="multiphasic"/>

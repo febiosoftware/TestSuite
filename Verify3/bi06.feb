@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A fixed CFD/FSI wedge with 4000 elements where Newtonian fluid enters from a plug normal velocity boundary load that increases linearly to t=1 and run until t=10. 
-Main Features:
-	BFSI
-	Normal fluid velocity
-Secondary Features:
-	Broyden
-	No diverge reform
-	No reform at each step
-Materials:
-	Newtonian
-Degrees of Freedom: 27877
-Results:
-	Steps Completed: 100
-	Equilibrium Iterations: 179
-	Right Hand Evaluations: 279
-	Stiffness Reformations: 2
-	Other:
-		The z-nodal flux for node 8101 at time t=10 is 2.00192
-Comments:
-	
+A fixed CFD/FSI wedge with 4000 elements where Newtonian fluid enters from a plug normal velocity boundary load that increases linearly to t=1 and run until t=10.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

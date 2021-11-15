@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A spring-mass-damper system in a dynamic analysis.
-Main Features:
-	Rigid spring
-	Rigid damper
-	Constant body force
-Secondary Features:
-	Rigid prismatic joint
-	Time integration using midpoint rule
-Materials:
-	rigid body
-Degrees of Freedom: 6
-Results:
-	Steps Completed: 1000
-	Equilibrium Iterations: 1000
-	Right Hand Evaluations: 2000
-	Siffness Reformations: 1000
-	Other:
-
-Comments:
-	
+A spring-mass-damper system in a dynamic analysis.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

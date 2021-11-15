@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	An element has a body force of 0 units at t=0 and 1 unit at t=1 applied in the z-direction.
-Main Features:
-	Body force
-	Dynamic analysis
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 24
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 10
-	Right Hand Evaluations: 20
-	Siffness Reformations: 10
-	Other:
-		At time t=1 all nodes have a z-displacement of -0.452
-Comments:
-	
+An element has a body force of 0 units at t=0 and 1 unit at t=1 applied in the z-direction.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

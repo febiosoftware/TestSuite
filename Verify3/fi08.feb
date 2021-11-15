@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A 10x10x10 block of Trans-isotropic Mooney-Rivlin material with a vector fiber
-	direction (1,1,1) undergoes an expansion of 0.2 units in the z-direction
-	at time t=1.
-Main Features:
-	Fiber with vector direction
-Secondary Features:
-	
-Materials:
-	Trans-iso Mooney-Rivlin
-Degrees of Freedom: 3630
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 30
-	Right Hand Evaluations: 40
-	Siffness Reformations: 10
-	Other:
-		The maximum effective strain is 0.307 at time t=1.
-Comments:
-	
+A 10x10x10 block of Trans-isotropic Mooney-Rivlin material with a vector fiber
+direction (1,1,1) undergoes an expansion of 0.2 units in the z-direction
+at time t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

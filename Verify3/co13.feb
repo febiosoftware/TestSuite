@@ -1,29 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Two cylindrical tubes at 90 degrees are compressed against each other.  The ends of
-	one tube are constrained in x,y,z and the ends of the other tube are attached to a
-	rigid body which has a prescribed displacement of -6.0 units in the x-direction.
-Main Features:
-	Facet to facet Contact
-	Rigid Bodies
-Secondary Features:
-	
-Materials:
-	Neo-Hooken
-	Rigid Body
-Degrees of Freedom: 5473
-Results:
-	Solver: Pardiso
-	Steps Completed: 51
-	Equilibrium Iterations: 217
-	Right Hand Evaluations: 324
-	Siffness Reformations: 53
-	Other:
-		The center node on the back of the horizontal tube (node 1491) has an x-displacement
-		of -3.56 at time t=1.
-Comments:
-	Penetration is slightly better using augmented lagrangian, but convergence is better without it.
+Two cylindrical tubes at 90 degrees are compressed against each other.  The ends of
+one tube are constrained in x,y,z and the ends of the other tube are attached to a
+rigid body which has a prescribed displacement of -6.0 units in the x-direction.
+
+Penetration is slightly better using augmented lagrangian, but convergence is better without it.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

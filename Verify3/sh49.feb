@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Shell(quad8) sandwiched by two box elements is compressed along z direction.
-	Bottom face of bottom box is fixed, and top face of top box is prescribed z displacment of -0.5 at t=1.
-Main Features:
-	quad8 shells
-Secondary Features:
-Materials:
-	neo-Hookean
-Degrees of Freedom: 96
-Results
-	Steps Completed: 10
-	Equilibrium Iterations: 21
-	Right Hand Evaluations: 31
-	Siffness Reformations: 21
-	Other:
-		The maximum z-shell strain is -0.218 units at time t=1.
-Comments:
+Shell(quad8) sandwiched by two box elements is compressed along z direction.
+Bottom face of bottom box is fixed, and top face of top box is prescribed z displacment of -0.5 at t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

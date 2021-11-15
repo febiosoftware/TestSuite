@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Heat transfer problem as described in tutorial 7 in the PreView user's manual.
-Main Features:
-	Heat transfer
-Secondary Features:
-	Outputs temperature to the log file.
-Materials:
-	Isotropic Fourier
-Degrees of Freedom: 462
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 0
-	Right Hand Evaluations: 0
-	Siffness Reformations: 10
-	Other:
-		Node 2 has a temperature of 854.33 at time t = 1.
-Comments:
-	
+Heat transfer problem as described in tutorial 7 in the PreView user's manual.
 -->
 <febio_spec version="3.0">
 	<Module type="heat"/>

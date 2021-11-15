@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A 20x4 element shell sheet is constrained in x,y,z on the left end and attached
-	by rigid contact to a rigid body with a prescribed rotation of 1 radian in time t=1.
-Main Features:
-	Shells
-	Rigid Contact
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 586
-Results
-	Steps Completed: 10
-	Equilibrium Iterations: 40
-	Right Hand Evaluations: 50
-	Siffness Reformations: 40
-	Other:
-		The maximum effective stress is 2.97e-3 units at time t=1.
-Comments:
-	
+A 20x4 element shell sheet is constrained in x,y,z on the left end and attached
+by rigid contact to a rigid body with a prescribed rotation of 1 radian in time t=1.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

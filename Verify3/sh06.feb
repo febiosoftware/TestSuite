@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	1/8th symmetrical representation of an inflating balloon.  A pressure of
-	0 units at time t=0 to -0.0045 units at t=1 is applied to the shell disk.
-Main Features:
-	Shells
-	Pressure
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 301
-Results
-	Steps Completed: 13
-	Equilibrium Iterations: 108
-	Right Hand Evaluations: 140
-	Siffness Reformations: 17
-	Other:
-		The disk has a maximum z-displacement of 0.433 at time t=1.
-Comments:
-	In order to have consistent results with multiple threads, the material parameter
-	E was changed from 1 to 10 and the pressure was increased to the limit before
-	the results became inconsistent.
+1/8th symmetrical representation of an inflating balloon.  A pressure of
+0 units at time t=0 to -0.0045 units at t=1 is applied to the shell disk.
+
+In order to have consistent results with multiple threads, the material parameter
+E was changed from 1 to 10 and the pressure was increased to the limit before
+the results became inconsistent.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

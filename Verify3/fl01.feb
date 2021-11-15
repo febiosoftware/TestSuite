@@ -1,28 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A 10x10x1 block of Newtonian fluid material undergoing Couette
-	flow, with up to
-	10000 units of relative x-velocity in 5 seconds (logarithmic
-	intervals every 0.2 seconds). 
-Main Features:
-        Steady State
-        Prescribed tangential velocity
-	Newtonian fluid
-Secondary Features:
-	generalized-alpha
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 580
-Results:
-	Steps Completed: 25
-	Equilibrium Iterations: 31
-	Right Hand Evaluations: 60
-	Stiffness Reformations: 31
-	Other:
-		The total nodal fluid velocity at node 232 at t=5 is 5000.
-Comments:
-	
+A 10x10x1 block of Newtonian fluid material undergoing Couette
+flow, with up to
+10000 units of relative x-velocity in 5 seconds (logarithmic
+intervals every 0.2 seconds).
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

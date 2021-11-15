@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	1D solute diffusion in a cube, with prescribed external concentration.
-	Units: length = mm, force = N, time = s, mole = nanomol; stress = MPa, concentration = mM.
-Main Features:
-	Biphasic with Solute
-Secondary Features:
-	
-Materials:
-	biphasicsolute
-Degrees of Freedom: 248
-Results:
-	Steps Completed: 28
-	Equilibrium Iterations: 32
-	Right Hand Evaluations: 70
-	Siffness Reformations: 32
-	Other:
-		The material has a minimum solute concentration of 0.986 at time t=2000.
-Comments:
-	
+1D solute diffusion in a cube, with prescribed external concentration.
+Units: length = mm, force = N, time = s, mole = nanomol; stress = MPa, concentration = mM.
 -->
 <febio_spec version="3.0">
 	<Module type="solute"/>

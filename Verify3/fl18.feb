@@ -1,32 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Flow in rectangular channel with a block. Vorticies form due
-	to the block as rhoi=0.5. Fluid normal velocity load on inlet, 0 ef outlet.
-Main Features:
-        Normal fluid velocity load
-	dynamic
-	Broyden
-	Post BL
-	Backflow/Tangential Stabilization
-	generalized alpha
-Secondary Features:
-	Newtonian fluid
-	No diverge reform
-	no ref each step
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 6842
-Results:
-	Steps Completed: 800
-	Equilibrium Iterations: 5426
-	Right Hand Evaluations: 6244
-	Stiffness Reformations: 93
-	Other:
-		The total nodal fluid velocity on node 1078 at t=80 is 2.23103.
-Comments:
-        Similar examples seen in results of
-        Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):021001-021001-17.
+Flow in rectangular channel with a block. Vorticies form due
+to the block as rhoi=0.5. Fluid normal velocity load on inlet, 0 ef outlet.
+
+Similar examples seen in results of
+Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):021001-021001-17.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid"/>

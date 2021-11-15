@@ -1,32 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Two balls have a constant body force of 1 unit in the z-direction and bounce off of
-	each other and a rigid horizontal wall.  Note that the rigid body horizontal wall is
-	only there to visulalize the rigid-wall contact.
-Main Features:
-	Dynamic Analysis
-	Body Force
-	Sliding Contact
-	Rigid-wall Contact
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-	Rigid Body
-Degrees of Freedom: 3102
-Results:
-	Steps Completed: 50
-	Equilibrium Iterations: 280
-	Right Hand Evaluations: 431
-	Siffness Reformations: 77
-	Other:
-		The bottom ball has its maximum z-displacement of -1.96 at time t=1.7 (on its
-		first bounce).
-Comments:
-	The penalty values of 10000 were necessary in order to reduce the penetration.  Facet to
-	fact contact converges somewhat faster than sliding_with_gaps, but the penetration is
-	is better with the latter.
+Two balls have a constant body force of 1 unit in the z-direction and bounce off of
+each other and a rigid horizontal wall.  Note that the rigid body horizontal wall is
+only there to visulalize the rigid-wall contact.
+
+The penalty values of 10000 were necessary in order to reduce the penetration.  Facet to
+fact contact converges somewhat faster than sliding_with_gaps, but the penetration is
+is better with the latter.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>
