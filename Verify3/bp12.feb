@@ -1,29 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	1D Permeation with prescribed upstream pressure and unclamped condition.
-	This problem demonstrates how to prescribe boundary conditions for a permeation problem
-	where the fluid pressure is prescribed upstream, but the solid displacement on the upstream
-	surface is unconstrained.  The latter boundary condition is satisfied by prescribing a zero
-	value for the effective traction on the upstream surface.
-
-Main Features:
-	Permeability
-Secondary Features:
-	Must point curve
-Materials:
-	Biphasic
-	NeoHookean
-Degrees of Freedom: 160
-Results:
-	Steps Completed: 28
-	Equilibrium Iterations: 83
-	Right Hand Evaluations: 111
-	Siffness Reformations: 83
-	Other:
-		The maximum total fluid flux is 2.87e4 at time t = 210.
-Comments:
-	
+1D Permeation with prescribed upstream pressure and unclamped condition.
+This problem demonstrates how to prescribe boundary conditions for a permeation problem
+where the fluid pressure is prescribed upstream, but the solid displacement on the upstream
+surface is unconstrained.  The latter boundary condition is satisfied by prescribing a zero
+value for the effective traction on the upstream surface.
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

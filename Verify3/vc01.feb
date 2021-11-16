@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A disk with a cavity has a pressure applied to one surface.  The volume of the cavity is constrained
+to be constant.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,30 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Sinusoidal deformational loading of a cube from tension to
-	compression. The material is reactive viscoelastic, with the
-	strong bonds (elastic response) given by a Mooney-Rivlin
-	material, and the weak bonds (viscous response) also given by a
-	Mooney-Rivlin material.  The bond relaxation is exponential,
-	with type I bond kinetics.
-Main Features:
-	Reactive viscoelastic material.
-Secondary Features:
-	
-Materials:
-	reactive viscoelastic
-	Holmes-Mow
-	neo-Hookean
-	relaxation-power
-Degrees of Freedom: 12
-Results:
-	Steps Completed: 500
-	Equilibrium Iterations: 1488
-	Right Hand Evaluations: 1988
-	Siffness Reformations: 1488
-	Other:
-Comments:
-	
+Sinusoidal deformational loading of a cube from tension to
+compression. The material is reactive viscoelastic, with the
+strong bonds (elastic response) given by a Mooney-Rivlin
+material, and the weak bonds (viscous response) also given by a
+Mooney-Rivlin material.  The bond relaxation is exponential,
+with type I bond kinetics.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

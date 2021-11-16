@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 10x10x1 block of Carreau-Yasuda fluid material undergoing Couette
+flow, with up to
+10000 units of relative x-velocity in 5 seconds (logarithmic
+intervals every 0.2 seconds). 
+
+Material parameters from
+Cho YI and Kensey KR (1991). Biorheology, 28:241-262.
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

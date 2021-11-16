@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Tube domain (curved inlet) where there is a flow past the center
+cylinder. RE=100 and towards the end a Karman vortex street
+forms. Hex 8 elements biased towards center. Rhoi=0.5
+
+Similar examples seen in supplemental section of
+Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):021001-021001-17.
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

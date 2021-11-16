@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A hexagonal rod with unique element geometry and linear constraints between the nodes
+has a prescribed displacement of 18.2417 units at time t=1 that is equal and opposite
+on the two ends.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

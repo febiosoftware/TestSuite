@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A shell disk constrained in x,y,z on the edges is diplaced in the z-direction by
+a rigid element with a prescribed z-displacement of -0.5 units at time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

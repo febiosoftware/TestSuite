@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A elastic block is stretched 1 unit in the x-direction to time t = 1 and then allowed
+to recoil dynamically to time t = 5.  This example illustrates the use of a fixed
+boundary condition inside a multi-step analysis.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Globals>

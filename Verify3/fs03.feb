@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Couette flow from shear motion of top face. 
-Main Features:
-        Moving boundary
-        Fixed/Prescribed ef
-Secondary Features:
-        Newtonian fluid
-	Newton Method
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 616
-Results:
-	Steps Completed: 250
-	Equilibrium Iterations: 662
-	Right Hand Evaluations: 1140
-	Stiffness Reformations: 662
-	Other:
-		The xnodal fluid velocity is 1.0 at time 2.5 for node 242
-Comments:
-        
+Couette flow from shear motion of top face.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

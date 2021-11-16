@@ -1,35 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
 <!--
-Problem Description:
-	BFSI 1D flow of fluid through a porous domain driven by gravity. 0 p at both ends
-Main Features:
-	BFSI
-	porous solid
-	permeability
-	Body force
-	Newtonian Fluid
-Secondary Features:
-	Broyden
-	no ref each step
-	no diverge reform
-	PostBL
-Materials:
-	NeoHookean
-	Poroelastic
-	Newtonian
-	Constant Permeability
-Degrees of Freedom: 2096
-Results:
-	Steps Completed: 100
-	Equilibrium Iterations: 419
-	Right Hand Evaluations: 676
-	Siffness Reformations: 7
-	Other:
-		The z-nodal flux for node 952 at time t=1 is -0.16677
-Comments:
-
+BFSI 1D flow of fluid through a porous domain driven by gravity. 0 p at both ends
 -->
+
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>
 	<Control>

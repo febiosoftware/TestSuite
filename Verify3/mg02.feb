@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Multigeneration growth in a hollow tube, followed by radial cut.  There are two intermingled growth
-	generations in this analysis.  In generation 1, the tube is internally pressurized and undergoes a large
-	expansion.  Generation 2 grows in this pressurized state. The pressure is subsequently removed 
-	and the tube recovers to a residually stressed state. The tube is then cut radially and observed to
-	curl inward (producing a negative opening angle) as a result of the residual stresses.
-Main Features:
-	Multigeneration
-Secondary Features:
-	Multistep analysis
-Materials:
-	HolmesMow elastic solid
-Degrees of Freedom: 6088
-Results:
-	Steps Completed: 15
-	Equilibrium Iterations: 126
-	Right Hand Evaluations: 147
-	Siffness Reformations: 127
-	Other:
-		The final position of node 2311 is (0.3573, 0.4602, 1)
-Comments:
-	This problem is from the article "Multigenerational interstitial growth of biological 
-	tissues", Ateshian and Ricken, Biomech Model Mechanobiol, 2010
+Multigeneration growth in a hollow tube, followed by radial cut.  There are two intermingled growth
+generations in this analysis.  In generation 1, the tube is internally pressurized and undergoes a large
+expansion.  Generation 2 grows in this pressurized state. The pressure is subsequently removed 
+and the tube recovers to a residually stressed state. The tube is then cut radially and observed to
+curl inward (producing a negative opening angle) as a result of the residual stresses.
+
+This problem is from the article "Multigenerational interstitial growth of biological 
+tissues", Ateshian and Ricken, Biomech Model Mechanobiol, 2010
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

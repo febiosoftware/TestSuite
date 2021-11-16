@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A serpentine surface is compressed along the x-direction experiencing self-contact and
+demonstrating the need of reducing the search_radius contact parameter from it's default
+value of 1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Nodal constraints are specified for the 1/8th symmetric representation of the
+compression of a block in the x-direction.  The right end nodes are given a
+prescribed x-displacement of -0.8 at time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

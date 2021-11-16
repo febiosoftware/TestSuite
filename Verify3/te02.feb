@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A cantilever beam composed of tetrahedral elements has a traction force of
+-1 unit in the z-direction applied to free end.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

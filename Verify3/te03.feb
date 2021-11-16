@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A block composed of tetrahedral elements has its left end nodes fixed and
+the right end nodes have a displacement of 1 unit in the x-direction at time
+t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Cylinder(20-node hex) with shell(quad8) compresses and slides against 
+a softer block(20-node hex) with shell(quad8).
+Top face of cylinder is prescribed z dispacement 0f -1.35 and then x displacement of 3 at t=4.
+Two shells have same stiffness to converge.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

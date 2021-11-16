@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Shell(quad8) element is stretched along z direction.
+Back face of shell is fixed and front face of shell is prescribed z displacment of 0.001 at t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

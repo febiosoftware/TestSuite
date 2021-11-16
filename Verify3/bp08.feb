@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Cylinder with Referentially Trans Iso Permeability material undergoes pressure change and twist
-Main Features:
-	Biphasic
-Secondary Features:
-	
-Materials:
-	Referentially Transversely Isotropic Permeability
-	neoHookean
-Degrees of Freedom: 16095
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 76
-	Right Hand Evaluations: 103
-	Siffness Reformations: 76
-	Other:
-		The xcomponent of the fluid flux for element 3188 is 0.1961 at time t=2.
-Comments:
-	
+Cylinder with Referentially Trans Iso Permeability material undergoes pressure change and twist
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

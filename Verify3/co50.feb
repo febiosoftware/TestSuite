@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A rigid non-circular cam rotates about a revolute joint and contacts a flat rigid follower,
-	whose motion is restricted by a prismatic joint in parallel with a spring.
-Main Features:
-	Sliding elastic contact between two rigid bodies
-Secondary Features:
-	Rigid joints (revolute, prismatic)
-	Rigid connector (spring)
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 12
-Results:
-	Steps Completed: 106
-	Equilibrium Iterations: 458
-	Right Hand Evaluations: 715
-	Siffness Reformations: 458
-	Other:
-		The maximum Y-displacement of the follower is 12.6248
-Comments:
-	Lagrange augmentation cannot be used for contact between rigid bodies.
+A rigid non-circular cam rotates about a revolute joint and contacts a flat rigid follower,
+whose motion is restricted by a prismatic joint in parallel with a spring.
+
+Lagrange augmentation cannot be used for contact between rigid bodies.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

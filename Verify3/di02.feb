@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Two blocks of four elements each are connected by a nodal spring on the center nodes of their
+mutually facing sides.  The nodes on the left face of the left block are constained in the x, y,
+and z directions.  The nodes on the right side of the right block have a prescribed displacement
+of one unit in the x-direction in time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

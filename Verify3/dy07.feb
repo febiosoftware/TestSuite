@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Dynamic analysis of a 4x10 element bar which is constrained in the x, y and z directions on
+the right end and has a prescribed displacement of 1 unit in the x-direction on the left end.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

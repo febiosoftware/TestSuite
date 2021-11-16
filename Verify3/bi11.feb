@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Tube where a rotational velocity is prescribed on inner and
-	outer walls. This is a couette flow problem. Run one newton
-	step and then use Broyden for rest. BFSI material.
-Main Features:
-		BFSI
-        Rotational velocity
-        Broyden
-        Multistep
-Secondary Features:
-        Dynamic
-        Gen alpha
-	no diverge reform
-	no ref each step
-	Newtonian fluid
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 4096
-Results:
-	Steps Completed: 49
-	Equilibrium Iterations: 107
-	Right Hand Evaluations: 156
-	Stiffness Reformations: 2
-	Other:
-		The total nodal fluid velocity at node 683 at t=0.5 is 1.30556.
-Comments:
-       
+Tube where a rotational velocity is prescribed on inner and
+outer walls. This is a couette flow problem. Run one newton
+step and then use Broyden for rest. BFSI material.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

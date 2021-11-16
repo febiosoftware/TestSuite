@@ -1,29 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A simplysupported elastic shell is subjected to a body
-	force of 1 unit at t=0 along the zdirection.  The shell
-	oscillates up and down in response to this body force. Energy
-	conservation is enforced using the Generalizedalpha method
-	with a spectral radius of 1.
-Main Features:
-	Body force
-	Dynamic analysis
-Secondary Features:
-	
-Materials:
-	neoHookean
-Degrees of Freedom: 12
-Results:
-	Steps Completed: 80
-	Equilibrium Iterations: 180
-	Right Hand Evaluations: 261
-	Siffness Reformations: 180
-	Other:
-		
-Comments:
-	The zdisplacement amplitude remains constant, demonstrating
-	energy conservation.
+A simplysupported elastic shell is subjected to a body
+force of 1 unit at t=0 along the zdirection.  The shell
+oscillates up and down in response to this body force. Energy
+conservation is enforced using the Generalizedalpha method
+with a spectral radius of 1.
+
+The zdisplacement amplitude remains constant, demonstrating
+energy conservation.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

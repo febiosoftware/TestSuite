@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A small hollow sphere rests inside a larger rigid hollow sphere and is allowed to
+contract due to the force of gravity.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

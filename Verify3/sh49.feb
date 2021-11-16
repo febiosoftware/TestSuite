@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Shell(quad8) sandwiched by two box elements is compressed along z direction.
+Bottom face of bottom box is fixed, and top face of top box is prescribed z displacment of -0.5 at t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

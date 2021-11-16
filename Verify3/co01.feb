@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Two elements with sliding contact are compressed against each other.  The nodes on the left face of
+the left element are constrained in the x-direction.  The nodes on the right face of the right element
+are given a displacement of -0.2 in the x-direction in time t=1.
+
+Not using the augmented Lagrangian gives slightly better convergence, but the contact penetration
+is greater.  This problem converges with fewer equilibrium iterations if the automatic time stepper
+is turned off.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

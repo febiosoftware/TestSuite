@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Axisymmetric section of circular pipe of Newtonian fluid material undergoing
+poiseuille flow. Normal flow constraint added to inlet and outlet
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

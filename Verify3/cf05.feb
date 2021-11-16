@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A rectangular strip consisting of hex20 elements is modeled with two
+continuous fiber distribution, each with a 2D von-Mises distribution
+density. The two fiber bundles lie in the x-y plane and are oriented at +45 deg. and -45
+deg. relative to the x-direction. The left and right ends of the strip are interfaced
+with rigid bodies. The left end is fixed and a displacement is prescribed on the
+right end, along x.
+
+The fiber-exponential-power-law properties are selected to
+produce a highly nonlinear response for the reaction
+force. Compare to cf04.feb which uses 3D von-Mises
+distribution densities.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

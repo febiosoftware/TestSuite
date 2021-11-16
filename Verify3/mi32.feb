@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Crushing of a pipe.  A quarter-symmetry, plain-strain model of a 114.3 mm radius pipe
+with 8.87 mm thickness.  The rigid body "anvil" is displaced 50 mm in the y-direction.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

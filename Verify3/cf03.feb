@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A rectangular strip consisting of hex20 elements is modeled with a
+continuous fiber distribution with a 3D von-Mises distribution
+density. A single fiber bundle is oriented along the
+x-direction. The left and right ends of the strip are interfaced
+with rigid bodies. The left end is fixed and a displacement is prescribed on the
+right end, along x.
+
+The fiber-exponential-power-law properties are selected to
+produce a highly nonlinear response for the reaction force.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

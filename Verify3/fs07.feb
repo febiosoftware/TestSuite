@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Blood flow through wedge with 0 pressure outlet, pulsatile
-	inlet. Newtonian fluid with Holzapfel solid with fibers
-Main Features:
-        Normal fluid vel
-        Fixed/Prescribed ef
-	FSI traction
-	Solid symmetry
-	Holzapfel Model, fibers
-Secondary Features:
-        Backflow stab
-        tangential stab
-	Broyden
-	no ref each step
-	no ref diverge
-Materials:
-        Newtonian Fluid
-        Holzapfel with fibers
-Degrees of Freedom: 7115
-Results:
-	Steps Completed: 512
-	Equilibrium Iterations: 6968
-	Right Hand Evaluations: 13767
-	Stiffness Reformations: 262
-	Other:
-		The znodal fluid velocity is 0.7513965 at time 0.2501
-		for node 999
-Comments:
-        Holzapfel model found in Holzapfel et al. J elasticity and the
-	physical science of solids 61(13):148.
+Blood flow through wedge with 0 pressure outlet, pulsatile
+inlet. Newtonian fluid with Holzapfel solid with fibers
+
+Holzapfel model found in Holzapfel et al. J elasticity and the
+physical science of solids 61(13):148.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

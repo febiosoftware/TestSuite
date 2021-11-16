@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Dynamic analysis of two cylinders colliding with each other.  The cylinder on the right
+is given an initial velocity of -1 units in the x-direction.
+
+Penetration was slightly better with slinding_with_gaps contact, but congergence was significantly
+better with facet to facet contact.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

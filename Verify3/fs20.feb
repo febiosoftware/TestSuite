@@ -1,33 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Quarter cylinder tube flow with wall surrounded by HEX20G8
-	matrix. Used tied contact. Acts to restrict
-	movement. Newtonian fluid and neoHookean solids
-Main Features:
-        Tied contact
-        FSI traction
-	Norm fluid vel
-	prescribed/fixed ef
-	PostBL
-	Hex20G8
-Secondary Features:
-	Broyden
-	No diverge ref
-	No ref each step
-Materials:
-        Newtonian Fluid
-Degrees of Freedom: 30628
-Results:
-	Steps Completed: 50
-	Equilibrium Iterations: 311
-	Right Hand Evaluations: 470
-	Stiffness Reformations: 6
-	Other:
-		The total nodal fluid velocity is 5.68929 at time 0.5
-		for node 5
-Comments:
-   
+Quarter cylinder tube flow with wall surrounded by HEX20G8
+matrix. Used tied contact. Acts to restrict
+movement. Newtonian fluid and neoHookean solids
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

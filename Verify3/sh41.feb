@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Shell(quad8) element with trans iso Mooney-Rivlin material is stretched along x direction.
+Left edge is fixed along x, bottom edge is fixed along y, and right edge is 
+prescribed x displacement of 1 at t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Block (20-node hex) with shell(quad8) is compressed and slided against a larger
+and softer block(20-node hex) with shell(quad8).
+Top face of top blox is prescribed z dispacement of -0.64 and then x displacement of -0.8 at t=2.
+Both shells have same stiffness to converge
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

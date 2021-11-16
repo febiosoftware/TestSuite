@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Two concentric planar rings are connected by nonlinear springs.  The outer ring is
+constrained on it's outer edge and the inner edge of the inner ring has a displacement
+of 0.8 units in the z-direction at time t = 1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

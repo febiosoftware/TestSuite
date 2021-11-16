@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Strip(20-node hex) with shell(quad8) constrained with rigid box is pulled off from 
+a rigid surface using sticky contact.
+Rigid box is prescribed z displacement of 4 at t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

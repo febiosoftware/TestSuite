@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Two box elements attached with shells are compressed against each other.
+Top face of top box prescribed z displacement of -1.2 in time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

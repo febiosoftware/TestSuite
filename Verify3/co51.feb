@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
- Problem Description:
-	Contact with top and bottom faces of shells.
-Main Features:
-	Sliding elastic contact using shell_bottom_secondary
-Secondary Features:
-	Prescribed shell displacements
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 6754
-Results:
-	Steps Completed: 106
-	Equilibrium Iterations: 419
-	Right Hand Evaluations: 543
-	Siffness Reformations: 419
-	Other:
-		The Z-displacements of the rectangular shell range
-		from -0.407 to 0.405
-Comments:
-	There are two contact interfaces, one for each cylindrical shell
-	contacting the rectangular shell.  The contact area on the
-	recangular shell was split to allow display of contact
-	pressure and contact gap on each half correctly.
+Contact with top and bottom faces of shells.
+
+There are two contact interfaces, one for each cylindrical shell
+contacting the rectangular shell.  The contact area on the
+recangular shell was split to allow display of contact
+pressure and contact gap on each half correctly.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

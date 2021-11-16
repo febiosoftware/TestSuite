@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A cylinder is attached to a rigid disk with a prescribed x-rotation and z-translation,
+each of 1 unit at time t=1.
+
+Note that rigid contact was not necessary because the cylinder and the disk together were
+all one mesh.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

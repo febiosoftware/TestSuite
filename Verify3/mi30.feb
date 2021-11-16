@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Strip biaxial stretching of an elastic sheet with a circular hole.  An initially
+square sheet with a circular hole has it's right face stretched in the x-direction
+508 units.  The left face is constrained in the x-direction and the upper and
+lower faces are constrained in the y-direction.  Quarter symmetry is used.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

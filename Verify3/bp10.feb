@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A poroelastic cylindrical section with quarter symmetry is subject to a pressure
-	that varies between 0 at time t=0 to 0.5 at time t=1.
-Main Features:
-	Poroelasticity
-	Pressure
-Secondary Features:
-	
-Materials:
-	poroelastic HolmesMow
-	HolmesMow
-Degrees of Freedom: 1032
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 36
-	Right Hand Evaluations: 47
-	Siffness Reformations: 36
-	Other:
-		The cylinder has a maximum Effective strain of 1.58 at time t=1.
-Comments:
-	This problem can be compared to ma11, which does not use a poroelastic material.
+A poroelastic cylindrical section with quarter symmetry is subject to a pressure
+that varies between 0 at time t=0 to 0.5 at time t=1.
+
+This problem can be compared to ma11, which does not use a poroelastic material.
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

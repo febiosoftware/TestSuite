@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Holzapfel-Gasser-Ogden material model used to analyze a circumferential
-	iliac adventitial strip subjected to prescribed loading from 0 to 2 N.
-Main Features:
-	Holzapfel-Gasser-Ogden material
-Secondary Features:
-	Lagrange augmentation for enforcing incompressibility
-Materials:
-	Holzapfel-Gasser-Ogden
-	rigid
-Degrees of Freedom: 12286
-Units:	N-mm-s
-Results:
-	Steps Completed: 49
-	Equilibrium Iterations: 261
-	Right Hand Evaluations: 366
-	Siffness Reformations: 261
-	Other:
-Comments:
-	Gasser et al. J.R. Soc. Interface (20006) 3, 15-35
-	Figs. 11 and 12
+Holzapfel-Gasser-Ogden material model used to analyze a circumferential
+iliac adventitial strip subjected to prescribed loading from 0 to 2 N.
+
+Gasser et al. J.R. Soc. Interface (20006) 3, 15-35
+Figs. 11 and 12
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

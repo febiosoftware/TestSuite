@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A stationary point at node 9 is connected by a spring to node 1 on the left face of the element.
+The nodes on the right face of the element have a prescribed displacement of 1 unit in time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

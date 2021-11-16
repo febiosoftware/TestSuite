@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Two rigid bars at 90 degrees to each other are connected by a rigid joint where they
+cross and by rigid contact to a Neo-Hookean material at their free ends.  The bar
+lying in the y-direction is also connected by a rigid joint to a disk that is
+constrained in x,y,z.  The bar lying in the x-direction has a prescribed displacement
+of 0.1 at time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

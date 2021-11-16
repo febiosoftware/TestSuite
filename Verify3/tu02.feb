@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 20x5x5 element block is constrained in x,y,z on the left end nodes.  The right
+end nodes are attached to a rigid body that has an x-rotation of 3.14 radians at
+time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

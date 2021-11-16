@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A 10x10x1 block of BFSI Newtonian fluid material undergoing Couette
-	flow, with up to
-	1 units of fluid viscous traction in xdirection in 50 seconds 
-Main Features:
-        Prescribed fluid viscous traction
-        BFSI
-Secondary Features:
-	Newton method
-Materials:
-	Newtonian Fluid
-Degrees of Freedom: 580
-Results:
-	Steps Completed: 250
-	Equilibrium Iterations: 250
-	Right Hand Evaluations: 500
-	Stiffness Reformations: 250
-	Other:
-		The total nodal fluid velocity at node 232 at t=50 is 4.99997.
-Comments:
-       
+A 10x10x1 block of BFSI Newtonian fluid material undergoing Couette
+flow, with up to
+1 units of fluid viscous traction in xdirection in 50 seconds
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

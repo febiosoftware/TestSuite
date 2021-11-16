@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A tetrahedral element has a prescribed displacement of -0.5 units in the z-direction
+on the top node.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

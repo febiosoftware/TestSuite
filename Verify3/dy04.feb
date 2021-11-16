@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Two balls have a constant body force of 1 unit in the z-direction and bounce off of
+each other and a rigid horizontal wall.  Note that the rigid body horizontal wall is
+only there to visulalize the rigid-wall contact.
+
+The penalty values of 10000 were necessary in order to reduce the penetration.  Facet to
+fact contact converges somewhat faster than sliding_with_gaps, but the penetration is
+is better with the latter.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

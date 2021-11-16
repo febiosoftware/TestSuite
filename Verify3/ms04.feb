@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Multi-step and dynamic analysis.  A spring attaches two rigid plates.  The upper
+plate is fixed and the lower plate is allowed to fall with gravity from time t=0
+to t=1.  It then detaches from the spring, which is allowed to recoil dynamically.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Globals>

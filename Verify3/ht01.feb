@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Heat transfer problem as described in tutorial 7 in the PreView user's manual.
+-->
 <febio_spec version="3.0">
 	<Module type="heat"/>
 	<Control>

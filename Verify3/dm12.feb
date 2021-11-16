@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Damage response of a solid mixture consisting of a neo-Hookean ground
+matrix and a single fiber bundle oriented along the z-axis.  Only the
+fiber can undergo damage.  A cube modeled with a single element is
+subjected to a prescribed tensile deformation along z, with
+traction-free surfaces along x and y.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

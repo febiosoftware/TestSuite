@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Flow in rectangular channel with flow expansion towards
+outlet. Prescribes pressure and constrains normal flow, with
+back and tan stabilization
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A block with a prescribed z-displacement of -1.5 units from time t=0 to t=7.5 slides
+with friction along a rigid inclined plane.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

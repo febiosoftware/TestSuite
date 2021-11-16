@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Flow in rectangular channel with a block. Reaches steady
+state due to backward euler. Fluid normal velocity load on inlet, 0 ef outlet.
+
+Similar examples seen in results of
+Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):021001-021001-17.
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

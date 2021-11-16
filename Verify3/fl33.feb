@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Flow through a quarter torus. Prescribed pressure at inlet, 0
+pressure outlet, with normal flow constraint and tan/back
+stabilization. Dynamic.
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

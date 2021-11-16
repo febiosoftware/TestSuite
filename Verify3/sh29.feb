@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Shell(quad8) constrained on edges is compressed by rigid shell(quad8).
+Rigid shell is prescribed z displacement of -2 at t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

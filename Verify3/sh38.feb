@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Shell strip with continuous fiber distribution of 3D von-Mises distribution where distribution is 
+heavily along x direction.
+Left edge with rigid constaint is fixed and right edge with rigid constraint is 
+prescribed x displacement of 2 at t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

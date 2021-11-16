@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Two incongruent cylindrical sections are compressed against each other in plain strain.
+
+The penetration is actually a bit better using Augmented Lagrangian, but this
+demonstrates that a reasonable penetration can be obtained with trial-and-error
+selection of the contact penalty parameter.  The other contact methods either
+error terminated or had too significant penetration.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

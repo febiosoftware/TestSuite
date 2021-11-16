@@ -1,31 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Free surface wave problem with body load and inviscid
-	fluid. Rhoi of 1. Newtonian fluid. Moving boundary
-Main Features:
-        moving boundary
-        free surface
-	prescribed/fixed ef
-	body load
-	nonzero gen alpha
-Secondary Features:
-	Broyden
-	No diverge ref
-	No ref each step
-Materials:
-        Newtonian Fluid
-Degrees of Freedom: 4206
-Results:
-	Steps Completed: 161
-	Equilibrium Iterations: 1022
-	Right Hand Evaluations: 1197
-	Stiffness Reformations: 18
-	Other:
-		The ydisplacement is 0.843581 at time 286.2
-		for node 810
-Comments:
-        Problem from Hughes et al. CMAME, 1981.
+Free surface wave problem with body load and inviscid
+fluid. Rhoi of 1. Newtonian fluid. Moving boundary
+
+Problem from Hughes et al. CMAME, 1981.
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

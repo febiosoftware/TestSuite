@@ -1,34 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	2D tube problem where solid arc compresses and then
-	slides. The Arc is rigid, otherwise Newtonian fluid,
-	neoHookean solid. Arc uses tet10
-Main Features:
-        Sliding contact
-        FSI traction
-	prescribed/fixed ef
-	Tet10
-	rigid body
-Secondary Features:
-	Broyden
-	No diverge ref
-	No ref each step
-	backflow stab
-	tangential stab
-Materials:
-        Newtonian Fluid
-Degrees of Freedom: 11210
-Results:
-	Steps Completed: 102
-	Equilibrium Iterations: 1651
-	Right Hand Evaluations: 3212
-	Stiffness Reformations: 64
-	Other:
-		The total nodal fluid velocity is 0.039544 at time 1
-		for node 1954
-Comments:
-   
+2D tube problem where solid arc compresses and then
+slides. The Arc is rigid, otherwise Newtonian fluid,
+neoHookean solid. Arc uses tet10
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

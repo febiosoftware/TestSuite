@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 10x10x1 element plate has nodes 1 and 2 constrained in x,y,z.  All other nodes are constrained
+in the z-direction.  Nodes 241 and 242 have a prescribed y-displacement of 1 unit at t=1.  The
+x-displacement of nodes 21 and 22 is the same as the y-displacement of nodes 241 and 242.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A displacement of 1 unit in the x-direction is prescribed for node 8.  Nodes 5, 6 and 7
+(the other nodes on the right end of the element) are constrained to have the same x component
+as element 8.
+
+Similar to problem mi01, but using alternative form of linear constraints.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Active isotropic contraction of a cube whose passive (elastic) component
-	is Mooney-Rivlin (isotropic).
-Main Features:
-	Prescribed isotropic active contraction.
-Secondary Features:
-	Uncoupled solid mixture
-Materials:
-	uncoupled prescribed isotropic active contraction
-	Mooney-Rivlin
-Degrees of Freedom: 12
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 20
-	Right Hand Evaluations: 30
-	Siffness Reformations: 20
-	Other:
-		The cube dimensions do not change at time t = 1.
-Comments:
-	Since the material is incompressible and isotropic, an
-	isotropic contraction does not cause any deformation.
+Active isotropic contraction of a cube whose passive (elastic) component
+is Mooney-Rivlin (isotropic).
+
+Since the material is incompressible and isotropic, an
+isotropic contraction does not cause any deformation.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

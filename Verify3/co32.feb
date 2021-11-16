@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Two blocks undergo confined compression with non-conforming mesh contact
+between them.  The bottom block is defined with a variable thickness mesh.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

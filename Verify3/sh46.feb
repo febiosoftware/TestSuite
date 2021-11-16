@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Two rigid shell plates attached by shell strips are connected with rigid joint and stretched 
+along x direction.
+Rigid plates have constraints of rigid joint.
+Left end of left strip is fixed, and right end of right strip is prescribed x displacement of 1 at t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

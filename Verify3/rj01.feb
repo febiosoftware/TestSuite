@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A fourbar linkage producing Cardanic motion in a static analysis.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 10x10 element shell sheet is constrained in x,y,z along the edges and
+has a body force of 0 units at time t=0 to 1 unit at time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

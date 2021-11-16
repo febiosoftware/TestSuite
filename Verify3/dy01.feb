@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+An element has a body force of 0 units at t=0 and 1 unit at t=1 applied in the z-direction.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 2-dimensional billet block is compressed between two rigid bodies in plain strain
+which each have a prescribed z-displacement (compressing the block) of 0.6 units
+from time t=0 to t=1.
+
+Gets better convergence and less contact penetration using augmented Lagrangian.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

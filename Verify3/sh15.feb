@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Shell verification problem.  Compare to analytical solution for cantilever beam.
+A 10x1 tri6 element shell sheet is fixed at one end and
+loaded at the opposite end using a downward force of
+0.001. The exact solution for the tip deflection is 0.004.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

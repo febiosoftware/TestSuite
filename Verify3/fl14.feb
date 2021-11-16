@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Rectangular channel where a normal fluid velocity load is
+prescribed at the inlet (plug). No pressure outlet, steady
+state so fully developed flow
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

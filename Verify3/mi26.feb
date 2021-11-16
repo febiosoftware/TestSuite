@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Mooney-Rivlin gradient material problem.  c1 varies from a value of 2 on the left
+hand side of a 10x10x10 block to a value of 10 on the right hand side.  A pressure
+load curve is applied to the right face of the block with a value of 0 at time t=0
+to a value of 2 at time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

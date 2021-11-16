@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A Rigid ball with a prescribed displacement of -5.0 units in the z-direction
+pushes down and slides on a cantilever board.
+
+Convergence and contact penetration are better without using augmented Lagrangian.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

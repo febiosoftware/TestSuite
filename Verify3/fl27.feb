@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Poiseuille flow through circular pipe. Pressure prescribed at
+inlet, 0 at outlet. Fully developed flow form, 1 step SS
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

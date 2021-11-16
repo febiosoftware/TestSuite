@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
- 
-Problem Description:
 Onedimensional osmotic loading of an inhomogeneous block consisting of two multiphasic domains containing different solutes.  There are three solute species in this problem: A neutral solute in one of the multiphasic mixtures, and two monovalent counterions in the other (charged) multiphasic mixture.  Solutes cannot transport from one material to the other, since there are no shared solute species. Therefore, the interface between the two materials is a soluteimpermeant barrier, though it is permeable to the solvent.  An osmotic load is prescribed on the neutral multiphasic material, by increasing the environment (bath) neutral solute concentration.  This osmotic load produces a transient response dominated by the diffusion of neutral solute into the neutral multiphasic region, and eventual efflux of solvent from both multiphasic regions.  Since the charged multiphasic material is bounded by ionimpermeant boundaries its electrical potential must be electrically grounded to prevent random fluctuations.  This grounding is done at the rigid impermeable bottom boundary (z=0) by prescribing the anion effective concentrations to be equal to its initial value.  This method for electric grounding is equivalent to prescribing zero electric potential on the outside of the charged mixture, but the electric potential inside depends on the fixed charge density and is not necessarily zero.
-
-Main Features:
-	Combining charged and neutral multiphasic materials in the same model
-Secondary Features:
-	
-Materials:
-	Multiphasic
-	NeoHookean
-	Constant Isotropic Permeability
-	Constant Osmotic Coefficient
-	Constant Isotropic Diffusivity
-	Constant Solubility
-Degrees of Freedom: 576
-Results:
-	Steps Completed: 49
-	Equilibrium Iterations: 142
-	Right Hand Evaluations: 191
-	Siffness Reformations: 142
-	Other:
-		The peak electric potential is 7.37 at time t=1e4.
- 
-Comments:
 -->
 <febio_spec version="3.0">
 	<Module type="multiphasic"/>

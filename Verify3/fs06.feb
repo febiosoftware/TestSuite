@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Blood flow through wedge with 0 pressure outlet, pulsatile
-	inlet. Newtonian fluid with neoHookean
-Main Features:
-        Normal fluid vel
-        Fixed/Prescribed ef
-	FSI traction
-	Solid symmetry
-Secondary Features:
-        Backflow stab
-        tangential stab
-	Broyden
-Materials:
-        Newtonian Fluid
-        neoHookean
-Degrees of Freedom: 7115
-Results:
-	Steps Completed: 500
-	Equilibrium Iterations: 2332
-	Right Hand Evaluations: 3438
-	Stiffness Reformations: 501
-	Other:
-		The znodal fluid velocity is 0.744621 at time 0.25
-		for node 999
-Comments:
+Blood flow through wedge with 0 pressure outlet, pulsatile
+inlet. Newtonian fluid with neoHookean
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

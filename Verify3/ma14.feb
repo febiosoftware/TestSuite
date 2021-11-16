@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A 4x4x20 element beam has a traction force of -0.01 units in the
-	z-direction applied to its right end.
-Main Features:
-	Traction force
-Secondary Features:
-	
-Materials:
-	Arruda-Boyce
-Degrees of Freedom: 1500
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 60
-	Right Hand Evaluations: 80
-	Siffness Reformations: 60
-	Other:
-		The maximum effective stress is 0.169 units at time t=1.
-Comments:
-	
+A 4x4x20 element beam has a traction force of -0.01 units in the
+z-direction applied to its right end.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

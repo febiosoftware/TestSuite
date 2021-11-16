@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A cylinder is constrained in x,y,z on its top end and attached  by rigid
+contact on its bottom end to a rigid spherical shell with z-dislacement of
+-1 units at time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

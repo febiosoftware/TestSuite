@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Geometrically onlinear.analysis of a cantilever beam.  A 269.35 N load is applied
+in the y-direction to a 10 m beam (100 mm thick x 150 mm high).  Results are
+consistent with the analytical solution.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

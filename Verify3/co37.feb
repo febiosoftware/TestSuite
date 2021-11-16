@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A semi-spherical rigid body in contact with a block of Ogden material is displaced
+0.2 units in the z-direction (into the block) at time t=1.
+
+This problem was changed to quarter symmetry to eliminate inconsistent convergence.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

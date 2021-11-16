@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 10x2 element shell cantilever has a z-force of 0 units at time t=0 to 1e-5 units
+at t=1 applied to the nodes of the free end.
+
+All nodes needed to be constrained in y and Ry in order for
+the termination stats to be consistent with the Pardiso solver.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Tube where a rotational velocity is prescribed on inner and
+outer walls. This is a couette flow problem.
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 10x10x1 block of Newtonian fluid material undergoing Couette
+flow, with up to
+345 units of fluid viscous traction in x-direction in 5 seconds (logarithmic
+intervals every 0.2 seconds). Leads to same velocity as other
+Couette flow problems
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

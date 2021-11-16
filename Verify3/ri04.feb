@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A cylinder is confined between two rigid disks; the top one constrained in x,y,z, and
+the bottom one connected by a rigid bar and rigid joints to a vertical rotating disk
+with prescribed rotation of 6.2 radians in time t=62.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

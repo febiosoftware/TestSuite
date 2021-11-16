@@ -2,10 +2,6 @@
 <!--
 This is an example file that illustrates how to use a math function to prescribe 
 a spatially non-uniform pressure load on the surface of a cube.
-#time steps = 10
-#eq iters   = 20
-#rhs eval   = 30
-#stiffness  = 10
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

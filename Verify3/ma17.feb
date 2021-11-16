@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A biphasic quarter symmetry cylinder of 300 elements is stretched to 3% strain
-	along the z direction (fiber direction) in 6 seconds and then held at that strain 
-	to 450 seconds.  A 0 fluid pressure constraint is applied to the curved surface of the cylinder. 
-	The solid component of the biphasic material is represented by the PRLig material, 
-	and the large lateral contraction caused by the Poisson's Ratio causes a
-	large pressure buildup and fluid to exude outward laterally from the cylinder.
-	This results in stress relaxation, which is evident in a large peak stress which relaxes to 
-	a smaller equilibrium stress. 
-	
-	
-Main Features:
-	Stress-relaxation caused by lateral contraction due to a large Poisson's ratio
-Secondary Features:
-	Non-uniform element thickness in lateral directions of the cylinder.
-Materials:
-	PRLig
-	Biphasic
-Degrees of Freedom: 2131
-Results:
-	Steps Completed: 1482
-	Equilibrium Iterations: 3172
-	Right Hand Evaluations: 4655
-	Siffness Reformations: 1482
-Comments:
-	Max z-stress = 9.75319 at t = 5.8
+A biphasic quarter symmetry cylinder of 300 elements is stretched to 3% strain
+along the z direction (fiber direction) in 6 seconds and then held at that strain 
+to 450 seconds.  A 0 fluid pressure constraint is applied to the curved surface of the cylinder. 
+The solid component of the biphasic material is represented by the PRLig material, 
+and the large lateral contraction caused by the Poisson's Ratio causes a
+large pressure buildup and fluid to exude outward laterally from the cylinder.
+This results in stress relaxation, which is evident in a large peak stress which relaxes to 
+a smaller equilibrium stress. 
+
+
+
+Max z-stress = 9.75319 at t = 5.8
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

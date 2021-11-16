@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+An element with prescribed displacement of -0.5 units in the z-direction compresses
+a 5x5x4 element block with sliding contact.
+
+Convergence and contact penetration are improved by setting auto="on" in the contact penalty.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

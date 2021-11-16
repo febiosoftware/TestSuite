@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A disk composed of non-uniform triangular shell elements is deflected at the
+center by a rigid cylinder with a prescribed z-displacement of 0.005 units
+at time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

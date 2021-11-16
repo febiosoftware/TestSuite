@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Cantilever shell attached with rigid box is applied torque along y direction.
+Torque on rigd body is prescribed along y of 1e-5 at t=1.
+Front and back face of left edge of shell is fixed.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Multi-step analysis.  A cantilever beam has a force in the z-direction of 0 units at
+time t=0 to 1 unit at time t=1 applied to the top nodes of it's free end.  Dynamic
+analysis is then applied to time t=2.5.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Globals>

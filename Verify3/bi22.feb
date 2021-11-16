@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
- This file was created with FEBio Studio version 1.0.0 
+This file was created with FEBio Studio version 1.0.0 
+
+
+
+BFSI one-dimensional isothermal dilatational wave propagation problem. Transient, but no viscous, friction effects, no intertia. Prescribed fluid dilatational disturbance, creating two solid disturbances. Energy conserved with rhoi=1. Multistep used to prescribe correct boundary conditions.
+
+Similar examples seen in results of
+   Shim JJ, Maas SA, Weiss JA, Ateshian GA. (2021) J Biomech Eng, In Press.
 -->
 
 <!--

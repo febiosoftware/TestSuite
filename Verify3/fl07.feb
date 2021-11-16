@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Bottom half of a rectangular channel of Newtonian fluid material undergoing
+poiseuille flow. It is tilted by 30 degrees and normal flow
+constraint on inlet and outlet
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

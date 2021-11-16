@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+24x24 biased lid driven cavity box problem RE=400. x-vel prescribed on the
+lid of the box to create vortex within. Uses must points to
+shorten problem to reach steady state. Tet10 elements
+
+Similar examples seen in results of
+Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):021001-021001-17.
+-->
 <febio_spec version="3.0">
 	<Module type="fluid"/>
 	<Control>

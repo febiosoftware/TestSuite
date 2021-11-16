@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 20x4 element shell sheet is constrained in x,y,z on the left end and attached
+by rigid contact to a rigid body with a prescribed rotation of 1 radian in time t=1.
+
+The shell-rigid interface connects nodal positions and
+directors, so that the shell edge rotates with the rigid
+body
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

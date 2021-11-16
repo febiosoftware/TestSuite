@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 2-D quarter billet with 1/4th symmetrical representation is compressed by a rigid bar
+with prescribed y-displacement of -0.3 units in time t=1.
+
+This problem is similar to co28 but with quater symmetry.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

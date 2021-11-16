@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 2-dimensional billet block is compressed between two rigid bodies which each have a
+prescribed z-displacement (compressing the block) of 0.6 units from time t=0 to t=1.
+
+This problem is similiar to co22 but with Ogden material and 100 time steps.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Interstitial growth of engineered cartilage using chemical reactions that convert soluble sulfate ion
+into solid-bound charged chondroitin sulfate (CS), based on the availability of glucose which is needed
+for CS synthesis as well as cell metabolism. The tissue construct consists of a scaffold (modeled as a
+solid porous matrix), cells (not modeled explicitly), the CS solid-bound molecule, and an interstitial
+fluid containing Na+, Cl-, Mg++ and SO4-.  Two chemical reactions occur in this analysis:
+
+Glucose Consumption:
+[cells] + [glucose] -> [cells] + [waste products]
+
+Chondroitin sulfate synthesis:
+[cells] + [glucose] + [sulfate] -> [cells] + [chondroitin sulfate]
+
+Cells and waste products are not modeled explicitly.  The [glucose] is modeled as a solute named "Glc",
+the [sulfate] is modeled as a soluted named "SO4", and the [chondroitin sulfate] is modeled as a
+solid-bound molecule named "CS".  The second chemical reaction explicitly enforces charge conservation
+between reactants and products, exchanging two negative charges between SO4 and CS.  The initial CS
+concentration is zero.  The analysis domain is a cylindrical disk, modeled as a wedge to take advantage
+of axisymmetry.  Fixed glucose, NaCl and MgSO4 concentrations are prescribed on the top and lateral
+boundaries, whereas the bottom boundary is impermeable to all solutes and solvent.  Over time, CS is
+deposited throughout the disk, increasing its fixed charge density and causing it to swell due to the
+resulting Donnan osmotic pressure.  Since CS deposition is dependent on the availability of Glc, and
+since Glc concentration is non-uniform due to competitive diffusion-consumption effects, the CS
+deposition and construct swelling also become inhomogeneous.
+-->
 <febio_spec version="3.0">
 	<Module type="multiphasic"/>
 	<Control>

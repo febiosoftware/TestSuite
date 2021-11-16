@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Two rigid plates have a rigid joint at their center.  Each plate has a 5 element block
+of neo-Hookean material attached by rigid contact to the top of the plate.  The free
+end block on the left is constrained in x,yz.  The free end of the block on the right
+has a prescribed x-displacement of 1 unit at time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

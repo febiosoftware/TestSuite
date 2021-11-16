@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Two 5 x 5 element blocks are compressed against each other with contact
+between them.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

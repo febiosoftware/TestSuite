@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A cantilever beam has a nodal force in the z-direction of 0 units at time t=0 and
+-0.00001 units at time t=1 applied to the right end nodes.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

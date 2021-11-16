@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A disk three elements thick with it's edge nodes constrained in x,y,z, has a
+sinusoidal pressure applied to time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

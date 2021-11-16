@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A cube consisting of a single element is modeled with a
+continuous fiber distribution with a 3D von-Mises distribution
+density. The fiber dispersion parameter b is set to a large
+value approximating infinity, so that the distribution is
+nearly equivalent to a single fiber bundle oriented along the
+z-direction. An isotropic strain is prescribed on the
+cube. For these choices, the resulting stress response along z
+may be compared to an analytical solution.
+
+The solution for the z-stress as b goes to infinity is
+190.016. This solution can be obtained by replacing the
+continuous fiber distribution material with a fiber-exp-pow material
+having identical fiber properties.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

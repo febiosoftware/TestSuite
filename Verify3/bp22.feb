@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	1D biphasic contact between two bricks under load control (creep), using a rigid interface.
-Main Features:
-	Biphasic contact under load control using a rigid interface
-	Permeability
-Secondary Features:
-	Must point curve
-Materials:
-	Biphasic
-	neoHookean
-Degrees of Freedom: 325
-Results:
-	Steps Completed: 65
-	Equilibrium Iterations: 184
-	Right Hand Evaluations: 249
-	Siffness Reformations: 184
-	Other:
-		The creep displacement at t=1e4 is 0.3593.
-Comments:
-	
+1D biphasic contact between two bricks under load control (creep), using a rigid interface.
 -->
 <febio_spec version="3.0">
 	<Module type="biphasic"/>

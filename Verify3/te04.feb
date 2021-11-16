@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Cook's membrane problem for unstructured nodally integrated tet mesh.  The left
+face is constrained and a traction force of 50 kPa is applied in the y-direction
+to the right face.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

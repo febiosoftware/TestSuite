@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A strip is pulled off of a rigid surface using sticky contact.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

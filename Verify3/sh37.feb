@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Shell(quad8) with continuous fiber distribution of 3D von-Mises distribution where the distribution
+is heavily along z direction.
+Back face is fixed and front face is prescribed z displaacement of 0.005 at t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

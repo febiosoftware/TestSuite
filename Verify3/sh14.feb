@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Shell verification problem.  Compare to analytical solution by Batoz.
+A 4x8 quad8 element shell sheet is twisted by constraining one end and applying
+equal but opposite forces of 1 N to the corners of the non-constrained end.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

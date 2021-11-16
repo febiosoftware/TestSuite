@@ -1,30 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Sinusoidal deformational loading of a cube from tension to
-	compression. The material is reactive viscoelastic, with the
-	strong bonds (elastic response) given by a Holmes-Mow
-	material, and the weak bonds (viscous response) given by a
-	neo-Hookean material.  The bond relaxation is strain-dependent
-	exponential, with type II bond kinetics.
-Main Features:
-	Reactive viscoelastic material.
-Secondary Features:
-	
-Materials:
-	reactive viscoelastic
-	Holmes-Mow
-	neo-Hookean
-	relaxation-exp-distortion
-Degrees of Freedom: 12
-Results:
-	Steps Completed: 500
-	Equilibrium Iterations: 1365
-	Right Hand Evaluations: 1865
-	Siffness Reformations: 1365
-	Other:
-Comments:
-	
+Sinusoidal deformational loading of a cube from tension to
+compression. The material is reactive viscoelastic, with the
+strong bonds (elastic response) given by a Holmes-Mow
+material, and the weak bonds (viscous response) given by a
+neo-Hookean material.  The bond relaxation is strain-dependent
+exponential, with type II bond kinetics.
 -->
 <febio_spec version="3.0">
 	<Module type="solid"/>

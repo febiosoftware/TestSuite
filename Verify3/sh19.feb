@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Box attached with shell is compressed against a multi-elements
+block attached with shell.
+Top face of box is prescribed z dispacement of -0.7 in time t=1.
+Top shell is 100 times stiffer to converge.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

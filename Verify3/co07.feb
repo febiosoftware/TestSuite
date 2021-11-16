@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A stiff section of a cylinder has a prescribed displacement in the z-direction 0f -0.35 units
+from time t=0 to t=1 and then a displacement of 3 units in the x-direction from time t=1 to
+t=4.  It presses down then slides along a softer block.
+
+This problem demonstrated the sliding2 symmetric contact with augmented Lagrangian turned off.
+It did not run well without using full-Newton (setting max_ups to 0).  Even though full-Newton
+converged with fewer iterations than BFGS, it took more than four times as long to do so.
+However, with these setting, this contact method did better than the other three.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>

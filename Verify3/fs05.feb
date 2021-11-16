@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	Blood flow through wedge with resistance and pressure offset at outlet, pulsatile
-	inlet. Newtonian fluid with MooneyRivlin solid
-Main Features:
-        Normal fluid vel
-        Fixed/Prescribed ef
-	Resistance BC with offset pressure
-	FSI traction
-	Solid symmetry
-Secondary Features:
-        Backflow stab
-        tangential stab
-	Broyden
-	No diverge ref
-	No ref each step
-Materials:
-        Newtonian Fluid
-        Mooney Rivlin
-Degrees of Freedom: 7115
-Results:
-	Steps Completed: 500
-	Equilibrium Iterations: 4080
-	Right Hand Evaluations: 6328
-	Stiffness Reformations: 144
-	Other:
-		The znodal fluid velocity is 0.693655 at time 0.25
-		for node 999
-Comments:
-        
+Blood flow through wedge with resistance and pressure offset at outlet, pulsatile
+inlet. Newtonian fluid with MooneyRivlin solid
 -->
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>

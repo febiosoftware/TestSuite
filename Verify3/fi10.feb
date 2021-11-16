@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 10x10x10 block of Trans-isotropic Mooney-Rivlin material has a user defined
+fiber direction.  The fibers range from horizontal in the x-direction at x = -0.5
+to nearly vertical at x = 0.5.  The block undergoes an expansion of 0.2 units in
+the z-direction at time t=1.
+-->
 <febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>
