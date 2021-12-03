@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
+Optimization problem described on the forums.  Confined compression relaxation.
+-->
+<!--
 Problem Description:
 	This is the optimization file that runs oi02.feb as an input file.  See that file for more details.
 Main Features:

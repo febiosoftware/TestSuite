@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <!--
+Optimization problem.  A cylindrical tube attached to a rigid body is stretched 1 unit.
+-->
+<!--
 Problem Description:
 	This is the optimization file that runs oi01.feb as an input file.  See that file for more details.
 Main Features:
