@@ -18,12 +18,6 @@
 			<qnmethod>BFGS</qnmethod>
 			<rhoi>-2</rhoi>
 		</solver>
-		<time_stepper>
-			<dtmin>0.01</dtmin>
-			<dtmax>0.1</dtmax>
-			<max_retries>5</max_retries>
-			<opt_iter>10</opt_iter>
-		</time_stepper>
 	</Control>
 	<Globals>
 		<Constants>
