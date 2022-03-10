@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!--
+This is the optimization file that runs oi04.feb as an input file.
+It optimizes using a strain-stress curve. 
+-->
+<febio_optimize version="2.0">
+	<Options type="levmar">
+		<obj_tol>1e-4</obj_tol>
+		<f_diff_scale>1e-4</f_diff_scale>
+		<print_level>PRINT_VERBOSE</print_level>
+	</Options>
+	<Parameters>
+		<param name="fem.material('tissue').elastic.c1">680,500,1000,500</param>
+		<param name="fem.material('tissue').bond.c1">3850,2000,5000,4000</param>
+		<param name="fem.material('tissue').relaxation.tau1.points.point[1]">0.05,0.01,0.5,0.05</param>
+		<param name="fem.material('tissue').relaxation.tau1.points.point[2]">0.2,0.01,0.5,0.2</param>
+		<param name="fem.material('tissue').relaxation.tau2.points.point[0]">1200,1000,3000,1200</param>
+		<param name="fem.material('tissue').relaxation.tau2.points.point[1]">200,150,400,200</param>
+		<param name="fem.material('tissue').relaxation.tau2.points.point[2]">200,150,400,200</param>
+		<param name="fem.material('tissue').recruitment.cdf.points.point[1]">1,1.0,1.5,1</param>
+		<param name="fem.material('tissue').recruitment.cdf.points.point[2]">2,1.0,3.0,1</param>
+	</Parameters>
+	<Objective type="data-fit">
+		<fnc type="parameter">
+			<param name="fem.rigidbody('platen').Fz"/>
+		</fnc>
+		<data>
+		  <point>0, 0</point>
+		  <point>0.2, -114.412</point>
+		  <point>0.4, -212.893</point>
+		  <point>0.6, -313.354</point>
+		  <point>0.8, -415.16</point>
+		  <point>1, -517.922</point>
+		  <point>1.2, -621.505</point>
+		  <point>1.4, -725.862</point>
+		  <point>1.6, -830.981</point>
+		  <point>1.8, -936.864</point>
+		  <point>2, -1043.52</point>
+		  <point>2.2, -1150.96</point>
+		  <point>2.4, -1259.19</point>
+		  <point>2.44, -1280.74</point>
+		  <point>3.44, -1205.85</point>
+		  <point>8.24, -1034.02</point>
+		  <point>16.08, -909.813</point>
+		  <point>26.352, -820.249</point>
+		  <point>38.5696, -752.311</point>
+		  <point>52.3437, -698.632</point>
+		  <point>67.3629, -654.909</point>
+		  <point>83.3784, -618.465</point>
+		  <point>100.191, -587.532</point>
+		  <point>117.641, -560.893</point>
+		  <point>135.6, -537.674</point>
+		  <point>153.968, -517.231</point>
+		  <point>172.663, -499.075</point>
+		  <point>191.618, -482.829</point>
+		  <point>210.783, -468.196</point>
+		  <point>230.114, -454.94</point>
+		  <point>249.579, -442.867</point>
+		  <point>269.151, -431.823</point>
+		  <point>288.809, -421.675</point>
+		  <point>308.535, -412.317</point>
+		  <point>328.316, -403.657</point>
+		  <point>348.141, -395.618</point>
+		  <point>362.32, -390.22</point>
+		  <point>362.52, -529.839</point>
+		  <point>362.72, -670.076</point>
+		  <point>362.92, -813.709</point>
+		  <point>363.12, -962.221</point>
+		  <point>363.32, -1116.5</point>
+		  <point>363.52, -1277.12</point>
+		  <point>363.72, -1444.43</point>
+		  <point>363.92, -1618.7</point>
+		  <point>364.12, -1800.1</point>
+		  <point>364.32, -1988.76</point>
+		  <point>364.52, -2184.75</point>
+		  <point>364.66, -2323.83</point>
+		  <point>365.66, -2152.01</point>
+		  <point>370.46, -1809.44</point>
+		  <point>378.3, -1574.03</point>
+		  <point>388.572, -1407.95</point>
+		  <point>400.79, -1284.1</point>
+		  <point>414.564, -1187.83</point>
+		  <point>429.583, -1110.73</point>
+		  <point>445.598, -1047.57</point>
+		  <point>462.411, -994.926</point>
+		  <point>479.861, -950.412</point>
+		  <point>497.82, -912.322</point>
+		  <point>516.188, -879.397</point>
+		  <point>534.883, -850.68</point>
+		  <point>553.838, -825.435</point>
+		  <point>573.003, -803.084</point>
+		  <point>592.334, -783.167</point>
+		  <point>611.799, -765.315</point>
+		  <point>631.371, -749.227</point>
+		  <point>651.029, -734.655</point>
+		  <point>670.755, -721.397</point>
+		  <point>690.536, -709.282</point>
+		  <point>710.361, -698.166</point>
+		  <point>724.4, -690.845</point>
+		</data>
+	</Objective>
+</febio_optimize>
