@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<febio_spec version="2.5">
+<febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>
+		<analysis>STATIC</analysis>
 		<time_steps>20</time_steps>
 		<step_size>0.05</step_size>
-		<max_refs>15</max_refs>
-		<max_ups>10</max_ups>
-		<diverge_reform>1</diverge_reform>
-		<reform_each_time_step>1</reform_each_time_step>
-		<dtol>0.001</dtol>
-		<etol>0.01</etol>
-		<rtol>0</rtol>
-		<lstol>0.9</lstol>
-		<min_residual>1e-020</min_residual>
-		<qnmethod>0</qnmethod>
+		<solver>
+			<max_refs>15</max_refs>
+			<max_ups>10</max_ups>
+			<diverge_reform>1</diverge_reform>
+			<reform_each_time_step>1</reform_each_time_step>
+			<dtol>0.001</dtol>
+			<etol>0.01</etol>
+			<rtol>0</rtol>
+			<lstol>0.9</lstol>
+			<min_residual>1e-020</min_residual>
+			<qnmethod>0</qnmethod>
+		</solver>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax>0.05</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>100</opt_iter>
 		</time_stepper>
-		<analysis type="static"/>
 	</Control>
 	<Globals>
 		<Constants>
@@ -41,7 +43,7 @@
 			<m>30</m>
 		</material>
 	</Material>
-	<Geometry>
+	<Mesh>
 		<Nodes name="Object01">
 			<node id="1"> 1.0000000e+001, 1.0000000e+001, 1.0000000e+001</node>
 			<node id="2"> 5.7735027e-001, 5.7735027e-001, 5.7735027e-001</node>
@@ -2518,22 +2520,36 @@
 			<quad4 id="74">   320,   321,   326,   325</quad4>
 			<quad4 id="75">   321,    28,    27,   326</quad4>
 		</Surface>
-	</Geometry>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part1" mat="Material1"/>
+	</MeshDomains>
 	<Boundary>
-		<fix bc="x" node_set="FixedDisplacement1"/>
-		<fix bc="y" node_set="FixedDisplacement2"/>
-		<fix bc="z" node_set="FixedDisplacement3"/>
-		<fix bc="x,y,z" node_set="FixedDisplacement4"/>
+		<bc type="fix" node_set="FixedDisplacement1">
+			<dofs>x</dofs>
+		</bc>
+		<bc type="fix" node_set="FixedDisplacement2">
+			<dofs>y</dofs>
+		</bc>
+		<bc type="fix" node_set="FixedDisplacement3">
+			<dofs>z</dofs>
+		</bc>
+		<bc type="fix" node_set="FixedDisplacement4">
+			<dofs>x,y,z</dofs>
+		</bc>
 		<bc type="normal displacement" surface="PressureLoad1">
 			<scale lc="1">0.3</scale>
 			<surface_hint>1</surface_hint>
 		</bc>
 	</Boundary>
 	<LoadData>
-		<loadcurve id="1" type="smooth">
-			<point>0,0</point>
-			<point>1,1</point>
-		</loadcurve>
+		<load_controller id="1" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<points>
+				<point>0,0</point>
+				<point>1,1</point>
+			</points>
+		</load_controller>
 	</LoadData>
 	<Output>
 		<plotfile type="febio">
