@@ -51,15 +51,15 @@ cf01.feb only by the choice of fiber integration scheme.
 	<Material>
 		<material id="1" name="Material" type="solid mixture">
 			<density>1</density>
-			<mat_axis type="vector">
-				<a>0,0,1</a>
-				<d>1,0,0</d>
-			</mat_axis>
 			<solid type="neo-Hookean">
 				<E>1</E>
 				<v>0.3</v>
 			</solid>
 			<solid type="continuous fiber distribution">
+				<mat_axis type="vector">
+					<a>0,0,1</a>
+					<d>1,0,0</d>
+				</mat_axis>
 				<fibers type="fiber-exp-pow">
 					<alpha>2</alpha>
 					<beta>2</beta>
