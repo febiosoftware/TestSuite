@@ -42,15 +42,15 @@ prescribed x displacement of 2 at t=1.
 	<Material>
 		<material id="1" name="mat1" type="solid mixture">
 			<density>1</density>
-			<mat_axis type="vector">
-				<a>1,0,0</a>
-				<d>0,1,0</d>
-			</mat_axis>
 			<solid type="neo-Hookean">
 				<E>1</E>
 				<v>0.3</v>
 			</solid>
 			<solid type="continuous fiber distribution">
+				<mat_axis type="vector">
+					<a>1,0,0</a>
+					<d>0,1,0</d>
+				</mat_axis>
 				<fibers type="fiber-exp-pow">
 					<alpha>20</alpha>
 					<beta>2</beta>
