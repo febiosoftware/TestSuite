@@ -35,7 +35,7 @@
 				<c3>2.4</c3>
 				<c4>30.6</c4>
 				<c5>323</c5>
-				<lambda>1.055</lambda>
+				<lam_max>1.055</lam_max>
 				<fiber type="local">1,2</fiber>
 				<k>100</k>
 			</elastic>
