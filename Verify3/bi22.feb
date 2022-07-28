@@ -18108,7 +18108,7 @@ Comments:
 	<Loads>
 		<surface_load name="FluidNormalVelocity01" type="fluid normal velocity" surface="FluidNormalVelocity01">
 			<velocity lc="1">-0.001</velocity>
-			<prescribe_nodal_velocities>0</prescribe_nodal_velocities>
+			<prescribe_nodal_velocities>1</prescribe_nodal_velocities>
 			<parabolic>0</parabolic>
 			<prescribe_rim_pressure>0</prescribe_rim_pressure>
 		</surface_load>
