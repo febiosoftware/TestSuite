@@ -1829,10 +1829,8 @@
 		</bc>
 	</Boundary>
 	<Loads>
-		<body_load type="const">
-			<x lc="3">0</x>
-			<y lc="4">1</y>
-			<z lc="5">0</z>
+		<body_load type="fluid body force">
+			<force lc="3">0,1,0</force>
 		</body_load>
 	</Loads>
 	<Constraints>
@@ -1869,20 +1867,6 @@
 			</points>
 		</load_controller>
 		<load_controller id="3" type="loadcurve">
-			<interpolate>SMOOTH</interpolate>
-			<points>
-				<point>0,0</point>
-				<point>1,1</point>
-			</points>
-		</load_controller>
-		<load_controller id="4" type="loadcurve">
-			<interpolate>SMOOTH</interpolate>
-			<points>
-				<point>0,0</point>
-				<point>1,1</point>
-			</points>
-		</load_controller>
-		<load_controller id="5" type="loadcurve">
 			<interpolate>SMOOTH</interpolate>
 			<points>
 				<point>0,0</point>

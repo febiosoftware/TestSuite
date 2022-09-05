@@ -2,7 +2,6 @@
 <!--
 BFSI 1D flow of fluid through a porous domain driven by gravity. 0 p at both ends
 -->
-
 <febio_spec version="3.0">
 	<Module type="fluid-FSI"/>
 	<Control>
@@ -100,7 +99,7 @@ BFSI 1D flow of fluid through a porous domain driven by gravity. 0 p at both end
 		</material>
 	</Material>
 	<Mesh>
-		<Nodes name="MergedObject2">
+		<Nodes name="Object01">
 			<node id="1">-0.5,-0.5,2.52</node>
 			<node id="2">-0.5,-0.5,2.54</node>
 			<node id="3">-0.5,-0.5,2.56</node>
@@ -3536,7 +3535,7 @@ BFSI 1D flow of fluid through a porous domain driven by gravity. 0 p at both end
 		<Surface name="FixedFluidDilatation2">
 			<quad4 id="1">513,713,613,413</quad4>
 		</Surface>
-		<ElementSet name="Const1">
+		<ElementSet name="BodyLoad1">
 			<e id="1"/>
 			<e id="2"/>
 			<e id="3"/>
@@ -3821,7 +3820,7 @@ BFSI 1D flow of fluid through a porous domain driven by gravity. 0 p at both end
 		</bc>
 	</Boundary>
 	<Loads>
-		<body_load type="const" elem_set="Const1">
+		<body_load type="const" elem_set="BodyLoad1">
 			<x lc="1">0</x>
 			<y lc="2">0</y>
 			<z lc="3">9.81</z>
@@ -3855,9 +3854,9 @@ BFSI 1D flow of fluid through a porous domain driven by gravity. 0 p at both end
 			<var type="acceleration"/>
 			<var type="displacement"/>
 			<var type="velocity"/>
+			<var type="fluid pressure"/>
 			<var type="fluid acceleration"/>
 			<var type="fluid dilatation"/>
-			<var type="fluid pressure"/>
 			<var type="fluid rate of deformation"/>
 			<var type="fluid stress"/>
 			<var type="fluid velocity"/>
