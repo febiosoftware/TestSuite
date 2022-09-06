@@ -3379,20 +3379,34 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 			<quad4 id="12">1020,1344,1349,1021</quad4>
 		</Surface>
 		<Surface name="FluidBackflowStabilization01">
-			<tri3 id="1">999,1000,1001</tri3>
-			<quad4 id="2">1000,1002,1003,1001</quad4>
-			<quad4 id="3">1002,1004,1005,1003</quad4>
-			<quad4 id="4">1004,1006,1007,1005</quad4>
-			<quad4 id="5">1006,1008,1009,1007</quad4>
-			<quad4 id="6">1008,1010,1011,1009</quad4>
-			<quad4 id="7">1010,1012,1013,1011</quad4>
-			<quad4 id="8">1012,1014,1015,1013</quad4>
-			<quad4 id="9">1014,1016,1017,1015</quad4>
-			<quad4 id="10">1016,1018,1019,1017</quad4>
-			<quad4 id="11">1018,1020,1021,1019</quad4>
-			<quad4 id="12">1020,1344,1349,1021</quad4>
+			<tri3 id="1">1,3,2</tri3>
+			<quad4 id="2">3,5,4,2</quad4>
+			<quad4 id="3">5,7,6,4</quad4>
+			<quad4 id="4">7,9,8,6</quad4>
+			<quad4 id="5">9,11,10,8</quad4>
+			<quad4 id="6">11,13,12,10</quad4>
+			<quad4 id="7">13,15,14,12</quad4>
+			<quad4 id="8">15,17,16,14</quad4>
+			<quad4 id="9">17,19,18,16</quad4>
+			<quad4 id="10">19,21,20,18</quad4>
+			<quad4 id="11">21,23,22,20</quad4>
+			<quad4 id="12">23,1027,1022,22</quad4>
 		</Surface>
 		<Surface name="FluidTangentialStabilization01">
+			<tri3 id="1">1,3,2</tri3>
+			<quad4 id="2">3,5,4,2</quad4>
+			<quad4 id="3">5,7,6,4</quad4>
+			<quad4 id="4">7,9,8,6</quad4>
+			<quad4 id="5">9,11,10,8</quad4>
+			<quad4 id="6">11,13,12,10</quad4>
+			<quad4 id="7">13,15,14,12</quad4>
+			<quad4 id="8">15,17,16,14</quad4>
+			<quad4 id="9">17,19,18,16</quad4>
+			<quad4 id="10">19,21,20,18</quad4>
+			<quad4 id="11">21,23,22,20</quad4>
+			<quad4 id="12">23,1027,1022,22</quad4>
+		</Surface>
+		<Surface name="FluidBackflowStabilization02">
 			<tri3 id="1">999,1000,1001</tri3>
 			<quad4 id="2">1000,1002,1003,1001</quad4>
 			<quad4 id="3">1002,1004,1005,1003</quad4>
@@ -3406,33 +3420,19 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 			<quad4 id="11">1018,1020,1021,1019</quad4>
 			<quad4 id="12">1020,1344,1349,1021</quad4>
 		</Surface>
-		<Surface name="FluidBackflowStabilization02">
-			<tri3 id="1">1,3,2</tri3>
-			<quad4 id="2">3,5,4,2</quad4>
-			<quad4 id="3">5,7,6,4</quad4>
-			<quad4 id="4">7,9,8,6</quad4>
-			<quad4 id="5">9,11,10,8</quad4>
-			<quad4 id="6">11,13,12,10</quad4>
-			<quad4 id="7">13,15,14,12</quad4>
-			<quad4 id="8">15,17,16,14</quad4>
-			<quad4 id="9">17,19,18,16</quad4>
-			<quad4 id="10">19,21,20,18</quad4>
-			<quad4 id="11">21,23,22,20</quad4>
-			<quad4 id="12">23,1027,1022,22</quad4>
-		</Surface>
 		<Surface name="FluidTangentialStabilization02">
-			<tri3 id="1">1,3,2</tri3>
-			<quad4 id="2">3,5,4,2</quad4>
-			<quad4 id="3">5,7,6,4</quad4>
-			<quad4 id="4">7,9,8,6</quad4>
-			<quad4 id="5">9,11,10,8</quad4>
-			<quad4 id="6">11,13,12,10</quad4>
-			<quad4 id="7">13,15,14,12</quad4>
-			<quad4 id="8">15,17,16,14</quad4>
-			<quad4 id="9">17,19,18,16</quad4>
-			<quad4 id="10">19,21,20,18</quad4>
-			<quad4 id="11">21,23,22,20</quad4>
-			<quad4 id="12">23,1027,1022,22</quad4>
+			<tri3 id="1">999,1000,1001</tri3>
+			<quad4 id="2">1000,1002,1003,1001</quad4>
+			<quad4 id="3">1002,1004,1005,1003</quad4>
+			<quad4 id="4">1004,1006,1007,1005</quad4>
+			<quad4 id="5">1006,1008,1009,1007</quad4>
+			<quad4 id="6">1008,1010,1011,1009</quad4>
+			<quad4 id="7">1010,1012,1013,1011</quad4>
+			<quad4 id="8">1012,1014,1015,1013</quad4>
+			<quad4 id="9">1014,1016,1017,1015</quad4>
+			<quad4 id="10">1016,1018,1019,1017</quad4>
+			<quad4 id="11">1018,1020,1021,1019</quad4>
+			<quad4 id="12">1020,1344,1349,1021</quad4>
 		</Surface>
 		<Surface name="FSInterfaceTraction01">
 			<quad4 id="1">1027,1022,47,48</quad4>
@@ -3476,7 +3476,7 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 			<quad4 id="39">973,972,997,998</quad4>
 			<quad4 id="40">998,997,1344,1349</quad4>
 		</Surface>
-		<Surface name="NormFlow">
+		<Surface name="NormFlowInlet">
 			<tri3 id="1">1,3,2</tri3>
 			<quad4 id="2">3,5,4,2</quad4>
 			<quad4 id="3">5,7,6,4</quad4>
@@ -3490,7 +3490,7 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 			<quad4 id="11">21,23,22,20</quad4>
 			<quad4 id="12">23,1027,1022,22</quad4>
 		</Surface>
-		<Surface name="NormFlow">
+		<Surface name="NormFlowOutlet">
 			<tri3 id="1">999,1000,1001</tri3>
 			<quad4 id="2">1000,1002,1003,1001</quad4>
 			<quad4 id="3">1002,1004,1005,1003</quad4>
@@ -4629,32 +4629,46 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 			<quad4 id="480">998,996,1021,1349</quad4>
 		</Surface>
 		<Surface name="Inlet">
-			<tri3 id="1">1,3,2</tri3>
-			<quad4 id="2">3,5,4,2</quad4>
-			<quad4 id="3">5,7,6,4</quad4>
-			<quad4 id="4">7,9,8,6</quad4>
-			<quad4 id="5">9,11,10,8</quad4>
-			<quad4 id="6">11,13,12,10</quad4>
-			<quad4 id="7">13,15,14,12</quad4>
-			<quad4 id="8">15,17,16,14</quad4>
-			<quad4 id="9">17,19,18,16</quad4>
-			<quad4 id="10">19,21,20,18</quad4>
-			<quad4 id="11">21,23,22,20</quad4>
-			<quad4 id="12">23,1027,1022,22</quad4>
+			<quad4 id="1">24,25,50,49</quad4>
+			<quad4 id="2">36,34,59,61</quad4>
+			<quad4 id="3">37,39,64,62</quad4>
+			<quad4 id="4">42,40,65,67</quad4>
+			<quad4 id="5">43,45,70,68</quad4>
+			<quad4 id="6">48,46,71,73</quad4>
+			<quad4 id="7">52,54,79,77</quad4>
+			<quad4 id="8">57,55,80,82</quad4>
+			<quad4 id="9">58,60,85,83</quad4>
+			<quad4 id="10">63,61,86,88</quad4>
+			<quad4 id="11">64,66,91,89</quad4>
+			<quad4 id="12">68,70,95,93</quad4>
 		</Surface>
 		<Surface name="Outlet">
-			<tri3 id="1">999,1000,1001</tri3>
-			<quad4 id="2">1000,1002,1003,1001</quad4>
-			<quad4 id="3">1002,1004,1005,1003</quad4>
-			<quad4 id="4">1004,1006,1007,1005</quad4>
-			<quad4 id="5">1006,1008,1009,1007</quad4>
-			<quad4 id="6">1008,1010,1011,1009</quad4>
-			<quad4 id="7">1010,1012,1013,1011</quad4>
-			<quad4 id="8">1012,1014,1015,1013</quad4>
-			<quad4 id="9">1014,1016,1017,1015</quad4>
-			<quad4 id="10">1016,1018,1019,1017</quad4>
-			<quad4 id="11">1018,1020,1021,1019</quad4>
-			<quad4 id="12">1020,1344,1349,1021</quad4>
+			<quad4 id="1">31,33,58,56</quad4>
+			<quad4 id="2">1063,1062,1070,1071</quad4>
+			<quad4 id="3">1064,1065,1073,1072</quad4>
+			<quad4 id="4">1070,1069,1077,1078</quad4>
+			<quad4 id="5">1071,1070,1078,1079</quad4>
+			<quad4 id="6">1072,1073,1081,1080</quad4>
+			<quad4 id="7">1078,1077,1085,1086</quad4>
+			<quad4 id="8">1079,1078,1086,1087</quad4>
+			<quad4 id="9">1080,1081,1089,1088</quad4>
+			<quad4 id="10">1086,1085,1093,1094</quad4>
+			<quad4 id="11">1087,1086,1094,1095</quad4>
+			<quad4 id="12">1093,1092,1100,1101</quad4>
+		</Surface>
+		<Surface name="NormFlow">
+			<quad4 id="1">24,25,50,49</quad4>
+			<quad4 id="2">36,34,59,61</quad4>
+			<quad4 id="3">37,39,64,62</quad4>
+			<quad4 id="4">42,40,65,67</quad4>
+			<quad4 id="5">43,45,70,68</quad4>
+			<quad4 id="6">48,46,71,73</quad4>
+			<quad4 id="7">52,54,79,77</quad4>
+			<quad4 id="8">57,55,80,82</quad4>
+			<quad4 id="9">58,60,85,83</quad4>
+			<quad4 id="10">63,61,86,88</quad4>
+			<quad4 id="11">64,66,91,89</quad4>
+			<quad4 id="12">68,70,95,93</quad4>
 		</Surface>
 	</Mesh>
 	<MeshDomains>
@@ -4707,7 +4721,7 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 		</surface_load>
 	</Loads>
 	<Constraints>
-		<constraint type="normal fluid flow" name="NormFlow" surface="NormFlow">
+		<constraint type="normal fluid flow" name="NormFlowInlet" surface="NormFlowInlet">
 			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>1000</penalty>
@@ -4715,7 +4729,7 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 			<maxaug>0</maxaug>
 			<rhs>0</rhs>
 		</constraint>
-		<constraint type="normal fluid flow" name="NormFlow" surface="NormFlow">
+		<constraint type="normal fluid flow" name="NormFlowOutlet" surface="NormFlowOutlet">
 			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>1000</penalty>
@@ -4804,6 +4818,7 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 			<var type="stress"/>
 			<var type="velocity"/>
 			<var type="fluid pressure"/>
+			<var type="fluid flux"/>
 			<var type="fluid acceleration"/>
 			<var type="fluid density"/>
 			<var type="fluid dilatation"/>
@@ -4816,7 +4831,6 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 			<var type="fluid vorticity"/>
 			<var type="nodal fluid velocity"/>
 			<var type="nodal fluid flux"/>
-			<var type="fluid flux"/>
 			<var type="relative fluid velocity"/>
 		</plotfile>
 	</Output>
