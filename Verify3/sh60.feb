@@ -345,9 +345,6 @@ sh01 with EAS shells
 		<NodeSet name="set01">
 			<n id="59"/>
 		</NodeSet>
-		<NodeSet name="set01">
-			<n id="59"/>
-		</NodeSet>
 		<Surface name="PressureLoad1">
 			<quad4 id="1">1,12,13,2</quad4>
 			<quad4 id="2">2,13,14,3</quad4>

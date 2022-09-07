@@ -97,9 +97,6 @@ A viscoelastic element has a prescribed x-diplacement of 0.0005 at time t=1.
 		<NodeSet name="unnamed_set01">
 			<n id="7"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="7"/>
-		</NodeSet>
 	</Mesh>
 	<MeshDomains>
 		<SolidDomain name="Part5" mat="Material 1"/>

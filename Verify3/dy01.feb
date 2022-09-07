@@ -62,9 +62,6 @@ An element has a body force of 0 units at t=0 and 1 unit at t=1 applied in the z
 		<NodeSet name="nodeset01">
 			<n id="1"/>
 		</NodeSet>
-		<NodeSet name="nodeset01">
-			<n id="1"/>
-		</NodeSet>
 	</Mesh>
 	<MeshDomains>
 		<SolidDomain name="Part4" mat="Material 1"/>

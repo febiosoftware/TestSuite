@@ -116,9 +116,6 @@ is turned off.
 		<NodeSet name="unnamed_set01">
 			<n id="4"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="4"/>
-		</NodeSet>
 		<Surface name="PrimarySurface01">
 			<quad4 id="1">11,15,13,9</quad4>
 		</Surface>

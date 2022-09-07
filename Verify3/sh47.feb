@@ -81,9 +81,6 @@ prescribed a translation of 1 at t=1.
 		<NodeSet name="unnamed_set01">
 			<n id="9"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="9"/>
-		</NodeSet>
 	</Mesh>
 	<MeshDomains>
 		<ShellDomain name="Part1" mat="Material1"/>

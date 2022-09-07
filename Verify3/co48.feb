@@ -5150,9 +5150,6 @@ This problem is similar to co07 but with friction.
 		<NodeSet name="unnamed_set01">
 			<n id="789"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="789"/>
-		</NodeSet>
 		<Surface name="PrimarySurface01">
 			<quad4 id="1">1388,1390,1444,1442</quad4>
 			<quad4 id="2">1392,1394,1448,1446</quad4>

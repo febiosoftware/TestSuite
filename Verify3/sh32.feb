@@ -59,9 +59,6 @@ constant body load along z of 1.
 		<NodeSet name="unnamed_set01">
 			<n id="4"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="4"/>
-		</NodeSet>
 	</Mesh>
 	<MeshDomains>
 		<ShellDomain name="Part1" mat="Material2"/>

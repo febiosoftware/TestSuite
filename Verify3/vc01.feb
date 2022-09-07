@@ -10751,9 +10751,6 @@ to be constant.
 		<NodeSet name="unnamed_set01">
 			<n id="3525"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="3525"/>
-		</NodeSet>
 		<Surface name="pressure">
 			<quad4 id="1">3201,3202,3207,3206</quad4>
 			<quad4 id="2">3202,3203,3208,3207</quad4>

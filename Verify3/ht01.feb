@@ -723,9 +723,6 @@ Heat transfer problem as described in tutorial 7 in the PreView user's manual.
 		<NodeSet name="unnamed_set01">
 			<n id="2"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="2"/>
-		</NodeSet>
 		<Surface name="surface02">
 			<quad4 id="1">21,19,20,22</quad4>
 			<quad4 id="2">19,17,18,20</quad4>

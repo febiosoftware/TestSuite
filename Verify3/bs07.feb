@@ -724,55 +724,6 @@
 			<n id="40"/>
 			<n id="42"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="42"/>
-		</NodeSet>
-		<NodeSet name="unnamed_set02">
-			<n id="86"/>
-			<n id="88"/>
-			<n id="90"/>
-			<n id="92"/>
-			<n id="94"/>
-			<n id="96"/>
-			<n id="98"/>
-			<n id="100"/>
-			<n id="102"/>
-			<n id="104"/>
-			<n id="106"/>
-			<n id="108"/>
-			<n id="110"/>
-			<n id="112"/>
-			<n id="114"/>
-			<n id="116"/>
-			<n id="118"/>
-			<n id="120"/>
-			<n id="122"/>
-			<n id="124"/>
-			<n id="126"/>
-		</NodeSet>
-		<NodeSet name="unnamed_set03">
-			<n id="2"/>
-			<n id="4"/>
-			<n id="6"/>
-			<n id="8"/>
-			<n id="10"/>
-			<n id="12"/>
-			<n id="14"/>
-			<n id="16"/>
-			<n id="18"/>
-			<n id="20"/>
-			<n id="22"/>
-			<n id="24"/>
-			<n id="26"/>
-			<n id="28"/>
-			<n id="30"/>
-			<n id="32"/>
-			<n id="34"/>
-			<n id="36"/>
-			<n id="38"/>
-			<n id="40"/>
-			<n id="42"/>
-		</NodeSet>
 		<Surface name="PrimarySurface01">
 			<quad4 id="1">85,127,128,86</quad4>
 		</Surface>

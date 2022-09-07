@@ -147,10 +147,6 @@ Left end of left strip is fixed, and right end of right strip is prescribed x di
 			<n id="31"/>
 			<n id="32"/>
 		</NodeSet>
-		<NodeSet name="patch4x">
-			<n id="31"/>
-			<n id="32"/>
-		</NodeSet>
 		<NodeSet name="RigidNodeset 1">
 			<n id="19"/>
 			<n id="20"/>

@@ -439,95 +439,13 @@ Final displacement of node 216: 0.685675, 0.260793, 0.405853
 			<n id="35"/>
 			<n id="36"/>
 		</NodeSet>
-		<NodeSet name="bcSupportList">
-			<n id="1"/>
-			<n id="2"/>
-			<n id="3"/>
-			<n id="4"/>
-			<n id="5"/>
-			<n id="6"/>
-			<n id="7"/>
-			<n id="8"/>
-			<n id="9"/>
-			<n id="10"/>
-			<n id="11"/>
-			<n id="12"/>
-			<n id="13"/>
-			<n id="14"/>
-			<n id="15"/>
-			<n id="16"/>
-			<n id="17"/>
-			<n id="18"/>
-			<n id="19"/>
-			<n id="20"/>
-			<n id="21"/>
-			<n id="22"/>
-			<n id="23"/>
-			<n id="24"/>
-			<n id="25"/>
-			<n id="26"/>
-			<n id="27"/>
-			<n id="28"/>
-			<n id="29"/>
-			<n id="30"/>
-			<n id="31"/>
-			<n id="32"/>
-			<n id="33"/>
-			<n id="34"/>
-			<n id="35"/>
-			<n id="36"/>
-		</NodeSet>
-		<NodeSet name="bcSupportList">
-			<n id="1"/>
-			<n id="2"/>
-			<n id="3"/>
-			<n id="4"/>
-			<n id="5"/>
-			<n id="6"/>
-			<n id="7"/>
-			<n id="8"/>
-			<n id="9"/>
-			<n id="10"/>
-			<n id="11"/>
-			<n id="12"/>
-			<n id="13"/>
-			<n id="14"/>
-			<n id="15"/>
-			<n id="16"/>
-			<n id="17"/>
-			<n id="18"/>
-			<n id="19"/>
-			<n id="20"/>
-			<n id="21"/>
-			<n id="22"/>
-			<n id="23"/>
-			<n id="24"/>
-			<n id="25"/>
-			<n id="26"/>
-			<n id="27"/>
-			<n id="28"/>
-			<n id="29"/>
-			<n id="30"/>
-			<n id="31"/>
-			<n id="32"/>
-			<n id="33"/>
-			<n id="34"/>
-			<n id="35"/>
-			<n id="36"/>
-		</NodeSet>
 	</Mesh>
 	<MeshDomains>
 		<SolidDomain name="Cube" mat="Material1"/>
 	</MeshDomains>
 	<Boundary>
 		<bc name="FixedDisplacement01" type="fix" node_set="bcSupportList">
-			<dofs>x</dofs>
-		</bc>
-		<bc name="FixedDisplacement02" type="fix" node_set="bcSupportList">
-			<dofs>y</dofs>
-		</bc>
-		<bc name="FixedDisplacement03" type="fix" node_set="bcSupportList">
-			<dofs>z</dofs>
+			<dofs>x,y,z</dofs>
 		</bc>
 	</Boundary>
 	<Loads>

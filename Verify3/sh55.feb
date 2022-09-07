@@ -70,9 +70,6 @@ Back face of shell is fixed and front face is prescribed pressure load of 0.1 at
 		<NodeSet name="unnamed_set01">
 			<n id="4"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="4"/>
-		</NodeSet>
 		<Surface name="patchz">
 			<quad8 id="1">1,3,4,2,5,8,7,6</quad8>
 		</Surface>

@@ -135,19 +135,6 @@ Top face of top box prescribed z displacement of -1.2 in time t=1.
 			<n id="37"/>
 			<n id="40"/>
 		</NodeSet>
-		<NodeSet name="box2z">
-			<n id="23"/>
-			<n id="25"/>
-			<n id="28"/>
-			<n id="30"/>
-			<n id="32"/>
-			<n id="35"/>
-			<n id="37"/>
-			<n id="40"/>
-		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="4"/>
-		</NodeSet>
 		<NodeSet name="unnamed_set01">
 			<n id="4"/>
 		</NodeSet>

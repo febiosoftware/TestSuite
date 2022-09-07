@@ -62,9 +62,6 @@ Same as dy01.feb except that the element is a rigid body instead of a Neo-Hookea
 		<NodeSet name="unnamed_set01">
 			<n id="2"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="2"/>
-		</NodeSet>
 	</Mesh>
 	<MeshDomains>
 		<SolidDomain name="Part1" mat="Material 1"/>

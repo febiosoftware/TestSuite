@@ -5516,9 +5516,6 @@ to it's initial position.
 		<NodeSet name="unnamed_set01">
 			<n id="1685"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="1685"/>
-		</NodeSet>
 		<Surface name="VolumeConstraintSurface01">
 			<quad4 id="1">166,161,321,326</quad4>
 			<quad4 id="2">171,166,326,331</quad4>

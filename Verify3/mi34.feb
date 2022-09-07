@@ -11384,9 +11384,6 @@ far side of sphere) is 0.9438 and occurs at time t = 0.0223
 		<NodeSet name="unnamed_set01">
 			<n id="40"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="40"/>
-		</NodeSet>
 		<Surface name="PrimarySurface01">
 			<quad4 id="1">29,240,807,228</quad4>
 			<quad4 id="2">228,807,810,229</quad4>

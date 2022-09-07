@@ -191,26 +191,6 @@ that enforce zero electric potential.
 			<n id="7"/>
 			<n id="8"/>
 		</NodeSet>
-		<NodeSet name="InitialConcentration01">
-			<n id="1"/>
-			<n id="2"/>
-			<n id="3"/>
-			<n id="4"/>
-			<n id="5"/>
-			<n id="6"/>
-			<n id="7"/>
-			<n id="8"/>
-		</NodeSet>
-		<NodeSet name="InitialConcentration01">
-			<n id="1"/>
-			<n id="2"/>
-			<n id="3"/>
-			<n id="4"/>
-			<n id="5"/>
-			<n id="6"/>
-			<n id="7"/>
-			<n id="8"/>
-		</NodeSet>
 		<NodeSet name="InitialFluidPressure01">
 			<n id="1"/>
 			<n id="2"/>

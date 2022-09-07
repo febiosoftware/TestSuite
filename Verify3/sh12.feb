@@ -234,10 +234,6 @@ equal but opposite forces of 1 N to the corners of the non-constrained end.
 			<n id="121"/>
 			<n id="113"/>
 		</NodeSet>
-		<NodeSet name="unnamed_set02">
-			<n id="121"/>
-			<n id="113"/>
-		</NodeSet>
 		<ElementSet name="unnamed_set01">
 			<e id="31"/>
 		</ElementSet>

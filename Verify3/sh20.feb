@@ -1063,19 +1063,6 @@ Top shell is 100 times stiffer to converge.
 			<n id="641"/>
 			<n id="644"/>
 		</NodeSet>
-		<NodeSet name="box2z">
-			<n id="627"/>
-			<n id="629"/>
-			<n id="632"/>
-			<n id="634"/>
-			<n id="636"/>
-			<n id="639"/>
-			<n id="641"/>
-			<n id="644"/>
-		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="4"/>
-		</NodeSet>
 		<NodeSet name="unnamed_set01">
 			<n id="4"/>
 		</NodeSet>

@@ -159,11 +159,6 @@ Front and back face of left edge is fixed, and right edge is applied nodal_load 
 			<n id="2"/>
 			<n id="3"/>
 		</NodeSet>
-		<NodeSet name="patch-x">
-			<n id="1"/>
-			<n id="2"/>
-			<n id="3"/>
-		</NodeSet>
 		<NodeSet name="patchz">
 			<n id="1"/>
 			<n id="2"/>
@@ -233,9 +228,6 @@ Front and back face of left edge is fixed, and right edge is applied nodal_load 
 			<n id="61"/>
 			<n id="62"/>
 			<n id="63"/>
-		</NodeSet>
-		<NodeSet name="unnamed_set01">
-			<n id="4"/>
 		</NodeSet>
 		<NodeSet name="unnamed_set01">
 			<n id="4"/>
