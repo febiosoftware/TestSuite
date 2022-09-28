@@ -13028,6 +13028,7 @@ Contact of two non-conforming multiphasic layers under displacement control
 					<min_residual>1e-11</min_residual>
 					<qnmethod>BFGS</qnmethod>
 					<symmetric_stiffness>0</symmetric_stiffness>
+					<equation_scheme>1</equation_scheme>
 				</solver>
 				<time_stepper>
 					<dtmin>0.01</dtmin>
@@ -13056,6 +13057,7 @@ Contact of two non-conforming multiphasic layers under displacement control
 					<min_residual>1e-20</min_residual>
 					<qnmethod>BFGS</qnmethod>
 					<symmetric_stiffness>0</symmetric_stiffness>
+					<equation_scheme>1</equation_scheme>
 				</solver>
 				<time_stepper>
 					<dtmin>0.01</dtmin>
