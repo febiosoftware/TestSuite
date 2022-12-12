@@ -52,7 +52,7 @@ inlet. Newtonian fluid with MooneyRivlin solid
 			</fluid>
 			<solid type="neo-Hookean">
 				<density>0</density>
-				<E>1e-09</E>
+				<E>1e-03</E>
 				<v>0</v>
 			</solid>
 		</material>

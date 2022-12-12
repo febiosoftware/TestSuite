@@ -57,7 +57,7 @@ Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 			</fluid>
 			<solid type="neo-Hookean">
 				<density>0</density>
-				<E>1e-09</E>
+				<E>1e-03</E>
 				<v>0</v>
 			</solid>
 		</material>
