@@ -36,7 +36,7 @@
 		</Constants>
 	</Globals>
 	<Material>
-		<material id="1" name="Material1" type="Rodriguez growth">
+		<material id="1" name="Material1" type="kinematic growth">
 		  <elastic type="neo-Hookean">
 			<density>1</density>
 			<E>1</E>
