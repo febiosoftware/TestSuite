@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Confined compression creep loading of a cube made of a
+biphasic material with porousneoHookean solid matrix.
+
+Final creep deformation (Zdisplacement of node 21) is 0.645891
+-->
+<febio_spec version="4.0">
+	<Module type="biphasic"/>
+	<Control>
+		<analysis>TRANSIENT</analysis>
+		<time_steps>80000</time_steps>
+		<step_size>0.1</step_size>
+		<plot_zero_state>0</plot_zero_state>
+		<plot_range>0,-1</plot_range>
+		<plot_level>PLOT_MAJOR_ITRS</plot_level>
+		<output_level>OUTPUT_MAJOR_ITRS</output_level>
+		<plot_stride>1</plot_stride>
+		<adaptor_re_solve>1</adaptor_re_solve>
+		<time_stepper type="default">
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+			<dtmin>0.01</dtmin>
+			<dtmax lc="1">0</dtmax>
+			<aggressiveness>0</aggressiveness>
+			<cutback>0.5</cutback>
+			<dtforce>0</dtforce>
+		</time_stepper>
+		<solver type="biphasic">
+			<symmetric_stiffness>non-symmetric</symmetric_stiffness>
+			<equation_scheme>staggered</equation_scheme>
+			<equation_order>default</equation_order>
+			<optimize_bw>0</optimize_bw>
+			<lstol>0.9</lstol>
+			<lsmin>0.01</lsmin>
+			<lsiter>5</lsiter>
+			<max_refs>15</max_refs>
+			<check_zero_diagonal>0</check_zero_diagonal>
+			<zero_diagonal_tol>0</zero_diagonal_tol>
+			<force_partition>0</force_partition>
+			<reform_each_time_step>1</reform_each_time_step>
+			<reform_augment>0</reform_augment>
+			<diverge_reform>1</diverge_reform>
+			<min_residual>1e-20</min_residual>
+			<max_residual>0</max_residual>
+			<dtol>0.001</dtol>
+			<etol>0.01</etol>
+			<rtol>0</rtol>
+			<rhoi>-2</rhoi>
+			<alpha>1</alpha>
+			<beta>0.25</beta>
+			<gamma>0.5</gamma>
+			<logSolve>0</logSolve>
+			<arc_length>0</arc_length>
+			<arc_length_scale>0</arc_length_scale>
+			<ptol>0.01</ptol>
+			<mixed_formulation>0</mixed_formulation>
+			<qn_method type="Broyden">
+				<max_ups>10</max_ups>
+				<max_buffer_size>0</max_buffer_size>
+				<cycle_buffer>1</cycle_buffer>
+				<cmax>100000</cmax>
+			</qn_method>
+		</solver>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="Material1" type="biphasic">
+			<phi0>0.2</phi0>
+			<fluid_density>1</fluid_density>
+			<tau>0</tau>
+			<solid type="porous neo-Hookean">
+				<density>1</density>
+				<E>0.5</E>
+				<phi0>1</phi0>
+			</solid>
+			<permeability type="perm-Holmes-Mow">
+				<perm>0.005</perm>
+				<M>5</M>
+				<alpha>2</alpha>
+			</permeability>
+		</material>
+	</Material>
+	<Mesh>
+		<Nodes name="Object01">
+			<node id="1">-0.5,-0.5,0</node>
+			<node id="2">-0.5,-0.5,0.17419367</node>
+			<node id="3">-0.5,-0.5,0.31877442</node>
+			<node id="4">-0.5,-0.5,0.43877643</node>
+			<node id="5">-0.5,-0.5,0.53837811</node>
+			<node id="6">-0.5,-0.5,0.6210475</node>
+			<node id="7">-0.5,-0.5,0.6896631</node>
+			<node id="8">-0.5,-0.5,0.74661404</node>
+			<node id="9">-0.5,-0.5,0.79388332</node>
+			<node id="10">-0.5,-0.5,0.83311683</node>
+			<node id="11">-0.5,-0.5,0.86568064</node>
+			<node id="12">-0.5,-0.5,0.8927086</node>
+			<node id="13">-0.5,-0.5,0.91514181</node>
+			<node id="14">-0.5,-0.5,0.93376137</node>
+			<node id="15">-0.5,-0.5,0.94921561</node>
+			<node id="16">-0.5,-0.5,0.96204262</node>
+			<node id="17">-0.5,-0.5,0.97268905</node>
+			<node id="18">-0.5,-0.5,0.98152558</node>
+			<node id="19">-0.5,-0.5,0.9888599</node>
+			<node id="20">-0.5,-0.5,0.99494739</node>
+			<node id="21">-0.5,-0.5,1</node>
+			<node id="22">-0.5,0.5,0</node>
+			<node id="23">-0.5,0.5,0.17419367</node>
+			<node id="24">-0.5,0.5,0.31877442</node>
+			<node id="25">-0.5,0.5,0.43877643</node>
+			<node id="26">-0.5,0.5,0.53837811</node>
+			<node id="27">-0.5,0.5,0.6210475</node>
+			<node id="28">-0.5,0.5,0.6896631</node>
+			<node id="29">-0.5,0.5,0.74661404</node>
+			<node id="30">-0.5,0.5,0.79388332</node>
+			<node id="31">-0.5,0.5,0.83311683</node>
+			<node id="32">-0.5,0.5,0.86568064</node>
+			<node id="33">-0.5,0.5,0.8927086</node>
+			<node id="34">-0.5,0.5,0.91514181</node>
+			<node id="35">-0.5,0.5,0.93376137</node>
+			<node id="36">-0.5,0.5,0.94921561</node>
+			<node id="37">-0.5,0.5,0.96204262</node>
+			<node id="38">-0.5,0.5,0.97268905</node>
+			<node id="39">-0.5,0.5,0.98152558</node>
+			<node id="40">-0.5,0.5,0.9888599</node>
+			<node id="41">-0.5,0.5,0.99494739</node>
+			<node id="42">-0.5,0.5,1</node>
+			<node id="43">0.5,-0.5,0</node>
+			<node id="44">0.5,-0.5,0.17419367</node>
+			<node id="45">0.5,-0.5,0.31877442</node>
+			<node id="46">0.5,-0.5,0.43877643</node>
+			<node id="47">0.5,-0.5,0.53837811</node>
+			<node id="48">0.5,-0.5,0.6210475</node>
+			<node id="49">0.5,-0.5,0.6896631</node>
+			<node id="50">0.5,-0.5,0.74661404</node>
+			<node id="51">0.5,-0.5,0.79388332</node>
+			<node id="52">0.5,-0.5,0.83311683</node>
+			<node id="53">0.5,-0.5,0.86568064</node>
+			<node id="54">0.5,-0.5,0.8927086</node>
+			<node id="55">0.5,-0.5,0.91514181</node>
+			<node id="56">0.5,-0.5,0.93376137</node>
+			<node id="57">0.5,-0.5,0.94921561</node>
+			<node id="58">0.5,-0.5,0.96204262</node>
+			<node id="59">0.5,-0.5,0.97268905</node>
+			<node id="60">0.5,-0.5,0.98152558</node>
+			<node id="61">0.5,-0.5,0.9888599</node>
+			<node id="62">0.5,-0.5,0.99494739</node>
+			<node id="63">0.5,-0.5,1</node>
+			<node id="64">0.5,0.5,0</node>
+			<node id="65">0.5,0.5,0.17419367</node>
+			<node id="66">0.5,0.5,0.31877442</node>
+			<node id="67">0.5,0.5,0.43877643</node>
+			<node id="68">0.5,0.5,0.53837811</node>
+			<node id="69">0.5,0.5,0.6210475</node>
+			<node id="70">0.5,0.5,0.6896631</node>
+			<node id="71">0.5,0.5,0.74661404</node>
+			<node id="72">0.5,0.5,0.79388332</node>
+			<node id="73">0.5,0.5,0.83311683</node>
+			<node id="74">0.5,0.5,0.86568064</node>
+			<node id="75">0.5,0.5,0.8927086</node>
+			<node id="76">0.5,0.5,0.91514181</node>
+			<node id="77">0.5,0.5,0.93376137</node>
+			<node id="78">0.5,0.5,0.94921561</node>
+			<node id="79">0.5,0.5,0.96204262</node>
+			<node id="80">0.5,0.5,0.97268905</node>
+			<node id="81">0.5,0.5,0.98152558</node>
+			<node id="82">0.5,0.5,0.9888599</node>
+			<node id="83">0.5,0.5,0.99494739</node>
+			<node id="84">0.5,0.5,1</node>
+		</Nodes>
+		<Elements type="hex8" name="Part1">
+			<elem id="1">1,43,64,22,2,44,65,23</elem>
+			<elem id="2">2,44,65,23,3,45,66,24</elem>
+			<elem id="3">3,45,66,24,4,46,67,25</elem>
+			<elem id="4">4,46,67,25,5,47,68,26</elem>
+			<elem id="5">5,47,68,26,6,48,69,27</elem>
+			<elem id="6">6,48,69,27,7,49,70,28</elem>
+			<elem id="7">7,49,70,28,8,50,71,29</elem>
+			<elem id="8">8,50,71,29,9,51,72,30</elem>
+			<elem id="9">9,51,72,30,10,52,73,31</elem>
+			<elem id="10">10,52,73,31,11,53,74,32</elem>
+			<elem id="11">11,53,74,32,12,54,75,33</elem>
+			<elem id="12">12,54,75,33,13,55,76,34</elem>
+			<elem id="13">13,55,76,34,14,56,77,35</elem>
+			<elem id="14">14,56,77,35,15,57,78,36</elem>
+			<elem id="15">15,57,78,36,16,58,79,37</elem>
+			<elem id="16">16,58,79,37,17,59,80,38</elem>
+			<elem id="17">17,59,80,38,18,60,81,39</elem>
+			<elem id="18">18,60,81,39,19,61,82,40</elem>
+			<elem id="19">19,61,82,40,20,62,83,41</elem>
+			<elem id="20">20,62,83,41,21,63,84,42</elem>
+		</Elements>
+		<NodeSet name="FixedDisplacement1">
+			1, 2, 3, 4, 5, 6, 7, 8,
+			9, 10, 11, 12, 13, 14, 15, 16,
+			17, 18, 19, 20, 21, 22, 23, 24,
+			25, 26, 27, 28, 29, 30, 31, 32,
+			33, 34, 35, 36, 37, 38, 39, 40,
+			41, 42, 43, 44, 45, 46, 47, 48,
+			49, 50, 51, 52, 53, 54, 55, 56,
+			57, 58, 59, 60, 61, 62, 63, 64,
+			65, 66, 67, 68, 69, 70, 71, 72,
+			73, 74, 75, 76, 77, 78, 79, 80,
+			81, 82, 83, 84, 1, 2, 3, 4,
+			5, 6, 7, 8, 9, 10, 11, 12,
+			13, 14, 15, 16, 17, 18, 19, 20,
+			21, 22, 23, 24, 25, 26, 27, 28,
+			29, 30, 31, 32, 33, 34, 35, 36,
+			37, 38, 39, 40, 41, 42, 43, 44,
+			45, 46, 47, 48, 49, 50, 51, 52,
+			53, 54, 55, 56, 57, 58, 59, 60,
+			61, 62, 63, 64, 65, 66, 67, 68,
+			69, 70, 71, 72, 73, 74, 75, 76,
+			77, 78, 79, 80, 81, 82, 83, 84
+		</NodeSet>
+		<NodeSet name="FixedDisplacement2">
+			1, 2, 3, 4, 5, 6, 7, 8,
+			9, 10, 11, 12, 13, 14, 15, 16,
+			17, 18, 19, 20, 21, 22, 23, 24,
+			25, 26, 27, 28, 29, 30, 31, 32,
+			33, 34, 35, 36, 37, 38, 39, 40,
+			41, 42, 43, 44, 45, 46, 47, 48,
+			49, 50, 51, 52, 53, 54, 55, 56,
+			57, 58, 59, 60, 61, 62, 63, 64,
+			65, 66, 67, 68, 69, 70, 71, 72,
+			73, 74, 75, 76, 77, 78, 79, 80,
+			81, 82, 83, 84, 1, 2, 3, 4,
+			5, 6, 7, 8, 9, 10, 11, 12,
+			13, 14, 15, 16, 17, 18, 19, 20,
+			21, 22, 23, 24, 25, 26, 27, 28,
+			29, 30, 31, 32, 33, 34, 35, 36,
+			37, 38, 39, 40, 41, 42, 43, 44,
+			45, 46, 47, 48, 49, 50, 51, 52,
+			53, 54, 55, 56, 57, 58, 59, 60,
+			61, 62, 63, 64, 65, 66, 67, 68,
+			69, 70, 71, 72, 73, 74, 75, 76,
+			77, 78, 79, 80, 81, 82, 83, 84
+		</NodeSet>
+		<NodeSet name="FixedDisplacement3">
+			1, 22, 43, 64
+		</NodeSet>
+		<NodeSet name="FixedEffectiveFluidPressure1">
+			21, 42, 63, 84
+		</NodeSet>
+		<Surface name="MixtureNormalTraction1">
+			<quad4 id="1">21,63,84,42</quad4>
+		</Surface>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part1" mat="Material1"/>
+	</MeshDomains>
+	<Boundary>
+		<bc name="FixedDisplacement01" node_set="FixedDisplacement1" type="zero displacement">
+			<x_dof>1</x_dof>
+			<y_dof>0</y_dof>
+			<z_dof>0</z_dof>
+		</bc>
+		<bc name="FixedDisplacement02" node_set="FixedDisplacement2" type="zero displacement">
+			<x_dof>0</x_dof>
+			<y_dof>1</y_dof>
+			<z_dof>0</z_dof>
+		</bc>
+		<bc name="FixedDisplacement03" node_set="FixedDisplacement3" type="zero displacement">
+			<x_dof>0</x_dof>
+			<y_dof>0</y_dof>
+			<z_dof>1</z_dof>
+		</bc>
+		<bc name="FixedFluidPressure01" node_set="FixedEffectiveFluidPressure1" type="zero fluid pressure"/>
+	</Boundary>
+	<Loads>
+		<surface_load name="NormalTraction0" surface="MixtureNormalTraction1" type="normal_traction">
+			<traction lc="2">-1</traction>
+			<linear>0</linear>
+			<shell_bottom>0</shell_bottom>
+			<effective>0</effective>
+		</surface_load>
+	</Loads>
+	<LoadData>
+		<load_controller id="1" name="LC1" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1,0.1</pt>
+				<pt>2,0.1</pt>
+				<pt>10,1</pt>
+				<pt>100,10</pt>
+				<pt>1000,100</pt>
+				<pt>10000,1000</pt>
+			</points>
+		</load_controller>
+		<load_controller id="2" name="LC2" type="loadcurve">
+			<interpolate>SMOOTH</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1,1</pt>
+			</points>
+		</load_controller>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="relative volume"/>
+			<var type="stress"/>
+			<var type="effective fluid pressure"/>
+			<var type="fluid pressure"/>
+			<var type="fluid flux"/>
+		</plotfile>
+	</Output>
+</febio_spec>

@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Unconfined compression creep response of charged multiphasic material containing CaCl2. 
+The solid matrix consists of a neoHookean ground matrix + ellipsoidal fiber distribution.
+A twostep analysis is performed: (1) The first step (from 0 to 1 s) is a steadystate analysis
+needed to produce equilibrium free swelling by raising the fixed charged density from zero 
+to the final desired value. During this step the loading platen is maintained stationary so
+that the swelling produces a small tare load. (2) The second step (from 1 to 7201 s) is a 
+transient analysis where a constant compressive load (0.471) is prescribed to the loading platen
+while the material undergoes creep deformation.
+-->
+<febio_spec version="4.0">
+	<Module type="multiphasic"/>
+	<Globals>
+		<Constants>
+			<T>310</T>
+			<R>8.314e-06</R>
+			<Fc>9.65e-05</Fc>
+		</Constants>
+		<Solutes>
+			<solute id="1" name="Cl-">
+				<charge_number>-1</charge_number>
+				<molar_mass>1</molar_mass>
+				<density>1</density>
+			</solute>
+			<solute id="2" name="Ca2+">
+				<charge_number>2</charge_number>
+				<molar_mass>1</molar_mass>
+				<density>1</density>
+			</solute>
+		</Solutes>
+	</Globals>
+	<Material>
+		<material id="1" name="Symmetry Plane" type="rigid body">
+			<density>1</density>
+			<E>1</E>
+			<v>0</v>
+			<center_of_mass>0,0,0</center_of_mass>
+		</material>
+		<material id="2" name="Platen" type="rigid body">
+			<density>1</density>
+			<E>1</E>
+			<v>0</v>
+			<center_of_mass>0,0,1.5</center_of_mass>
+		</material>
+		<material id="3" name="Cartilage CaCl2" type="multiphasic">
+			<phi0>0.2</phi0>
+			<fluid_density>0</fluid_density>
+			<penalty>1</penalty>
+			<fixed_charge_density lc="2">1</fixed_charge_density>
+			<solid type="EFD neo-Hookean">
+				<density>1</density>
+				<E>0.1</E>
+				<v>0</v>
+				<beta>2.5,2.5,2.5</beta>
+				<ksi>2,2,2</ksi>
+			</solid>
+			<permeability type="perm-const-iso">
+				<perm>0.1</perm>
+			</permeability>
+			<osmotic_coefficient type="osm-coef-const">
+				<osmcoef>1</osmcoef>
+			</osmotic_coefficient>
+			<solute sol="Cl-">
+				<diffusivity type="diff-const-iso">
+					<free_diff>0.001</free_diff>
+					<diff>0.0005</diff>
+				</diffusivity>
+				<solubility type="solub-const">
+					<solub>1</solub>
+				</solubility>
+			</solute>
+			<solute sol="Ca2+">
+				<diffusivity type="diff-const-iso">
+					<free_diff>0.0016</free_diff>
+					<diff>0.0008</diff>
+				</diffusivity>
+				<solubility type="solub-const">
+					<solub>1</solub>
+				</solubility>
+			</solute>
+		</material>
+	</Material>
+	<Mesh>
+		<Nodes name="Object01">
+			<node id="1">0,0,0</node>
+			<node id="2">0.45346025,0,0</node>
+			<node id="3">0.44958083,0.059188438,0</node>
+			<node id="4">0.83890146,0,0</node>
+			<node id="5">0.83172454,0.10949861,0</node>
+			<node id="6">1.1665265,0,0</node>
+			<node id="7">1.1565467,0.15226226,0</node>
+			<node id="8">1.4450078,0,0</node>
+			<node id="9">1.4326455,0.18861136,0</node>
+			<node id="10">1.6817168,0,0</node>
+			<node id="11">1.6673295,0.21950809,0</node>
+			<node id="12">1.8829196,0,0</node>
+			<node id="13">1.8668109,0.24577032,0</node>
+			<node id="14">2.0539419,0,0</node>
+			<node id="15">2.0363701,0.26809321,0</node>
+			<node id="16">2.1993108,0,0</node>
+			<node id="17">2.1804954,0.28706766,0</node>
+			<node id="18">2.3228745,0,0</node>
+			<node id="19">2.3030019,0.30319595,0</node>
+			<node id="20">2.4279035,0,0</node>
+			<node id="21">2.4071325,0.316905,0</node>
+			<node id="22">2.5171783,0,0</node>
+			<node id="23">2.4956434,0.32855769,0</node>
+			<node id="24">2.5930618,0,0</node>
+			<node id="25">2.5708778,0.33846247,0</node>
+			<node id="26">2.6575627,0,0</node>
+			<node id="27">2.6348269,0.34688154,0</node>
+			<node id="28">2.7123886,0,0</node>
+			<node id="29">2.6891837,0.35403775,0</node>
+			<node id="30">2.7589905,0,0</node>
+			<node id="31">2.735387,0.36012052,0</node>
+			<node id="32">2.7986022,0,0</node>
+			<node id="33">2.7746598,0.36529088,0</node>
+			<node id="34">2.8322721,0,0</node>
+			<node id="35">2.8080416,0.36968569,0</node>
+			<node id="36">2.8608915,0,0</node>
+			<node id="37">2.8364162,0.37342127,0</node>
+			<node id="38">2.8852181,0,0</node>
+			<node id="39">2.8605346,0.37659652,0</node>
+			<node id="40">2.9058956,0,0</node>
+			<node id="41">2.8810353,0.37929548,0</node>
+			<node id="42">2.9234715,0,0</node>
+			<node id="43">2.8984608,0.3815896,0</node>
+			<node id="44">2.938411,0,0</node>
+			<node id="45">2.9132725,0.3835396,0</node>
+			<node id="46">2.9511096,0,0</node>
+			<node id="47">2.9258625,0.38519709,0</node>
+			<node id="48">2.9619034,0,0</node>
+			<node id="49">2.9365639,0.38660597,0</node>
+			<node id="50">2.9710782,0,0</node>
+			<node id="51">2.9456602,0.38780351,0</node>
+			<node id="52">2.9788767,0,0</node>
+			<node id="53">2.953392,0.38882142,0</node>
+			<node id="54">2.9855054,0,0</node>
+			<node id="55">2.959964,0.38968665,0</node>
+			<node id="56">2.9911399,0,0</node>
+			<node id="57">2.9655502,0.39042209,0</node>
+			<node id="58">2.9959291,0,0</node>
+			<node id="59">2.9702985,0.39104721,0</node>
+			<node id="60">3,0,0</node>
+			<node id="61">2.9743346,0.39157857,0</node>
+			<node id="62">0,0,1.5</node>
+			<node id="63">0.45346025,0,1.5</node>
+			<node id="64">0.44958083,0.059188438,1.5</node>
+			<node id="65">0.83890146,0,1.5</node>
+			<node id="66">0.83172454,0.10949861,1.5</node>
+			<node id="67">1.1665265,0,1.5</node>
+			<node id="68">1.1565467,0.15226226,1.5</node>
+			<node id="69">1.4450078,0,1.5</node>
+			<node id="70">1.4326455,0.18861136,1.5</node>
+			<node id="71">1.6817168,0,1.5</node>
+			<node id="72">1.6673295,0.21950809,1.5</node>
+			<node id="73">1.8829196,0,1.5</node>
+			<node id="74">1.8668109,0.24577032,1.5</node>
+			<node id="75">2.0539419,0,1.5</node>
+			<node id="76">2.0363701,0.26809321,1.5</node>
+			<node id="77">2.1993108,0,1.5</node>
+			<node id="78">2.1804954,0.28706766,1.5</node>
+			<node id="79">2.3228745,0,1.5</node>
+			<node id="80">2.3030019,0.30319595,1.5</node>
+			<node id="81">2.4279035,0,1.5</node>
+			<node id="82">2.4071325,0.316905,1.5</node>
+			<node id="83">2.5171783,0,1.5</node>
+			<node id="84">2.4956434,0.32855769,1.5</node>
+			<node id="85">2.5930618,0,1.5</node>
+			<node id="86">2.5708778,0.33846247,1.5</node>
+			<node id="87">2.6575627,0,1.5</node>
+			<node id="88">2.6348269,0.34688154,1.5</node>
+			<node id="89">2.7123886,0,1.5</node>
+			<node id="90">2.6891837,0.35403775,1.5</node>
+			<node id="91">2.7589905,0,1.5</node>
+			<node id="92">2.735387,0.36012052,1.5</node>
+			<node id="93">2.7986022,0,1.5</node>
+			<node id="94">2.7746598,0.36529088,1.5</node>
+			<node id="95">2.8322721,0,1.5</node>
+			<node id="96">2.8080416,0.36968569,1.5</node>
+			<node id="97">2.8608915,0,1.5</node>
+			<node id="98">2.8364162,0.37342127,1.5</node>
+			<node id="99">2.8852181,0,1.5</node>
+			<node id="100">2.8605346,0.37659652,1.5</node>
+			<node id="101">2.9058956,0,1.5</node>
+			<node id="102">2.8810353,0.37929548,1.5</node>
+			<node id="103">2.9234715,0,1.5</node>
+			<node id="104">2.8984608,0.3815896,1.5</node>
+			<node id="105">2.938411,0,1.5</node>
+			<node id="106">2.9132725,0.3835396,1.5</node>
+			<node id="107">2.9511096,0,1.5</node>
+			<node id="108">2.9258625,0.38519709,1.5</node>
+			<node id="109">2.9619034,0,1.5</node>
+			<node id="110">2.9365639,0.38660597,1.5</node>
+			<node id="111">2.9710782,0,1.5</node>
+			<node id="112">2.9456602,0.38780351,1.5</node>
+			<node id="113">2.9788767,0,1.5</node>
+			<node id="114">2.953392,0.38882142,1.5</node>
+			<node id="115">2.9855054,0,1.5</node>
+			<node id="116">2.959964,0.38968665,1.5</node>
+			<node id="117">2.9911399,0,1.5</node>
+			<node id="118">2.9655502,0.39042209,1.5</node>
+			<node id="119">2.9959291,0,1.5</node>
+			<node id="120">2.9702985,0.39104721,1.5</node>
+			<node id="121">3,0,1.5</node>
+			<node id="122">2.9743346,0.39157857,1.5</node>
+			<node id="123">-3.9657794,-0.52210487,-4</node>
+			<node id="124">-3.9657795,-0.52210465,4</node>
+			<node id="125">3.9657795,0.52210465,-4</node>
+			<node id="126">3.9657794,0.52210487,4</node>
+			<node id="127">-4,4,1.4999998</node>
+			<node id="128">-4,-4,1.5000002</node>
+			<node id="129">4,4,1.4999998</node>
+			<node id="130">4,-4,1.5000002</node>
+		</Nodes>
+		<Elements type="penta6" name="Part01">
+			<elem id="1">1,2,3,62,63,64</elem>
+		</Elements>
+		<Elements type="hex8" name="Part01(2)">
+			<elem id="2">2,4,5,3,63,65,66,64</elem>
+			<elem id="3">4,6,7,5,65,67,68,66</elem>
+			<elem id="4">6,8,9,7,67,69,70,68</elem>
+			<elem id="5">8,10,11,9,69,71,72,70</elem>
+			<elem id="6">10,12,13,11,71,73,74,72</elem>
+			<elem id="7">12,14,15,13,73,75,76,74</elem>
+			<elem id="8">14,16,17,15,75,77,78,76</elem>
+			<elem id="9">16,18,19,17,77,79,80,78</elem>
+			<elem id="10">18,20,21,19,79,81,82,80</elem>
+			<elem id="11">20,22,23,21,81,83,84,82</elem>
+			<elem id="12">22,24,25,23,83,85,86,84</elem>
+			<elem id="13">24,26,27,25,85,87,88,86</elem>
+			<elem id="14">26,28,29,27,87,89,90,88</elem>
+			<elem id="15">28,30,31,29,89,91,92,90</elem>
+			<elem id="16">30,32,33,31,91,93,94,92</elem>
+			<elem id="17">32,34,35,33,93,95,96,94</elem>
+			<elem id="18">34,36,37,35,95,97,98,96</elem>
+			<elem id="19">36,38,39,37,97,99,100,98</elem>
+			<elem id="20">38,40,41,39,99,101,102,100</elem>
+			<elem id="21">40,42,43,41,101,103,104,102</elem>
+			<elem id="22">42,44,45,43,103,105,106,104</elem>
+			<elem id="23">44,46,47,45,105,107,108,106</elem>
+			<elem id="24">46,48,49,47,107,109,110,108</elem>
+			<elem id="25">48,50,51,49,109,111,112,110</elem>
+			<elem id="26">50,52,53,51,111,113,114,112</elem>
+			<elem id="27">52,54,55,53,113,115,116,114</elem>
+			<elem id="28">54,56,57,55,115,117,118,116</elem>
+			<elem id="29">56,58,59,57,117,119,120,118</elem>
+			<elem id="30">58,60,61,59,119,121,122,120</elem>
+		</Elements>
+		<Elements type="quad4" name="Part3">
+			<elem id="31">123,125,126,124</elem>
+		</Elements>
+		<Elements type="quad4" name="Part4">
+			<elem id="32">127,129,130,128</elem>
+		</Elements>
+		<NodeSet name="FixedDisplacement01">
+			1, 62
+		</NodeSet>
+		<NodeSet name="FixedDisplacement02">
+			1, 2, 4, 6, 8, 10, 12, 14,
+			16, 18, 20, 22, 24, 26, 28, 30,
+			32, 34, 36, 38, 40, 42, 44, 46,
+			48, 50, 52, 54, 56, 58, 60, 62,
+			63, 65, 67, 69, 71, 73, 75, 77,
+			79, 81, 83, 85, 87, 89, 91, 93,
+			95, 97, 99, 101, 103, 105, 107, 109,
+			111, 113, 115, 117, 119, 121
+		</NodeSet>
+		<NodeSet name="FixedDisplacement03">
+			1, 2, 3, 4, 5, 6, 7, 8,
+			9, 10, 11, 12, 13, 14, 15, 16,
+			17, 18, 19, 20, 21, 22, 23, 24,
+			25, 26, 27, 28, 29, 30, 31, 32,
+			33, 34, 35, 36, 37, 38, 39, 40,
+			41, 42, 43, 44, 45, 46, 47, 48,
+			49, 50, 51, 52, 53, 54, 55, 56,
+			57, 58, 59, 60, 61
+		</NodeSet>
+		<NodeSet name="PrescribedBC179">
+			60, 61, 121, 122
+		</NodeSet>
+		<NodeSet name="PrescribedBC180">
+			60, 61, 121, 122
+		</NodeSet>
+		<NodeSet name="PrescribedBC181">
+			60, 61, 121, 122
+		</NodeSet>
+		<NodeSet name="InitialConcentration01">
+			1, 2, 3, 4, 5, 6, 7, 8,
+			9, 10, 11, 12, 13, 14, 15, 16,
+			17, 18, 19, 20, 21, 22, 23, 24,
+			25, 26, 27, 28, 29, 30, 31, 32,
+			33, 34, 35, 36, 37, 38, 39, 40,
+			41, 42, 43, 44, 45, 46, 47, 48,
+			49, 50, 51, 52, 53, 54, 55, 56,
+			57, 58, 59, 60, 61, 62, 63, 64,
+			65, 66, 67, 68, 69, 70, 71, 72,
+			73, 74, 75, 76, 77, 78, 79, 80,
+			81, 82, 83, 84, 85, 86, 87, 88,
+			89, 90, 91, 92, 93, 94, 95, 96,
+			97, 98, 99, 100, 101, 102, 103, 104,
+			105, 106, 107, 108, 109, 110, 111, 112,
+			113, 114, 115, 116, 117, 118, 119, 120,
+			121, 122
+		</NodeSet>
+		<NodeSet name="InitialFluidPressure01">
+			1, 2, 3, 4, 5, 6, 7, 8,
+			9, 10, 11, 12, 13, 14, 15, 16,
+			17, 18, 19, 20, 21, 22, 23, 24,
+			25, 26, 27, 28, 29, 30, 31, 32,
+			33, 34, 35, 36, 37, 38, 39, 40,
+			41, 42, 43, 44, 45, 46, 47, 48,
+			49, 50, 51, 52, 53, 54, 55, 56,
+			57, 58, 59, 60, 61, 62, 63, 64,
+			65, 66, 67, 68, 69, 70, 71, 72,
+			73, 74, 75, 76, 77, 78, 79, 80,
+			81, 82, 83, 84, 85, 86, 87, 88,
+			89, 90, 91, 92, 93, 94, 95, 96,
+			97, 98, 99, 100, 101, 102, 103, 104,
+			105, 106, 107, 108, 109, 110, 111, 112,
+			113, 114, 115, 116, 117, 118, 119, 120,
+			121, 122
+		</NodeSet>
+		<Surface name="PrimarySurface01">
+			<quad4 id="1">1,62,64,3</quad4>
+			<quad4 id="2">5,3,64,66</quad4>
+			<quad4 id="3">7,5,66,68</quad4>
+			<quad4 id="4">9,7,68,70</quad4>
+			<quad4 id="5">11,9,70,72</quad4>
+			<quad4 id="6">13,11,72,74</quad4>
+			<quad4 id="7">15,13,74,76</quad4>
+			<quad4 id="8">17,15,76,78</quad4>
+			<quad4 id="9">19,17,78,80</quad4>
+			<quad4 id="10">21,19,80,82</quad4>
+			<quad4 id="11">23,21,82,84</quad4>
+			<quad4 id="12">25,23,84,86</quad4>
+			<quad4 id="13">27,25,86,88</quad4>
+			<quad4 id="14">29,27,88,90</quad4>
+			<quad4 id="15">31,29,90,92</quad4>
+			<quad4 id="16">33,31,92,94</quad4>
+			<quad4 id="17">35,33,94,96</quad4>
+			<quad4 id="18">37,35,96,98</quad4>
+			<quad4 id="19">39,37,98,100</quad4>
+			<quad4 id="20">41,39,100,102</quad4>
+			<quad4 id="21">43,41,102,104</quad4>
+			<quad4 id="22">45,43,104,106</quad4>
+			<quad4 id="23">47,45,106,108</quad4>
+			<quad4 id="24">49,47,108,110</quad4>
+			<quad4 id="25">51,49,110,112</quad4>
+			<quad4 id="26">53,51,112,114</quad4>
+			<quad4 id="27">55,53,114,116</quad4>
+			<quad4 id="28">57,55,116,118</quad4>
+			<quad4 id="29">59,57,118,120</quad4>
+			<quad4 id="30">61,59,120,122</quad4>
+		</Surface>
+		<Surface name="SecondarySurface01">
+			<quad4 id="1">123,125,126,124</quad4>
+		</Surface>
+		<Surface name="PrimarySurface02">
+			<tri3 id="1">62,63,64</tri3>
+			<quad4 id="2">63,65,66,64</quad4>
+			<quad4 id="3">65,67,68,66</quad4>
+			<quad4 id="4">67,69,70,68</quad4>
+			<quad4 id="5">69,71,72,70</quad4>
+			<quad4 id="6">71,73,74,72</quad4>
+			<quad4 id="7">73,75,76,74</quad4>
+			<quad4 id="8">75,77,78,76</quad4>
+			<quad4 id="9">77,79,80,78</quad4>
+			<quad4 id="10">79,81,82,80</quad4>
+			<quad4 id="11">81,83,84,82</quad4>
+			<quad4 id="12">83,85,86,84</quad4>
+			<quad4 id="13">85,87,88,86</quad4>
+			<quad4 id="14">87,89,90,88</quad4>
+			<quad4 id="15">89,91,92,90</quad4>
+			<quad4 id="16">91,93,94,92</quad4>
+			<quad4 id="17">93,95,96,94</quad4>
+			<quad4 id="18">95,97,98,96</quad4>
+			<quad4 id="19">97,99,100,98</quad4>
+			<quad4 id="20">99,101,102,100</quad4>
+			<quad4 id="21">101,103,104,102</quad4>
+			<quad4 id="22">103,105,106,104</quad4>
+			<quad4 id="23">105,107,108,106</quad4>
+			<quad4 id="24">107,109,110,108</quad4>
+			<quad4 id="25">109,111,112,110</quad4>
+			<quad4 id="26">111,113,114,112</quad4>
+			<quad4 id="27">113,115,116,114</quad4>
+			<quad4 id="28">115,117,118,116</quad4>
+			<quad4 id="29">117,119,120,118</quad4>
+			<quad4 id="30">119,121,122,120</quad4>
+		</Surface>
+		<Surface name="SecondarySurface02">
+			<quad4 id="1">127,129,130,128</quad4>
+		</Surface>
+		<ElementSet name="unnamed_set01">
+			2
+		</ElementSet>
+		<SurfacePair name="TCInterface01">
+			<primary>PrimarySurface01</primary>
+			<secondary>SecondarySurface01</secondary>
+		</SurfacePair>
+		<SurfacePair name="TCInterface02">
+			<primary>PrimarySurface02</primary>
+			<secondary>SecondarySurface02</secondary>
+		</SurfacePair>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part01" mat="Cartilage CaCl2"/>
+		<SolidDomain name="Part01(2)" mat="Cartilage CaCl2"/>
+		<ShellDomain name="Part3" mat="Symmetry Plane">
+			<shell_thickness>0</shell_thickness>
+		</ShellDomain>
+		<ShellDomain name="Part4" mat="Platen">
+			<shell_thickness>0</shell_thickness>
+		</ShellDomain>
+	</MeshDomains>
+	<MeshData>
+		<ElementData type="shell thickness" elem_set="Part3">
+			<e lid="1">0.01,0.01,0.01,0.01</e>
+		</ElementData>
+		<ElementData type="shell thickness" elem_set="Part4">
+			<e lid="1">0.01,0.01,0.01,0.01</e>
+		</ElementData>
+	</MeshData>
+	<Boundary>
+		<bc name="FixedDisplacement01" node_set="FixedDisplacement01" type="zero displacement">
+			<x_dof>1</x_dof>
+			<y_dof>1</y_dof>
+			<z_dof>0</z_dof>
+		</bc>
+		<bc name="FixedDisplacement02" node_set="FixedDisplacement02" type="zero displacement">
+			<x_dof>0</x_dof>
+			<y_dof>1</y_dof>
+			<z_dof>0</z_dof>
+		</bc>
+		<bc name="FixedDisplacement03" node_set="FixedDisplacement03" type="zero displacement">
+			<x_dof>0</x_dof>
+			<y_dof>0</y_dof>
+			<z_dof>1</z_dof>
+		</bc>
+		<bc name="PrescribedBC179" node_set="PrescribedBC179" type="prescribed fluid pressure">
+			<value lc="3">1</value>
+			<relative>0</relative>
+		</bc>
+		<bc name="PrescribedBC180" node_set="PrescribedBC180" type="prescribed concentration">
+			<dof>c1</dof>
+			<value lc="4">1</value>
+			<relative>0</relative>
+		</bc>
+		<bc name="PrescribedBC181" node_set="PrescribedBC181" type="prescribed concentration">
+			<dof>c2</dof>
+			<value lc="5">1</value>
+			<relative>0</relative>
+		</bc>
+	</Boundary>
+	<Rigid>
+		<rigid_bc name="RigidFixed69" type="rigid_fixed">
+			<rb>Symmetry Plane</rb>
+			<Rx_dof>1</Rx_dof>
+			<Ry_dof>1</Ry_dof>
+			<Rz_dof>1</Rz_dof>
+			<Ru_dof>1</Ru_dof>
+			<Rv_dof>1</Rv_dof>
+			<Rw_dof>1</Rw_dof>
+		</rigid_bc>
+		<rigid_bc name="RigidFixed70" type="rigid_fixed">
+			<rb>Platen</rb>
+			<Rx_dof>1</Rx_dof>
+			<Ry_dof>1</Ry_dof>
+			<Rz_dof>0</Rz_dof>
+			<Ru_dof>1</Ru_dof>
+			<Rv_dof>1</Rv_dof>
+			<Rw_dof>1</Rw_dof>
+		</rigid_bc>
+	</Rigid>
+	<Contact>
+		<contact name="TCInterface01" surface_pair="TCInterface01" type="sliding-elastic">
+			<laugon>PENALTY</laugon>
+			<tolerance>0.2</tolerance>
+			<gaptol>0</gaptol>
+			<penalty>10000</penalty>
+			<auto_penalty>1</auto_penalty>
+			<update_penalty>0</update_penalty>
+			<two_pass>0</two_pass>
+			<knmult>0</knmult>
+			<search_tol>0.01</search_tol>
+			<symmetric_stiffness>0</symmetric_stiffness>
+			<search_radius>1</search_radius>
+			<seg_up>0</seg_up>
+			<tension>1</tension>
+			<minaug>0</minaug>
+			<maxaug>10</maxaug>
+			<node_reloc>0</node_reloc>
+			<fric_coeff>0</fric_coeff>
+			<smooth_aug>0</smooth_aug>
+			<flip_primary>0</flip_primary>
+			<flip_secondary>0</flip_secondary>
+			<shell_bottom_primary>0</shell_bottom_primary>
+			<shell_bottom_secondary>0</shell_bottom_secondary>
+			<offset>0</offset>
+		</contact>
+		<contact name="TCInterface02" surface_pair="TCInterface02" type="sliding-elastic">
+			<laugon>PENALTY</laugon>
+			<tolerance>0.2</tolerance>
+			<gaptol>0</gaptol>
+			<penalty>1000</penalty>
+			<auto_penalty>1</auto_penalty>
+			<update_penalty>0</update_penalty>
+			<two_pass>0</two_pass>
+			<knmult>0</knmult>
+			<search_tol>0.01</search_tol>
+			<symmetric_stiffness>0</symmetric_stiffness>
+			<search_radius>1</search_radius>
+			<seg_up>0</seg_up>
+			<tension>0</tension>
+			<minaug>0</minaug>
+			<maxaug>10</maxaug>
+			<node_reloc>0</node_reloc>
+			<fric_coeff>0</fric_coeff>
+			<smooth_aug>0</smooth_aug>
+			<flip_primary>0</flip_primary>
+			<flip_secondary>0</flip_secondary>
+			<shell_bottom_primary>0</shell_bottom_primary>
+			<shell_bottom_secondary>0</shell_bottom_secondary>
+			<offset>0</offset>
+		</contact>
+	</Contact>
+	<Initial>
+		<ic name="InitConcentration01" node_set="InitialConcentration01" type="initial concentration">
+			<dof>c1</dof>
+			<value>220</value>
+		</ic>
+		<ic name="InitConcentration02" node_set="InitialConcentration01" type="initial concentration">
+			<dof>c2</dof>
+			<value>110</value>
+		</ic>
+		<ic name="InitialFluidPressure01" node_set="InitialFluidPressure01" type="initial fluid pressure">
+			<value>-0.8505</value>
+		</ic>
+	</Initial>
+	<Step>
+		<step id="1" name="Step01 Steady-State">
+			<Control>
+				<analysis>STEADY-STATE</analysis>
+				<time_steps>10</time_steps>
+				<step_size>0.1</step_size>
+				<plot_zero_state>0</plot_zero_state>
+				<plot_range>0,-1</plot_range>
+				<plot_level>PLOT_MAJOR_ITRS</plot_level>
+				<output_level>OUTPUT_MAJOR_ITRS</output_level>
+				<plot_stride>1</plot_stride>
+				<adaptor_re_solve>1</adaptor_re_solve>
+				<time_stepper type="default">
+					<max_retries>5</max_retries>
+					<opt_iter>10</opt_iter>
+					<dtmin>0.01</dtmin>
+					<dtmax>0.1</dtmax>
+					<aggressiveness>0</aggressiveness>
+					<cutback>0.5</cutback>
+					<dtforce>0</dtforce>
+				</time_stepper>
+				<solver type="multiphasic">
+					<symmetric_stiffness>non-symmetric</symmetric_stiffness>
+					<equation_scheme>staggered</equation_scheme>
+					<equation_order>default</equation_order>
+					<optimize_bw>0</optimize_bw>
+					<lstol>0.9</lstol>
+					<lsmin>0.01</lsmin>
+					<lsiter>5</lsiter>
+					<max_refs>15</max_refs>
+					<check_zero_diagonal>0</check_zero_diagonal>
+					<zero_diagonal_tol>0</zero_diagonal_tol>
+					<force_partition>0</force_partition>
+					<reform_each_time_step>1</reform_each_time_step>
+					<reform_augment>0</reform_augment>
+					<diverge_reform>1</diverge_reform>
+					<min_residual>1e-20</min_residual>
+					<max_residual>0</max_residual>
+					<dtol>0.001</dtol>
+					<etol>0.01</etol>
+					<rtol>0</rtol>
+					<rhoi>-2</rhoi>
+					<alpha>1</alpha>
+					<beta>0.25</beta>
+					<gamma>0.5</gamma>
+					<logSolve>0</logSolve>
+					<arc_length>0</arc_length>
+					<arc_length_scale>0</arc_length_scale>
+					<ptol>0.01</ptol>
+					<ctol>0.01</ctol>
+					<force_positive_concentrations>1</force_positive_concentrations>
+					<qn_method type="Broyden">
+						<max_ups>0</max_ups>
+						<max_buffer_size>0</max_buffer_size>
+						<cycle_buffer>1</cycle_buffer>
+						<cmax>100000</cmax>
+					</qn_method>
+				</solver>
+			</Control>
+			<Rigid>
+				<rigid_bc name="RigidDisplacement33" type="rigid_displacement">
+					<rb>Platen</rb>
+					<dof>z</dof>
+					<value lc="6">1</value>
+					<relative>0</relative>
+				</rigid_bc>
+			</Rigid>
+		</step>
+		<step id="2" name="Step02 Transient">
+			<Control>
+				<analysis>TRANSIENT</analysis>
+				<time_steps>72000</time_steps>
+				<step_size>0.1</step_size>
+				<plot_zero_state>0</plot_zero_state>
+				<plot_range>0,-1</plot_range>
+				<plot_level>PLOT_MAJOR_ITRS</plot_level>
+				<output_level>OUTPUT_MAJOR_ITRS</output_level>
+				<plot_stride>1</plot_stride>
+				<adaptor_re_solve>1</adaptor_re_solve>
+				<time_stepper type="default">
+					<max_retries>5</max_retries>
+					<opt_iter>10</opt_iter>
+					<dtmin>0.01</dtmin>
+					<dtmax lc="1">0</dtmax>
+					<aggressiveness>0</aggressiveness>
+					<cutback>0.5</cutback>
+					<dtforce>0</dtforce>
+				</time_stepper>
+				<solver type="multiphasic">
+					<symmetric_stiffness>non-symmetric</symmetric_stiffness>
+					<equation_scheme>staggered</equation_scheme>
+					<equation_order>default</equation_order>
+					<optimize_bw>0</optimize_bw>
+					<lstol>0.9</lstol>
+					<lsmin>0.01</lsmin>
+					<lsiter>5</lsiter>
+					<max_refs>25</max_refs>
+					<check_zero_diagonal>0</check_zero_diagonal>
+					<zero_diagonal_tol>0</zero_diagonal_tol>
+					<force_partition>0</force_partition>
+					<reform_each_time_step>1</reform_each_time_step>
+					<reform_augment>0</reform_augment>
+					<diverge_reform>1</diverge_reform>
+					<min_residual>1e-20</min_residual>
+					<max_residual>0</max_residual>
+					<dtol>0.001</dtol>
+					<etol>0.01</etol>
+					<rtol>0</rtol>
+					<rhoi>-2</rhoi>
+					<alpha>1</alpha>
+					<beta>0.25</beta>
+					<gamma>0.5</gamma>
+					<logSolve>0</logSolve>
+					<arc_length>0</arc_length>
+					<arc_length_scale>0</arc_length_scale>
+					<ptol>0.01</ptol>
+					<ctol>0.01</ctol>
+					<force_positive_concentrations>1</force_positive_concentrations>
+					<qn_method type="Broyden">
+						<max_ups>0</max_ups>
+						<max_buffer_size>0</max_buffer_size>
+						<cycle_buffer>1</cycle_buffer>
+						<cmax>100000</cmax>
+					</qn_method>
+				</solver>
+			</Control>
+			<Rigid>
+				<rigid_load name="RigidForce04" type="rigid_force">
+					<rb>Platen</rb>
+					<dof>Rz</dof>
+					<value lc="7">1</value>
+					<load_type>LOAD</load_type>
+					<relative>0</relative>
+				</rigid_load>
+			</Rigid>
+		</step>
+	</Step>
+	<LoadData>
+		<load_controller id="1" name="LC1" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1.1,0.1</pt>
+				<pt>1.5,0.1</pt>
+				<pt>2,0.1</pt>
+				<pt>10,1</pt>
+				<pt>100,10</pt>
+				<pt>1000,100</pt>
+				<pt>10000,1000</pt>
+			</points>
+		</load_controller>
+		<load_controller id="2" name="LC2" type="loadcurve">
+			<interpolate>SMOOTH</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1,-200</pt>
+			</points>
+		</load_controller>
+		<load_controller id="3" name="LC3" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1,-0.8505</pt>
+			</points>
+		</load_controller>
+		<load_controller id="4" name="LC4" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1,220</pt>
+			</points>
+		</load_controller>
+		<load_controller id="5" name="LC5" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1,110</pt>
+			</points>
+		</load_controller>
+		<load_controller id="6" name="LC6" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1,0</pt>
+			</points>
+		</load_controller>
+		<load_controller id="7" name="LC7" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1,-0.471</pt>
+			</points>
+		</load_controller>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="contact gap"/>
+			<var type="contact pressure"/>
+			<var type="current density"/>
+			<var type="displacement"/>
+			<var type="reaction forces"/>
+			<var type="relative volume"/>
+			<var type="stress"/>
+			<var type="effective fluid pressure"/>
+			<var type="fluid pressure"/>
+			<var type="fluid flux"/>
+			<var type="effective solute concentration"/>
+			<var type="electric potential"/>
+			<var type="fixed charge density"/>
+			<var type="solute concentration"/>
+			<var type="solute flux"/>
+		</plotfile>
+		<logfile>
+			<element_data data="sx" elem_set="unnamed_set01"/>
+		</logfile>
+	</Output>
+</febio_spec>

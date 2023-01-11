@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+A 20x4 element shell sheet is constrained in x,y,z on the left end and attached
+by rigid contact to a rigid body with a prescribed rotation of 1 radian in time t=1.
+
+The shellrigid interface connects nodal positions and
+directors, so that the shell edge rotates with the rigid
+body
+-->
+<febio_spec version="4.0">
+	<Module type="solid"/>
+	<Control>
+		<analysis>STATIC</analysis>
+		<time_steps>10</time_steps>
+		<step_size>0.1</step_size>
+		<plot_zero_state>0</plot_zero_state>
+		<plot_range>0,-1</plot_range>
+		<plot_level>PLOT_MAJOR_ITRS</plot_level>
+		<output_level>OUTPUT_MAJOR_ITRS</output_level>
+		<plot_stride>1</plot_stride>
+		<adaptor_re_solve>1</adaptor_re_solve>
+		<time_stepper type="default">
+			<max_retries>5</max_retries>
+			<opt_iter>10</opt_iter>
+			<dtmin>0.01</dtmin>
+			<dtmax>0.1</dtmax>
+			<aggressiveness>0</aggressiveness>
+			<cutback>0.5</cutback>
+			<dtforce>0</dtforce>
+		</time_stepper>
+		<solver type="solid">
+			<symmetric_stiffness>symmetric</symmetric_stiffness>
+			<equation_scheme>staggered</equation_scheme>
+			<equation_order>default</equation_order>
+			<optimize_bw>0</optimize_bw>
+			<lstol>0.9</lstol>
+			<lsmin>0.01</lsmin>
+			<lsiter>5</lsiter>
+			<max_refs>15</max_refs>
+			<check_zero_diagonal>0</check_zero_diagonal>
+			<zero_diagonal_tol>0</zero_diagonal_tol>
+			<force_partition>0</force_partition>
+			<reform_each_time_step>1</reform_each_time_step>
+			<reform_augment>0</reform_augment>
+			<diverge_reform>1</diverge_reform>
+			<min_residual>1e-20</min_residual>
+			<max_residual>0</max_residual>
+			<dtol>0.001</dtol>
+			<etol>0.01</etol>
+			<rtol>0</rtol>
+			<rhoi>-2</rhoi>
+			<alpha>1</alpha>
+			<beta>0.25</beta>
+			<gamma>0.5</gamma>
+			<logSolve>0</logSolve>
+			<arc_length>0</arc_length>
+			<arc_length_scale>0</arc_length_scale>
+			<qn_method type="BFGS">
+				<max_ups>0</max_ups>
+				<max_buffer_size>0</max_buffer_size>
+				<cycle_buffer>1</cycle_buffer>
+				<cmax>100000</cmax>
+			</qn_method>
+		</solver>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="Material 1" type="neo-Hookean">
+			<density>1</density>
+			<E>1</E>
+			<v>0</v>
+		</material>
+		<material id="2" name="Material 2" type="rigid body">
+			<density>1</density>
+			<E>1</E>
+			<v>0</v>
+		</material>
+	</Material>
+	<Mesh>
+		<Nodes name="Object01">
+			<node id="1">-2.5,-0.5,0</node>
+			<node id="2">-2.5,-0.25,0</node>
+			<node id="3">-2.5,0,0</node>
+			<node id="4">-2.5,0.25,0</node>
+			<node id="5">-2.5,0.5,0</node>
+			<node id="6">-2.25,-0.5,0</node>
+			<node id="7">-2.25,-0.25,0</node>
+			<node id="8">-2.25,0,0</node>
+			<node id="9">-2.25,0.25,0</node>
+			<node id="10">-2.25,0.5,0</node>
+			<node id="11">-2,-0.5,0</node>
+			<node id="12">-2,-0.25,0</node>
+			<node id="13">-2,0,0</node>
+			<node id="14">-2,0.25,0</node>
+			<node id="15">-2,0.5,0</node>
+			<node id="16">-1.75,-0.5,0</node>
+			<node id="17">-1.75,-0.25,0</node>
+			<node id="18">-1.75,0,0</node>
+			<node id="19">-1.75,0.25,0</node>
+			<node id="20">-1.75,0.5,0</node>
+			<node id="21">-1.5,-0.5,0</node>
+			<node id="22">-1.5,-0.25,0</node>
+			<node id="23">-1.5,0,0</node>
+			<node id="24">-1.5,0.25,0</node>
+			<node id="25">-1.5,0.5,0</node>
+			<node id="26">-1.25,-0.5,0</node>
+			<node id="27">-1.25,-0.25,0</node>
+			<node id="28">-1.25,0,0</node>
+			<node id="29">-1.25,0.25,0</node>
+			<node id="30">-1.25,0.5,0</node>
+			<node id="31">-1,-0.5,0</node>
+			<node id="32">-1,-0.25,0</node>
+			<node id="33">-1,0,0</node>
+			<node id="34">-1,0.25,0</node>
+			<node id="35">-1,0.5,0</node>
+			<node id="36">-0.75,-0.5,0</node>
+			<node id="37">-0.75,-0.25,0</node>
+			<node id="38">-0.75,0,0</node>
+			<node id="39">-0.75,0.25,0</node>
+			<node id="40">-0.75,0.5,0</node>
+			<node id="41">-0.5,-0.5,0</node>
+			<node id="42">-0.5,-0.25,0</node>
+			<node id="43">-0.5,0,0</node>
+			<node id="44">-0.5,0.25,0</node>
+			<node id="45">-0.5,0.5,0</node>
+			<node id="46">-0.25,-0.5,0</node>
+			<node id="47">-0.25,-0.25,0</node>
+			<node id="48">-0.25,0,0</node>
+			<node id="49">-0.25,0.25,0</node>
+			<node id="50">-0.25,0.5,0</node>
+			<node id="51">0,-0.5,0</node>
+			<node id="52">0,-0.25,0</node>
+			<node id="53">0,0,0</node>
+			<node id="54">0,0.25,0</node>
+			<node id="55">0,0.5,0</node>
+			<node id="56">0.25,-0.5,0</node>
+			<node id="57">0.25,-0.25,0</node>
+			<node id="58">0.25,0,0</node>
+			<node id="59">0.25,0.25,0</node>
+			<node id="60">0.25,0.5,0</node>
+			<node id="61">0.5,-0.5,0</node>
+			<node id="62">0.5,-0.25,0</node>
+			<node id="63">0.5,0,0</node>
+			<node id="64">0.5,0.25,0</node>
+			<node id="65">0.5,0.5,0</node>
+			<node id="66">0.75,-0.5,0</node>
+			<node id="67">0.75,-0.25,0</node>
+			<node id="68">0.75,0,0</node>
+			<node id="69">0.75,0.25,0</node>
+			<node id="70">0.75,0.5,0</node>
+			<node id="71">1,-0.5,0</node>
+			<node id="72">1,-0.25,0</node>
+			<node id="73">1,0,0</node>
+			<node id="74">1,0.25,0</node>
+			<node id="75">1,0.5,0</node>
+			<node id="76">1.25,-0.5,0</node>
+			<node id="77">1.25,-0.25,0</node>
+			<node id="78">1.25,0,0</node>
+			<node id="79">1.25,0.25,0</node>
+			<node id="80">1.25,0.5,0</node>
+			<node id="81">1.5,-0.5,0</node>
+			<node id="82">1.5,-0.25,0</node>
+			<node id="83">1.5,0,0</node>
+			<node id="84">1.5,0.25,0</node>
+			<node id="85">1.5,0.5,0</node>
+			<node id="86">1.75,-0.5,0</node>
+			<node id="87">1.75,-0.25,0</node>
+			<node id="88">1.75,0,0</node>
+			<node id="89">1.75,0.25,0</node>
+			<node id="90">1.75,0.5,0</node>
+			<node id="91">2,-0.5,0</node>
+			<node id="92">2,-0.25,0</node>
+			<node id="93">2,0,0</node>
+			<node id="94">2,0.25,0</node>
+			<node id="95">2,0.5,0</node>
+			<node id="96">2.25,-0.5,0</node>
+			<node id="97">2.25,-0.25,0</node>
+			<node id="98">2.25,0,0</node>
+			<node id="99">2.25,0.25,0</node>
+			<node id="100">2.25,0.5,0</node>
+			<node id="101">2.5,-0.5,0</node>
+			<node id="102">2.5,-0.25,0</node>
+			<node id="103">2.5,0,0</node>
+			<node id="104">2.5,0.25,0</node>
+			<node id="105">2.5,0.5,0</node>
+			<node id="106">2.5,-0.5,-0.5</node>
+			<node id="107">2.5,-0.5,0.5</node>
+			<node id="108">2.5,0.5,-0.5</node>
+			<node id="109">2.5,0.5,0.5</node>
+			<node id="110">3.5,-0.5,-0.5</node>
+			<node id="111">3.5,-0.5,0.5</node>
+			<node id="112">3.5,0.5,-0.5</node>
+			<node id="113">3.5,0.5,0.5</node>
+		</Nodes>
+		<Elements type="quad4" name="Part45">
+			<elem id="1">1,6,7,2</elem>
+			<elem id="2">2,7,8,3</elem>
+			<elem id="3">3,8,9,4</elem>
+			<elem id="4">4,9,10,5</elem>
+			<elem id="5">6,11,12,7</elem>
+			<elem id="6">7,12,13,8</elem>
+			<elem id="7">8,13,14,9</elem>
+			<elem id="8">9,14,15,10</elem>
+			<elem id="9">11,16,17,12</elem>
+			<elem id="10">12,17,18,13</elem>
+			<elem id="11">13,18,19,14</elem>
+			<elem id="12">14,19,20,15</elem>
+			<elem id="13">16,21,22,17</elem>
+			<elem id="14">17,22,23,18</elem>
+			<elem id="15">18,23,24,19</elem>
+			<elem id="16">19,24,25,20</elem>
+			<elem id="17">21,26,27,22</elem>
+			<elem id="18">22,27,28,23</elem>
+			<elem id="19">23,28,29,24</elem>
+			<elem id="20">24,29,30,25</elem>
+			<elem id="21">26,31,32,27</elem>
+			<elem id="22">27,32,33,28</elem>
+			<elem id="23">28,33,34,29</elem>
+			<elem id="24">29,34,35,30</elem>
+			<elem id="25">31,36,37,32</elem>
+			<elem id="26">32,37,38,33</elem>
+			<elem id="27">33,38,39,34</elem>
+			<elem id="28">34,39,40,35</elem>
+			<elem id="29">36,41,42,37</elem>
+			<elem id="30">37,42,43,38</elem>
+			<elem id="31">38,43,44,39</elem>
+			<elem id="32">39,44,45,40</elem>
+			<elem id="33">41,46,47,42</elem>
+			<elem id="34">42,47,48,43</elem>
+			<elem id="35">43,48,49,44</elem>
+			<elem id="36">44,49,50,45</elem>
+			<elem id="37">46,51,52,47</elem>
+			<elem id="38">47,52,53,48</elem>
+			<elem id="39">48,53,54,49</elem>
+			<elem id="40">49,54,55,50</elem>
+			<elem id="41">51,56,57,52</elem>
+			<elem id="42">52,57,58,53</elem>
+			<elem id="43">53,58,59,54</elem>
+			<elem id="44">54,59,60,55</elem>
+			<elem id="45">56,61,62,57</elem>
+			<elem id="46">57,62,63,58</elem>
+			<elem id="47">58,63,64,59</elem>
+			<elem id="48">59,64,65,60</elem>
+			<elem id="49">61,66,67,62</elem>
+			<elem id="50">62,67,68,63</elem>
+			<elem id="51">63,68,69,64</elem>
+			<elem id="52">64,69,70,65</elem>
+			<elem id="53">66,71,72,67</elem>
+			<elem id="54">67,72,73,68</elem>
+			<elem id="55">68,73,74,69</elem>
+			<elem id="56">69,74,75,70</elem>
+			<elem id="57">71,76,77,72</elem>
+			<elem id="58">72,77,78,73</elem>
+			<elem id="59">73,78,79,74</elem>
+			<elem id="60">74,79,80,75</elem>
+			<elem id="61">76,81,82,77</elem>
+			<elem id="62">77,82,83,78</elem>
+			<elem id="63">78,83,84,79</elem>
+			<elem id="64">79,84,85,80</elem>
+			<elem id="65">81,86,87,82</elem>
+			<elem id="66">82,87,88,83</elem>
+			<elem id="67">83,88,89,84</elem>
+			<elem id="68">84,89,90,85</elem>
+			<elem id="69">86,91,92,87</elem>
+			<elem id="70">87,92,93,88</elem>
+			<elem id="71">88,93,94,89</elem>
+			<elem id="72">89,94,95,90</elem>
+			<elem id="73">91,96,97,92</elem>
+			<elem id="74">92,97,98,93</elem>
+			<elem id="75">93,98,99,94</elem>
+			<elem id="76">94,99,100,95</elem>
+			<elem id="77">96,101,102,97</elem>
+			<elem id="78">97,102,103,98</elem>
+			<elem id="79">98,103,104,99</elem>
+			<elem id="80">99,104,105,100</elem>
+		</Elements>
+		<Elements type="hex8" name="Part46">
+			<elem id="81">106,110,112,108,107,111,113,109</elem>
+		</Elements>
+		<NodeSet name="FixedDisplacement01">
+			1, 2, 3, 4, 5
+		</NodeSet>
+		<NodeSet name="FixedDisplacement02">
+			1, 2, 3, 4, 5
+		</NodeSet>
+		<NodeSet name="FixedDisplacement03">
+			1, 2, 3, 4, 5
+		</NodeSet>
+		<NodeSet name="RigidNodeset 1">
+			101, 102, 103, 104, 105
+		</NodeSet>
+		<ElementSet name="unnamed_set01">
+			39
+		</ElementSet>
+	</Mesh>
+	<MeshDomains>
+		<ShellDomain name="Part45" mat="Material 1">
+			<shell_thickness>0</shell_thickness>
+		</ShellDomain>
+		<SolidDomain name="Part46" mat="Material 2"/>
+	</MeshDomains>
+	<MeshData>
+		<ElementData type="shell thickness" elem_set="Part45">
+			<e lid="1">0.01,0.01,0.01,0.01</e>
+			<e lid="2">0.01,0.01,0.01,0.01</e>
+			<e lid="3">0.01,0.01,0.01,0.01</e>
+			<e lid="4">0.01,0.01,0.01,0.01</e>
+			<e lid="5">0.01,0.01,0.01,0.01</e>
+			<e lid="6">0.01,0.01,0.01,0.01</e>
+			<e lid="7">0.01,0.01,0.01,0.01</e>
+			<e lid="8">0.01,0.01,0.01,0.01</e>
+			<e lid="9">0.01,0.01,0.01,0.01</e>
+			<e lid="10">0.01,0.01,0.01,0.01</e>
+			<e lid="11">0.01,0.01,0.01,0.01</e>
+			<e lid="12">0.01,0.01,0.01,0.01</e>
+			<e lid="13">0.01,0.01,0.01,0.01</e>
+			<e lid="14">0.01,0.01,0.01,0.01</e>
+			<e lid="15">0.01,0.01,0.01,0.01</e>
+			<e lid="16">0.01,0.01,0.01,0.01</e>
+			<e lid="17">0.01,0.01,0.01,0.01</e>
+			<e lid="18">0.01,0.01,0.01,0.01</e>
+			<e lid="19">0.01,0.01,0.01,0.01</e>
+			<e lid="20">0.01,0.01,0.01,0.01</e>
+			<e lid="21">0.01,0.01,0.01,0.01</e>
+			<e lid="22">0.01,0.01,0.01,0.01</e>
+			<e lid="23">0.01,0.01,0.01,0.01</e>
+			<e lid="24">0.01,0.01,0.01,0.01</e>
+			<e lid="25">0.01,0.01,0.01,0.01</e>
+			<e lid="26">0.01,0.01,0.01,0.01</e>
+			<e lid="27">0.01,0.01,0.01,0.01</e>
+			<e lid="28">0.01,0.01,0.01,0.01</e>
+			<e lid="29">0.01,0.01,0.01,0.01</e>
+			<e lid="30">0.01,0.01,0.01,0.01</e>
+			<e lid="31">0.01,0.01,0.01,0.01</e>
+			<e lid="32">0.01,0.01,0.01,0.01</e>
+			<e lid="33">0.01,0.01,0.01,0.01</e>
+			<e lid="34">0.01,0.01,0.01,0.01</e>
+			<e lid="35">0.01,0.01,0.01,0.01</e>
+			<e lid="36">0.01,0.01,0.01,0.01</e>
+			<e lid="37">0.01,0.01,0.01,0.01</e>
+			<e lid="38">0.01,0.01,0.01,0.01</e>
+			<e lid="39">0.01,0.01,0.01,0.01</e>
+			<e lid="40">0.01,0.01,0.01,0.01</e>
+			<e lid="41">0.01,0.01,0.01,0.01</e>
+			<e lid="42">0.01,0.01,0.01,0.01</e>
+			<e lid="43">0.01,0.01,0.01,0.01</e>
+			<e lid="44">0.01,0.01,0.01,0.01</e>
+			<e lid="45">0.01,0.01,0.01,0.01</e>
+			<e lid="46">0.01,0.01,0.01,0.01</e>
+			<e lid="47">0.01,0.01,0.01,0.01</e>
+			<e lid="48">0.01,0.01,0.01,0.01</e>
+			<e lid="49">0.01,0.01,0.01,0.01</e>
+			<e lid="50">0.01,0.01,0.01,0.01</e>
+			<e lid="51">0.01,0.01,0.01,0.01</e>
+			<e lid="52">0.01,0.01,0.01,0.01</e>
+			<e lid="53">0.01,0.01,0.01,0.01</e>
+			<e lid="54">0.01,0.01,0.01,0.01</e>
+			<e lid="55">0.01,0.01,0.01,0.01</e>
+			<e lid="56">0.01,0.01,0.01,0.01</e>
+			<e lid="57">0.01,0.01,0.01,0.01</e>
+			<e lid="58">0.01,0.01,0.01,0.01</e>
+			<e lid="59">0.01,0.01,0.01,0.01</e>
+			<e lid="60">0.01,0.01,0.01,0.01</e>
+			<e lid="61">0.01,0.01,0.01,0.01</e>
+			<e lid="62">0.01,0.01,0.01,0.01</e>
+			<e lid="63">0.01,0.01,0.01,0.01</e>
+			<e lid="64">0.01,0.01,0.01,0.01</e>
+			<e lid="65">0.01,0.01,0.01,0.01</e>
+			<e lid="66">0.01,0.01,0.01,0.01</e>
+			<e lid="67">0.01,0.01,0.01,0.01</e>
+			<e lid="68">0.01,0.01,0.01,0.01</e>
+			<e lid="69">0.01,0.01,0.01,0.01</e>
+			<e lid="70">0.01,0.01,0.01,0.01</e>
+			<e lid="71">0.01,0.01,0.01,0.01</e>
+			<e lid="72">0.01,0.01,0.01,0.01</e>
+			<e lid="73">0.01,0.01,0.01,0.01</e>
+			<e lid="74">0.01,0.01,0.01,0.01</e>
+			<e lid="75">0.01,0.01,0.01,0.01</e>
+			<e lid="76">0.01,0.01,0.01,0.01</e>
+			<e lid="77">0.01,0.01,0.01,0.01</e>
+			<e lid="78">0.01,0.01,0.01,0.01</e>
+			<e lid="79">0.01,0.01,0.01,0.01</e>
+			<e lid="80">0.01,0.01,0.01,0.01</e>
+		</ElementData>
+	</MeshData>
+	<Boundary>
+		<bc name="FixedDisplacement01" node_set="FixedDisplacement01" type="zero displacement">
+			<x_dof>0</x_dof>
+			<y_dof>0</y_dof>
+			<z_dof>1</z_dof>
+		</bc>
+		<bc name="FixedDisplacement02" node_set="FixedDisplacement02" type="zero displacement">
+			<x_dof>0</x_dof>
+			<y_dof>1</y_dof>
+			<z_dof>0</z_dof>
+		</bc>
+		<bc name="FixedDisplacement03" node_set="FixedDisplacement03" type="zero displacement">
+			<x_dof>1</x_dof>
+			<y_dof>0</y_dof>
+			<z_dof>0</z_dof>
+		</bc>
+		<bc name="RigidInterface02" node_set="RigidNodeset 1" type="rigid">
+			<rb>Material 2</rb>
+			<clamp_shells>1</clamp_shells>
+		</bc>
+	</Boundary>
+	<Rigid>
+		<rigid_bc name="RigidFixed119" type="rigid_fixed">
+			<rb>Material 2</rb>
+			<Rx_dof>0</Rx_dof>
+			<Ry_dof>1</Ry_dof>
+			<Rz_dof>1</Rz_dof>
+			<Ru_dof>1</Ru_dof>
+			<Rv_dof>0</Rv_dof>
+			<Rw_dof>1</Rw_dof>
+		</rigid_bc>
+		<rigid_bc name="RigidDisplacement47" type="rigid_rotation">
+			<rb>Material 2</rb>
+			<dof>Rv</dof>
+			<value lc="1">1</value>
+			<relative>0</relative>
+		</rigid_bc>
+	</Rigid>
+	<LoadData>
+		<load_controller id="1" name="LC1" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1,1</pt>
+			</points>
+		</load_controller>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="shell director"/>
+			<var type="shell thickness"/>
+			<var type="stress"/>
+		</plotfile>
+		<logfile>
+			<element_data data="z" elem_set="unnamed_set01"/>
+		</logfile>
+	</Output>
+</febio_spec>
