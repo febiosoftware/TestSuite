@@ -110,7 +110,7 @@ at time t=1.  The left end nodes are constrained in the xdirection.
 	<MeshDomains>
 		<SolidDomain name="Part1" mat="Material 1" type="three-field-solid">
 			<laugon>1</laugon>
-			<atol>0</atol>
+			<atol>0.01</atol>
 			<minaug>0</minaug>
 			<maxaug>0</maxaug>
 		</SolidDomain>
