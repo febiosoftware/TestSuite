@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 1D permeation of solvent and neutral solute through a block.
-    The boundary conditions on the upstream face are presecribed
-    effective fluid pressure and prescribed effective solute concentration.
-    On the downstream face the effective fluid pressure is set to zero,
+    The boundary conditions on the upstream face are prescribed
+    fluid pressure and prescribed effective solute concentration.
+    On the downstream face the fluid pressure is set to zero,
     and a solute natural flux is prescribed to allow the solute to flow out
     with no hindrance outside of the multiphasic mixture. The initial solute
     concentration in the block is zero. Over time, solute convects and diffuses
@@ -103,7 +103,7 @@
 			<solute sol="solute1">
 				<diffusivity type="diff-const-iso">
 					<free_diff>0.001</free_diff>
-					<diff>0.0005</diff>
+					<diff>0.001</diff>
 				</diffusivity>
 				<solubility type="solub-const">
 					<solub>1</solub>
@@ -308,16 +308,16 @@
 			<quad4 id="1">4,3,2,1</quad4>
 			<quad4 id="2">5,6,7,8</quad4>
 		</Surface>
-		<Surface name="FixedEffectiveFluidPressure1">
-			<quad4 id="1">5,6,7,8</quad4>
-		</Surface>
 		<Surface name="PrescribedEffectiveConcentration1">
 			<quad4 id="1">4,3,2,1</quad4>
 		</Surface>
-		<Surface name="PrescribedEffectiveFluidPressure1">
+		<Surface name="SoluteNaturalFlux2">
+			<quad4 id="1">5,6,7,8</quad4>
+		</Surface>
+		<Surface name="FluidPressureUpstream">
 			<quad4 id="1">4,3,2,1</quad4>
 		</Surface>
-		<Surface name="SoluteNaturalFlux">
+		<Surface name="FluidPressureDownstream">
 			<quad4 id="1">5,6,7,8</quad4>
 		</Surface>
 	</Mesh>
@@ -340,21 +340,23 @@
 			<y_dof>0</y_dof>
 			<z_dof>1</z_dof>
 		</bc>
-		<bc name="FixedEffectiveFluidPressure1" node_set="@surface:FixedEffectiveFluidPressure1" type="zero fluid pressure"/>
 		<bc name="PrescribedEffectiveConcentration1" node_set="@surface:PrescribedEffectiveConcentration1" type="prescribed concentration">
 			<dof>c1</dof>
 			<value lc="2">1</value>
 			<relative>0</relative>
 		</bc>
-		<bc name="PrescribedEffectiveFluidPressure1" node_set="@surface:PrescribedEffectiveFluidPressure1" type="prescribed fluid pressure">
-			<value lc="3">0.5</value>
-			<relative>0</relative>
-		</bc>
 	</Boundary>
 	<Loads>
-		<surface_load name="SoluteNaturalFlux" surface="SoluteNaturalFlux" type="solute natural flux">
+		<surface_load name="SoluteNaturalFlux2" surface="SoluteNaturalFlux2" type="solute natural flux">
 			<shell_bottom>0</shell_bottom>
 			<solute_id>solute1</solute_id>
+			<update>0</update>
+		</surface_load>
+		<surface_load name="FluidPressureUpstream" surface="FluidPressureUpstream" type="fluid pressure">
+			<pressure lc="2">0.1</pressure>
+		</surface_load>
+		<surface_load name="FluidPressureDownstream" surface="FluidPressureDownstream" type="fluid pressure">
+			<pressure>0</pressure>
 		</surface_load>
 	</Loads>
 	<LoadData>
@@ -375,14 +377,6 @@
 				<pt>1,1</pt>
 			</points>
 		</load_controller>
-		<load_controller id="3" name="LC3" type="loadcurve">
-			<interpolate>SMOOTH</interpolate>
-			<extend>CONSTANT</extend>
-			<points>
-				<pt>0,0</pt>
-				<pt>1,1</pt>
-			</points>
-		</load_controller>
 	</LoadData>
 	<Output>
 		<plotfile type="febio">
@@ -395,6 +389,7 @@
 			<var type="effective solute concentration"/>
 			<var type="solute concentration"/>
 			<var type="solute flux"/>
+			<var type="fluid pressure"/>
 		</plotfile>
 	</Output>
 </febio_spec>
