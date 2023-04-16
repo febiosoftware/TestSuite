@@ -20,7 +20,7 @@ far side of sphere) is 0.9438 and occurs at time t = 0.0223
 			<equation_scheme>staggered</equation_scheme>
 			<equation_order>default</equation_order>
 			<optimize_bw>0</optimize_bw>
-			<mass_lumping>2</mass_lumping>
+			<mass_lumping>1</mass_lumping>
 			<dyn_damping>1</dyn_damping>
 		</solver>
 	</Control>

@@ -985,13 +985,13 @@ This model implements shell nodal loads in a plane stress analysis.  To enforce 
 			124, 125, 126, 127, 133, 134, 135, 136,
 			137
 		</NodeSet>
-		<NodeSet name="ForceNodeset01">
+		<NodeSet name="NodalLoad1">
 			10, 11, 12, 16, 17, 83, 84, 85,
 			86, 87, 93, 94, 95, 96, 97, 143,
 			144, 145, 146, 147, 153, 154, 155, 156,
 			157
 		</NodeSet>
-		<NodeSet name="ForceNodeset02">
+		<NodeSet name="NodalLoad2">
 			10, 11, 12, 16, 17, 83, 84, 85,
 			86, 87, 93, 94, 95, 96, 97, 143,
 			144, 145, 146, 147, 153, 154, 155, 156,
@@ -1892,12 +1892,12 @@ This model implements shell nodal loads in a plane stress analysis.  To enforce 
 		</bc>
 	</Boundary>
 	<Loads>
-		<nodal_load name="NodalLoad1" node_set="ForceNodeset01" type="nodal_force">
+		<nodal_load name="NodalLoad1" node_set="NodalLoad1" type="nodal_force">
 			<relative>0</relative>
 			<value lc="1">-1,0,0</value>
 			<shell_bottom>1</shell_bottom>
 		</nodal_load>
-		<nodal_load name="NodalLoad2" node_set="ForceNodeset02" type="nodal_force">
+		<nodal_load name="NodalLoad2" node_set="NodalLoad2" type="nodal_force">
 			<relative>0</relative>
 			<value lc="2">-1,0,0</value>
 			<shell_bottom>0</shell_bottom>
@@ -1927,6 +1927,7 @@ This model implements shell nodal loads in a plane stress analysis.  To enforce 
 			<var type="reaction forces"/>
 			<var type="relative volume"/>
 			<var type="shell director"/>
+			<var type="shell relative volume"/>
 			<var type="shell strain"/>
 			<var type="shell thickness"/>
 			<var type="stress"/>
