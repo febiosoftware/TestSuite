@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<febio_spec version="4.0">
+	<Module type="solid">
+		<units>mm-N-s</units>
+	</Module>
+	<Control>
+		<analysis>STATIC</analysis>
+		<time_steps>100</time_steps>
+		<step_size>0.01</step_size>
+		<plot_zero_state>0</plot_zero_state>
+		<plot_range>0,-1</plot_range>
+		<plot_level>PLOT_MAJOR_ITRS</plot_level>
+		<output_level>OUTPUT_MAJOR_ITRS</output_level>
+		<plot_stride>1</plot_stride>
+		<adaptor_re_solve>1</adaptor_re_solve>
+		<time_stepper type="default">
+			<max_retries>5</max_retries>
+			<opt_iter>11</opt_iter>
+			<dtmin>0</dtmin>
+			<dtmax>0.01</dtmax>
+			<aggressiveness>0</aggressiveness>
+			<cutback>0.5</cutback>
+			<dtforce>0</dtforce>
+		</time_stepper>
+		<solver type="solid">
+			<symmetric_stiffness>symmetric</symmetric_stiffness>
+			<equation_scheme>staggered</equation_scheme>
+			<equation_order>default</equation_order>
+			<optimize_bw>0</optimize_bw>
+			<lstol>0.9</lstol>
+			<lsmin>0.01</lsmin>
+			<lsiter>5</lsiter>
+			<max_refs>15</max_refs>
+			<check_zero_diagonal>0</check_zero_diagonal>
+			<zero_diagonal_tol>0</zero_diagonal_tol>
+			<force_partition>0</force_partition>
+			<reform_each_time_step>1</reform_each_time_step>
+			<reform_augment>0</reform_augment>
+			<diverge_reform>1</diverge_reform>
+			<min_residual>1e-20</min_residual>
+			<max_residual>0</max_residual>
+			<dtol>0.001</dtol>
+			<etol>0.01</etol>
+			<rtol>0</rtol>
+			<rhoi>-2</rhoi>
+			<alpha>1</alpha>
+			<beta>0.25</beta>
+			<gamma>0.5</gamma>
+			<logSolve>0</logSolve>
+			<arc_length>0</arc_length>
+			<arc_length_scale>0</arc_length_scale>
+			<qn_method type="BFGS">
+				<max_ups>10</max_ups>
+				<max_buffer_size>0</max_buffer_size>
+				<cycle_buffer>1</cycle_buffer>
+				<cmax>100000</cmax>
+			</qn_method>
+		</solver>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<P>0</P>
+			<R>8.31446e-06</R>
+			<Fc>9.64853e-05</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="Material2" type="solid mixture">
+			<density>1</density>
+			<solid type="St.Venant-Kirchhoff">
+				<density>1</density>
+				<E>1</E>
+				<v>0</v>
+			</solid>
+			<solid type="fiber-CDF">
+				<density>1</density>
+				<E>5</E>
+				<fiber type="vector">
+					<vector>0,0,1</vector>
+				</fiber>
+				<cdf type="CDF Weibull">
+					<Dmax>1</Dmax>
+					<alpha>2</alpha>
+					<mu>0.2</mu>
+					<ploc>0</ploc>
+				</cdf>
+			</solid>
+		</material>
+	</Material>
+	<Mesh>
+		<Nodes name="Object1">
+			<node id="1">-0.5,-0.5,0</node>
+			<node id="2">0.5,-0.5,0</node>
+			<node id="3">0.5,0.5,0</node>
+			<node id="4">-0.5,0.5,0</node>
+			<node id="5">-0.5,-0.5,1</node>
+			<node id="6">0.5,-0.5,1</node>
+			<node id="7">0.5,0.5,1</node>
+			<node id="8">-0.5,0.5,1</node>
+		</Nodes>
+		<Elements type="hex8" name="Part1">
+			<elem id="1">1,2,3,4,5,6,7,8</elem>
+		</Elements>
+		<Surface name="ZeroDisplacement1">
+			<quad4 id="1">4,1,5,8</quad4>
+		</Surface>
+		<Surface name="ZeroDisplacement2">
+			<quad4 id="1">1,2,6,5</quad4>
+		</Surface>
+		<Surface name="ZeroDisplacement3">
+			<quad4 id="1">4,3,2,1</quad4>
+		</Surface>
+		<Surface name="PrescribedDisplacement4">
+			<quad4 id="1">5,6,7,8</quad4>
+		</Surface>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part1" mat="Material2"/>
+	</MeshDomains>
+	<Boundary>
+		<bc name="ZeroDisplacement1" node_set="@surface:ZeroDisplacement1" type="zero displacement">
+			<x_dof>1</x_dof>
+			<y_dof>0</y_dof>
+			<z_dof>0</z_dof>
+		</bc>
+		<bc name="ZeroDisplacement2" node_set="@surface:ZeroDisplacement2" type="zero displacement">
+			<x_dof>0</x_dof>
+			<y_dof>1</y_dof>
+			<z_dof>0</z_dof>
+		</bc>
+		<bc name="ZeroDisplacement3" node_set="@surface:ZeroDisplacement3" type="zero displacement">
+			<x_dof>0</x_dof>
+			<y_dof>0</y_dof>
+			<z_dof>1</z_dof>
+		</bc>
+		<bc name="PrescribedDisplacement4" node_set="@surface:PrescribedDisplacement4" type="prescribed displacement">
+			<dof>z</dof>
+			<value lc="1">1</value>
+			<relative>0</relative>
+		</bc>
+	</Boundary>
+	<LoadData>
+		<load_controller id="1" name="LC1" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>0,0</pt>
+				<pt>0.01,0.0156976</pt>
+				<pt>0.02,0.0313333</pt>
+				<pt>0.03,0.0468453</pt>
+				<pt>0.04,0.0621725</pt>
+				<pt>0.05,0.0772542</pt>
+				<pt>0.06,0.0920311</pt>
+				<pt>0.07,0.106445</pt>
+				<pt>0.08,0.120438</pt>
+				<pt>0.09,0.133957</pt>
+				<pt>0.1,0.146946</pt>
+				<pt>0.11,0.159356</pt>
+				<pt>0.12,0.171137</pt>
+				<pt>0.13,0.182242</pt>
+				<pt>0.14,0.192628</pt>
+				<pt>0.15,0.202254</pt>
+				<pt>0.16,0.211082</pt>
+				<pt>0.17,0.219077</pt>
+				<pt>0.18,0.226207</pt>
+				<pt>0.19,0.232444</pt>
+				<pt>0.2,0.237764</pt>
+				<pt>0.21,0.242146</pt>
+				<pt>0.22,0.245572</pt>
+				<pt>0.23,0.248029</pt>
+				<pt>0.24,0.249507</pt>
+				<pt>0.25,0.25</pt>
+				<pt>0.26,0.249507</pt>
+				<pt>0.27,0.248029</pt>
+				<pt>0.28,0.245572</pt>
+				<pt>0.29,0.242146</pt>
+				<pt>0.3,0.237764</pt>
+				<pt>0.31,0.232444</pt>
+				<pt>0.32,0.226207</pt>
+				<pt>0.33,0.219077</pt>
+				<pt>0.34,0.211082</pt>
+				<pt>0.35,0.202254</pt>
+				<pt>0.36,0.192628</pt>
+				<pt>0.37,0.182242</pt>
+				<pt>0.38,0.171137</pt>
+				<pt>0.39,0.159356</pt>
+				<pt>0.4,0.146946</pt>
+				<pt>0.41,0.133957</pt>
+				<pt>0.42,0.120438</pt>
+				<pt>0.43,0.106445</pt>
+				<pt>0.44,0.0920311</pt>
+				<pt>0.45,0.0772542</pt>
+				<pt>0.46,0.0621725</pt>
+				<pt>0.47,0.0468453</pt>
+				<pt>0.48,0.0313333</pt>
+				<pt>0.49,0.0156976</pt>
+				<pt>0.5,3.06162e-17</pt>
+				<pt>0.51,-0.0156976</pt>
+				<pt>0.52,-0.0313333</pt>
+				<pt>0.53,-0.0468453</pt>
+				<pt>0.54,-0.0621725</pt>
+				<pt>0.55,-0.0772542</pt>
+				<pt>0.56,-0.0920311</pt>
+				<pt>0.57,-0.106445</pt>
+				<pt>0.58,-0.120438</pt>
+				<pt>0.59,-0.133957</pt>
+				<pt>0.6,-0.146946</pt>
+				<pt>0.61,-0.159356</pt>
+				<pt>0.62,-0.171137</pt>
+				<pt>0.63,-0.182242</pt>
+				<pt>0.64,-0.192628</pt>
+				<pt>0.65,-0.202254</pt>
+				<pt>0.66,-0.211082</pt>
+				<pt>0.67,-0.219077</pt>
+				<pt>0.68,-0.226207</pt>
+				<pt>0.69,-0.232444</pt>
+				<pt>0.7,-0.237764</pt>
+				<pt>0.71,-0.242146</pt>
+				<pt>0.72,-0.245572</pt>
+				<pt>0.73,-0.248029</pt>
+				<pt>0.74,-0.249507</pt>
+				<pt>0.75,-0.25</pt>
+				<pt>0.76,-0.249507</pt>
+				<pt>0.77,-0.248029</pt>
+				<pt>0.78,-0.245572</pt>
+				<pt>0.79,-0.242146</pt>
+				<pt>0.8,-0.237764</pt>
+				<pt>0.81,-0.232444</pt>
+				<pt>0.82,-0.226207</pt>
+				<pt>0.83,-0.219077</pt>
+				<pt>0.84,-0.211082</pt>
+				<pt>0.85,-0.202254</pt>
+				<pt>0.86,-0.192628</pt>
+				<pt>0.87,-0.182242</pt>
+				<pt>0.88,-0.171137</pt>
+				<pt>0.89,-0.159356</pt>
+				<pt>0.9,-0.146946</pt>
+				<pt>0.91,-0.133957</pt>
+				<pt>0.92,-0.120438</pt>
+				<pt>0.93,-0.106445</pt>
+				<pt>0.94,-0.0920311</pt>
+				<pt>0.95,-0.0772542</pt>
+				<pt>0.96,-0.0621725</pt>
+				<pt>0.97,-0.0468453</pt>
+				<pt>0.98,-0.0313333</pt>
+				<pt>0.99,-0.0156976</pt>
+				<pt>1,-6.12323e-17</pt>
+			</points>
+		</load_controller>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="stress"/>
+			<var type="relative volume"/>
+			<var type="elasticity"/>
+			<var type="strain energy density"/>
+			<var type="left stretch"/>
+		</plotfile>
+	</Output>
+</febio_spec>
