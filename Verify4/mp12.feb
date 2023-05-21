@@ -1955,6 +1955,10 @@
 			<y_dof>0</y_dof>
 			<z_dof>1</z_dof>
 		</bc>
+		<bc name="FluidPressure3" surface="FluidPressure3" type="fluid pressure">
+			<pressure>0</pressure>
+			<shell_bottom>0</shell_bottom>
+		</bc>
 	</Boundary>
 	<Loads>
 		<surface_load name="SoluteNaturalFlux1" surface="SoluteNaturalFlux1" type="solute natural flux">
@@ -1967,9 +1971,6 @@
 			<linear>0</linear>
 			<shell_bottom>0</shell_bottom>
 			<mixture>0</mixture>
-		</surface_load>
-		<surface_load name="FluidPressure3" surface="FluidPressure3" type="fluid pressure">
-			<pressure>0</pressure>
 		</surface_load>
 	</Loads>
 	<Initial>

@@ -345,18 +345,20 @@
 			<value lc="2">1</value>
 			<relative>0</relative>
 		</bc>
+		<bc name="FluidPressureUpstream" surface="FluidPressureUpstream" type="fluid pressure">
+			<pressure lc="2">0.1</pressure>
+			<shell_bottom>0</shell_bottom>
+		</bc>
+		<bc name="FluidPressureDownstream" surface="FluidPressureDownstream" type="fluid pressure">
+			<pressure>0</pressure>
+			<shell_bottom>0</shell_bottom>
+		</bc>
 	</Boundary>
 	<Loads>
 		<surface_load name="SoluteNaturalFlux2" surface="SoluteNaturalFlux2" type="solute natural flux">
 			<shell_bottom>0</shell_bottom>
 			<solute_id>solute1</solute_id>
 			<update>0</update>
-		</surface_load>
-		<surface_load name="FluidPressureUpstream" surface="FluidPressureUpstream" type="fluid pressure">
-			<pressure lc="2">0.1</pressure>
-		</surface_load>
-		<surface_load name="FluidPressureDownstream" surface="FluidPressureDownstream" type="fluid pressure">
-			<pressure>0</pressure>
 		</surface_load>
 	</Loads>
 	<LoadData>
