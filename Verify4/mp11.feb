@@ -345,11 +345,11 @@
 			<value lc="2">1</value>
 			<relative>0</relative>
 		</bc>
-		<bc name="FluidPressureUpstream" surface="FluidPressureUpstream" type="fluid pressure">
+		<bc name="FluidPressureUpstream" surface="FluidPressureUpstream" type="actual fluid pressure">
 			<pressure lc="2">0.1</pressure>
 			<shell_bottom>0</shell_bottom>
 		</bc>
-		<bc name="FluidPressureDownstream" surface="FluidPressureDownstream" type="fluid pressure">
+		<bc name="FluidPressureDownstream" surface="FluidPressureDownstream" type="actual fluid pressure">
 			<pressure>0</pressure>
 			<shell_bottom>0</shell_bottom>
 		</bc>

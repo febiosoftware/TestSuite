@@ -1955,7 +1955,7 @@
 			<y_dof>0</y_dof>
 			<z_dof>1</z_dof>
 		</bc>
-		<bc name="FluidPressure3" surface="FluidPressure3" type="fluid pressure">
+		<bc name="FluidPressure3" surface="FluidPressure3" type="actual fluid pressure">
 			<pressure>0</pressure>
 			<shell_bottom>0</shell_bottom>
 		</bc>
