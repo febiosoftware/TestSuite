@@ -31,7 +31,7 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 		</time_stepper>
 		<solver type="fluid-solutes">
 			<symmetric_stiffness>non-symmetric</symmetric_stiffness>
-			<equation_scheme>staggered</equation_scheme>
+			<equation_scheme>block</equation_scheme>
 			<equation_order>default</equation_order>
 			<optimize_bw>0</optimize_bw>
 			<lstol>0.9</lstol>
@@ -55,7 +55,7 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 			<predictor>0</predictor>
 			<min_volume_ratio>0</min_volume_ratio>
 			<force_positive_concentrations>1</force_positive_concentrations>
-			<solve_strategy>coupled</solve_strategy>
+			<solve_strategy>sequential</solve_strategy>
 			<qn_method type="Broyden">
 				<max_ups>20</max_ups>
 				<max_buffer_size>0</max_buffer_size>
