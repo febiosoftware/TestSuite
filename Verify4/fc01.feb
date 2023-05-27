@@ -78,7 +78,7 @@ Units: length = mm, force = N, time = s, mole = nanomol; stress = MPa, concentra
 	</Globals>
 	<Material>
 		<material id="1" name="Fluid with solute" type="fluid-solutes">
-			<dms>0</dms>
+			<dms>1</dms>
 			<fluid>
 				<density>1e-09</density>
 				<k>2200</k>
@@ -89,7 +89,7 @@ Units: length = mm, force = N, time = s, mole = nanomol; stress = MPa, concentra
 				<elastic type="nonlinear"/>
 			</fluid>
 			<osmotic_coefficient type="osm-coef-const">
-				<osmcoef>0</osmcoef>
+				<osmcoef>1</osmcoef>
 			</osmotic_coefficient>
 			<solute sol="neutral">
 				<diffusivity type="diff-const-iso">
