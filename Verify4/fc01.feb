@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+1D solute diffusion in a cube, with prescribed external concentration.
+Units: length = mm, force = N, time = s, mole = nanomol; stress = MPa, concentration = mM.
+-->
+<febio_spec version="4.0">
+	<Module type="fluid-solutes">
+		<units>mm-N-s</units>
+	</Module>
+	<Control>
+		<analysis>DYNAMIC</analysis>
+		<time_steps>20000</time_steps>
+		<step_size>0.1</step_size>
+		<plot_zero_state>0</plot_zero_state>
+		<plot_range>0,-1</plot_range>
+		<plot_level>PLOT_MAJOR_ITRS</plot_level>
+		<output_level>OUTPUT_MAJOR_ITRS</output_level>
+		<plot_stride>1</plot_stride>
+		<adaptor_re_solve>1</adaptor_re_solve>
+		<time_stepper type="default">
+			<max_retries>5</max_retries>
+			<opt_iter>100</opt_iter>
+			<dtmin>0</dtmin>
+			<dtmax lc="1">0.1</dtmax>
+			<aggressiveness>0</aggressiveness>
+			<cutback>0.5</cutback>
+			<dtforce>0</dtforce>
+		</time_stepper>
+		<solver type="fluid-solutes">
+			<symmetric_stiffness>non-symmetric</symmetric_stiffness>
+			<equation_scheme>staggered</equation_scheme>
+			<equation_order>default</equation_order>
+			<optimize_bw>0</optimize_bw>
+			<lstol>0.9</lstol>
+			<lsmin>0.01</lsmin>
+			<lsiter>5</lsiter>
+			<max_refs>5</max_refs>
+			<check_zero_diagonal>0</check_zero_diagonal>
+			<zero_diagonal_tol>0</zero_diagonal_tol>
+			<force_partition>0</force_partition>
+			<reform_each_time_step>1</reform_each_time_step>
+			<reform_augment>0</reform_augment>
+			<diverge_reform>0</diverge_reform>
+			<min_residual>1e-20</min_residual>
+			<max_residual>1e+20</max_residual>
+			<vtol>0.001</vtol>
+			<ftol>0.001</ftol>
+			<ctol>0.01</ctol>
+			<etol>0.01</etol>
+			<rtol>0.001</rtol>
+			<rhoi>0</rhoi>
+			<predictor>0</predictor>
+			<min_volume_ratio>0</min_volume_ratio>
+			<force_positive_concentrations>1</force_positive_concentrations>
+			<solve_strategy>coupled</solve_strategy>
+			<qn_method type="Broyden">
+				<max_ups>20</max_ups>
+				<max_buffer_size>0</max_buffer_size>
+				<cycle_buffer>1</cycle_buffer>
+				<cmax>100000</cmax>
+			</qn_method>
+		</solver>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>298</T>
+			<P>0</P>
+			<R>8.31446e-06</R>
+			<Fc>9.64853e-05</Fc>
+		</Constants>
+		<Solutes>
+			<solute id="1" name="neutral">
+				<charge_number>0</charge_number>
+				<molar_mass>1</molar_mass>
+				<density>1</density>
+			</solute>
+		</Solutes>
+	</Globals>
+	<Material>
+		<material id="1" name="Fluid with solute" type="fluid-solutes">
+			<dms>0</dms>
+			<fluid>
+				<density>1e-09</density>
+				<k>2200</k>
+				<viscous type="Newtonian fluid">
+					<kappa>0</kappa>
+					<mu>0</mu>
+				</viscous>
+				<elastic type="nonlinear"/>
+			</fluid>
+			<osmotic_coefficient type="osm-coef-const">
+				<osmcoef>0</osmcoef>
+			</osmotic_coefficient>
+			<solute sol="neutral">
+				<diffusivity type="diff-const-iso">
+					<free_diff>0.001</free_diff>
+					<diff>0.001</diff>
+				</diffusivity>
+				<solubility type="solub-const">
+					<solub>1</solub>
+				</solubility>
+			</solute>
+		</material>
+	</Material>
+	<Mesh>
+		<Nodes name="Object01">
+			<node id="1">-0.5,-0.5,0</node>
+			<node id="2">-0.5,-0.5,0.20233274</node>
+			<node id="3">-0.5,-0.5,0.36419893</node>
+			<node id="4">-0.5,-0.5,0.49369188</node>
+			<node id="5">-0.5,-0.5,0.59728624</node>
+			<node id="6">-0.5,-0.5,0.68016173</node>
+			<node id="7">-0.5,-0.5,0.74646212</node>
+			<node id="8">-0.5,-0.5,0.79950244</node>
+			<node id="9">-0.5,-0.5,0.84193469</node>
+			<node id="10">-0.5,-0.5,0.87588049</node>
+			<node id="11">-0.5,-0.5,0.90303713</node>
+			<node id="12">-0.5,-0.5,0.92476244</node>
+			<node id="13">-0.5,-0.5,0.94214269</node>
+			<node id="14">-0.5,-0.5,0.95604689</node>
+			<node id="15">-0.5,-0.5,0.96717025</node>
+			<node id="16">-0.5,-0.5,0.97606894</node>
+			<node id="17">-0.5,-0.5,0.98318789</node>
+			<node id="18">-0.5,-0.5,0.98888305</node>
+			<node id="19">-0.5,-0.5,0.99343918</node>
+			<node id="20">-0.5,-0.5,0.99708408</node>
+			<node id="21">-0.5,-0.5,1</node>
+			<node id="22">-0.5,0.5,0</node>
+			<node id="23">-0.5,0.5,0.20233274</node>
+			<node id="24">-0.5,0.5,0.36419893</node>
+			<node id="25">-0.5,0.5,0.49369188</node>
+			<node id="26">-0.5,0.5,0.59728624</node>
+			<node id="27">-0.5,0.5,0.68016173</node>
+			<node id="28">-0.5,0.5,0.74646212</node>
+			<node id="29">-0.5,0.5,0.79950244</node>
+			<node id="30">-0.5,0.5,0.84193469</node>
+			<node id="31">-0.5,0.5,0.87588049</node>
+			<node id="32">-0.5,0.5,0.90303713</node>
+			<node id="33">-0.5,0.5,0.92476244</node>
+			<node id="34">-0.5,0.5,0.94214269</node>
+			<node id="35">-0.5,0.5,0.95604689</node>
+			<node id="36">-0.5,0.5,0.96717025</node>
+			<node id="37">-0.5,0.5,0.97606894</node>
+			<node id="38">-0.5,0.5,0.98318789</node>
+			<node id="39">-0.5,0.5,0.98888305</node>
+			<node id="40">-0.5,0.5,0.99343918</node>
+			<node id="41">-0.5,0.5,0.99708408</node>
+			<node id="42">-0.5,0.5,1</node>
+			<node id="43">0.5,-0.5,0</node>
+			<node id="44">0.5,-0.5,0.20233274</node>
+			<node id="45">0.5,-0.5,0.36419893</node>
+			<node id="46">0.5,-0.5,0.49369188</node>
+			<node id="47">0.5,-0.5,0.59728624</node>
+			<node id="48">0.5,-0.5,0.68016173</node>
+			<node id="49">0.5,-0.5,0.74646212</node>
+			<node id="50">0.5,-0.5,0.79950244</node>
+			<node id="51">0.5,-0.5,0.84193469</node>
+			<node id="52">0.5,-0.5,0.87588049</node>
+			<node id="53">0.5,-0.5,0.90303713</node>
+			<node id="54">0.5,-0.5,0.92476244</node>
+			<node id="55">0.5,-0.5,0.94214269</node>
+			<node id="56">0.5,-0.5,0.95604689</node>
+			<node id="57">0.5,-0.5,0.96717025</node>
+			<node id="58">0.5,-0.5,0.97606894</node>
+			<node id="59">0.5,-0.5,0.98318789</node>
+			<node id="60">0.5,-0.5,0.98888305</node>
+			<node id="61">0.5,-0.5,0.99343918</node>
+			<node id="62">0.5,-0.5,0.99708408</node>
+			<node id="63">0.5,-0.5,1</node>
+			<node id="64">0.5,0.5,0</node>
+			<node id="65">0.5,0.5,0.20233274</node>
+			<node id="66">0.5,0.5,0.36419893</node>
+			<node id="67">0.5,0.5,0.49369188</node>
+			<node id="68">0.5,0.5,0.59728624</node>
+			<node id="69">0.5,0.5,0.68016173</node>
+			<node id="70">0.5,0.5,0.74646212</node>
+			<node id="71">0.5,0.5,0.79950244</node>
+			<node id="72">0.5,0.5,0.84193469</node>
+			<node id="73">0.5,0.5,0.87588049</node>
+			<node id="74">0.5,0.5,0.90303713</node>
+			<node id="75">0.5,0.5,0.92476244</node>
+			<node id="76">0.5,0.5,0.94214269</node>
+			<node id="77">0.5,0.5,0.95604689</node>
+			<node id="78">0.5,0.5,0.96717025</node>
+			<node id="79">0.5,0.5,0.97606894</node>
+			<node id="80">0.5,0.5,0.98318789</node>
+			<node id="81">0.5,0.5,0.98888305</node>
+			<node id="82">0.5,0.5,0.99343918</node>
+			<node id="83">0.5,0.5,0.99708408</node>
+			<node id="84">0.5,0.5,1</node>
+		</Nodes>
+		<Elements type="hex8" name="Part1">
+			<elem id="1">1,43,64,22,2,44,65,23</elem>
+			<elem id="2">2,44,65,23,3,45,66,24</elem>
+			<elem id="3">3,45,66,24,4,46,67,25</elem>
+			<elem id="4">4,46,67,25,5,47,68,26</elem>
+			<elem id="5">5,47,68,26,6,48,69,27</elem>
+			<elem id="6">6,48,69,27,7,49,70,28</elem>
+			<elem id="7">7,49,70,28,8,50,71,29</elem>
+			<elem id="8">8,50,71,29,9,51,72,30</elem>
+			<elem id="9">9,51,72,30,10,52,73,31</elem>
+			<elem id="10">10,52,73,31,11,53,74,32</elem>
+			<elem id="11">11,53,74,32,12,54,75,33</elem>
+			<elem id="12">12,54,75,33,13,55,76,34</elem>
+			<elem id="13">13,55,76,34,14,56,77,35</elem>
+			<elem id="14">14,56,77,35,15,57,78,36</elem>
+			<elem id="15">15,57,78,36,16,58,79,37</elem>
+			<elem id="16">16,58,79,37,17,59,80,38</elem>
+			<elem id="17">17,59,80,38,18,60,81,39</elem>
+			<elem id="18">18,60,81,39,19,61,82,40</elem>
+			<elem id="19">19,61,82,40,20,62,83,41</elem>
+			<elem id="20">20,62,83,41,21,63,84,42</elem>
+		</Elements>
+		<Surface name="PrescribedConcentration1">
+			<quad4 id="1">21,63,84,42</quad4>
+		</Surface>
+		<Surface name="FluidPressure2">
+			<quad4 id="1">21,63,84,42</quad4>
+		</Surface>
+		<Surface name="ZeroFluidVelocity3">
+			<quad4 id="1">43,64,65,44</quad4>
+			<quad4 id="2">44,65,66,45</quad4>
+			<quad4 id="3">45,66,67,46</quad4>
+			<quad4 id="4">46,67,68,47</quad4>
+			<quad4 id="5">47,68,69,48</quad4>
+			<quad4 id="6">48,69,70,49</quad4>
+			<quad4 id="7">49,70,71,50</quad4>
+			<quad4 id="8">50,71,72,51</quad4>
+			<quad4 id="9">51,72,73,52</quad4>
+			<quad4 id="10">52,73,74,53</quad4>
+			<quad4 id="11">53,74,75,54</quad4>
+			<quad4 id="12">54,75,76,55</quad4>
+			<quad4 id="13">55,76,77,56</quad4>
+			<quad4 id="14">56,77,78,57</quad4>
+			<quad4 id="15">57,78,79,58</quad4>
+			<quad4 id="16">58,79,80,59</quad4>
+			<quad4 id="17">59,80,81,60</quad4>
+			<quad4 id="18">60,81,82,61</quad4>
+			<quad4 id="19">61,82,83,62</quad4>
+			<quad4 id="20">62,83,84,63</quad4>
+			<quad4 id="21">22,1,2,23</quad4>
+			<quad4 id="22">23,2,3,24</quad4>
+			<quad4 id="23">24,3,4,25</quad4>
+			<quad4 id="24">25,4,5,26</quad4>
+			<quad4 id="25">26,5,6,27</quad4>
+			<quad4 id="26">27,6,7,28</quad4>
+			<quad4 id="27">28,7,8,29</quad4>
+			<quad4 id="28">29,8,9,30</quad4>
+			<quad4 id="29">30,9,10,31</quad4>
+			<quad4 id="30">31,10,11,32</quad4>
+			<quad4 id="31">32,11,12,33</quad4>
+			<quad4 id="32">33,12,13,34</quad4>
+			<quad4 id="33">34,13,14,35</quad4>
+			<quad4 id="34">35,14,15,36</quad4>
+			<quad4 id="35">36,15,16,37</quad4>
+			<quad4 id="36">37,16,17,38</quad4>
+			<quad4 id="37">38,17,18,39</quad4>
+			<quad4 id="38">39,18,19,40</quad4>
+			<quad4 id="39">40,19,20,41</quad4>
+			<quad4 id="40">41,20,21,42</quad4>
+		</Surface>
+		<Surface name="ZeroFluidVelocity4">
+			<quad4 id="1">1,43,44,2</quad4>
+			<quad4 id="2">2,44,45,3</quad4>
+			<quad4 id="3">3,45,46,4</quad4>
+			<quad4 id="4">4,46,47,5</quad4>
+			<quad4 id="5">5,47,48,6</quad4>
+			<quad4 id="6">6,48,49,7</quad4>
+			<quad4 id="7">7,49,50,8</quad4>
+			<quad4 id="8">8,50,51,9</quad4>
+			<quad4 id="9">9,51,52,10</quad4>
+			<quad4 id="10">10,52,53,11</quad4>
+			<quad4 id="11">11,53,54,12</quad4>
+			<quad4 id="12">12,54,55,13</quad4>
+			<quad4 id="13">13,55,56,14</quad4>
+			<quad4 id="14">14,56,57,15</quad4>
+			<quad4 id="15">15,57,58,16</quad4>
+			<quad4 id="16">16,58,59,17</quad4>
+			<quad4 id="17">17,59,60,18</quad4>
+			<quad4 id="18">18,60,61,19</quad4>
+			<quad4 id="19">19,61,62,20</quad4>
+			<quad4 id="20">20,62,63,21</quad4>
+			<quad4 id="21">64,22,23,65</quad4>
+			<quad4 id="22">65,23,24,66</quad4>
+			<quad4 id="23">66,24,25,67</quad4>
+			<quad4 id="24">67,25,26,68</quad4>
+			<quad4 id="25">68,26,27,69</quad4>
+			<quad4 id="26">69,27,28,70</quad4>
+			<quad4 id="27">70,28,29,71</quad4>
+			<quad4 id="28">71,29,30,72</quad4>
+			<quad4 id="29">72,30,31,73</quad4>
+			<quad4 id="30">73,31,32,74</quad4>
+			<quad4 id="31">74,32,33,75</quad4>
+			<quad4 id="32">75,33,34,76</quad4>
+			<quad4 id="33">76,34,35,77</quad4>
+			<quad4 id="34">77,35,36,78</quad4>
+			<quad4 id="35">78,36,37,79</quad4>
+			<quad4 id="36">79,37,38,80</quad4>
+			<quad4 id="37">80,38,39,81</quad4>
+			<quad4 id="38">81,39,40,82</quad4>
+			<quad4 id="39">82,40,41,83</quad4>
+			<quad4 id="40">83,41,42,84</quad4>
+		</Surface>
+		<Surface name="ZeroFluidVelocity5">
+			<quad4 id="1">22,64,43,1</quad4>
+		</Surface>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part1" mat="Fluid with solute"/>
+	</MeshDomains>
+	<Boundary>
+		<bc name="PrescribedConcentration1" node_set="@surface:PrescribedConcentration1" type="prescribed concentration">
+			<dof>c1</dof>
+			<value lc="2">1</value>
+			<relative>0</relative>
+		</bc>
+		<bc name="FluidPressure2" surface="FluidPressure2" type="fluid pressure">
+			<pressure>0</pressure>
+		</bc>
+		<bc name="ZeroFluidVelocity3" node_set="@surface:ZeroFluidVelocity3" type="zero fluid velocity">
+			<wx_dof>1</wx_dof>
+			<wy_dof>0</wy_dof>
+			<wz_dof>0</wz_dof>
+		</bc>
+		<bc name="ZeroFluidVelocity4" node_set="@surface:ZeroFluidVelocity4" type="zero fluid velocity">
+			<wx_dof>0</wx_dof>
+			<wy_dof>1</wy_dof>
+			<wz_dof>0</wz_dof>
+		</bc>
+		<bc name="ZeroFluidVelocity5" node_set="@surface:ZeroFluidVelocity5" type="zero fluid velocity">
+			<wx_dof>0</wx_dof>
+			<wy_dof>0</wy_dof>
+			<wz_dof>1</wz_dof>
+		</bc>
+	</Boundary>
+	<LoadData>
+		<load_controller id="1" name="LC1" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0.1</pt>
+				<pt>1000,100</pt>
+			</points>
+		</load_controller>
+		<load_controller id="2" name="LC2" type="loadcurve">
+			<interpolate>STEP</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1,1</pt>
+			</points>
+		</load_controller>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="effective fluid pressure"/>
+			<var type="effective solute concentration"/>
+			<var type="fluid acceleration"/>
+			<var type="fluid dilatation"/>
+			<var type="fluid pressure"/>
+			<var type="fluid rate of deformation"/>
+			<var type="fluid stress"/>
+			<var type="fluid velocity"/>
+			<var type="fluid volume ratio"/>
+			<var type="fluid vorticity"/>
+			<var type="nodal fluid velocity"/>
+			<var type="solute concentration"/>
+			<var type="solute flux"/>
+			<var type="relative volume"/>
+			<var type="stress"/>
+			<var type="fluid flux"/>
+		</plotfile>
+	</Output>
+</febio_spec>
