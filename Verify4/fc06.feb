@@ -12,7 +12,8 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 	</Module>
 	<Control>
 		<analysis>DYNAMIC</analysis>
-		<time_steps>400</time_steps>
+		<time_steps>40</time_steps>
+		<!-- <time_steps>400</time_steps> -->
 		<step_size>0.01</step_size>
 		<plot_zero_state>0</plot_zero_state>
 		<plot_range>0,-1</plot_range>

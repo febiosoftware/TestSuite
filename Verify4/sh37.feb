@@ -3,13 +3,14 @@
 Rectangular shell strip (quad4) subjected to elongation along X. 
 The shell material is an uncoupled solid mixture of a MooneyRivlin ground matrix
 and two fiber bundles in the plane of the shell, having 3D von Mises
-distributions and making angles of ±26.6° with X.
+distributions and making angles of 26.6 with X.
 -->
 <febio_spec version="4.0">
 	<Module type="solid"/>
 	<Control>
 		<analysis>STATIC</analysis>
-		<time_steps>10000</time_steps>
+		<time_steps>1000</time_steps>
+		<!-- <time_steps>10000</time_steps> -->
 		<step_size>0.0001</step_size>
 		<plot_zero_state>0</plot_zero_state>
 		<plot_range>0,-1</plot_range>
