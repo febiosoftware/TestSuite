@@ -8874,8 +8874,5 @@ far side of sphere) is 0.9438 and occurs at time t = 0.0223
 			<var type="stress"/>
 			<var type="velocity"/>
 		</plotfile>
-		<logfile>
-			<node_data data="x" node_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

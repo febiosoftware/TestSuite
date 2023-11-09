@@ -293,8 +293,5 @@ Front and back face of left edge is fixed, and right edge is applied nodal_load 
 			<var type="Lagrange strain"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<node_data data="z" node_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

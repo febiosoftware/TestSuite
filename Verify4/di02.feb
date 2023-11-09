@@ -221,8 +221,5 @@ of one unit in the xdirection in time t=1.
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="Ey" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

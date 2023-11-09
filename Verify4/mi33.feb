@@ -3134,8 +3134,5 @@ This problem demonstrates bone remodeling using the Weinans Huiskes remodeling m
 			<var type="strain energy density"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="Ez" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

@@ -268,9 +268,5 @@ A crankslider linkage with precribed revolute joint rotation in a dynamic analys
 			<var type="stress"/>
 			<var type="velocity"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="Fy"/>
-			<rigid_connector_data data="RCFx;RCFy;RCFz;RCMx;RCMy;RCMz"/>
-		</logfile>
 	</Output>
 </febio_spec>

@@ -593,8 +593,5 @@ Onedimensional osmotic loading of an inhomogeneous block consisting of a biphasi
 			<var type="solute concentration"/>
 			<var type="solute flux"/>
 		</plotfile>
-		<logfile>
-			<element_data data="sy" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

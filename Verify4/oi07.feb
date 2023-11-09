@@ -228,8 +228,5 @@ in time t=100, then allowed to relax to time t=1000.
 			<var type="fluid flux"/>
 			<var type="solid stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="p" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

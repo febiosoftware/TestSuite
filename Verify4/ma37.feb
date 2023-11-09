@@ -71,10 +71,14 @@ This file demonstrates the use of the generic 'uncoupled hyperelastic' material,
 			<density>1</density>
 			<k>100</k>
 			<pressure_model>default</pressure_model>
-			<W>
-				c1 = 1;
-				c2 = 0.1;
-				c1*(I1 - 3) + c2*(I2 - 3)
+			<W>
+
+				c1 = 1;
+
+				c2 = 0.1;
+
+				c1*(I1 - 3) + c2*(I2 - 3)
+
 			</W>
 			<print_derivs>0</print_derivs>
 		</material>

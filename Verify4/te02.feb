@@ -5171,8 +5171,5 @@ A cantilever beam composed of tetrahedral elements has a traction force of
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="Ez" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

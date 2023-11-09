@@ -142,8 +142,5 @@ Bottom face of box is fixed and top face of shell is prescribed z displacment of
 			<var type="shell strain"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="Ez"/>
-		</logfile>
 	</Output>
 </febio_spec>

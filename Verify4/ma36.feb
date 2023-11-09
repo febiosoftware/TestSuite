@@ -69,10 +69,14 @@ This file demonstrates the use of the generic 'hyperelastic' material,
 	<Material>
 		<material id="1" name="Material1" type="hyperelastic">
 			<density>1</density>
-			<W>
-				mu = 0.384615;
-				lam = 0.576923;
-				mu*((I1-3)/2 - ln(J))+lam*ln(J)*ln(J)/2
+			<W>
+
+				mu = 0.384615;
+
+				lam = 0.576923;
+
+				mu*((I1-3)/2 - ln(J))+lam*ln(J)*ln(J)/2
+
 			</W>
 		</material>
 	</Material>

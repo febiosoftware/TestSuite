@@ -306,8 +306,5 @@ value for the effective traction on the upstream surface.
 			<var type="fluid pressure"/>
 			<var type="fluid flux"/>
 		</plotfile>
-		<logfile>
-			<element_data data="p" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

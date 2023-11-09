@@ -5575,8 +5575,5 @@ Contact of two nonconforming multiphasic layers under displacement control
 			<var type="solute concentration"/>
 			<var type="solute flux"/>
 		</plotfile>
-		<logfile>
-			<node_data data="p" node_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

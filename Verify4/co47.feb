@@ -3912,8 +3912,5 @@ intersecting the plane z = 5 and the horizontal tube are constrained in the zdir
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="Ey" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

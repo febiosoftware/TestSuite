@@ -7712,8 +7712,5 @@ Figs. 11 and 12
 			<var type="rigid force"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="x;Fx"/>
-		</logfile>
 	</Output>
 </febio_spec>

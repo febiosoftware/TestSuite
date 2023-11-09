@@ -1221,8 +1221,5 @@ Max zstress = 9.75319 at t = 5.8
 			<var type="effective fluid pressure"/>
 			<var type="fluid flux"/>
 		</plotfile>
-		<logfile>
-			<element_data data="sz" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

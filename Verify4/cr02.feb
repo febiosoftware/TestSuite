@@ -1231,8 +1231,5 @@ achieves a steadystate response.
 			<var type="sbm referential apparent density"/>
 			<var type="sbm concentration"/>
 		</plotfile>
-		<logfile>
-			<element_data data="sz" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

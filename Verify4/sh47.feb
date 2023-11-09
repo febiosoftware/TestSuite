@@ -253,8 +253,5 @@ prescribed a translation of 1 at t=1.
 			<var type="Lagrange strain"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<node_data data="y" node_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

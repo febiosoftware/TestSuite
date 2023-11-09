@@ -4586,8 +4586,5 @@ with 8.87 mm thickness.  The rigid body "anvil" is displaced 50 mm in the ydirec
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="Fy"/>
-		</logfile>
 	</Output>
 </febio_spec>

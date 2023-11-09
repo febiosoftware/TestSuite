@@ -290,8 +290,5 @@ that enforce zero electric potential.
 			<var type="solute concentration"/>
 			<var type="solute flux"/>
 		</plotfile>
-		<logfile>
-			<element_data data="c1" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

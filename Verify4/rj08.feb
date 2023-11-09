@@ -185,8 +185,5 @@ A prismatic joint with a prescribed force in a static analysis.
 			<var type="stress"/>
 			<var type="velocity"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="z"/>
-		</logfile>
 	</Output>
 </febio_spec>

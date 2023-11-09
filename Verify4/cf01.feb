@@ -212,8 +212,5 @@ having identical fiber properties.
 			<var type="strain energy density"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="sz" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

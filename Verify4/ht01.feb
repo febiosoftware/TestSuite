@@ -814,8 +814,5 @@ Heat transfer problem as described in tutorial 7 in the PreView user's manual.
 			<var type="temperature"/>
 			<var type="heat flux"/>
 		</plotfile>
-		<logfile>
-			<node_data data="T" node_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

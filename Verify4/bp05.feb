@@ -449,8 +449,5 @@ a step function, then allowed to relax to time t=1e4 s.
 			<var type="effective fluid pressure"/>
 			<var type="fluid flux"/>
 		</plotfile>
-		<logfile>
-			<element_data data="wx" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

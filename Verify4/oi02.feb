@@ -305,8 +305,5 @@ This is the same problem as CCsrlxFit.feb in the Biphasic Examples on the forums
 			<var type="effective fluid pressure"/>
 			<var type="fluid flux"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="Fz"/>
-		</logfile>
 	</Output>
 </febio_spec>

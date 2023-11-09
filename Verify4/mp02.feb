@@ -1027,8 +1027,5 @@ is relative to the freeswelling state.
 			<var type="solute concentration"/>
 			<var type="solute flux"/>
 		</plotfile>
-		<logfile>
-			<element_data data="sz" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

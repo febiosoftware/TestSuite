@@ -587,8 +587,5 @@ sh01 with EAS shells
 			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<node_data data="uz" node_set="set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

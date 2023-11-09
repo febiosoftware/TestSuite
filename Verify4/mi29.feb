@@ -79661,8 +79661,5 @@ Finger Hood Model with springs connecting the extensor indicis to the bone.
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="Fx;Fy;Fz"/>
-		</logfile>
 	</Output>
 </febio_spec>

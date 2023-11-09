@@ -319,8 +319,5 @@ series of rotations and translations.
 			<var type="stress"/>
 			<var type="velocity"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="qx"/>
-		</logfile>
 	</Output>
 </febio_spec>

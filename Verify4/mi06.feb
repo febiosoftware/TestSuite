@@ -493,8 +493,5 @@ xdisplacement of nodes 21 and 22 is the same as the ydisplacement of nodes 241 a
 			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="Ey" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

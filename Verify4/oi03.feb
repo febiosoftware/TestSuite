@@ -3319,8 +3319,5 @@ is rigidly connected to a rigid body that is displaced 1 unit in the zdirection 
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="Fz"/>
-		</logfile>
 	</Output>
 </febio_spec>

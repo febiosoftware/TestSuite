@@ -1277,8 +1277,5 @@ This problem is similar to co28 but with quater symmetry.
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="Ex" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

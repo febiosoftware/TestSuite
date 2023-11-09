@@ -928,8 +928,5 @@ vicoelastic material. cf10 is computationally more efficient than cf09.
 			<var type="strong bond SED"/>
 			<var type="weak bond SED"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="Fx"/>
-		</logfile>
 	</Output>
 </febio_spec>

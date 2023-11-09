@@ -3,7 +3,7 @@
 Rectangular shell strip (quad4) subjected to elongation along X. 
 The shell material is a solid mixture of a neoHookean ground matrix
 and two fiber bundles in the plane of the shell, having 3D von Mises
-distributions and making angles of ±26.6° with X.
+distributions and making angles of Â±26.6Â° with X.
 -->
 <febio_spec version="4.0">
 	<Module type="solid"/>

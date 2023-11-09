@@ -245,8 +245,5 @@ A fourbar linkage producing Cardanic motion in a static analysis.
 			<var type="rigid torque"/>
 			<var type="rigid velocity"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="Fy"/>
-		</logfile>
 	</Output>
 </febio_spec>

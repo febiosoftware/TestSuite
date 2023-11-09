@@ -539,10 +539,5 @@
 			<var type="solute concentration"/>
 			<var type="solute flux"/>
 		</plotfile>
-		<logfile>
-			<node_data data="c" node_set="unnamed_set01"/>
-			<node_data data="y;uy;p;c" node_set="unnamed_set02"/>
-			<node_data data="y;uy;p;c" node_set="unnamed_set03"/>
-		</logfile>
 	</Output>
 </febio_spec>

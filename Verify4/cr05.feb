@@ -358,8 +358,5 @@ where the molar volume of the solid is different from that of the nutrient.  The
 			<var type="referential solid volume fraction"/>
 			<var type="sbm concentration"/>
 		</plotfile>
-		<logfile>
-			<element_data data="wz" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

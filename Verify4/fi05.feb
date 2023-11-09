@@ -2534,8 +2534,5 @@ A 10x10x10 block of Transisotropic VerondaWestmann material with a diagonal fibe
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="Ez" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

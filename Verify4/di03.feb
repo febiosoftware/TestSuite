@@ -427,8 +427,5 @@ Two cantilever boards are connected by nodal springs on their free ends and a ve
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="sy" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

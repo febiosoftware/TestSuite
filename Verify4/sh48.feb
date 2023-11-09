@@ -155,9 +155,5 @@ Bottom face of bottom box is fixed, and top face of top box is prescribed z disp
 			<var type="shell strain"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="Ez"/>
-			<node_data data="uz"/>
-		</logfile>
 	</Output>
 </febio_spec>

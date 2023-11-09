@@ -790,8 +790,5 @@ This problem can be compared to ma11, which does not use a poroelastic material.
 			<var type="fluid pressure"/>
 			<var type="fluid flux"/>
 		</plotfile>
-		<logfile>
-			<element_data data="p" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

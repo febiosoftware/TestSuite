@@ -4113,8 +4113,5 @@ Rigid shell is prescribed z displacement of 2 at t=1.
 			<var type="Lagrange strain"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="sx" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

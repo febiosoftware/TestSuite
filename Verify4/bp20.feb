@@ -279,8 +279,5 @@ Max fluid pressure = 0.0359 at t = 2000
 			<var type="fluid pressure"/>
 			<var type="fluid flux"/>
 		</plotfile>
-		<logfile>
-			<element_data data="p" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

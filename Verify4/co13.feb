@@ -3800,8 +3800,5 @@ Penetration is slightly better using augmented lagrangian, but convergence is be
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="Ez" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

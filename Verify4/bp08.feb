@@ -8592,8 +8592,5 @@ Cylinder with Referentially Trans Iso Permeability material undergoes pressure c
 			<var type="effective fluid pressure"/>
 			<var type="fluid flux"/>
 		</plotfile>
-		<logfile>
-			<element_data data="wx" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

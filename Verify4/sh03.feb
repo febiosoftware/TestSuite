@@ -507,8 +507,5 @@ of 0 units at time t=0 to 0.0005 units at time t=1 applied to the center node.
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="sx" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

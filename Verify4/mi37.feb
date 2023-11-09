@@ -178,8 +178,5 @@ This is a modification of mi04 that addes load curves to some of the linear cons
 			<var type="relative volume"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="Ex" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

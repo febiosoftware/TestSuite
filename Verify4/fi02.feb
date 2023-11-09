@@ -153,8 +153,5 @@ nodes are constrained in the xdirection.
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="sx" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

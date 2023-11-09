@@ -412,8 +412,5 @@ Front and back face of left edge of shell is fixed.
 			<var type="Lagrange strain"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<node_data data="z" node_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

@@ -1244,8 +1244,5 @@ Edge is fixed and face is prescribed pressure load of 0.005 at t=1.
 			<var type="Lagrange strain"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<node_data data="z" node_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

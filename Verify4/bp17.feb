@@ -3357,8 +3357,5 @@ block under displacement control.
 			<var type="effective fluid pressure"/>
 			<var type="fluid flux"/>
 		</plotfile>
-		<logfile>
-			<element_data data="p" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

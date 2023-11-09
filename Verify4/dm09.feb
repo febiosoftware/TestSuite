@@ -169,8 +169,5 @@ tractionfree surfaces along x and y.
 			<var type="strain energy density"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="sz"/>
-		</logfile>
 	</Output>
 </febio_spec>

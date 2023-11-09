@@ -345,9 +345,5 @@ equal but opposite forces of 1 N to the corners of the nonconstrained end.
 			<var type="shell thickness"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="sy" elem_set="unnamed_set01"/>
-			<node_data data="uz" node_set="unnamed_set02"/>
-		</logfile>
 	</Output>
 </febio_spec>

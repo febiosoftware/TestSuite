@@ -830,8 +830,5 @@ produce a highly nonlinear response for the reaction force.
 			<var type="strain energy density"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="Fx"/>
-		</logfile>
 	</Output>
 </febio_spec>

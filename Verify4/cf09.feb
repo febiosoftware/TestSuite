@@ -928,8 +928,5 @@ distribution densities.
 			<var type="strong bond SED"/>
 			<var type="weak bond SED"/>
 		</plotfile>
-		<logfile>
-			<rigid_body_data data="Fx"/>
-		</logfile>
 	</Output>
 </febio_spec>

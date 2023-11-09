@@ -311,8 +311,5 @@ Front and back face of left edge of shell is fixed.
 			<var type="shell thickness"/>
 			<var type="stress"/>
 		</plotfile>
-		<logfile>
-			<element_data data="z" elem_set="unnamed_set01"/>
-		</logfile>
 	</Output>
 </febio_spec>

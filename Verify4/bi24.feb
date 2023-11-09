@@ -8130,8 +8130,5 @@ This example uses the mixed biphasic formulation (i.e. mixed_formulation = 1)
 			<var type="referential solid volume fraction"/>
 			<var type="solid stress"/>
 		</plotfile>
-		<logfile>
-			<node_data data="p" node_set="set01"/>
-		</logfile>
 	</Output>
 </febio_spec>
