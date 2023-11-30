@@ -63,8 +63,8 @@
 		<Elements type="line2" name="Part1">
 			<elem id="1">1,2</elem>
 			<elem id="2">2,3</elem>
-			<elem id="2">3,4</elem>
-			<elem id="2">4,5</elem>
+			<elem id="3">3,4</elem>
+			<elem id="4">4,5</elem>
 		</Elements>
 		<NodeSet name="set1">1</NodeSet>
 		<NodeSet name="set2">5</NodeSet>
