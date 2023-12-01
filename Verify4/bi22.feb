@@ -18112,8 +18112,8 @@ Comments:
 		<step id="1" name="Step1">
 			<Control>
 				<analysis>DYNAMIC</analysis>
-				<time_steps>200</time_steps>
-				<step_size>5e-06</step_size>
+				<time_steps>100</time_steps>
+				<step_size>1e-05</step_size>
 				<plot_zero_state>0</plot_zero_state>
 				<plot_range>0,-1</plot_range>
 				<plot_level>PLOT_MAJOR_ITRS</plot_level>

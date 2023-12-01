@@ -2398,10 +2398,10 @@ Comments:
 			<extend>CONSTANT</extend>
 			<points>
 				<pt>0,0</pt>
-				<pt>0.1,0.001</pt>
+				<!-- <pt>0.1,0.001</pt>
 				<pt>0.5,0.002</pt>
-				<pt>1,0.01</pt>
-				<pt>5,0.02</pt>
+				<pt>1,0.01</pt> -->
+				<pt>5,0.05</pt>
 				<pt>10,0.1</pt>
 				<pt>50,0.2</pt>
 				<pt>100,1</pt>

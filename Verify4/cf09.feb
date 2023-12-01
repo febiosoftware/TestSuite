@@ -16,8 +16,8 @@ distribution densities.
 	<Module type="solid"/>
 	<Control>
 		<analysis>STATIC</analysis>
-		<time_steps>1000</time_steps>
-		<step_size>0.01</step_size>
+		<time_steps>200</time_steps>
+		<step_size>0.05</step_size>
 		<plot_zero_state>0</plot_zero_state>
 		<plot_range>0,-1</plot_range>
 		<plot_level>PLOT_MAJOR_ITRS</plot_level>
@@ -902,7 +902,7 @@ distribution densities.
 			<interpolate>LINEAR</interpolate>
 			<extend>CONSTANT</extend>
 			<points>
-				<pt>0,0.01</pt>
+				<pt>0,0.05</pt>
 				<pt>1,0.1</pt>
 				<pt>10,1</pt>
 			</points>
