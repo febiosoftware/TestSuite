@@ -130,7 +130,7 @@
 			<var type="displacement"/>
 			<var type="nodal velocity"/>
 			<var type="nodal acceleration"/>
-			<var type="shell rotation"/>
+			<var type="rotation"/>
 			<var type="beam strain"/>
 			<var type="beam stress"/>
 			<var type="beam stress couple"/>
