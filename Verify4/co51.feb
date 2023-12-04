@@ -11,7 +11,7 @@ pressure and contact gap on each half correctly.
 	<Module type="solid"/>
 	<Control>
 		<analysis>STATIC</analysis>
-		<time_steps>10000</time_steps>
+		<time_steps>5000</time_steps>
 		<step_size>0.0001</step_size>
 		<plot_zero_state>0</plot_zero_state>
 		<plot_range>0,-1</plot_range>

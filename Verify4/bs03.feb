@@ -7,8 +7,9 @@ Units: length = mm, force = N, time = s, mole = nanomol; stress = MPa, concentra
 	<Module type="solute"/>
 	<Control>
 		<analysis>TRANSIENT</analysis>
-		<time_steps>36000</time_steps>
-		<step_size>0.1</step_size>
+		<time_steps>500</time_steps>
+		<!-- <time_steps>18000</time_steps> -->
+		<step_size>0.2</step_size>
 		<plot_zero_state>0</plot_zero_state>
 		<plot_range>0,-1</plot_range>
 		<plot_level>PLOT_MAJOR_ITRS</plot_level>
@@ -2599,7 +2600,7 @@ Units: length = mm, force = N, time = s, mole = nanomol; stress = MPa, concentra
 			<extend>EXTRAPOLATE</extend>
 			<points>
 				<pt>0,0</pt>
-				<pt>1,0.2</pt>
+				<pt>1,0.4</pt>
 			</points>
 		</load_controller>
 		<load_controller id="2" name="LC2" type="loadcurve">

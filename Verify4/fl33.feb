@@ -8,7 +8,8 @@ stabilization. Dynamic.
 	<Module type="fluid"/>
 	<Control>
 		<analysis>DYNAMIC</analysis>
-		<time_steps>50</time_steps>
+		<time_steps>20</time_steps>
+		<!-- <time_steps>50</time_steps> -->
 		<step_size>1</step_size>
 		<plot_zero_state>0</plot_zero_state>
 		<plot_range>0,-1</plot_range>

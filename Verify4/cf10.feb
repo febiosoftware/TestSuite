@@ -20,7 +20,8 @@ vicoelastic material. cf10 is computationally more efficient than cf09.
 	<Module type="solid"/>
 	<Control>
 		<analysis>STATIC</analysis>
-		<time_steps>100</time_steps>
+		<time_steps>50</time_steps>
+		<!-- <time_steps>100</time_steps> -->
 		<step_size>0.05</step_size>
 		<plot_zero_state>0</plot_zero_state>
 		<plot_range>0,-1</plot_range>

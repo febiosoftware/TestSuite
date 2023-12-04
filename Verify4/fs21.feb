@@ -8,8 +8,10 @@ neoHookean solid. Arc uses tet 4
 	<Module type="fluid-FSI"/>
 	<Control>
 		<analysis>DYNAMIC</analysis>
-		<time_steps>100</time_steps>
-		<step_size>0.01</step_size>
+		<time_steps>20</time_steps>
+		<step_size>0.02</step_size>
+		<!-- <time_steps>100</time_steps>
+		<step_size>0.01</step_size> -->
 		<plot_zero_state>0</plot_zero_state>
 		<plot_range>0,-1</plot_range>
 		<plot_level>PLOT_MAJOR_ITRS</plot_level>
@@ -20,7 +22,8 @@ neoHookean solid. Arc uses tet 4
 			<max_retries>5</max_retries>
 			<opt_iter>80</opt_iter>
 			<dtmin>0.001</dtmin>
-			<dtmax>0.01</dtmax>
+			<dtmax>0.02</dtmax>
+			<!-- <dtmax>0.01</dtmax> -->
 			<aggressiveness>0</aggressiveness>
 			<cutback>0.5</cutback>
 			<dtforce>0</dtforce>

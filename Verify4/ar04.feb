@@ -3,8 +3,8 @@
 	<Module type="biphasic"/>
 	<Control>
 		<analysis>TRANSIENT</analysis>
-		<time_steps>20</time_steps>
-		<step_size>0.05</step_size>
+		<time_steps>10</time_steps>
+		<step_size>0.1</step_size>
 		<plot_zero_state>0</plot_zero_state>
 		<plot_range>0,-1</plot_range>
 		<plot_level>PLOT_MAJOR_ITRS</plot_level>

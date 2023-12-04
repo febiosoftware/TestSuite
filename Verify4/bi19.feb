@@ -36,7 +36,7 @@ Comments:
 	<Module type="fluid-FSI"/>
 	<Control>
 		<analysis>DYNAMIC</analysis>
-		<time_steps>40</time_steps>
+		<time_steps>20</time_steps>
 		<!-- <time_steps>400</time_steps> -->
 		<step_size>0.02</step_size>
 		<plot_zero_state>0</plot_zero_state>

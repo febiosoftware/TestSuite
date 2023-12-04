@@ -9,7 +9,8 @@ prescribed the other end of the shaft.
 	<Module type="solid"/>
 	<Control>
 		<analysis>STATIC</analysis>
-		<time_steps>10</time_steps>
+		<time_steps>2</time_steps>
+		<!-- <time_steps>10</time_steps> -->
 		<step_size>0.1</step_size>
 		<plot_zero_state>0</plot_zero_state>
 		<plot_range>0,-1</plot_range>
