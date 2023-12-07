@@ -16,7 +16,7 @@ time t=62 on the crank.
 		<plot_stride>1</plot_stride>
 		<adaptor_re_solve>1</adaptor_re_solve>
 		<solver type="solid">
-			<symmetric_stiffness>symmetric</symmetric_stiffness>
+			<symmetric_stiffness>0</symmetric_stiffness>
 			<equation_scheme>staggered</equation_scheme>
 			<equation_order>default</equation_order>
 			<optimize_bw>0</optimize_bw>
@@ -13245,6 +13245,16 @@ time t=62 on the crank.
 		<bc name="RigidInterface07" node_set="RigidNodeset 2" type="rigid">
 			<rb>piston2</rb>
 			<clamp_shells>1</clamp_shells>
+		</bc>
+		<bc name="fixed_chamber1" node_set="@elem_set:Part11" type="zero displacement">
+			<x_dof>1</x_dof>
+			<y_dof>1</y_dof>
+			<z_dof>0</z_dof>
+		</bc>
+		<bc name="fixed_chamber2" node_set="@elem_set:Part12" type="zero displacement">
+			<x_dof>1</x_dof>
+			<y_dof>1</y_dof>
+			<z_dof>0</z_dof>
 		</bc>
 	</Boundary>
 	<Rigid>

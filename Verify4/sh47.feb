@@ -248,10 +248,6 @@ prescribed a translation of 1 at t=1.
 	<Output>
 		<plotfile type="febio">
 			<var type="displacement"/>
-			<var type="relative volume"/>
-			<var type="shell director"/>
-			<var type="Lagrange strain"/>
-			<var type="stress"/>
 		</plotfile>
 	</Output>
 </febio_spec>
