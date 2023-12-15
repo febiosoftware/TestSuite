@@ -718,7 +718,6 @@
 	<MeshDomains>
 		<ShellDomain name="Part1" mat="Rigid Plane" type="rigid-shell">
 			<shell_thickness>0</shell_thickness>
-			<shell_normal_nodal>1</shell_normal_nodal>
 		</ShellDomain>
 		<SolidDomain name="Part3" mat="Biphasic Block"/>
 	</MeshDomains>

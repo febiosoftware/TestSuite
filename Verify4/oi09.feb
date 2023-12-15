@@ -160,7 +160,6 @@
 		<SolidDomain name="Part1" mat="tissue"/>
 		<ShellDomain name="Part2" mat="platen" type="rigid-shell">
 			<shell_thickness>0</shell_thickness>
-			<shell_normal_nodal>1</shell_normal_nodal>
 		</ShellDomain>
 	</MeshDomains>
 	<MeshData>

@@ -10042,7 +10042,6 @@ This file was created with FEBio Studio version 1.0.1
 		<SolidDomain name="Part1" mat="Material1"/>
 		<ShellDomain name="Part3" mat="Material2" type="rigid-shell">
 			<shell_thickness>0</shell_thickness>
-			<shell_normal_nodal>1</shell_normal_nodal>
 		</ShellDomain>
 	</MeshDomains>
 	<MeshData>
