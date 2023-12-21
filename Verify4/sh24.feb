@@ -4768,7 +4768,7 @@ Two shells have same stiffness to converge.
 			<y_dof>1</y_dof>
 			<z_dof>0</z_dof>
 		</bc>
-		<bc name="box2z" node_set="@surface:FixedDisplacement03" type="prescribed displacement">
+		<bc name="box2x" node_set="@surface:FixedDisplacement03" type="prescribed displacement">
 			<dof>x</dof>
 			<value lc="1">1</value>
 			<relative>0</relative>
