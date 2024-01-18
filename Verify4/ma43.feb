@@ -78,7 +78,7 @@ Relaxation function: continuous spectrum Malkin
 			<relaxation type="relaxation-Malkin">
 				<tau1>1</tau1>
 				<tau2>10</tau2>
-				<beta>0.25</beta>
+				<beta>1.25</beta>
 			</relaxation>
 		</material>
 	</Material>
