@@ -4678,7 +4678,7 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 	</Loads>
 	<Constraints>
 		<constraint name="NormFlowInlet" surface="NormFlowInlet" type="normal fluid flow">
-			<laugon>0</laugon>
+			<laugon>LAGMULT</laugon>
 			<tol>0.2</tol>
 			<penalty>1000</penalty>
 			<rhs>0</rhs>
@@ -4686,7 +4686,7 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 			<maxaug>0</maxaug>
 		</constraint>
 		<constraint name="NormFlowOutlet" surface="NormFlowOutlet" type="normal fluid flow">
-			<laugon>0</laugon>
+			<laugon>PENALTY</laugon>
 			<tol>0.2</tol>
 			<penalty>1000</penalty>
 			<rhs>0</rhs>
@@ -4694,7 +4694,7 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 			<maxaug>0</maxaug>
 		</constraint>
 		<constraint name="SymmetryPlane1" surface="SymmetryPlane1" type="symmetry plane">
-			<laugon>0</laugon>
+			<laugon>LAGMULT</laugon>
 			<tol>0.2</tol>
 			<penalty>1000</penalty>
 			<rhs>0</rhs>
@@ -4702,7 +4702,7 @@ Blood flow through wedge with pressure at inlet and outlet. Newtonian fluid with
 			<maxaug>0</maxaug>
 		</constraint>
 		<constraint name="FrictionlessFluidWall4" surface="FrictionlessFluidWall4" type="frictionless fluid wall">
-			<laugon>0</laugon>
+			<laugon>PENALTY</laugon>
 			<tol>0.2</tol>
 			<penalty>1</penalty>
 			<rhs>0</rhs>

@@ -4624,7 +4624,7 @@ Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 	</Loads>
 	<Constraints>
 		<constraint name="SymmetryPlane1" surface="SymmetryPlane1" type="symmetry plane">
-			<laugon>0</laugon>
+			<laugon>LAGMULT</laugon>
 			<tol>0.2</tol>
 			<penalty>1000</penalty>
 			<rhs>0</rhs>
@@ -4632,7 +4632,7 @@ Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 			<maxaug>0</maxaug>
 		</constraint>
 		<constraint name="FrictionlessFluidWall2" surface="FrictionlessFluidWall2" type="frictionless fluid wall">
-			<laugon>0</laugon>
+			<laugon>PENALTY</laugon>
 			<tol>0.2</tol>
 			<penalty>1</penalty>
 			<rhs>0</rhs>

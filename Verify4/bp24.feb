@@ -1316,7 +1316,7 @@ The solid deformation and fluid pressure exhibit axisymmetry.
 	</Boundary>
 	<Constraints>
 		<constraint name="SymmetryPlane01" surface="SymmetryPlane01" type="symmetry plane">
-			<laugon>1</laugon>
+			<laugon>LAGMULT</laugon>
 			<tol>1e-06</tol>
 			<penalty>1000000</penalty>
 			<rhs>0</rhs>

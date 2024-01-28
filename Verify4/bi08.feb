@@ -3172,7 +3172,7 @@ inlet. Newtonian fluid with MooneyRivlin solid. With must points.
 	</Loads>
 	<Constraints>
 		<constraint name="SymmetryPlane1" surface="SymmetryPlane1" type="symmetry plane">
-			<laugon>0</laugon>
+			<laugon>PENALTY</laugon>
 			<tol>0.2</tol>
 			<penalty>1000</penalty>
 			<rhs>0</rhs>
