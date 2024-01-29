@@ -13981,7 +13981,7 @@ A fixed CFD/FSI wedge with 4000 elements where Newtonian fluid enters from a plu
 	</Loads>
 	<Constraints>
 		<constraint name="NormalFluidFlow1" surface="NormalFluidFlow1" type="normal fluid flow">
-			<laugon>LAGMULT</laugon>
+			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>1000</penalty>
 			<rhs>0</rhs>

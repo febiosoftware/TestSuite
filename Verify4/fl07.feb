@@ -915,7 +915,7 @@ constraint on inlet and outlet
 	</Boundary>
 	<Constraints>
 		<constraint name="NormalFlowSurface02" surface="NormalFlowSurface01" type="normal fluid flow">
-			<laugon>LAGMULT</laugon>
+			<laugon>1</laugon>
 			<tol>0.2</tol>
 			<penalty>1000000</penalty>
 			<rhs>0</rhs>
@@ -923,7 +923,7 @@ constraint on inlet and outlet
 			<maxaug>10</maxaug>
 		</constraint>
 		<constraint name="NormalFlowSurface03" surface="NormalFlowSurface02" type="normal fluid flow">
-			<laugon>LAGMULT</laugon>
+			<laugon>1</laugon>
 			<tol>0.2</tol>
 			<penalty>1000000</penalty>
 			<rhs>0</rhs>

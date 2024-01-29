@@ -9876,7 +9876,7 @@ Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 	</Boundary>
 	<Constraints>
 		<constraint name="NormalFlowSurface02" surface="NormalFlowSurface01" type="normal fluid flow">
-			<laugon>PENALTY</laugon>
+			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>1000000</penalty>
 			<rhs>0</rhs>
@@ -9884,7 +9884,7 @@ Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 			<maxaug>0</maxaug>
 		</constraint>
 		<constraint name="NormalFlowSurface03" surface="NormalFlowSurface02" type="normal fluid flow">
-			<laugon>PENALTY</laugon>
+			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>1000000</penalty>
 			<rhs>0</rhs>

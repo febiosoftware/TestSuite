@@ -65851,7 +65851,7 @@ end of the shaft.
 	</Loads>
 	<Constraints>
 		<constraint name="FixedNormalDisplacement1" surface="FixedNormalDisplacement1" type="fixed normal displacement">
-			<laugon>AUGLAG</laugon>
+			<laugon>1</laugon>
 			<tol>0.01</tol>
 			<penalty>10000</penalty>
 			<rhs>0</rhs>
@@ -65860,7 +65860,7 @@ end of the shaft.
 			<shell_bottom>0</shell_bottom>
 		</constraint>
 		<constraint name="FixedNormalDisplacement2" surface="FixedNormalDisplacement2" type="fixed normal displacement">
-			<laugon>AUGLAG</laugon>
+			<laugon>1</laugon>
 			<tol>0.01</tol>
 			<penalty>10000</penalty>
 			<rhs>0</rhs>

@@ -3175,7 +3175,7 @@ Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 	</Loads>
 	<Constraints>
 		<constraint name="SymmetryPlane1" surface="SymmetryPlane1" type="symmetry plane">
-			<laugon>PENALTY</laugon>
+			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>1000</penalty>
 			<rhs>0</rhs>

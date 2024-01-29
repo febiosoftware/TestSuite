@@ -4625,7 +4625,7 @@ physical science of solids 61(13):148.
 	</Loads>
 	<Constraints>
 		<constraint name="SymmetryPlane1" surface="SymmetryPlane1" type="symmetry plane">
-			<laugon>LAGMULT/laugon>
+			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>1000</penalty>
 			<rhs>0</rhs>
@@ -4633,7 +4633,7 @@ physical science of solids 61(13):148.
 			<maxaug>0</maxaug>
 		</constraint>
 		<constraint name="FrictionlessFluidWall2" surface="FrictionlessFluidWall2" type="frictionless fluid wall">
-			<laugon>PENALTY</laugon>
+			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>1</penalty>
 			<rhs>0</rhs>

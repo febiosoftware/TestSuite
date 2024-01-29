@@ -961,7 +961,7 @@
 	</Loads>
 	<Constraints>
 		<constraint name="NormalFlowConstraint1" surface="NormalFlowConstraint1" type="normal fluid flow">
-			<laugon>PENALTY</laugon>
+			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>1000000</penalty>
 			<rhs>0</rhs>
@@ -969,7 +969,7 @@
 			<maxaug>0</maxaug>
 		</constraint>
 		<constraint name="NormalFlowConstraint2" surface="NormalFlowConstraint2" type="normal fluid flow">
-			<laugon>PENALTY</laugon>
+			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>1000000</penalty>
 			<rhs>0</rhs>

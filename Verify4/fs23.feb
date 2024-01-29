@@ -10375,14 +10375,14 @@
 	</Loads>
 	<Constraints>
 		<constraint type="uniform fluid flow" name="UniformFluidFlow1" surface="UniformFluidFlow1">
-			<laugon>LAGMULT</laugon>
+			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>10000</penalty>
 			<minaug>0</minaug>
 			<maxaug>10</maxaug>
 		</constraint>
 		<constraint type="uniform fluid flow" name="UniformFluidFlow2" surface="UniformFluidFlow2">
-			<laugon>LAGMULT</laugon>
+			<laugon>0</laugon>
 			<tol>0.2</tol>
 			<penalty>10000</penalty>
 			<minaug>0</minaug>

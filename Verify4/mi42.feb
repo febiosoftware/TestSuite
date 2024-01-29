@@ -62628,7 +62628,7 @@ The mesh consists of tet10 elements.
 	</Loads>
 	<Constraints>
 		<constraint name="FixedNormalDisplacement1" surface="FixedNormalDisplacement1" type="fixed normal displacement">
-			<laugon>AUGLAG</laugon>
+			<laugon>1</laugon>
 			<tol>0.05</tol>
 			<penalty>10000</penalty>
 			<rhs>0</rhs>

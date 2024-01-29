@@ -8199,7 +8199,7 @@ on the two ends.
 	</Boundary>
 	<Constraints>
 		<constraint name="" type="linear constraint">
-			<laugon>AUGLAG</laugon>
+			<laugon>1</laugon>
 			<tol>0.1</tol>
 			<penalty>1e-08</penalty>
 			<rhs>0</rhs>
