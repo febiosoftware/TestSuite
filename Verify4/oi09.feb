@@ -103,15 +103,15 @@
 			  </tau2>
 			  <beta type="math">1</beta>
 			</relaxation>
-			<recruitment type="CDF user">
-			  <cdf type="point">
+			<recruitment type="recruitment user">
+			  <function type="point">
 			    <interpolate>LINEAR</interpolate>
 			    <points>
 			      <point>0.0,        1.0</point>
 			      <point>0.063,  1.0</point>
 			      <point>0.130,1.8</point>
 			    </points>
-			  </cdf>
+			  </function>
 			</recruitment>
 		</material>
 	</Material>

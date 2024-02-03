@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-This is the optimization file that runs oi04.feb as an input file.
+This is the optimization file that runs oi09.feb as an input file.
 It optimizes using a strain-stress curve. 
 -->
 <febio_optimize version="2.0">
@@ -17,8 +17,8 @@ It optimizes using a strain-stress curve.
 		<param name="fem.material('tissue').relaxation.tau2.points.point[0]">1200,1000,3000,1200</param>
 		<param name="fem.material('tissue').relaxation.tau2.points.point[1]">200,150,400,200</param>
 		<param name="fem.material('tissue').relaxation.tau2.points.point[2]">200,150,400,200</param>
-		<param name="fem.material('tissue').recruitment.cdf.points.point[1]">1,1.0,1.5,1</param>
-		<param name="fem.material('tissue').recruitment.cdf.points.point[2]">2,1.0,3.0,1</param>
+		<param name="fem.material('tissue').recruitment.function.points.point[1]">1,1.0,1.5,1</param>
+		<param name="fem.material('tissue').recruitment.function.points.point[2]">2,1.0,3.0,1</param>
 	</Parameters>
 	<Objective type="data-fit">
 		<fnc type="parameter">
