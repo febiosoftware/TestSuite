@@ -4,4 +4,5 @@
 *.dat
 *.csv
 Logs/
-
+__pycache__
+code/__pycache__
