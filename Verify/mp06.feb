@@ -26,9 +26,9 @@ Materials:
 Degrees of Freedom: 608
 Results:
 	Steps Completed: 62
-	Equilibrium Iterations: 200
-	Right Hand Evaluations: 272
-	Siffness Reformations: 200
+	Equilibrium Iterations: 189
+	Right Hand Evaluations: 262
+	Siffness Reformations: 189
 	Other:
 		The tare load is 0.054 at time t=1.
 		The loading platen displacement is -0.5928 at t=7201.
@@ -36,7 +36,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.2">
+<febio_spec version="2.0">
 	<Globals>
 		<Constants>
 			<T>310</T>
@@ -231,39 +231,45 @@ Comments:
 			<node id="129">  4.0000000e+00,  4.0000000e+00,  1.4999998e+00</node>
 			<node id="130">  4.0000000e+00, -4.0000000e+00,  1.5000002e+00</node>
 		</Nodes>
-		<Elements>
-			<penta6 id="1" mat="1">     1,     2,     3,    62,    63,    64</penta6>
-			<hex8 id="2" mat="1">     2,     4,     5,     3,    63,    65,    66,    64</hex8>
-			<hex8 id="3" mat="1">     4,     6,     7,     5,    65,    67,    68,    66</hex8>
-			<hex8 id="4" mat="1">     6,     8,     9,     7,    67,    69,    70,    68</hex8>
-			<hex8 id="5" mat="1">     8,    10,    11,     9,    69,    71,    72,    70</hex8>
-			<hex8 id="6" mat="1">    10,    12,    13,    11,    71,    73,    74,    72</hex8>
-			<hex8 id="7" mat="1">    12,    14,    15,    13,    73,    75,    76,    74</hex8>
-			<hex8 id="8" mat="1">    14,    16,    17,    15,    75,    77,    78,    76</hex8>
-			<hex8 id="9" mat="1">    16,    18,    19,    17,    77,    79,    80,    78</hex8>
-			<hex8 id="10" mat="1">    18,    20,    21,    19,    79,    81,    82,    80</hex8>
-			<hex8 id="11" mat="1">    20,    22,    23,    21,    81,    83,    84,    82</hex8>
-			<hex8 id="12" mat="1">    22,    24,    25,    23,    83,    85,    86,    84</hex8>
-			<hex8 id="13" mat="1">    24,    26,    27,    25,    85,    87,    88,    86</hex8>
-			<hex8 id="14" mat="1">    26,    28,    29,    27,    87,    89,    90,    88</hex8>
-			<hex8 id="15" mat="1">    28,    30,    31,    29,    89,    91,    92,    90</hex8>
-			<hex8 id="16" mat="1">    30,    32,    33,    31,    91,    93,    94,    92</hex8>
-			<hex8 id="17" mat="1">    32,    34,    35,    33,    93,    95,    96,    94</hex8>
-			<hex8 id="18" mat="1">    34,    36,    37,    35,    95,    97,    98,    96</hex8>
-			<hex8 id="19" mat="1">    36,    38,    39,    37,    97,    99,   100,    98</hex8>
-			<hex8 id="20" mat="1">    38,    40,    41,    39,    99,   101,   102,   100</hex8>
-			<hex8 id="21" mat="1">    40,    42,    43,    41,   101,   103,   104,   102</hex8>
-			<hex8 id="22" mat="1">    42,    44,    45,    43,   103,   105,   106,   104</hex8>
-			<hex8 id="23" mat="1">    44,    46,    47,    45,   105,   107,   108,   106</hex8>
-			<hex8 id="24" mat="1">    46,    48,    49,    47,   107,   109,   110,   108</hex8>
-			<hex8 id="25" mat="1">    48,    50,    51,    49,   109,   111,   112,   110</hex8>
-			<hex8 id="26" mat="1">    50,    52,    53,    51,   111,   113,   114,   112</hex8>
-			<hex8 id="27" mat="1">    52,    54,    55,    53,   113,   115,   116,   114</hex8>
-			<hex8 id="28" mat="1">    54,    56,    57,    55,   115,   117,   118,   116</hex8>
-			<hex8 id="29" mat="1">    56,    58,    59,    57,   117,   119,   120,   118</hex8>
-			<hex8 id="30" mat="1">    58,    60,    61,    59,   119,   121,   122,   120</hex8>
-			<quad4 id="31" mat="2">   123,   125,   126,   124</quad4>
-			<quad4 id="32" mat="3">   127,   129,   130,   128</quad4>
+		<Elements type="penta6" mat="1" elset="Part01">
+			<elem id="1">     1,     2,     3,    62,    63,    64</elem>
+		</Elements>
+		<Elements type="hex8" mat="1" elset="Part01">
+			<elem id="2">     2,     4,     5,     3,    63,    65,    66,    64</elem>
+			<elem id="3">     4,     6,     7,     5,    65,    67,    68,    66</elem>
+			<elem id="4">     6,     8,     9,     7,    67,    69,    70,    68</elem>
+			<elem id="5">     8,    10,    11,     9,    69,    71,    72,    70</elem>
+			<elem id="6">    10,    12,    13,    11,    71,    73,    74,    72</elem>
+			<elem id="7">    12,    14,    15,    13,    73,    75,    76,    74</elem>
+			<elem id="8">    14,    16,    17,    15,    75,    77,    78,    76</elem>
+			<elem id="9">    16,    18,    19,    17,    77,    79,    80,    78</elem>
+			<elem id="10">    18,    20,    21,    19,    79,    81,    82,    80</elem>
+			<elem id="11">    20,    22,    23,    21,    81,    83,    84,    82</elem>
+			<elem id="12">    22,    24,    25,    23,    83,    85,    86,    84</elem>
+			<elem id="13">    24,    26,    27,    25,    85,    87,    88,    86</elem>
+			<elem id="14">    26,    28,    29,    27,    87,    89,    90,    88</elem>
+			<elem id="15">    28,    30,    31,    29,    89,    91,    92,    90</elem>
+			<elem id="16">    30,    32,    33,    31,    91,    93,    94,    92</elem>
+			<elem id="17">    32,    34,    35,    33,    93,    95,    96,    94</elem>
+			<elem id="18">    34,    36,    37,    35,    95,    97,    98,    96</elem>
+			<elem id="19">    36,    38,    39,    37,    97,    99,   100,    98</elem>
+			<elem id="20">    38,    40,    41,    39,    99,   101,   102,   100</elem>
+			<elem id="21">    40,    42,    43,    41,   101,   103,   104,   102</elem>
+			<elem id="22">    42,    44,    45,    43,   103,   105,   106,   104</elem>
+			<elem id="23">    44,    46,    47,    45,   105,   107,   108,   106</elem>
+			<elem id="24">    46,    48,    49,    47,   107,   109,   110,   108</elem>
+			<elem id="25">    48,    50,    51,    49,   109,   111,   112,   110</elem>
+			<elem id="26">    50,    52,    53,    51,   111,   113,   114,   112</elem>
+			<elem id="27">    52,    54,    55,    53,   113,   115,   116,   114</elem>
+			<elem id="28">    54,    56,    57,    55,   115,   117,   118,   116</elem>
+			<elem id="29">    56,    58,    59,    57,   117,   119,   120,   118</elem>
+			<elem id="30">    58,    60,    61,    59,   119,   121,   122,   120</elem>
+		</Elements>
+		<Elements type="quad4" mat="2">
+			<elem id="31">   123,   125,   126,   124</elem>
+		</Elements>
+		<Elements type="quad4" mat="3">
+			<elem id="32">   127,   129,   130,   128</elem>
 		</Elements>
 		<ElementData>
 			<element id="31">
@@ -273,158 +279,230 @@ Comments:
 				<thickness>0.01,0.01,0.01,0.01</thickness>
 			</element>
 		</ElementData>
+		<Surface name="MasterSurface01">
+			<quad4 id="1">   123,   125,   126,   124</quad4>
+		</Surface>
+		<Surface name="SlaveSurface01">
+			<quad4 id="1">     1,    62,    64,     3</quad4>
+			<quad4 id="2">     5,     3,    64,    66</quad4>
+			<quad4 id="3">     7,     5,    66,    68</quad4>
+			<quad4 id="4">     9,     7,    68,    70</quad4>
+			<quad4 id="5">    11,     9,    70,    72</quad4>
+			<quad4 id="6">    13,    11,    72,    74</quad4>
+			<quad4 id="7">    15,    13,    74,    76</quad4>
+			<quad4 id="8">    17,    15,    76,    78</quad4>
+			<quad4 id="9">    19,    17,    78,    80</quad4>
+			<quad4 id="10">    21,    19,    80,    82</quad4>
+			<quad4 id="11">    23,    21,    82,    84</quad4>
+			<quad4 id="12">    25,    23,    84,    86</quad4>
+			<quad4 id="13">    27,    25,    86,    88</quad4>
+			<quad4 id="14">    29,    27,    88,    90</quad4>
+			<quad4 id="15">    31,    29,    90,    92</quad4>
+			<quad4 id="16">    33,    31,    92,    94</quad4>
+			<quad4 id="17">    35,    33,    94,    96</quad4>
+			<quad4 id="18">    37,    35,    96,    98</quad4>
+			<quad4 id="19">    39,    37,    98,   100</quad4>
+			<quad4 id="20">    41,    39,   100,   102</quad4>
+			<quad4 id="21">    43,    41,   102,   104</quad4>
+			<quad4 id="22">    45,    43,   104,   106</quad4>
+			<quad4 id="23">    47,    45,   106,   108</quad4>
+			<quad4 id="24">    49,    47,   108,   110</quad4>
+			<quad4 id="25">    51,    49,   110,   112</quad4>
+			<quad4 id="26">    53,    51,   112,   114</quad4>
+			<quad4 id="27">    55,    53,   114,   116</quad4>
+			<quad4 id="28">    57,    55,   116,   118</quad4>
+			<quad4 id="29">    59,    57,   118,   120</quad4>
+			<quad4 id="30">    61,    59,   120,   122</quad4>
+		</Surface>
+		<Surface name="MasterSurface02">
+			<quad4 id="1">   127,   129,   130,   128</quad4>
+		</Surface>
+		<Surface name="SlaveSurface02">
+			<tri3 id="1">    62,    63,    64</tri3>
+			<quad4 id="2">    63,    65,    66,    64</quad4>
+			<quad4 id="3">    65,    67,    68,    66</quad4>
+			<quad4 id="4">    67,    69,    70,    68</quad4>
+			<quad4 id="5">    69,    71,    72,    70</quad4>
+			<quad4 id="6">    71,    73,    74,    72</quad4>
+			<quad4 id="7">    73,    75,    76,    74</quad4>
+			<quad4 id="8">    75,    77,    78,    76</quad4>
+			<quad4 id="9">    77,    79,    80,    78</quad4>
+			<quad4 id="10">    79,    81,    82,    80</quad4>
+			<quad4 id="11">    81,    83,    84,    82</quad4>
+			<quad4 id="12">    83,    85,    86,    84</quad4>
+			<quad4 id="13">    85,    87,    88,    86</quad4>
+			<quad4 id="14">    87,    89,    90,    88</quad4>
+			<quad4 id="15">    89,    91,    92,    90</quad4>
+			<quad4 id="16">    91,    93,    94,    92</quad4>
+			<quad4 id="17">    93,    95,    96,    94</quad4>
+			<quad4 id="18">    95,    97,    98,    96</quad4>
+			<quad4 id="19">    97,    99,   100,    98</quad4>
+			<quad4 id="20">    99,   101,   102,   100</quad4>
+			<quad4 id="21">   101,   103,   104,   102</quad4>
+			<quad4 id="22">   103,   105,   106,   104</quad4>
+			<quad4 id="23">   105,   107,   108,   106</quad4>
+			<quad4 id="24">   107,   109,   110,   108</quad4>
+			<quad4 id="25">   109,   111,   112,   110</quad4>
+			<quad4 id="26">   111,   113,   114,   112</quad4>
+			<quad4 id="27">   113,   115,   116,   114</quad4>
+			<quad4 id="28">   115,   117,   118,   116</quad4>
+			<quad4 id="29">   117,   119,   120,   118</quad4>
+			<quad4 id="30">   119,   121,   122,   120</quad4>
+		</Surface>
 	</Geometry>
 	<Boundary>
-		<fix>
-			<node id="1" bc="xy"/>
-			<node id="62" bc="xy"/>
+		<fix bc="xy">
+			<node id="1"/>
+			<node id="62"/>
 		</fix>
-		<fix>
-			<node id="1" bc="y"/>
-			<node id="2" bc="y"/>
-			<node id="4" bc="y"/>
-			<node id="6" bc="y"/>
-			<node id="8" bc="y"/>
-			<node id="10" bc="y"/>
-			<node id="12" bc="y"/>
-			<node id="14" bc="y"/>
-			<node id="16" bc="y"/>
-			<node id="18" bc="y"/>
-			<node id="20" bc="y"/>
-			<node id="22" bc="y"/>
-			<node id="24" bc="y"/>
-			<node id="26" bc="y"/>
-			<node id="28" bc="y"/>
-			<node id="30" bc="y"/>
-			<node id="32" bc="y"/>
-			<node id="34" bc="y"/>
-			<node id="36" bc="y"/>
-			<node id="38" bc="y"/>
-			<node id="40" bc="y"/>
-			<node id="42" bc="y"/>
-			<node id="44" bc="y"/>
-			<node id="46" bc="y"/>
-			<node id="48" bc="y"/>
-			<node id="50" bc="y"/>
-			<node id="52" bc="y"/>
-			<node id="54" bc="y"/>
-			<node id="56" bc="y"/>
-			<node id="58" bc="y"/>
-			<node id="60" bc="y"/>
-			<node id="62" bc="y"/>
-			<node id="63" bc="y"/>
-			<node id="65" bc="y"/>
-			<node id="67" bc="y"/>
-			<node id="69" bc="y"/>
-			<node id="71" bc="y"/>
-			<node id="73" bc="y"/>
-			<node id="75" bc="y"/>
-			<node id="77" bc="y"/>
-			<node id="79" bc="y"/>
-			<node id="81" bc="y"/>
-			<node id="83" bc="y"/>
-			<node id="85" bc="y"/>
-			<node id="87" bc="y"/>
-			<node id="89" bc="y"/>
-			<node id="91" bc="y"/>
-			<node id="93" bc="y"/>
-			<node id="95" bc="y"/>
-			<node id="97" bc="y"/>
-			<node id="99" bc="y"/>
-			<node id="101" bc="y"/>
-			<node id="103" bc="y"/>
-			<node id="105" bc="y"/>
-			<node id="107" bc="y"/>
-			<node id="109" bc="y"/>
-			<node id="111" bc="y"/>
-			<node id="113" bc="y"/>
-			<node id="115" bc="y"/>
-			<node id="117" bc="y"/>
-			<node id="119" bc="y"/>
-			<node id="121" bc="y"/>
+		<fix bc="y">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="4"/>
+			<node id="6"/>
+			<node id="8"/>
+			<node id="10"/>
+			<node id="12"/>
+			<node id="14"/>
+			<node id="16"/>
+			<node id="18"/>
+			<node id="20"/>
+			<node id="22"/>
+			<node id="24"/>
+			<node id="26"/>
+			<node id="28"/>
+			<node id="30"/>
+			<node id="32"/>
+			<node id="34"/>
+			<node id="36"/>
+			<node id="38"/>
+			<node id="40"/>
+			<node id="42"/>
+			<node id="44"/>
+			<node id="46"/>
+			<node id="48"/>
+			<node id="50"/>
+			<node id="52"/>
+			<node id="54"/>
+			<node id="56"/>
+			<node id="58"/>
+			<node id="60"/>
+			<node id="62"/>
+			<node id="63"/>
+			<node id="65"/>
+			<node id="67"/>
+			<node id="69"/>
+			<node id="71"/>
+			<node id="73"/>
+			<node id="75"/>
+			<node id="77"/>
+			<node id="79"/>
+			<node id="81"/>
+			<node id="83"/>
+			<node id="85"/>
+			<node id="87"/>
+			<node id="89"/>
+			<node id="91"/>
+			<node id="93"/>
+			<node id="95"/>
+			<node id="97"/>
+			<node id="99"/>
+			<node id="101"/>
+			<node id="103"/>
+			<node id="105"/>
+			<node id="107"/>
+			<node id="109"/>
+			<node id="111"/>
+			<node id="113"/>
+			<node id="115"/>
+			<node id="117"/>
+			<node id="119"/>
+			<node id="121"/>
 		</fix>
-		<fix>
-			<node id="1" bc="z"/>
-			<node id="2" bc="z"/>
-			<node id="3" bc="z"/>
-			<node id="4" bc="z"/>
-			<node id="5" bc="z"/>
-			<node id="6" bc="z"/>
-			<node id="7" bc="z"/>
-			<node id="8" bc="z"/>
-			<node id="9" bc="z"/>
-			<node id="10" bc="z"/>
-			<node id="11" bc="z"/>
-			<node id="12" bc="z"/>
-			<node id="13" bc="z"/>
-			<node id="14" bc="z"/>
-			<node id="15" bc="z"/>
-			<node id="16" bc="z"/>
-			<node id="17" bc="z"/>
-			<node id="18" bc="z"/>
-			<node id="19" bc="z"/>
-			<node id="20" bc="z"/>
-			<node id="21" bc="z"/>
-			<node id="22" bc="z"/>
-			<node id="23" bc="z"/>
-			<node id="24" bc="z"/>
-			<node id="25" bc="z"/>
-			<node id="26" bc="z"/>
-			<node id="27" bc="z"/>
-			<node id="28" bc="z"/>
-			<node id="29" bc="z"/>
-			<node id="30" bc="z"/>
-			<node id="31" bc="z"/>
-			<node id="32" bc="z"/>
-			<node id="33" bc="z"/>
-			<node id="34" bc="z"/>
-			<node id="35" bc="z"/>
-			<node id="36" bc="z"/>
-			<node id="37" bc="z"/>
-			<node id="38" bc="z"/>
-			<node id="39" bc="z"/>
-			<node id="40" bc="z"/>
-			<node id="41" bc="z"/>
-			<node id="42" bc="z"/>
-			<node id="43" bc="z"/>
-			<node id="44" bc="z"/>
-			<node id="45" bc="z"/>
-			<node id="46" bc="z"/>
-			<node id="47" bc="z"/>
-			<node id="48" bc="z"/>
-			<node id="49" bc="z"/>
-			<node id="50" bc="z"/>
-			<node id="51" bc="z"/>
-			<node id="52" bc="z"/>
-			<node id="53" bc="z"/>
-			<node id="54" bc="z"/>
-			<node id="55" bc="z"/>
-			<node id="56" bc="z"/>
-			<node id="57" bc="z"/>
-			<node id="58" bc="z"/>
-			<node id="59" bc="z"/>
-			<node id="60" bc="z"/>
-			<node id="61" bc="z"/>
+		<fix bc="z">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="13"/>
+			<node id="14"/>
+			<node id="15"/>
+			<node id="16"/>
+			<node id="17"/>
+			<node id="18"/>
+			<node id="19"/>
+			<node id="20"/>
+			<node id="21"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="24"/>
+			<node id="25"/>
+			<node id="26"/>
+			<node id="27"/>
+			<node id="28"/>
+			<node id="29"/>
+			<node id="30"/>
+			<node id="31"/>
+			<node id="32"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="35"/>
+			<node id="36"/>
+			<node id="37"/>
+			<node id="38"/>
+			<node id="39"/>
+			<node id="40"/>
+			<node id="41"/>
+			<node id="42"/>
+			<node id="43"/>
+			<node id="44"/>
+			<node id="45"/>
+			<node id="46"/>
+			<node id="47"/>
+			<node id="48"/>
+			<node id="49"/>
+			<node id="50"/>
+			<node id="51"/>
+			<node id="52"/>
+			<node id="53"/>
+			<node id="54"/>
+			<node id="55"/>
+			<node id="56"/>
+			<node id="57"/>
+			<node id="58"/>
+			<node id="59"/>
+			<node id="60"/>
+			<node id="61"/>
 		</fix>
-		<prescribe>
-			<node id="60" bc="p" lc="3">1</node>
-			<node id="61" bc="p" lc="3">1</node>
-			<node id="121" bc="p" lc="3">1</node>
-			<node id="122" bc="p" lc="3">1</node>
+		<prescribe bc="p" lc="3">
+			<node id="60" >1</node>
+			<node id="61" >1</node>
+			<node id="121">1</node>
+			<node id="122">1</node>
 		</prescribe>
-		<prescribe>
-			<node id="60" bc="c1" lc="4">1</node>
-			<node id="61" bc="c1" lc="4">1</node>
-			<node id="121" bc="c1" lc="4">1</node>
-			<node id="122" bc="c1" lc="4">1</node>
+		<prescribe bc="c1" lc="4">
+			<node id="60">1</node>
+			<node id="61">1</node>
+			<node id="121">1</node>
+			<node id="122">1</node>
 		</prescribe>
-		<prescribe>
-			<node id="60" bc="c2" lc="5">1</node>
-			<node id="61" bc="c2" lc="5">1</node>
-			<node id="121" bc="c2" lc="5">1</node>
-			<node id="122" bc="c2" lc="5">1</node>
+		<prescribe bc="c2" lc="5">
+			<node id="60">1</node>
+			<node id="61">1</node>
+			<node id="121">1</node>
+			<node id="122">1</node>
 		</prescribe>
-		<contact type="sliding-tension-compression">
+	</Boundary>
+	<Contact>
+		<contact type="sliding-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.2</tolerance>
 			<penalty>10000</penalty>
@@ -432,101 +510,35 @@ Comments:
 			<auto_penalty>1</auto_penalty>
 			<tension>1</tension>
 			<symmetric_stiffness>0</symmetric_stiffness>
-			<surface type="master" name="">
-				<quad4 id="1">   123,   125,   126,   124</quad4>
-			</surface>
-			<surface type="slave" name="">
-				<quad4 id="1">     1,    62,    64,     3</quad4>
-				<quad4 id="2">     5,     3,    64,    66</quad4>
-				<quad4 id="3">     7,     5,    66,    68</quad4>
-				<quad4 id="4">     9,     7,    68,    70</quad4>
-				<quad4 id="5">    11,     9,    70,    72</quad4>
-				<quad4 id="6">    13,    11,    72,    74</quad4>
-				<quad4 id="7">    15,    13,    74,    76</quad4>
-				<quad4 id="8">    17,    15,    76,    78</quad4>
-				<quad4 id="9">    19,    17,    78,    80</quad4>
-				<quad4 id="10">    21,    19,    80,    82</quad4>
-				<quad4 id="11">    23,    21,    82,    84</quad4>
-				<quad4 id="12">    25,    23,    84,    86</quad4>
-				<quad4 id="13">    27,    25,    86,    88</quad4>
-				<quad4 id="14">    29,    27,    88,    90</quad4>
-				<quad4 id="15">    31,    29,    90,    92</quad4>
-				<quad4 id="16">    33,    31,    92,    94</quad4>
-				<quad4 id="17">    35,    33,    94,    96</quad4>
-				<quad4 id="18">    37,    35,    96,    98</quad4>
-				<quad4 id="19">    39,    37,    98,   100</quad4>
-				<quad4 id="20">    41,    39,   100,   102</quad4>
-				<quad4 id="21">    43,    41,   102,   104</quad4>
-				<quad4 id="22">    45,    43,   104,   106</quad4>
-				<quad4 id="23">    47,    45,   106,   108</quad4>
-				<quad4 id="24">    49,    47,   108,   110</quad4>
-				<quad4 id="25">    51,    49,   110,   112</quad4>
-				<quad4 id="26">    53,    51,   112,   114</quad4>
-				<quad4 id="27">    55,    53,   114,   116</quad4>
-				<quad4 id="28">    57,    55,   116,   118</quad4>
-				<quad4 id="29">    59,    57,   118,   120</quad4>
-				<quad4 id="30">    61,    59,   120,   122</quad4>
-			</surface>
+			<surface type="master" set="MasterSurface01"/>
+			<surface type="slave" set="SlaveSurface01"/>
 		</contact>
-		<contact type="sliding-tension-compression">
+		<contact type="sliding-elastic">
 			<laugon>0</laugon>
 			<tolerance>0.2</tolerance>
 			<penalty>10000</penalty>
 			<two_pass>0</two_pass>
 			<auto_penalty>1</auto_penalty>
 			<symmetric_stiffness>0</symmetric_stiffness>
-			<surface type="master" name="">
-				<quad4 id="1">   127,   129,   130,   128</quad4>
-			</surface>
-			<surface type="slave" name="">
-				<tri3 id="1">    62,    63,    64</tri3>
-				<quad4 id="2">    63,    65,    66,    64</quad4>
-				<quad4 id="3">    65,    67,    68,    66</quad4>
-				<quad4 id="4">    67,    69,    70,    68</quad4>
-				<quad4 id="5">    69,    71,    72,    70</quad4>
-				<quad4 id="6">    71,    73,    74,    72</quad4>
-				<quad4 id="7">    73,    75,    76,    74</quad4>
-				<quad4 id="8">    75,    77,    78,    76</quad4>
-				<quad4 id="9">    77,    79,    80,    78</quad4>
-				<quad4 id="10">    79,    81,    82,    80</quad4>
-				<quad4 id="11">    81,    83,    84,    82</quad4>
-				<quad4 id="12">    83,    85,    86,    84</quad4>
-				<quad4 id="13">    85,    87,    88,    86</quad4>
-				<quad4 id="14">    87,    89,    90,    88</quad4>
-				<quad4 id="15">    89,    91,    92,    90</quad4>
-				<quad4 id="16">    91,    93,    94,    92</quad4>
-				<quad4 id="17">    93,    95,    96,    94</quad4>
-				<quad4 id="18">    95,    97,    98,    96</quad4>
-				<quad4 id="19">    97,    99,   100,    98</quad4>
-				<quad4 id="20">    99,   101,   102,   100</quad4>
-				<quad4 id="21">   101,   103,   104,   102</quad4>
-				<quad4 id="22">   103,   105,   106,   104</quad4>
-				<quad4 id="23">   105,   107,   108,   106</quad4>
-				<quad4 id="24">   107,   109,   110,   108</quad4>
-				<quad4 id="25">   109,   111,   112,   110</quad4>
-				<quad4 id="26">   111,   113,   114,   112</quad4>
-				<quad4 id="27">   113,   115,   116,   114</quad4>
-				<quad4 id="28">   115,   117,   118,   116</quad4>
-				<quad4 id="29">   117,   119,   120,   118</quad4>
-				<quad4 id="30">   119,   121,   122,   120</quad4>
-			</surface>
+			<surface type="master" set="MasterSurface02"/>
+			<surface type="slave" set="SlaveSurface02"/>
 		</contact>
-	</Boundary>
+	</Contact>
 	<Constraints>
 		<rigid_body mat="2">
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<trans_z type="fixed"></trans_z>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
+			<fixed bc="x"/>
+			<fixed bc="y"/>
+			<fixed bc="z"/>
+			<fixed bc="Rx"/>
+			<fixed bc="Ry"/>
+			<fixed bc="Rz"/>
 		</rigid_body>
 		<rigid_body mat="3">
-			<trans_x type="fixed"></trans_x>
-			<trans_y type="fixed"></trans_y>
-			<rot_x type="fixed"></rot_x>
-			<rot_y type="fixed"></rot_y>
-			<rot_z type="fixed"></rot_z>
+			<fixed bc="x"/>
+			<fixed bc="y"/>
+			<fixed bc="Rx"/>
+			<fixed bc="Ry"/>
+			<fixed bc="Rz"/>
 		</rigid_body>
 	</Constraints>
 	<Initial>
@@ -946,18 +958,15 @@ Comments:
 			<var type="current density"/>
 			<var type="displacement"/>
 			<var type="effective fluid pressure"/>
-			<var type="effective solute 1 concentration"/>
-			<var type="effective solute 2 concentration"/>
+			<var type="effective solute concentration"/>
 			<var type="electric potential"/>
 			<var type="fixed charge density"/>
 			<var type="fluid flux"/>
 			<var type="fluid pressure"/>
 			<var type="reaction forces"/>
 			<var type="relative volume"/>
-			<var type="solute 1 concentration"/>
-			<var type="solute 2 concentration"/>
-			<var type="solute 1 flux"/>
-			<var type="solute 2 flux"/>
+			<var type="solute concentration"/>
+			<var type="solute flux"/>
 			<var type="stress"/>
 		</plotfile>
 		<logfile>
@@ -988,7 +997,7 @@ Comments:
 		</Control>
 		<Constraints>
 			<rigid_body mat="3">
-				<trans_z type="prescribed" lc="6">1</trans_z>
+				<prescribed bc="z"lc="6">1</prescribed>
 			</rigid_body>
 		</Constraints>
 	</Step>
@@ -1015,7 +1024,7 @@ Comments:
 		</Control>
 		<Constraints>
 			<rigid_body mat="3">
-				<trans_z type="force" lc="7">1</trans_z>
+				<force bc="z" lc="7">1</force>
 			</rigid_body>
 		</Constraints>
 	</Step>

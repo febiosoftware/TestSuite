@@ -35,16 +35,16 @@ Materials:
 Degrees of Freedom: 720
 Results:
 	Steps Completed: 45
-	Equilibrium Iterations: 227
-	Right Hand Evaluations: 441
-	Siffness Reformations: 227
+	Equilibrium Iterations: 230
+	Right Hand Evaluations: 456
+	Siffness Reformations: 230
 	Other:
 		The peak concentration of soluble matrix product is 0.00158 at z=0  and time t=4e7.
  
 Comments:
 	
 -->
-<febio_spec version="1.2">
+<febio_spec version="2.0">
 	<Module type="multiphasic"/>
 	<Control>
 		<time_steps>400</time_steps>
@@ -279,77 +279,76 @@ Comments:
 			<node id="123">  5.0000000e-01,  5.0000000e-01,  1.2451696e-01</node>
 			<node id="124">  5.0000000e-01,  5.0000000e-01,  1.2500000e-01</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,    63,    94,    32,     2,    64,    95,    33</hex8>
-			<hex8 id="2" mat="1">     2,    64,    95,    33,     3,    65,    96,    34</hex8>
-			<hex8 id="3" mat="1">     3,    65,    96,    34,     4,    66,    97,    35</hex8>
-			<hex8 id="4" mat="1">     4,    66,    97,    35,     5,    67,    98,    36</hex8>
-			<hex8 id="5" mat="1">     5,    67,    98,    36,     6,    68,    99,    37</hex8>
-			<hex8 id="6" mat="1">     6,    68,    99,    37,     7,    69,   100,    38</hex8>
-			<hex8 id="7" mat="1">     7,    69,   100,    38,     8,    70,   101,    39</hex8>
-			<hex8 id="8" mat="1">     8,    70,   101,    39,     9,    71,   102,    40</hex8>
-			<hex8 id="9" mat="1">     9,    71,   102,    40,    10,    72,   103,    41</hex8>
-			<hex8 id="10" mat="1">    10,    72,   103,    41,    11,    73,   104,    42</hex8>
-			<hex8 id="11" mat="1">    11,    73,   104,    42,    12,    74,   105,    43</hex8>
-			<hex8 id="12" mat="1">    12,    74,   105,    43,    13,    75,   106,    44</hex8>
-			<hex8 id="13" mat="1">    13,    75,   106,    44,    14,    76,   107,    45</hex8>
-			<hex8 id="14" mat="1">    14,    76,   107,    45,    15,    77,   108,    46</hex8>
-			<hex8 id="15" mat="1">    15,    77,   108,    46,    16,    78,   109,    47</hex8>
-			<hex8 id="16" mat="1">    16,    78,   109,    47,    17,    79,   110,    48</hex8>
-			<hex8 id="17" mat="1">    17,    79,   110,    48,    18,    80,   111,    49</hex8>
-			<hex8 id="18" mat="1">    18,    80,   111,    49,    19,    81,   112,    50</hex8>
-			<hex8 id="19" mat="1">    19,    81,   112,    50,    20,    82,   113,    51</hex8>
-			<hex8 id="20" mat="1">    20,    82,   113,    51,    21,    83,   114,    52</hex8>
-			<hex8 id="21" mat="1">    21,    83,   114,    52,    22,    84,   115,    53</hex8>
-			<hex8 id="22" mat="1">    22,    84,   115,    53,    23,    85,   116,    54</hex8>
-			<hex8 id="23" mat="1">    23,    85,   116,    54,    24,    86,   117,    55</hex8>
-			<hex8 id="24" mat="1">    24,    86,   117,    55,    25,    87,   118,    56</hex8>
-			<hex8 id="25" mat="1">    25,    87,   118,    56,    26,    88,   119,    57</hex8>
-			<hex8 id="26" mat="1">    26,    88,   119,    57,    27,    89,   120,    58</hex8>
-			<hex8 id="27" mat="1">    27,    89,   120,    58,    28,    90,   121,    59</hex8>
-			<hex8 id="28" mat="1">    28,    90,   121,    59,    29,    91,   122,    60</hex8>
-			<hex8 id="29" mat="1">    29,    91,   122,    60,    30,    92,   123,    61</hex8>
-			<hex8 id="30" mat="1">    30,    92,   123,    61,    31,    93,   124,    62</hex8>
+		<Elements type="hex8" mat="1"> 
+			<elem id="1">     1,    63,    94,    32,     2,    64,    95,    33</elem>
+			<elem id="2">     2,    64,    95,    33,     3,    65,    96,    34</elem>
+			<elem id="3">     3,    65,    96,    34,     4,    66,    97,    35</elem>
+			<elem id="4">     4,    66,    97,    35,     5,    67,    98,    36</elem>
+			<elem id="5">     5,    67,    98,    36,     6,    68,    99,    37</elem>
+			<elem id="6">     6,    68,    99,    37,     7,    69,   100,    38</elem>
+			<elem id="7">     7,    69,   100,    38,     8,    70,   101,    39</elem>
+			<elem id="8">     8,    70,   101,    39,     9,    71,   102,    40</elem>
+			<elem id="9">     9,    71,   102,    40,    10,    72,   103,    41</elem>
+			<elem id="10">    10,    72,   103,    41,    11,    73,   104,    42</elem>
+			<elem id="11">    11,    73,   104,    42,    12,    74,   105,    43</elem>
+			<elem id="12">    12,    74,   105,    43,    13,    75,   106,    44</elem>
+			<elem id="13">    13,    75,   106,    44,    14,    76,   107,    45</elem>
+			<elem id="14">    14,    76,   107,    45,    15,    77,   108,    46</elem>
+			<elem id="15">    15,    77,   108,    46,    16,    78,   109,    47</elem>
+			<elem id="16">    16,    78,   109,    47,    17,    79,   110,    48</elem>
+			<elem id="17">    17,    79,   110,    48,    18,    80,   111,    49</elem>
+			<elem id="18">    18,    80,   111,    49,    19,    81,   112,    50</elem>
+			<elem id="19">    19,    81,   112,    50,    20,    82,   113,    51</elem>
+			<elem id="20">    20,    82,   113,    51,    21,    83,   114,    52</elem>
+			<elem id="21">    21,    83,   114,    52,    22,    84,   115,    53</elem>
+			<elem id="22">    22,    84,   115,    53,    23,    85,   116,    54</elem>
+			<elem id="23">    23,    85,   116,    54,    24,    86,   117,    55</elem>
+			<elem id="24">    24,    86,   117,    55,    25,    87,   118,    56</elem>
+			<elem id="25">    25,    87,   118,    56,    26,    88,   119,    57</elem>
+			<elem id="26">    26,    88,   119,    57,    27,    89,   120,    58</elem>
+			<elem id="27">    27,    89,   120,    58,    28,    90,   121,    59</elem>
+			<elem id="28">    28,    90,   121,    59,    29,    91,   122,    60</elem>
+			<elem id="29">    29,    91,   122,    60,    30,    92,   123,    61</elem>
+			<elem id="30">    30,    92,   123,    61,    31,    93,   124,    62</elem>
 		</Elements>
 	</Geometry>
 	<Boundary>
-		<fix>
-			<node id="1" bc="xyz"/>
-			<node id="32" bc="xyz"/>
-			<node id="63" bc="xyz"/>
-			<node id="94" bc="xyz"/>
+		<fix bc="xyz">
+			<node id="1"/>
+			<node id="32"/>
+			<node id="63"/>
+			<node id="94"/>
 		</fix>
-		<fix>
-			<node id="31" bc="c1"/>
-			<node id="31" bc="c2"/>
-			<node id="62" bc="c1"/>
-			<node id="62" bc="c2"/>
-			<node id="93" bc="c1"/>
-			<node id="93" bc="c2"/>
-			<node id="124" bc="c1"/>
-			<node id="124" bc="c2"/>
+		<fix bc="c1">
+			<node id="31"/>
+			<node id="62"/>
+			<node id="93"/>
+			<node id="124"/>
 		</fix>
-		<fix>
-			<node id="31" bc="p"/>
-			<node id="62" bc="p"/>
-			<node id="93" bc="p"/>
-			<node id="124" bc="p"/>
+		<fix bc="c2">
+			<node id="31"/>
+			<node id="62"/>
+			<node id="93"/>
+			<node id="124"/>
+		</fix>
+		<fix bc="p">
+			<node id="31"/>
+			<node id="62"/>
+			<node id="93"/>
+			<node id="124"/>
 		</fix>
 	</Boundary>
 	<Output>
 		<plotfile type="febio">
 			<var type="displacement"/>
 			<var type="effective fluid pressure"/>
-			<var type="effective solute 1 concentration"/>
-			<var type="effective solute 2 concentration"/>
+			<var type="effective solute concentration"/>
 			<var type="fluid flux"/>
 			<var type="fluid pressure"/>
 			<var type="relative volume"/>
-			<var type="solute 1 concentration"/>
-			<var type="solute 2 concentration"/>
-			<var type="sbm 1 concentration"/>
-			<var type="solute 1 flux"/>
-			<var type="solute 2 flux"/>
+			<var type="solute concentration"/>
+			<var type="sbm concentration"/>
+			<var type="solute flux"/>
 			<var type="stress"/>
 		</plotfile>
 		<logfile>

@@ -31,16 +31,16 @@ Materials:
 Degrees of Freedom: 60
 Results:
 	Steps Completed: 303
-	Equilibrium Iterations: 450
-	Right Hand Evaluations: 753
-	Siffness Reformations: 450
+	Equilibrium Iterations: 561
+	Right Hand Evaluations: 864
+	Siffness Reformations: 561
 	Other:
 		The final NaCl concentration is 0.0848 and the final Na+ and Cl- concentrations are 0.9152, at time t=6.
  
 Comments:
 	
 -->
-<febio_spec version="1.2">
+<febio_spec version="2.0">
 	<Module type="multiphasic"/>
 	<Control>
 		<time_steps>600</time_steps>
@@ -175,28 +175,28 @@ Comments:
 			<node id="7">  5.0000000e-01,  5.0000000e-01,  0.0000000e+00</node>
 			<node id="8">  5.0000000e-01,  5.0000000e-01,  1.0000000e+00</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,     5,     7,     3,     2,     6,     8,     4</hex8>
+		<Elements type="hex8" mat="1">
+			<elem id="1">     1,     5,     7,     3,     2,     6,     8,     4</elem>
 		</Elements>
 	</Geometry>
 	<Boundary>
-		<fix>
-			<node id="1" bc="xyz"/>
-			<node id="3" bc="xyz"/>
-			<node id="5" bc="xyz"/>
-			<node id="7" bc="xyz"/>
+		<fix bc="xyz">
+			<node id="1"/>
+			<node id="3"/>
+			<node id="5"/>
+			<node id="7"/>
 		</fix>
-		<prescribe>
-			<node id="2" bc="c4" lc="1">1</node>
-			<node id="4" bc="c4" lc="1">1</node>
-			<node id="6" bc="c4" lc="1">1</node>
-			<node id="8" bc="c4" lc="1">1</node>
+		<prescribe bc="c4" lc="1">
+			<node id="2">1</node>
+			<node id="4">1</node>
+			<node id="6">1</node>
+			<node id="8">1</node>
 		</prescribe>
-		<prescribe>
-			<node id="2" bc="c5" lc="2">1</node>
-			<node id="4" bc="c5" lc="2">1</node>
-			<node id="6" bc="c5" lc="2">1</node>
-			<node id="8" bc="c5" lc="2">1</node>
+		<prescribe bc="c5" lc="2">
+			<node id="2">1</node>
+			<node id="4">1</node>
+			<node id="6">1</node>
+			<node id="8">1</node>
 		</prescribe>
 	</Boundary>
 	<Initial>
@@ -256,25 +256,13 @@ Comments:
 			<var type="current density"/>
 			<var type="displacement"/>
 			<var type="effective fluid pressure"/>
-			<var type="effective solute 1 concentration"/>
-			<var type="effective solute 2 concentration"/>
-			<var type="effective solute 3 concentration"/>
-			<var type="effective solute 4 concentration"/>
-			<var type="effective solute 5 concentration"/>
+			<var type="effective solute concentration"/>
 			<var type="electric potential"/>
 			<var type="fluid flux"/>
 			<var type="fluid pressure"/>
 			<var type="relative volume"/>
-			<var type="solute 1 concentration"/>
-			<var type="solute 2 concentration"/>
-			<var type="solute 3 concentration"/>
-			<var type="solute 4 concentration"/>
-			<var type="solute 5 concentration"/>
-			<var type="solute 1 flux"/>
-			<var type="solute 2 flux"/>
-			<var type="solute 3 flux"/>
-			<var type="solute 4 flux"/>
-			<var type="solute 5 flux"/>
+			<var type="solute concentration"/>
+			<var type="solute flux"/>
 			<var type="stress"/>
 		</plotfile>
 		<logfile>

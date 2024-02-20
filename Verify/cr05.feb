@@ -19,7 +19,7 @@ Materials:
 	Constant Reaction Rate
 Degrees of Freedom: 240
 Results:
-	Steps Completed: 101
+	Steps Completed: 305
 	Equilibrium Iterations: 305
 	Right Hand Evaluations: 610
 	Siffness Reformations: 305
@@ -29,7 +29,7 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.2">
+<febio_spec version="2.0">
 	<Module type="multiphasic"/>
 	<Control>
 		<time_steps>3000</time_steps>
@@ -223,551 +223,303 @@ Comments:
 			<node id="123">  5.0000000e-01,  5.0000000e-01,  9.9698933e-01</node>
 			<node id="124">  5.0000000e-01,  5.0000000e-01,  1.0000000e+00</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,    63,    94,    32,     2,    64,    95,    33</hex8>
-			<hex8 id="2" mat="1">     2,    64,    95,    33,     3,    65,    96,    34</hex8>
-			<hex8 id="3" mat="1">     3,    65,    96,    34,     4,    66,    97,    35</hex8>
-			<hex8 id="4" mat="1">     4,    66,    97,    35,     5,    67,    98,    36</hex8>
-			<hex8 id="5" mat="1">     5,    67,    98,    36,     6,    68,    99,    37</hex8>
-			<hex8 id="6" mat="1">     6,    68,    99,    37,     7,    69,   100,    38</hex8>
-			<hex8 id="7" mat="1">     7,    69,   100,    38,     8,    70,   101,    39</hex8>
-			<hex8 id="8" mat="1">     8,    70,   101,    39,     9,    71,   102,    40</hex8>
-			<hex8 id="9" mat="1">     9,    71,   102,    40,    10,    72,   103,    41</hex8>
-			<hex8 id="10" mat="1">    10,    72,   103,    41,    11,    73,   104,    42</hex8>
-			<hex8 id="11" mat="1">    11,    73,   104,    42,    12,    74,   105,    43</hex8>
-			<hex8 id="12" mat="1">    12,    74,   105,    43,    13,    75,   106,    44</hex8>
-			<hex8 id="13" mat="1">    13,    75,   106,    44,    14,    76,   107,    45</hex8>
-			<hex8 id="14" mat="1">    14,    76,   107,    45,    15,    77,   108,    46</hex8>
-			<hex8 id="15" mat="1">    15,    77,   108,    46,    16,    78,   109,    47</hex8>
-			<hex8 id="16" mat="1">    16,    78,   109,    47,    17,    79,   110,    48</hex8>
-			<hex8 id="17" mat="1">    17,    79,   110,    48,    18,    80,   111,    49</hex8>
-			<hex8 id="18" mat="1">    18,    80,   111,    49,    19,    81,   112,    50</hex8>
-			<hex8 id="19" mat="1">    19,    81,   112,    50,    20,    82,   113,    51</hex8>
-			<hex8 id="20" mat="1">    20,    82,   113,    51,    21,    83,   114,    52</hex8>
-			<hex8 id="21" mat="1">    21,    83,   114,    52,    22,    84,   115,    53</hex8>
-			<hex8 id="22" mat="1">    22,    84,   115,    53,    23,    85,   116,    54</hex8>
-			<hex8 id="23" mat="1">    23,    85,   116,    54,    24,    86,   117,    55</hex8>
-			<hex8 id="24" mat="1">    24,    86,   117,    55,    25,    87,   118,    56</hex8>
-			<hex8 id="25" mat="1">    25,    87,   118,    56,    26,    88,   119,    57</hex8>
-			<hex8 id="26" mat="1">    26,    88,   119,    57,    27,    89,   120,    58</hex8>
-			<hex8 id="27" mat="1">    27,    89,   120,    58,    28,    90,   121,    59</hex8>
-			<hex8 id="28" mat="1">    28,    90,   121,    59,    29,    91,   122,    60</hex8>
-			<hex8 id="29" mat="1">    29,    91,   122,    60,    30,    92,   123,    61</hex8>
-			<hex8 id="30" mat="1">    30,    92,   123,    61,    31,    93,   124,    62</hex8>
+		<Elements type="hex8" mat="1">
+			<elem id="1">     1,    63,    94,    32,     2,    64,    95,    33</elem>
+			<elem id="2">     2,    64,    95,    33,     3,    65,    96,    34</elem>
+			<elem id="3">     3,    65,    96,    34,     4,    66,    97,    35</elem>
+			<elem id="4">     4,    66,    97,    35,     5,    67,    98,    36</elem>
+			<elem id="5">     5,    67,    98,    36,     6,    68,    99,    37</elem>
+			<elem id="6">     6,    68,    99,    37,     7,    69,   100,    38</elem>
+			<elem id="7">     7,    69,   100,    38,     8,    70,   101,    39</elem>
+			<elem id="8">     8,    70,   101,    39,     9,    71,   102,    40</elem>
+			<elem id="9">     9,    71,   102,    40,    10,    72,   103,    41</elem>
+			<elem id="10">    10,    72,   103,    41,    11,    73,   104,    42</elem>
+			<elem id="11">    11,    73,   104,    42,    12,    74,   105,    43</elem>
+			<elem id="12">    12,    74,   105,    43,    13,    75,   106,    44</elem>
+			<elem id="13">    13,    75,   106,    44,    14,    76,   107,    45</elem>
+			<elem id="14">    14,    76,   107,    45,    15,    77,   108,    46</elem>
+			<elem id="15">    15,    77,   108,    46,    16,    78,   109,    47</elem>
+			<elem id="16">    16,    78,   109,    47,    17,    79,   110,    48</elem>
+			<elem id="17">    17,    79,   110,    48,    18,    80,   111,    49</elem>
+			<elem id="18">    18,    80,   111,    49,    19,    81,   112,    50</elem>
+			<elem id="19">    19,    81,   112,    50,    20,    82,   113,    51</elem>
+			<elem id="20">    20,    82,   113,    51,    21,    83,   114,    52</elem>
+			<elem id="21">    21,    83,   114,    52,    22,    84,   115,    53</elem>
+			<elem id="22">    22,    84,   115,    53,    23,    85,   116,    54</elem>
+			<elem id="23">    23,    85,   116,    54,    24,    86,   117,    55</elem>
+			<elem id="24">    24,    86,   117,    55,    25,    87,   118,    56</elem>
+			<elem id="25">    25,    87,   118,    56,    26,    88,   119,    57</elem>
+			<elem id="26">    26,    88,   119,    57,    27,    89,   120,    58</elem>
+			<elem id="27">    27,    89,   120,    58,    28,    90,   121,    59</elem>
+			<elem id="28">    28,    90,   121,    59,    29,    91,   122,    60</elem>
+			<elem id="29">    29,    91,   122,    60,    30,    92,   123,    61</elem>
+			<elem id="30">    30,    92,   123,    61,    31,    93,   124,    62</elem>
 		</Elements>
 	</Geometry>
 	<Boundary>
-		<fix>
-			<node id="1" bc="x"/>
-			<node id="2" bc="x"/>
-			<node id="3" bc="x"/>
-			<node id="4" bc="x"/>
-			<node id="5" bc="x"/>
-			<node id="6" bc="x"/>
-			<node id="7" bc="x"/>
-			<node id="8" bc="x"/>
-			<node id="9" bc="x"/>
-			<node id="10" bc="x"/>
-			<node id="11" bc="x"/>
-			<node id="12" bc="x"/>
-			<node id="13" bc="x"/>
-			<node id="14" bc="x"/>
-			<node id="15" bc="x"/>
-			<node id="16" bc="x"/>
-			<node id="17" bc="x"/>
-			<node id="18" bc="x"/>
-			<node id="19" bc="x"/>
-			<node id="20" bc="x"/>
-			<node id="21" bc="x"/>
-			<node id="22" bc="x"/>
-			<node id="23" bc="x"/>
-			<node id="24" bc="x"/>
-			<node id="25" bc="x"/>
-			<node id="26" bc="x"/>
-			<node id="27" bc="x"/>
-			<node id="28" bc="x"/>
-			<node id="29" bc="x"/>
-			<node id="30" bc="x"/>
-			<node id="31" bc="x"/>
-			<node id="32" bc="x"/>
-			<node id="33" bc="x"/>
-			<node id="34" bc="x"/>
-			<node id="35" bc="x"/>
-			<node id="36" bc="x"/>
-			<node id="37" bc="x"/>
-			<node id="38" bc="x"/>
-			<node id="39" bc="x"/>
-			<node id="40" bc="x"/>
-			<node id="41" bc="x"/>
-			<node id="42" bc="x"/>
-			<node id="43" bc="x"/>
-			<node id="44" bc="x"/>
-			<node id="45" bc="x"/>
-			<node id="46" bc="x"/>
-			<node id="47" bc="x"/>
-			<node id="48" bc="x"/>
-			<node id="49" bc="x"/>
-			<node id="50" bc="x"/>
-			<node id="51" bc="x"/>
-			<node id="52" bc="x"/>
-			<node id="53" bc="x"/>
-			<node id="54" bc="x"/>
-			<node id="55" bc="x"/>
-			<node id="56" bc="x"/>
-			<node id="57" bc="x"/>
-			<node id="58" bc="x"/>
-			<node id="59" bc="x"/>
-			<node id="60" bc="x"/>
-			<node id="61" bc="x"/>
-			<node id="62" bc="x"/>
-			<node id="63" bc="x"/>
-			<node id="64" bc="x"/>
-			<node id="65" bc="x"/>
-			<node id="66" bc="x"/>
-			<node id="67" bc="x"/>
-			<node id="68" bc="x"/>
-			<node id="69" bc="x"/>
-			<node id="70" bc="x"/>
-			<node id="71" bc="x"/>
-			<node id="72" bc="x"/>
-			<node id="73" bc="x"/>
-			<node id="74" bc="x"/>
-			<node id="75" bc="x"/>
-			<node id="76" bc="x"/>
-			<node id="77" bc="x"/>
-			<node id="78" bc="x"/>
-			<node id="79" bc="x"/>
-			<node id="80" bc="x"/>
-			<node id="81" bc="x"/>
-			<node id="82" bc="x"/>
-			<node id="83" bc="x"/>
-			<node id="84" bc="x"/>
-			<node id="85" bc="x"/>
-			<node id="86" bc="x"/>
-			<node id="87" bc="x"/>
-			<node id="88" bc="x"/>
-			<node id="89" bc="x"/>
-			<node id="90" bc="x"/>
-			<node id="91" bc="x"/>
-			<node id="92" bc="x"/>
-			<node id="93" bc="x"/>
-			<node id="94" bc="x"/>
-			<node id="95" bc="x"/>
-			<node id="96" bc="x"/>
-			<node id="97" bc="x"/>
-			<node id="98" bc="x"/>
-			<node id="99" bc="x"/>
-			<node id="100" bc="x"/>
-			<node id="101" bc="x"/>
-			<node id="102" bc="x"/>
-			<node id="103" bc="x"/>
-			<node id="104" bc="x"/>
-			<node id="105" bc="x"/>
-			<node id="106" bc="x"/>
-			<node id="107" bc="x"/>
-			<node id="108" bc="x"/>
-			<node id="109" bc="x"/>
-			<node id="110" bc="x"/>
-			<node id="111" bc="x"/>
-			<node id="112" bc="x"/>
-			<node id="113" bc="x"/>
-			<node id="114" bc="x"/>
-			<node id="115" bc="x"/>
-			<node id="116" bc="x"/>
-			<node id="117" bc="x"/>
-			<node id="118" bc="x"/>
-			<node id="119" bc="x"/>
-			<node id="120" bc="x"/>
-			<node id="121" bc="x"/>
-			<node id="122" bc="x"/>
-			<node id="123" bc="x"/>
-			<node id="124" bc="x"/>
-			<node id="1" bc="x"/>
-			<node id="2" bc="x"/>
-			<node id="3" bc="x"/>
-			<node id="4" bc="x"/>
-			<node id="5" bc="x"/>
-			<node id="6" bc="x"/>
-			<node id="7" bc="x"/>
-			<node id="8" bc="x"/>
-			<node id="9" bc="x"/>
-			<node id="10" bc="x"/>
-			<node id="11" bc="x"/>
-			<node id="12" bc="x"/>
-			<node id="13" bc="x"/>
-			<node id="14" bc="x"/>
-			<node id="15" bc="x"/>
-			<node id="16" bc="x"/>
-			<node id="17" bc="x"/>
-			<node id="18" bc="x"/>
-			<node id="19" bc="x"/>
-			<node id="20" bc="x"/>
-			<node id="21" bc="x"/>
-			<node id="22" bc="x"/>
-			<node id="23" bc="x"/>
-			<node id="24" bc="x"/>
-			<node id="25" bc="x"/>
-			<node id="26" bc="x"/>
-			<node id="27" bc="x"/>
-			<node id="28" bc="x"/>
-			<node id="29" bc="x"/>
-			<node id="30" bc="x"/>
-			<node id="31" bc="x"/>
-			<node id="32" bc="x"/>
-			<node id="33" bc="x"/>
-			<node id="34" bc="x"/>
-			<node id="35" bc="x"/>
-			<node id="36" bc="x"/>
-			<node id="37" bc="x"/>
-			<node id="38" bc="x"/>
-			<node id="39" bc="x"/>
-			<node id="40" bc="x"/>
-			<node id="41" bc="x"/>
-			<node id="42" bc="x"/>
-			<node id="43" bc="x"/>
-			<node id="44" bc="x"/>
-			<node id="45" bc="x"/>
-			<node id="46" bc="x"/>
-			<node id="47" bc="x"/>
-			<node id="48" bc="x"/>
-			<node id="49" bc="x"/>
-			<node id="50" bc="x"/>
-			<node id="51" bc="x"/>
-			<node id="52" bc="x"/>
-			<node id="53" bc="x"/>
-			<node id="54" bc="x"/>
-			<node id="55" bc="x"/>
-			<node id="56" bc="x"/>
-			<node id="57" bc="x"/>
-			<node id="58" bc="x"/>
-			<node id="59" bc="x"/>
-			<node id="60" bc="x"/>
-			<node id="61" bc="x"/>
-			<node id="62" bc="x"/>
-			<node id="63" bc="x"/>
-			<node id="64" bc="x"/>
-			<node id="65" bc="x"/>
-			<node id="66" bc="x"/>
-			<node id="67" bc="x"/>
-			<node id="68" bc="x"/>
-			<node id="69" bc="x"/>
-			<node id="70" bc="x"/>
-			<node id="71" bc="x"/>
-			<node id="72" bc="x"/>
-			<node id="73" bc="x"/>
-			<node id="74" bc="x"/>
-			<node id="75" bc="x"/>
-			<node id="76" bc="x"/>
-			<node id="77" bc="x"/>
-			<node id="78" bc="x"/>
-			<node id="79" bc="x"/>
-			<node id="80" bc="x"/>
-			<node id="81" bc="x"/>
-			<node id="82" bc="x"/>
-			<node id="83" bc="x"/>
-			<node id="84" bc="x"/>
-			<node id="85" bc="x"/>
-			<node id="86" bc="x"/>
-			<node id="87" bc="x"/>
-			<node id="88" bc="x"/>
-			<node id="89" bc="x"/>
-			<node id="90" bc="x"/>
-			<node id="91" bc="x"/>
-			<node id="92" bc="x"/>
-			<node id="93" bc="x"/>
-			<node id="94" bc="x"/>
-			<node id="95" bc="x"/>
-			<node id="96" bc="x"/>
-			<node id="97" bc="x"/>
-			<node id="98" bc="x"/>
-			<node id="99" bc="x"/>
-			<node id="100" bc="x"/>
-			<node id="101" bc="x"/>
-			<node id="102" bc="x"/>
-			<node id="103" bc="x"/>
-			<node id="104" bc="x"/>
-			<node id="105" bc="x"/>
-			<node id="106" bc="x"/>
-			<node id="107" bc="x"/>
-			<node id="108" bc="x"/>
-			<node id="109" bc="x"/>
-			<node id="110" bc="x"/>
-			<node id="111" bc="x"/>
-			<node id="112" bc="x"/>
-			<node id="113" bc="x"/>
-			<node id="114" bc="x"/>
-			<node id="115" bc="x"/>
-			<node id="116" bc="x"/>
-			<node id="117" bc="x"/>
-			<node id="118" bc="x"/>
-			<node id="119" bc="x"/>
-			<node id="120" bc="x"/>
-			<node id="121" bc="x"/>
-			<node id="122" bc="x"/>
-			<node id="123" bc="x"/>
-			<node id="124" bc="x"/>
+		<fix bc="x">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="13"/>
+			<node id="14"/>
+			<node id="15"/>
+			<node id="16"/>
+			<node id="17"/>
+			<node id="18"/>
+			<node id="19"/>
+			<node id="20"/>
+			<node id="21"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="24"/>
+			<node id="25"/>
+			<node id="26"/>
+			<node id="27"/>
+			<node id="28"/>
+			<node id="29"/>
+			<node id="30"/>
+			<node id="31"/>
+			<node id="32"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="35"/>
+			<node id="36"/>
+			<node id="37"/>
+			<node id="38"/>
+			<node id="39"/>
+			<node id="40"/>
+			<node id="41"/>
+			<node id="42"/>
+			<node id="43"/>
+			<node id="44"/>
+			<node id="45"/>
+			<node id="46"/>
+			<node id="47"/>
+			<node id="48"/>
+			<node id="49"/>
+			<node id="50"/>
+			<node id="51"/>
+			<node id="52"/>
+			<node id="53"/>
+			<node id="54"/>
+			<node id="55"/>
+			<node id="56"/>
+			<node id="57"/>
+			<node id="58"/>
+			<node id="59"/>
+			<node id="60"/>
+			<node id="61"/>
+			<node id="62"/>
+			<node id="63"/>
+			<node id="64"/>
+			<node id="65"/>
+			<node id="66"/>
+			<node id="67"/>
+			<node id="68"/>
+			<node id="69"/>
+			<node id="70"/>
+			<node id="71"/>
+			<node id="72"/>
+			<node id="73"/>
+			<node id="74"/>
+			<node id="75"/>
+			<node id="76"/>
+			<node id="77"/>
+			<node id="78"/>
+			<node id="79"/>
+			<node id="80"/>
+			<node id="81"/>
+			<node id="82"/>
+			<node id="83"/>
+			<node id="84"/>
+			<node id="85"/>
+			<node id="86"/>
+			<node id="87"/>
+			<node id="88"/>
+			<node id="89"/>
+			<node id="90"/>
+			<node id="91"/>
+			<node id="92"/>
+			<node id="93"/>
+			<node id="94"/>
+			<node id="95"/>
+			<node id="96"/>
+			<node id="97"/>
+			<node id="98"/>
+			<node id="99"/>
+			<node id="100"/>
+			<node id="101"/>
+			<node id="102"/>
+			<node id="103"/>
+			<node id="104"/>
+			<node id="105"/>
+			<node id="106"/>
+			<node id="107"/>
+			<node id="108"/>
+			<node id="109"/>
+			<node id="110"/>
+			<node id="111"/>
+			<node id="112"/>
+			<node id="113"/>
+			<node id="114"/>
+			<node id="115"/>
+			<node id="116"/>
+			<node id="117"/>
+			<node id="118"/>
+			<node id="119"/>
+			<node id="120"/>
+			<node id="121"/>
+			<node id="122"/>
+			<node id="123"/>
+			<node id="124"/>
 		</fix>
-		<fix>
-			<node id="1" bc="y"/>
-			<node id="2" bc="y"/>
-			<node id="3" bc="y"/>
-			<node id="4" bc="y"/>
-			<node id="5" bc="y"/>
-			<node id="6" bc="y"/>
-			<node id="7" bc="y"/>
-			<node id="8" bc="y"/>
-			<node id="9" bc="y"/>
-			<node id="10" bc="y"/>
-			<node id="11" bc="y"/>
-			<node id="12" bc="y"/>
-			<node id="13" bc="y"/>
-			<node id="14" bc="y"/>
-			<node id="15" bc="y"/>
-			<node id="16" bc="y"/>
-			<node id="17" bc="y"/>
-			<node id="18" bc="y"/>
-			<node id="19" bc="y"/>
-			<node id="20" bc="y"/>
-			<node id="21" bc="y"/>
-			<node id="22" bc="y"/>
-			<node id="23" bc="y"/>
-			<node id="24" bc="y"/>
-			<node id="25" bc="y"/>
-			<node id="26" bc="y"/>
-			<node id="27" bc="y"/>
-			<node id="28" bc="y"/>
-			<node id="29" bc="y"/>
-			<node id="30" bc="y"/>
-			<node id="31" bc="y"/>
-			<node id="32" bc="y"/>
-			<node id="33" bc="y"/>
-			<node id="34" bc="y"/>
-			<node id="35" bc="y"/>
-			<node id="36" bc="y"/>
-			<node id="37" bc="y"/>
-			<node id="38" bc="y"/>
-			<node id="39" bc="y"/>
-			<node id="40" bc="y"/>
-			<node id="41" bc="y"/>
-			<node id="42" bc="y"/>
-			<node id="43" bc="y"/>
-			<node id="44" bc="y"/>
-			<node id="45" bc="y"/>
-			<node id="46" bc="y"/>
-			<node id="47" bc="y"/>
-			<node id="48" bc="y"/>
-			<node id="49" bc="y"/>
-			<node id="50" bc="y"/>
-			<node id="51" bc="y"/>
-			<node id="52" bc="y"/>
-			<node id="53" bc="y"/>
-			<node id="54" bc="y"/>
-			<node id="55" bc="y"/>
-			<node id="56" bc="y"/>
-			<node id="57" bc="y"/>
-			<node id="58" bc="y"/>
-			<node id="59" bc="y"/>
-			<node id="60" bc="y"/>
-			<node id="61" bc="y"/>
-			<node id="62" bc="y"/>
-			<node id="63" bc="y"/>
-			<node id="64" bc="y"/>
-			<node id="65" bc="y"/>
-			<node id="66" bc="y"/>
-			<node id="67" bc="y"/>
-			<node id="68" bc="y"/>
-			<node id="69" bc="y"/>
-			<node id="70" bc="y"/>
-			<node id="71" bc="y"/>
-			<node id="72" bc="y"/>
-			<node id="73" bc="y"/>
-			<node id="74" bc="y"/>
-			<node id="75" bc="y"/>
-			<node id="76" bc="y"/>
-			<node id="77" bc="y"/>
-			<node id="78" bc="y"/>
-			<node id="79" bc="y"/>
-			<node id="80" bc="y"/>
-			<node id="81" bc="y"/>
-			<node id="82" bc="y"/>
-			<node id="83" bc="y"/>
-			<node id="84" bc="y"/>
-			<node id="85" bc="y"/>
-			<node id="86" bc="y"/>
-			<node id="87" bc="y"/>
-			<node id="88" bc="y"/>
-			<node id="89" bc="y"/>
-			<node id="90" bc="y"/>
-			<node id="91" bc="y"/>
-			<node id="92" bc="y"/>
-			<node id="93" bc="y"/>
-			<node id="94" bc="y"/>
-			<node id="95" bc="y"/>
-			<node id="96" bc="y"/>
-			<node id="97" bc="y"/>
-			<node id="98" bc="y"/>
-			<node id="99" bc="y"/>
-			<node id="100" bc="y"/>
-			<node id="101" bc="y"/>
-			<node id="102" bc="y"/>
-			<node id="103" bc="y"/>
-			<node id="104" bc="y"/>
-			<node id="105" bc="y"/>
-			<node id="106" bc="y"/>
-			<node id="107" bc="y"/>
-			<node id="108" bc="y"/>
-			<node id="109" bc="y"/>
-			<node id="110" bc="y"/>
-			<node id="111" bc="y"/>
-			<node id="112" bc="y"/>
-			<node id="113" bc="y"/>
-			<node id="114" bc="y"/>
-			<node id="115" bc="y"/>
-			<node id="116" bc="y"/>
-			<node id="117" bc="y"/>
-			<node id="118" bc="y"/>
-			<node id="119" bc="y"/>
-			<node id="120" bc="y"/>
-			<node id="121" bc="y"/>
-			<node id="122" bc="y"/>
-			<node id="123" bc="y"/>
-			<node id="124" bc="y"/>
-			<node id="1" bc="y"/>
-			<node id="2" bc="y"/>
-			<node id="3" bc="y"/>
-			<node id="4" bc="y"/>
-			<node id="5" bc="y"/>
-			<node id="6" bc="y"/>
-			<node id="7" bc="y"/>
-			<node id="8" bc="y"/>
-			<node id="9" bc="y"/>
-			<node id="10" bc="y"/>
-			<node id="11" bc="y"/>
-			<node id="12" bc="y"/>
-			<node id="13" bc="y"/>
-			<node id="14" bc="y"/>
-			<node id="15" bc="y"/>
-			<node id="16" bc="y"/>
-			<node id="17" bc="y"/>
-			<node id="18" bc="y"/>
-			<node id="19" bc="y"/>
-			<node id="20" bc="y"/>
-			<node id="21" bc="y"/>
-			<node id="22" bc="y"/>
-			<node id="23" bc="y"/>
-			<node id="24" bc="y"/>
-			<node id="25" bc="y"/>
-			<node id="26" bc="y"/>
-			<node id="27" bc="y"/>
-			<node id="28" bc="y"/>
-			<node id="29" bc="y"/>
-			<node id="30" bc="y"/>
-			<node id="31" bc="y"/>
-			<node id="32" bc="y"/>
-			<node id="33" bc="y"/>
-			<node id="34" bc="y"/>
-			<node id="35" bc="y"/>
-			<node id="36" bc="y"/>
-			<node id="37" bc="y"/>
-			<node id="38" bc="y"/>
-			<node id="39" bc="y"/>
-			<node id="40" bc="y"/>
-			<node id="41" bc="y"/>
-			<node id="42" bc="y"/>
-			<node id="43" bc="y"/>
-			<node id="44" bc="y"/>
-			<node id="45" bc="y"/>
-			<node id="46" bc="y"/>
-			<node id="47" bc="y"/>
-			<node id="48" bc="y"/>
-			<node id="49" bc="y"/>
-			<node id="50" bc="y"/>
-			<node id="51" bc="y"/>
-			<node id="52" bc="y"/>
-			<node id="53" bc="y"/>
-			<node id="54" bc="y"/>
-			<node id="55" bc="y"/>
-			<node id="56" bc="y"/>
-			<node id="57" bc="y"/>
-			<node id="58" bc="y"/>
-			<node id="59" bc="y"/>
-			<node id="60" bc="y"/>
-			<node id="61" bc="y"/>
-			<node id="62" bc="y"/>
-			<node id="63" bc="y"/>
-			<node id="64" bc="y"/>
-			<node id="65" bc="y"/>
-			<node id="66" bc="y"/>
-			<node id="67" bc="y"/>
-			<node id="68" bc="y"/>
-			<node id="69" bc="y"/>
-			<node id="70" bc="y"/>
-			<node id="71" bc="y"/>
-			<node id="72" bc="y"/>
-			<node id="73" bc="y"/>
-			<node id="74" bc="y"/>
-			<node id="75" bc="y"/>
-			<node id="76" bc="y"/>
-			<node id="77" bc="y"/>
-			<node id="78" bc="y"/>
-			<node id="79" bc="y"/>
-			<node id="80" bc="y"/>
-			<node id="81" bc="y"/>
-			<node id="82" bc="y"/>
-			<node id="83" bc="y"/>
-			<node id="84" bc="y"/>
-			<node id="85" bc="y"/>
-			<node id="86" bc="y"/>
-			<node id="87" bc="y"/>
-			<node id="88" bc="y"/>
-			<node id="89" bc="y"/>
-			<node id="90" bc="y"/>
-			<node id="91" bc="y"/>
-			<node id="92" bc="y"/>
-			<node id="93" bc="y"/>
-			<node id="94" bc="y"/>
-			<node id="95" bc="y"/>
-			<node id="96" bc="y"/>
-			<node id="97" bc="y"/>
-			<node id="98" bc="y"/>
-			<node id="99" bc="y"/>
-			<node id="100" bc="y"/>
-			<node id="101" bc="y"/>
-			<node id="102" bc="y"/>
-			<node id="103" bc="y"/>
-			<node id="104" bc="y"/>
-			<node id="105" bc="y"/>
-			<node id="106" bc="y"/>
-			<node id="107" bc="y"/>
-			<node id="108" bc="y"/>
-			<node id="109" bc="y"/>
-			<node id="110" bc="y"/>
-			<node id="111" bc="y"/>
-			<node id="112" bc="y"/>
-			<node id="113" bc="y"/>
-			<node id="114" bc="y"/>
-			<node id="115" bc="y"/>
-			<node id="116" bc="y"/>
-			<node id="117" bc="y"/>
-			<node id="118" bc="y"/>
-			<node id="119" bc="y"/>
-			<node id="120" bc="y"/>
-			<node id="121" bc="y"/>
-			<node id="122" bc="y"/>
-			<node id="123" bc="y"/>
-			<node id="124" bc="y"/>
+		<fix bc="y">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="13"/>
+			<node id="14"/>
+			<node id="15"/>
+			<node id="16"/>
+			<node id="17"/>
+			<node id="18"/>
+			<node id="19"/>
+			<node id="20"/>
+			<node id="21"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="24"/>
+			<node id="25"/>
+			<node id="26"/>
+			<node id="27"/>
+			<node id="28"/>
+			<node id="29"/>
+			<node id="30"/>
+			<node id="31"/>
+			<node id="32"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="35"/>
+			<node id="36"/>
+			<node id="37"/>
+			<node id="38"/>
+			<node id="39"/>
+			<node id="40"/>
+			<node id="41"/>
+			<node id="42"/>
+			<node id="43"/>
+			<node id="44"/>
+			<node id="45"/>
+			<node id="46"/>
+			<node id="47"/>
+			<node id="48"/>
+			<node id="49"/>
+			<node id="50"/>
+			<node id="51"/>
+			<node id="52"/>
+			<node id="53"/>
+			<node id="54"/>
+			<node id="55"/>
+			<node id="56"/>
+			<node id="57"/>
+			<node id="58"/>
+			<node id="59"/>
+			<node id="60"/>
+			<node id="61"/>
+			<node id="62"/>
+			<node id="63"/>
+			<node id="64"/>
+			<node id="65"/>
+			<node id="66"/>
+			<node id="67"/>
+			<node id="68"/>
+			<node id="69"/>
+			<node id="70"/>
+			<node id="71"/>
+			<node id="72"/>
+			<node id="73"/>
+			<node id="74"/>
+			<node id="75"/>
+			<node id="76"/>
+			<node id="77"/>
+			<node id="78"/>
+			<node id="79"/>
+			<node id="80"/>
+			<node id="81"/>
+			<node id="82"/>
+			<node id="83"/>
+			<node id="84"/>
+			<node id="85"/>
+			<node id="86"/>
+			<node id="87"/>
+			<node id="88"/>
+			<node id="89"/>
+			<node id="90"/>
+			<node id="91"/>
+			<node id="92"/>
+			<node id="93"/>
+			<node id="94"/>
+			<node id="95"/>
+			<node id="96"/>
+			<node id="97"/>
+			<node id="98"/>
+			<node id="99"/>
+			<node id="100"/>
+			<node id="101"/>
+			<node id="102"/>
+			<node id="103"/>
+			<node id="104"/>
+			<node id="105"/>
+			<node id="106"/>
+			<node id="107"/>
+			<node id="108"/>
+			<node id="109"/>
+			<node id="110"/>
+			<node id="111"/>
+			<node id="112"/>
+			<node id="113"/>
+			<node id="114"/>
+			<node id="115"/>
+			<node id="116"/>
+			<node id="117"/>
+			<node id="118"/>
+			<node id="119"/>
+			<node id="120"/>
+			<node id="121"/>
+			<node id="122"/>
+			<node id="123"/>
+			<node id="124"/>
 		</fix>
-		<fix>
-			<node id="1" bc="z"/>
-			<node id="32" bc="z"/>
-			<node id="63" bc="z"/>
-			<node id="94" bc="z"/>
+		<fix bc="z">
+			<node id="1"/>
+			<node id="32"/>
+			<node id="63"/>
+			<node id="94"/>
 		</fix>
-		<fix>
-			<node id="31" bc="p"/>
-			<node id="62" bc="p"/>
-			<node id="93" bc="p"/>
-			<node id="124" bc="p"/>
+		<fix bc="p">
+			<node id="31"/>
+			<node id="62"/>
+			<node id="93"/>
+			<node id="124"/>
 		</fix>
 	</Boundary>
 	<Output>
@@ -780,7 +532,7 @@ Comments:
 			<var type="stress"/>
 			<var type="velocity"/>
 			<var type="density"/>
-			<var type="sbm 1 concentration"/>
+			<var type="sbm concentration"/>
 			<var type="referential solid volume fraction"/>
 		</plotfile>
 		<logfile>

@@ -20,7 +20,8 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.2">
+<febio_spec version="2.0">
+	<Module type="solid"/>
 	<Control>
 		<title>Dynamic Bar</title>
 		<time_steps>100</time_steps>
@@ -37,11 +38,18 @@ Comments:
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
-		<plot_level>PLOT_DEFAULT</plot_level>
-		<analysis type="dynamic"></analysis>
+		<analysis type="dynamic"/>
 	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
 	<Material>
 		<material id="1" name="Material 5" type="neo-Hookean">
+			<density>1</density>
 			<E>1</E>
 			<v>0.49</v>
 		</material>
@@ -148,75 +156,86 @@ Comments:
 			<node id="98"> 2.5000000e+000, 5.0000000e-001, 5.0000000e-001</node>
 			<node id="99"> 2.5000000e+000, 5.0000000e-001, 1.0000000e+000</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,    10,    13,     4,     2,    11,    14,     5</hex8>
-			<hex8 id="2" mat="1">     2,    11,    14,     5,     3,    12,    15,     6</hex8>
-			<hex8 id="3" mat="1">     4,    13,    16,     7,     5,    14,    17,     8</hex8>
-			<hex8 id="4" mat="1">     5,    14,    17,     8,     6,    15,    18,     9</hex8>
-			<hex8 id="5" mat="1">    10,    19,    22,    13,    11,    20,    23,    14</hex8>
-			<hex8 id="6" mat="1">    11,    20,    23,    14,    12,    21,    24,    15</hex8>
-			<hex8 id="7" mat="1">    13,    22,    25,    16,    14,    23,    26,    17</hex8>
-			<hex8 id="8" mat="1">    14,    23,    26,    17,    15,    24,    27,    18</hex8>
-			<hex8 id="9" mat="1">    19,    28,    31,    22,    20,    29,    32,    23</hex8>
-			<hex8 id="10" mat="1">    20,    29,    32,    23,    21,    30,    33,    24</hex8>
-			<hex8 id="11" mat="1">    22,    31,    34,    25,    23,    32,    35,    26</hex8>
-			<hex8 id="12" mat="1">    23,    32,    35,    26,    24,    33,    36,    27</hex8>
-			<hex8 id="13" mat="1">    28,    37,    40,    31,    29,    38,    41,    32</hex8>
-			<hex8 id="14" mat="1">    29,    38,    41,    32,    30,    39,    42,    33</hex8>
-			<hex8 id="15" mat="1">    31,    40,    43,    34,    32,    41,    44,    35</hex8>
-			<hex8 id="16" mat="1">    32,    41,    44,    35,    33,    42,    45,    36</hex8>
-			<hex8 id="17" mat="1">    37,    46,    49,    40,    38,    47,    50,    41</hex8>
-			<hex8 id="18" mat="1">    38,    47,    50,    41,    39,    48,    51,    42</hex8>
-			<hex8 id="19" mat="1">    40,    49,    52,    43,    41,    50,    53,    44</hex8>
-			<hex8 id="20" mat="1">    41,    50,    53,    44,    42,    51,    54,    45</hex8>
-			<hex8 id="21" mat="1">    46,    55,    58,    49,    47,    56,    59,    50</hex8>
-			<hex8 id="22" mat="1">    47,    56,    59,    50,    48,    57,    60,    51</hex8>
-			<hex8 id="23" mat="1">    49,    58,    61,    52,    50,    59,    62,    53</hex8>
-			<hex8 id="24" mat="1">    50,    59,    62,    53,    51,    60,    63,    54</hex8>
-			<hex8 id="25" mat="1">    55,    64,    67,    58,    56,    65,    68,    59</hex8>
-			<hex8 id="26" mat="1">    56,    65,    68,    59,    57,    66,    69,    60</hex8>
-			<hex8 id="27" mat="1">    58,    67,    70,    61,    59,    68,    71,    62</hex8>
-			<hex8 id="28" mat="1">    59,    68,    71,    62,    60,    69,    72,    63</hex8>
-			<hex8 id="29" mat="1">    64,    73,    76,    67,    65,    74,    77,    68</hex8>
-			<hex8 id="30" mat="1">    65,    74,    77,    68,    66,    75,    78,    69</hex8>
-			<hex8 id="31" mat="1">    67,    76,    79,    70,    68,    77,    80,    71</hex8>
-			<hex8 id="32" mat="1">    68,    77,    80,    71,    69,    78,    81,    72</hex8>
-			<hex8 id="33" mat="1">    73,    82,    85,    76,    74,    83,    86,    77</hex8>
-			<hex8 id="34" mat="1">    74,    83,    86,    77,    75,    84,    87,    78</hex8>
-			<hex8 id="35" mat="1">    76,    85,    88,    79,    77,    86,    89,    80</hex8>
-			<hex8 id="36" mat="1">    77,    86,    89,    80,    78,    87,    90,    81</hex8>
-			<hex8 id="37" mat="1">    82,    91,    94,    85,    83,    92,    95,    86</hex8>
-			<hex8 id="38" mat="1">    83,    92,    95,    86,    84,    93,    96,    87</hex8>
-			<hex8 id="39" mat="1">    85,    94,    97,    88,    86,    95,    98,    89</hex8>
-			<hex8 id="40" mat="1">    86,    95,    98,    89,    87,    96,    99,    90</hex8>
+		<Elements type="hex8" mat="1" elset="Part11">
+			<elem id="1">     1,    10,    13,     4,     2,    11,    14,     5</elem>
+			<elem id="2">     2,    11,    14,     5,     3,    12,    15,     6</elem>
+			<elem id="3">     4,    13,    16,     7,     5,    14,    17,     8</elem>
+			<elem id="4">     5,    14,    17,     8,     6,    15,    18,     9</elem>
+			<elem id="5">    10,    19,    22,    13,    11,    20,    23,    14</elem>
+			<elem id="6">    11,    20,    23,    14,    12,    21,    24,    15</elem>
+			<elem id="7">    13,    22,    25,    16,    14,    23,    26,    17</elem>
+			<elem id="8">    14,    23,    26,    17,    15,    24,    27,    18</elem>
+			<elem id="9">    19,    28,    31,    22,    20,    29,    32,    23</elem>
+			<elem id="10">    20,    29,    32,    23,    21,    30,    33,    24</elem>
+			<elem id="11">    22,    31,    34,    25,    23,    32,    35,    26</elem>
+			<elem id="12">    23,    32,    35,    26,    24,    33,    36,    27</elem>
+			<elem id="13">    28,    37,    40,    31,    29,    38,    41,    32</elem>
+			<elem id="14">    29,    38,    41,    32,    30,    39,    42,    33</elem>
+			<elem id="15">    31,    40,    43,    34,    32,    41,    44,    35</elem>
+			<elem id="16">    32,    41,    44,    35,    33,    42,    45,    36</elem>
+			<elem id="17">    37,    46,    49,    40,    38,    47,    50,    41</elem>
+			<elem id="18">    38,    47,    50,    41,    39,    48,    51,    42</elem>
+			<elem id="19">    40,    49,    52,    43,    41,    50,    53,    44</elem>
+			<elem id="20">    41,    50,    53,    44,    42,    51,    54,    45</elem>
+			<elem id="21">    46,    55,    58,    49,    47,    56,    59,    50</elem>
+			<elem id="22">    47,    56,    59,    50,    48,    57,    60,    51</elem>
+			<elem id="23">    49,    58,    61,    52,    50,    59,    62,    53</elem>
+			<elem id="24">    50,    59,    62,    53,    51,    60,    63,    54</elem>
+			<elem id="25">    55,    64,    67,    58,    56,    65,    68,    59</elem>
+			<elem id="26">    56,    65,    68,    59,    57,    66,    69,    60</elem>
+			<elem id="27">    58,    67,    70,    61,    59,    68,    71,    62</elem>
+			<elem id="28">    59,    68,    71,    62,    60,    69,    72,    63</elem>
+			<elem id="29">    64,    73,    76,    67,    65,    74,    77,    68</elem>
+			<elem id="30">    65,    74,    77,    68,    66,    75,    78,    69</elem>
+			<elem id="31">    67,    76,    79,    70,    68,    77,    80,    71</elem>
+			<elem id="32">    68,    77,    80,    71,    69,    78,    81,    72</elem>
+			<elem id="33">    73,    82,    85,    76,    74,    83,    86,    77</elem>
+			<elem id="34">    74,    83,    86,    77,    75,    84,    87,    78</elem>
+			<elem id="35">    76,    85,    88,    79,    77,    86,    89,    80</elem>
+			<elem id="36">    77,    86,    89,    80,    78,    87,    90,    81</elem>
+			<elem id="37">    82,    91,    94,    85,    83,    92,    95,    86</elem>
+			<elem id="38">    83,    92,    95,    86,    84,    93,    96,    87</elem>
+			<elem id="39">    85,    94,    97,    88,    86,    95,    98,    89</elem>
+			<elem id="40">    86,    95,    98,    89,    87,    96,    99,    90</elem>
 		</Elements>
 	</Geometry>
 	<Boundary>
-		<fix>
-			<node id="1" bc="yz"></node>
-			<node id="2" bc="yz"></node>
-			<node id="3" bc="yz"></node>
-			<node id="4" bc="yz"></node>
-			<node id="5" bc="yz"></node>
-			<node id="6" bc="yz"></node>
-			<node id="7" bc="yz"></node>
-			<node id="8" bc="yz"></node>
-			<node id="9" bc="yz"></node>
+		<fix bc="z">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
 		</fix>
-		<prescribe>
-			<node id="1" bc="x" lc="1">1</node>
-			<node id="2" bc="x" lc="1">1</node>
-			<node id="3" bc="x" lc="1">1</node>
-			<node id="4" bc="x" lc="1">1</node>
-			<node id="5" bc="x" lc="1">1</node>
-			<node id="6" bc="x" lc="1">1</node>
-			<node id="7" bc="x" lc="1">1</node>
-			<node id="8" bc="x" lc="1">1</node>
-			<node id="9" bc="x" lc="1">1</node>
+		<fix bc="y">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+		</fix>
+		<prescribe bc="x" lc="1">
+			<node id="1">1</node>
+			<node id="2">1</node>
+			<node id="3">1</node>
+			<node id="4">1</node>
+			<node id="5">1</node>
+			<node id="6">1</node>
+			<node id="7">1</node>
+			<node id="8">1</node>
+			<node id="9">1</node>
 		</prescribe>
 	</Boundary>
 	<LoadData>
-		<loadcurve id="1">
+		<loadcurve id="1" type="linear">
 			<loadpoint>0,0</loadpoint>
 			<loadpoint>1,1</loadpoint>
 		</loadcurve>

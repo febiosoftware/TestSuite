@@ -22,7 +22,8 @@ Results:
 Comments:
 	
 -->
-<febio_spec version="1.2">
+<febio_spec version="2.0">
+	<Module type="solid"/>
 	<Control>
 		<title>TrueGridauto</title>
 		<time_steps>50</time_steps>
@@ -33,17 +34,24 @@ Comments:
 		<etol>0.01</etol>
 		<rtol>1e+010</rtol>
 		<lstol>0.9</lstol>
-		<pressure_stiffness>1</pressure_stiffness>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax>0.02</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>20</opt_iter>
 		</time_stepper>
-		<plot_level>PLOT_DEFAULT</plot_level>
+		<analysis type="static"/>
 	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
 	<Material>
 		<material id="1" name="Material 1" type="Mooney-Rivlin">
+			<density>1</density>
 			<c1>1</c1>
 			<c2>10</c2>
 			<k>100</k>
@@ -60,35 +68,48 @@ Comments:
 			<node id="7"> 1.0000000e+000, 1.0000000e+000, 0.0000000e+000</node>
 			<node id="8"> 1.0000000e+000, 1.0000000e+000, 1.0000000e+000</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,     5,     7,     3,     2,     6,     8,     4</hex8>
+		<Elements type="hex8" mat="1" elset="Part5">
+			<elem id="1">     1,     5,     7,     3,     2,     6,     8,     4</elem>
 		</Elements>
 	</Geometry>
 	<Boundary>
-		<fix>
-			<node id="1" bc="xyz"></node>
-			<node id="2" bc="xy"></node>
-			<node id="3" bc="xz"></node>
-			<node id="4" bc="x"></node>
-			<node id="5" bc="yz"></node>
-			<node id="6" bc="y"></node>
-			<node id="7" bc="z"></node>
+		<fix bc="z">
+			<node id="1"/>
+			<node id="3"/>
+			<node id="5"/>
+			<node id="7"/>
 		</fix>
-		<prescribe>
-			<node id="5" bc="x" lc="1">1</node>
-			<node id="6" bc="x" lc="1">1</node>
-			<node id="7" bc="x" lc="1">1</node>
-			<node id="8" bc="x" lc="1">1</node>
+		<fix bc="y">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="5"/>
+			<node id="6"/>
+		</fix>
+		<fix bc="x">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+		</fix>
+		<prescribe bc="x" lc="1">
+			<node id="5">1</node>
+			<node id="6">1</node>
+			<node id="7">1</node>
+			<node id="8">1</node>
 		</prescribe>
 	</Boundary>
 	<LoadData>
-		<loadcurve id="1">
+		<loadcurve id="1" type="linear">
 			<loadpoint>0,0</loadpoint>
 			<loadpoint>1,-0.8</loadpoint>
 		</loadcurve>
 	</LoadData>
 	<Output>
-		<plotfile type="febio"></plotfile>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="relative volume"/>
+			<var type="stress"/>
+		</plotfile>
 		<logfile>
 			<element_data data="Ey">1</element_data>
 		</logfile>
