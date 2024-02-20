@@ -1,50 +1,39 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!--
-Problem Description:
-	Uniaxial loading of a bar that is rotated about the Z-axis by 30 degrees.
-	The preferred material directions are aligned along and perpendicular
-	to the long axis of the bar.
-Main Features:
-	Material directions not along coordinate axes.
-Secondary Features:
-	Pressure
-Materials:
-	Linear Orthotropic
-Degrees of Freedom: 132
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 52
-	Right Hand Evaluations: 62
-	Siffness Reformations: 10
-	Other:
-		The end of the bar has a total displacement of 0.85 units at time t = 1.
-Comments:
-	
--->
-<febio_spec version="1.2">
+<febio_spec version="2.5">
 	<Module type="solid"/>
 	<Control>
-		<title>Linear Orthotropic</title>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
 		<max_refs>15</max_refs>
 		<max_ups>10</max_ups>
+		<diverge_reform>1</diverge_reform>
+		<reform_each_time_step>1</reform_each_time_step>
 		<dtol>0.001</dtol>
 		<etol>0.01</etol>
 		<rtol>0</rtol>
 		<lstol>0.9</lstol>
+		<min_residual>1e-020</min_residual>
+		<qnmethod>0</qnmethod>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax>0.1</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
+		<analysis type="static"/>
 	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
 	<Material>
 		<material id="1" name="Material1" type="orthotropic elastic">
 			<mat_axis type="vector">
-			  <a>0.866,0.5,0</a>
-			  <d>-0.5,0.866,0</d>
+				<a>0.866,0.5,0</a>
+				<d>-0.5,0.866,0</d>
 			</mat_axis>
 			<density>1</density>
 			<E1>1</E1>
@@ -59,87 +48,109 @@ Comments:
 		</material>
 	</Material>
 	<Geometry>
-		<Nodes>
-			<node id="1"> -4.0801270e+00, -2.9330127e+00,  5.5511151e-17</node>
-			<node id="2"> -4.0801270e+00, -2.9330127e+00,  1.0000000e+00</node>
-			<node id="3"> -4.5801270e+00, -2.0669873e+00,  5.5511151e-17</node>
-			<node id="4"> -4.5801270e+00, -2.0669873e+00,  1.0000000e+00</node>
-			<node id="5"> -3.2928312e+00, -2.4784672e+00,  5.5511151e-17</node>
-			<node id="6"> -3.2928312e+00, -2.4784672e+00,  1.0000000e+00</node>
-			<node id="7"> -3.7928312e+00, -1.6124418e+00,  5.5511151e-17</node>
-			<node id="8"> -3.7928312e+00, -1.6124418e+00,  1.0000000e+00</node>
-			<node id="9"> -2.5055354e+00, -2.0239218e+00,  5.5511151e-17</node>
-			<node id="10"> -2.5055354e+00, -2.0239218e+00,  1.0000000e+00</node>
-			<node id="11"> -3.0055354e+00, -1.1578964e+00,  5.5511151e-17</node>
-			<node id="12"> -3.0055354e+00, -1.1578964e+00,  1.0000000e+00</node>
-			<node id="13"> -1.7182396e+00, -1.5693763e+00,  5.5511151e-17</node>
-			<node id="14"> -1.7182396e+00, -1.5693763e+00,  1.0000000e+00</node>
-			<node id="15"> -2.2182396e+00, -7.0335091e-01,  5.5511151e-17</node>
-			<node id="16"> -2.2182396e+00, -7.0335091e-01,  1.0000000e+00</node>
-			<node id="17"> -9.3094374e-01, -1.1148309e+00,  5.5511151e-17</node>
-			<node id="18"> -9.3094374e-01, -1.1148309e+00,  1.0000000e+00</node>
-			<node id="19"> -1.4309437e+00, -2.4880547e-01,  5.5511151e-17</node>
-			<node id="20"> -1.4309437e+00, -2.4880547e-01,  1.0000000e+00</node>
-			<node id="21"> -1.4364792e-01, -6.6028543e-01,  5.5511151e-17</node>
-			<node id="22"> -1.4364792e-01, -6.6028543e-01,  1.0000000e+00</node>
-			<node id="23"> -6.4364791e-01,  2.0573998e-01,  5.5511151e-17</node>
-			<node id="24"> -6.4364791e-01,  2.0573998e-01,  1.0000000e+00</node>
-			<node id="25">  6.4364791e-01, -2.0573998e-01,  5.5511151e-17</node>
-			<node id="26">  6.4364791e-01, -2.0573998e-01,  1.0000000e+00</node>
-			<node id="27">  1.4364792e-01,  6.6028543e-01,  5.5511151e-17</node>
-			<node id="28">  1.4364792e-01,  6.6028543e-01,  1.0000000e+00</node>
-			<node id="29">  1.4309437e+00,  2.4880547e-01,  5.5511151e-17</node>
-			<node id="30">  1.4309437e+00,  2.4880547e-01,  1.0000000e+00</node>
-			<node id="31">  9.3094374e-01,  1.1148309e+00,  5.5511151e-17</node>
-			<node id="32">  9.3094374e-01,  1.1148309e+00,  1.0000000e+00</node>
-			<node id="33">  2.2182396e+00,  7.0335091e-01,  5.5511151e-17</node>
-			<node id="34">  2.2182396e+00,  7.0335091e-01,  1.0000000e+00</node>
-			<node id="35">  1.7182396e+00,  1.5693763e+00,  5.5511151e-17</node>
-			<node id="36">  1.7182396e+00,  1.5693763e+00,  1.0000000e+00</node>
-			<node id="37">  3.0055354e+00,  1.1578964e+00,  5.5511151e-17</node>
-			<node id="38">  3.0055354e+00,  1.1578964e+00,  1.0000000e+00</node>
-			<node id="39">  2.5055354e+00,  2.0239218e+00,  5.5511151e-17</node>
-			<node id="40">  2.5055354e+00,  2.0239218e+00,  1.0000000e+00</node>
-			<node id="41">  3.7928312e+00,  1.6124418e+00,  5.5511151e-17</node>
-			<node id="42">  3.7928312e+00,  1.6124418e+00,  1.0000000e+00</node>
-			<node id="43">  3.2928312e+00,  2.4784672e+00,  5.5511151e-17</node>
-			<node id="44">  3.2928312e+00,  2.4784672e+00,  1.0000000e+00</node>
-			<node id="45">  4.5801270e+00,  2.0669873e+00,  5.5511151e-17</node>
-			<node id="46">  4.5801270e+00,  2.0669873e+00,  1.0000000e+00</node>
-			<node id="47">  4.0801270e+00,  2.9330127e+00,  5.5511151e-17</node>
-			<node id="48">  4.0801270e+00,  2.9330127e+00,  1.0000000e+00</node>
+		<Nodes name="ma15">
+			<node id="1">-4.0801270e+000,-2.9330127e+000, 5.5511151e-017</node>
+			<node id="2">-4.0801270e+000,-2.9330127e+000, 1.0000000e+000</node>
+			<node id="3">-4.5801270e+000,-2.0669873e+000, 5.5511151e-017</node>
+			<node id="4">-4.5801270e+000,-2.0669873e+000, 1.0000000e+000</node>
+			<node id="5">-3.2928312e+000,-2.4784672e+000, 5.5511151e-017</node>
+			<node id="6">-3.2928312e+000,-2.4784672e+000, 1.0000000e+000</node>
+			<node id="7">-3.7928312e+000,-1.6124418e+000, 5.5511151e-017</node>
+			<node id="8">-3.7928312e+000,-1.6124418e+000, 1.0000000e+000</node>
+			<node id="9">-2.5055354e+000,-2.0239218e+000, 5.5511151e-017</node>
+			<node id="10">-2.5055354e+000,-2.0239218e+000, 1.0000000e+000</node>
+			<node id="11">-3.0055354e+000,-1.1578964e+000, 5.5511151e-017</node>
+			<node id="12">-3.0055354e+000,-1.1578964e+000, 1.0000000e+000</node>
+			<node id="13">-1.7182396e+000,-1.5693763e+000, 5.5511151e-017</node>
+			<node id="14">-1.7182396e+000,-1.5693763e+000, 1.0000000e+000</node>
+			<node id="15">-2.2182396e+000,-7.0335091e-001, 5.5511151e-017</node>
+			<node id="16">-2.2182396e+000,-7.0335091e-001, 1.0000000e+000</node>
+			<node id="17">-9.3094374e-001,-1.1148309e+000, 5.5511151e-017</node>
+			<node id="18">-9.3094374e-001,-1.1148309e+000, 1.0000000e+000</node>
+			<node id="19">-1.4309437e+000,-2.4880547e-001, 5.5511151e-017</node>
+			<node id="20">-1.4309437e+000,-2.4880547e-001, 1.0000000e+000</node>
+			<node id="21">-1.4364792e-001,-6.6028543e-001, 5.5511151e-017</node>
+			<node id="22">-1.4364792e-001,-6.6028543e-001, 1.0000000e+000</node>
+			<node id="23">-6.4364791e-001, 2.0573998e-001, 5.5511151e-017</node>
+			<node id="24">-6.4364791e-001, 2.0573998e-001, 1.0000000e+000</node>
+			<node id="25"> 6.4364791e-001,-2.0573998e-001, 5.5511151e-017</node>
+			<node id="26"> 6.4364791e-001,-2.0573998e-001, 1.0000000e+000</node>
+			<node id="27"> 1.4364792e-001, 6.6028543e-001, 5.5511151e-017</node>
+			<node id="28"> 1.4364792e-001, 6.6028543e-001, 1.0000000e+000</node>
+			<node id="29"> 1.4309437e+000, 2.4880547e-001, 5.5511151e-017</node>
+			<node id="30"> 1.4309437e+000, 2.4880547e-001, 1.0000000e+000</node>
+			<node id="31"> 9.3094374e-001, 1.1148309e+000, 5.5511151e-017</node>
+			<node id="32"> 9.3094374e-001, 1.1148309e+000, 1.0000000e+000</node>
+			<node id="33"> 2.2182396e+000, 7.0335091e-001, 5.5511151e-017</node>
+			<node id="34"> 2.2182396e+000, 7.0335091e-001, 1.0000000e+000</node>
+			<node id="35"> 1.7182396e+000, 1.5693763e+000, 5.5511151e-017</node>
+			<node id="36"> 1.7182396e+000, 1.5693763e+000, 1.0000000e+000</node>
+			<node id="37"> 3.0055354e+000, 1.1578964e+000, 5.5511151e-017</node>
+			<node id="38"> 3.0055354e+000, 1.1578964e+000, 1.0000000e+000</node>
+			<node id="39"> 2.5055354e+000, 2.0239218e+000, 5.5511151e-017</node>
+			<node id="40"> 2.5055354e+000, 2.0239218e+000, 1.0000000e+000</node>
+			<node id="41"> 3.7928312e+000, 1.6124418e+000, 5.5511151e-017</node>
+			<node id="42"> 3.7928312e+000, 1.6124418e+000, 1.0000000e+000</node>
+			<node id="43"> 3.2928312e+000, 2.4784672e+000, 5.5511151e-017</node>
+			<node id="44"> 3.2928312e+000, 2.4784672e+000, 1.0000000e+000</node>
+			<node id="45"> 4.5801270e+000, 2.0669873e+000, 5.5511151e-017</node>
+			<node id="46"> 4.5801270e+000, 2.0669873e+000, 1.0000000e+000</node>
+			<node id="47"> 4.0801270e+000, 2.9330127e+000, 5.5511151e-017</node>
+			<node id="48"> 4.0801270e+000, 2.9330127e+000, 1.0000000e+000</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,     5,     7,     3,     2,     6,     8,     4</hex8>
-			<hex8 id="2" mat="1">     5,     9,    11,     7,     6,    10,    12,     8</hex8>
-			<hex8 id="3" mat="1">     9,    13,    15,    11,    10,    14,    16,    12</hex8>
-			<hex8 id="4" mat="1">    13,    17,    19,    15,    14,    18,    20,    16</hex8>
-			<hex8 id="5" mat="1">    17,    21,    23,    19,    18,    22,    24,    20</hex8>
-			<hex8 id="6" mat="1">    21,    25,    27,    23,    22,    26,    28,    24</hex8>
-			<hex8 id="7" mat="1">    25,    29,    31,    27,    26,    30,    32,    28</hex8>
-			<hex8 id="8" mat="1">    29,    33,    35,    31,    30,    34,    36,    32</hex8>
-			<hex8 id="9" mat="1">    33,    37,    39,    35,    34,    38,    40,    36</hex8>
-			<hex8 id="10" mat="1">    37,    41,    43,    39,    38,    42,    44,    40</hex8>
-			<hex8 id="11" mat="1">    41,    45,    47,    43,    42,    46,    48,    44</hex8>
+		<Elements type="hex8" mat="1" name="Part12">
+			<elem id="1">     1,     5,     7,     3,     2,     6,     8,     4</elem>
+			<elem id="2">     5,     9,    11,     7,     6,    10,    12,     8</elem>
+			<elem id="3">     9,    13,    15,    11,    10,    14,    16,    12</elem>
+			<elem id="4">    13,    17,    19,    15,    14,    18,    20,    16</elem>
+			<elem id="5">    17,    21,    23,    19,    18,    22,    24,    20</elem>
+			<elem id="6">    21,    25,    27,    23,    22,    26,    28,    24</elem>
+			<elem id="7">    25,    29,    31,    27,    26,    30,    32,    28</elem>
+			<elem id="8">    29,    33,    35,    31,    30,    34,    36,    32</elem>
+			<elem id="9">    33,    37,    39,    35,    34,    38,    40,    36</elem>
+			<elem id="10">    37,    41,    43,    39,    38,    42,    44,    40</elem>
+			<elem id="11">    41,    45,    47,    43,    42,    46,    48,    44</elem>
 		</Elements>
+		<NodeSet name="FixedDisplacement01">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement02">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement03">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+		</NodeSet>
+		<Surface name="PressureLoad1">
+			<quad4 id="1">    45,    47,    48,    46</quad4>
+		</Surface>
+		<ElementSet name="unnamed_set01">
+			<elem id="1"/>
+		</ElementSet>
 	</Geometry>
 	<Boundary>
-		<fix>
-			<node id="1" bc="xyz"/>
-			<node id="2" bc="xyz"/>
-			<node id="3" bc="xyz"/>
-			<node id="4" bc="xyz"/>
-		</fix>
+		<fix bc="z" node_set="FixedDisplacement01"/>
+		<fix bc="y" node_set="FixedDisplacement02"/>
+		<fix bc="x" node_set="FixedDisplacement03"/>
 	</Boundary>
 	<Loads>
-		<pressure>
-			<quad4 id="1" lc="1" scale="-1">    45,    47,    48,    46</quad4>
-		</pressure>
+		<surface_load type="pressure" surface="PressureLoad1">
+			<pressure lc="1">-1</pressure>
+			<linear>0</linear>
+		</surface_load>
 	</Loads>
 	<LoadData>
 		<loadcurve id="1" type="smooth">
-			<loadpoint>0,0</loadpoint>
-			<loadpoint>1,0.1</loadpoint>
+			<point>0,0</point>
+			<point>1,0.1</point>
 		</loadcurve>
 	</LoadData>
 	<Output>
@@ -147,11 +158,8 @@ Comments:
 			<var type="displacement"/>
 			<var type="stress"/>
 		</plotfile>
-	</Output>
-	<Output>
-		<plotfile type="febio"></plotfile>
 		<logfile>
-			<element_data data="sy">1</element_data>
-		</logfile>	
+			<element_data data="sy" elem_set="unnamed_set01"/>
+		</logfile>
 	</Output>
 </febio_spec>

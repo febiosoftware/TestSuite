@@ -1,52 +1,43 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!--
-Problem Description:
-	A shell disk is constrained in x,y,z on the edges and has a pressure of 0 units
-	at time t=0 to -0.005 units at time t=1.
-Main Features:
-	Shells
-	Pressure
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-Degrees of Freedom: 1014
-Results:
-	Steps Completed: 18
-	Equilibrium Iterations: 150
-	Right Hand Evaluations: 176
-	Siffness Reformations: 19
-	Other:
-		The disk has a maximum z-displacement of 0.879 at time t=1.
-Comments:
-	
--->
-<febio_spec version="1.2">
+<febio_spec version="2.5">
+	<Module type="solid"/>
 	<Control>
-		<title>Pressure on Disk</title>
 		<time_steps>100</time_steps>
 		<step_size>0.01</step_size>
 		<max_refs>15</max_refs>
 		<max_ups>10</max_ups>
+		<diverge_reform>1</diverge_reform>
+		<reform_each_time_step>1</reform_each_time_step>
 		<dtol>0.001</dtol>
 		<etol>0.01</etol>
 		<rtol>0</rtol>
 		<lstol>0.9</lstol>
+		<min_residual>1e-020</min_residual>
+		<qnmethod>0</qnmethod>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax>0.1</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
+		<analysis type="static"/>
 	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
 	<Material>
 		<material id="1" name="Material 1" type="neo-Hookean">
+			<density>1</density>
 			<E>1</E>
 			<v>0.45</v>
 		</material>
 	</Material>
 	<Geometry>
-		<Nodes>
+		<Nodes name="sh05">
 			<node id="1">-3.1819805e-001,-3.1819805e-001, 0.0000000e+000</node>
 			<node id="2">-3.3647104e-001,-2.2431403e-001, 0.0000000e+000</node>
 			<node id="3">-3.4537541e-001,-1.1512514e-001, 0.0000000e+000</node>
@@ -241,1023 +232,735 @@ Comments:
 			<node id="192">-5.5470020e-001, 8.3205029e-001, 0.0000000e+000</node>
 			<node id="193">-7.0710678e-001, 7.0710678e-001, 0.0000000e+000</node>
 		</Nodes>
-		<Elements>
-			<quad4 id="1" mat="1">     1,     8,     9,     2</quad4>
-			<quad4 id="2" mat="1">     8,    15,    16,     9</quad4>
-			<quad4 id="3" mat="1">    15,    22,    23,    16</quad4>
-			<quad4 id="4" mat="1">    22,    29,    30,    23</quad4>
-			<quad4 id="5" mat="1">    29,    36,    37,    30</quad4>
-			<quad4 id="6" mat="1">    36,    43,    44,    37</quad4>
-			<quad4 id="7" mat="1">     2,     9,    10,     3</quad4>
-			<quad4 id="8" mat="1">     9,    16,    17,    10</quad4>
-			<quad4 id="9" mat="1">    16,    23,    24,    17</quad4>
-			<quad4 id="10" mat="1">    23,    30,    31,    24</quad4>
-			<quad4 id="11" mat="1">    30,    37,    38,    31</quad4>
-			<quad4 id="12" mat="1">    37,    44,    45,    38</quad4>
-			<quad4 id="13" mat="1">     3,    10,    11,     4</quad4>
-			<quad4 id="14" mat="1">    10,    17,    18,    11</quad4>
-			<quad4 id="15" mat="1">    17,    24,    25,    18</quad4>
-			<quad4 id="16" mat="1">    24,    31,    32,    25</quad4>
-			<quad4 id="17" mat="1">    31,    38,    39,    32</quad4>
-			<quad4 id="18" mat="1">    38,    45,    46,    39</quad4>
-			<quad4 id="19" mat="1">     4,    11,    12,     5</quad4>
-			<quad4 id="20" mat="1">    11,    18,    19,    12</quad4>
-			<quad4 id="21" mat="1">    18,    25,    26,    19</quad4>
-			<quad4 id="22" mat="1">    25,    32,    33,    26</quad4>
-			<quad4 id="23" mat="1">    32,    39,    40,    33</quad4>
-			<quad4 id="24" mat="1">    39,    46,    47,    40</quad4>
-			<quad4 id="25" mat="1">     5,    12,    13,     6</quad4>
-			<quad4 id="26" mat="1">    12,    19,    20,    13</quad4>
-			<quad4 id="27" mat="1">    19,    26,    27,    20</quad4>
-			<quad4 id="28" mat="1">    26,    33,    34,    27</quad4>
-			<quad4 id="29" mat="1">    33,    40,    41,    34</quad4>
-			<quad4 id="30" mat="1">    40,    47,    48,    41</quad4>
-			<quad4 id="31" mat="1">     6,    13,    14,     7</quad4>
-			<quad4 id="32" mat="1">    13,    20,    21,    14</quad4>
-			<quad4 id="33" mat="1">    20,    27,    28,    21</quad4>
-			<quad4 id="34" mat="1">    27,    34,    35,    28</quad4>
-			<quad4 id="35" mat="1">    34,    41,    42,    35</quad4>
-			<quad4 id="36" mat="1">    41,    48,    49,    42</quad4>
-			<quad4 id="37" mat="1">     6,    50,    51,     5</quad4>
-			<quad4 id="38" mat="1">     5,    51,    52,     4</quad4>
-			<quad4 id="39" mat="1">     4,    52,    53,     3</quad4>
-			<quad4 id="40" mat="1">     3,    53,    54,     2</quad4>
-			<quad4 id="41" mat="1">     2,    54,    55,     1</quad4>
-			<quad4 id="42" mat="1">     1,    55,    56,     8</quad4>
-			<quad4 id="43" mat="1">     8,    56,    57,    15</quad4>
-			<quad4 id="44" mat="1">    15,    57,    58,    22</quad4>
-			<quad4 id="45" mat="1">    22,    58,    59,    29</quad4>
-			<quad4 id="46" mat="1">    29,    59,    60,    36</quad4>
-			<quad4 id="47" mat="1">    36,    60,    61,    43</quad4>
-			<quad4 id="48" mat="1">    43,    61,    62,    44</quad4>
-			<quad4 id="49" mat="1">    44,    62,    63,    45</quad4>
-			<quad4 id="50" mat="1">    45,    63,    64,    46</quad4>
-			<quad4 id="51" mat="1">    46,    64,    65,    47</quad4>
-			<quad4 id="52" mat="1">    47,    65,    66,    48</quad4>
-			<quad4 id="53" mat="1">    48,    66,    67,    49</quad4>
-			<quad4 id="54" mat="1">    49,    67,    68,    42</quad4>
-			<quad4 id="55" mat="1">    42,    68,    69,    35</quad4>
-			<quad4 id="56" mat="1">    35,    69,    70,    28</quad4>
-			<quad4 id="57" mat="1">    28,    70,    71,    21</quad4>
-			<quad4 id="58" mat="1">    21,    71,    72,    14</quad4>
-			<quad4 id="59" mat="1">    14,    72,    73,     7</quad4>
-			<quad4 id="60" mat="1">     7,    73,    50,     6</quad4>
-			<quad4 id="61" mat="1">    50,    74,    75,    51</quad4>
-			<quad4 id="62" mat="1">    51,    75,    76,    52</quad4>
-			<quad4 id="63" mat="1">    52,    76,    77,    53</quad4>
-			<quad4 id="64" mat="1">    53,    77,    78,    54</quad4>
-			<quad4 id="65" mat="1">    54,    78,    79,    55</quad4>
-			<quad4 id="66" mat="1">    55,    79,    80,    56</quad4>
-			<quad4 id="67" mat="1">    56,    80,    81,    57</quad4>
-			<quad4 id="68" mat="1">    57,    81,    82,    58</quad4>
-			<quad4 id="69" mat="1">    58,    82,    83,    59</quad4>
-			<quad4 id="70" mat="1">    59,    83,    84,    60</quad4>
-			<quad4 id="71" mat="1">    60,    84,    85,    61</quad4>
-			<quad4 id="72" mat="1">    61,    85,    86,    62</quad4>
-			<quad4 id="73" mat="1">    62,    86,    87,    63</quad4>
-			<quad4 id="74" mat="1">    63,    87,    88,    64</quad4>
-			<quad4 id="75" mat="1">    64,    88,    89,    65</quad4>
-			<quad4 id="76" mat="1">    65,    89,    90,    66</quad4>
-			<quad4 id="77" mat="1">    66,    90,    91,    67</quad4>
-			<quad4 id="78" mat="1">    67,    91,    92,    68</quad4>
-			<quad4 id="79" mat="1">    68,    92,    93,    69</quad4>
-			<quad4 id="80" mat="1">    69,    93,    94,    70</quad4>
-			<quad4 id="81" mat="1">    70,    94,    95,    71</quad4>
-			<quad4 id="82" mat="1">    71,    95,    96,    72</quad4>
-			<quad4 id="83" mat="1">    72,    96,    97,    73</quad4>
-			<quad4 id="84" mat="1">    73,    97,    74,    50</quad4>
-			<quad4 id="85" mat="1">    74,    98,    99,    75</quad4>
-			<quad4 id="86" mat="1">    75,    99,   100,    76</quad4>
-			<quad4 id="87" mat="1">    76,   100,   101,    77</quad4>
-			<quad4 id="88" mat="1">    77,   101,   102,    78</quad4>
-			<quad4 id="89" mat="1">    78,   102,   103,    79</quad4>
-			<quad4 id="90" mat="1">    79,   103,   104,    80</quad4>
-			<quad4 id="91" mat="1">    80,   104,   105,    81</quad4>
-			<quad4 id="92" mat="1">    81,   105,   106,    82</quad4>
-			<quad4 id="93" mat="1">    82,   106,   107,    83</quad4>
-			<quad4 id="94" mat="1">    83,   107,   108,    84</quad4>
-			<quad4 id="95" mat="1">    84,   108,   109,    85</quad4>
-			<quad4 id="96" mat="1">    85,   109,   110,    86</quad4>
-			<quad4 id="97" mat="1">    86,   110,   111,    87</quad4>
-			<quad4 id="98" mat="1">    87,   111,   112,    88</quad4>
-			<quad4 id="99" mat="1">    88,   112,   113,    89</quad4>
-			<quad4 id="100" mat="1">    89,   113,   114,    90</quad4>
-			<quad4 id="101" mat="1">    90,   114,   115,    91</quad4>
-			<quad4 id="102" mat="1">    91,   115,   116,    92</quad4>
-			<quad4 id="103" mat="1">    92,   116,   117,    93</quad4>
-			<quad4 id="104" mat="1">    93,   117,   118,    94</quad4>
-			<quad4 id="105" mat="1">    94,   118,   119,    95</quad4>
-			<quad4 id="106" mat="1">    95,   119,   120,    96</quad4>
-			<quad4 id="107" mat="1">    96,   120,   121,    97</quad4>
-			<quad4 id="108" mat="1">    97,   121,    98,    74</quad4>
-			<quad4 id="109" mat="1">    98,   122,   123,    99</quad4>
-			<quad4 id="110" mat="1">    99,   123,   124,   100</quad4>
-			<quad4 id="111" mat="1">   100,   124,   125,   101</quad4>
-			<quad4 id="112" mat="1">   101,   125,   126,   102</quad4>
-			<quad4 id="113" mat="1">   102,   126,   127,   103</quad4>
-			<quad4 id="114" mat="1">   103,   127,   128,   104</quad4>
-			<quad4 id="115" mat="1">   104,   128,   129,   105</quad4>
-			<quad4 id="116" mat="1">   105,   129,   130,   106</quad4>
-			<quad4 id="117" mat="1">   106,   130,   131,   107</quad4>
-			<quad4 id="118" mat="1">   107,   131,   132,   108</quad4>
-			<quad4 id="119" mat="1">   108,   132,   133,   109</quad4>
-			<quad4 id="120" mat="1">   109,   133,   134,   110</quad4>
-			<quad4 id="121" mat="1">   110,   134,   135,   111</quad4>
-			<quad4 id="122" mat="1">   111,   135,   136,   112</quad4>
-			<quad4 id="123" mat="1">   112,   136,   137,   113</quad4>
-			<quad4 id="124" mat="1">   113,   137,   138,   114</quad4>
-			<quad4 id="125" mat="1">   114,   138,   139,   115</quad4>
-			<quad4 id="126" mat="1">   115,   139,   140,   116</quad4>
-			<quad4 id="127" mat="1">   116,   140,   141,   117</quad4>
-			<quad4 id="128" mat="1">   117,   141,   142,   118</quad4>
-			<quad4 id="129" mat="1">   118,   142,   143,   119</quad4>
-			<quad4 id="130" mat="1">   119,   143,   144,   120</quad4>
-			<quad4 id="131" mat="1">   120,   144,   145,   121</quad4>
-			<quad4 id="132" mat="1">   121,   145,   122,    98</quad4>
-			<quad4 id="133" mat="1">   122,   146,   147,   123</quad4>
-			<quad4 id="134" mat="1">   123,   147,   148,   124</quad4>
-			<quad4 id="135" mat="1">   124,   148,   149,   125</quad4>
-			<quad4 id="136" mat="1">   125,   149,   150,   126</quad4>
-			<quad4 id="137" mat="1">   126,   150,   151,   127</quad4>
-			<quad4 id="138" mat="1">   127,   151,   152,   128</quad4>
-			<quad4 id="139" mat="1">   128,   152,   153,   129</quad4>
-			<quad4 id="140" mat="1">   129,   153,   154,   130</quad4>
-			<quad4 id="141" mat="1">   130,   154,   155,   131</quad4>
-			<quad4 id="142" mat="1">   131,   155,   156,   132</quad4>
-			<quad4 id="143" mat="1">   132,   156,   157,   133</quad4>
-			<quad4 id="144" mat="1">   133,   157,   158,   134</quad4>
-			<quad4 id="145" mat="1">   134,   158,   159,   135</quad4>
-			<quad4 id="146" mat="1">   135,   159,   160,   136</quad4>
-			<quad4 id="147" mat="1">   136,   160,   161,   137</quad4>
-			<quad4 id="148" mat="1">   137,   161,   162,   138</quad4>
-			<quad4 id="149" mat="1">   138,   162,   163,   139</quad4>
-			<quad4 id="150" mat="1">   139,   163,   164,   140</quad4>
-			<quad4 id="151" mat="1">   140,   164,   165,   141</quad4>
-			<quad4 id="152" mat="1">   141,   165,   166,   142</quad4>
-			<quad4 id="153" mat="1">   142,   166,   167,   143</quad4>
-			<quad4 id="154" mat="1">   143,   167,   168,   144</quad4>
-			<quad4 id="155" mat="1">   144,   168,   169,   145</quad4>
-			<quad4 id="156" mat="1">   145,   169,   146,   122</quad4>
-			<quad4 id="157" mat="1">   146,   170,   171,   147</quad4>
-			<quad4 id="158" mat="1">   147,   171,   172,   148</quad4>
-			<quad4 id="159" mat="1">   148,   172,   173,   149</quad4>
-			<quad4 id="160" mat="1">   149,   173,   174,   150</quad4>
-			<quad4 id="161" mat="1">   150,   174,   175,   151</quad4>
-			<quad4 id="162" mat="1">   151,   175,   176,   152</quad4>
-			<quad4 id="163" mat="1">   152,   176,   177,   153</quad4>
-			<quad4 id="164" mat="1">   153,   177,   178,   154</quad4>
-			<quad4 id="165" mat="1">   154,   178,   179,   155</quad4>
-			<quad4 id="166" mat="1">   155,   179,   180,   156</quad4>
-			<quad4 id="167" mat="1">   156,   180,   181,   157</quad4>
-			<quad4 id="168" mat="1">   157,   181,   182,   158</quad4>
-			<quad4 id="169" mat="1">   158,   182,   183,   159</quad4>
-			<quad4 id="170" mat="1">   159,   183,   184,   160</quad4>
-			<quad4 id="171" mat="1">   160,   184,   185,   161</quad4>
-			<quad4 id="172" mat="1">   161,   185,   186,   162</quad4>
-			<quad4 id="173" mat="1">   162,   186,   187,   163</quad4>
-			<quad4 id="174" mat="1">   163,   187,   188,   164</quad4>
-			<quad4 id="175" mat="1">   164,   188,   189,   165</quad4>
-			<quad4 id="176" mat="1">   165,   189,   190,   166</quad4>
-			<quad4 id="177" mat="1">   166,   190,   191,   167</quad4>
-			<quad4 id="178" mat="1">   167,   191,   192,   168</quad4>
-			<quad4 id="179" mat="1">   168,   192,   193,   169</quad4>
-			<quad4 id="180" mat="1">   169,   193,   170,   146</quad4>
+		<Elements type="quad4" mat="1" name="Part41">
+			<elem id="1">     1,     8,     9,     2</elem>
+			<elem id="2">     8,    15,    16,     9</elem>
+			<elem id="3">    15,    22,    23,    16</elem>
+			<elem id="4">    22,    29,    30,    23</elem>
+			<elem id="5">    29,    36,    37,    30</elem>
+			<elem id="6">    36,    43,    44,    37</elem>
+			<elem id="7">     2,     9,    10,     3</elem>
+			<elem id="8">     9,    16,    17,    10</elem>
+			<elem id="9">    16,    23,    24,    17</elem>
+			<elem id="10">    23,    30,    31,    24</elem>
+			<elem id="11">    30,    37,    38,    31</elem>
+			<elem id="12">    37,    44,    45,    38</elem>
+			<elem id="13">     3,    10,    11,     4</elem>
+			<elem id="14">    10,    17,    18,    11</elem>
+			<elem id="15">    17,    24,    25,    18</elem>
+			<elem id="16">    24,    31,    32,    25</elem>
+			<elem id="17">    31,    38,    39,    32</elem>
+			<elem id="18">    38,    45,    46,    39</elem>
+			<elem id="19">     4,    11,    12,     5</elem>
+			<elem id="20">    11,    18,    19,    12</elem>
+			<elem id="21">    18,    25,    26,    19</elem>
+			<elem id="22">    25,    32,    33,    26</elem>
+			<elem id="23">    32,    39,    40,    33</elem>
+			<elem id="24">    39,    46,    47,    40</elem>
+			<elem id="25">     5,    12,    13,     6</elem>
+			<elem id="26">    12,    19,    20,    13</elem>
+			<elem id="27">    19,    26,    27,    20</elem>
+			<elem id="28">    26,    33,    34,    27</elem>
+			<elem id="29">    33,    40,    41,    34</elem>
+			<elem id="30">    40,    47,    48,    41</elem>
+			<elem id="31">     6,    13,    14,     7</elem>
+			<elem id="32">    13,    20,    21,    14</elem>
+			<elem id="33">    20,    27,    28,    21</elem>
+			<elem id="34">    27,    34,    35,    28</elem>
+			<elem id="35">    34,    41,    42,    35</elem>
+			<elem id="36">    41,    48,    49,    42</elem>
+			<elem id="37">     6,    50,    51,     5</elem>
+			<elem id="38">     5,    51,    52,     4</elem>
+			<elem id="39">     4,    52,    53,     3</elem>
+			<elem id="40">     3,    53,    54,     2</elem>
+			<elem id="41">     2,    54,    55,     1</elem>
+			<elem id="42">     1,    55,    56,     8</elem>
+			<elem id="43">     8,    56,    57,    15</elem>
+			<elem id="44">    15,    57,    58,    22</elem>
+			<elem id="45">    22,    58,    59,    29</elem>
+			<elem id="46">    29,    59,    60,    36</elem>
+			<elem id="47">    36,    60,    61,    43</elem>
+			<elem id="48">    43,    61,    62,    44</elem>
+			<elem id="49">    44,    62,    63,    45</elem>
+			<elem id="50">    45,    63,    64,    46</elem>
+			<elem id="51">    46,    64,    65,    47</elem>
+			<elem id="52">    47,    65,    66,    48</elem>
+			<elem id="53">    48,    66,    67,    49</elem>
+			<elem id="54">    49,    67,    68,    42</elem>
+			<elem id="55">    42,    68,    69,    35</elem>
+			<elem id="56">    35,    69,    70,    28</elem>
+			<elem id="57">    28,    70,    71,    21</elem>
+			<elem id="58">    21,    71,    72,    14</elem>
+			<elem id="59">    14,    72,    73,     7</elem>
+			<elem id="60">     7,    73,    50,     6</elem>
+			<elem id="61">    50,    74,    75,    51</elem>
+			<elem id="62">    51,    75,    76,    52</elem>
+			<elem id="63">    52,    76,    77,    53</elem>
+			<elem id="64">    53,    77,    78,    54</elem>
+			<elem id="65">    54,    78,    79,    55</elem>
+			<elem id="66">    55,    79,    80,    56</elem>
+			<elem id="67">    56,    80,    81,    57</elem>
+			<elem id="68">    57,    81,    82,    58</elem>
+			<elem id="69">    58,    82,    83,    59</elem>
+			<elem id="70">    59,    83,    84,    60</elem>
+			<elem id="71">    60,    84,    85,    61</elem>
+			<elem id="72">    61,    85,    86,    62</elem>
+			<elem id="73">    62,    86,    87,    63</elem>
+			<elem id="74">    63,    87,    88,    64</elem>
+			<elem id="75">    64,    88,    89,    65</elem>
+			<elem id="76">    65,    89,    90,    66</elem>
+			<elem id="77">    66,    90,    91,    67</elem>
+			<elem id="78">    67,    91,    92,    68</elem>
+			<elem id="79">    68,    92,    93,    69</elem>
+			<elem id="80">    69,    93,    94,    70</elem>
+			<elem id="81">    70,    94,    95,    71</elem>
+			<elem id="82">    71,    95,    96,    72</elem>
+			<elem id="83">    72,    96,    97,    73</elem>
+			<elem id="84">    73,    97,    74,    50</elem>
+			<elem id="85">    74,    98,    99,    75</elem>
+			<elem id="86">    75,    99,   100,    76</elem>
+			<elem id="87">    76,   100,   101,    77</elem>
+			<elem id="88">    77,   101,   102,    78</elem>
+			<elem id="89">    78,   102,   103,    79</elem>
+			<elem id="90">    79,   103,   104,    80</elem>
+			<elem id="91">    80,   104,   105,    81</elem>
+			<elem id="92">    81,   105,   106,    82</elem>
+			<elem id="93">    82,   106,   107,    83</elem>
+			<elem id="94">    83,   107,   108,    84</elem>
+			<elem id="95">    84,   108,   109,    85</elem>
+			<elem id="96">    85,   109,   110,    86</elem>
+			<elem id="97">    86,   110,   111,    87</elem>
+			<elem id="98">    87,   111,   112,    88</elem>
+			<elem id="99">    88,   112,   113,    89</elem>
+			<elem id="100">    89,   113,   114,    90</elem>
+			<elem id="101">    90,   114,   115,    91</elem>
+			<elem id="102">    91,   115,   116,    92</elem>
+			<elem id="103">    92,   116,   117,    93</elem>
+			<elem id="104">    93,   117,   118,    94</elem>
+			<elem id="105">    94,   118,   119,    95</elem>
+			<elem id="106">    95,   119,   120,    96</elem>
+			<elem id="107">    96,   120,   121,    97</elem>
+			<elem id="108">    97,   121,    98,    74</elem>
+			<elem id="109">    98,   122,   123,    99</elem>
+			<elem id="110">    99,   123,   124,   100</elem>
+			<elem id="111">   100,   124,   125,   101</elem>
+			<elem id="112">   101,   125,   126,   102</elem>
+			<elem id="113">   102,   126,   127,   103</elem>
+			<elem id="114">   103,   127,   128,   104</elem>
+			<elem id="115">   104,   128,   129,   105</elem>
+			<elem id="116">   105,   129,   130,   106</elem>
+			<elem id="117">   106,   130,   131,   107</elem>
+			<elem id="118">   107,   131,   132,   108</elem>
+			<elem id="119">   108,   132,   133,   109</elem>
+			<elem id="120">   109,   133,   134,   110</elem>
+			<elem id="121">   110,   134,   135,   111</elem>
+			<elem id="122">   111,   135,   136,   112</elem>
+			<elem id="123">   112,   136,   137,   113</elem>
+			<elem id="124">   113,   137,   138,   114</elem>
+			<elem id="125">   114,   138,   139,   115</elem>
+			<elem id="126">   115,   139,   140,   116</elem>
+			<elem id="127">   116,   140,   141,   117</elem>
+			<elem id="128">   117,   141,   142,   118</elem>
+			<elem id="129">   118,   142,   143,   119</elem>
+			<elem id="130">   119,   143,   144,   120</elem>
+			<elem id="131">   120,   144,   145,   121</elem>
+			<elem id="132">   121,   145,   122,    98</elem>
+			<elem id="133">   122,   146,   147,   123</elem>
+			<elem id="134">   123,   147,   148,   124</elem>
+			<elem id="135">   124,   148,   149,   125</elem>
+			<elem id="136">   125,   149,   150,   126</elem>
+			<elem id="137">   126,   150,   151,   127</elem>
+			<elem id="138">   127,   151,   152,   128</elem>
+			<elem id="139">   128,   152,   153,   129</elem>
+			<elem id="140">   129,   153,   154,   130</elem>
+			<elem id="141">   130,   154,   155,   131</elem>
+			<elem id="142">   131,   155,   156,   132</elem>
+			<elem id="143">   132,   156,   157,   133</elem>
+			<elem id="144">   133,   157,   158,   134</elem>
+			<elem id="145">   134,   158,   159,   135</elem>
+			<elem id="146">   135,   159,   160,   136</elem>
+			<elem id="147">   136,   160,   161,   137</elem>
+			<elem id="148">   137,   161,   162,   138</elem>
+			<elem id="149">   138,   162,   163,   139</elem>
+			<elem id="150">   139,   163,   164,   140</elem>
+			<elem id="151">   140,   164,   165,   141</elem>
+			<elem id="152">   141,   165,   166,   142</elem>
+			<elem id="153">   142,   166,   167,   143</elem>
+			<elem id="154">   143,   167,   168,   144</elem>
+			<elem id="155">   144,   168,   169,   145</elem>
+			<elem id="156">   145,   169,   146,   122</elem>
+			<elem id="157">   146,   170,   171,   147</elem>
+			<elem id="158">   147,   171,   172,   148</elem>
+			<elem id="159">   148,   172,   173,   149</elem>
+			<elem id="160">   149,   173,   174,   150</elem>
+			<elem id="161">   150,   174,   175,   151</elem>
+			<elem id="162">   151,   175,   176,   152</elem>
+			<elem id="163">   152,   176,   177,   153</elem>
+			<elem id="164">   153,   177,   178,   154</elem>
+			<elem id="165">   154,   178,   179,   155</elem>
+			<elem id="166">   155,   179,   180,   156</elem>
+			<elem id="167">   156,   180,   181,   157</elem>
+			<elem id="168">   157,   181,   182,   158</elem>
+			<elem id="169">   158,   182,   183,   159</elem>
+			<elem id="170">   159,   183,   184,   160</elem>
+			<elem id="171">   160,   184,   185,   161</elem>
+			<elem id="172">   161,   185,   186,   162</elem>
+			<elem id="173">   162,   186,   187,   163</elem>
+			<elem id="174">   163,   187,   188,   164</elem>
+			<elem id="175">   164,   188,   189,   165</elem>
+			<elem id="176">   165,   189,   190,   166</elem>
+			<elem id="177">   166,   190,   191,   167</elem>
+			<elem id="178">   167,   191,   192,   168</elem>
+			<elem id="179">   168,   192,   193,   169</elem>
+			<elem id="180">   169,   193,   170,   146</elem>
 		</Elements>
-		<ElementData>
-			<element id="1">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="2">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="3">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="4">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="5">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="6">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="7">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="8">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="9">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="10">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="11">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="12">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="13">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="14">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="15">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="16">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="17">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="18">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="19">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="20">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="21">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="22">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="23">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="24">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="25">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="26">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="27">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="28">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="29">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="30">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="31">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="32">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="33">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="34">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="35">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="36">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="37">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="38">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="39">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="40">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="41">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="42">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="43">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="44">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="45">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="46">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="47">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="48">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="49">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="50">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="51">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="52">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="53">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="54">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="55">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="56">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="57">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="58">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="59">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="60">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="61">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="62">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="63">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="64">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="65">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="66">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="67">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="68">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="69">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="70">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="71">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="72">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="73">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="74">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="75">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="76">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="77">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="78">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="79">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="80">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="81">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="82">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="83">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="84">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="85">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="86">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="87">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="88">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="89">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="90">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="91">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="92">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="93">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="94">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="95">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="96">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="97">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="98">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="99">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="100">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="101">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="102">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="103">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="104">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="105">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="106">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="107">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="108">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="109">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="110">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="111">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="112">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="113">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="114">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="115">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="116">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="117">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="118">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="119">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="120">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="121">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="122">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="123">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="124">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="125">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="126">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="127">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="128">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="129">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="130">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="131">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="132">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="133">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="134">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="135">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="136">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="137">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="138">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="139">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="140">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="141">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="142">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="143">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="144">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="145">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="146">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="147">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="148">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="149">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="150">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="151">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="152">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="153">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="154">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="155">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="156">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="157">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="158">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="159">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="160">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="161">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="162">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="163">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="164">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="165">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="166">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="167">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="168">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="169">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="170">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="171">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="172">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="173">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="174">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="175">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="176">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="177">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="178">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="179">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-			<element id="180">
-				<thickness>0.01,0.01,0.01,0.01</thickness>
-			</element>
-		</ElementData>
+		<NodeSet name="FixedShellDisplacement01">
+			<node id="4"/>
+			<node id="11"/>
+			<node id="18"/>
+			<node id="25"/>
+			<node id="32"/>
+			<node id="39"/>
+			<node id="46"/>
+			<node id="52"/>
+			<node id="64"/>
+			<node id="76"/>
+			<node id="88"/>
+			<node id="100"/>
+			<node id="112"/>
+			<node id="124"/>
+			<node id="136"/>
+			<node id="148"/>
+			<node id="160"/>
+			<node id="172"/>
+			<node id="184"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement01">
+			<node id="4"/>
+			<node id="11"/>
+			<node id="18"/>
+			<node id="25"/>
+			<node id="32"/>
+			<node id="39"/>
+			<node id="46"/>
+			<node id="52"/>
+			<node id="64"/>
+			<node id="76"/>
+			<node id="88"/>
+			<node id="100"/>
+			<node id="112"/>
+			<node id="124"/>
+			<node id="136"/>
+			<node id="148"/>
+			<node id="160"/>
+			<node id="170"/>
+			<node id="171"/>
+			<node id="172"/>
+			<node id="173"/>
+			<node id="174"/>
+			<node id="175"/>
+			<node id="176"/>
+			<node id="177"/>
+			<node id="178"/>
+			<node id="179"/>
+			<node id="180"/>
+			<node id="181"/>
+			<node id="182"/>
+			<node id="183"/>
+			<node id="184"/>
+			<node id="185"/>
+			<node id="186"/>
+			<node id="187"/>
+			<node id="188"/>
+			<node id="189"/>
+			<node id="190"/>
+			<node id="191"/>
+			<node id="192"/>
+			<node id="193"/>
+		</NodeSet>
+		<NodeSet name="FixedShellDisplacement02">
+			<node id="22"/>
+			<node id="23"/>
+			<node id="24"/>
+			<node id="25"/>
+			<node id="26"/>
+			<node id="27"/>
+			<node id="28"/>
+			<node id="58"/>
+			<node id="70"/>
+			<node id="82"/>
+			<node id="94"/>
+			<node id="106"/>
+			<node id="118"/>
+			<node id="130"/>
+			<node id="142"/>
+			<node id="154"/>
+			<node id="166"/>
+			<node id="178"/>
+			<node id="190"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement02">
+			<node id="22"/>
+			<node id="23"/>
+			<node id="24"/>
+			<node id="25"/>
+			<node id="26"/>
+			<node id="27"/>
+			<node id="28"/>
+			<node id="58"/>
+			<node id="70"/>
+			<node id="82"/>
+			<node id="94"/>
+			<node id="106"/>
+			<node id="118"/>
+			<node id="130"/>
+			<node id="142"/>
+			<node id="154"/>
+			<node id="166"/>
+			<node id="170"/>
+			<node id="171"/>
+			<node id="172"/>
+			<node id="173"/>
+			<node id="174"/>
+			<node id="175"/>
+			<node id="176"/>
+			<node id="177"/>
+			<node id="178"/>
+			<node id="179"/>
+			<node id="180"/>
+			<node id="181"/>
+			<node id="182"/>
+			<node id="183"/>
+			<node id="184"/>
+			<node id="185"/>
+			<node id="186"/>
+			<node id="187"/>
+			<node id="188"/>
+			<node id="189"/>
+			<node id="190"/>
+			<node id="191"/>
+			<node id="192"/>
+			<node id="193"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement03">
+			<node id="170"/>
+			<node id="171"/>
+			<node id="172"/>
+			<node id="173"/>
+			<node id="174"/>
+			<node id="175"/>
+			<node id="176"/>
+			<node id="177"/>
+			<node id="178"/>
+			<node id="179"/>
+			<node id="180"/>
+			<node id="181"/>
+			<node id="182"/>
+			<node id="183"/>
+			<node id="184"/>
+			<node id="185"/>
+			<node id="186"/>
+			<node id="187"/>
+			<node id="188"/>
+			<node id="189"/>
+			<node id="190"/>
+			<node id="191"/>
+			<node id="192"/>
+			<node id="193"/>
+		</NodeSet>
+		<Surface name="surface01">
+			<quad4 id="1">     1,     8,     9,     2</quad4>
+			<quad4 id="2">     8,    15,    16,     9</quad4>
+			<quad4 id="3">    15,    22,    23,    16</quad4>
+			<quad4 id="4">    22,    29,    30,    23</quad4>
+			<quad4 id="5">    29,    36,    37,    30</quad4>
+			<quad4 id="6">    36,    43,    44,    37</quad4>
+			<quad4 id="7">     2,     9,    10,     3</quad4>
+			<quad4 id="8">     9,    16,    17,    10</quad4>
+			<quad4 id="9">    16,    23,    24,    17</quad4>
+			<quad4 id="10">    23,    30,    31,    24</quad4>
+			<quad4 id="11">    30,    37,    38,    31</quad4>
+			<quad4 id="12">    37,    44,    45,    38</quad4>
+			<quad4 id="13">     3,    10,    11,     4</quad4>
+			<quad4 id="14">    10,    17,    18,    11</quad4>
+			<quad4 id="15">    17,    24,    25,    18</quad4>
+			<quad4 id="16">    24,    31,    32,    25</quad4>
+			<quad4 id="17">    31,    38,    39,    32</quad4>
+			<quad4 id="18">    38,    45,    46,    39</quad4>
+			<quad4 id="19">     4,    11,    12,     5</quad4>
+			<quad4 id="20">    11,    18,    19,    12</quad4>
+			<quad4 id="21">    18,    25,    26,    19</quad4>
+			<quad4 id="22">    25,    32,    33,    26</quad4>
+			<quad4 id="23">    32,    39,    40,    33</quad4>
+			<quad4 id="24">    39,    46,    47,    40</quad4>
+			<quad4 id="25">     5,    12,    13,     6</quad4>
+			<quad4 id="26">    12,    19,    20,    13</quad4>
+			<quad4 id="27">    19,    26,    27,    20</quad4>
+			<quad4 id="28">    26,    33,    34,    27</quad4>
+			<quad4 id="29">    33,    40,    41,    34</quad4>
+			<quad4 id="30">    40,    47,    48,    41</quad4>
+			<quad4 id="31">     6,    13,    14,     7</quad4>
+			<quad4 id="32">    13,    20,    21,    14</quad4>
+			<quad4 id="33">    20,    27,    28,    21</quad4>
+			<quad4 id="34">    27,    34,    35,    28</quad4>
+			<quad4 id="35">    34,    41,    42,    35</quad4>
+			<quad4 id="36">    41,    48,    49,    42</quad4>
+			<quad4 id="37">     6,    50,    51,     5</quad4>
+			<quad4 id="38">     5,    51,    52,     4</quad4>
+			<quad4 id="39">     4,    52,    53,     3</quad4>
+			<quad4 id="40">     3,    53,    54,     2</quad4>
+			<quad4 id="41">     2,    54,    55,     1</quad4>
+			<quad4 id="42">     1,    55,    56,     8</quad4>
+			<quad4 id="43">     8,    56,    57,    15</quad4>
+			<quad4 id="44">    15,    57,    58,    22</quad4>
+			<quad4 id="45">    22,    58,    59,    29</quad4>
+			<quad4 id="46">    29,    59,    60,    36</quad4>
+			<quad4 id="47">    36,    60,    61,    43</quad4>
+			<quad4 id="48">    43,    61,    62,    44</quad4>
+			<quad4 id="49">    44,    62,    63,    45</quad4>
+			<quad4 id="50">    45,    63,    64,    46</quad4>
+			<quad4 id="51">    46,    64,    65,    47</quad4>
+			<quad4 id="52">    47,    65,    66,    48</quad4>
+			<quad4 id="53">    48,    66,    67,    49</quad4>
+			<quad4 id="54">    49,    67,    68,    42</quad4>
+			<quad4 id="55">    42,    68,    69,    35</quad4>
+			<quad4 id="56">    35,    69,    70,    28</quad4>
+			<quad4 id="57">    28,    70,    71,    21</quad4>
+			<quad4 id="58">    21,    71,    72,    14</quad4>
+			<quad4 id="59">    14,    72,    73,     7</quad4>
+			<quad4 id="60">     7,    73,    50,     6</quad4>
+			<quad4 id="61">    50,    74,    75,    51</quad4>
+			<quad4 id="62">    51,    75,    76,    52</quad4>
+			<quad4 id="63">    52,    76,    77,    53</quad4>
+			<quad4 id="64">    53,    77,    78,    54</quad4>
+			<quad4 id="65">    54,    78,    79,    55</quad4>
+			<quad4 id="66">    55,    79,    80,    56</quad4>
+			<quad4 id="67">    56,    80,    81,    57</quad4>
+			<quad4 id="68">    57,    81,    82,    58</quad4>
+			<quad4 id="69">    58,    82,    83,    59</quad4>
+			<quad4 id="70">    59,    83,    84,    60</quad4>
+			<quad4 id="71">    60,    84,    85,    61</quad4>
+			<quad4 id="72">    61,    85,    86,    62</quad4>
+			<quad4 id="73">    62,    86,    87,    63</quad4>
+			<quad4 id="74">    63,    87,    88,    64</quad4>
+			<quad4 id="75">    64,    88,    89,    65</quad4>
+			<quad4 id="76">    65,    89,    90,    66</quad4>
+			<quad4 id="77">    66,    90,    91,    67</quad4>
+			<quad4 id="78">    67,    91,    92,    68</quad4>
+			<quad4 id="79">    68,    92,    93,    69</quad4>
+			<quad4 id="80">    69,    93,    94,    70</quad4>
+			<quad4 id="81">    70,    94,    95,    71</quad4>
+			<quad4 id="82">    71,    95,    96,    72</quad4>
+			<quad4 id="83">    72,    96,    97,    73</quad4>
+			<quad4 id="84">    73,    97,    74,    50</quad4>
+			<quad4 id="85">    74,    98,    99,    75</quad4>
+			<quad4 id="86">    75,    99,   100,    76</quad4>
+			<quad4 id="87">    76,   100,   101,    77</quad4>
+			<quad4 id="88">    77,   101,   102,    78</quad4>
+			<quad4 id="89">    78,   102,   103,    79</quad4>
+			<quad4 id="90">    79,   103,   104,    80</quad4>
+			<quad4 id="91">    80,   104,   105,    81</quad4>
+			<quad4 id="92">    81,   105,   106,    82</quad4>
+			<quad4 id="93">    82,   106,   107,    83</quad4>
+			<quad4 id="94">    83,   107,   108,    84</quad4>
+			<quad4 id="95">    84,   108,   109,    85</quad4>
+			<quad4 id="96">    85,   109,   110,    86</quad4>
+			<quad4 id="97">    86,   110,   111,    87</quad4>
+			<quad4 id="98">    87,   111,   112,    88</quad4>
+			<quad4 id="99">    88,   112,   113,    89</quad4>
+			<quad4 id="100">    89,   113,   114,    90</quad4>
+			<quad4 id="101">    90,   114,   115,    91</quad4>
+			<quad4 id="102">    91,   115,   116,    92</quad4>
+			<quad4 id="103">    92,   116,   117,    93</quad4>
+			<quad4 id="104">    93,   117,   118,    94</quad4>
+			<quad4 id="105">    94,   118,   119,    95</quad4>
+			<quad4 id="106">    95,   119,   120,    96</quad4>
+			<quad4 id="107">    96,   120,   121,    97</quad4>
+			<quad4 id="108">    97,   121,    98,    74</quad4>
+			<quad4 id="109">    98,   122,   123,    99</quad4>
+			<quad4 id="110">    99,   123,   124,   100</quad4>
+			<quad4 id="111">   100,   124,   125,   101</quad4>
+			<quad4 id="112">   101,   125,   126,   102</quad4>
+			<quad4 id="113">   102,   126,   127,   103</quad4>
+			<quad4 id="114">   103,   127,   128,   104</quad4>
+			<quad4 id="115">   104,   128,   129,   105</quad4>
+			<quad4 id="116">   105,   129,   130,   106</quad4>
+			<quad4 id="117">   106,   130,   131,   107</quad4>
+			<quad4 id="118">   107,   131,   132,   108</quad4>
+			<quad4 id="119">   108,   132,   133,   109</quad4>
+			<quad4 id="120">   109,   133,   134,   110</quad4>
+			<quad4 id="121">   110,   134,   135,   111</quad4>
+			<quad4 id="122">   111,   135,   136,   112</quad4>
+			<quad4 id="123">   112,   136,   137,   113</quad4>
+			<quad4 id="124">   113,   137,   138,   114</quad4>
+			<quad4 id="125">   114,   138,   139,   115</quad4>
+			<quad4 id="126">   115,   139,   140,   116</quad4>
+			<quad4 id="127">   116,   140,   141,   117</quad4>
+			<quad4 id="128">   117,   141,   142,   118</quad4>
+			<quad4 id="129">   118,   142,   143,   119</quad4>
+			<quad4 id="130">   119,   143,   144,   120</quad4>
+			<quad4 id="131">   120,   144,   145,   121</quad4>
+			<quad4 id="132">   121,   145,   122,    98</quad4>
+			<quad4 id="133">   122,   146,   147,   123</quad4>
+			<quad4 id="134">   123,   147,   148,   124</quad4>
+			<quad4 id="135">   124,   148,   149,   125</quad4>
+			<quad4 id="136">   125,   149,   150,   126</quad4>
+			<quad4 id="137">   126,   150,   151,   127</quad4>
+			<quad4 id="138">   127,   151,   152,   128</quad4>
+			<quad4 id="139">   128,   152,   153,   129</quad4>
+			<quad4 id="140">   129,   153,   154,   130</quad4>
+			<quad4 id="141">   130,   154,   155,   131</quad4>
+			<quad4 id="142">   131,   155,   156,   132</quad4>
+			<quad4 id="143">   132,   156,   157,   133</quad4>
+			<quad4 id="144">   133,   157,   158,   134</quad4>
+			<quad4 id="145">   134,   158,   159,   135</quad4>
+			<quad4 id="146">   135,   159,   160,   136</quad4>
+			<quad4 id="147">   136,   160,   161,   137</quad4>
+			<quad4 id="148">   137,   161,   162,   138</quad4>
+			<quad4 id="149">   138,   162,   163,   139</quad4>
+			<quad4 id="150">   139,   163,   164,   140</quad4>
+			<quad4 id="151">   140,   164,   165,   141</quad4>
+			<quad4 id="152">   141,   165,   166,   142</quad4>
+			<quad4 id="153">   142,   166,   167,   143</quad4>
+			<quad4 id="154">   143,   167,   168,   144</quad4>
+			<quad4 id="155">   144,   168,   169,   145</quad4>
+			<quad4 id="156">   145,   169,   146,   122</quad4>
+			<quad4 id="157">   146,   170,   171,   147</quad4>
+			<quad4 id="158">   147,   171,   172,   148</quad4>
+			<quad4 id="159">   148,   172,   173,   149</quad4>
+			<quad4 id="160">   149,   173,   174,   150</quad4>
+			<quad4 id="161">   150,   174,   175,   151</quad4>
+			<quad4 id="162">   151,   175,   176,   152</quad4>
+			<quad4 id="163">   152,   176,   177,   153</quad4>
+			<quad4 id="164">   153,   177,   178,   154</quad4>
+			<quad4 id="165">   154,   178,   179,   155</quad4>
+			<quad4 id="166">   155,   179,   180,   156</quad4>
+			<quad4 id="167">   156,   180,   181,   157</quad4>
+			<quad4 id="168">   157,   181,   182,   158</quad4>
+			<quad4 id="169">   158,   182,   183,   159</quad4>
+			<quad4 id="170">   159,   183,   184,   160</quad4>
+			<quad4 id="171">   160,   184,   185,   161</quad4>
+			<quad4 id="172">   161,   185,   186,   162</quad4>
+			<quad4 id="173">   162,   186,   187,   163</quad4>
+			<quad4 id="174">   163,   187,   188,   164</quad4>
+			<quad4 id="175">   164,   188,   189,   165</quad4>
+			<quad4 id="176">   165,   189,   190,   166</quad4>
+			<quad4 id="177">   166,   190,   191,   167</quad4>
+			<quad4 id="178">   167,   191,   192,   168</quad4>
+			<quad4 id="179">   168,   192,   193,   169</quad4>
+			<quad4 id="180">   169,   193,   170,   146</quad4>
+		</Surface>
+		<ElementSet name="unnamed_set01">
+			<elem id="22"/>
+		</ElementSet>
 	</Geometry>
+	<MeshData>
+		<ElementData var="shell thickness" elem_set="Part41">
+			<elem lid="1">0.01,0.01,0.01,0.01</elem>
+			<elem lid="2">0.01,0.01,0.01,0.01</elem>
+			<elem lid="3">0.01,0.01,0.01,0.01</elem>
+			<elem lid="4">0.01,0.01,0.01,0.01</elem>
+			<elem lid="5">0.01,0.01,0.01,0.01</elem>
+			<elem lid="6">0.01,0.01,0.01,0.01</elem>
+			<elem lid="7">0.01,0.01,0.01,0.01</elem>
+			<elem lid="8">0.01,0.01,0.01,0.01</elem>
+			<elem lid="9">0.01,0.01,0.01,0.01</elem>
+			<elem lid="10">0.01,0.01,0.01,0.01</elem>
+			<elem lid="11">0.01,0.01,0.01,0.01</elem>
+			<elem lid="12">0.01,0.01,0.01,0.01</elem>
+			<elem lid="13">0.01,0.01,0.01,0.01</elem>
+			<elem lid="14">0.01,0.01,0.01,0.01</elem>
+			<elem lid="15">0.01,0.01,0.01,0.01</elem>
+			<elem lid="16">0.01,0.01,0.01,0.01</elem>
+			<elem lid="17">0.01,0.01,0.01,0.01</elem>
+			<elem lid="18">0.01,0.01,0.01,0.01</elem>
+			<elem lid="19">0.01,0.01,0.01,0.01</elem>
+			<elem lid="20">0.01,0.01,0.01,0.01</elem>
+			<elem lid="21">0.01,0.01,0.01,0.01</elem>
+			<elem lid="22">0.01,0.01,0.01,0.01</elem>
+			<elem lid="23">0.01,0.01,0.01,0.01</elem>
+			<elem lid="24">0.01,0.01,0.01,0.01</elem>
+			<elem lid="25">0.01,0.01,0.01,0.01</elem>
+			<elem lid="26">0.01,0.01,0.01,0.01</elem>
+			<elem lid="27">0.01,0.01,0.01,0.01</elem>
+			<elem lid="28">0.01,0.01,0.01,0.01</elem>
+			<elem lid="29">0.01,0.01,0.01,0.01</elem>
+			<elem lid="30">0.01,0.01,0.01,0.01</elem>
+			<elem lid="31">0.01,0.01,0.01,0.01</elem>
+			<elem lid="32">0.01,0.01,0.01,0.01</elem>
+			<elem lid="33">0.01,0.01,0.01,0.01</elem>
+			<elem lid="34">0.01,0.01,0.01,0.01</elem>
+			<elem lid="35">0.01,0.01,0.01,0.01</elem>
+			<elem lid="36">0.01,0.01,0.01,0.01</elem>
+			<elem lid="37">0.01,0.01,0.01,0.01</elem>
+			<elem lid="38">0.01,0.01,0.01,0.01</elem>
+			<elem lid="39">0.01,0.01,0.01,0.01</elem>
+			<elem lid="40">0.01,0.01,0.01,0.01</elem>
+			<elem lid="41">0.01,0.01,0.01,0.01</elem>
+			<elem lid="42">0.01,0.01,0.01,0.01</elem>
+			<elem lid="43">0.01,0.01,0.01,0.01</elem>
+			<elem lid="44">0.01,0.01,0.01,0.01</elem>
+			<elem lid="45">0.01,0.01,0.01,0.01</elem>
+			<elem lid="46">0.01,0.01,0.01,0.01</elem>
+			<elem lid="47">0.01,0.01,0.01,0.01</elem>
+			<elem lid="48">0.01,0.01,0.01,0.01</elem>
+			<elem lid="49">0.01,0.01,0.01,0.01</elem>
+			<elem lid="50">0.01,0.01,0.01,0.01</elem>
+			<elem lid="51">0.01,0.01,0.01,0.01</elem>
+			<elem lid="52">0.01,0.01,0.01,0.01</elem>
+			<elem lid="53">0.01,0.01,0.01,0.01</elem>
+			<elem lid="54">0.01,0.01,0.01,0.01</elem>
+			<elem lid="55">0.01,0.01,0.01,0.01</elem>
+			<elem lid="56">0.01,0.01,0.01,0.01</elem>
+			<elem lid="57">0.01,0.01,0.01,0.01</elem>
+			<elem lid="58">0.01,0.01,0.01,0.01</elem>
+			<elem lid="59">0.01,0.01,0.01,0.01</elem>
+			<elem lid="60">0.01,0.01,0.01,0.01</elem>
+			<elem lid="61">0.01,0.01,0.01,0.01</elem>
+			<elem lid="62">0.01,0.01,0.01,0.01</elem>
+			<elem lid="63">0.01,0.01,0.01,0.01</elem>
+			<elem lid="64">0.01,0.01,0.01,0.01</elem>
+			<elem lid="65">0.01,0.01,0.01,0.01</elem>
+			<elem lid="66">0.01,0.01,0.01,0.01</elem>
+			<elem lid="67">0.01,0.01,0.01,0.01</elem>
+			<elem lid="68">0.01,0.01,0.01,0.01</elem>
+			<elem lid="69">0.01,0.01,0.01,0.01</elem>
+			<elem lid="70">0.01,0.01,0.01,0.01</elem>
+			<elem lid="71">0.01,0.01,0.01,0.01</elem>
+			<elem lid="72">0.01,0.01,0.01,0.01</elem>
+			<elem lid="73">0.01,0.01,0.01,0.01</elem>
+			<elem lid="74">0.01,0.01,0.01,0.01</elem>
+			<elem lid="75">0.01,0.01,0.01,0.01</elem>
+			<elem lid="76">0.01,0.01,0.01,0.01</elem>
+			<elem lid="77">0.01,0.01,0.01,0.01</elem>
+			<elem lid="78">0.01,0.01,0.01,0.01</elem>
+			<elem lid="79">0.01,0.01,0.01,0.01</elem>
+			<elem lid="80">0.01,0.01,0.01,0.01</elem>
+			<elem lid="81">0.01,0.01,0.01,0.01</elem>
+			<elem lid="82">0.01,0.01,0.01,0.01</elem>
+			<elem lid="83">0.01,0.01,0.01,0.01</elem>
+			<elem lid="84">0.01,0.01,0.01,0.01</elem>
+			<elem lid="85">0.01,0.01,0.01,0.01</elem>
+			<elem lid="86">0.01,0.01,0.01,0.01</elem>
+			<elem lid="87">0.01,0.01,0.01,0.01</elem>
+			<elem lid="88">0.01,0.01,0.01,0.01</elem>
+			<elem lid="89">0.01,0.01,0.01,0.01</elem>
+			<elem lid="90">0.01,0.01,0.01,0.01</elem>
+			<elem lid="91">0.01,0.01,0.01,0.01</elem>
+			<elem lid="92">0.01,0.01,0.01,0.01</elem>
+			<elem lid="93">0.01,0.01,0.01,0.01</elem>
+			<elem lid="94">0.01,0.01,0.01,0.01</elem>
+			<elem lid="95">0.01,0.01,0.01,0.01</elem>
+			<elem lid="96">0.01,0.01,0.01,0.01</elem>
+			<elem lid="97">0.01,0.01,0.01,0.01</elem>
+			<elem lid="98">0.01,0.01,0.01,0.01</elem>
+			<elem lid="99">0.01,0.01,0.01,0.01</elem>
+			<elem lid="100">0.01,0.01,0.01,0.01</elem>
+			<elem lid="101">0.01,0.01,0.01,0.01</elem>
+			<elem lid="102">0.01,0.01,0.01,0.01</elem>
+			<elem lid="103">0.01,0.01,0.01,0.01</elem>
+			<elem lid="104">0.01,0.01,0.01,0.01</elem>
+			<elem lid="105">0.01,0.01,0.01,0.01</elem>
+			<elem lid="106">0.01,0.01,0.01,0.01</elem>
+			<elem lid="107">0.01,0.01,0.01,0.01</elem>
+			<elem lid="108">0.01,0.01,0.01,0.01</elem>
+			<elem lid="109">0.01,0.01,0.01,0.01</elem>
+			<elem lid="110">0.01,0.01,0.01,0.01</elem>
+			<elem lid="111">0.01,0.01,0.01,0.01</elem>
+			<elem lid="112">0.01,0.01,0.01,0.01</elem>
+			<elem lid="113">0.01,0.01,0.01,0.01</elem>
+			<elem lid="114">0.01,0.01,0.01,0.01</elem>
+			<elem lid="115">0.01,0.01,0.01,0.01</elem>
+			<elem lid="116">0.01,0.01,0.01,0.01</elem>
+			<elem lid="117">0.01,0.01,0.01,0.01</elem>
+			<elem lid="118">0.01,0.01,0.01,0.01</elem>
+			<elem lid="119">0.01,0.01,0.01,0.01</elem>
+			<elem lid="120">0.01,0.01,0.01,0.01</elem>
+			<elem lid="121">0.01,0.01,0.01,0.01</elem>
+			<elem lid="122">0.01,0.01,0.01,0.01</elem>
+			<elem lid="123">0.01,0.01,0.01,0.01</elem>
+			<elem lid="124">0.01,0.01,0.01,0.01</elem>
+			<elem lid="125">0.01,0.01,0.01,0.01</elem>
+			<elem lid="126">0.01,0.01,0.01,0.01</elem>
+			<elem lid="127">0.01,0.01,0.01,0.01</elem>
+			<elem lid="128">0.01,0.01,0.01,0.01</elem>
+			<elem lid="129">0.01,0.01,0.01,0.01</elem>
+			<elem lid="130">0.01,0.01,0.01,0.01</elem>
+			<elem lid="131">0.01,0.01,0.01,0.01</elem>
+			<elem lid="132">0.01,0.01,0.01,0.01</elem>
+			<elem lid="133">0.01,0.01,0.01,0.01</elem>
+			<elem lid="134">0.01,0.01,0.01,0.01</elem>
+			<elem lid="135">0.01,0.01,0.01,0.01</elem>
+			<elem lid="136">0.01,0.01,0.01,0.01</elem>
+			<elem lid="137">0.01,0.01,0.01,0.01</elem>
+			<elem lid="138">0.01,0.01,0.01,0.01</elem>
+			<elem lid="139">0.01,0.01,0.01,0.01</elem>
+			<elem lid="140">0.01,0.01,0.01,0.01</elem>
+			<elem lid="141">0.01,0.01,0.01,0.01</elem>
+			<elem lid="142">0.01,0.01,0.01,0.01</elem>
+			<elem lid="143">0.01,0.01,0.01,0.01</elem>
+			<elem lid="144">0.01,0.01,0.01,0.01</elem>
+			<elem lid="145">0.01,0.01,0.01,0.01</elem>
+			<elem lid="146">0.01,0.01,0.01,0.01</elem>
+			<elem lid="147">0.01,0.01,0.01,0.01</elem>
+			<elem lid="148">0.01,0.01,0.01,0.01</elem>
+			<elem lid="149">0.01,0.01,0.01,0.01</elem>
+			<elem lid="150">0.01,0.01,0.01,0.01</elem>
+			<elem lid="151">0.01,0.01,0.01,0.01</elem>
+			<elem lid="152">0.01,0.01,0.01,0.01</elem>
+			<elem lid="153">0.01,0.01,0.01,0.01</elem>
+			<elem lid="154">0.01,0.01,0.01,0.01</elem>
+			<elem lid="155">0.01,0.01,0.01,0.01</elem>
+			<elem lid="156">0.01,0.01,0.01,0.01</elem>
+			<elem lid="157">0.01,0.01,0.01,0.01</elem>
+			<elem lid="158">0.01,0.01,0.01,0.01</elem>
+			<elem lid="159">0.01,0.01,0.01,0.01</elem>
+			<elem lid="160">0.01,0.01,0.01,0.01</elem>
+			<elem lid="161">0.01,0.01,0.01,0.01</elem>
+			<elem lid="162">0.01,0.01,0.01,0.01</elem>
+			<elem lid="163">0.01,0.01,0.01,0.01</elem>
+			<elem lid="164">0.01,0.01,0.01,0.01</elem>
+			<elem lid="165">0.01,0.01,0.01,0.01</elem>
+			<elem lid="166">0.01,0.01,0.01,0.01</elem>
+			<elem lid="167">0.01,0.01,0.01,0.01</elem>
+			<elem lid="168">0.01,0.01,0.01,0.01</elem>
+			<elem lid="169">0.01,0.01,0.01,0.01</elem>
+			<elem lid="170">0.01,0.01,0.01,0.01</elem>
+			<elem lid="171">0.01,0.01,0.01,0.01</elem>
+			<elem lid="172">0.01,0.01,0.01,0.01</elem>
+			<elem lid="173">0.01,0.01,0.01,0.01</elem>
+			<elem lid="174">0.01,0.01,0.01,0.01</elem>
+			<elem lid="175">0.01,0.01,0.01,0.01</elem>
+			<elem lid="176">0.01,0.01,0.01,0.01</elem>
+			<elem lid="177">0.01,0.01,0.01,0.01</elem>
+			<elem lid="178">0.01,0.01,0.01,0.01</elem>
+			<elem lid="179">0.01,0.01,0.01,0.01</elem>
+			<elem lid="180">0.01,0.01,0.01,0.01</elem>
+		</ElementData>
+	</MeshData>
 	<Boundary>
-		<fix>
-			<node id="4" bc="y"></node>
-			<node id="4" bc="v"></node>
-			<node id="11" bc="y"></node>
-			<node id="11" bc="v"></node>
-			<node id="18" bc="y"></node>
-			<node id="18" bc="v"></node>
-			<node id="22" bc="x"></node>
-			<node id="22" bc="u"></node>
-			<node id="23" bc="x"></node>
-			<node id="23" bc="u"></node>
-			<node id="24" bc="x"></node>
-			<node id="24" bc="u"></node>
-			<node id="25" bc="xy"></node>
-			<node id="25" bc="uv"></node>
-			<node id="26" bc="x"></node>
-			<node id="26" bc="u"></node>
-			<node id="27" bc="x"></node>
-			<node id="27" bc="u"></node>
-			<node id="28" bc="x"></node>
-			<node id="28" bc="u"></node>
-			<node id="32" bc="y"></node>
-			<node id="32" bc="v"></node>
-			<node id="39" bc="y"></node>
-			<node id="39" bc="v"></node>
-			<node id="46" bc="y"></node>
-			<node id="46" bc="v"></node>
-			<node id="52" bc="y"></node>
-			<node id="52" bc="v"></node>
-			<node id="58" bc="x"></node>
-			<node id="58" bc="u"></node>
-			<node id="64" bc="y"></node>
-			<node id="64" bc="v"></node>
-			<node id="70" bc="x"></node>
-			<node id="70" bc="u"></node>
-			<node id="76" bc="y"></node>
-			<node id="76" bc="v"></node>
-			<node id="82" bc="x"></node>
-			<node id="82" bc="u"></node>
-			<node id="88" bc="y"></node>
-			<node id="88" bc="v"></node>
-			<node id="94" bc="x"></node>
-			<node id="94" bc="u"></node>
-			<node id="100" bc="y"></node>
-			<node id="100" bc="v"></node>
-			<node id="106" bc="x"></node>
-			<node id="106" bc="u"></node>
-			<node id="112" bc="y"></node>
-			<node id="112" bc="v"></node>
-			<node id="118" bc="x"></node>
-			<node id="118" bc="u"></node>
-			<node id="124" bc="y"></node>
-			<node id="124" bc="v"></node>
-			<node id="130" bc="x"></node>
-			<node id="130" bc="u"></node>
-			<node id="136" bc="y"></node>
-			<node id="136" bc="v"></node>
-			<node id="142" bc="x"></node>
-			<node id="142" bc="u"></node>
-			<node id="148" bc="y"></node>
-			<node id="148" bc="v"></node>
-			<node id="154" bc="x"></node>
-			<node id="154" bc="u"></node>
-			<node id="160" bc="y"></node>
-			<node id="160" bc="v"></node>
-			<node id="166" bc="x"></node>
-			<node id="166" bc="u"></node>
-			<node id="170" bc="xyz"></node>
-			<node id="171" bc="xyz"></node>
-			<node id="172" bc="xyz"></node>
-			<node id="172" bc="v"></node>
-			<node id="173" bc="xyz"></node>
-			<node id="174" bc="xyz"></node>
-			<node id="175" bc="xyz"></node>
-			<node id="176" bc="xyz"></node>
-			<node id="177" bc="xyz"></node>
-			<node id="178" bc="xyz"></node>
-			<node id="178" bc="u"></node>
-			<node id="179" bc="xyz"></node>
-			<node id="180" bc="xyz"></node>
-			<node id="181" bc="xyz"></node>
-			<node id="182" bc="xyz"></node>
-			<node id="183" bc="xyz"></node>
-			<node id="184" bc="xyz"></node>
-			<node id="184" bc="v"></node>
-			<node id="185" bc="xyz"></node>
-			<node id="186" bc="xyz"></node>
-			<node id="187" bc="xyz"></node>
-			<node id="188" bc="xyz"></node>
-			<node id="189" bc="xyz"></node>
-			<node id="190" bc="xyz"></node>
-			<node id="190" bc="u"></node>
-			<node id="191" bc="xyz"></node>
-			<node id="192" bc="xyz"></node>
-			<node id="193" bc="xyz"></node>
-		</fix>
+		<fix bc="sy" node_set="FixedShellDisplacement01"/>
+		<fix bc="y" node_set="FixedDisplacement01"/>
+		<fix bc="sx" node_set="FixedShellDisplacement02"/>
+		<fix bc="x" node_set="FixedDisplacement02"/>
+		<fix bc="z" node_set="FixedDisplacement03"/>
 	</Boundary>
 	<Loads>
-		<pressure>
-			<quad4 id="1" lc="1" scale="1">     1,     8,     9,     2</quad4>
-			<quad4 id="2" lc="1" scale="1">     8,    15,    16,     9</quad4>
-			<quad4 id="3" lc="1" scale="1">    15,    22,    23,    16</quad4>
-			<quad4 id="4" lc="1" scale="1">    22,    29,    30,    23</quad4>
-			<quad4 id="5" lc="1" scale="1">    29,    36,    37,    30</quad4>
-			<quad4 id="6" lc="1" scale="1">    36,    43,    44,    37</quad4>
-			<quad4 id="7" lc="1" scale="1">     2,     9,    10,     3</quad4>
-			<quad4 id="8" lc="1" scale="1">     9,    16,    17,    10</quad4>
-			<quad4 id="9" lc="1" scale="1">    16,    23,    24,    17</quad4>
-			<quad4 id="10" lc="1" scale="1">    23,    30,    31,    24</quad4>
-			<quad4 id="11" lc="1" scale="1">    30,    37,    38,    31</quad4>
-			<quad4 id="12" lc="1" scale="1">    37,    44,    45,    38</quad4>
-			<quad4 id="13" lc="1" scale="1">     3,    10,    11,     4</quad4>
-			<quad4 id="14" lc="1" scale="1">    10,    17,    18,    11</quad4>
-			<quad4 id="15" lc="1" scale="1">    17,    24,    25,    18</quad4>
-			<quad4 id="16" lc="1" scale="1">    24,    31,    32,    25</quad4>
-			<quad4 id="17" lc="1" scale="1">    31,    38,    39,    32</quad4>
-			<quad4 id="18" lc="1" scale="1">    38,    45,    46,    39</quad4>
-			<quad4 id="19" lc="1" scale="1">     4,    11,    12,     5</quad4>
-			<quad4 id="20" lc="1" scale="1">    11,    18,    19,    12</quad4>
-			<quad4 id="21" lc="1" scale="1">    18,    25,    26,    19</quad4>
-			<quad4 id="22" lc="1" scale="1">    25,    32,    33,    26</quad4>
-			<quad4 id="23" lc="1" scale="1">    32,    39,    40,    33</quad4>
-			<quad4 id="24" lc="1" scale="1">    39,    46,    47,    40</quad4>
-			<quad4 id="25" lc="1" scale="1">     5,    12,    13,     6</quad4>
-			<quad4 id="26" lc="1" scale="1">    12,    19,    20,    13</quad4>
-			<quad4 id="27" lc="1" scale="1">    19,    26,    27,    20</quad4>
-			<quad4 id="28" lc="1" scale="1">    26,    33,    34,    27</quad4>
-			<quad4 id="29" lc="1" scale="1">    33,    40,    41,    34</quad4>
-			<quad4 id="30" lc="1" scale="1">    40,    47,    48,    41</quad4>
-			<quad4 id="31" lc="1" scale="1">     6,    13,    14,     7</quad4>
-			<quad4 id="32" lc="1" scale="1">    13,    20,    21,    14</quad4>
-			<quad4 id="33" lc="1" scale="1">    20,    27,    28,    21</quad4>
-			<quad4 id="34" lc="1" scale="1">    27,    34,    35,    28</quad4>
-			<quad4 id="35" lc="1" scale="1">    34,    41,    42,    35</quad4>
-			<quad4 id="36" lc="1" scale="1">    41,    48,    49,    42</quad4>
-			<quad4 id="37" lc="1" scale="1">     6,    50,    51,     5</quad4>
-			<quad4 id="38" lc="1" scale="1">     5,    51,    52,     4</quad4>
-			<quad4 id="39" lc="1" scale="1">     4,    52,    53,     3</quad4>
-			<quad4 id="40" lc="1" scale="1">     3,    53,    54,     2</quad4>
-			<quad4 id="41" lc="1" scale="1">     2,    54,    55,     1</quad4>
-			<quad4 id="42" lc="1" scale="1">     1,    55,    56,     8</quad4>
-			<quad4 id="43" lc="1" scale="1">     8,    56,    57,    15</quad4>
-			<quad4 id="44" lc="1" scale="1">    15,    57,    58,    22</quad4>
-			<quad4 id="45" lc="1" scale="1">    22,    58,    59,    29</quad4>
-			<quad4 id="46" lc="1" scale="1">    29,    59,    60,    36</quad4>
-			<quad4 id="47" lc="1" scale="1">    36,    60,    61,    43</quad4>
-			<quad4 id="48" lc="1" scale="1">    43,    61,    62,    44</quad4>
-			<quad4 id="49" lc="1" scale="1">    44,    62,    63,    45</quad4>
-			<quad4 id="50" lc="1" scale="1">    45,    63,    64,    46</quad4>
-			<quad4 id="51" lc="1" scale="1">    46,    64,    65,    47</quad4>
-			<quad4 id="52" lc="1" scale="1">    47,    65,    66,    48</quad4>
-			<quad4 id="53" lc="1" scale="1">    48,    66,    67,    49</quad4>
-			<quad4 id="54" lc="1" scale="1">    49,    67,    68,    42</quad4>
-			<quad4 id="55" lc="1" scale="1">    42,    68,    69,    35</quad4>
-			<quad4 id="56" lc="1" scale="1">    35,    69,    70,    28</quad4>
-			<quad4 id="57" lc="1" scale="1">    28,    70,    71,    21</quad4>
-			<quad4 id="58" lc="1" scale="1">    21,    71,    72,    14</quad4>
-			<quad4 id="59" lc="1" scale="1">    14,    72,    73,     7</quad4>
-			<quad4 id="60" lc="1" scale="1">     7,    73,    50,     6</quad4>
-			<quad4 id="61" lc="1" scale="1">    50,    74,    75,    51</quad4>
-			<quad4 id="62" lc="1" scale="1">    51,    75,    76,    52</quad4>
-			<quad4 id="63" lc="1" scale="1">    52,    76,    77,    53</quad4>
-			<quad4 id="64" lc="1" scale="1">    53,    77,    78,    54</quad4>
-			<quad4 id="65" lc="1" scale="1">    54,    78,    79,    55</quad4>
-			<quad4 id="66" lc="1" scale="1">    55,    79,    80,    56</quad4>
-			<quad4 id="67" lc="1" scale="1">    56,    80,    81,    57</quad4>
-			<quad4 id="68" lc="1" scale="1">    57,    81,    82,    58</quad4>
-			<quad4 id="69" lc="1" scale="1">    58,    82,    83,    59</quad4>
-			<quad4 id="70" lc="1" scale="1">    59,    83,    84,    60</quad4>
-			<quad4 id="71" lc="1" scale="1">    60,    84,    85,    61</quad4>
-			<quad4 id="72" lc="1" scale="1">    61,    85,    86,    62</quad4>
-			<quad4 id="73" lc="1" scale="1">    62,    86,    87,    63</quad4>
-			<quad4 id="74" lc="1" scale="1">    63,    87,    88,    64</quad4>
-			<quad4 id="75" lc="1" scale="1">    64,    88,    89,    65</quad4>
-			<quad4 id="76" lc="1" scale="1">    65,    89,    90,    66</quad4>
-			<quad4 id="77" lc="1" scale="1">    66,    90,    91,    67</quad4>
-			<quad4 id="78" lc="1" scale="1">    67,    91,    92,    68</quad4>
-			<quad4 id="79" lc="1" scale="1">    68,    92,    93,    69</quad4>
-			<quad4 id="80" lc="1" scale="1">    69,    93,    94,    70</quad4>
-			<quad4 id="81" lc="1" scale="1">    70,    94,    95,    71</quad4>
-			<quad4 id="82" lc="1" scale="1">    71,    95,    96,    72</quad4>
-			<quad4 id="83" lc="1" scale="1">    72,    96,    97,    73</quad4>
-			<quad4 id="84" lc="1" scale="1">    73,    97,    74,    50</quad4>
-			<quad4 id="85" lc="1" scale="1">    74,    98,    99,    75</quad4>
-			<quad4 id="86" lc="1" scale="1">    75,    99,   100,    76</quad4>
-			<quad4 id="87" lc="1" scale="1">    76,   100,   101,    77</quad4>
-			<quad4 id="88" lc="1" scale="1">    77,   101,   102,    78</quad4>
-			<quad4 id="89" lc="1" scale="1">    78,   102,   103,    79</quad4>
-			<quad4 id="90" lc="1" scale="1">    79,   103,   104,    80</quad4>
-			<quad4 id="91" lc="1" scale="1">    80,   104,   105,    81</quad4>
-			<quad4 id="92" lc="1" scale="1">    81,   105,   106,    82</quad4>
-			<quad4 id="93" lc="1" scale="1">    82,   106,   107,    83</quad4>
-			<quad4 id="94" lc="1" scale="1">    83,   107,   108,    84</quad4>
-			<quad4 id="95" lc="1" scale="1">    84,   108,   109,    85</quad4>
-			<quad4 id="96" lc="1" scale="1">    85,   109,   110,    86</quad4>
-			<quad4 id="97" lc="1" scale="1">    86,   110,   111,    87</quad4>
-			<quad4 id="98" lc="1" scale="1">    87,   111,   112,    88</quad4>
-			<quad4 id="99" lc="1" scale="1">    88,   112,   113,    89</quad4>
-			<quad4 id="100" lc="1" scale="1">    89,   113,   114,    90</quad4>
-			<quad4 id="101" lc="1" scale="1">    90,   114,   115,    91</quad4>
-			<quad4 id="102" lc="1" scale="1">    91,   115,   116,    92</quad4>
-			<quad4 id="103" lc="1" scale="1">    92,   116,   117,    93</quad4>
-			<quad4 id="104" lc="1" scale="1">    93,   117,   118,    94</quad4>
-			<quad4 id="105" lc="1" scale="1">    94,   118,   119,    95</quad4>
-			<quad4 id="106" lc="1" scale="1">    95,   119,   120,    96</quad4>
-			<quad4 id="107" lc="1" scale="1">    96,   120,   121,    97</quad4>
-			<quad4 id="108" lc="1" scale="1">    97,   121,    98,    74</quad4>
-			<quad4 id="109" lc="1" scale="1">    98,   122,   123,    99</quad4>
-			<quad4 id="110" lc="1" scale="1">    99,   123,   124,   100</quad4>
-			<quad4 id="111" lc="1" scale="1">   100,   124,   125,   101</quad4>
-			<quad4 id="112" lc="1" scale="1">   101,   125,   126,   102</quad4>
-			<quad4 id="113" lc="1" scale="1">   102,   126,   127,   103</quad4>
-			<quad4 id="114" lc="1" scale="1">   103,   127,   128,   104</quad4>
-			<quad4 id="115" lc="1" scale="1">   104,   128,   129,   105</quad4>
-			<quad4 id="116" lc="1" scale="1">   105,   129,   130,   106</quad4>
-			<quad4 id="117" lc="1" scale="1">   106,   130,   131,   107</quad4>
-			<quad4 id="118" lc="1" scale="1">   107,   131,   132,   108</quad4>
-			<quad4 id="119" lc="1" scale="1">   108,   132,   133,   109</quad4>
-			<quad4 id="120" lc="1" scale="1">   109,   133,   134,   110</quad4>
-			<quad4 id="121" lc="1" scale="1">   110,   134,   135,   111</quad4>
-			<quad4 id="122" lc="1" scale="1">   111,   135,   136,   112</quad4>
-			<quad4 id="123" lc="1" scale="1">   112,   136,   137,   113</quad4>
-			<quad4 id="124" lc="1" scale="1">   113,   137,   138,   114</quad4>
-			<quad4 id="125" lc="1" scale="1">   114,   138,   139,   115</quad4>
-			<quad4 id="126" lc="1" scale="1">   115,   139,   140,   116</quad4>
-			<quad4 id="127" lc="1" scale="1">   116,   140,   141,   117</quad4>
-			<quad4 id="128" lc="1" scale="1">   117,   141,   142,   118</quad4>
-			<quad4 id="129" lc="1" scale="1">   118,   142,   143,   119</quad4>
-			<quad4 id="130" lc="1" scale="1">   119,   143,   144,   120</quad4>
-			<quad4 id="131" lc="1" scale="1">   120,   144,   145,   121</quad4>
-			<quad4 id="132" lc="1" scale="1">   121,   145,   122,    98</quad4>
-			<quad4 id="133" lc="1" scale="1">   122,   146,   147,   123</quad4>
-			<quad4 id="134" lc="1" scale="1">   123,   147,   148,   124</quad4>
-			<quad4 id="135" lc="1" scale="1">   124,   148,   149,   125</quad4>
-			<quad4 id="136" lc="1" scale="1">   125,   149,   150,   126</quad4>
-			<quad4 id="137" lc="1" scale="1">   126,   150,   151,   127</quad4>
-			<quad4 id="138" lc="1" scale="1">   127,   151,   152,   128</quad4>
-			<quad4 id="139" lc="1" scale="1">   128,   152,   153,   129</quad4>
-			<quad4 id="140" lc="1" scale="1">   129,   153,   154,   130</quad4>
-			<quad4 id="141" lc="1" scale="1">   130,   154,   155,   131</quad4>
-			<quad4 id="142" lc="1" scale="1">   131,   155,   156,   132</quad4>
-			<quad4 id="143" lc="1" scale="1">   132,   156,   157,   133</quad4>
-			<quad4 id="144" lc="1" scale="1">   133,   157,   158,   134</quad4>
-			<quad4 id="145" lc="1" scale="1">   134,   158,   159,   135</quad4>
-			<quad4 id="146" lc="1" scale="1">   135,   159,   160,   136</quad4>
-			<quad4 id="147" lc="1" scale="1">   136,   160,   161,   137</quad4>
-			<quad4 id="148" lc="1" scale="1">   137,   161,   162,   138</quad4>
-			<quad4 id="149" lc="1" scale="1">   138,   162,   163,   139</quad4>
-			<quad4 id="150" lc="1" scale="1">   139,   163,   164,   140</quad4>
-			<quad4 id="151" lc="1" scale="1">   140,   164,   165,   141</quad4>
-			<quad4 id="152" lc="1" scale="1">   141,   165,   166,   142</quad4>
-			<quad4 id="153" lc="1" scale="1">   142,   166,   167,   143</quad4>
-			<quad4 id="154" lc="1" scale="1">   143,   167,   168,   144</quad4>
-			<quad4 id="155" lc="1" scale="1">   144,   168,   169,   145</quad4>
-			<quad4 id="156" lc="1" scale="1">   145,   169,   146,   122</quad4>
-			<quad4 id="157" lc="1" scale="1">   146,   170,   171,   147</quad4>
-			<quad4 id="158" lc="1" scale="1">   147,   171,   172,   148</quad4>
-			<quad4 id="159" lc="1" scale="1">   148,   172,   173,   149</quad4>
-			<quad4 id="160" lc="1" scale="1">   149,   173,   174,   150</quad4>
-			<quad4 id="161" lc="1" scale="1">   150,   174,   175,   151</quad4>
-			<quad4 id="162" lc="1" scale="1">   151,   175,   176,   152</quad4>
-			<quad4 id="163" lc="1" scale="1">   152,   176,   177,   153</quad4>
-			<quad4 id="164" lc="1" scale="1">   153,   177,   178,   154</quad4>
-			<quad4 id="165" lc="1" scale="1">   154,   178,   179,   155</quad4>
-			<quad4 id="166" lc="1" scale="1">   155,   179,   180,   156</quad4>
-			<quad4 id="167" lc="1" scale="1">   156,   180,   181,   157</quad4>
-			<quad4 id="168" lc="1" scale="1">   157,   181,   182,   158</quad4>
-			<quad4 id="169" lc="1" scale="1">   158,   182,   183,   159</quad4>
-			<quad4 id="170" lc="1" scale="1">   159,   183,   184,   160</quad4>
-			<quad4 id="171" lc="1" scale="1">   160,   184,   185,   161</quad4>
-			<quad4 id="172" lc="1" scale="1">   161,   185,   186,   162</quad4>
-			<quad4 id="173" lc="1" scale="1">   162,   186,   187,   163</quad4>
-			<quad4 id="174" lc="1" scale="1">   163,   187,   188,   164</quad4>
-			<quad4 id="175" lc="1" scale="1">   164,   188,   189,   165</quad4>
-			<quad4 id="176" lc="1" scale="1">   165,   189,   190,   166</quad4>
-			<quad4 id="177" lc="1" scale="1">   166,   190,   191,   167</quad4>
-			<quad4 id="178" lc="1" scale="1">   167,   191,   192,   168</quad4>
-			<quad4 id="179" lc="1" scale="1">   168,   192,   193,   169</quad4>
-			<quad4 id="180" lc="1" scale="1">   169,   193,   170,   146</quad4>
-		</pressure>
+		<surface_load type="pressure" surface="surface01">
+			<pressure lc="1">1</pressure>
+			<linear>0</linear>
+		</surface_load>
 	</Loads>
 	<LoadData>
-		<loadcurve id="1">
-			<loadpoint>0,0</loadpoint>
-			<loadpoint>1,-0.005</loadpoint>
+		<loadcurve id="1" type="linear">
+			<point>0,0</point>
+			<point>1,-0.005</point>
 		</loadcurve>
 	</LoadData>
 	<Output>
-		<plotfile type="febio"></plotfile>
+		<plotfile type="febio"/>
 		<logfile>
-			<element_data data="sx">22</element_data>
+			<element_data data="sx" elem_set="unnamed_set01"/>
 		</logfile>
 	</Output>
 </febio_spec>

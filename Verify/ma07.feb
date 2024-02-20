@@ -1,48 +1,34 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!--
-Problem Description:
-	Modeling of ligament cyclic Stress Relaxation.
-Main Features:
-	Uncoupled viscoelasticity
-	Fiber material
-Secondary Features:
-	Cyclic deformation
-	Must points
-Materials:
-	Trans-Iso Mooney-Rivlin
-	Uncoupled Viscoelastic
-Degrees of Freedom: 540
-Results:
-	Steps Completed: 199
-	Equilibrium Iterations: 571
-	Right Hand Evaluations: 770
-	Siffness Reformations: 199
-	Other:
-		See the stress-strain curve in ma07.jpg
-Comments:
-	This problem is from the article "Finite element implementation of anisotropic
-	quasilinear viscoelasticity using a discrete spectrum approximation", Puso and Weiss,
-	Journal of Biomechanical Engineering, 1997
--->
-<febio_spec version="1.2">
+<febio_spec version="2.5">
 	<Module type="solid"/>
 	<Control>
-		<title>Viscoelastic Cyclic Stress</title>
 		<time_steps>200</time_steps>
-		<step_size>.5</step_size>
+		<step_size>0.5</step_size>
 		<max_refs>15</max_refs>
 		<max_ups>10</max_ups>
+		<diverge_reform>1</diverge_reform>
+		<reform_each_time_step>1</reform_each_time_step>
 		<dtol>0.001</dtol>
 		<etol>0.01</etol>
 		<rtol>0</rtol>
 		<lstol>0.9</lstol>
+		<min_residual>1e-020</min_residual>
+		<qnmethod>0</qnmethod>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax lc="1"></dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>100</opt_iter>
 		</time_stepper>
+		<analysis type="static"/>
 	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
 	<Material>
 		<material id="1" name="Material1" type="uncoupled viscoelastic">
 			<g1>0.288</g1>
@@ -50,25 +36,28 @@ Comments:
 			<g3>0.288</g3>
 			<g4>0.288</g4>
 			<g5>0.288</g5>
+			<g6>0</g6>
 			<t1>0.01</t1>
 			<t2>0.1</t2>
 			<t3>1</t3>
 			<t4>10</t4>
 			<t5>100</t5>
-			<elastic id="2" name="Material2" type="trans iso Mooney-Rivlin">
-				<fiber type="vector"> 0.0000000e+000, 1.0000000e+000, 0.0000000e+000</fiber>
+			<t6>1</t6>
+			<elastic name="Material2" type="trans iso Mooney-Rivlin">
+				<density>1</density>
 				<c1>47.93</c1>
 				<c2>-40.46</c2>
 				<c3>2.36</c3>
 				<c4>76.9</c4>
 				<c5>1584</c5>
-				<k>5000</k>
 				<lam_max>1.03</lam_max>
+				<k>5000</k>
+				<fiber type="vector">0,1,0</fiber>
 			</elastic>
 		</material>
 	</Material>
 	<Geometry>
-		<Nodes>
+		<Nodes name="ma07">
 			<node id="1">-5.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
 			<node id="2">-5.0000000e-001,-5.0000000e-001, 2.0000000e-001</node>
 			<node id="3">-5.0000000e-001,-5.0000000e-001, 4.0000000e-001</node>
@@ -286,340 +275,350 @@ Comments:
 			<node id="215"> 5.0000000e-001, 5.0000000e-001, 8.0000000e-001</node>
 			<node id="216"> 5.0000000e-001, 5.0000000e-001, 1.0000000e+000</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,    37,    43,     7,     2,    38,    44,     8</hex8>
-			<hex8 id="2" mat="1">     2,    38,    44,     8,     3,    39,    45,     9</hex8>
-			<hex8 id="3" mat="1">     3,    39,    45,     9,     4,    40,    46,    10</hex8>
-			<hex8 id="4" mat="1">     4,    40,    46,    10,     5,    41,    47,    11</hex8>
-			<hex8 id="5" mat="1">     5,    41,    47,    11,     6,    42,    48,    12</hex8>
-			<hex8 id="6" mat="1">     7,    43,    49,    13,     8,    44,    50,    14</hex8>
-			<hex8 id="7" mat="1">     8,    44,    50,    14,     9,    45,    51,    15</hex8>
-			<hex8 id="8" mat="1">     9,    45,    51,    15,    10,    46,    52,    16</hex8>
-			<hex8 id="9" mat="1">    10,    46,    52,    16,    11,    47,    53,    17</hex8>
-			<hex8 id="10" mat="1">    11,    47,    53,    17,    12,    48,    54,    18</hex8>
-			<hex8 id="11" mat="1">    13,    49,    55,    19,    14,    50,    56,    20</hex8>
-			<hex8 id="12" mat="1">    14,    50,    56,    20,    15,    51,    57,    21</hex8>
-			<hex8 id="13" mat="1">    15,    51,    57,    21,    16,    52,    58,    22</hex8>
-			<hex8 id="14" mat="1">    16,    52,    58,    22,    17,    53,    59,    23</hex8>
-			<hex8 id="15" mat="1">    17,    53,    59,    23,    18,    54,    60,    24</hex8>
-			<hex8 id="16" mat="1">    19,    55,    61,    25,    20,    56,    62,    26</hex8>
-			<hex8 id="17" mat="1">    20,    56,    62,    26,    21,    57,    63,    27</hex8>
-			<hex8 id="18" mat="1">    21,    57,    63,    27,    22,    58,    64,    28</hex8>
-			<hex8 id="19" mat="1">    22,    58,    64,    28,    23,    59,    65,    29</hex8>
-			<hex8 id="20" mat="1">    23,    59,    65,    29,    24,    60,    66,    30</hex8>
-			<hex8 id="21" mat="1">    25,    61,    67,    31,    26,    62,    68,    32</hex8>
-			<hex8 id="22" mat="1">    26,    62,    68,    32,    27,    63,    69,    33</hex8>
-			<hex8 id="23" mat="1">    27,    63,    69,    33,    28,    64,    70,    34</hex8>
-			<hex8 id="24" mat="1">    28,    64,    70,    34,    29,    65,    71,    35</hex8>
-			<hex8 id="25" mat="1">    29,    65,    71,    35,    30,    66,    72,    36</hex8>
-			<hex8 id="26" mat="1">    37,    73,    79,    43,    38,    74,    80,    44</hex8>
-			<hex8 id="27" mat="1">    38,    74,    80,    44,    39,    75,    81,    45</hex8>
-			<hex8 id="28" mat="1">    39,    75,    81,    45,    40,    76,    82,    46</hex8>
-			<hex8 id="29" mat="1">    40,    76,    82,    46,    41,    77,    83,    47</hex8>
-			<hex8 id="30" mat="1">    41,    77,    83,    47,    42,    78,    84,    48</hex8>
-			<hex8 id="31" mat="1">    43,    79,    85,    49,    44,    80,    86,    50</hex8>
-			<hex8 id="32" mat="1">    44,    80,    86,    50,    45,    81,    87,    51</hex8>
-			<hex8 id="33" mat="1">    45,    81,    87,    51,    46,    82,    88,    52</hex8>
-			<hex8 id="34" mat="1">    46,    82,    88,    52,    47,    83,    89,    53</hex8>
-			<hex8 id="35" mat="1">    47,    83,    89,    53,    48,    84,    90,    54</hex8>
-			<hex8 id="36" mat="1">    49,    85,    91,    55,    50,    86,    92,    56</hex8>
-			<hex8 id="37" mat="1">    50,    86,    92,    56,    51,    87,    93,    57</hex8>
-			<hex8 id="38" mat="1">    51,    87,    93,    57,    52,    88,    94,    58</hex8>
-			<hex8 id="39" mat="1">    52,    88,    94,    58,    53,    89,    95,    59</hex8>
-			<hex8 id="40" mat="1">    53,    89,    95,    59,    54,    90,    96,    60</hex8>
-			<hex8 id="41" mat="1">    55,    91,    97,    61,    56,    92,    98,    62</hex8>
-			<hex8 id="42" mat="1">    56,    92,    98,    62,    57,    93,    99,    63</hex8>
-			<hex8 id="43" mat="1">    57,    93,    99,    63,    58,    94,   100,    64</hex8>
-			<hex8 id="44" mat="1">    58,    94,   100,    64,    59,    95,   101,    65</hex8>
-			<hex8 id="45" mat="1">    59,    95,   101,    65,    60,    96,   102,    66</hex8>
-			<hex8 id="46" mat="1">    61,    97,   103,    67,    62,    98,   104,    68</hex8>
-			<hex8 id="47" mat="1">    62,    98,   104,    68,    63,    99,   105,    69</hex8>
-			<hex8 id="48" mat="1">    63,    99,   105,    69,    64,   100,   106,    70</hex8>
-			<hex8 id="49" mat="1">    64,   100,   106,    70,    65,   101,   107,    71</hex8>
-			<hex8 id="50" mat="1">    65,   101,   107,    71,    66,   102,   108,    72</hex8>
-			<hex8 id="51" mat="1">    73,   109,   115,    79,    74,   110,   116,    80</hex8>
-			<hex8 id="52" mat="1">    74,   110,   116,    80,    75,   111,   117,    81</hex8>
-			<hex8 id="53" mat="1">    75,   111,   117,    81,    76,   112,   118,    82</hex8>
-			<hex8 id="54" mat="1">    76,   112,   118,    82,    77,   113,   119,    83</hex8>
-			<hex8 id="55" mat="1">    77,   113,   119,    83,    78,   114,   120,    84</hex8>
-			<hex8 id="56" mat="1">    79,   115,   121,    85,    80,   116,   122,    86</hex8>
-			<hex8 id="57" mat="1">    80,   116,   122,    86,    81,   117,   123,    87</hex8>
-			<hex8 id="58" mat="1">    81,   117,   123,    87,    82,   118,   124,    88</hex8>
-			<hex8 id="59" mat="1">    82,   118,   124,    88,    83,   119,   125,    89</hex8>
-			<hex8 id="60" mat="1">    83,   119,   125,    89,    84,   120,   126,    90</hex8>
-			<hex8 id="61" mat="1">    85,   121,   127,    91,    86,   122,   128,    92</hex8>
-			<hex8 id="62" mat="1">    86,   122,   128,    92,    87,   123,   129,    93</hex8>
-			<hex8 id="63" mat="1">    87,   123,   129,    93,    88,   124,   130,    94</hex8>
-			<hex8 id="64" mat="1">    88,   124,   130,    94,    89,   125,   131,    95</hex8>
-			<hex8 id="65" mat="1">    89,   125,   131,    95,    90,   126,   132,    96</hex8>
-			<hex8 id="66" mat="1">    91,   127,   133,    97,    92,   128,   134,    98</hex8>
-			<hex8 id="67" mat="1">    92,   128,   134,    98,    93,   129,   135,    99</hex8>
-			<hex8 id="68" mat="1">    93,   129,   135,    99,    94,   130,   136,   100</hex8>
-			<hex8 id="69" mat="1">    94,   130,   136,   100,    95,   131,   137,   101</hex8>
-			<hex8 id="70" mat="1">    95,   131,   137,   101,    96,   132,   138,   102</hex8>
-			<hex8 id="71" mat="1">    97,   133,   139,   103,    98,   134,   140,   104</hex8>
-			<hex8 id="72" mat="1">    98,   134,   140,   104,    99,   135,   141,   105</hex8>
-			<hex8 id="73" mat="1">    99,   135,   141,   105,   100,   136,   142,   106</hex8>
-			<hex8 id="74" mat="1">   100,   136,   142,   106,   101,   137,   143,   107</hex8>
-			<hex8 id="75" mat="1">   101,   137,   143,   107,   102,   138,   144,   108</hex8>
-			<hex8 id="76" mat="1">   109,   145,   151,   115,   110,   146,   152,   116</hex8>
-			<hex8 id="77" mat="1">   110,   146,   152,   116,   111,   147,   153,   117</hex8>
-			<hex8 id="78" mat="1">   111,   147,   153,   117,   112,   148,   154,   118</hex8>
-			<hex8 id="79" mat="1">   112,   148,   154,   118,   113,   149,   155,   119</hex8>
-			<hex8 id="80" mat="1">   113,   149,   155,   119,   114,   150,   156,   120</hex8>
-			<hex8 id="81" mat="1">   115,   151,   157,   121,   116,   152,   158,   122</hex8>
-			<hex8 id="82" mat="1">   116,   152,   158,   122,   117,   153,   159,   123</hex8>
-			<hex8 id="83" mat="1">   117,   153,   159,   123,   118,   154,   160,   124</hex8>
-			<hex8 id="84" mat="1">   118,   154,   160,   124,   119,   155,   161,   125</hex8>
-			<hex8 id="85" mat="1">   119,   155,   161,   125,   120,   156,   162,   126</hex8>
-			<hex8 id="86" mat="1">   121,   157,   163,   127,   122,   158,   164,   128</hex8>
-			<hex8 id="87" mat="1">   122,   158,   164,   128,   123,   159,   165,   129</hex8>
-			<hex8 id="88" mat="1">   123,   159,   165,   129,   124,   160,   166,   130</hex8>
-			<hex8 id="89" mat="1">   124,   160,   166,   130,   125,   161,   167,   131</hex8>
-			<hex8 id="90" mat="1">   125,   161,   167,   131,   126,   162,   168,   132</hex8>
-			<hex8 id="91" mat="1">   127,   163,   169,   133,   128,   164,   170,   134</hex8>
-			<hex8 id="92" mat="1">   128,   164,   170,   134,   129,   165,   171,   135</hex8>
-			<hex8 id="93" mat="1">   129,   165,   171,   135,   130,   166,   172,   136</hex8>
-			<hex8 id="94" mat="1">   130,   166,   172,   136,   131,   167,   173,   137</hex8>
-			<hex8 id="95" mat="1">   131,   167,   173,   137,   132,   168,   174,   138</hex8>
-			<hex8 id="96" mat="1">   133,   169,   175,   139,   134,   170,   176,   140</hex8>
-			<hex8 id="97" mat="1">   134,   170,   176,   140,   135,   171,   177,   141</hex8>
-			<hex8 id="98" mat="1">   135,   171,   177,   141,   136,   172,   178,   142</hex8>
-			<hex8 id="99" mat="1">   136,   172,   178,   142,   137,   173,   179,   143</hex8>
-			<hex8 id="100" mat="1">   137,   173,   179,   143,   138,   174,   180,   144</hex8>
-			<hex8 id="101" mat="1">   145,   181,   187,   151,   146,   182,   188,   152</hex8>
-			<hex8 id="102" mat="1">   146,   182,   188,   152,   147,   183,   189,   153</hex8>
-			<hex8 id="103" mat="1">   147,   183,   189,   153,   148,   184,   190,   154</hex8>
-			<hex8 id="104" mat="1">   148,   184,   190,   154,   149,   185,   191,   155</hex8>
-			<hex8 id="105" mat="1">   149,   185,   191,   155,   150,   186,   192,   156</hex8>
-			<hex8 id="106" mat="1">   151,   187,   193,   157,   152,   188,   194,   158</hex8>
-			<hex8 id="107" mat="1">   152,   188,   194,   158,   153,   189,   195,   159</hex8>
-			<hex8 id="108" mat="1">   153,   189,   195,   159,   154,   190,   196,   160</hex8>
-			<hex8 id="109" mat="1">   154,   190,   196,   160,   155,   191,   197,   161</hex8>
-			<hex8 id="110" mat="1">   155,   191,   197,   161,   156,   192,   198,   162</hex8>
-			<hex8 id="111" mat="1">   157,   193,   199,   163,   158,   194,   200,   164</hex8>
-			<hex8 id="112" mat="1">   158,   194,   200,   164,   159,   195,   201,   165</hex8>
-			<hex8 id="113" mat="1">   159,   195,   201,   165,   160,   196,   202,   166</hex8>
-			<hex8 id="114" mat="1">   160,   196,   202,   166,   161,   197,   203,   167</hex8>
-			<hex8 id="115" mat="1">   161,   197,   203,   167,   162,   198,   204,   168</hex8>
-			<hex8 id="116" mat="1">   163,   199,   205,   169,   164,   200,   206,   170</hex8>
-			<hex8 id="117" mat="1">   164,   200,   206,   170,   165,   201,   207,   171</hex8>
-			<hex8 id="118" mat="1">   165,   201,   207,   171,   166,   202,   208,   172</hex8>
-			<hex8 id="119" mat="1">   166,   202,   208,   172,   167,   203,   209,   173</hex8>
-			<hex8 id="120" mat="1">   167,   203,   209,   173,   168,   204,   210,   174</hex8>
-			<hex8 id="121" mat="1">   169,   205,   211,   175,   170,   206,   212,   176</hex8>
-			<hex8 id="122" mat="1">   170,   206,   212,   176,   171,   207,   213,   177</hex8>
-			<hex8 id="123" mat="1">   171,   207,   213,   177,   172,   208,   214,   178</hex8>
-			<hex8 id="124" mat="1">   172,   208,   214,   178,   173,   209,   215,   179</hex8>
-			<hex8 id="125" mat="1">   173,   209,   215,   179,   174,   210,   216,   180</hex8>
+		<Elements type="hex8" mat="1" name="Part7">
+			<elem id="1">     1,    37,    43,     7,     2,    38,    44,     8</elem>
+			<elem id="2">     2,    38,    44,     8,     3,    39,    45,     9</elem>
+			<elem id="3">     3,    39,    45,     9,     4,    40,    46,    10</elem>
+			<elem id="4">     4,    40,    46,    10,     5,    41,    47,    11</elem>
+			<elem id="5">     5,    41,    47,    11,     6,    42,    48,    12</elem>
+			<elem id="6">     7,    43,    49,    13,     8,    44,    50,    14</elem>
+			<elem id="7">     8,    44,    50,    14,     9,    45,    51,    15</elem>
+			<elem id="8">     9,    45,    51,    15,    10,    46,    52,    16</elem>
+			<elem id="9">    10,    46,    52,    16,    11,    47,    53,    17</elem>
+			<elem id="10">    11,    47,    53,    17,    12,    48,    54,    18</elem>
+			<elem id="11">    13,    49,    55,    19,    14,    50,    56,    20</elem>
+			<elem id="12">    14,    50,    56,    20,    15,    51,    57,    21</elem>
+			<elem id="13">    15,    51,    57,    21,    16,    52,    58,    22</elem>
+			<elem id="14">    16,    52,    58,    22,    17,    53,    59,    23</elem>
+			<elem id="15">    17,    53,    59,    23,    18,    54,    60,    24</elem>
+			<elem id="16">    19,    55,    61,    25,    20,    56,    62,    26</elem>
+			<elem id="17">    20,    56,    62,    26,    21,    57,    63,    27</elem>
+			<elem id="18">    21,    57,    63,    27,    22,    58,    64,    28</elem>
+			<elem id="19">    22,    58,    64,    28,    23,    59,    65,    29</elem>
+			<elem id="20">    23,    59,    65,    29,    24,    60,    66,    30</elem>
+			<elem id="21">    25,    61,    67,    31,    26,    62,    68,    32</elem>
+			<elem id="22">    26,    62,    68,    32,    27,    63,    69,    33</elem>
+			<elem id="23">    27,    63,    69,    33,    28,    64,    70,    34</elem>
+			<elem id="24">    28,    64,    70,    34,    29,    65,    71,    35</elem>
+			<elem id="25">    29,    65,    71,    35,    30,    66,    72,    36</elem>
+			<elem id="26">    37,    73,    79,    43,    38,    74,    80,    44</elem>
+			<elem id="27">    38,    74,    80,    44,    39,    75,    81,    45</elem>
+			<elem id="28">    39,    75,    81,    45,    40,    76,    82,    46</elem>
+			<elem id="29">    40,    76,    82,    46,    41,    77,    83,    47</elem>
+			<elem id="30">    41,    77,    83,    47,    42,    78,    84,    48</elem>
+			<elem id="31">    43,    79,    85,    49,    44,    80,    86,    50</elem>
+			<elem id="32">    44,    80,    86,    50,    45,    81,    87,    51</elem>
+			<elem id="33">    45,    81,    87,    51,    46,    82,    88,    52</elem>
+			<elem id="34">    46,    82,    88,    52,    47,    83,    89,    53</elem>
+			<elem id="35">    47,    83,    89,    53,    48,    84,    90,    54</elem>
+			<elem id="36">    49,    85,    91,    55,    50,    86,    92,    56</elem>
+			<elem id="37">    50,    86,    92,    56,    51,    87,    93,    57</elem>
+			<elem id="38">    51,    87,    93,    57,    52,    88,    94,    58</elem>
+			<elem id="39">    52,    88,    94,    58,    53,    89,    95,    59</elem>
+			<elem id="40">    53,    89,    95,    59,    54,    90,    96,    60</elem>
+			<elem id="41">    55,    91,    97,    61,    56,    92,    98,    62</elem>
+			<elem id="42">    56,    92,    98,    62,    57,    93,    99,    63</elem>
+			<elem id="43">    57,    93,    99,    63,    58,    94,   100,    64</elem>
+			<elem id="44">    58,    94,   100,    64,    59,    95,   101,    65</elem>
+			<elem id="45">    59,    95,   101,    65,    60,    96,   102,    66</elem>
+			<elem id="46">    61,    97,   103,    67,    62,    98,   104,    68</elem>
+			<elem id="47">    62,    98,   104,    68,    63,    99,   105,    69</elem>
+			<elem id="48">    63,    99,   105,    69,    64,   100,   106,    70</elem>
+			<elem id="49">    64,   100,   106,    70,    65,   101,   107,    71</elem>
+			<elem id="50">    65,   101,   107,    71,    66,   102,   108,    72</elem>
+			<elem id="51">    73,   109,   115,    79,    74,   110,   116,    80</elem>
+			<elem id="52">    74,   110,   116,    80,    75,   111,   117,    81</elem>
+			<elem id="53">    75,   111,   117,    81,    76,   112,   118,    82</elem>
+			<elem id="54">    76,   112,   118,    82,    77,   113,   119,    83</elem>
+			<elem id="55">    77,   113,   119,    83,    78,   114,   120,    84</elem>
+			<elem id="56">    79,   115,   121,    85,    80,   116,   122,    86</elem>
+			<elem id="57">    80,   116,   122,    86,    81,   117,   123,    87</elem>
+			<elem id="58">    81,   117,   123,    87,    82,   118,   124,    88</elem>
+			<elem id="59">    82,   118,   124,    88,    83,   119,   125,    89</elem>
+			<elem id="60">    83,   119,   125,    89,    84,   120,   126,    90</elem>
+			<elem id="61">    85,   121,   127,    91,    86,   122,   128,    92</elem>
+			<elem id="62">    86,   122,   128,    92,    87,   123,   129,    93</elem>
+			<elem id="63">    87,   123,   129,    93,    88,   124,   130,    94</elem>
+			<elem id="64">    88,   124,   130,    94,    89,   125,   131,    95</elem>
+			<elem id="65">    89,   125,   131,    95,    90,   126,   132,    96</elem>
+			<elem id="66">    91,   127,   133,    97,    92,   128,   134,    98</elem>
+			<elem id="67">    92,   128,   134,    98,    93,   129,   135,    99</elem>
+			<elem id="68">    93,   129,   135,    99,    94,   130,   136,   100</elem>
+			<elem id="69">    94,   130,   136,   100,    95,   131,   137,   101</elem>
+			<elem id="70">    95,   131,   137,   101,    96,   132,   138,   102</elem>
+			<elem id="71">    97,   133,   139,   103,    98,   134,   140,   104</elem>
+			<elem id="72">    98,   134,   140,   104,    99,   135,   141,   105</elem>
+			<elem id="73">    99,   135,   141,   105,   100,   136,   142,   106</elem>
+			<elem id="74">   100,   136,   142,   106,   101,   137,   143,   107</elem>
+			<elem id="75">   101,   137,   143,   107,   102,   138,   144,   108</elem>
+			<elem id="76">   109,   145,   151,   115,   110,   146,   152,   116</elem>
+			<elem id="77">   110,   146,   152,   116,   111,   147,   153,   117</elem>
+			<elem id="78">   111,   147,   153,   117,   112,   148,   154,   118</elem>
+			<elem id="79">   112,   148,   154,   118,   113,   149,   155,   119</elem>
+			<elem id="80">   113,   149,   155,   119,   114,   150,   156,   120</elem>
+			<elem id="81">   115,   151,   157,   121,   116,   152,   158,   122</elem>
+			<elem id="82">   116,   152,   158,   122,   117,   153,   159,   123</elem>
+			<elem id="83">   117,   153,   159,   123,   118,   154,   160,   124</elem>
+			<elem id="84">   118,   154,   160,   124,   119,   155,   161,   125</elem>
+			<elem id="85">   119,   155,   161,   125,   120,   156,   162,   126</elem>
+			<elem id="86">   121,   157,   163,   127,   122,   158,   164,   128</elem>
+			<elem id="87">   122,   158,   164,   128,   123,   159,   165,   129</elem>
+			<elem id="88">   123,   159,   165,   129,   124,   160,   166,   130</elem>
+			<elem id="89">   124,   160,   166,   130,   125,   161,   167,   131</elem>
+			<elem id="90">   125,   161,   167,   131,   126,   162,   168,   132</elem>
+			<elem id="91">   127,   163,   169,   133,   128,   164,   170,   134</elem>
+			<elem id="92">   128,   164,   170,   134,   129,   165,   171,   135</elem>
+			<elem id="93">   129,   165,   171,   135,   130,   166,   172,   136</elem>
+			<elem id="94">   130,   166,   172,   136,   131,   167,   173,   137</elem>
+			<elem id="95">   131,   167,   173,   137,   132,   168,   174,   138</elem>
+			<elem id="96">   133,   169,   175,   139,   134,   170,   176,   140</elem>
+			<elem id="97">   134,   170,   176,   140,   135,   171,   177,   141</elem>
+			<elem id="98">   135,   171,   177,   141,   136,   172,   178,   142</elem>
+			<elem id="99">   136,   172,   178,   142,   137,   173,   179,   143</elem>
+			<elem id="100">   137,   173,   179,   143,   138,   174,   180,   144</elem>
+			<elem id="101">   145,   181,   187,   151,   146,   182,   188,   152</elem>
+			<elem id="102">   146,   182,   188,   152,   147,   183,   189,   153</elem>
+			<elem id="103">   147,   183,   189,   153,   148,   184,   190,   154</elem>
+			<elem id="104">   148,   184,   190,   154,   149,   185,   191,   155</elem>
+			<elem id="105">   149,   185,   191,   155,   150,   186,   192,   156</elem>
+			<elem id="106">   151,   187,   193,   157,   152,   188,   194,   158</elem>
+			<elem id="107">   152,   188,   194,   158,   153,   189,   195,   159</elem>
+			<elem id="108">   153,   189,   195,   159,   154,   190,   196,   160</elem>
+			<elem id="109">   154,   190,   196,   160,   155,   191,   197,   161</elem>
+			<elem id="110">   155,   191,   197,   161,   156,   192,   198,   162</elem>
+			<elem id="111">   157,   193,   199,   163,   158,   194,   200,   164</elem>
+			<elem id="112">   158,   194,   200,   164,   159,   195,   201,   165</elem>
+			<elem id="113">   159,   195,   201,   165,   160,   196,   202,   166</elem>
+			<elem id="114">   160,   196,   202,   166,   161,   197,   203,   167</elem>
+			<elem id="115">   161,   197,   203,   167,   162,   198,   204,   168</elem>
+			<elem id="116">   163,   199,   205,   169,   164,   200,   206,   170</elem>
+			<elem id="117">   164,   200,   206,   170,   165,   201,   207,   171</elem>
+			<elem id="118">   165,   201,   207,   171,   166,   202,   208,   172</elem>
+			<elem id="119">   166,   202,   208,   172,   167,   203,   209,   173</elem>
+			<elem id="120">   167,   203,   209,   173,   168,   204,   210,   174</elem>
+			<elem id="121">   169,   205,   211,   175,   170,   206,   212,   176</elem>
+			<elem id="122">   170,   206,   212,   176,   171,   207,   213,   177</elem>
+			<elem id="123">   171,   207,   213,   177,   172,   208,   214,   178</elem>
+			<elem id="124">   172,   208,   214,   178,   173,   209,   215,   179</elem>
+			<elem id="125">   173,   209,   215,   179,   174,   210,   216,   180</elem>
 		</Elements>
+		<NodeSet name="FixedDisplacement01">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="37"/>
+			<node id="38"/>
+			<node id="39"/>
+			<node id="40"/>
+			<node id="41"/>
+			<node id="42"/>
+			<node id="73"/>
+			<node id="74"/>
+			<node id="75"/>
+			<node id="76"/>
+			<node id="77"/>
+			<node id="78"/>
+			<node id="109"/>
+			<node id="110"/>
+			<node id="111"/>
+			<node id="112"/>
+			<node id="113"/>
+			<node id="114"/>
+			<node id="145"/>
+			<node id="146"/>
+			<node id="147"/>
+			<node id="148"/>
+			<node id="149"/>
+			<node id="150"/>
+			<node id="181"/>
+			<node id="182"/>
+			<node id="183"/>
+			<node id="184"/>
+			<node id="185"/>
+			<node id="186"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement02">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="7"/>
+			<node id="8"/>
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+			<node id="13"/>
+			<node id="14"/>
+			<node id="15"/>
+			<node id="16"/>
+			<node id="17"/>
+			<node id="18"/>
+			<node id="19"/>
+			<node id="20"/>
+			<node id="21"/>
+			<node id="22"/>
+			<node id="23"/>
+			<node id="24"/>
+			<node id="25"/>
+			<node id="26"/>
+			<node id="27"/>
+			<node id="28"/>
+			<node id="29"/>
+			<node id="30"/>
+			<node id="31"/>
+			<node id="32"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="35"/>
+			<node id="36"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement03">
+			<node id="1"/>
+			<node id="7"/>
+			<node id="13"/>
+			<node id="19"/>
+			<node id="25"/>
+			<node id="31"/>
+			<node id="37"/>
+			<node id="43"/>
+			<node id="49"/>
+			<node id="55"/>
+			<node id="61"/>
+			<node id="67"/>
+			<node id="73"/>
+			<node id="79"/>
+			<node id="85"/>
+			<node id="91"/>
+			<node id="97"/>
+			<node id="103"/>
+			<node id="109"/>
+			<node id="115"/>
+			<node id="121"/>
+			<node id="127"/>
+			<node id="133"/>
+			<node id="139"/>
+			<node id="145"/>
+			<node id="151"/>
+			<node id="157"/>
+			<node id="163"/>
+			<node id="169"/>
+			<node id="175"/>
+			<node id="181"/>
+			<node id="187"/>
+			<node id="193"/>
+			<node id="199"/>
+			<node id="205"/>
+			<node id="211"/>
+		</NodeSet>
+		<NodeSet name="PrescribedBC141">
+			<node id="31"/>
+			<node id="32"/>
+			<node id="33"/>
+			<node id="34"/>
+			<node id="35"/>
+			<node id="36"/>
+			<node id="67"/>
+			<node id="68"/>
+			<node id="69"/>
+			<node id="70"/>
+			<node id="71"/>
+			<node id="72"/>
+			<node id="103"/>
+			<node id="104"/>
+			<node id="105"/>
+			<node id="106"/>
+			<node id="107"/>
+			<node id="108"/>
+			<node id="139"/>
+			<node id="140"/>
+			<node id="141"/>
+			<node id="142"/>
+			<node id="143"/>
+			<node id="144"/>
+			<node id="175"/>
+			<node id="176"/>
+			<node id="177"/>
+			<node id="178"/>
+			<node id="179"/>
+			<node id="180"/>
+			<node id="211"/>
+			<node id="212"/>
+			<node id="213"/>
+			<node id="214"/>
+			<node id="215"/>
+			<node id="216"/>
+		</NodeSet>
+		<ElementSet name="unnamed_set01">
+			<elem id="73"/>
+		</ElementSet>
 	</Geometry>
 	<Boundary>
-		<fix>
-			<node id="1" bc="y"/>
-			<node id="2" bc="y"/>
-			<node id="3" bc="y"/>
-			<node id="4" bc="y"/>
-			<node id="5" bc="y"/>
-			<node id="6" bc="y"/>
-			<node id="37" bc="y"/>
-			<node id="38" bc="y"/>
-			<node id="39" bc="y"/>
-			<node id="40" bc="y"/>
-			<node id="41" bc="y"/>
-			<node id="42" bc="y"/>
-			<node id="73" bc="y"/>
-			<node id="74" bc="y"/>
-			<node id="75" bc="y"/>
-			<node id="76" bc="y"/>
-			<node id="77" bc="y"/>
-			<node id="78" bc="y"/>
-			<node id="109" bc="y"/>
-			<node id="110" bc="y"/>
-			<node id="111" bc="y"/>
-			<node id="112" bc="y"/>
-			<node id="113" bc="y"/>
-			<node id="114" bc="y"/>
-			<node id="145" bc="y"/>
-			<node id="146" bc="y"/>
-			<node id="147" bc="y"/>
-			<node id="148" bc="y"/>
-			<node id="149" bc="y"/>
-			<node id="150" bc="y"/>
-			<node id="181" bc="y"/>
-			<node id="182" bc="y"/>
-			<node id="183" bc="y"/>
-			<node id="184" bc="y"/>
-			<node id="185" bc="y"/>
-			<node id="186" bc="y"/>
-		</fix>
-		<fix>
-			<node id="1" bc="x"/>
-			<node id="2" bc="x"/>
-			<node id="3" bc="x"/>
-			<node id="4" bc="x"/>
-			<node id="5" bc="x"/>
-			<node id="6" bc="x"/>
-			<node id="7" bc="x"/>
-			<node id="8" bc="x"/>
-			<node id="9" bc="x"/>
-			<node id="10" bc="x"/>
-			<node id="11" bc="x"/>
-			<node id="12" bc="x"/>
-			<node id="13" bc="x"/>
-			<node id="14" bc="x"/>
-			<node id="15" bc="x"/>
-			<node id="16" bc="x"/>
-			<node id="17" bc="x"/>
-			<node id="18" bc="x"/>
-			<node id="19" bc="x"/>
-			<node id="20" bc="x"/>
-			<node id="21" bc="x"/>
-			<node id="22" bc="x"/>
-			<node id="23" bc="x"/>
-			<node id="24" bc="x"/>
-			<node id="25" bc="x"/>
-			<node id="26" bc="x"/>
-			<node id="27" bc="x"/>
-			<node id="28" bc="x"/>
-			<node id="29" bc="x"/>
-			<node id="30" bc="x"/>
-			<node id="31" bc="x"/>
-			<node id="32" bc="x"/>
-			<node id="33" bc="x"/>
-			<node id="34" bc="x"/>
-			<node id="35" bc="x"/>
-			<node id="36" bc="x"/>
-		</fix>
-		<fix>
-			<node id="1" bc="z"/>
-			<node id="7" bc="z"/>
-			<node id="13" bc="z"/>
-			<node id="19" bc="z"/>
-			<node id="25" bc="z"/>
-			<node id="31" bc="z"/>
-			<node id="37" bc="z"/>
-			<node id="43" bc="z"/>
-			<node id="49" bc="z"/>
-			<node id="55" bc="z"/>
-			<node id="61" bc="z"/>
-			<node id="67" bc="z"/>
-			<node id="73" bc="z"/>
-			<node id="79" bc="z"/>
-			<node id="85" bc="z"/>
-			<node id="91" bc="z"/>
-			<node id="97" bc="z"/>
-			<node id="103" bc="z"/>
-			<node id="109" bc="z"/>
-			<node id="115" bc="z"/>
-			<node id="121" bc="z"/>
-			<node id="127" bc="z"/>
-			<node id="133" bc="z"/>
-			<node id="139" bc="z"/>
-			<node id="145" bc="z"/>
-			<node id="151" bc="z"/>
-			<node id="157" bc="z"/>
-			<node id="163" bc="z"/>
-			<node id="169" bc="z"/>
-			<node id="175" bc="z"/>
-			<node id="181" bc="z"/>
-			<node id="187" bc="z"/>
-			<node id="193" bc="z"/>
-			<node id="199" bc="z"/>
-			<node id="205" bc="z"/>
-			<node id="211" bc="z"/>
-		</fix>
-		<prescribe>
-			<node id="31" bc="y" lc="2">1</node>
-			<node id="32" bc="y" lc="2">1</node>
-			<node id="33" bc="y" lc="2">1</node>
-			<node id="34" bc="y" lc="2">1</node>
-			<node id="35" bc="y" lc="2">1</node>
-			<node id="36" bc="y" lc="2">1</node>
-			<node id="67" bc="y" lc="2">1</node>
-			<node id="68" bc="y" lc="2">1</node>
-			<node id="69" bc="y" lc="2">1</node>
-			<node id="70" bc="y" lc="2">1</node>
-			<node id="71" bc="y" lc="2">1</node>
-			<node id="72" bc="y" lc="2">1</node>
-			<node id="103" bc="y" lc="2">1</node>
-			<node id="104" bc="y" lc="2">1</node>
-			<node id="105" bc="y" lc="2">1</node>
-			<node id="106" bc="y" lc="2">1</node>
-			<node id="107" bc="y" lc="2">1</node>
-			<node id="108" bc="y" lc="2">1</node>
-			<node id="139" bc="y" lc="2">1</node>
-			<node id="140" bc="y" lc="2">1</node>
-			<node id="141" bc="y" lc="2">1</node>
-			<node id="142" bc="y" lc="2">1</node>
-			<node id="143" bc="y" lc="2">1</node>
-			<node id="144" bc="y" lc="2">1</node>
-			<node id="175" bc="y" lc="2">1</node>
-			<node id="176" bc="y" lc="2">1</node>
-			<node id="177" bc="y" lc="2">1</node>
-			<node id="178" bc="y" lc="2">1</node>
-			<node id="179" bc="y" lc="2">1</node>
-			<node id="180" bc="y" lc="2">1</node>
-			<node id="211" bc="y" lc="2">1</node>
-			<node id="212" bc="y" lc="2">1</node>
-			<node id="213" bc="y" lc="2">1</node>
-			<node id="214" bc="y" lc="2">1</node>
-			<node id="215" bc="y" lc="2">1</node>
-			<node id="216" bc="y" lc="2">1</node>
+		<fix bc="y" node_set="FixedDisplacement01"/>
+		<fix bc="x" node_set="FixedDisplacement02"/>
+		<fix bc="z" node_set="FixedDisplacement03"/>
+		<prescribe bc="y" node_set="PrescribedBC141">
+			<scale lc="2">1</scale>
+			<relative>0</relative>
 		</prescribe>
 	</Boundary>
 	<LoadData>
 		<loadcurve id="1" type="step">
-			<loadpoint>0,0.5</loadpoint>
-			<loadpoint>5,0.5</loadpoint>
-			<loadpoint>10,0.5</loadpoint>
-			<loadpoint>15,0.5</loadpoint>
-			<loadpoint>20,0.5</loadpoint>
-			<loadpoint>25,0.5</loadpoint>
-			<loadpoint>30,0.5</loadpoint>
-			<loadpoint>35,0.5</loadpoint>
-			<loadpoint>40,0.5</loadpoint>
-			<loadpoint>45,0.5</loadpoint>
-			<loadpoint>50,0.5</loadpoint>
-			<loadpoint>55,0.5</loadpoint>
-			<loadpoint>60,0.5</loadpoint>
-			<loadpoint>65,0.5</loadpoint>
-			<loadpoint>70,0.5</loadpoint>
-			<loadpoint>75,0.5</loadpoint>
-			<loadpoint>80,0.5</loadpoint>
-			<loadpoint>85,0.5</loadpoint>
-			<loadpoint>90,0.5</loadpoint>
-			<loadpoint>95,0.5</loadpoint>
-			<loadpoint>100,0.5</loadpoint>
+			<point>0,0.5</point>
+			<point>5,0.5</point>
+			<point>10,0.5</point>
+			<point>15,0.5</point>
+			<point>20,0.5</point>
+			<point>25,0.5</point>
+			<point>30,0.5</point>
+			<point>35,0.5</point>
+			<point>40,0.5</point>
+			<point>45,0.5</point>
+			<point>50,0.5</point>
+			<point>55,0.5</point>
+			<point>60,0.5</point>
+			<point>65,0.5</point>
+			<point>70,0.5</point>
+			<point>75,0.5</point>
+			<point>80,0.5</point>
+			<point>85,0.5</point>
+			<point>90,0.5</point>
+			<point>95,0.5</point>
+			<point>100,0.5</point>
 		</loadcurve>
-		<loadcurve id="2">
-			<loadpoint>0,0</loadpoint>
-			<loadpoint>5,0.03</loadpoint>
-			<loadpoint>10,0.015</loadpoint>
-			<loadpoint>15,0.03</loadpoint>
-			<loadpoint>20,0.015</loadpoint>
-			<loadpoint>25,0.03</loadpoint>
-			<loadpoint>30,0.015</loadpoint>
-			<loadpoint>35,0.03</loadpoint>
-			<loadpoint>40,0.015</loadpoint>
-			<loadpoint>45,0.03</loadpoint>
-			<loadpoint>50,0.015</loadpoint>
-			<loadpoint>55,0.03</loadpoint>
-			<loadpoint>60,0.015</loadpoint>
-			<loadpoint>65,0.03</loadpoint>
-			<loadpoint>70,0.015</loadpoint>
-			<loadpoint>75,0.03</loadpoint>
-			<loadpoint>80,0.015</loadpoint>
-			<loadpoint>85,0.03</loadpoint>
-			<loadpoint>90,0.015</loadpoint>
-			<loadpoint>95,0.03</loadpoint>
-			<loadpoint>100,0.015</loadpoint>
+		<loadcurve id="2" type="linear">
+			<point>0,0</point>
+			<point>5,0.03</point>
+			<point>10,0.015</point>
+			<point>15,0.03</point>
+			<point>20,0.015</point>
+			<point>25,0.03</point>
+			<point>30,0.015</point>
+			<point>35,0.03</point>
+			<point>40,0.015</point>
+			<point>45,0.03</point>
+			<point>50,0.015</point>
+			<point>55,0.03</point>
+			<point>60,0.015</point>
+			<point>65,0.03</point>
+			<point>70,0.015</point>
+			<point>75,0.03</point>
+			<point>80,0.015</point>
+			<point>85,0.03</point>
+			<point>90,0.015</point>
+			<point>95,0.03</point>
+			<point>100,0.015</point>
 		</loadcurve>
 	</LoadData>
 	<Output>
-		<plotfile type="febio"></plotfile>
+		<plotfile type="febio"/>
 		<logfile>
-			<element_data data="s3">73</element_data>
-		</logfile>	
+			<element_data data="s3" elem_set="unnamed_set01"/>
+		</logfile>
 	</Output>
 </febio_spec>

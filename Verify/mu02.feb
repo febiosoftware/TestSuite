@@ -1,60 +1,50 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!--
-Problem Description:
-	A two element muscle material with fiber orientation in the x-direction has a
-	prescribed x-displacement of -0.01 units at time t=1.
-Main Features:
-	Muscle Material
-Secondary Features:
-	
-Materials:
-	Muscle Material
-Degrees of Freedom: 20
-Results:
-	Steps Completed: 100
-	Equilibrium Iterations: 200
-	Right Hand Evaluations: 300
-	Siffness Reformations: 100
-	Other:
-		The top of the material has a z-displacement of 2.36e-3 units at time t=1.
-Comments:
-	
--->
-<febio_spec version="1.2">
+<febio_spec version="2.5">
+	<Module type="solid"/>
 	<Control>
-		<title>Two Element Muscle</title>
 		<time_steps>100</time_steps>
 		<step_size>0.01</step_size>
 		<max_refs>15</max_refs>
 		<max_ups>10</max_ups>
+		<diverge_reform>1</diverge_reform>
+		<reform_each_time_step>1</reform_each_time_step>
 		<dtol>0.001</dtol>
 		<etol>0.01</etol>
 		<rtol>0</rtol>
 		<lstol>0.9</lstol>
-		<pressure_stiffness>1</pressure_stiffness>
+		<min_residual>1e-020</min_residual>
+		<qnmethod>0</qnmethod>
 		<time_stepper>
 			<dtmin>0.01</dtmin>
 			<dtmax>0.01</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
-		<plot_level>PLOT_DEFAULT</plot_level>
+		<analysis type="static"/>
 	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
 	<Material>
-		<material id="1" type="muscle material">
-			<g1>5e2</g1>
-			<g2>5e2</g2>
+		<material id="1" name="Material01" type="muscle material">
+			<density>1</density>
+			<g1>500</g1>
+			<g2>500</g2>
+			<k>1e+007</k>
 			<p1>0.05</p1>
 			<p2>6.6</p2>
-			<k>1e7</k>
 			<Lofl>1.4</Lofl>
-			<smax>3e5</smax>
 			<lam_max>1.4</lam_max>
+			<smax>300000</smax>
 			<fiber type="vector">1,0,0</fiber>
 		</material>
 	</Material>
 	<Geometry>
-		<Nodes>
+		<Nodes name="mu02">
 			<node id="1">-1.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
 			<node id="2">-1.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
 			<node id="3">-1.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
@@ -68,41 +58,61 @@ Comments:
 			<node id="11"> 1.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
 			<node id="12"> 1.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,     5,     7,     3,     2,     6,     8,     4</hex8>
-			<hex8 id="2" mat="1">     5,     9,    11,     7,     6,    10,    12,     8</hex8>
+		<Elements type="hex8" mat="1" name="Part7">
+			<elem id="1">     1,     5,     7,     3,     2,     6,     8,     4</elem>
+			<elem id="2">     5,     9,    11,     7,     6,    10,    12,     8</elem>
 		</Elements>
+		<NodeSet name="FixedDisplacement01">
+			<node id="1"/>
+			<node id="3"/>
+			<node id="5"/>
+			<node id="7"/>
+			<node id="9"/>
+			<node id="11"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement02">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="5"/>
+			<node id="6"/>
+			<node id="9"/>
+			<node id="10"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement03">
+			<node id="1"/>
+			<node id="2"/>
+			<node id="3"/>
+			<node id="4"/>
+		</NodeSet>
+		<NodeSet name="PrescribedBC192">
+			<node id="9"/>
+			<node id="10"/>
+			<node id="11"/>
+			<node id="12"/>
+		</NodeSet>
+		<ElementSet name="unnamed_set01">
+			<elem id="1"/>
+		</ElementSet>
 	</Geometry>
 	<Boundary>
-		<fix>
-			<node id="1" bc="xyz"></node>
-			<node id="2" bc="xy"></node>
-			<node id="3" bc="xz"></node>
-			<node id="4" bc="x"></node>
-			<node id="5" bc="yz"></node>
-			<node id="6" bc="y"></node>
-			<node id="7" bc="z"></node>
-			<node id="9" bc="yz"></node>
-			<node id="10" bc="y"></node>
-			<node id="11" bc="z"></node>
-		</fix>
-		<prescribe>
-			<node id="9" bc="x" lc="1">1</node>
-			<node id="10" bc="x" lc="1">1</node>
-			<node id="11" bc="x" lc="1">1</node>
-			<node id="12" bc="x" lc="1">1</node>
+		<fix bc="z" node_set="FixedDisplacement01"/>
+		<fix bc="y" node_set="FixedDisplacement02"/>
+		<fix bc="x" node_set="FixedDisplacement03"/>
+		<prescribe bc="x" node_set="PrescribedBC192">
+			<scale lc="1">1</scale>
+			<relative>0</relative>
 		</prescribe>
 	</Boundary>
 	<LoadData>
-		<loadcurve id="1">
-			<loadpoint>0,0</loadpoint>
-			<loadpoint>1,-0.01</loadpoint>
+		<loadcurve id="1" type="linear">
+			<point>0,0</point>
+			<point>1,-0.01</point>
 		</loadcurve>
 	</LoadData>
 	<Output>
-		<plotfile type="febio"></plotfile>
+		<plotfile type="febio"/>
 		<logfile>
-			<element_data data="Ey">1</element_data>
+			<element_data data="Ey" elem_set="unnamed_set01"/>
 		</logfile>
 	</Output>
 </febio_spec>
