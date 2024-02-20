@@ -1,98 +1,139 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A viscoelastic element has a prescribed x-diplacement of 0.0005 at time t=1.
-Main Features:
-	Viscoelasticity
-Secondary Features:
-	
-Materials:
-	Neo-Hookean
-	Viscoelastic
-Degrees of Freedom: 12
-Results:
-	Steps Completed: 25
-	Equilibrium Iterations: 30
-	Right Hand Evaluations: 55
-	Siffness Reformations: 25
-	Other:
-		The element has a maximum displacement of 0.002 at time t=0.2127.
-Comments:
-	
+A viscoelastic element has a prescribed x-diplacement of 0.0005 at time t=1.
 -->
-<febio_spec version="1.2">
+<febio_spec version="3.0">
+	<Module type="solid"/>
 	<Control>
-		<title>Viscoelasticity</title>
+		<analysis>STATIC</analysis>
 		<time_steps>5000</time_steps>
 		<step_size>0.0002</step_size>
-		<max_refs>15</max_refs>
-		<max_ups>10</max_ups>
-		<dtol>0.001</dtol>
-		<etol>0.01</etol>
-		<rtol>0</rtol>
-		<lstol>0.9</lstol>
+		<solver>
+			<max_refs>15</max_refs>
+			<max_ups>10</max_ups>
+			<diverge_reform>1</diverge_reform>
+			<reform_each_time_step>1</reform_each_time_step>
+			<dtol>0.001</dtol>
+			<etol>0.01</etol>
+			<rtol>0</rtol>
+			<lstol>0.9</lstol>
+			<min_residual>1e-20</min_residual>
+			<qnmethod>BFGS</qnmethod>
+			<rhoi>-2</rhoi>
+		</solver>
 		<time_stepper>
 			<dtmin>0.005</dtmin>
 			<dtmax>0.05</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
-		<plot_level>PLOT_DEFAULT</plot_level>
 	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
 	<Material>
 		<material id="1" name="Material 1" type="viscoelastic">
-			<t1>0.01</t1>
+			<density>1</density>
 			<g1>0.95</g1>
-			<elastic id="2" name="Material 2" type="neo-Hookean">
+			<g2>0</g2>
+			<g3>0</g3>
+			<g4>0</g4>
+			<g5>0</g5>
+			<g6>0</g6>
+			<t1>0.01</t1>
+			<t2>1</t2>
+			<t3>1</t3>
+			<t4>1</t4>
+			<t5>1</t5>
+			<t6>1</t6>
+			<elastic name="Material 2" type="neo-Hookean">
 				<E>1</E>
-				<v>0.0</v>
+				<v>0</v>
 			</elastic>
 		</material>
 	</Material>
-	<Geometry>
-		<Nodes>
-			<node id="1">-5.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="2">-5.0000000e-001,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="3">-5.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="4">-5.0000000e-001, 5.0000000e-001, 1.0000000e+000</node>
-			<node id="5"> 5.0000000e-001,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="6"> 5.0000000e-001,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="7"> 5.0000000e-001, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="8"> 5.0000000e-001, 5.0000000e-001, 1.0000000e+000</node>
+	<Mesh>
+		<Nodes name="Object01">
+			<node id="1">-0.5,-0.5,0</node>
+			<node id="2">-0.5,-0.5,1</node>
+			<node id="3">-0.5,0.5,0</node>
+			<node id="4">-0.5,0.5,1</node>
+			<node id="5">0.5,-0.5,0</node>
+			<node id="6">0.5,-0.5,1</node>
+			<node id="7">0.5,0.5,0</node>
+			<node id="8">0.5,0.5,1</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,     5,     7,     3,     2,     6,     8,     4</hex8>
+		<Elements type="hex8" name="Part5">
+			<elem id="1">1,5,7,3,2,6,8,4</elem>
 		</Elements>
-	</Geometry>
+		<NodeSet name="FixedDisplacement01">
+			<n id="1"/>
+			<n id="3"/>
+			<n id="5"/>
+			<n id="7"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement02">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="5"/>
+			<n id="6"/>
+		</NodeSet>
+		<NodeSet name="FixedDisplacement03">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="3"/>
+			<n id="4"/>
+		</NodeSet>
+		<NodeSet name="ForceNodeset01">
+			<n id="5"/>
+			<n id="6"/>
+			<n id="7"/>
+			<n id="8"/>
+		</NodeSet>
+		<NodeSet name="unnamed_set01">
+			<n id="7"/>
+		</NodeSet>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part5" mat="Material 1"/>
+	</MeshDomains>
 	<Boundary>
-		<fix>
-			<node id="1" bc="xyz"></node>
-			<node id="2" bc="xy"></node>
-			<node id="3" bc="xz"></node>
-			<node id="4" bc="x"></node>
-			<node id="5" bc="yz"></node>
-			<node id="6" bc="y"></node>
-			<node id="7" bc="z"></node>
-		</fix>
+		<bc name="FixedDisplacement01" type="fix" node_set="FixedDisplacement01">
+			<dofs>z</dofs>
+		</bc>
+		<bc name="FixedDisplacement02" type="fix" node_set="FixedDisplacement02">
+			<dofs>y</dofs>
+		</bc>
+		<bc name="FixedDisplacement03" type="fix" node_set="FixedDisplacement03">
+			<dofs>x</dofs>
+		</bc>
 	</Boundary>
 	<Loads>
-		<force>
-			<node id="5" bc="x" lc="1">1</node>
-			<node id="6" bc="x" lc="1">1</node>
-			<node id="7" bc="x" lc="1">1</node>
-			<node id="8" bc="x" lc="1">1</node>
-		</force>
+		<nodal_load name="ForceLoad01" type="nodal_load" node_set="ForceNodeset01">
+			<dof>x</dof>
+			<scale lc="1">1</scale>
+		</nodal_load>
 	</Loads>
 	<LoadData>
-		<loadcurve id="1">
-			<loadpoint>0.0,0.0005</loadpoint>
-			<loadpoint>1.0,0.0005</loadpoint>
-		</loadcurve>
+		<load_controller id="1" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<points>
+				<point>0,0.0005</point>
+				<point>1,0.0005</point>
+			</points>
+		</load_controller>
 	</LoadData>
 	<Output>
-		<plotfile type="febio"></plotfile>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="stress"/>
+		</plotfile>
 		<logfile>
-			<node_data data="ux">7</node_data>
+			<node_data data="ux" node_set="unnamed_set01"/>
 		</logfile>
-    </Output>
+	</Output>
 </febio_spec>

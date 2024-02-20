@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<febio_config version="1.0">
-	<linear_solver type="pardiso"></linear_solver>
-	<import>plugins/FEWarp.dll</import>
-</febio_config>

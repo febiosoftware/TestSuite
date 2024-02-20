@@ -1,58 +1,45 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A cube consisting of a single element is modeled with a
-	continuous fiber distribution with a 3D von-Mises distribution
-	density. The fiber dispersion parameter b is set to a large
-	value approximating infinity, so that the distribution is
-	nearly equivalent to a single fiber bundle oriented along the
-	z-direction. An isotropic strain is prescribed on the
-	cube. For these choices, the resulting stress response along z
-	may be compared to an analytical solution.
-Main Features:
-	Continuous fiber distribution
-Secondary Features:
-	Finite element integration scheme
-Materials:
-	solid mixture
-	neo-Hookean
-	continuous fiber distribution
-	fiber-exponential-power-law
-	von-Mises-3d
-	fibers-3d-fei
-Degrees of Freedom: 12
-Results:
-	Steps Completed: 100
-	Equilibrium Iterations: 100
-	Right Hand Evaluations: 200
-	Siffness Reformations: 100
-	Other:
-		The z-stress at time 1 is 186.823.
-Comments:
-	The solution for the z-stress as b goes to infinity is
-	190.016. This solution can be obtained by replacing the
-	continuous fiber distribution material with a fiber-exp-pow material
-	having identical fiber properties. This problem differs from
-	cf01.feb only by the choice of fiber integration scheme.
+A cube consisting of a single element is modeled with a
+continuous fiber distribution with a 3D von-Mises distribution
+density. The fiber dispersion parameter b is set to a large
+value approximating infinity, so that the distribution is
+nearly equivalent to a single fiber bundle oriented along the
+z-direction. An isotropic strain is prescribed on the
+cube. For these choices, the resulting stress response along z
+may be compared to an analytical solution.
+
+The solution for the z-stress as b goes to infinity is
+190.016. This solution can be obtained by replacing the
+continuous fiber distribution material with a fiber-exp-pow material
+having identical fiber properties. This problem differs from
+cf01.feb only by the choice of fiber integration scheme.
 -->
-<febio_spec version="1.2">
+<febio_spec version="3.0">
 	<Module type="solid"/>
 	<Control>
+		<analysis>STATIC</analysis>
 		<time_steps>100</time_steps>
 		<step_size>0.01</step_size>
-		<max_refs>15</max_refs>
-		<max_ups>0</max_ups>
-		<dtol>0.001</dtol>
-		<etol>0.01</etol>
-		<rtol>0</rtol>
-		<lstol>0.9</lstol>
+		<solver>
+			<max_refs>15</max_refs>
+			<max_ups>0</max_ups>
+			<diverge_reform>1</diverge_reform>
+			<reform_each_time_step>1</reform_each_time_step>
+			<dtol>0.001</dtol>
+			<etol>0.01</etol>
+			<rtol>0</rtol>
+			<lstol>0.9</lstol>
+			<min_residual>1e-20</min_residual>
+			<qnmethod>BFGS</qnmethod>
+			<rhoi>-2</rhoi>
+		</solver>
 		<time_stepper>
 			<dtmin>0.001</dtmin>
 			<dtmax>0.01</dtmax>
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
 		</time_stepper>
-		<analysis type="static"/>
 	</Control>
 	<Globals>
 		<Constants>
@@ -63,21 +50,20 @@ Comments:
 	</Globals>
 	<Material>
 		<material id="1" name="Material" type="solid mixture">
-			<mat_axis type="vector">
-				<a>0,0,1</a>
-				<d>1,0,0</d>
-			</mat_axis>
+			<density>1</density>
 			<solid type="neo-Hookean">
-				<density>1</density>
 				<E>1</E>
 				<v>0.3</v>
 			</solid>
 			<solid type="continuous fiber distribution">
-				<fibers type="fiber-exponential-power-law">
+				<mat_axis type="vector">
+					<a>0,0,1</a>
+					<d>1,0,0</d>
+				</mat_axis>
+				<fibers type="fiber-exp-pow">
 					<alpha>2</alpha>
 					<beta>2</beta>
 					<ksi>5</ksi>
-					<mu>0</mu>
 				</fibers>
 				<distribution type="von-Mises-3d">
 					<b>30</b>
@@ -88,60 +74,111 @@ Comments:
 			</solid>
 		</material>
 	</Material>
-	<Geometry>
-		<Nodes>
-			<node id="1"> -5.0000000e-01, -5.0000000e-01,  0.0000000e+00</node>
-			<node id="2"> -5.0000000e-01, -5.0000000e-01,  1.0000000e+00</node>
-			<node id="3"> -5.0000000e-01,  5.0000000e-01,  0.0000000e+00</node>
-			<node id="4"> -5.0000000e-01,  5.0000000e-01,  1.0000000e+00</node>
-			<node id="5">  5.0000000e-01, -5.0000000e-01,  0.0000000e+00</node>
-			<node id="6">  5.0000000e-01, -5.0000000e-01,  1.0000000e+00</node>
-			<node id="7">  5.0000000e-01,  5.0000000e-01,  0.0000000e+00</node>
-			<node id="8">  5.0000000e-01,  5.0000000e-01,  1.0000000e+00</node>
+	<Mesh>
+		<Nodes name="Object01">
+			<node id="1">-0.5,-0.5,0</node>
+			<node id="2">-0.5,-0.5,1</node>
+			<node id="3">-0.5,0.5,0</node>
+			<node id="4">-0.5,0.5,1</node>
+			<node id="5">0.5,-0.5,0</node>
+			<node id="6">0.5,-0.5,1</node>
+			<node id="7">0.5,0.5,0</node>
+			<node id="8">0.5,0.5,1</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,     5,     7,     3,     2,     6,     8,     4</hex8>
+		<Elements type="hex8" name="Part1">
+			<elem id="1">     1,     5,     7,     3,     2,     6,     8,     4</elem>
 		</Elements>
-	</Geometry>
+		<NodeSet name="FixedNodeset01">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="3"/>
+			<n id="4"/>
+		</NodeSet>
+		<NodeSet name="FixedNodeset02">
+			<n id="1"/>
+			<n id="2"/>
+			<n id="5"/>
+			<n id="6"/>
+		</NodeSet>
+		<NodeSet name="FixedNodeset03">
+			<n id="1"/>
+			<n id="3"/>
+			<n id="5"/>
+			<n id="7"/>
+		</NodeSet>
+		<NodeSet name="Nodeset01">
+			<n id="5"/>
+			<n id="6"/>
+			<n id="7"/>
+			<n id="8"/>
+		</NodeSet>
+		<NodeSet name="Nodeset02">
+			<n id="3"/>
+			<n id="4"/>
+			<n id="7"/>
+			<n id="8"/>
+		</NodeSet>
+		<NodeSet name="Nodeset03">
+			<n id="2"/>
+			<n id="4"/>
+			<n id="6"/>
+			<n id="8"/>
+		</NodeSet>
+		<ElementSet name="unnamed_set01">
+			<e id="1"/>
+		</ElementSet>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part1" mat="Material"/>
+	</MeshDomains>
 	<Boundary>
-		<fix>
-			<node id="1" bc="x"/>
-			<node id="2" bc="x"/>
-			<node id="3" bc="x"/>
-			<node id="4" bc="x"/>
-		</fix>
-		<fix>
-			<node id="1" bc="y"/>
-			<node id="2" bc="y"/>
-			<node id="5" bc="y"/>
-			<node id="6" bc="y"/>
-		</fix>
-		<fix>
-			<node id="1" bc="z"/>
-			<node id="3" bc="z"/>
-			<node id="5" bc="z"/>
-			<node id="7" bc="z"/>
-		</fix>
-		<prescribe>
-			<node id="5" bc="x" lc="1">1</node>
-			<node id="6" bc="x" lc="1">1</node>
-			<node id="7" bc="x" lc="1">1</node>
-			<node id="8" bc="x" lc="1">1</node>
-			<node id="3" bc="y" lc="1">1</node>
-			<node id="4" bc="y" lc="1">1</node>
-			<node id="7" bc="y" lc="1">1</node>
-			<node id="8" bc="y" lc="1">1</node>
-			<node id="2" bc="z" lc="1">1</node>
-			<node id="4" bc="z" lc="1">1</node>
-			<node id="6" bc="z" lc="1">1</node>
-			<node id="8" bc="z" lc="1">1</node>
-		</prescribe>
+		<bc name="FixedDisplacement01" type="fix" node_set="FixedNodeset01">
+			<dofs>x</dofs>
+		</bc>
+		<bc name="FixedDisplacement02" type="fix" node_set="FixedNodeset02">
+			<dofs>y</dofs>
+		</bc>
+		<bc name="FixedDisplacement03" type="fix" node_set="FixedNodeset03">
+			<dofs>z</dofs>
+		</bc>
+		<bc name="Nodeset01" type="prescribe" node_set="Nodeset01">
+			<dof>x</dof>
+			<scale lc="1">1</scale>
+			<relative>0</relative>
+		</bc>
+		<bc name="Nodeset02" type="prescribe" node_set="Nodeset02">
+			<dof>y</dof>
+			<scale lc="2">1</scale>
+			<relative>0</relative>
+		</bc>
+		<bc name="Nodeset03" type="prescribe" node_set="Nodeset03">
+			<dof>z</dof>
+			<scale lc="3">1</scale>
+			<relative>0</relative>
+		</bc>
 	</Boundary>
 	<LoadData>
-		<loadcurve id="1" type="smooth">
-			<loadpoint>0,0</loadpoint>
-			<loadpoint>1,0.5</loadpoint>
-		</loadcurve>
+		<load_controller id="1" type="loadcurve">
+			<interpolate>SMOOTH</interpolate>
+			<points>
+				<point>0,0</point>
+				<point>1,0.5</point>
+			</points>
+		</load_controller>
+		<load_controller id="2" type="loadcurve">
+			<interpolate>SMOOTH</interpolate>
+			<points>
+				<point>0,0</point>
+				<point>1,0.5</point>
+			</points>
+		</load_controller>
+		<load_controller id="3" type="loadcurve">
+			<interpolate>SMOOTH</interpolate>
+			<points>
+				<point>0,0</point>
+				<point>1,0.5</point>
+			</points>
+		</load_controller>
 	</LoadData>
 	<Output>
 		<plotfile type="febio">
@@ -150,5 +187,8 @@ Comments:
 			<var type="strain energy density"/>
 			<var type="stress"/>
 		</plotfile>
+		<logfile>
+			<element_data data="sz" elem_set="unnamed_set01"/>
+		</logfile>
 	</Output>
 </febio_spec>
