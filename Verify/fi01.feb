@@ -1,169 +1,206 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-Problem Description:
-	A 10-element bar of trans iso Mooney-Rivlin material udergoes active contraction
-	in the x-direction.
-Main Features:
-	Active contraction of transversely isotropic material
-Secondary Features:
-	
-Materials:
-	trans iso Mooney-Rivlin
-Degrees of Freedom: 84
-Results:
-	Steps Completed: 10
-	Equilibrium Iterations: 39
-	Right Hand Evaluations: 49
-	Siffness Reformations: 10
-	Other:
-		The bar has a maximum x-displacement of -1.08 units at time t=1.
- 
-Comments:
-	
+A 10element bar of trans iso MooneyRivlin material udergoes active contraction
+in the xdirection.
 -->
-<febio_spec version="1.2">
+<febio_spec version="4.0">
+	<Module type="solid"/>
 	<Control>
-		<title>Active Contraction</title>
+		<analysis>STATIC</analysis>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
-		<max_refs>15</max_refs>
-		<max_ups>10</max_ups>
-		<dtol>0.001</dtol>
-		<etol>0.01</etol>
-		<rtol>0</rtol>
-		<lstol>0.9</lstol>
-		<time_stepper>
-			<dtmin>0.01</dtmin>
-			<dtmax>0.1</dtmax>
+		<plot_zero_state>0</plot_zero_state>
+		<plot_range>0,-1</plot_range>
+		<plot_level>PLOT_MAJOR_ITRS</plot_level>
+		<output_level>OUTPUT_MAJOR_ITRS</output_level>
+		<plot_stride>1</plot_stride>
+		<adaptor_re_solve>1</adaptor_re_solve>
+		<time_stepper type="default">
 			<max_retries>5</max_retries>
 			<opt_iter>10</opt_iter>
+			<dtmin>0.01</dtmin>
+			<dtmax>0.1</dtmax>
+			<aggressiveness>0</aggressiveness>
+			<cutback>0.5</cutback>
+			<dtforce>0</dtforce>
 		</time_stepper>
+		<solver type="solid">
+			<symmetric_stiffness>symmetric</symmetric_stiffness>
+			<equation_scheme>staggered</equation_scheme>
+			<equation_order>default</equation_order>
+			<optimize_bw>0</optimize_bw>
+			<lstol>0.9</lstol>
+			<lsmin>0.01</lsmin>
+			<lsiter>5</lsiter>
+			<max_refs>15</max_refs>
+			<check_zero_diagonal>0</check_zero_diagonal>
+			<zero_diagonal_tol>0</zero_diagonal_tol>
+			<force_partition>0</force_partition>
+			<reform_each_time_step>1</reform_each_time_step>
+			<reform_augment>0</reform_augment>
+			<diverge_reform>1</diverge_reform>
+			<min_residual>1e-20</min_residual>
+			<max_residual>0</max_residual>
+			<dtol>0.001</dtol>
+			<etol>0.01</etol>
+			<rtol>0</rtol>
+			<rhoi>-2</rhoi>
+			<alpha>1</alpha>
+			<beta>0.25</beta>
+			<gamma>0.5</gamma>
+			<logSolve>0</logSolve>
+			<arc_length>0</arc_length>
+			<arc_length_scale>0</arc_length_scale>
+			<qn_method type="BFGS">
+				<max_ups>10</max_ups>
+				<max_buffer_size>0</max_buffer_size>
+				<cycle_buffer>1</cycle_buffer>
+				<cmax>100000</cmax>
+			</qn_method>
+		</solver>
 	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
 	<Material>
 		<material id="1" name="Material 1" type="trans iso Mooney-Rivlin">
+			<density>1</density>
+			<k>100</k>
+			<pressure_model>default</pressure_model>
 			<c1>1</c1>
 			<c2>0</c2>
 			<c3>1</c3>
 			<c4>1</c4>
 			<c5>1</c5>
-			<k>100</k>
 			<lam_max>10</lam_max>
-			<fiber type="vector"> 1.0000000e+000, 0.0000000e+000, 0.0000000e+000</fiber>
-			<active_contraction lc="1">
+			<fiber type="vector">
+				<vector>1,0,0</vector>
+			</fiber>
+			<active_contraction>
+				<ascl lc="1">1</ascl>
+				<Tmax>1</Tmax>
 				<ca0>4.75</ca0>
+				<camax>0</camax>
 				<beta>4.35</beta>
 				<l0>1.58</l0>
 				<refl>2.04</refl>
 			</active_contraction>
 		</material>
 	</Material>
-	<Geometry>
-		<Nodes>
-			<node id="1">-5.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="2">-5.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="3">-5.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="4">-5.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
-			<node id="5">-4.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="6">-4.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="7">-4.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="8">-4.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
-			<node id="9">-3.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="10">-3.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="11">-3.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="12">-3.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
-			<node id="13">-2.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="14">-2.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="15">-2.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="16">-2.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
-			<node id="17">-1.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="18">-1.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="19">-1.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="20">-1.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
-			<node id="21"> 0.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="22"> 0.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="23"> 0.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="24"> 0.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
-			<node id="25"> 1.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="26"> 1.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="27"> 1.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="28"> 1.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
-			<node id="29"> 2.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="30"> 2.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="31"> 2.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="32"> 2.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
-			<node id="33"> 3.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="34"> 3.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="35"> 3.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="36"> 3.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
-			<node id="37"> 4.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="38"> 4.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="39"> 4.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="40"> 4.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
-			<node id="41"> 5.0000000e+000,-5.0000000e-001, 0.0000000e+000</node>
-			<node id="42"> 5.0000000e+000,-5.0000000e-001, 1.0000000e+000</node>
-			<node id="43"> 5.0000000e+000, 5.0000000e-001, 0.0000000e+000</node>
-			<node id="44"> 5.0000000e+000, 5.0000000e-001, 1.0000000e+000</node>
+	<Mesh>
+		<Nodes name="Object01">
+			<node id="1">-5,-0.5,0</node>
+			<node id="2">-5,-0.5,1</node>
+			<node id="3">-5,0.5,0</node>
+			<node id="4">-5,0.5,1</node>
+			<node id="5">-4,-0.5,0</node>
+			<node id="6">-4,-0.5,1</node>
+			<node id="7">-4,0.5,0</node>
+			<node id="8">-4,0.5,1</node>
+			<node id="9">-3,-0.5,0</node>
+			<node id="10">-3,-0.5,1</node>
+			<node id="11">-3,0.5,0</node>
+			<node id="12">-3,0.5,1</node>
+			<node id="13">-2,-0.5,0</node>
+			<node id="14">-2,-0.5,1</node>
+			<node id="15">-2,0.5,0</node>
+			<node id="16">-2,0.5,1</node>
+			<node id="17">-1,-0.5,0</node>
+			<node id="18">-1,-0.5,1</node>
+			<node id="19">-1,0.5,0</node>
+			<node id="20">-1,0.5,1</node>
+			<node id="21">0,-0.5,0</node>
+			<node id="22">0,-0.5,1</node>
+			<node id="23">0,0.5,0</node>
+			<node id="24">0,0.5,1</node>
+			<node id="25">1,-0.5,0</node>
+			<node id="26">1,-0.5,1</node>
+			<node id="27">1,0.5,0</node>
+			<node id="28">1,0.5,1</node>
+			<node id="29">2,-0.5,0</node>
+			<node id="30">2,-0.5,1</node>
+			<node id="31">2,0.5,0</node>
+			<node id="32">2,0.5,1</node>
+			<node id="33">3,-0.5,0</node>
+			<node id="34">3,-0.5,1</node>
+			<node id="35">3,0.5,0</node>
+			<node id="36">3,0.5,1</node>
+			<node id="37">4,-0.5,0</node>
+			<node id="38">4,-0.5,1</node>
+			<node id="39">4,0.5,0</node>
+			<node id="40">4,0.5,1</node>
+			<node id="41">5,-0.5,0</node>
+			<node id="42">5,-0.5,1</node>
+			<node id="43">5,0.5,0</node>
+			<node id="44">5,0.5,1</node>
 		</Nodes>
-		<Elements>
-			<hex8 id="1" mat="1">     1,     5,     7,     3,     2,     6,     8,     4</hex8>
-			<hex8 id="2" mat="1">     5,     9,    11,     7,     6,    10,    12,     8</hex8>
-			<hex8 id="3" mat="1">     9,    13,    15,    11,    10,    14,    16,    12</hex8>
-			<hex8 id="4" mat="1">    13,    17,    19,    15,    14,    18,    20,    16</hex8>
-			<hex8 id="5" mat="1">    17,    21,    23,    19,    18,    22,    24,    20</hex8>
-			<hex8 id="6" mat="1">    21,    25,    27,    23,    22,    26,    28,    24</hex8>
-			<hex8 id="7" mat="1">    25,    29,    31,    27,    26,    30,    32,    28</hex8>
-			<hex8 id="8" mat="1">    29,    33,    35,    31,    30,    34,    36,    32</hex8>
-			<hex8 id="9" mat="1">    33,    37,    39,    35,    34,    38,    40,    36</hex8>
-			<hex8 id="10" mat="1">    37,    41,    43,    39,    38,    42,    44,    40</hex8>
+		<Elements type="hex8" name="Part14">
+			<elem id="1">1,5,7,3,2,6,8,4</elem>
+			<elem id="2">5,9,11,7,6,10,12,8</elem>
+			<elem id="3">9,13,15,11,10,14,16,12</elem>
+			<elem id="4">13,17,19,15,14,18,20,16</elem>
+			<elem id="5">17,21,23,19,18,22,24,20</elem>
+			<elem id="6">21,25,27,23,22,26,28,24</elem>
+			<elem id="7">25,29,31,27,26,30,32,28</elem>
+			<elem id="8">29,33,35,31,30,34,36,32</elem>
+			<elem id="9">33,37,39,35,34,38,40,36</elem>
+			<elem id="10">37,41,43,39,38,42,44,40</elem>
 		</Elements>
-	</Geometry>
+		<NodeSet name="FixedDisplacement01">
+			1, 3, 5, 7, 9, 11, 13, 15,
+			17, 19, 21, 23, 25, 27, 29, 31,
+			33, 35, 37, 39, 41, 43
+		</NodeSet>
+		<NodeSet name="FixedDisplacement02">
+			1, 2, 5, 6, 9, 10, 13, 14,
+			17, 18, 21, 22, 25, 26, 29, 30,
+			33, 34, 37, 38, 41, 42
+		</NodeSet>
+		<NodeSet name="FixedDisplacement03">
+			1, 2, 3, 4
+		</NodeSet>
+		<ElementSet name="unnamed_set01">
+			10
+		</ElementSet>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part14" mat="Material 1"/>
+	</MeshDomains>
 	<Boundary>
-		<fix>
-			<node id="1" bc="xyz"></node>
-			<node id="2" bc="xy"></node>
-			<node id="3" bc="xz"></node>
-			<node id="4" bc="x"></node>
-			<node id="5" bc="yz"></node>
-			<node id="6" bc="y"></node>
-			<node id="7" bc="z"></node>
-			<node id="9" bc="yz"></node>
-			<node id="10" bc="y"></node>
-			<node id="11" bc="z"></node>
-			<node id="13" bc="yz"></node>
-			<node id="14" bc="y"></node>
-			<node id="15" bc="z"></node>
-			<node id="17" bc="yz"></node>
-			<node id="18" bc="y"></node>
-			<node id="19" bc="z"></node>
-			<node id="21" bc="yz"></node>
-			<node id="22" bc="y"></node>
-			<node id="23" bc="z"></node>
-			<node id="25" bc="yz"></node>
-			<node id="26" bc="y"></node>
-			<node id="27" bc="z"></node>
-			<node id="29" bc="yz"></node>
-			<node id="30" bc="y"></node>
-			<node id="31" bc="z"></node>
-			<node id="33" bc="yz"></node>
-			<node id="34" bc="y"></node>
-			<node id="35" bc="z"></node>
-			<node id="37" bc="yz"></node>
-			<node id="38" bc="y"></node>
-			<node id="39" bc="z"></node>
-			<node id="41" bc="yz"></node>
-			<node id="42" bc="y"></node>
-			<node id="43" bc="z"></node>
-		</fix>
+		<bc name="FixedDisplacement01" node_set="FixedDisplacement01" type="zero displacement">
+			<x_dof>0</x_dof>
+			<y_dof>0</y_dof>
+			<z_dof>1</z_dof>
+		</bc>
+		<bc name="FixedDisplacement02" node_set="FixedDisplacement02" type="zero displacement">
+			<x_dof>0</x_dof>
+			<y_dof>1</y_dof>
+			<z_dof>0</z_dof>
+		</bc>
+		<bc name="FixedDisplacement03" node_set="FixedDisplacement03" type="zero displacement">
+			<x_dof>1</x_dof>
+			<y_dof>0</y_dof>
+			<z_dof>0</z_dof>
+		</bc>
 	</Boundary>
 	<LoadData>
-		<loadcurve id="1">
-			<loadpoint>0,0</loadpoint>
-			<loadpoint>1,1</loadpoint>
-		</loadcurve>
+		<load_controller id="1" name="LC1" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,0</pt>
+				<pt>1,1</pt>
+			</points>
+		</load_controller>
 	</LoadData>
 	<Output>
-		<plotfile type="febio"></plotfile>
-		<logfile>
-			<element_data data="Ex">10</element_data>
-		</logfile></Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="stress"/>
+		</plotfile>
+	</Output>
 </febio_spec>
