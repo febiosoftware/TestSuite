@@ -12,13 +12,13 @@ It optimizes using a strain-stress curve.
 	<Parameters>
 		<param name="fem.material('tissue').elastic.c1">680,500,1000,500</param>
 		<param name="fem.material('tissue').bond.c1">3850,2000,5000,4000</param>
-		<param name="fem.material('tissue').relaxation.tau1.points.point[1]">0.05,0.01,0.5,0.05</param>
+		<param name="fem.material('tissue').relaxation.tau1.points.point[1]">0.05,0.001,0.5,0.05</param>
 		<param name="fem.material('tissue').relaxation.tau1.points.point[2]">0.2,0.01,0.5,0.2</param>
 		<param name="fem.material('tissue').relaxation.tau2.points.point[0]">1200,1000,3000,1200</param>
 		<param name="fem.material('tissue').relaxation.tau2.points.point[1]">200,150,400,200</param>
 		<param name="fem.material('tissue').relaxation.tau2.points.point[2]">200,150,400,200</param>
 		<param name="fem.material('tissue').recruitment.function.points.point[1]">1,1.0,1.5,1</param>
-		<param name="fem.material('tissue').recruitment.function.points.point[2]">2,1.0,3.0,1</param>
+		<param name="fem.material('tissue').recruitment.function.points.point[2]">2,1.0,6.0,1</param>
 	</Parameters>
 	<Objective type="data-fit">
 		<fnc type="parameter">
