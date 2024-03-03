@@ -924,8 +924,8 @@ distribution densities.
 			<var type="relative volume"/>
 			<var type="strain energy density"/>
 			<var type="stress"/>
-			<var type="RVE generations"/>
-			<var type="RVE reforming bonds"/>
+			<var type="RVE generations['solid[1]']=RVE generations 1"/>
+			<var type="RVE reforming bonds['solid[1]']=RVE reforming bonds 1"/>
 			<var type="strong bond SED"/>
 			<var type="weak bond SED"/>
 		</plotfile>

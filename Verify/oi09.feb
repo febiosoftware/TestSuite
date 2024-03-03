@@ -77,11 +77,11 @@
 			<emin>0.0005</emin>
 			<k>1e7</k>
 			<elastic type="Mooney-Rivlin">
-				<c1>704.1</c1>
+				<c1>698.24</c1>
 				<c2>0</c2>
 			</elastic>
 			<bond type="Mooney-Rivlin">
-				<c1>3931</c1>
+				<c1>4002.2</c1>
 				<c2>0</c2>
 			</bond>
 			<relaxation type="relaxation-Malkin-dist-user">
