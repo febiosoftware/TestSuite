@@ -258,7 +258,7 @@ if __name__ == "__main__":
         
         results = runTestSuite(febioTestBin, NumCores, exp, False)
 
-        if not results[0]:
+        if not results.success:
             exit(1)
 
     elif '-h' in sys.argv:
