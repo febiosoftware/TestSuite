@@ -163,8 +163,17 @@ def runTestSuite(febioTestBin, numCores, regex, commitNew: bool):
     logFile = os.path.join(LOGDIR, str(datetime.date.today()) + ".txt")
     success, subject, message, results = runTests(febioTestBin, VERIFYDIR, VERIFYDIR, stdResults, exp=regex, numCores=numCores, logFilename=logFile)
 
+    # Check for new tests
+    newTests = False
+    resultkeys = results.keys()
+    stdResultKeys = stdResults.keys()
+    for key in resultkeys:
+        if key not in stdResultKeys:
+            newTests = True
+            break
+
     # Add any new tests to the std file
-    if commitNew and len(results) > len(stdResults):
+    if commitNew and newTests:
         if subject != "":
             subject += ", "
             
