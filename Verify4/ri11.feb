@@ -97,9 +97,9 @@ Example that illustrates the use of the "rigid_euler_angles" rigid body constrai
 		</rigid_bc>
 		<rigid_bc name="prescribed rotation" type="rigid_euler_angles">
 			<rb>Material1</rb>
-			<Ex lc="1">1</Ex>
-			<Ey lc="2">1</Ey>
-			<Ez lc="3">1</Ez>
+			<Ex lc="1">60</Ex>
+			<Ey lc="2">60</Ey>
+			<Ez lc="3">60</Ez>
 		</rigid_bc>
 	</Rigid>
 	<LoadData>
