@@ -2,6 +2,7 @@
 
 import os, subprocess, sys, glob, platform, re, fnmatch, copy, datetime, multiprocessing
 from runTests import *
+from acceptChanges import *
 from textwrap import TextWrapper
 
 REPOROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -17,75 +18,6 @@ elif platform.system() == "Linux":
 else:
     from macOSGoldStandards import *
     GOLDSTANDARDS =os.path.join(REPOROOT, "code", "macOSGoldStandards.py")
-
-
-def acceptChanges(logFile, exp = None):
-    if not os.path.isfile(logFile):
-        print(logFile + " does not exist.")
-        
-    oldResults = copy.deepcopy(stdResults)
-    
-    updatedTests = set()
-
-    with open(logFile) as log:
-        for line in log:
-            if not line.startswith('    '):
-                continue
-            
-            splitLine = line.split(':');
-            
-            test = splitLine[0].strip();         
-            results = splitLine[1].split('|')
-            
-            # Skip tests not matching optional exp argument
-            if exp:
-                cont = True
-                for ex in exp:
-                    if re.search(ex, test):
-                        cont = False
-                        break
-                if cont:
-                    continue
-                    
-            for index in range(len(results)):
-                # If an incorrect result is recorded, the correct result will
-                # be shown in parenthesis next to it
-                if '(' in results[index]:
-                    # If we find an incorrect result, add the test to the
-                    # list of updated tests
-                    updatedTests.add(test)
-                    
-                    result = results[index].split('(')[0].strip()
-                    
-                    if "'" in result:
-                        stdResults[test][index + 1] = result.replace("'", '')
-                    else:
-                        stdResults[test][index + 1] = int(result)
-                    
-    with open(GOLDSTANDARDS, "w") as ldata:
-        ldata.write("stdResults = " + str(stdResults).replace("], ", "],\n        ") + "\n\n")
-        
-    if len(updatedTests) == 0:
-        print("No results were updated.")
-    else:
-        print("The following results were updated:")
-        
-        sortedList = list(updatedTests)
-        sortedList.sort()
-        for test in sortedList:
-            print(test + ":")
-            print("\tOld: " + str(oldResults[test]))
-            print("\tNew: " + str(stdResults[test]))
-            
-        
-        # Commit changes and push them
-        print("Committing new standard results.")
-        subprocess.run(["git", "-C", REPOROOT, "stage", GOLDSTANDARDS], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        subprocess.run(["git", "-C", REPOROOT, "commit", "-m", "Updated " + GOLDSTANDARDS + " with new results."], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        print("Pulling and auto-merging")
-        subprocess.run(["git", "-C", REPOROOT, "pull", "--no-edit"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        print("Pushing new commit")
-        subprocess.run(["git", "-C", REPOROOT, "push"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     
 def showHelp():
     wrapper = TextWrapper()
@@ -211,13 +143,10 @@ if __name__ == "__main__":
         index = sys.argv.index('-a')
         
         if len(sys.argv) > index + 1 and sys.argv[index+1] != "-e":
-            acceptChanges(sys.argv[index+1], exp)
+            acceptChangesLocal(REPOROOT, sys.argv[index+1], exp)
         else:
-            logs = glob.glob(os.path.join(LOGDIR, "*.txt"))
-            latestFile = max(logs, key=os.path.getctime)
-            
-            print("Accepting changes from latest log file: " + latestFile + "\n")
-            acceptChanges(latestFile, exp)
+            print("Accepting changes from latest GitHub actions")
+            acceptChangesRemote(REPOROOT, exp)
     
     elif '-r' in sys.argv:
         # find the febio binary
