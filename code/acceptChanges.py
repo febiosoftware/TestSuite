@@ -92,7 +92,7 @@ def _acceptChanges(repoRoot, log, stdResults, standardsFile, exp):
         # Commit changes 
         print("Committing new standard results.")
         subprocess.run(["git", "-C", repoRoot, "stage", standardsFile], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        subprocess.run(["git", "-C", repoRoot, "commit", "-m", "Updated " + standardsFile + " with new results."], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.run(["git", "-C", repoRoot, "commit", "-m", "Updated " + os.path.basename(standardsFile) + " with new results."], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 def acceptChangesRemote(repoRoot, exp = None):
     
