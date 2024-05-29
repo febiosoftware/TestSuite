@@ -194,7 +194,7 @@ if __name__ == "__main__":
                 NumCores = defaultCores
                 print("Cannot parse cores number. Defauling to " + str(defaultCores) + " cores.\nPlease pass the number of cores after the '-c' flag as a positive integer.")
         
-        results = runTestSuite(febioTestBin, NumCores, exp, False)
+        results = runTestSuite(febioTestBin, NumCores, exp, True)
 
         if not results.success:
             exit(1)
