@@ -58,27 +58,35 @@ def _acceptChanges(repoRoot, log, stdResults, standardsFile, exp):
                     break
             if cont:
                 continue
-                
+
+        diff = False        
         for index in range(len(results)):
             # If an incorrect result is recorded, the correct result will
             # be shown in parenthesis next to it
             if '(' in results[index]:
-                # If we find an incorrect result, add the test to the
-                # list of updated tests
-                updatedTests.add(test)
-                
                 result = results[index].split('(')[0].strip()
+
+                # Check if the current result is actually different from the standards
+                if stdResults[test][index + 1] == result:
+                    diff = True
                 
                 if "'" in result:
                     stdResults[test][index + 1] = result.replace("'", '')
                 else:
                     stdResults[test][index + 1] = int(result)
+        
+        # If we find an incorrect result, add the test to the
+        # list of updated tests
+        if diff:
+            updatedTests.add(test)
                     
     with open(standardsFile, "w") as ldata:
         ldata.write("stdResults = " + str(stdResults).replace("], ", "],\n        ") + "\n\n")
         
     if len(updatedTests) == 0:
         print("No results were updated.")
+
+        return False
     else:
         print("The following results were updated:")
         
@@ -94,8 +102,11 @@ def _acceptChanges(repoRoot, log, stdResults, standardsFile, exp):
         subprocess.run(["git", "-C", repoRoot, "stage", standardsFile], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         subprocess.run(["git", "-C", repoRoot, "commit", "-m", "Updated " + os.path.basename(standardsFile) + " with new results."], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
+        return True
+
 def acceptChangesRemote(repoRoot, exp = None):
-    
+    push = False
+
     # Windows
     print("Accepting Windows changes")
     osName = "Windows"
@@ -103,7 +114,8 @@ def acceptChangesRemote(repoRoot, exp = None):
     standardsFile = os.path.join(repoRoot, "code", "windowsGoldStandards.py")
     
     log = _getLogLines(osName)
-    _acceptChanges(repoRoot, log, stdResults, standardsFile, exp)
+    if _acceptChanges(repoRoot, log, stdResults, standardsFile, exp):
+        push = True
 
     # Linux
     print("Accepting Linux changes")
@@ -112,7 +124,8 @@ def acceptChangesRemote(repoRoot, exp = None):
     standardsFile = os.path.join(repoRoot, "code", "linuxGoldStandards.py")
     
     log = _getLogLines(osName)
-    _acceptChanges(repoRoot, log, stdResults, standardsFile, exp)
+    if _acceptChanges(repoRoot, log, stdResults, standardsFile, exp):
+        push = True
     
     # macOS
     print("Accepting macOS changes")
@@ -121,9 +134,13 @@ def acceptChangesRemote(repoRoot, exp = None):
     standardsFile = os.path.join(repoRoot, "code", "macOSGoldStandards.py")
 
     log = _getLogLines(osName)
-    _acceptChanges(repoRoot, log, stdResults, standardsFile, exp)
+    if _acceptChanges(repoRoot, log, stdResults, standardsFile, exp):
+        push = True
 
-    _pullPush(repoRoot)
+    if push:
+        _pullPush(repoRoot)
+    else:
+        print("No new commits. Nothing to push.")
 
 
 def acceptChangesLocal(repoRoot, logFile, exp = None):
@@ -141,6 +158,9 @@ def acceptChangesLocal(repoRoot, logFile, exp = None):
         standardsFile =os.path.join(repoRoot, "code", "macOSGoldStandards.py")
 
     with open(logFile) as log:
-        _acceptChanges(repoRoot, log, stdResults, standardsFile, exp)
+        push = _acceptChanges(repoRoot, log, stdResults, standardsFile, exp)
 
-    _pullPush(repoRoot)
+    if push:
+        _pullPush(repoRoot)
+    else:
+        print("No new commits. Nothing to push.")
