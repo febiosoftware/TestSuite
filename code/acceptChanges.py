@@ -1,6 +1,6 @@
 import requests, zipfile, io, subprocess, copy, re, os, platform
 
-def _getLogFile(osName):
+def _getLogLines(osName):
 
     token = ""
     try:
@@ -26,7 +26,7 @@ def _getLogFile(osName):
             logName = name
             break
 
-    return zip.read(logName).decode()
+    return zip.read(logName).decode().split("\n")
 
 def _pullPush(repoRoot):
     print("Pulling and auto-merging")
@@ -102,7 +102,7 @@ def acceptChangesRemote(repoRoot, exp = None):
     from windowsGoldStandards import stdResults
     standardsFile = os.path.join(repoRoot, "code", "windowsGoldStandards.py")
     
-    log = _getLogFile(osName)
+    log = _getLogLines(osName)
     _acceptChanges(repoRoot, log, stdResults, standardsFile, exp)
 
     # Linux
@@ -111,7 +111,7 @@ def acceptChangesRemote(repoRoot, exp = None):
     from linuxGoldStandards import stdResults
     standardsFile = os.path.join(repoRoot, "code", "linuxGoldStandards.py")
     
-    log = _getLogFile(osName)
+    log = _getLogLines(osName)
     _acceptChanges(repoRoot, log, stdResults, standardsFile, exp)
     
     # macOS
@@ -120,7 +120,7 @@ def acceptChangesRemote(repoRoot, exp = None):
     from macOSGoldStandards import stdResults
     standardsFile = os.path.join(repoRoot, "code", "macOSGoldStandards.py")
 
-    log = _getLogFile(osName)
+    log = _getLogLines(osName)
     _acceptChanges(repoRoot, log, stdResults, standardsFile, exp)
 
     _pullPush(repoRoot)
