@@ -79,10 +79,10 @@ def _commitNewTestResultsToGithub(newResults):
     with open(GOLDSTANDARDS, "w") as ldata:
         ldata.write("stdResults = " + str(newResults).replace("], ", "],\n        ") + "\n\n")
 
-    subprocess.run(["git", "-C", REPOROOT, "stage", GOLDSTANDARDS], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    subprocess.run(["git", "-C", REPOROOT, "commit", "-m", "Updated " + GOLDSTANDARDS + " with new tests."], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    subprocess.run(["git", "-C", REPOROOT, "pull", "--no-edit"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    subprocess.run(["git", "-C", REPOROOT, "push"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(["git", "-C", REPOROOT, "stage", GOLDSTANDARDS])#, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(["git", "-C", REPOROOT, "commit", "-m", "Updated " + GOLDSTANDARDS + " with new tests."])#, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(["git", "-C", REPOROOT, "pull", "--no-edit"])#, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(["git", "-C", REPOROOT, "push"])#, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 # class defining the test report
 class TestReport:
@@ -200,6 +200,8 @@ if __name__ == "__main__":
             commitNew = True
         
         results = runTestSuite(febioTestBin, NumCores, exp, commitNew)
+
+        print(results.message)
 
         if not results.success:
             exit(1)
