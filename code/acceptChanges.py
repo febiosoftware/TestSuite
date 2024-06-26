@@ -11,7 +11,7 @@ def _getLogLines(osName):
 
     headers = {'User-Agent': 'python-requests/2.18.4', 'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + token}
 
-    response = requests.get("https://api.github.com/repos/febiosoftware/febio/actions/artifacts?per_page=1,name=testsuite" + osName + "-X64-logs", 
+    response = requests.get("https://api.github.com/repos/febiosoftware/febio/actions/artifacts?per_page=1&name=testsuite-" + osName + "-X64-logs", 
                             headers=headers)
 
     id = (response.json()["artifacts"][0]["id"])
@@ -67,7 +67,7 @@ def _acceptChanges(repoRoot, log, stdResults, standardsFile, exp):
                 result = results[index].split('(')[0].strip()
 
                 # Check if the current result is actually different from the standards
-                if stdResults[test][index + 1] == result:
+                if stdResults[test][index + 1] != result:
                     diff = True
                 
                 if "'" in result:
