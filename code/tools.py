@@ -44,6 +44,7 @@ def showHelp():
     print(wrapper.fill("Also accepts optional argument to specify the number of simultaneous tests to run:"))
     print("")
     print("    -c [num]  Runs suite with [num] simultaneous problems.")
+    print("    -n If there were new problems in the suite, add them to the gold standards")
     
     print("")
     print("-e [exp] ...  Selects problems matching [exp]")
@@ -193,8 +194,12 @@ if __name__ == "__main__":
             if coreFail:
                 NumCores = defaultCores
                 print("Cannot parse cores number. Defauling to " + str(defaultCores) + " cores.\nPlease pass the number of cores after the '-c' flag as a positive integer.")
+
+        commitNew = False
+        if '-n' in sys.argv:
+            commitNew = True
         
-        results = runTestSuite(febioTestBin, NumCores, exp, True)
+        results = runTestSuite(febioTestBin, NumCores, exp, commitNew)
 
         if not results.success:
             exit(1)
