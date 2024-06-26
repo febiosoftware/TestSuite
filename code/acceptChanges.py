@@ -66,15 +66,16 @@ def _acceptChanges(repoRoot, log, stdResults, standardsFile, exp):
             if '(' in results[index]:
                 result = results[index].split('(')[0].strip()
 
+                if "'" in result:
+                    result = result.replace("'", '')
+                else:
+                    result = int(result)
+
                 # Check if the current result is actually different from the standards
                 if stdResults[test][index + 1] != result:
                     diff = True
+                    stdResults[test][index + 1] = result
                 
-                if "'" in result:
-                    stdResults[test][index + 1] = result.replace("'", '')
-                else:
-                    stdResults[test][index + 1] = int(result)
-        
         # If we find an incorrect result, add the test to the
         # list of updated tests
         if diff:
