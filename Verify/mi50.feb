@@ -72,12 +72,9 @@ This file was created with FEBio Studio version 1.0.0
 				<E>1</E>
 				<v>0.3</v>
 			</elastic>
-			<growth type="area growth">
-				<multiplier lc="1">1</multiplier>
-				<fiber type="angles">
-					<theta>0</theta>
-					<phi>0</phi>
-				</fiber>
+			<growth type="general growth">
+				<iso lc="1">1</iso>
+				<ani>1</ani>
 			</growth>
 		</material>
 	</Material>

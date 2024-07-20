@@ -139,6 +139,7 @@ This file was created with FEBio Studio version 1.0.0
 		<plotfile type="febio">
 			<var type="displacement"/>
 			<var type="relative volume"/>
+			<var type="growth relative volume"/>
 			<var type="strain energy density"/>
 			<var type="stress"/>
 		</plotfile>
