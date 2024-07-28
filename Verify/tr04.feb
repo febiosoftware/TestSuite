@@ -3,7 +3,7 @@
 Onedimensional steadystate electrophoresis and electroosmosis of a triphasic material.  To examine the phenomena of electrophoresis and electroosmosis, consider a tissue described by a triphasic material with ions Na+ and Cl and a negatively charged solid matrix. The tissue (thickness h = 1 mm) is located between an upstream and a downstream bath. In these baths, due to electroneutrality and the absence of a charged solid matrix, the anion and cation concentrations must be the same. The salt concentrations in the upstream and downstream baths may also be taken to be the same (c0 = 150 mM), to prevent diffusion and osmosis. To produce electrophoresis and electroosmosis, ramp up the electric potential from psi0 = 0 mV to 10 mV in the upstream bath, whereas the downstream bath is maintained at a 0 mV, thereby creating an electric potential gradient across the tissue thickness. Also let the pressure equal ambient conditions (0 MPa) in both baths, to prevent permeation and barophoresis. All of these conditions may be combined to produce the following boundary conditions: On the upstream side, the effective fluid pressure is pe_u =  2 R T c0, the effective concentrations are ce_u[Na] = c0 exp(Fc psi0/R T) and ce_u[Cl] = c0 exp(Fc psi0/R T), and on the downstream side, pe_d = 2 R T c0, ce_d[Na] = c0, ce_d[Cl]=c0. For initial conditions, it may be assumed that the electric potential upstream is initially zero, thus pe = 2 R T c0, ce[Na]=c0, and ce[Cl]=c0 throughout the tissue initially.  The fixed charge density is ramped from 0 to 200 mM in Step 1.  The upstream electric potential is ramped in Step 2.
 -->
 <febio_spec version="4.0">
-	<Module type="solute"/>
+	<Module type="multiphasic"/>
 	<Globals>
 		<Constants>
 			<T>293</T>
@@ -468,7 +468,7 @@ Onedimensional steadystate electrophoresis and electroosmosis of a triphasic mat
 					<cutback>0.5</cutback>
 					<dtforce>0</dtforce>
 				</time_stepper>
-				<solver type="solute">
+				<solver type="multiphasic">
 					<symmetric_stiffness>non-symmetric</symmetric_stiffness>
 					<equation_scheme>staggered</equation_scheme>
 					<equation_order>default</equation_order>
@@ -496,7 +496,6 @@ Onedimensional steadystate electrophoresis and electroosmosis of a triphasic mat
 					<arc_length>0</arc_length>
 					<arc_length_scale>0</arc_length_scale>
 					<ptol>0.01</ptol>
-					<mixed_formulation>0</mixed_formulation>
 					<ctol>0.01</ctol>
 					<qn_method type="Broyden">
 						<max_ups>0</max_ups>
@@ -527,7 +526,7 @@ Onedimensional steadystate electrophoresis and electroosmosis of a triphasic mat
 					<cutback>0.5</cutback>
 					<dtforce>0</dtforce>
 				</time_stepper>
-				<solver type="solute">
+				<solver type="multiphasic">
 					<symmetric_stiffness>non-symmetric</symmetric_stiffness>
 					<equation_scheme>staggered</equation_scheme>
 					<equation_order>default</equation_order>
@@ -555,7 +554,6 @@ Onedimensional steadystate electrophoresis and electroosmosis of a triphasic mat
 					<arc_length>0</arc_length>
 					<arc_length_scale>0</arc_length_scale>
 					<ptol>0.01</ptol>
-					<mixed_formulation>0</mixed_formulation>
 					<ctol>0.01</ctol>
 					<qn_method type="Broyden">
 						<max_ups>0</max_ups>

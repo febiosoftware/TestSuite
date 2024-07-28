@@ -8,7 +8,7 @@ transient analysis where the compressive displacement prescribed on the top surf
 is relative to the freeswelling state.
 -->
 <febio_spec version="4.0">
-	<Module type="solute"/>
+	<Module type="multiphasic"/>
 	<Globals>
 		<Constants>
 			<T>293</T>
@@ -852,7 +852,7 @@ is relative to the freeswelling state.
 					<cutback>0.5</cutback>
 					<dtforce>0</dtforce>
 				</time_stepper>
-				<solver type="solute">
+				<solver type="multiphasic">
 					<symmetric_stiffness>non-symmetric</symmetric_stiffness>
 					<equation_scheme>staggered</equation_scheme>
 					<equation_order>default</equation_order>
@@ -880,7 +880,6 @@ is relative to the freeswelling state.
 					<arc_length>0</arc_length>
 					<arc_length_scale>0</arc_length_scale>
 					<ptol>0.01</ptol>
-					<mixed_formulation>0</mixed_formulation>
 					<ctol>0.01</ctol>
 					<qn_method type="Broyden">
 						<max_ups>0</max_ups>
@@ -911,7 +910,7 @@ is relative to the freeswelling state.
 					<cutback>0.5</cutback>
 					<dtforce>0</dtforce>
 				</time_stepper>
-				<solver type="solute">
+				<solver type="multiphasic">
 					<symmetric_stiffness>non-symmetric</symmetric_stiffness>
 					<equation_scheme>staggered</equation_scheme>
 					<equation_order>default</equation_order>
@@ -939,7 +938,6 @@ is relative to the freeswelling state.
 					<arc_length>0</arc_length>
 					<arc_length_scale>0</arc_length_scale>
 					<ptol>0.01</ptol>
-					<mixed_formulation>0</mixed_formulation>
 					<ctol>0.01</ctol>
 					<qn_method type="Broyden">
 						<max_ups>0</max_ups>
