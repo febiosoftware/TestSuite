@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<febio_optimize version="2.0">
+	<Options type="levmar">
+		<obj_tol>0.001</obj_tol>
+		<f_diff_scale>0.001</f_diff_scale>
+		<print_level>PRINT_VERBOSE</print_level>
+	</Options>
+	<Parameters>
+		<param name="fem.material[0].E">0.3, .1, 5</param>
+	</Parameters>
+	<Objective type="data-fit">
+		<fnc type="filter_sum">
+			<element_data data="=sx+sy+sz" elem_set="Part1"/>
+		</fnc>
+		<data>
+			<pt>0.0,          0</pt>
+			<pt>0.1, 4.23384094</pt>
+			<pt>0.2,8.140159964</pt>
+			<pt>0.3,11.81386715</pt>
+			<pt>0.4,15.32280939</pt>
+			<pt>0.5,18.71696257</pt>
+			<pt>0.6,22.03398209</pt>
+			<pt>0.7,25.30279849</pt>
+			<pt>0.8, 28.5460181</pt>
+			<pt>0.9,31.78156733</pt>
+			<pt>1.0, 35.0238449</pt>
+		</data>
+	</Objective>
+</febio_optimize>
