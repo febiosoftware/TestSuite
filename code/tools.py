@@ -9,15 +9,19 @@ REPOROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VERIFYDIR = os.path.join(REPOROOT, "Verify", "")
 LOGDIR = os.path.join(REPOROOT, "Logs")
 
-if platform.system() == "Windows":
-    from windowsGoldStandards import *
-    GOLDSTANDARDS =os.path.join(REPOROOT, "code", "windowsGoldStandards.py")
-elif platform.system() == "Linux":
-    from linuxGoldStandards import *
-    GOLDSTANDARDS =os.path.join(REPOROOT, "code", "linuxGoldStandards.py")
+if '-l' in sys.argv:
+    from localGoldStandards import *
+    GOLDSTANDARDS =os.path.join(REPOROOT, "code", "localGoldStandards.py")
 else:
-    from macOSGoldStandards import *
-    GOLDSTANDARDS =os.path.join(REPOROOT, "code", "macOSGoldStandards.py")
+    if platform.system() == "Windows":
+        from windowsGoldStandards import *
+        GOLDSTANDARDS =os.path.join(REPOROOT, "code", "windowsGoldStandards.py")
+    elif platform.system() == "Linux":
+        from linuxGoldStandards import *
+        GOLDSTANDARDS =os.path.join(REPOROOT, "code", "linuxGoldStandards.py")
+    else:
+        from macOSGoldStandards import *
+        GOLDSTANDARDS =os.path.join(REPOROOT, "code", "macOSGoldStandards.py")
     
 def showHelp():
     wrapper = TextWrapper()
@@ -93,6 +97,10 @@ class TestReport:
 
 # run the test suite and return a TestReport object
 def runTestSuite(febioTestBin, numCores, regex, commitNew: bool):
+
+    print("Using FEBio binary:", febioTestBin)
+    print("Using gold standards:", GOLDSTANDARDS)
+
     logFile = os.path.join(LOGDIR, str(datetime.date.today()) + ".txt")
     success, subject, message, results = runTests(febioTestBin, VERIFYDIR, VERIFYDIR, stdResults, exp=regex, numCores=numCores, logFilename=logFile)
 
@@ -144,7 +152,10 @@ if __name__ == "__main__":
         index = sys.argv.index('-a')
         
         if len(sys.argv) > index + 1 and sys.argv[index+1] != "-e":
-            acceptChangesLocal(REPOROOT, sys.argv[index+1], exp)
+            commitAndPush = True
+            if '-l' in sys.argv:
+                commitAndPush = False # don't commit if using local gold standards
+            acceptChangesLocal(REPOROOT, sys.argv[index+1], stdResults, GOLDSTANDARDS, exp, commitAndPush)
         else:
             print("Accepting changes from latest GitHub actions")
             acceptChangesRemote(REPOROOT, exp)
@@ -169,7 +180,6 @@ if __name__ == "__main__":
         else:
             print("Please pass in a valid path to an FEBio binary or set FEBIO_TEST_BIN")
             sys.exit(1)
-
 
         defaultCores = multiprocessing.cpu_count()
         NumCores = defaultCores
