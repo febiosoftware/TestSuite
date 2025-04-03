@@ -1674,7 +1674,6 @@ to t=1.  It then detaches from the spring, which is allowed to recoil dynamicall
 	<Boundary>
 		<bc name="RigidInterface01" node_set="RigidNodeset 1" type="rigid">
 			<rb>fixed</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 	</Boundary>
 	<Rigid>

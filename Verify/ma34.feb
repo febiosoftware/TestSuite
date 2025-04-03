@@ -7653,11 +7653,9 @@ Figs. 11 and 12
 	<Boundary>
 		<bc name="RigidInterface02" node_set="RigidInterface02" type="rigid">
 			<rb>Left RB</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 		<bc name="RigidInterface03" node_set="RigidInterface03" type="rigid">
 			<rb>Right RB</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 	</Boundary>
 	<Rigid>

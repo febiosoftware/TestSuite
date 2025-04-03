@@ -5125,7 +5125,6 @@ Multistep analysis with tiedelastic contact defined in second step. Tied contact
 		</bc>
 		<bc name="Rigid1" node_set="@surface:Rigid1" type="rigid">
 			<rb>Top rigid substrate</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 	</Boundary>
 	<Rigid>

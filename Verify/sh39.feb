@@ -367,11 +367,9 @@ prescribed x displacement of 2 at t=1.
 	<Boundary>
 		<bc name="RigidInterface02" node_set="RigidNodeset 1" type="rigid">
 			<rb>shell1</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 		<bc name="RigidInterface03" node_set="RigidNodeset 2" type="rigid">
 			<rb>shell2</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 	</Boundary>
 	<Rigid>

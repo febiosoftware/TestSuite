@@ -220,11 +220,9 @@ has a prescribed xdisplacement of 1 unit at time t=1.
 		</bc>
 		<bc name="RigidInterface03" node_set="RigidNodeset 1" type="rigid">
 			<rb>rigid2</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 		<bc name="RigidInterface02" node_set="RigidNodeset 2" type="rigid">
 			<rb>rigid 1</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 	</Boundary>
 	<Rigid>

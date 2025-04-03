@@ -403,7 +403,6 @@ by rigid contact to a rigid body with a prescribed rotation of 1 radian in time 
 		</bc>
 		<bc name="RigidInterface02" node_set="RigidNodeset 1" type="rigid">
 			<rb>Material 2</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 	</Boundary>
 	<Rigid>

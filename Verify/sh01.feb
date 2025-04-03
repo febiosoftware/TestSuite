@@ -4074,7 +4074,6 @@ contact on its bottom end to a rigid spherical shell with zdislacement of
 		</bc>
 		<bc name="RigidInterface02" node_set="RigidNodeset 1" type="rigid">
 			<rb>Material 2</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 	</Boundary>
 	<Rigid>
