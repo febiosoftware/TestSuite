@@ -725,11 +725,6 @@
 			<penalty>1</penalty>
 			<minaug>0</minaug>
 			<maxaug>10</maxaug>
-			<search_tolerance>0.0001</search_tolerance>
-			<offset_shells>0</offset_shells>
-			<max_distance>0</max_distance>
-			<special>1</special>
-			<node_reloc>0</node_reloc>
 			<primary>primary</primary>
 			<secondary>secondary</secondary>
 		</constraint>
