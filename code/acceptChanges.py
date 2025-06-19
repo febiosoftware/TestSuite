@@ -34,8 +34,17 @@ def _pullPush(repoRoot):
     print("Pushing new commit")
     subprocess.run(["git", "-C", repoRoot, "push"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
+def _commitToRepo(repoRoot, filepath, message):
+    print("Committing to repo")
+    subprocess.run(["git", "-C", repoRoot, "stage", filepath], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(["git", "-C", repoRoot, "commit", "-m", message], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-def _acceptChanges(repoRoot, log, stdResults, standardsFile, exp):
+# builds a python file from a log file that contains test results. 
+# log (in): the name of the log file
+# stdResults (in/out): the original test results are overwritten with the results from the log file
+# standardsFile (in): the name of the output file
+# exp (in) : regex that sets what log entries to process (or empty for all entries)
+def _buildStandardsFileFromLog(log, stdResults, standardsFile, exp) -> bool:
     oldResults = copy.deepcopy(stdResults)
     
     updatedTests = set()
@@ -97,13 +106,16 @@ def _acceptChanges(repoRoot, log, stdResults, standardsFile, exp):
             print(test + ":")
             print("\tOld: " + str(oldResults[test]))
             print("\tNew: " + str(stdResults[test]))
-            
-        # Commit changes 
-        print("Committing new standard results.")
-        subprocess.run(["git", "-C", repoRoot, "stage", standardsFile], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        subprocess.run(["git", "-C", repoRoot, "commit", "-m", "Updated " + os.path.basename(standardsFile) + " with new results."], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
         return True
+
+def _acceptChanges(repoRoot, log, stdResults, standardsFile, exp):
+
+    if _buildStandardsFileFromLog(log, stdResults, standardsFile, exp):
+        print("Committing new standard results.")
+        _commitToRepo(repoRoot, standardsFile, "Updated " + os.path.basename(standardsFile) + " with new results.")
+        return True
+    else:
+        return False
 
 def acceptChangesRemote(repoRoot, exp = None):
     push = False
@@ -144,24 +156,17 @@ def acceptChangesRemote(repoRoot, exp = None):
         print("No new commits. Nothing to push.")
 
 
-def acceptChangesLocal(repoRoot, logFile, exp = None):
+def acceptChangesLocal(repoRoot, logFile, stdResults, standardsFile, exp = None, commitAndPush = True):
     if not os.path.isfile(logFile):
         print(logFile + " does not exist.")
-        
-    if platform.system() == "Windows":
-        from windowsGoldStandards import stdResults
-        standardsFile =os.path.join(repoRoot, "code", "windowsGoldStandards.py")
-    elif platform.system() == "Linux":
-        from linuxGoldStandards import stdResults
-        standardsFile =os.path.join(repoRoot, "code", "linuxGoldStandards.py")
-    else:
-        from macOSGoldStandards import stdResults
-        standardsFile =os.path.join(repoRoot, "code", "macOSGoldStandards.py")
-
+        return
+    
     with open(logFile) as log:
-        push = _acceptChanges(repoRoot, log, stdResults, standardsFile, exp)
-
-    if push:
-        _pullPush(repoRoot)
-    else:
-        print("No new commits. Nothing to push.")
+        success = _buildStandardsFileFromLog(log, stdResults, standardsFile, exp)
+        if commitAndPush:
+            if success:
+                print("Committing new standard results.")
+                _commitToRepo(repoRoot, standardsFile, "Updated " + os.path.basename(standardsFile) + " with new results.")
+                _pullPush(repoRoot)
+            elif (success == False):
+                print("No new commits. Nothing to push.")

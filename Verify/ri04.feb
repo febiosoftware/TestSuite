@@ -5805,11 +5805,9 @@ with prescribed rotation of 6.2 radians in time t=62.
 	<Boundary>
 		<bc name="RigidInterface02" node_set="RigidNodeset 1" type="rigid">
 			<rb>Material02</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 		<bc name="RigidInterface03" node_set="RigidNodeset 2" type="rigid">
 			<rb>Material03</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 	</Boundary>
 	<Rigid>

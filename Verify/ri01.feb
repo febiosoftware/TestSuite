@@ -249,7 +249,6 @@ applied force of 0.05 units at time t=1.
 		</bc>
 		<bc name="RigidInterface01" node_set="RigidNodeset 1" type="rigid">
 			<rb>Material 1</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 	</Boundary>
 	<Rigid>

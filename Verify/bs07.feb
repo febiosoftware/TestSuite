@@ -43,13 +43,6 @@
 			<dtol>0.001</dtol>
 			<etol>0.01</etol>
 			<rtol>0</rtol>
-			<rhoi>-2</rhoi>
-			<alpha>1</alpha>
-			<beta>0.25</beta>
-			<gamma>0.5</gamma>
-			<logSolve>0</logSolve>
-			<arc_length>0</arc_length>
-			<arc_length_scale>0</arc_length_scale>
 			<ptol>0.01</ptol>
 			<mixed_formulation>0</mixed_formulation>
 			<ctol>0.01</ctol>

@@ -79490,19 +79490,15 @@ Finger Hood Model with springs connecting the extensor indicis to the bone.
 		</bc>
 		<bc name="RigidInterface08" node_set="RigidNodeset 1" type="rigid">
 			<rb>Material 8</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 		<bc name="RigidInterface07" node_set="RigidNodeset 2" type="rigid">
 			<rb>Material 7</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 		<bc name="RigidInterface06" node_set="RigidNodeset 3" type="rigid">
 			<rb>Material 6</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 		<bc name="RigidInterface06" node_set="RigidNodeset 4" type="rigid">
 			<rb>Material 6</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 	</Boundary>
 	<Rigid>

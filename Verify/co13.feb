@@ -3742,11 +3742,9 @@ Penetration is slightly better using augmented lagrangian, but convergence is be
 		</bc>
 		<bc name="RigidInterface03" node_set="RigidNodeset 1" type="rigid">
 			<rb>Material 5</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 		<bc name="RigidInterface03" node_set="RigidNodeset 2" type="rigid">
 			<rb>Material 5</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 	</Boundary>
 	<Rigid>

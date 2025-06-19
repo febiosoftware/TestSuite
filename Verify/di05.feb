@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<febio_spec version="4.0">
+	<Module type="solid"/>
+	<Control>
+		<analysis>STATIC</analysis>
+		<time_steps>20</time_steps>
+		<step_size>0.05</step_size>
+		<plot_zero_state>0</plot_zero_state>
+		<plot_range>0,-1</plot_range>
+		<plot_level>PLOT_MAJOR_ITRS</plot_level>
+		<output_level>OUTPUT_MAJOR_ITRS</output_level>
+		<plot_stride>1</plot_stride>
+		<adaptor_re_solve>1</adaptor_re_solve>
+		<solver type="solid">
+			<symmetric_stiffness>symmetric</symmetric_stiffness>
+			<equation_scheme>staggered</equation_scheme>
+			<equation_order>default</equation_order>
+			<optimize_bw>0</optimize_bw>
+			<lstol>0.9</lstol>
+			<lsmin>0.01</lsmin>
+			<lsiter>5</lsiter>
+			<max_refs>15</max_refs>
+			<check_zero_diagonal>0</check_zero_diagonal>
+			<zero_diagonal_tol>0</zero_diagonal_tol>
+			<force_partition>0</force_partition>
+			<reform_each_time_step>1</reform_each_time_step>
+			<reform_augment>0</reform_augment>
+			<diverge_reform>1</diverge_reform>
+			<min_residual>1e-20</min_residual>
+			<max_residual>0</max_residual>
+			<dtol>0.001</dtol>
+			<etol>0.01</etol>
+			<rtol>0</rtol>
+			<rhoi>0</rhoi>
+			<alpha>1</alpha>
+			<beta>0.25</beta>
+			<gamma>0.5</gamma>
+			<logSolve>0</logSolve>
+			<arc_length>0</arc_length>
+			<arc_length_scale>0</arc_length_scale>
+			<qn_method type="BFGS">
+				<max_ups>10</max_ups>
+				<max_buffer_size>0</max_buffer_size>
+				<cycle_buffer>1</cycle_buffer>
+				<cmax>100000</cmax>
+			</qn_method>
+		</solver>
+	</Control>
+	<Globals>
+		<Constants>
+			<T>0</T>
+			<P>0</P>
+			<R>0</R>
+			<Fc>0</Fc>
+		</Constants>
+	</Globals>
+	<Material>
+		<material id="1" name="Left" type="rigid body">
+			<density>1</density>
+			<E>0</E>
+			<v>0</v>
+			<center_of_mass>-0.1,0,0</center_of_mass>
+		</material>
+		<material id="2" name="Right" type="rigid body">
+			<density>1</density>
+			<E>0</E>
+			<v>0</v>
+			<center_of_mass>1.1,0,0</center_of_mass>
+		</material>
+	</Material>
+	<Mesh>
+		<Nodes name="Right">
+			<node id="1">-0.136735389,0.176755893,-0.107435774</node>
+			<node id="2">-0.131360925,-0.176755893,-0.106706075</node>
+			<node id="3">0.00628608869,0.0023553537,0.000403499829</node>
+			<node id="4">-0.145694689,0.000454490741,0.198893374</node>
+		</Nodes>
+		<Nodes name="Clone1">
+			<node id="5">1.14455108,-0.176755886,-0.103998374</node>
+			<node id="6">1.13917663,0.176755886,-0.103268675</node>
+			<node id="7">1.00152961,-0.00235534608,0.00384089983</node>
+			<node id="8">1.15351039,-0.000454491347,0.202330774</node>
+		</Nodes>
+		<Elements type="tet4" name="Part1">
+			<elem id="1">2,3,1,4</elem>
+		</Elements>
+		<Elements type="tet4" name="Part3">
+			<elem id="2">6,7,5,8</elem>
+		</Elements>
+		<DiscreteSet name="Muscle">
+			<delem>3,7</delem>
+		</DiscreteSet>
+	</Mesh>
+	<MeshDomains>
+		<SolidDomain name="Part1" mat="Left"/>
+		<SolidDomain name="Part3" mat="Right"/>
+	</MeshDomains>
+	<Rigid>
+		<rigid_bc name="Fix_Left" type="rigid_fixed">
+			<rb>Left</rb>
+			<Rx_dof>1</Rx_dof>
+			<Ry_dof>1</Ry_dof>
+			<Rz_dof>1</Rz_dof>
+			<Ru_dof>1</Ru_dof>
+			<Rv_dof>1</Rv_dof>
+			<Rw_dof>1</Rw_dof>
+		</rigid_bc>
+		<rigid_bc name="Constrain_Right" type="rigid_fixed">
+			<rb>Right</rb>
+			<Rx_dof>0</Rx_dof>
+			<Ry_dof>1</Ry_dof>
+			<Rz_dof>1</Rz_dof>
+			<Ru_dof>1</Ru_dof>
+			<Rv_dof>1</Rv_dof>
+			<Rw_dof>1</Rw_dof>
+		</rigid_bc>
+		<rigid_load name="Force_Right" type="rigid_force">
+			<rb>Right</rb>
+			<dof>Rx</dof>
+			<value lc="1">60</value>
+			<load_type>LOAD</load_type>
+			<relative>0</relative>
+		</rigid_load>
+	</Rigid>
+	<Discrete>
+		<discrete_material id="1" name="Muscle" type="Hill">
+			<Vmax>1</Vmax>
+			<ac>1</ac>
+			<Fmax>50</Fmax>
+			<Ksh>5</Ksh>
+			<Lmax>1</Lmax>
+			<L0>0</L0>
+			<Ftl type="point">
+				<interpolate>smooth</interpolate>
+				<extend>constant</extend>
+				<points>
+					<pt>0,0</pt>
+					<pt>0.197752808989,0.0172413793103</pt>
+					<pt>0.404494382022,0.0632183908046</pt>
+					<pt>0.606741573034,0.275862068966</pt>
+					<pt>0.8,0.706896551724</pt>
+					<pt>0.898876404494,0.919540229885</pt>
+					<pt>1,1</pt>
+					<pt>1.09662921348,0.919540229885</pt>
+					<pt>1.29887640449,0.477011494253</pt>
+					<pt>1.50561797753,0.126436781609</pt>
+					<pt>1.69887640449,0.0344827586207</pt>
+					<pt>2,0</pt>
+				</points>
+			</Ftl>
+			<Fvl type="point">
+				<interpolate>linear</interpolate>
+				<extend>constant</extend>
+				<points>
+					<pt>-1,0</pt>
+					<pt>-0.795031055901,0.0620689655172</pt>
+					<pt>-0.60248447205,0.113793103448</pt>
+					<pt>-0.409937888199,0.21724137931</pt>
+					<pt>-0.204968944099,0.424137931034</pt>
+					<pt>-0.0621118012422,0.765517241379</pt>
+					<pt>0.0310559006211,1.24137931034</pt>
+					<pt>0.0807453416149,1.30344827586</pt>
+					<pt>0.285714285714,1.37586206897</pt>
+					<pt>0.67701863354,1.40689655172</pt>
+					<pt>0.888198757764,1.40689655172</pt>
+				</points>
+			</Fvl>
+		</discrete_material>
+		<discrete dmat="1" discrete_set="Muscle"/>
+	</Discrete>
+	<LoadData>
+		<load_controller id="1" name="LC2" type="loadcurve">
+			<interpolate>LINEAR</interpolate>
+			<extend>CONSTANT</extend>
+			<points>
+				<pt>0,1</pt>
+				<pt>1,1</pt>
+			</points>
+		</load_controller>
+	</LoadData>
+	<Output>
+		<plotfile type="febio">
+			<var type="displacement"/>
+			<var type="reaction forces"/>
+			<var type="rigid force"/>
+			<var type="stress"/>
+		</plotfile>
+	</Output>
+</febio_spec>

@@ -13240,11 +13240,9 @@ time t=62 on the crank.
 		</bc>
 		<bc name="RigidInterface06" node_set="RigidNodeset 1" type="rigid">
 			<rb>piston1</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 		<bc name="RigidInterface07" node_set="RigidNodeset 2" type="rigid">
 			<rb>piston2</rb>
-			<clamp_shells>1</clamp_shells>
 		</bc>
 		<bc name="fixed_chamber1" node_set="@elem_set:Part11" type="zero displacement">
 			<x_dof>1</x_dof>
