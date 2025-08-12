@@ -10,7 +10,7 @@ def _getBaseOfFilename(fileName):
 
 # This function builds the list of files that will be run. 
 # It includes all the files with extension feb in the provided directory that match the regular expression (if provided).
-def _buildFileList(testDir, exp = None):
+def _buildFileList(testDir, exp = None, searchStr = None):
 
     print(testDir)
 
@@ -21,6 +21,7 @@ def _buildFileList(testDir, exp = None):
     # build the testfile list
     testFiles = []
     for fileName in allFiles:
+        
         baseName = _getBaseOfFilename(fileName)
 
         # skip optimization input files
@@ -36,6 +37,20 @@ def _buildFileList(testDir, exp = None):
                     break
             if skipFile:
                 continue
+
+        if searchStr:
+            file = open(fileName)
+            if file:
+                found = False
+                for line in file:
+                    if re.search(searchStr, line):
+                        found = True
+                        break
+                file.close()
+                if not found:
+                    continue
+            else:
+                print(f"ERROR: Failed opening file {fileName}")
 
         # add it to the pile
         testFiles.append(fileName)
@@ -381,10 +396,10 @@ def _createTestReport(results, stdResults, elapsedTime, logFilename = None):
     return success, subject, message
 
 # This function will run the test suite
-def runTests(febioPath, verifyDir, workDir, stdResults, exp=None, numCores=1, logFilename = None):
+def runTests(febioPath, verifyDir, workDir, stdResults, exp=None, searchStr = None, numCores=1, logFilename = None):
     
     # get all the testsuite files
-    testFiles = _buildFileList(verifyDir, exp)
+    testFiles = _buildFileList(verifyDir, exp, searchStr)
     print("Running %1d test file(s)" %(len(testFiles)))
 
     # mark start point

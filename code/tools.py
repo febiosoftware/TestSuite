@@ -58,24 +58,31 @@ def showHelp():
     print(wrapper.fill("    tools.py -r -e bi co"))
     print(wrapper.fill("To only accept changes from a few specific probelms: "))
     print(wrapper.fill("    tools.py -a [logfile] -e dm17 co01 fl36"))
+    print("")
+    print("-s [string]  Finds files that contain the search string 'string'")  
+    print(wrapper.fill("             When combined with -r, only the files that contain the search string will be run."))
 
 def searchFEBioFiles(searchString):
     print("Searching FEBio files in ", VERIFYDIR)
     files = os.listdir(VERIFYDIR)
-    matches = 0
+    lineMatches = 0
+    fileMatches = 0
     for filename in files:
         if fnmatch.fnmatch(filename, "*.feb"):
             file = open(os.path.join(VERIFYDIR, filename))
             linenr = 0
+            oldMatches = lineMatches
             for line in file:
                 linenr += 1
                 if re.search(searchString, line):
                     print(filename + " (line " + str(linenr) + "):" + line[:-1])
-                    matches += 1
-    if matches==0:
+                    lineMatches += 1
+            if oldMatches != lineMatches:
+                fileMatches += 1
+    if lineMatches==0:
         print("no matches found")
     else:
-        print("%d matches found" %(matches))
+        print(f"{lineMatches} matches found (in {fileMatches} files)")
 
 # commit new results to git repo
 def _commitNewTestResultsToGithub(newResults):
@@ -96,13 +103,13 @@ class TestReport:
         self.message = message
 
 # run the test suite and return a TestReport object
-def runTestSuite(febioTestBin, numCores, regex, commitNew: bool):
+def runTestSuite(febioTestBin, numCores, regex, searchString, commitNew: bool):
 
     print("Using FEBio binary:", febioTestBin)
     print("Using gold standards:", GOLDSTANDARDS)
 
     logFile = os.path.join(LOGDIR, str(datetime.date.today()) + ".txt")
-    success, subject, message, results = runTests(febioTestBin, VERIFYDIR, VERIFYDIR, stdResults, exp=regex, numCores=numCores, logFilename=logFile)
+    success, subject, message, results = runTests(febioTestBin, VERIFYDIR, VERIFYDIR, stdResults, exp=regex, searchStr=searchString, numCores=numCores, logFilename=logFile)
 
     # Check for new tests
     newTests = False
@@ -208,8 +215,13 @@ if __name__ == "__main__":
         commitNew = False
         if '-n' in sys.argv:
             commitNew = True
+
+        searchStr = ""
+        if '-s' in sys.argv:
+            index = sys.argv.index('-s')
+            searchStr = sys.argv[index + 1]
         
-        results = runTestSuite(febioTestBin, NumCores, exp, commitNew)
+        results = runTestSuite(febioTestBin, NumCores, exp, searchStr, commitNew)
 
         if not results.success:
             exit(1)
