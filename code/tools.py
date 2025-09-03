@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os, subprocess, sys, glob, platform, re, fnmatch, copy, datetime, multiprocessing
+
 from runTests import *
 from acceptChanges import *
 from textwrap import TextWrapper
@@ -8,6 +9,7 @@ from textwrap import TextWrapper
 REPOROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VERIFYDIR = os.path.join(REPOROOT, "Verify", "")
 LOGDIR = os.path.join(REPOROOT, "Logs")
+
 
 if '-l' in sys.argv:
     from localGoldStandards import *

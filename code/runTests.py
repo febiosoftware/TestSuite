@@ -1,5 +1,7 @@
 import os, platform, atexit, glob, time, re, subprocess
 
+from tools import VERIFYDIR
+
 #helper function for getting the base of a filename
 def _getBaseOfFilename(fileName):
     if platform.system() == "Windows":
@@ -60,7 +62,7 @@ def _buildFileList(testDir, exp = None, searchStr = None):
 # helper function for starting a process.
 # just pass the command and we'll do the rest!
 def _startProcess(command):
-    return subprocess.Popen(command, env={"OMP_NUM_THREADS": "1"}, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    return subprocess.Popen(command, env={"OMP_NUM_THREADS": "1"}, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, cwd=VERIFYDIR)
 
 # helper function for running an optimization test file
 def _runOptimizationTestFile(febioPath, fileName, optFile, logname, pltname):
