@@ -71,7 +71,7 @@ This is a test problem for the first-order homogenization feature in FEBio.
 	<Material>
 		<material id="1" name="Material1" type="micro-material">
 			<density>1</density>
-			<RVE>../Verify/ma74.rve</RVE>
+			<RVE>ma74.rve</RVE>
 			<bc_set>boundary</bc_set>
 			<probe>
 				<element_id>1</element_id>
