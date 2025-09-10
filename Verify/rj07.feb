@@ -28,7 +28,7 @@ A pendulum in a dynamic analysis.
 			<equation_scheme>staggered</equation_scheme>
 			<equation_order>default</equation_order>
 			<optimize_bw>0</optimize_bw>
-			<lstol>0.9</lstol>
+			<lstol>0</lstol>
 			<lsmin>0.01</lsmin>
 			<lsiter>5</lsiter>
 			<max_refs>15</max_refs>

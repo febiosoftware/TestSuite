@@ -5,7 +5,7 @@ A crankslider linkage with precribed revolute joint rotation in a dynamic analys
 <febio_spec version="4.0">
 	<Module type="solid"/>
 	<Control>
-		<analysis>DYNAMIC</analysis>
+		<analysis>STATIC</analysis>
 		<time_steps>72</time_steps>
 		<step_size>0.5</step_size>
 		<plot_zero_state>0</plot_zero_state>
@@ -28,7 +28,7 @@ A crankslider linkage with precribed revolute joint rotation in a dynamic analys
 			<equation_scheme>staggered</equation_scheme>
 			<equation_order>default</equation_order>
 			<optimize_bw>0</optimize_bw>
-			<lstol>0.9</lstol>
+			<lstol>0</lstol>
 			<lsmin>0.01</lsmin>
 			<lsiter>5</lsiter>
 			<max_refs>15</max_refs>
@@ -43,7 +43,7 @@ A crankslider linkage with precribed revolute joint rotation in a dynamic analys
 			<dtol>0.001</dtol>
 			<etol>0.01</etol>
 			<rtol>0</rtol>
-			<rhoi>0</rhoi>
+			<rhoi>-2</rhoi>
 			<alpha>1</alpha>
 			<beta>0.25</beta>
 			<gamma>0.5</gamma>
