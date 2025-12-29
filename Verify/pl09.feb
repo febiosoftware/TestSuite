@@ -1942,6 +1942,7 @@ represent the yield point, with stress = Young's modulus x strain
 			<var type="yielded bond fraction"/>
 			<var type="left Hencky"/>
 			<var type="right Hencky"/>
+                        <var type="plastic yield stress"/>
 		</plotfile>
 	</Output>
 </febio_spec>

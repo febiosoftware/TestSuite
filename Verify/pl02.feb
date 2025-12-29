@@ -156,6 +156,8 @@ This model demonstrates the response of a reactive plasticity material which has
 			<var type="relative volume"/>
 			<var type="stress"/>
 			<var type="yielded bond fraction"/>
+                        <var type="octahedral plastic strain"/>
+                        <var type="plastic yield stress"/>
 		</plotfile>
 	</Output>
 </febio_spec>

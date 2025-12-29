@@ -177,6 +177,7 @@ Mild steel
 			<var type="reaction forces"/>
 			<var type="relative volume"/>
 			<var type="stress"/>
+                        <var type="plastic yield stress"/>
 		</plotfile>
 	</Output>
 </febio_spec>

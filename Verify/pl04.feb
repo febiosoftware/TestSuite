@@ -159,6 +159,8 @@ Demonstrates the response of a reactive plasticity material which has 10 bond fa
 			<var type="relative volume"/>
 			<var type="stress"/>
 			<var type="yielded bond fraction"/>
+                        <var type="octahedral plastic strain"/>
+                        <var type="plastic yield stress"/>
 		</plotfile>
 	</Output>
 </febio_spec>
