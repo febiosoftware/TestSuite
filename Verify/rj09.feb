@@ -154,8 +154,8 @@ A prismatic joint with a prescribed translation in a static analysis.
 			<body_a>Ground</body_a>
 			<body_b>Slider</body_b>
 			<k>1</k>
-			<insertion_a>0,0,1</insertion_a>
-			<insertion_b>0,0,3</insertion_b>
+			<insertion_a>0,0,3</insertion_a>
+			<insertion_b>0,0,1</insertion_b>
 			<free_length>0</free_length>
 		</rigid_connector>
 	</Rigid>
