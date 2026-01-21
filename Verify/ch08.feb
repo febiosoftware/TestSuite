@@ -6,6 +6,7 @@
 		<step_size>0.1</step_size>
 		<solver type="reaction-diffusion">
 			<force_positive_concentrations>0</force_positive_concentrations>
+			<alpha>0.5</alpha>
 		</solver>
 	</Control>
 	<Globals>

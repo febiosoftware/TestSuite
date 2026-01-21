@@ -4,7 +4,9 @@
 	<Control>
 		<time_steps>10</time_steps>
 		<step_size>0.1</step_size>
-		<solver type="reaction-diffusion"/>
+		<solver type="reaction-diffusion">
+			<alpha>0.5</alpha>
+		</solver>
 	</Control>
 	<Globals>
 		<Constants>

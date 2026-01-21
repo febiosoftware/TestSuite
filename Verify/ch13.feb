@@ -8,6 +8,7 @@
 			<Ctol>0.001</Ctol>
 			<Rtol>0.01</Rtol>
 			<force_positive_concentrations>0</force_positive_concentrations>
+			<alpha>0.5</alpha>
 		</solver>
 	</Control>
 	<Globals>

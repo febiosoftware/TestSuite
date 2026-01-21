@@ -9,6 +9,7 @@
 			<Rtol>0</Rtol>
 			<Ctol>0</Ctol>
 			<force_positive_concentrations>1</force_positive_concentrations>
+			<alpha>0.5</alpha>
 		</solver>
 		<time_stepper>
 			<dtmin>0.001</dtmin>

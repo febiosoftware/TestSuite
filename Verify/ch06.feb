@@ -8,6 +8,7 @@
 			<Ctol>0.001</Ctol>
 			<Rtol>0.01</Rtol>
 			<min_residual>1e-20</min_residual>
+			<alpha>0.5</alpha>
 		</solver>
 	</Control>
 	<Globals>
