@@ -6,4 +6,4 @@
 Logs/
 __pycache__
 code/__pycache__
-./code/localGoldStandards.py
+code/localGoldStandards.py
