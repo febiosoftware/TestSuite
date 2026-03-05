@@ -89,9 +89,6 @@ def searchFEBioFiles(searchString):
 # commit new results to git repo
 def _commitNewTestResultsToGithub(newResults):
 
-    with open(GOLDSTANDARDS, "w") as ldata:
-        ldata.write("stdResults = " + str(newResults).replace("], ", "],\n        ") + "\n\n")
-
     subprocess.run(["git", "-C", REPOROOT, "stage", GOLDSTANDARDS], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     subprocess.run(["git", "-C", REPOROOT, "commit", "-m", "Updated " + platform.system() + " standards with new tests."], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     subprocess.run(["git", "-C", REPOROOT, "pull", "--no-edit"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -123,7 +120,7 @@ def runTestSuite(febioTestBin, numCores, regex, searchString, commitNew: bool):
             break
 
     # Add any new tests to the std file
-    if commitNew and newTests:
+    if newTests:
         if subject != "":
             subject += ", "
             
@@ -136,7 +133,14 @@ def runTestSuite(febioTestBin, numCores, regex, searchString, commitNew: bool):
                 message += "\t" + key + "\n"
                 stdResults[key] = results[key]
 
-        _commitNewTestResultsToGithub(stdResults)
+        # update the gold standards file
+        print("New tests were added to the suite. Updating gold standards...")
+        with open(GOLDSTANDARDS, "w") as ldata:
+            ldata.write("stdResults = " + str(stdResults).replace("], ", "],\n        ") + "\n\n")
+
+        if commitNew:
+            print("Committing new standards to GitHub...")
+            _commitNewTestResultsToGithub(stdResults)
 
     return TestReport(success, subject, message)
 
@@ -212,7 +216,7 @@ if __name__ == "__main__":
             
             if coreFail:
                 NumCores = defaultCores
-                print("Cannot parse cores number. Defauling to " + str(defaultCores) + " cores.\nPlease pass the number of cores after the '-c' flag as a positive integer.")
+                print("Cannot parse cores number. Defaulting to " + str(defaultCores) + " cores.\nPlease pass the number of cores after the '-c' flag as a positive integer.")
 
         commitNew = False
         if '-n' in sys.argv:

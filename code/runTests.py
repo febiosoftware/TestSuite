@@ -164,12 +164,14 @@ def _processFileResults(workDir, baseName, returnCode, stdResults):
     # determine which, if any, convergence criteria failed
     fail = [False] * len(results)
     
+    isNew = False
     try:
         index = 0
         for index in range(1, len(results)):
             if results[index] != stdResults[baseName][index]:
                 fail[index] = True
     except:
+        isNew = True
         pass
 
     # color codes for printing results:
@@ -177,11 +179,12 @@ def _processFileResults(workDir, baseName, returnCode, stdResults):
     # green  = test passed
     # blue   = all criteria passed, except plot file size
     # yellow = some criteria failed
-    BLUE   = '\033[96m'
+    BLUE   = '\033[36m'
     RED    = '\033[91m'
     GREEN  = '\033[92m'
     WHITE  = '\033[37m'
     YELLOW = '\033[93m'
+    CYAN   = '\033[96m'
 
     # if the test error terminated
     if results[0] != "Normal":
@@ -209,7 +212,10 @@ def _processFileResults(workDir, baseName, returnCode, stdResults):
 
     # if the test passed
     else:
-        print(GREEN + baseName + ": " + str(results) + WHITE)
+        if isNew:
+            print(CYAN + baseName + ": " + str(results) + WHITE)
+        else:
+            print(GREEN + baseName + ": " + str(results) + WHITE)
 
     return results
 
