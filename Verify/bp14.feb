@@ -225,9 +225,6 @@ displacement on the upstream surface is unconstrained.
 		<Surface name="NormalTraction1">
 			<quad4 id="1">22,64,43,1</quad4>
 		</Surface>
-		<ElementSet name="unnamed_set01">
-			1
-		</ElementSet>
 	</Mesh>
 	<MeshDomains>
 		<SolidDomain name="Part1" mat="Biphasic material"/>
@@ -258,7 +255,7 @@ displacement on the upstream surface is unconstrained.
 			<mixture>1</mixture>
 		</surface_load>
 		<surface_load name="NormalTraction0" surface="NormalTraction1" type="normal_traction">
-			<traction lc="3">1</traction>
+			<traction>0</traction>
 			<linear>0</linear>
 			<shell_bottom>0</shell_bottom>
 			<effective>1</effective>
@@ -280,14 +277,6 @@ displacement on the upstream surface is unconstrained.
 			<points>
 				<pt>0,0</pt>
 				<pt>1,-0.0002</pt>
-			</points>
-		</load_controller>
-		<load_controller id="3" name="LC3" type="loadcurve">
-			<interpolate>SMOOTH</interpolate>
-			<extend>CONSTANT</extend>
-			<points>
-				<pt>0,0</pt>
-				<pt>1,0</pt>
 			</points>
 		</load_controller>
 	</LoadData>

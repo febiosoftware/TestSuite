@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<febio_optimize version="2.0">
+	<Options type="levmar">
+		<obj_tol>0.0001</obj_tol>
+		<f_diff_scale>0.001</f_diff_scale>
+		<log_level>LOG_DEFAULT</log_level>
+		<print_level>PRINT_ITERATIONS</print_level>
+	</Options>
+	<Parameters>
+		<param name="fem.material('Material1').E">100,50,200</param>
+	</Parameters>
+	<Objective type="target">
+		<var name="fem.mesh.node.fromId(22).position.z">-0.2</var>
+	</Objective>
+</febio_optimize>
