@@ -92,6 +92,9 @@ def _commitNewTestResultsToGithub(newResults):
     with open(GOLDSTANDARDS, "w") as ldata:
         ldata.write("stdResults = " + str(newResults).replace("], ", "],\n        ") + "\n\n")
 
+    subprocess.run(["git", "-C", REPOROOT, "config", "user.email", "ci-bot@febio.org"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(["git", "-C", REPOROOT, "config", "user.name", "CI Bot"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
     subprocess.run(["git", "-C", REPOROOT, "stage", GOLDSTANDARDS], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     subprocess.run(["git", "-C", REPOROOT, "commit", "-m", "Updated " + platform.system() + " standards with new tests."], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     subprocess.run(["git", "-C", REPOROOT, "pull", "--no-edit"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
