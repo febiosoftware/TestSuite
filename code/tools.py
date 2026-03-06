@@ -88,6 +88,8 @@ def searchFEBioFiles(searchString):
 
 # commit new results to git repo
 def _commitNewTestResultsToGithub(newResults):
+    subprocess.run(["git", "-C", REPOROOT, "config", "user.email", "ci-bot@febio.org"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(["git", "-C", REPOROOT, "config", "user.name", "CI Bot"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     subprocess.run(["git", "-C", REPOROOT, "stage", GOLDSTANDARDS], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     subprocess.run(["git", "-C", REPOROOT, "commit", "-m", "Updated " + platform.system() + " standards with new tests."], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
