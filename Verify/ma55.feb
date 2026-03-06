@@ -84,7 +84,7 @@
 					<b>0.3</b>
 				</distribution>
 				<scheme type="fibers-3d-fei">
-					<resolution>196</resolution>
+					<resolution> 196</resolution>
 				</scheme>
 			</solid>
 		</material>

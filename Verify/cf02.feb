@@ -99,7 +99,7 @@ cf01.feb only by the choice of fiber integration scheme.
 					<b>30</b>
 				</distribution>
 				<scheme type="fibers-3d-fei">
-					<resolution>1796</resolution>
+					<resolution> 1796</resolution>
 				</scheme>
 				<mat_axis type="vector">
 					<a>0,0,1</a>
