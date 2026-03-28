@@ -1,6 +1,19 @@
-import os, platform, atexit, glob, time, re, subprocess
+import os, sys, platform, atexit, glob, time, re, subprocess
 
 from tools import VERIFYDIR
+
+def set_title(text: str):
+    if os.name == "nt":
+        # Windows
+        try:
+            import ctypes
+            ctypes.windll.kernel32.SetConsoleTitleW(text)
+        except Exception:
+            os.system(f"title {text}")
+    else:
+        # Linux / macOS (ANSI escape sequence)
+        sys.stdout.write(f"\033]0;{text}\007")
+        sys.stdout.flush()
 
 #helper function for getting the base of a filename
 def _getBaseOfFilename(fileName):
@@ -66,12 +79,12 @@ def _startProcess(command):
 
 # helper function for running an optimization test file
 def _runOptimizationTestFile(febioPath, fileName, optFile, logname, pltname):
-    command = [febioPath, '-i', optFile, '-s', fileName, '-o', logname, '-p', pltname]
+    command = [febioPath, '-i', optFile, '-s', fileName, '-o', logname, '-p', pltname, '-silent']
     return _startProcess(command)
 
 # helper function for running plain vanilla test problem
 def _runStandardTestFile(febioPath, fileName, logname, pltname):
-    command = [febioPath, '-i', fileName, '-o', logname, '-p', pltname, '-task=test']
+    command = [febioPath, '-i', fileName, '-o', logname, '-p', pltname, '-task=test', '-silent']
 #   command = [febioPath, '-i', fileName, '-o', logname, '-p', pltname]
 #   command = [febioPath, '-i', fileName, '-task=restart_test']
     return _startProcess(command)
@@ -82,6 +95,9 @@ def _processFileResults(workDir, baseName, returnCode, stdResults):
 
     # define the results field. This will depend on whether the problem is an optimization problem or not
     results = []
+
+    # we assume the test passed, until we find otherwise
+    status = True
 
     # Check if test is an optimization problem
     opt = "op" in baseName
@@ -189,8 +205,10 @@ def _processFileResults(workDir, baseName, returnCode, stdResults):
     # if the test error terminated
     if results[0] != "Normal":
         print(RED + baseName + ": " + str(results) + WHITE)
+        status = False
     # if the test failed convergence criteria
-    elif True in fail:                
+    elif True in fail:
+        status = False
         resultStrings = str(results).replace("[", "").replace("]", "").split(",")
         
         failFlag = 0
@@ -217,7 +235,7 @@ def _processFileResults(workDir, baseName, returnCode, stdResults):
         else:
             print(GREEN + baseName + ": " + str(results) + WHITE)
 
-    return results
+    return [results, status]
 
 # runs a list of files and returns results
 def _runFilesInList(testFiles, febioPath, verifyDir, workDir, numCores, stdResults):
@@ -228,6 +246,11 @@ def _runFilesInList(testFiles, febioPath, verifyDir, workDir, numCores, stdResul
             proc.kill()
 
     atexit.register(cleanup)
+
+    # the number of tests to run.
+    numTests = len(testFiles)
+    numCompleted = 0
+    numFailed = 0
 
     # Loop over the tests and run them
     running = {}
@@ -284,15 +307,22 @@ def _runFilesInList(testFiles, febioPath, verifyDir, workDir, numCores, stdResul
         # process the finished files
         # (and remove the files from the running list)
         for baseName in finished:
-            results[baseName] = _processFileResults(workDir, baseName, running[baseName].returncode, stdResults)
+            [res, status] = _processFileResults(workDir, baseName, running[baseName].returncode, stdResults)
+            results[baseName] = res
+            if not status:
+                numFailed += 1
             del running[baseName]
 
         # We take a little nap here, to prevent the outer while loop from taking up processor time 
         # when waiting for a processor to free up
         time.sleep(0.01)
 
+        # update the title with the progress
+        numCompleted += len(finished)
+        set_title(f"{numCompleted}/{numTests} completed")
+
     # all done!
-    return results
+    return results, numFailed
 
 # return the list of problems that crashed or error terminated
 def _getErrorTerminations(results):
@@ -415,7 +445,12 @@ def runTests(febioPath, verifyDir, workDir, stdResults, exp=None, searchStr = No
 
     # run the test suite
     # returns a dictionary with the stats: {basename : [list of stats]}
-    results = _runFilesInList(testFiles, febioPath, verifyDir, workDir, numCores, stdResults)
+    results, numFailed = _runFilesInList(testFiles, febioPath, verifyDir, workDir, numCores, stdResults)
+
+    # count the number of tests that completed successfully, and the number that failed
+    numPassed = len(results) - numFailed
+    
+    print(f"Tests passed: {numPassed}, Tests failed: {numFailed}")
 
     # Calculate time it took to run suite
     toc = time.time()
