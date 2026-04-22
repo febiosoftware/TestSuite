@@ -17,17 +17,12 @@ def set_title(text: str):
 
 #helper function for getting the base of a filename
 def _getBaseOfFilename(fileName):
-    if platform.system() == "Windows":
-        baseName = fileName.split('\\')[-1].split('.')[0]
-    else:
-        baseName = fileName.split('/')[-1].split('.')[0]
-    return baseName
+    return fileName.split(os.sep)[-1].split('.')[0]
 
 # This function builds the list of files that will be run. 
 # It includes all the files with extension feb in the provided directory that match the regular expression (if provided).
 def _buildFileList(testDir, exp = None, searchStr = None):
-
-    print(testDir)
+    testDir = os.path.normpath(testDir) + os.sep
 
     # get all the feb files in the directory
     allFiles = glob.glob(testDir + "*.feb")
@@ -434,11 +429,12 @@ def _createTestReport(results, stdResults, elapsedTime, logFilename = None):
     return success, subject, message
 
 # This function will run the test suite
-def runTests(febioPath, verifyDir, workDir, stdResults, exp=None, searchStr = None, numCores=1, logFilename = None):
+def runTests(febioPath, verifyDir, workDir, stdResults, pluginTestPaths, exp=None, searchStr = None, numCores=1, logFilename = None):
     
     # get all the testsuite files
     testFiles = _buildFileList(verifyDir, exp, searchStr)
-    print("Running %1d test file(s)" %(len(testFiles)))
+    for path in pluginTestPaths:
+        testFiles += _buildFileList(path + "/Verify/", exp, searchStr)
 
     # mark start point
     tic = time.time()

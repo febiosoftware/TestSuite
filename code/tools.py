@@ -104,13 +104,13 @@ class TestReport:
         self.message = message
 
 # run the test suite and return a TestReport object
-def runTestSuite(febioTestBin, numCores, regex, searchString, commitNew: bool):
+def runTestSuite(febioTestBin, numCores, regex, searchString, commitNew: bool, pluginTestPaths=None):
 
     print("Using FEBio binary:", febioTestBin)
     print("Using gold standards:", GOLDSTANDARDS)
 
     logFile = os.path.join(LOGDIR, str(datetime.date.today()) + ".txt")
-    success, subject, message, results = runTests(febioTestBin, VERIFYDIR, VERIFYDIR, stdResults, exp=regex, searchStr=searchString, numCores=numCores, logFilename=logFile)
+    success, subject, message, results = runTests(febioTestBin, VERIFYDIR, VERIFYDIR, stdResults, pluginTestPaths, exp=regex, searchStr=searchString, numCores=numCores, logFilename=logFile)
 
     # Check for new tests
     newTests = False
@@ -228,8 +228,16 @@ if __name__ == "__main__":
         if '-s' in sys.argv:
             index = sys.argv.index('-s')
             searchStr = sys.argv[index + 1]
+
+        pluginTestPaths = []
+        if '-p' in sys.argv:
+            index = sys.argv.index('-p')
+            for i in range(index + 1, len(sys.argv)):
+                if sys.argv[i].startswith('-') and len(sys.argv[i]) == 2:
+                    break
+                pluginTestPaths.append(sys.argv[i])
         
-        results = runTestSuite(febioTestBin, NumCores, exp, searchStr, commitNew)
+        results = runTestSuite(febioTestBin, NumCores, exp, searchStr, commitNew, pluginTestPaths)
 
         if not results.success:
             exit(1)
