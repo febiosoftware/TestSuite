@@ -434,7 +434,7 @@ def runTests(febioPath, verifyDir, workDir, stdResults, pluginTestPaths, exp=Non
     # get all the testsuite files
     testFiles = _buildFileList(verifyDir, exp, searchStr)
     for path in pluginTestPaths:
-        testFiles += _buildFileList(path + "/Verify/", exp, searchStr)
+        testFiles += _buildFileList(path, exp, searchStr)
 
     # mark start point
     tic = time.time()
