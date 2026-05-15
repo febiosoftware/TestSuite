@@ -43,7 +43,7 @@ def showHelp():
 
     print("")
     print("-r (febio bin) Run test suite.")
-    print(wrapper.fill("Runs the problems in the test stute. Does not update or build anything. "
+    print(wrapper.fill("Runs the problems in the test suite. Does not update or build anything. "
         "Does not send email. Does not update the gold standards. If (febio bin) is not provided, "
         "it defaults to the value set in the FEBIO_TEST_BIN environment variable"))
     print("")
@@ -63,6 +63,10 @@ def showHelp():
     print("")
     print("-s [string]  Finds files that contain the search string 'string'")  
     print(wrapper.fill("             When combined with -r, only the files that contain the search string will be run."))
+    print("")
+    print("-p [path] ... Adds additional paths to search for FEBio test files. Can be used with -r and -e to run a specific subset of tests that are not in the default Verify directory.")
+    print("")
+    print("-l ... Use local gold standards file `localGoldStandards.py` instead of the ones from GitHub.")
 
 def searchFEBioFiles(searchString):
     print("Searching FEBio files in ", VERIFYDIR)
@@ -164,12 +168,10 @@ if __name__ == "__main__":
     
     
     if '-a' in sys.argv:
-        index = sys.argv.index('-a')
-        
-        if len(sys.argv) > index + 1 and sys.argv[index+1] != "-e":
-            commitAndPush = True
-            if '-l' in sys.argv:
-                commitAndPush = False # don't commit if using local gold standards
+        commitAndPush = True
+        if '-l' in sys.argv:
+            index = sys.argv.index('-a')
+            commitAndPush = False # don't commit if using local gold standards
             acceptChangesLocal(REPOROOT, sys.argv[index+1], stdResults, GOLDSTANDARDS, exp, commitAndPush)
         else:
             print("Accepting changes from latest GitHub actions")
