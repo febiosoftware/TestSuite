@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
  This file was created with FEBio Studio version 1.0.0 
+ Explicit fluid solver for lid-driven cavity flow
 -->
 <febio_spec version="4.0">
 	<Module type="fluid"/>

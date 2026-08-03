@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-A 10x10x1 block of Newtonian fluid material undergoing Couette
-flow, with up to
-10000 units of relative xvelocity in 5 seconds (logarithmic
-intervals every 0.2 seconds).
+Explicit fluid solver for Couette flow
 -->
 <febio_spec version="4.0">
 	<Module type="fluid">
