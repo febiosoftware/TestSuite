@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Problem Description:
-	BFSI compression of a block with HolmesMow permeability model. Smoothly compress by 99.99% to t=1s. 
+	BFSI compression of a block with HolmesMow permeability model. Smoothly compress by 99.9% to t=1s. 
 Main Features:
 	BFSI
 	porous solid
@@ -768,7 +768,7 @@ Comments:
 		<bc name="FixedFluidDilatation01" node_set="FixedEffectiveFluidPressure1" type="zero fluid dilatation"/>
 		<bc name="PrescribedDisplacement1" node_set="PrescribedDisplacement1" type="prescribed displacement">
 			<dof>z</dof>
-			<value lc="1">-0.9999</value>
+			<value lc="1">-0.999</value>
 			<relative>0</relative>
 		</bc>
 	</Boundary>
