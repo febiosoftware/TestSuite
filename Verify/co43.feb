@@ -542,11 +542,9 @@ Patch contact of multiphasic rectangular strips in unconfined compression stress
 			<auto_penalty>1</auto_penalty>
 			<update_penalty>0</update_penalty>
 			<two_pass>1</two_pass>
-			<knmult>1</knmult>
 			<search_tol>0.01</search_tol>
 			<pressure_penalty>1</pressure_penalty>
 			<concentration_penalty>1</concentration_penalty>
-			<symmetric_stiffness>0</symmetric_stiffness>
 			<search_radius>1</search_radius>
 			<seg_up>0</seg_up>
 			<node_reloc>0</node_reloc>
