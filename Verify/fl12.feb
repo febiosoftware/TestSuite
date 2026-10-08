@@ -9,6 +9,7 @@ step and then use Broyden for rest
 	<Globals>
 		<Constants>
 			<T>0</T>
+			<P>0</P>
 			<R>0</R>
 			<Fc>0</Fc>
 		</Constants>
@@ -3485,7 +3486,7 @@ step and then use Broyden for rest
 		</bc>
 	</Boundary>
 	<Step>
-		<step id="1" name="Step02">
+		<step id="1" name="Step01">
 			<Control>
 				<analysis>DYNAMIC</analysis>
 				<time_steps>1</time_steps>
@@ -3495,6 +3496,7 @@ step and then use Broyden for rest
 				<plot_level>PLOT_MAJOR_ITRS</plot_level>
 				<output_level>OUTPUT_MAJOR_ITRS</output_level>
 				<plot_stride>1</plot_stride>
+				<output_stride>1</output_stride>
 				<adaptor_re_solve>1</adaptor_re_solve>
 				<time_stepper type="default">
 					<max_retries>0</max_retries>
@@ -3513,6 +3515,7 @@ step and then use Broyden for rest
 					<lstol>0.9</lstol>
 					<lsmin>0.01</lsmin>
 					<lsiter>5</lsiter>
+					<ls_check_jacobians>0</ls_check_jacobians>
 					<max_refs>5</max_refs>
 					<check_zero_diagonal>0</check_zero_diagonal>
 					<zero_diagonal_tol>0</zero_diagonal_tol>
@@ -3538,7 +3541,7 @@ step and then use Broyden for rest
 				</solver>
 			</Control>
 		</step>
-		<step id="2" name="Step03">
+		<step id="2" name="Step02">
 			<Control>
 				<analysis>DYNAMIC</analysis>
 				<time_steps>49</time_steps>
@@ -3548,6 +3551,7 @@ step and then use Broyden for rest
 				<plot_level>PLOT_MAJOR_ITRS</plot_level>
 				<output_level>OUTPUT_MAJOR_ITRS</output_level>
 				<plot_stride>1</plot_stride>
+				<output_stride>1</output_stride>
 				<adaptor_re_solve>1</adaptor_re_solve>
 				<time_stepper type="default">
 					<max_retries>0</max_retries>
@@ -3566,6 +3570,7 @@ step and then use Broyden for rest
 					<lstol>0.9</lstol>
 					<lsmin>0.01</lsmin>
 					<lsiter>5</lsiter>
+					<ls_check_jacobians>0</ls_check_jacobians>
 					<max_refs>5</max_refs>
 					<check_zero_diagonal>0</check_zero_diagonal>
 					<zero_diagonal_tol>0</zero_diagonal_tol>
@@ -3621,6 +3626,8 @@ step and then use Broyden for rest
 			<var type="fluid volume ratio"/>
 			<var type="fluid vorticity"/>
 			<var type="nodal fluid velocity"/>
+			<var type="fluid wall shear stress" surface="FluidRotationalVelocity1"/>
+			<var type="fluid wall shear stress" surface="FluidRotationalVelocity2"/>
 		</plotfile>
 	</Output>
 </febio_spec>

@@ -17,6 +17,7 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 		<plot_level>PLOT_MAJOR_ITRS</plot_level>
 		<output_level>OUTPUT_MAJOR_ITRS</output_level>
 		<plot_stride>1</plot_stride>
+		<output_stride>1</output_stride>
 		<adaptor_re_solve>1</adaptor_re_solve>
 		<solver type="fluid">
 			<symmetric_stiffness>non-symmetric</symmetric_stiffness>
@@ -26,6 +27,7 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 			<lstol>0.9</lstol>
 			<lsmin>0.01</lsmin>
 			<lsiter>5</lsiter>
+			<ls_check_jacobians>0</ls_check_jacobians>
 			<max_refs>2</max_refs>
 			<check_zero_diagonal>0</check_zero_diagonal>
 			<zero_diagonal_tol>0</zero_diagonal_tol>
@@ -53,6 +55,7 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 	<Globals>
 		<Constants>
 			<T>0</T>
+			<P>0</P>
 			<R>0</R>
 			<Fc>0</Fc>
 		</Constants>
@@ -5736,6 +5739,21 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 		<NodeSet name="FixedFluidDilatation02">
 			1, 2, 21, 22, 1, 2, 21, 22
 		</NodeSet>
+		<Surface name="BlockWall">
+			<quad4 id="1">333,335,336,334</quad4>
+			<quad4 id="2">335,337,338,336</quad4>
+			<quad4 id="3">337,339,340,338</quad4>
+			<quad4 id="4">331,333,334,332</quad4>
+			<quad4 id="5">339,353,354,340</quad4>
+			<quad4 id="6">353,367,368,354</quad4>
+			<quad4 id="7">367,381,382,368</quad4>
+			<quad4 id="8">381,395,396,382</quad4>
+			<quad4 id="9">395,409,410,396</quad4>
+			<quad4 id="10">427,425,426,428</quad4>
+			<quad4 id="11">429,427,428,430</quad4>
+			<quad4 id="12">409,429,430,410</quad4>
+			<quad4 id="13">425,423,424,426</quad4>
+		</Surface>
 		<Surface name="FluidNormalVelocity1">
 			<quad4 id="1">5,3,4,6</quad4>
 			<quad4 id="2">7,5,6,8</quad4>
@@ -5885,6 +5903,7 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 			<var type="fluid velocity"/>
 			<var type="fluid vorticity"/>
 			<var type="nodal fluid velocity"/>
+			<var type="fluid wall shear stress" surface="BlockWall"/>
 		</plotfile>
 	</Output>
 </febio_spec>
