@@ -14,6 +14,7 @@ poiseuille flow.
 		<plot_level>PLOT_MAJOR_ITRS</plot_level>
 		<output_level>OUTPUT_MAJOR_ITRS</output_level>
 		<plot_stride>1</plot_stride>
+		<output_stride>1</output_stride>
 		<adaptor_re_solve>1</adaptor_re_solve>
 		<time_stepper type="default">
 			<max_retries>5</max_retries>
@@ -32,6 +33,7 @@ poiseuille flow.
 			<lstol>0.9</lstol>
 			<lsmin>0.01</lsmin>
 			<lsiter>5</lsiter>
+			<ls_check_jacobians>0</ls_check_jacobians>
 			<max_refs>5</max_refs>
 			<check_zero_diagonal>0</check_zero_diagonal>
 			<zero_diagonal_tol>0</zero_diagonal_tol>
@@ -59,6 +61,7 @@ poiseuille flow.
 	<Globals>
 		<Constants>
 			<T>0</T>
+			<P>0</P>
 			<R>0</R>
 			<Fc>0</Fc>
 		</Constants>
@@ -1645,6 +1648,48 @@ poiseuille flow.
 			33, 34, 35, 36, 37, 38, 39, 40,
 			41, 42
 		</NodeSet>
+		<Surface name="TopBottomWalls">
+			<quad4 id="1">1,43,44,2</quad4>
+			<quad4 id="2">43,85,86,44</quad4>
+			<quad4 id="3">85,127,128,86</quad4>
+			<quad4 id="4">127,169,170,128</quad4>
+			<quad4 id="5">169,211,212,170</quad4>
+			<quad4 id="6">211,253,254,212</quad4>
+			<quad4 id="7">253,295,296,254</quad4>
+			<quad4 id="8">295,337,338,296</quad4>
+			<quad4 id="9">337,379,380,338</quad4>
+			<quad4 id="10">379,421,422,380</quad4>
+			<quad4 id="11">421,463,464,422</quad4>
+			<quad4 id="12">463,505,506,464</quad4>
+			<quad4 id="13">505,547,548,506</quad4>
+			<quad4 id="14">547,589,590,548</quad4>
+			<quad4 id="15">589,631,632,590</quad4>
+			<quad4 id="16">631,673,674,632</quad4>
+			<quad4 id="17">673,715,716,674</quad4>
+			<quad4 id="18">715,757,758,716</quad4>
+			<quad4 id="19">757,799,800,758</quad4>
+			<quad4 id="20">799,841,842,800</quad4>
+			<quad4 id="21">83,41,42,84</quad4>
+			<quad4 id="22">125,83,84,126</quad4>
+			<quad4 id="23">167,125,126,168</quad4>
+			<quad4 id="24">209,167,168,210</quad4>
+			<quad4 id="25">251,209,210,252</quad4>
+			<quad4 id="26">293,251,252,294</quad4>
+			<quad4 id="27">335,293,294,336</quad4>
+			<quad4 id="28">377,335,336,378</quad4>
+			<quad4 id="29">419,377,378,420</quad4>
+			<quad4 id="30">461,419,420,462</quad4>
+			<quad4 id="31">503,461,462,504</quad4>
+			<quad4 id="32">545,503,504,546</quad4>
+			<quad4 id="33">587,545,546,588</quad4>
+			<quad4 id="34">629,587,588,630</quad4>
+			<quad4 id="35">671,629,630,672</quad4>
+			<quad4 id="36">713,671,672,714</quad4>
+			<quad4 id="37">755,713,714,756</quad4>
+			<quad4 id="38">797,755,756,798</quad4>
+			<quad4 id="39">839,797,798,840</quad4>
+			<quad4 id="40">881,839,840,882</quad4>
+		</Surface>
 	</Mesh>
 	<MeshDomains>
 		<SolidDomain name="Part1" mat="Material1"/>
@@ -1694,6 +1739,7 @@ poiseuille flow.
 			<var type="fluid volume ratio"/>
 			<var type="fluid vorticity"/>
 			<var type="nodal fluid velocity"/>
+			<var type="fluid wall shear stress" surface="TopBottomWalls"/>
 		</plotfile>
 	</Output>
 </febio_spec>

@@ -15,6 +15,7 @@ state so fully developed flow
 		<plot_level>PLOT_MAJOR_ITRS</plot_level>
 		<output_level>OUTPUT_MAJOR_ITRS</output_level>
 		<plot_stride>1</plot_stride>
+		<output_stride>1</output_stride>
 		<adaptor_re_solve>1</adaptor_re_solve>
 		<time_stepper type="default">
 			<max_retries>50</max_retries>
@@ -33,6 +34,7 @@ state so fully developed flow
 			<lstol>0.9</lstol>
 			<lsmin>0.01</lsmin>
 			<lsiter>5</lsiter>
+			<ls_check_jacobians>0</ls_check_jacobians>
 			<max_refs>5</max_refs>
 			<check_zero_diagonal>0</check_zero_diagonal>
 			<zero_diagonal_tol>0</zero_diagonal_tol>
@@ -60,6 +62,7 @@ state so fully developed flow
 	<Globals>
 		<Constants>
 			<T>0</T>
+			<P>0</P>
 			<R>0</R>
 			<Fc>0</Fc>
 		</Constants>
@@ -3096,6 +3099,88 @@ state so fully developed flow
 		<NodeSet name="FixedFluidDilatation2">
 			1, 2, 41, 42, 1, 2, 41, 42
 		</NodeSet>
+		<Surface name="TopBottomWalls">
+			<quad4 id="1">1,43,44,2</quad4>
+			<quad4 id="2">43,85,86,44</quad4>
+			<quad4 id="3">85,127,128,86</quad4>
+			<quad4 id="4">127,169,170,128</quad4>
+			<quad4 id="5">169,211,212,170</quad4>
+			<quad4 id="6">211,253,254,212</quad4>
+			<quad4 id="7">253,295,296,254</quad4>
+			<quad4 id="8">295,337,338,296</quad4>
+			<quad4 id="9">337,379,380,338</quad4>
+			<quad4 id="10">379,421,422,380</quad4>
+			<quad4 id="11">421,463,464,422</quad4>
+			<quad4 id="12">463,505,506,464</quad4>
+			<quad4 id="13">505,547,548,506</quad4>
+			<quad4 id="14">547,589,590,548</quad4>
+			<quad4 id="15">589,631,632,590</quad4>
+			<quad4 id="16">631,673,674,632</quad4>
+			<quad4 id="17">673,715,716,674</quad4>
+			<quad4 id="18">715,757,758,716</quad4>
+			<quad4 id="19">757,799,800,758</quad4>
+			<quad4 id="20">799,841,842,800</quad4>
+			<quad4 id="21">841,883,884,842</quad4>
+			<quad4 id="22">883,925,926,884</quad4>
+			<quad4 id="23">925,967,968,926</quad4>
+			<quad4 id="24">967,1009,1010,968</quad4>
+			<quad4 id="25">1009,1051,1052,1010</quad4>
+			<quad4 id="26">1051,1093,1094,1052</quad4>
+			<quad4 id="27">1093,1135,1136,1094</quad4>
+			<quad4 id="28">1135,1177,1178,1136</quad4>
+			<quad4 id="29">1177,1219,1220,1178</quad4>
+			<quad4 id="30">1219,1261,1262,1220</quad4>
+			<quad4 id="31">1261,1303,1304,1262</quad4>
+			<quad4 id="32">1303,1345,1346,1304</quad4>
+			<quad4 id="33">1345,1387,1388,1346</quad4>
+			<quad4 id="34">1387,1429,1430,1388</quad4>
+			<quad4 id="35">1429,1471,1472,1430</quad4>
+			<quad4 id="36">1471,1513,1514,1472</quad4>
+			<quad4 id="37">1513,1555,1556,1514</quad4>
+			<quad4 id="38">1555,1597,1598,1556</quad4>
+			<quad4 id="39">1597,1639,1640,1598</quad4>
+			<quad4 id="40">1639,1681,1682,1640</quad4>
+			<quad4 id="41">83,41,42,84</quad4>
+			<quad4 id="42">125,83,84,126</quad4>
+			<quad4 id="43">167,125,126,168</quad4>
+			<quad4 id="44">209,167,168,210</quad4>
+			<quad4 id="45">251,209,210,252</quad4>
+			<quad4 id="46">293,251,252,294</quad4>
+			<quad4 id="47">335,293,294,336</quad4>
+			<quad4 id="48">377,335,336,378</quad4>
+			<quad4 id="49">419,377,378,420</quad4>
+			<quad4 id="50">461,419,420,462</quad4>
+			<quad4 id="51">503,461,462,504</quad4>
+			<quad4 id="52">545,503,504,546</quad4>
+			<quad4 id="53">587,545,546,588</quad4>
+			<quad4 id="54">629,587,588,630</quad4>
+			<quad4 id="55">671,629,630,672</quad4>
+			<quad4 id="56">713,671,672,714</quad4>
+			<quad4 id="57">755,713,714,756</quad4>
+			<quad4 id="58">797,755,756,798</quad4>
+			<quad4 id="59">839,797,798,840</quad4>
+			<quad4 id="60">881,839,840,882</quad4>
+			<quad4 id="61">923,881,882,924</quad4>
+			<quad4 id="62">965,923,924,966</quad4>
+			<quad4 id="63">1007,965,966,1008</quad4>
+			<quad4 id="64">1049,1007,1008,1050</quad4>
+			<quad4 id="65">1091,1049,1050,1092</quad4>
+			<quad4 id="66">1133,1091,1092,1134</quad4>
+			<quad4 id="67">1175,1133,1134,1176</quad4>
+			<quad4 id="68">1217,1175,1176,1218</quad4>
+			<quad4 id="69">1259,1217,1218,1260</quad4>
+			<quad4 id="70">1301,1259,1260,1302</quad4>
+			<quad4 id="71">1343,1301,1302,1344</quad4>
+			<quad4 id="72">1385,1343,1344,1386</quad4>
+			<quad4 id="73">1427,1385,1386,1428</quad4>
+			<quad4 id="74">1469,1427,1428,1470</quad4>
+			<quad4 id="75">1511,1469,1470,1512</quad4>
+			<quad4 id="76">1553,1511,1512,1554</quad4>
+			<quad4 id="77">1595,1553,1554,1596</quad4>
+			<quad4 id="78">1637,1595,1596,1638</quad4>
+			<quad4 id="79">1679,1637,1638,1680</quad4>
+			<quad4 id="80">1721,1679,1680,1722</quad4>
+		</Surface>
 		<Surface name="FluidNormalVelocity1">
 			<quad4 id="1">41,39,40,42</quad4>
 			<quad4 id="2">39,37,38,40</quad4>
@@ -3171,6 +3256,7 @@ state so fully developed flow
 			<var type="fluid volume ratio"/>
 			<var type="fluid vorticity"/>
 			<var type="nodal fluid velocity"/>
+			<var type="fluid wall shear stress" surface="TopBottomWalls"/>
 		</plotfile>
 	</Output>
 </febio_spec>

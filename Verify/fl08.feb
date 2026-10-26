@@ -13,6 +13,7 @@
 		<plot_level>PLOT_MAJOR_ITRS</plot_level>
 		<output_level>OUTPUT_MAJOR_ITRS</output_level>
 		<plot_stride>1</plot_stride>
+		<output_stride>1</output_stride>
 		<adaptor_re_solve>1</adaptor_re_solve>
 		<time_stepper type="default">
 			<max_retries>50</max_retries>
@@ -31,6 +32,7 @@
 			<lstol>0.9</lstol>
 			<lsmin>0.01</lsmin>
 			<lsiter>5</lsiter>
+			<ls_check_jacobians>0</ls_check_jacobians>
 			<max_refs>5</max_refs>
 			<check_zero_diagonal>0</check_zero_diagonal>
 			<zero_diagonal_tol>0</zero_diagonal_tol>
@@ -58,6 +60,7 @@
 	<Globals>
 		<Constants>
 			<T>0</T>
+			<P>0</P>
 			<R>0</R>
 			<Fc>0</Fc>
 		</Constants>
@@ -878,6 +881,28 @@
 			33, 34, 35, 36, 37, 38, 39, 40,
 			41, 42
 		</NodeSet>
+		<Surface name="TopBottomWalls">
+			<quad4 id="1">1,43,44,2</quad4>
+			<quad4 id="2">43,85,86,44</quad4>
+			<quad4 id="3">85,127,128,86</quad4>
+			<quad4 id="4">127,169,170,128</quad4>
+			<quad4 id="5">169,211,212,170</quad4>
+			<quad4 id="6">211,253,254,212</quad4>
+			<quad4 id="7">253,295,296,254</quad4>
+			<quad4 id="8">295,337,338,296</quad4>
+			<quad4 id="9">337,379,380,338</quad4>
+			<quad4 id="10">379,421,422,380</quad4>
+			<quad4 id="11">83,41,42,84</quad4>
+			<quad4 id="12">125,83,84,126</quad4>
+			<quad4 id="13">167,125,126,168</quad4>
+			<quad4 id="14">209,167,168,210</quad4>
+			<quad4 id="15">251,209,210,252</quad4>
+			<quad4 id="16">293,251,252,294</quad4>
+			<quad4 id="17">335,293,294,336</quad4>
+			<quad4 id="18">377,335,336,378</quad4>
+			<quad4 id="19">419,377,378,420</quad4>
+			<quad4 id="20">461,419,420,462</quad4>
+		</Surface>
 		<Surface name="NormalFlowConstraint1">
 			<quad4 id="1">41,39,40,42</quad4>
 			<quad4 id="2">39,37,38,40</quad4>
@@ -1014,6 +1039,7 @@
 			<var type="fluid volume ratio"/>
 			<var type="fluid vorticity"/>
 			<var type="nodal fluid velocity"/>
+			<var type="fluid wall shear stress" surface="TopBottomWalls"/>
 		</plotfile>
 	</Output>
 </febio_spec>

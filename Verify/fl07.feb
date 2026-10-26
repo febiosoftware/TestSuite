@@ -15,6 +15,7 @@ constraint on inlet and outlet
 		<plot_level>PLOT_MAJOR_ITRS</plot_level>
 		<output_level>OUTPUT_MAJOR_ITRS</output_level>
 		<plot_stride>1</plot_stride>
+		<output_stride>1</output_stride>
 		<adaptor_re_solve>1</adaptor_re_solve>
 		<solver type="fluid">
 			<symmetric_stiffness>non-symmetric</symmetric_stiffness>
@@ -24,6 +25,7 @@ constraint on inlet and outlet
 			<lstol>0.9</lstol>
 			<lsmin>0.01</lsmin>
 			<lsiter>5</lsiter>
+			<ls_check_jacobians>0</ls_check_jacobians>
 			<max_refs>15</max_refs>
 			<check_zero_diagonal>0</check_zero_diagonal>
 			<zero_diagonal_tol>0</zero_diagonal_tol>
@@ -51,6 +53,7 @@ constraint on inlet and outlet
 	<Globals>
 		<Constants>
 			<T>0</T>
+			<P>0</P>
 			<R>0</R>
 			<Fc>0</Fc>
 		</Constants>
@@ -868,6 +871,50 @@ constraint on inlet and outlet
 			9, 10, 11, 12, 13, 14, 15, 16,
 			17, 18, 19, 20, 21, 22
 		</NodeSet>
+		<Surface name="TopWall">
+			<quad4 id="1">43,21,22,44</quad4>
+			<quad4 id="2">65,43,44,66</quad4>
+			<quad4 id="3">87,65,66,88</quad4>
+			<quad4 id="4">109,87,88,110</quad4>
+			<quad4 id="5">131,109,110,132</quad4>
+			<quad4 id="6">153,131,132,154</quad4>
+			<quad4 id="7">175,153,154,176</quad4>
+			<quad4 id="8">197,175,176,198</quad4>
+			<quad4 id="9">219,197,198,220</quad4>
+			<quad4 id="10">241,219,220,242</quad4>
+			<quad4 id="11">263,241,242,264</quad4>
+			<quad4 id="12">285,263,264,286</quad4>
+			<quad4 id="13">307,285,286,308</quad4>
+			<quad4 id="14">329,307,308,330</quad4>
+			<quad4 id="15">351,329,330,352</quad4>
+			<quad4 id="16">373,351,352,374</quad4>
+			<quad4 id="17">395,373,374,396</quad4>
+			<quad4 id="18">417,395,396,418</quad4>
+			<quad4 id="19">439,417,418,440</quad4>
+			<quad4 id="20">461,439,440,462</quad4>
+		</Surface>
+		<Surface name="BottomWall">
+			<quad4 id="1">1,23,24,2</quad4>
+			<quad4 id="2">23,45,46,24</quad4>
+			<quad4 id="3">45,67,68,46</quad4>
+			<quad4 id="4">67,89,90,68</quad4>
+			<quad4 id="5">89,111,112,90</quad4>
+			<quad4 id="6">111,133,134,112</quad4>
+			<quad4 id="7">133,155,156,134</quad4>
+			<quad4 id="8">155,177,178,156</quad4>
+			<quad4 id="9">177,199,200,178</quad4>
+			<quad4 id="10">199,221,222,200</quad4>
+			<quad4 id="11">221,243,244,222</quad4>
+			<quad4 id="12">243,265,266,244</quad4>
+			<quad4 id="13">265,287,288,266</quad4>
+			<quad4 id="14">287,309,310,288</quad4>
+			<quad4 id="15">309,331,332,310</quad4>
+			<quad4 id="16">331,353,354,332</quad4>
+			<quad4 id="17">353,375,376,354</quad4>
+			<quad4 id="18">375,397,398,376</quad4>
+			<quad4 id="19">397,419,420,398</quad4>
+			<quad4 id="20">419,441,442,420</quad4>
+		</Surface>
 		<Surface name="NormalFlowSurface01">
 			<quad4 id="1">21,19,20,22</quad4>
 			<quad4 id="2">19,17,18,20</quad4>
@@ -952,6 +999,8 @@ constraint on inlet and outlet
 			<var type="fluid velocity"/>
 			<var type="fluid vorticity"/>
 			<var type="nodal fluid velocity"/>
+			<var type="fluid wall shear stress" surface="TopWall"/>
+			<var type="fluid wall shear stress" surface="BottomWall"/>
 		</plotfile>
 	</Output>
 </febio_spec>

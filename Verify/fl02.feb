@@ -19,6 +19,7 @@ Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 		<plot_level>PLOT_MAJOR_ITRS</plot_level>
 		<output_level>OUTPUT_MAJOR_ITRS</output_level>
 		<plot_stride>1</plot_stride>
+		<output_stride>1</output_stride>
 		<adaptor_re_solve>1</adaptor_re_solve>
 		<solver type="fluid">
 			<symmetric_stiffness>non-symmetric</symmetric_stiffness>
@@ -28,6 +29,7 @@ Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 			<lstol>0.9</lstol>
 			<lsmin>0.01</lsmin>
 			<lsiter>5</lsiter>
+			<ls_check_jacobians>0</ls_check_jacobians>
 			<max_refs>25</max_refs>
 			<check_zero_diagonal>0</check_zero_diagonal>
 			<zero_diagonal_tol>0</zero_diagonal_tol>
@@ -55,6 +57,7 @@ Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 	<Globals>
 		<Constants>
 			<T>0</T>
+			<P>0</P>
 			<R>0</R>
 			<Fc>0</Fc>
 		</Constants>
@@ -530,6 +533,18 @@ Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 			109, 110, 131, 132, 153, 154, 175, 176,
 			197, 198, 219, 220, 241, 242
 		</NodeSet>
+		<Surface name="TopWall">
+			<quad4 id="1">43,21,22,44</quad4>
+			<quad4 id="2">65,43,44,66</quad4>
+			<quad4 id="3">87,65,66,88</quad4>
+			<quad4 id="4">109,87,88,110</quad4>
+			<quad4 id="5">131,109,110,132</quad4>
+			<quad4 id="6">153,131,132,154</quad4>
+			<quad4 id="7">175,153,154,176</quad4>
+			<quad4 id="8">197,175,176,198</quad4>
+			<quad4 id="9">219,197,198,220</quad4>
+			<quad4 id="10">241,219,220,242</quad4>
+		</Surface>
 	</Mesh>
 	<MeshDomains>
 		<SolidDomain name="Part1" mat="Material1"/>
@@ -603,6 +618,7 @@ Cho YI and Kensey KR (1991). Biorheology, 28:241262.
 			<var type="fluid velocity"/>
 			<var type="fluid vorticity"/>
 			<var type="nodal fluid velocity"/>
+			<var type="fluid wall shear stress" surface="TopWall"/>
 		</plotfile>
 	</Output>
 </febio_spec>

@@ -18,6 +18,7 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 		<plot_level>PLOT_MAJOR_ITRS</plot_level>
 		<output_level>OUTPUT_MAJOR_ITRS</output_level>
 		<plot_stride>1</plot_stride>
+		<output_stride>1</output_stride>
 		<adaptor_re_solve>1</adaptor_re_solve>
 		<solver type="fluid">
 			<symmetric_stiffness>non-symmetric</symmetric_stiffness>
@@ -27,6 +28,7 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 			<lstol>0.9</lstol>
 			<lsmin>0.01</lsmin>
 			<lsiter>5</lsiter>
+			<ls_check_jacobians>0</ls_check_jacobians>
 			<max_refs>2</max_refs>
 			<check_zero_diagonal>0</check_zero_diagonal>
 			<zero_diagonal_tol>0</zero_diagonal_tol>
@@ -54,6 +56,7 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 	<Globals>
 		<Constants>
 			<T>0</T>
+			<P>0</P>
 			<R>0</R>
 			<Fc>0</Fc>
 		</Constants>
@@ -5536,6 +5539,72 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 			1989, 2006, 2023, 2040, 2057, 2074, 2091, 2108,
 			2125, 2142, 2159, 2176
 		</NodeSet>
+		<Surface name="CylinderWall">
+			<quad4 id="1">18,1,1089,1106</quad4>
+			<quad4 id="2">35,18,1106,1123</quad4>
+			<quad4 id="3">52,35,1123,1140</quad4>
+			<quad4 id="4">69,52,1140,1157</quad4>
+			<quad4 id="5">86,69,1157,1174</quad4>
+			<quad4 id="6">103,86,1174,1191</quad4>
+			<quad4 id="7">120,103,1191,1208</quad4>
+			<quad4 id="8">137,120,1208,1225</quad4>
+			<quad4 id="9">154,137,1225,1242</quad4>
+			<quad4 id="10">171,154,1242,1259</quad4>
+			<quad4 id="11">188,171,1259,1276</quad4>
+			<quad4 id="12">205,188,1276,1293</quad4>
+			<quad4 id="13">222,205,1293,1310</quad4>
+			<quad4 id="14">239,222,1310,1327</quad4>
+			<quad4 id="15">256,239,1327,1344</quad4>
+			<quad4 id="16">273,256,1344,1361</quad4>
+			<quad4 id="17">290,273,1361,1378</quad4>
+			<quad4 id="18">307,290,1378,1395</quad4>
+			<quad4 id="19">324,307,1395,1412</quad4>
+			<quad4 id="20">341,324,1412,1429</quad4>
+			<quad4 id="21">358,341,1429,1446</quad4>
+			<quad4 id="22">375,358,1446,1463</quad4>
+			<quad4 id="23">392,375,1463,1480</quad4>
+			<quad4 id="24">409,392,1480,1497</quad4>
+			<quad4 id="25">426,409,1497,1514</quad4>
+			<quad4 id="26">443,426,1514,1531</quad4>
+			<quad4 id="27">460,443,1531,1548</quad4>
+			<quad4 id="28">477,460,1548,1565</quad4>
+			<quad4 id="29">494,477,1565,1582</quad4>
+			<quad4 id="30">511,494,1582,1599</quad4>
+			<quad4 id="31">528,511,1599,1616</quad4>
+			<quad4 id="32">545,528,1616,1633</quad4>
+			<quad4 id="33">562,545,1633,1650</quad4>
+			<quad4 id="34">579,562,1650,1667</quad4>
+			<quad4 id="35">596,579,1667,1684</quad4>
+			<quad4 id="36">613,596,1684,1701</quad4>
+			<quad4 id="37">630,613,1701,1718</quad4>
+			<quad4 id="38">647,630,1718,1735</quad4>
+			<quad4 id="39">664,647,1735,1752</quad4>
+			<quad4 id="40">681,664,1752,1769</quad4>
+			<quad4 id="41">698,681,1769,1786</quad4>
+			<quad4 id="42">715,698,1786,1803</quad4>
+			<quad4 id="43">732,715,1803,1820</quad4>
+			<quad4 id="44">749,732,1820,1837</quad4>
+			<quad4 id="45">766,749,1837,1854</quad4>
+			<quad4 id="46">783,766,1854,1871</quad4>
+			<quad4 id="47">800,783,1871,1888</quad4>
+			<quad4 id="48">817,800,1888,1905</quad4>
+			<quad4 id="49">834,817,1905,1922</quad4>
+			<quad4 id="50">851,834,1922,1939</quad4>
+			<quad4 id="51">868,851,1939,1956</quad4>
+			<quad4 id="52">885,868,1956,1973</quad4>
+			<quad4 id="53">902,885,1973,1990</quad4>
+			<quad4 id="54">919,902,1990,2007</quad4>
+			<quad4 id="55">936,919,2007,2024</quad4>
+			<quad4 id="56">953,936,2024,2041</quad4>
+			<quad4 id="57">970,953,2041,2058</quad4>
+			<quad4 id="58">987,970,2058,2075</quad4>
+			<quad4 id="59">1004,987,2075,2092</quad4>
+			<quad4 id="60">1021,1004,2092,2109</quad4>
+			<quad4 id="61">1038,1021,2109,2126</quad4>
+			<quad4 id="62">1055,1038,2126,2143</quad4>
+			<quad4 id="63">1072,1055,2143,2160</quad4>
+			<quad4 id="64">1,1072,2160,1089</quad4>
+		</Surface>
 		<Surface name="FluidTractionLoad1">
 			<quad4 id="1">289,306,1394,1377</quad4>
 			<quad4 id="2">306,323,1411,1394</quad4>
@@ -5662,6 +5731,7 @@ Ateshian GA, Shim JJ, Maas SA, Weiss JA. (2018) J Biomech Eng, 140(2):0210010210
 			<var type="fluid velocity"/>
 			<var type="fluid vorticity"/>
 			<var type="nodal fluid velocity"/>
+			<var type="fluid wall shear stress" surface="CylinderWall"/>
 		</plotfile>
 	</Output>
 </febio_spec>
