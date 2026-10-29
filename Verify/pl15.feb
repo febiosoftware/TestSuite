@@ -69,6 +69,8 @@ Mild steel
 		<material id="1" name="mild steel" type="reactive plasticity">
 			<density>1</density>
 			<isochoric>1</isochoric>
+                        <formulation>1</formulation>
+                        <mandel_normal>1</mandel_normal>
 			<rtol>0.0001</rtol>
 			<secant_tangent>1</secant_tangent>
 			<elastic type="natural neo-Hookean">
